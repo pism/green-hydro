@@ -49,17 +49,20 @@ MPIQUEUELINE="#PBS -q standard_4"
  MPISIZELINE="#PBS -l nodes=$NODES:ppn=4"
   MPIOUTLINE="#PBS -j oe"
 
-GRID=10
+GRID=20
 INFILE=pism_Greenland_${GRID}km_v2_hotspot.nc
 PISM_DATANAME=$INFILE
 DURA=125000
-DURAKA=$(($DURA/1000))
-
+START=-125000
+FTTTIME=-124000
+END=-123000
 
 SCRIPT="do_${CLIMATE}-spinup-hotspot.sh"
 rm -f $SCRIPT
 EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization with hotspot"
-OUTFILE=g${GRID}km_${DURAKA}ka_${CLIMATE}_hotspot.nc
+FTTTIMEMKA=$(($FTTTIME/-1000))
+
+OUTFILE=g${GRID}km_m${FTTTIMEMKA}ka_${CLIMATE}_hotspot.nc
 
 # insert preamble
 echo $SHEBANGLINE >> $SCRIPT
@@ -75,7 +78,14 @@ echo >> $SCRIPT # add newline
 export PISM_EXPERIMENT=$EXPERIMENT
 export PISM_TITLE="Greenland Parameter Study"
       
-cmd="PISM_DO="" PISM_DATANAME=$PISM_DATANAME PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+cmd="PISM_DO="" STARTEND=$START,$FTTTIME PISM_DATANAME=$PISM_DATANAME  ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+
+INFILE=$OUTFILE
+OUTFILE=g${GRID}km_0_${CLIMATE}_hotspot.nc
+
+echo >> $SCRIPT
+cmd="PISM_DO="" STARTEND=$FTTTIME,$END PISM_DATANAME=$PISM_DATANAME PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 	      
 echo "($SPAWNSCRIPT)  $SCRIPT written"

@@ -70,6 +70,7 @@ if [ $# -lt 5 ] ; then
   echo "    REGRIDFILE   set to file name to regrid from; defaults to empty (no regrid)"
   echo "    REGRIDVARS   desired -regrid_vars; applies *if* REGRIDFILE set;"
   echo "                   defaults to 'bmelt,enthalpy,litho_temp,thk,tillwat'"
+  echo "    STARTEND     sets START and END year of a simulation. If used, overwrites DURA. e.g. -50000,2500 for a run from -50000 to 2500 years"
   echo
   echo "example usage 1:"
   echo
@@ -94,7 +95,7 @@ if [ -n "${SCRIPTNAME:+1}" ] ; then
   echo "[SCRIPTNAME=$SCRIPTNAME (already set)]"
   echo ""
 else
-  SCRIPTNAME="#(spinup.sh)"
+  SCRIPTNAME="#(run.sh)"
 fi
 
 if [ $# -gt 8 ] ; then
@@ -102,8 +103,17 @@ if [ $# -gt 8 ] ; then
 fi
 
 NN="$1" # first arg is number of processes
-DURATION=$3
-RUNSTARTEND="-ys -$DURATION -ye 0"
+
+if [ -z "${STARTEND}" ] ; then  # check if env var is NOT set
+    DURATION=$3
+    START=-$(($DURATION))
+    END=0
+    RUNSTARTEND="-ys $START -ye $END"
+else
+    STARTEND=$STARTEND
+    IFS=',' read START END <<<"$STARTEND"
+    RUNSTARTEND="-ys $START -ye $END"
+fi
 
 # are we doing force to thickness?
 PISM_FTT_FILE=$PISM_DATANAME
@@ -350,9 +360,9 @@ echo "$SCRIPTNAME        dynamics = '$PHYS'"
 # set up diagnostics
 if [ -z "${NODIAGS}" ] ; then  # check if env var is NOT set
   TSNAME=ts_$OUTNAME
-  TSTIMES=-$DURATION:$TSSTEP:0
+  TSTIMES=$START:$TSSTEP:$END
   EXNAME=ex_$OUTNAME
-  EXTIMES=-$DURATION:$EXSTEP:0
+  EXTIMES=$START:$EXSTEP:$END
   # check_stationarity.py can be applied to $EXNAME
   DIAGNOSTICS="-ts_file $TSNAME -ts_times $TSTIMES -extra_file $EXNAME -extra_times $EXTIMES -extra_vars $EXVARS"
 else
