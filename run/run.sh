@@ -16,8 +16,12 @@ DYNALIST="{sia, hybrid}"
 HYDROLIST="{null, routing, distributed}"
 
 # preprocess.sh generates pism_*.nc files; run it first
-PISM_DATAVERSION=1.1
-PISM_DATANAME=pism_Greenland_5km_hotspot.nc
+if [ -n "${PISM_DATANAME:+1}" ] ; then  # check if env var is already set
+    PISM_DATANAME=$PISM_DATANAME
+else
+    PISM_DATANAME=pism_Greenland_5km_hotspot.nc
+fi
+
 PISM_TEMPSERIES=pism_dT.nc
 PISM_SLSERIES=pism_dSL.nc
 
@@ -39,6 +43,7 @@ if [ $# -lt 5 ] ; then
   echo "    BOOTFILE  optional name of input file; default = $PISM_DATANAME"
   echo
   echo "consider setting optional environment variables (see script for meaning):"
+  echo "    PISM_DATANAME sets DATANAME file used for input data"
   echo "    TSSTEP       spacing between -ts_files outputs; defaults to yearly"
   echo "    EXSTEP       spacing in years between -extra_files outputs; defaults to 100"
   echo "    EXVARS       desired -extra_vars; defaults to 'diffusivity,temppabase,"
@@ -53,6 +58,7 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_TTPHI  sets (hybrid-only) option -topg_to_phi \$PARAM_TTPHI"
   echo "                   [default=15.0,40.0,-300.0,700.0]"
   echo "    PARAM_NOSGL  if set, DON'T use -tauc_slippery_grounding_lines"
+  echo "    PARAM_FTT    if set, use force-to-thickness method"
   echo "    PARAM_TWRATE sets option -hydrology_tillwat_rate \$PARAM_TWRATE"
   echo "                   [default=1e-6]"
   echo "    PARAM_TWPROP sets -hydrology_tillwat_transfer_proportion \$PARAM_TWPROP"
@@ -99,15 +105,23 @@ NN="$1" # first arg is number of processes
 DURATION=$3
 RUNSTARTEND="-ys -$DURATION -ye 0"
 
+# are we doing force to thickness?
+PISM_FTT_FILE=$PISM_DATANAME
+if [ -z "${PARAM_FTT}" ] ; then  # check if env var is NOT set
+    FTT=""
+else
+    FTT=",forcing -force_to_thk $PISM_FTT_FILE"
+fi
+
 # set coupler from argument 2
 if [ "$2" = "const" ]; then
   climname="constant-climate"
   INLIST=""
-  COUPLER="-surface given -surface_given_file $PISM_DATANAME"
+  COUPLER="-surface given$FTT -surface_given_file $PISM_DATANAME"
 elif [ "$2" = "paleo" ]; then
   climname="paleo-climate"
   INLIST="$PISM_TEMPSERIES $PISM_SLSERIES"
-  COUPLER=" -bed_def lc -atmosphere searise_greenland,delta_T,paleo_precip -surface pdd -atmosphere_paleo_precip_file $PISM_TEMPSERIES -atmosphere_delta_T_file $PISM_TEMPSERIES -ocean constant,delta_SL -ocean_delta_SL_file $PISM_SLSERIES"
+  COUPLER=" -bed_def lc -atmosphere searise_greenland,delta_T,paleo_precip -surface pdd$FTT -atmosphere_paleo_precip_file $PISM_TEMPSERIES -atmosphere_delta_T_file $PISM_TEMPSERIES -ocean constant,delta_SL -ocean_delta_SL_file $PISM_SLSERIES"
 else
   echo "invalid second argument; must be in $CLIMLIST"
   exit
@@ -285,7 +299,7 @@ fi
 if [ -n "${TSSTEP:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME          TSSTEP = $TSSTEP  (already set)"
 else
-  EXSTEP="100"
+  TSSTEP=yearly
   echo "$SCRIPTNAME          TSSTEP = $TSSTEP"
 fi
 

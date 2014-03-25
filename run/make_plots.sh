@@ -11,14 +11,16 @@ for q in 0.1 0.25; do
 		filepre=g${GRID}km_${q}_${delta}_${mu}_${omega}
 		title="q=$q;"'$\delta$'"=$delta;"'$\omega$'"=$omega;"'$\mu$'"=$mu"
 		for var in  "cbase" "csurf"; do
-		    ~/base/pypismtools/scripts/basemap-plot.py -v $var --inner_titles $title --colorbar_label -p twocol --singlerow --colormap ~/base/pypismtools/colormaps/Full_saturation_spectrum_CCW_orange.cpt  -o ${filepre}_${var}.pdf ${filepre}.nc
-	done
+		    echo "plotting $var from ${filepre}.nc"
+		    ~/base/pypismtools/scripts/basemap-plot.py -v $var --inner_titles $title --colorbar_label -p twocol --singlerow --colormap ~/base/pypismtools/colormaps/Full_saturation_spectrum_CCW_orange.cpt --geotiff_file MODISGreenland1kmclean_cut.tif -o ${filepre}_${var}.pdf ${filepre}.nc
+		done
 	    done
 	done
 	filepre=g${GRID}km_${q}_${delta}_hydro_null
-	title="q=$q;"'$\delta$'"=$delta;"'$\omega$'"=$omega;"'$\mu$'"=$mu"
+	title="q=$q;"'$\delta$'"=$delta;ctrl"
 	for var in "cbase" "csurf"; do
-    ~/base/pypismtools/scripts/basemap-plot.py -v $var --inner_titles $title --colorbar_label -p twocol --singlerow --colormap ~/base/pypismtools/colormaps/Full_saturation_spectrum_CCW_orange.cpt  -o ${filepre}_${var}.pdf ${filepre}.nc
+	    echo "plotting $var from ${filepre}.nc"
+	    ~/base/pypismtools/scripts/basemap-plot.py -v $var --inner_titles $title --colorbar_label -p twocol --singlerow --colormap ~/base/pypismtools/colormaps/Full_saturation_spectrum_CCW_orange.cpt --geotiff_file MODISGreenland1kmclean_cut.tif -o ${filepre}_${var}.pdf ${filepre}.nc
 	done
     done
 done
