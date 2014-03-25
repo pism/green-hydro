@@ -17,7 +17,7 @@ set -e  # exit on error
 
 
 set -e # exit on error
-CLIMATE=paleo
+CLIMATE=const
 SCRIPTNAME=${CLIMATE}-spinup-hotspot.sh
 
 NN=32  # default number of processors

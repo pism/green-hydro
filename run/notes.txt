@@ -2,3 +2,8 @@ check between
 
 q=0.1, delta=0.01, mu=1e-6
 omega in {100,1000}
+
+
+q=0.1, delta=0.02, omega=100,mu=5e-5
+
+q=0.25, delta=0.02, omega=1000,mu=1e-6
