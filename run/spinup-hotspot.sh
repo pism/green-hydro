@@ -11,13 +11,25 @@ set -e  # exit on error
 #  usage: to use NN=8 processors, 2 4-core nodes, and duration 4:00:00,
 #     $ export PISM_WALLTIME=4:00:00
 #     $ export PISM_NODES=2
-#     $ ./ 8
+#     $ ./spinup-hotspot.sh 8 paleo     ## do paleo-climate spinup
+#     or
+#     $ ./spinup-hotspot.sh 8 const     ## do paleo-climate spinup
 #  then, assuming you like the resulting scripts:
 #     $ qsub do-climate-spinup-hotspot.sh      ### <--- REALLY SUBMITS using qsub
 
 
 set -e # exit on error
-CLIMATE=paleo
+CLIMLIST="{const, paleo}"
+# set coupler from argument 2
+if [ "$2" = "const" ]; then
+    CLIMATE=$2
+elif [ "$2" = "paleo" ]; then
+    CLIMATE=$2
+else
+  echo "invalid second argument; must be in $CLIMLIST"
+  exit
+fi
+
 SCRIPTNAME=${CLIMATE}-spinup-hotspot.sh
 
 NN=32  # default number of processors
