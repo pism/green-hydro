@@ -54,8 +54,8 @@ INFILE=pism_Greenland_${GRID}km_v2_hotspot.nc
 PISM_DATANAME=$INFILE
 DURA=125000
 START=-125000
-FTTTIME=-124000
-END=-123000
+FTTTIME=-5000
+END=0
 
 SCRIPT="do_${CLIMATE}-spinup-hotspot.sh"
 rm -f $SCRIPT
