@@ -137,7 +137,7 @@ rm -f $SCRIPT
 EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization with hotspot"
 MKA=$(($END/-1000))
 
-OUTFILE=g${GRID}km_m${MKA}ka_${CLIMATE}_hotspot.nc
+OUTFILE=g${GRID}km_0_${CLIMATE}_hotspot.nc
 
 # insert preamble
 echo $SHEBANGLINE >> $SCRIPT
