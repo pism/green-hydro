@@ -8,6 +8,15 @@
 
 set -e  # exit on error
 
+# generate config file
+echo "  Generating config files..."
+for CONFIG in "hydro_config"; do
+ncgen -o ${CONFIG}.nc ${CONFIG}.cdl
+done
+echo "  Done generating config file."
+echo
+
+
 # get file; see page http://websrv.cs.umt.edu/isis/index.php/Present_Day_Greenland
 DATAVERSION=1.1
 DATAURL=http://websrv.cs.umt.edu/isis/images/a/a5/

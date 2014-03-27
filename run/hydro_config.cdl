@@ -1,0 +1,20 @@
+netcdf pism_overrides {
+    variables:
+    byte pism_overrides;
+
+    pism_overrides:air_temp_all_precip_as_snow = 272.15;
+    pism_overrides:air_temp_all_precip_as_snow_doc = "Kelvin; threshold temperature below which all precipitation is snow";
+
+    pism_overrides:air_temp_all_precip_as_rain = 274.15;
+    pism_overrides:air_temp_all_precip_as_rain_doc = "Kelvin; threshold temperature above which all precipitation is rain; must exceed air_temp_all_precip_as_snow to avoid division by zero, because difference is in a denominator";
+
+    pism_overrides:pdd_refreeze_ice_melt = "no";
+    pism_overrides:pdd_refreeze_ice_melt_doc = "If set to 'yes', refreeze pdd_refreeze fraction of melted ice, otherwise all of the melted ice runs off.";
+
+    pism_overrides:institution = "University of Alaska Fairbanks";
+    pism_overrides:institution_doc = "Institution name. This string is written to output files as the 'institution' global attribute.";
+
+    pism_overrides:backup_interval = 5.0;
+    pism_overrides:backup_interval_doc = "hours; wall-clock time between automatic backups";
+
+}

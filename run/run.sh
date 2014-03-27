@@ -67,6 +67,7 @@ if [ $# -lt 5 ] ; then
   echo "    PISM_MPIDO   defaults to 'mpiexec -n'"
   echo "    PISM_PREFIX  set to path to pismr executable if desired; defaults to empty"
   echo "    PISM_EXEC    defaults to 'pismr'"
+  echo "    PISM_CONFIG  config file, defaults to hydro_config.nc"
   echo "    REGRIDFILE   set to file name to regrid from; defaults to empty (no regrid)"
   echo "    REGRIDVARS   desired -regrid_vars; applies *if* REGRIDFILE set;"
   echo "                   defaults to 'bmelt,enthalpy,litho_temp,thk,tillwat'"
@@ -121,6 +122,13 @@ if [ -z "${PARAM_FTT}" ] ; then  # check if env var is NOT set
     FTT=""
 else
     FTT=",forcing -force_to_thk $PISM_FTT_FILE"
+fi
+
+# override config file?
+if [ -z "${PISM_CONFIG}" ] ; then  # check if env var is NOT set
+    CONFIG=hydro_config.nc
+else
+    CONFIG=$PISM_CONFIG
 fi
 
 # set coupler from argument 2
@@ -249,7 +257,7 @@ if [ -z "$8" ]; then
 else
   INNAME=$8
 fi
-INLIST="${INLIST} $INNAME $REGRIDFILE"
+INLIST="${INLIST} $INNAME $REGRIDFILE $CONFIG"
 
 # now we have read options ... we know enough to report to user ...
 echo
@@ -370,7 +378,7 @@ else
 fi
 
 # construct command
-cmd="$PISM_MPIDO $NN $PISM -boot_file $INNAME -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $COUPLER $PHYS $HYDRO $DIAGNOSTICS -o $OUTNAME"
+cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG -boot_file $INNAME -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $COUPLER $PHYS $HYDRO $DIAGNOSTICS -o $OUTNAME"
 echo
 $PISM_DO $cmd
 
