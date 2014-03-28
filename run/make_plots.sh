@@ -14,6 +14,11 @@ for q in 0.1 0.25 0.8; do
 		    echo "plotting $var from ${filepre}.nc"
 		    ~/base/pypismtools/scripts/basemap-plot.py -v $var --inner_titles $title --colorbar_label -p twocol --singlerow --colormap ~/base/pypismtools/colormaps/Full_saturation_spectrum_CCW_orange.cpt --geotiff_file MODISGreenland1kmclean_cut.tif -o ${filepre}_${var}.pdf ${filepre}.nc
 		done
+		for var in  "bwat"; do
+		    echo "plotting $var from ${filepre}.nc"
+		    ~/base/pypismtools/scripts/basemap-plot.py -v $var --inner_titles $title --colorbar_label -p twocol --singlerow --geotiff_file MODISGreenland1kmclean_cut.tif -o ${filepre}_${var}.pdf ${filepre}.nc
+		done
+
 	    done
 	done
 	filepre=g${GRID}km_${q}_${delta}_hydro_null
