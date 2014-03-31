@@ -33,6 +33,7 @@ export PISM_TITLE="Greenland Parameter Study"
 
 GRID=20
 INFILE=pism_Greenland_${GRID}km_v2_hotspot.nc
+#INFILE=g20km_steady_ssa.nc
 PISM_DATANAME=$INFILE
 DURA=100000
 START=-125000
