@@ -8,6 +8,12 @@
 
 set -e  # exit on error
 
+# run ./preprocess.sh 1 if you havent CDO compiled with OpenMP
+NN=1  # default number of processors
+if [ $# -gt 0 ] ; then
+  NN="$1"
+fi
+
 # generate config file
 echo "  Generating config files..."
 for CONFIG in "hydro_config"; do
@@ -42,7 +48,7 @@ ncrename -O -v airtemp2m,ice_surface_temp $PISMVERSION
 ncatted -O -a units,ice_surface_temp,c,c,"Celsius" $PISMVERSION
 # use pism-recognized name and standard_name for surface mass balance, after
 # converting from liquid water equivalent thickness per year to [kg m-2 year-1]
-ncap2 -O -s "climatic_mass_balance=1000.0*smb" $PISMVERSION $PISMVERSION
+ncap2 -t $NN -O -s "climatic_mass_balance=1000.0*smb" $PISMVERSION $PISMVERSION
 ncatted -O -a standard_name,climatic_mass_balance,m,c,"land_ice_surface_specific_mass_balance" $PISMVERSION
 ncatted -O -a units,climatic_mass_balance,m,c,"kg m-2 year-1" $PISMVERSION
 # de-clutter by only keeping vars we want
@@ -62,7 +68,7 @@ ncrename -O -d oisotopestimes,time \
 # reverse time dimension
 ncpdq -O --rdr=-time $TEMPSERIES $TEMPSERIES
 # make times follow same convention as PISM
-ncap2 -O -s "time=-time" $TEMPSERIES $TEMPSERIES
+ncap2 -t $NN -O -s "time=-time" $TEMPSERIES $TEMPSERIES
 ncatted -O -a units,time,m,c,"years since 1-1-1" $TEMPSERIES
 ncatted -O -a calendar,time,c,c,"365_day" $TEMPSERIES
 ncatted -O -a units,delta_T,m,c,"Kelvin" $TEMPSERIES
@@ -78,7 +84,7 @@ ncrename -O -d sealeveltimes,time \
             -v sealeveltimes,time \
             -v sealevel_time_series,delta_SL $SLSERIES
 # reverse time dimension
-ncpdq -O --rdr=-time $SLSERIES $SLSERIES
+ncpdq -t $NN -O --rdr=-time $SLSERIES $SLSERIES
 # make times follow same convention as PISM
 ncap2 -O -s "time=-time" $SLSERIES $SLSERIES
 ncatted -O -a units,time,m,c,"years since 1-1-1" $SLSERIES
@@ -87,12 +93,28 @@ echo "done."
 echo
 
 nc2cdo.py $PISMVERSION
+HS=970mW_hs
+CTRL=ctrl
 for GS in "20" "10" "5" "2.5" "2" "1"; do
-    DATANAME=pism_Greenland_${GS}km_v2_hotspot.nc
-    wget -nc http://pism-docs.org/download/$DATANAME
-    nc2cdo.py $DATANAME
-    cdo remapbil,$DATANAME $PISMVERSION tmp_Greenland_${GS}km.nc
-    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc $DATANAME
+    DATANAME=pism_Greenland_${GS}km_v2
+    wget -nc http://pism-docs.org/download/${DATANAME}.nc
+    nc2cdo.py ${DATANAME}.nc
+    ncks -O $DATANAME.nc ${DATANAME}_${CTRL}.nc
+    echo
+    echo "Creating hotspot"
+    echo 
+    sh create_hotspot.sh $NN $GS ${DATANAME}.nc ${DATANAME}_${HS}.nc
+    echo
+    echo "Adding climatic fields"
+    echo
+    if [ [$NN == 1] ] ; then
+	cdo remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}km.nc
+    else
+	cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}km.nc
+    fi
+    echo
+    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${CTRL}.nc
+    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${HS}.nc
     rm tmp_Greenland_${GS}km.nc
 done
 

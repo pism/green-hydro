@@ -139,7 +139,7 @@ if [ "$2" = "const" ]; then
 elif [ "$2" = "paleo" ]; then
   climname="paleo-climate"
   INLIST="$PISM_TEMPSERIES $PISM_SLSERIES"
-  COUPLER=" -bed_def lc -atmosphere searise_greenland,delta_T,paleo_precip -surface pdd$FTT -atmosphere_paleo_precip_file $PISM_TEMPSERIES -atmosphere_delta_T_file $PISM_TEMPSERIES -ocean constant,delta_SL -ocean_delta_SL_file $PISM_SLSERIES"
+  COUPLER=" -bed_def lc -atmosphere searise_greenland,delta_T,paleo_precip -surface pdd_old$FTT -atmosphere_paleo_precip_file $PISM_TEMPSERIES -atmosphere_delta_T_file $PISM_TEMPSERIES -ocean constant,delta_SL -ocean_delta_SL_file $PISM_SLSERIES"
 else
   echo "invalid second argument; must be in $CLIMLIST"
   exit
