@@ -107,7 +107,7 @@ for GS in "20" "10" "5" "2.5" "2" "1"; do
     echo
     echo "Adding climatic fields"
     echo
-    if [ [$NN == 1] ] ; then
+    if [ [$NN == "1"] ] ; then
 	cdo remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}km.nc
     else
 	cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}km.nc
