@@ -34,9 +34,19 @@ if [ $# -lt 2 ] ; then
   exit
 fi
 
+if [ -n "${PROC_PER_NODE:+1}" ] ; then  # check if env var is already set
+    PROC_PER_NODE=$PROC_PER_NODE
+else
+    PROC_PER_NODE=4
+fi
 
+if [ -n "${QUEUE:+1}" ] ; then  # check if env var is already set
+    QUEUE=$QUEUE
+else
+    QUEUE=standard_4
+fi
 
-# set coupler from argument 1
+# set CLIMATE from argument 1
 if [ "$1" = "const" ]; then
     CLIMATE=$1
 elif [ "$1" = "paleo" ]; then
@@ -46,7 +56,7 @@ else
   exit
 fi
 
-# set TYPE from argument 1
+# set TYPE from argument 2
 if [ "$2" = "ctrl" ]; then
     TYPE=$2
 elif [ "$2" = "970mW_hs" ]; then
@@ -60,6 +70,10 @@ SCRIPTNAME=${CLIMATE}-spinup-${TYPE}.sh
 export PISM_EXPERIMENT=$EXPERIMENT
 export PISM_TITLE="Greenland Parameter Study"
 
+# ###############################
+# 20 km run
+# ###############################
+
 GRID=20
 INFILE=pism_Greenland_${GRID}km_v2_${TYPE}.nc
 PISM_DATANAME=$INFILE
@@ -68,13 +82,13 @@ START=-125000
 END=-25000
 
 WALLTIME=12:00:00
-NODES=2
 NN=8
+NODES=$(( $NN/$PROC_PER_NODE))
 
  SHEBANGLINE="#!/bin/bash"
-MPIQUEUELINE="#PBS -q standard_4"
+MPIQUEUELINE="#PBS -q $QUEUE"
  MPITIMELINE="#PBS -l walltime=$WALLTIME"
- MPISIZELINE="#PBS -l nodes=$NODES:ppn=4"
+ MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
 SCRIPT="do_${GRID}km_${CLIMATE}-spinup-${TYPE}.sh"
@@ -100,6 +114,10 @@ echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 
 echo "($SPAWNSCRIPT)  $SCRIPT written"
 
+# ###############################
+# 10 km run
+# ###############################
+
 GRID=10
 SCRIPTNAME=${GRID}km_${CLIMATE}-spinup-${TYPE}.sh
 INFILE=pism_Greenland_${GRID}km_v2_${TYPE}.nc
@@ -110,13 +128,13 @@ START=-25000
 END=-5000
 
 WALLTIME=24:00:00
-NODES=8
 NN=32
+NODES=$(( $NN/$PROC_PER_NODE))
 
  SHEBANGLINE="#!/bin/bash"
 MPIQUEUELINE="#PBS -q standard_4"
  MPITIMELINE="#PBS -l walltime=$WALLTIME"
- MPISIZELINE="#PBS -l nodes=$NODES:ppn=4"
+ MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
 SCRIPT="do_${GRID}km_${CLIMATE}-spinup-${TYPE}.sh"
@@ -141,6 +159,10 @@ echo >> $SCRIPT
 cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 echo "($SPAWNSCRIPT)  $SCRIPT written"
+
+# ###############################
+# 5 km run
+# ###############################
 	      
 GRID=5
 SCRIPTNAME=${GRID}km_${CLIMATE}-spinup-${TYPE}.sh
@@ -152,13 +174,13 @@ START=-5000
 END=0
 
 WALLTIME=96:00:00
-NODES=16
 NN=64
+NODES=$(( $NN/$PROC_PER_NODE))
 
  SHEBANGLINE="#!/bin/bash"
 MPIQUEUELINE="#PBS -q standard_4"
  MPITIMELINE="#PBS -l walltime=$WALLTIME"
- MPISIZELINE="#PBS -l nodes=$NODES:ppn=4"
+ MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
 SCRIPT="do_${GRID}km_${CLIMATE}-spinup-${TYPE}.sh"
