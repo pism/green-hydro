@@ -94,7 +94,7 @@ ncap2 -t $NN -O -s $NEWBHEATFLX $OUTNAME $OUTNAME
 
 # ncap2 leaves hosed attributes; start over
 ncatted -a ,bheatflx,d,, $OUTNAME   # delete all attributes
-ncatted -a units,bheatflx,c,c,"mW m-2" $OUTNAME
+ncatted -a units,bheatflx,c,c,"W m-2" $OUTNAME
 ncatted -a long_name,bheatflx,c,c,"basal geothermal flux" $OUTNAME
 ncatted -a propose_standard_name,bheatflx,c,c,"lithosphere_upward_heat_flux" $OUTNAME
 
@@ -106,7 +106,7 @@ echo "  * variable 'bheatflxSR' is copy of 'bheatflx' from '$PISMVERSION'"
 echo "  * variable 'bheatflx' has added hot spot near source of NE Greenland ice stream:"
 echo "      center: (74 deg N lat, -40 W lon)"
 echo "      radius: $RSPOT m"
-echo "      value : $GHFSPOT mW m-2"
+echo "      value : $GHFSPOT W m-2"
 echo "  * reference for hot spot is"
 echo "      M. Fahnestock, et al (2001).  High geothermal heat flow, basal melt, and"
 echo "      the origin of rapid ice flow in central Greenland, Science vol 294, 2338--2342."
