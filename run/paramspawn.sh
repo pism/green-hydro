@@ -77,7 +77,7 @@ MPIQUEUELINE="#PBS -q $QUEUE"
  MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
-if [ "$CLIMATE = "const" ]; then
+if [ "$CLIMATE" = "const" ]; then
     INCLIMATE="const"
 elif [ "$CLIMATE" = "pdd" ]; then
     INCLIMATE="paleo"
