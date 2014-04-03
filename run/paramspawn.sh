@@ -68,6 +68,7 @@ GRID=$2
 CLIMATE=$3
 TYPE=$4
 INFILE=$5
+PISM_DATANAME=pism_Greenland_${GRID}km_v2_${TYPE}.nc
 
 NODES=$(( $NN/$PROC_PER_NODE))
 
@@ -76,14 +77,6 @@ MPIQUEUELINE="#PBS -q $QUEUE"
  MPITIMELINE="#PBS -l walltime=$WALLTIME"
  MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
-
-if [ "$CLIMATE" = "const" ]; then
-    INCLIMATE="const"
-elif [ "$CLIMATE" = "pdd" ]; then
-    INCLIMATE="paleo"
-fi
-PISM_DATANAME=pism_Greenland_${GRID}km_v2_${INCLIMATE}.nc
-
 
 # ########################################################
 # set up parameter sensitivity study
