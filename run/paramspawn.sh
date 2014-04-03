@@ -77,10 +77,20 @@ MPIQUEUELINE="#PBS -q $QUEUE"
  MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
-INFILE=g${GRID}km_0_${CLIMATE}_${TYPE}.nc
+# set coupler from argument 2
+if [ "$2" = "const" ]; then
+    INCLIMATE="const"
+elif [ "$2" = "pdd" ]; then
+    INCLIMATE="paleo"
+fi
+PISM_DATANAME=pism_Greenland_${GRID}km_v2_${INCLIMATE}.nc
+
+
+# ########################################################
+# set up parameter sensitivity study
+# ########################################################
 
 DURA=100
-
 for PPQ in 0.1 0.25 0.8 ; do
   for TEFO in 0.01 0.02 0.05 ; do
       for RATE in 1e-5 5e-5 1e-6; do
@@ -105,7 +115,7 @@ for PPQ in 0.1 0.25 0.8 ; do
 	      export PISM_EXPERIMENT=$EXPERIMENT
 	      export PISM_TITLE="Greenland Parameter Study"
 	      
-	      cmd="PISM_DO="" TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TWRATE=$RATE PARAM_TWPROP=$PROP ./run.sh $NN $CLIMATE $DURA $GRID hybrid routing $OUTFILE $INFILE"
+	      cmd="PISM_DO="" PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TWRATE=$RATE PARAM_TWPROP=$PROP ./run.sh $NN $CLIMATE $DURA $GRID hybrid routing $OUTFILE $INFILE"
 	      echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 	      
 	      echo "($SPAWNSCRIPT)  $SCRIPT written"
@@ -132,7 +142,7 @@ for PPQ in 0.1 0.25 0.8 ; do
       export PISM_EXPERIMENT=$EXPERIMENT
       export PISM_TITLE="Greenland Parameter Study"
       
-      cmd="PISM_DO="" TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO ./run.sh $NN const $DURA $GRID hybrid null $OUTFILE $INFILE"
+      cmd="PISM_DO="" PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO ./run.sh $NN const $DURA $GRID hybrid null $OUTFILE $INFILE"
       echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 	      
       echo "($SPAWNSCRIPT)  $SCRIPT written"
