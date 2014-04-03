@@ -25,14 +25,14 @@ if [ $# -lt 5 ] ; then
   echo
   echo "usage:"
   echo
-  echo "    paramspawn.sh NN GRID CLIMATE TYPE INFILE"
+  echo "    paramspawn.sh NN GRID CLIMATE TYPE REGRIDFILE"
   echo
   echo "  where:"
-  echo "    PROCS     = 1,2,3,... is number of MPI processes"
-  echo "    GRID      in $GRIDLIST (km)"
-  echo "    CLIMATE   in $CLIMLIST"
-  echo "    TYPE      in $TYPELIST"
-  echo "    INFILE    name of input file"
+  echo "    PROCS       = 1,2,3,... is number of MPI processes"
+  echo "    GRID        in $GRIDLIST (km)"
+  echo "    CLIMATE     in $CLIMLIST"
+  echo "    TYPE        in $TYPELIST"
+  echo "    REGRIDFILE  name of regrid file"
   echo
   echo
   exit
@@ -67,7 +67,7 @@ fi
 GRID=$2
 CLIMATE=$3
 TYPE=$4
-INFILE=$5
+REGRIDFILE=$5
 PISM_DATANAME=pism_Greenland_${GRID}km_v2_${TYPE}.nc
 
 NODES=$(( $NN/$PROC_PER_NODE))
@@ -107,7 +107,7 @@ for PPQ in 0.1 0.25 0.8 ; do
 	      export PISM_EXPERIMENT=$EXPERIMENT
 	      export PISM_TITLE="Greenland Parameter Study"
 	      
-	      cmd="PISM_DO="" PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TWRATE=$RATE PARAM_TWPROP=$PROP ./run.sh $NN $CLIMATE $DURA $GRID hybrid routing $OUTFILE $INFILE"
+	      cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TWRATE=$RATE PARAM_TWPROP=$PROP ./run.sh $NN $CLIMATE $DURA $GRID hybrid routing $OUTFILE"
 	      echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 	      
 	      echo "($SPAWNSCRIPT)  $SCRIPT written"
@@ -134,7 +134,7 @@ for PPQ in 0.1 0.25 0.8 ; do
       export PISM_EXPERIMENT=$EXPERIMENT
       export PISM_TITLE="Greenland Parameter Study"
       
-      cmd="PISM_DO="" PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO ./run.sh $NN const $DURA $GRID hybrid null $OUTFILE $INFILE"
+      cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO ./run.sh $NN const $DURA $GRID hybrid null $OUTFILE $INFILE"
       echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 	      
       echo "($SPAWNSCRIPT)  $SCRIPT written"
