@@ -77,10 +77,9 @@ MPIQUEUELINE="#PBS -q $QUEUE"
  MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
-# set coupler from argument 2
-if [ "$2" = "const" ]; then
+if [ "$CLIMATE = "const" ]; then
     INCLIMATE="const"
-elif [ "$2" = "pdd" ]; then
+elif [ "$CLIMATE" = "pdd" ]; then
     INCLIMATE="paleo"
 fi
 PISM_DATANAME=pism_Greenland_${GRID}km_v2_${INCLIMATE}.nc
