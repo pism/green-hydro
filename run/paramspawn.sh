@@ -9,7 +9,7 @@
 #  usage: to use NN=8 processors, 2 4-core nodes, and duration 4:00:00,
 #     $ export PISM_WALLTIME=4:00:00
 #     $ export PISM_NODES=2
-#     $ ./paramspawn.sh 8
+#     $ ./paramspawn.sh 8 FIXME
 #  then, assuming you like the resulting scripts:
 #     $ ./paramsubmit.sh      ### <--- REALLY SUBMITS using qsub
 
@@ -17,7 +17,28 @@
 set -e # exit on error
 SCRIPTNAME=paramspawn.sh
 
-NN=32  # default number of processors
+CLIMLIST="{const, pdd}"
+TYPELIST="{ctrl, 970mW_hs}"
+GRIDLIST="{10,5}"
+if [ $# -lt 5 ] ; then
+  echo "paramspawn.sh ERROR: needs 5 positional arguments ... ENDING NOW"
+  echo
+  echo "usage:"
+  echo
+  echo "    paramspawn.sh NN GRID CLIMATE TYPE INFILE"
+  echo
+  echo "  where:"
+  echo "    PROCS     = 1,2,3,... is number of MPI processes"
+  echo "    GRID      in $GRIDLIST (km)"
+  echo "    CLIMATE   in $CLIMLIST"
+  echo "    TYPE      in $TYPELIST"
+  echo "    INFILE    name of input file"
+  echo
+  echo
+  exit
+fi
+
+NN=64  # default number of processors
 if [ $# -gt 0 ] ; then  # if user says "paramspawn.sh 8" then NN = 8
   NN="$1"
 fi
@@ -31,34 +52,44 @@ else
 fi
 WALLTIME=$PISM_WALLTIME
 
-# set number of nodes
-if [ -n "${PISM_NODES:+1}" ] ; then  # check if env var is already set
-  echo "$SCRIPTNAME                    PISM_NODES = $PISM_NODES  (already set)"
+if [ -n "${PROC_PER_NODE:+1}" ] ; then  # check if env var is already set
+    PROC_PER_NODE=$PROC_PER_NODE
 else
-  PISM_NODES=8
-  echo "$SCRIPTNAME                     PISM_NODES = $PISM_NODES"
+    PROC_PER_NODE=4
 fi
-NODES=$PISM_NODES
+
+if [ -n "${QUEUE:+1}" ] ; then  # check if env var is already set
+    QUEUE=$QUEUE
+else
+    QUEUE=standard_4
+fi
+
+GRID=$2
+CLIMATE=$3
+TYPE=$4
+INFILE=$5
+
+NODES=$(( $NN/$PROC_PER_NODE))
 
  SHEBANGLINE="#!/bin/bash"
-MPIQUEUELINE="#PBS -q standard_4"
+MPIQUEUELINE="#PBS -q $QUEUE"
  MPITIMELINE="#PBS -l walltime=$WALLTIME"
- MPISIZELINE="#PBS -l nodes=$NODES:ppn=4"
+ MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
-INFILE=g10km_100ka_const_hot.nc
-GRID=10
-DURA=250
+INFILE=g${GRID}km_0_${CLIMATE}_${TYPE}.nc
+
+DURA=100
 
 for PPQ in 0.1 0.25 0.8 ; do
   for TEFO in 0.01 0.02 0.05 ; do
-      for RATE in 1e-5 5e-5 1e-6 5e-6 ; do
-	  for PROP in 1 10 100 1000 10000 ; do
+      for RATE in 1e-5 5e-5 1e-6; do
+	  for PROP in 10 100 1000 10000 ; do
 
-	      SCRIPT="do_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}.sh"
+	      SCRIPT="do_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}.sh"
 	      rm -f $SCRIPT
-	      EXPERIMENT=ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}
-	      OUTFILE=g${GRID}km_${PPQ}_${TEFO}_${RATE}_${PROP}.nc
+	      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}
+	      OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_${PPQ}_${TEFO}_${RATE}_${PROP}.nc
 
 	      # insert preamble
 	      echo $SHEBANGLINE >> $SCRIPT
@@ -74,7 +105,7 @@ for PPQ in 0.1 0.25 0.8 ; do
 	      export PISM_EXPERIMENT=$EXPERIMENT
 	      export PISM_TITLE="Greenland Parameter Study"
 	      
-	      cmd="PISM_DO="" TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TWRATE=$RATE PARAM_TWPROP=$PROP ./run.sh $NN const $DURA $GRID hybrid routing $OUTFILE $INFILE"
+	      cmd="PISM_DO="" TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TWRATE=$RATE PARAM_TWPROP=$PROP ./run.sh $NN $CLIMATE $DURA $GRID hybrid routing $OUTFILE $INFILE"
 	      echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 	      
 	      echo "($SPAWNSCRIPT)  $SCRIPT written"
@@ -82,10 +113,10 @@ for PPQ in 0.1 0.25 0.8 ; do
 	  done
       done
 
-      SCRIPT="do_ppq_${PPQ}_tefo_${TEFO}_hydro_null.sh"
+      SCRIPT="do_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_hydro_null.sh"
       rm -f $SCRIPT
-      EXPERIMENT=ppq_${PPQ}_tefo_${TEFO}_hydro_null
-      OUTFILE=g${GRID}km_${PPQ}_${TEFO}_hydro_null.nc
+      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_hydro_null
+      OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_${PPQ}_${TEFO}_hydro_null.nc
 
       # insert preamble
       echo $SHEBANGLINE >> $SCRIPT

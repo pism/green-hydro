@@ -11,7 +11,7 @@
 set -e  # exit on error
 
 GRIDLIST="{40, 20, 10, 5, 3, 2}"
-CLIMLIST="{const, paleo}"
+CLIMLIST="{const, paleo, pdd}"
 DYNALIST="{sia, hybrid}"
 HYDROLIST="{null, routing, distributed}"
 
@@ -141,6 +141,10 @@ elif [ "$2" = "paleo" ]; then
   INLIST="$PISM_TEMPSERIES $PISM_SLSERIES"
   # for now, we're using the old PDD scheme
   COUPLER=" -bed_def lc -atmosphere searise_greenland,delta_T,paleo_precip -surface pdd_old$FTT -atmosphere_paleo_precip_file $PISM_TEMPSERIES -atmosphere_delta_T_file $PISM_TEMPSERIES -ocean constant,delta_SL -ocean_delta_SL_file $PISM_SLSERIES"
+elif [ "$2" = "pdd" ]; then
+  climname="pdd-climate"
+  # for now, we're using the old PDD scheme
+  COUPLER=" -bed_def lc -atmosphere searise_greenland -surface pdd_old$FTT -ocean constant"
 else
   echo "invalid second argument; must be in $CLIMLIST"
   exit
