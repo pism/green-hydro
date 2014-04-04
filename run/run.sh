@@ -140,11 +140,11 @@ elif [ "$2" = "paleo" ]; then
   climname="paleo-climate"
   INLIST="$PISM_TEMPSERIES $PISM_SLSERIES"
   # for now, we're using the old PDD scheme
-  COUPLER=" -bed_def lc -atmosphere searise_greenland,delta_T,paleo_precip -surface pdd_old$FTT -atmosphere_paleo_precip_file $PISM_TEMPSERIES -atmosphere_delta_T_file $PISM_TEMPSERIES -ocean constant,delta_SL -ocean_delta_SL_file $PISM_SLSERIES"
+  COUPLER=" -atmosphere searise_greenland,delta_T,paleo_precip -surface pdd$FTT -atmosphere_paleo_precip_file $PISM_TEMPSERIES -atmosphere_delta_T_file $PISM_TEMPSERIES -ocean constant,delta_SL -ocean_delta_SL_file $PISM_SLSERIES"
 elif [ "$2" = "pdd" ]; then
   climname="pdd-climate"
   # for now, we're using the old PDD scheme
-  COUPLER=" -bed_def lc -atmosphere searise_greenland -surface pdd_old$FTT -ocean constant"
+  COUPLER=" -atmosphere searise_greenland -surface pdd$FTT -ocean constant"
 else
   echo "invalid second argument; must be in $CLIMLIST"
   exit
@@ -356,10 +356,6 @@ if [ -n "${REGRIDFILE:+1}" ] ; then  # check if env var is already set
     echo "$SCRIPTNAME      REGRIDVARS = $REGRIDVARS"
   fi
   regridcommand="-regrid_file $REGRIDFILE -regrid_vars $REGRIDVARS"
-  # -regrid_bed_special not used here because hard-to-explain and not documented
-  #if [ "$2" = "paleo" ]; then
-  #  regridcommand="$regridcommand -regrid_bed_special"
-  #fi
 else
   regridcommand=""
 fi

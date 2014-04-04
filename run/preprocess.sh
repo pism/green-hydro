@@ -54,6 +54,9 @@ ncatted -O -a units,climatic_mass_balance,m,c,"kg m-2 year-1" $PISMVERSION
 # de-clutter by only keeping vars we want
 ncks -O -v mapping,lat,lon,bheatflx,topg,thk,precipitation,ice_surface_temp,climatic_mass_balance \
   $PISMVERSION $PISMVERSION
+# straighten dimension names
+ncrename -O -d x1,x -d y1,y -v x1,x -v y1,y $PISMVERSION $PISMVERSION
+nc2cdo.py $PISMVERSION
 echo "done."
 echo
 
@@ -112,9 +115,9 @@ for GS in "20" "10" "5" "2.5" "2" "1"; do
     else
 	cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}km.nc
     fi
+    ncks -A -v x,y ${DATANAME}.nc tmp_Greenland_${GS}km.nc
     echo
     ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${CTRL}.nc
     ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${HS}.nc
-    rm tmp_Greenland_${GS}km.nc
 done
 
