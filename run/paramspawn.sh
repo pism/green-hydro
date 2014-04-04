@@ -88,7 +88,7 @@ for PPQ in 0.1 0.25 0.8 ; do
       for RATE in 1e-5 5e-5 1e-6; do
 	  for PROP in 10 100 1000 10000 ; do
 
-	      SCRIPT="do_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}.sh"
+	      SCRIPT="do_${GRID}_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}.sh"
 	      rm -f $SCRIPT
 	      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}
 	      OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_${PPQ}_${TEFO}_${RATE}_${PROP}.nc
@@ -115,7 +115,7 @@ for PPQ in 0.1 0.25 0.8 ; do
 	  done
       done
 
-      SCRIPT="do_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_hydro_null.sh"
+      SCRIPT="do_${GRID}_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_hydro_null.sh"
       rm -f $SCRIPT
       EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_hydro_null
       OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_${PPQ}_${TEFO}_hydro_null.nc
