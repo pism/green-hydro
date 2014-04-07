@@ -49,7 +49,7 @@ EOF
         done
         filepre=g${GRID}km_${CLIMATE}_${TYPE}_${q}_${delta}_hydro_null
 	if [ -f ${filepre}.nc ]; then
-	    ncpqdq -O -a time,y,x,z,zb ${filepre}.nc ${filepre}.nc
+	    ncpdq -O -a time,y,x,z,zb ${filepre}.nc ${filepre}.nc
             title="q=$q;"'$\delta$'"=$delta;ctrl"
             for var in "cbase" "csurf"; do
 		echo "plotting $var from ${filepre}.nc"
