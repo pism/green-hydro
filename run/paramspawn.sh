@@ -52,17 +52,19 @@ else
 fi
 WALLTIME=$PISM_WALLTIME
 
-if [ -n "${PROC_PER_NODE:+1}" ] ; then  # check if env var is already set
-    PROC_PER_NODE=$PROC_PER_NODE
+if [ -n "${PISM_PROC_PER_NODE:+1}" ] ; then  # check if env var is already set
+    PISM_PROC_PER_NODE=$PISM_PROC_PER_NODE
 else
-    PROC_PER_NODE=4
+    PISM_PROC_PER_NODE=4
 fi
+PROC_PER_NODE=$PISM_PROC_PER_NODE
 
-if [ -n "${QUEUE:+1}" ] ; then  # check if env var is already set
-    QUEUE=$QUEUE
+if [ -n "${PISM_QUEUE:+1}" ] ; then  # check if env var is already set
+    PISM_QUEUE=$PISM_QUEUE
 else
-    QUEUE=standard_4
+    PISM_QUEUE=standard_4
 fi
+QUEUE=$PISM_QUEUE
 
 GRID=$2
 CLIMATE=$3
