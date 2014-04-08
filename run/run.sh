@@ -19,7 +19,7 @@ HYDROLIST="{null, routing, distributed}"
 if [ -n "${PISM_DATANAME:+1}" ] ; then  # check if env var is already set
     PISM_DATANAME=$PISM_DATANAME
 else
-    PISM_DATANAME=pism_Greenland_5km_hotspot.nc
+    PISM_DATANAME=pism_Greenland_5km_v2_ctrl.nc
 fi
 
 PISM_TEMPSERIES=pism_dT.nc
@@ -60,9 +60,13 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_NOSGL  if set, DON'T use -tauc_slippery_grounding_lines"
   echo "    PARAM_FTT    if set, use force-to-thickness method"
   echo "    PARAM_TWRATE sets option -hydrology_tillwat_rate \$PARAM_TWRATE"
-  echo "                   [default=1e-6]"
+  echo "                   [default=1e-6] for [routing, distributed]"
   echo "    PARAM_TWPROP sets -hydrology_tillwat_transfer_proportion \$PARAM_TWPROP"
-  echo "                 [default=100]"
+  echo "                 [default=100] for [routing, distributed]"
+  echo "    PARAM_OPEN   sets -hydrology_cavitation_opening_coefficient \$PARAM_OPEN"
+  echo "                 [default=0.5] for [distributed]"
+  echo "    PARAM_CLOSE  sets -hydrology_creep_closure_coefficient \$PARAM_CLOSE"
+  echo "                 [default=0.04] for [distributed]"
   echo "    PISM_DO      set to 'echo' if no run desired; defaults to empty"
   echo "    PISM_MPIDO   defaults to 'mpiexec -n'"
   echo "    PISM_PREFIX  set to path to pismr executable if desired; defaults to empty"
@@ -139,11 +143,9 @@ if [ "$2" = "const" ]; then
 elif [ "$2" = "paleo" ]; then
   climname="paleo-climate"
   INLIST="$PISM_TEMPSERIES $PISM_SLSERIES"
-  # for now, we're using the old PDD scheme
   COUPLER=" -atmosphere searise_greenland,delta_T,paleo_precip -surface pdd$FTT -atmosphere_paleo_precip_file $PISM_TEMPSERIES -atmosphere_delta_T_file $PISM_TEMPSERIES -ocean constant,delta_SL -ocean_delta_SL_file $PISM_SLSERIES"
 elif [ "$2" = "pdd" ]; then
   climname="pdd-climate"
-  # for now, we're using the old PDD scheme
   COUPLER=" -atmosphere searise_greenland -surface pdd$FTT -ocean constant"
 else
   echo "invalid second argument; must be in $CLIMLIST"
@@ -226,6 +228,7 @@ else
   fi
 fi
 
+
 if [ -n "${PARAM_TWRATE+1}" ] ; then  # check if env var is set
   PARAM_TWRATE=$PARAM_TWRATE
 else
@@ -236,7 +239,18 @@ if [ -n "${PARAM_TWPROP+1}" ] ; then  # check if env var is set
 else
   PARAM_TWPROP="100"
 fi
-HYDROPARAMS="-hydrology_tillwat_rate ${PARAM_TWRATE} -hydrology_tillwat_transfer_proportion ${PARAM_TWPROP}"
+if [ -n "${PARAM_OPEN+1}" ] ; then  # check if env var is set
+  PARAM_OPEN=$PARAM_OPEN
+else
+  PARAM_OPEN="0.5"
+fi
+if [ -n "${PARAM_CLOSE+1}" ] ; then  # check if env var is set
+  PARAM_CLOSE=$PARAM_CLOSE
+else
+  PARAM_CLOSE="0.04"
+fi
+
+HYDROPARAMS="-hydrology_tillwat_rate ${PARAM_TWRATE} -hydrology_tillwat_transfer_proportion ${PARAM_TWPROP} -hydrology_cavitation_opening_coefficient ${PARAM_OPEN} -hydrology_creep_closure_coefficient ${PARAM_CLOSE}"
 
 # set output filename from argument 6
 if [ "$6" = "null" ]; then
