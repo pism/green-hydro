@@ -161,10 +161,10 @@ for PPQ in 0.25; do
 
                       HYDRO=distributed
 
-	              SCRIPT="do_${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}_hydro_${HYDRO}.sh"
+	              SCRIPT="do_${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_hydro_${HYDRO}.sh"
 	              rm -f $SCRIPT
-	              EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}_${HYDRO}
-	              OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_${PPQ}_${TEFO}_${RATE}_${PROP}_${HYDRO}.nc
+	              EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_${HYDRO}
+	              OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_${PPQ}_${TEFO}_${RATE}_${PROP}_${OPEN}_${CLOSE}_${HYDRO}.nc
 
 	              # insert preamble
 	              echo $SHEBANGLINE >> $SCRIPT
