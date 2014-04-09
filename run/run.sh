@@ -60,9 +60,11 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_NOSGL  if set, DON'T use -tauc_slippery_grounding_lines"
   echo "    PARAM_FTT    if set, use force-to-thickness method"
   echo "    PARAM_TWRATE sets option -hydrology_tillwat_rate \$PARAM_TWRATE"
-  echo "                   [default=1e-6] for [routing, distributed]"
+  echo "                   [default=1e-6] for [routing,distributed]"
   echo "    PARAM_TWPROP sets -hydrology_tillwat_transfer_proportion \$PARAM_TWPROP"
-  echo "                 [default=100] for [routing, distributed]"
+  echo "                 [default=100] for [routing,distributed]"
+  echo "    PARAM_COND   sets -hydrology_cavitation_opening_coefficient \$PARAM_COND"
+  echo "                 [default=0.01] for [routing,distributed]"
   echo "    PARAM_OPEN   sets -hydrology_cavitation_opening_coefficient \$PARAM_OPEN"
   echo "                 [default=0.5] for [distributed]"
   echo "    PARAM_CLOSE  sets -hydrology_creep_closure_coefficient \$PARAM_CLOSE"
@@ -249,8 +251,13 @@ if [ -n "${PARAM_CLOSE+1}" ] ; then  # check if env var is set
 else
   PARAM_CLOSE="0.04"
 fi
+if [ -n "${PARAM_COND+1}" ] ; then  # check if env var is set
+  PARAM_COND=$PARAM_COND
+else
+  PARAM_COND="0.01"
+fi
 
-HYDROPARAMS="-hydrology_tillwat_rate ${PARAM_TWRATE} -hydrology_tillwat_transfer_proportion ${PARAM_TWPROP} -hydrology_cavitation_opening_coefficient ${PARAM_OPEN} -hydrology_creep_closure_coefficient ${PARAM_CLOSE}"
+HYDROPARAMS="-hydrology_tillwat_rate ${PARAM_TWRATE} -hydrology_tillwat_transfer_proportion ${PARAM_TWPROP} -hydrology_cavitation_opening_coefficient ${PARAM_OPEN} -hydrology_creep_closure_coefficient ${PARAM_CLOSE} -hydrology_hydraulic_conductivity ${PARAM_COND}"
 
 # set output filename from argument 6
 if [ "$6" = "null" ]; then

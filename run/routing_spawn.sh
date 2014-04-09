@@ -15,7 +15,7 @@
 
 
 set -e # exit on error
-SCRIPTNAME=paramspawn.sh
+SCRIPTNAME=routing_spawn.sh
 
 CLIMLIST="{const, pdd}"
 TYPELIST="{ctrl, 970mW_hs}"
@@ -94,7 +94,7 @@ for PPQ in 0.1 0.25 0.8 ; do
 	      SCRIPT="do_${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}_hydro_${HYDRO}.sh"
 	      rm -f $SCRIPT
 	      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}_hydro_${HYDRO}
-	      OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_${PPQ}_${TEFO}_${RATE}_${PROP}_${HYDRO}.nc
+	      OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}_hydro_${HYDRO}.nc
 
 	      # insert preamble
 	      echo $SHEBANGLINE >> $SCRIPT
@@ -123,7 +123,7 @@ for PPQ in 0.1 0.25 0.8 ; do
       SCRIPT="do_${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_hydro_${HYDRO}.sh"
       rm -f $SCRIPT
       EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_hydro_$HYDRO}
-      OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_${PPQ}_${TEFO}_hydro_${HYDRO}.nc
+      OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_hydro_${HYDRO}.nc
 
       # insert preamble
       echo $SHEBANGLINE >> $SCRIPT
@@ -148,74 +148,6 @@ for PPQ in 0.1 0.25 0.8 ; do
 done
 
 
-# ########################################################
-# set up parameter sensitivity study: distributed
-# ########################################################
-
-for PPQ in 0.25; do
-  for TEFO in 0.02; do
-      for RATE in 1e-6; do
-	  for PROP in 100 500 1000 ; do
-              for OPEN in 0.4 0.5 0.6; do
-                  for CLOSE in 0.03 0.04 0.05; do
-
-                      HYDRO=distributed
-
-	              SCRIPT="do_${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_hydro_${HYDRO}.sh"
-	              rm -f $SCRIPT
-	              EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_${HYDRO}
-	              OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_${PPQ}_${TEFO}_${RATE}_${PROP}_${OPEN}_${CLOSE}_${HYDRO}.nc
-
-	              # insert preamble
-	              echo $SHEBANGLINE >> $SCRIPT
-	              echo >> $SCRIPT # add newline
-	              echo $MPIQUEUELINE >> $SCRIPT
-	              echo $MPITIMELINE >> $SCRIPT
-	              echo $MPISIZELINE >> $SCRIPT
-	              echo $MPIOUTLINE >> $SCRIPT
-	              echo >> $SCRIPT # add newline
-	              echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-	              echo >> $SCRIPT # add newline
-                      
-	              export PISM_EXPERIMENT=$EXPERIMENT
-	              export PISM_TITLE="Greenland Parameter Study"
-	              cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TWRATE=$RATE PARAM_TWPROP=$PROP PARAM_OPEN=$OPEN PARAM_CLOSE=$CLOSE ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE"
-	              echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-
-	              echo "($SPAWNSCRIPT)  $SCRIPT written"
-                  done
-              done
-	  done
-      done
-
-      HYDRO=null
-
-      SCRIPT="do_${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_hydro_${HYDRO}.sh"
-      rm -f $SCRIPT
-      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_hydro_${HYDRO}
-      OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_${PPQ}_${TEFO}_hydro_${HYDRO}.nc
-
-      # insert preamble
-      echo $SHEBANGLINE >> $SCRIPT
-      echo >> $SCRIPT # add newline
-      echo $MPIQUEUELINE >> $SCRIPT
-      echo $MPITIMELINE >> $SCRIPT
-      echo $MPISIZELINE >> $SCRIPT
-      echo $MPIOUTLINE >> $SCRIPT
-      echo >> $SCRIPT # add newline
-      echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-      echo >> $SCRIPT # add newline
-      
-      export PISM_EXPERIMENT=$EXPERIMENT
-      export PISM_TITLE="Greenland Parameter Study"
-      
-      cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO ./run.sh $NN const $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
-      echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-      
-      echo "($SPAWNSCRIPT)  $SCRIPT written"
-
-  done
-done
 
 echo
 echo "($SPAWNSCRIPT)  use paramsubmit.sh to submit the scripts"
