@@ -88,39 +88,42 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 
 for PPQ in 0.25; do
   for TEFO in 0.02; do
-      for RATE in 1e-6; do
-	  for PROP in 100 500 1000 ; do
-              for OPEN in 0.5; do
-                  for CLOSE in 0.04; do
-                      for COND in 0.0001 0.001 0.01 0.1; do
-                          HYDRO=distributed
+      for PHILOW in 5 10 15; do
+          PARAM_TTPHI="${PHILOW}.0,40.0,-300.0,700.0"
+          for RATE in 1e-6; do
+	      for PROP in 100 500 1000 ; do
+                  for OPEN in 0.5; do
+                      for CLOSE in 0.04; do
+                          for COND in 0.0001 0.001 0.01 0.1; do
+                              HYDRO=distributed
                           
-	                  SCRIPT="do_${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}.sh"
-	                  rm -f $SCRIPT
-	                  EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_${HYDRO}
-	                  OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}.nc
+	                      SCRIPT="do_${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}.sh"
+	                      rm -f $SCRIPT
+	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_${HYDRO}
+	                      OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_$PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}.nc
 
-	                  # insert preamble
-	                  echo $SHEBANGLINE >> $SCRIPT
-	                  echo >> $SCRIPT # add newline
-	                  echo $MPIQUEUELINE >> $SCRIPT
-	                  echo $MPITIMELINE >> $SCRIPT
-	                  echo $MPISIZELINE >> $SCRIPT
-	                  echo $MPIOUTLINE >> $SCRIPT
-	                  echo >> $SCRIPT # add newline
-	                  echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-	                  echo >> $SCRIPT # add newline
-                          
-	                  export PISM_EXPERIMENT=$EXPERIMENT
-	                  export PISM_TITLE="Greenland Parameter Study"
-	                  cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TWRATE=$RATE PARAM_TWPROP=$PROP PARAM_COND=$COND PARAM_OPEN=$OPEN PARAM_CLOSE=$CLOSE ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE"
-	                  echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+	                      # insert preamble
+	                      echo $SHEBANGLINE >> $SCRIPT
+	                      echo >> $SCRIPT # add newline
+	                      echo $MPIQUEUELINE >> $SCRIPT
+	                      echo $MPITIMELINE >> $SCRIPT
+	                      echo $MPISIZELINE >> $SCRIPT
+	                      echo $MPIOUTLINE >> $SCRIPT
+	                      echo >> $SCRIPT # add newline
+	                      echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
+	                      echo >> $SCRIPT # add newline
+                              
+	                      export PISM_EXPERIMENT=$EXPERIMENT
+	                      export PISM_TITLE="Greenland Parameter Study"
+	                      cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_TWRATE=$RATE PARAM_TWPROP=$PROP PARAM_COND=$COND PARAM_OPEN=$OPEN PARAM_CLOSE=$CLOSE ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE"
+	                      echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 
-	                  echo "($SPAWNSCRIPT)  $SCRIPT written"
+	                      echo "($SPAWNSCRIPT)  $SCRIPT written"
+                          done
                       done
                   done
-              done
-	  done
+	      done
+          done
       done
 
       HYDRO=null
