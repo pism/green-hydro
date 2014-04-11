@@ -58,6 +58,7 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_TTPHI  sets (hybrid-only) option -topg_to_phi \$PARAM_TTPHI"
   echo "                   [default=15.0,40.0,-300.0,700.0]"
   echo "    PARAM_NOSGL  if set, DON'T use -tauc_slippery_grounding_lines"
+  echo "    PARAM_ADDBWAT if set, use -tauc_add_transportable_water"
   echo "    PARAM_FTT    if set, use force-to-thickness method"
   echo "    PARAM_TWRATE sets option -hydrology_tillwat_rate \$PARAM_TWRATE"
   echo "                   [default=1e-6] for [routing,distributed]"
@@ -257,7 +258,13 @@ else
   PARAM_COND="0.01"
 fi
 
-HYDROPARAMS="-hydrology_tillwat_rate ${PARAM_TWRATE} -hydrology_tillwat_transfer_proportion ${PARAM_TWPROP} -hydrology_cavitation_opening_coefficient ${PARAM_OPEN} -hydrology_creep_closure_coefficient ${PARAM_CLOSE} -hydrology_hydraulic_conductivity ${PARAM_COND}"
+if [ -z "${PARAM_ADDBWAT}" ] ; then  # check if env var is NOT set
+    ADDBWAT=""
+else
+    ADDBWAT="-tauc_add_transportable_water"
+fi
+
+HYDROPARAMS="-hydrology_tillwat_rate ${PARAM_TWRATE} -hydrology_tillwat_transfer_proportion ${PARAM_TWPROP} -hydrology_cavitation_opening_coefficient ${PARAM_OPEN} -hydrology_creep_closure_coefficient ${PARAM_CLOSE} -hydrology_hydraulic_conductivity ${PARAM_COND} $ADDBWAT"
 
 # set output filename from argument 6
 if [ "$6" = "null" ]; then

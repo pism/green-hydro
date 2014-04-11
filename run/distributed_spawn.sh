@@ -119,6 +119,29 @@ for PPQ in 0.25; do
 	                      echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 
 	                      echo "($SPAWNSCRIPT)  $SCRIPT written"
+	                      SCRIPT="do_${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}_addbwat.sh"
+	                      rm -f $SCRIPT
+	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_${HYDRO}_addbwat
+	                      OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}_addbwat.nc
+
+	                      # insert preamble
+	                      echo $SHEBANGLINE >> $SCRIPT
+	                      echo >> $SCRIPT # add newline
+	                      echo $MPIQUEUELINE >> $SCRIPT
+	                      echo $MPITIMELINE >> $SCRIPT
+	                      echo $MPISIZELINE >> $SCRIPT
+	                      echo $MPIOUTLINE >> $SCRIPT
+	                      echo >> $SCRIPT # add newline
+	                      echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
+	                      echo >> $SCRIPT # add newline
+                              
+	                      export PISM_EXPERIMENT=$EXPERIMENT
+	                      export PISM_TITLE="Greenland Parameter Study"
+	                      cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_TWRATE=$RATE PARAM_TWPROP=$PROP PARAM_COND=$COND PARAM_OPEN=$OPEN PARAM_CLOSE=$CLOSE $PARAM_ADDBWAT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE"
+	                      echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+
+	                      echo "($SPAWNSCRIPT)  $SCRIPT written"
+
                           done
                       done
                   done
