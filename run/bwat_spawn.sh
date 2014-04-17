@@ -88,7 +88,7 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 
 for PPQ in 0.25; do
   for TEFO in 0.02; do
-      for PHILOW in 5 10 15; do
+      for PHILOW in 5; do
           PARAM_TTPHI="${PHILOW}.0,40.0,-300.0,700.0"
           for RATE in 1e-6; do
 	      for PROP in 100 1000 ; do
@@ -96,23 +96,6 @@ for PPQ in 0.25; do
                       for CLOSE in 0.04; do
                           for COND in 0.0001 0.001 0.01 0.1; do
                               HYDRO=distributed
-
-	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_${HYDRO}
-                              SCRIPT=do_${EXPERIMENT}.sh
-	                      rm -f $SCRIPT
-
-	                      OUTFILE=g${GRID}km_${EXPERIMENT}.nc
-
-	                      # insert preamble
-	                      echo $SHEBANGLINE >> $SCRIPT
-	                      echo >> $SCRIPT # add newline
-	                      echo $MPIQUEUELINE >> $SCRIPT
-	                      echo $MPITIMELINE >> $SCRIPT
-	                      echo $MPISIZELINE >> $SCRIPT
-	                      echo $MPIOUTLINE >> $SCRIPT
-	                      echo >> $SCRIPT # add newline
-	                      echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-	                      echo >> $SCRIPT # add newline
                               
 	                      export PISM_EXPERIMENT=$EXPERIMENT
 	                      export PISM_TITLE="Greenland Parameter Study"
@@ -120,7 +103,7 @@ for PPQ in 0.25; do
 	                      echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 
 	                      echo "($SPAWNSCRIPT)  $SCRIPT written"
-	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_${HYDRO}_lnbwat
+	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_${HYDRO}_bwatfac
                               SCRIPT=do_${EXPERIMENT}.sh
 	                      rm -f $SCRIPT
 
