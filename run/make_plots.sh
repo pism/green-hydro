@@ -21,7 +21,8 @@ for q in 0.25; do
                     for open in 0.5; do
                         for close in 0.04; do
                             for cond in 0.0001 0.001 0.01; do
-                                for addbwat in "" "_addbwat"; do
+#                                for addbwat in "_lnbwat" "" "_addbwat"; do
+                                for addbwat in "_lnbwat"; do
                                     filepre=g${GRID}km_${CLIMATE}_${TYPE}_ppq_${q}_tefo_${delta}_philow_${philow}_rate_${mu}_prop_${omega}_open_${open}_close_${close}_cond_${cond}_hydro_${hydro}${addbwat}
 		                    if [ -f ${filepre}.nc ]; then
 		                        # because QGIS doesn't like (x,y) ordering

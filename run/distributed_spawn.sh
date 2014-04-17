@@ -96,11 +96,12 @@ for PPQ in 0.25; do
                       for CLOSE in 0.04; do
                           for COND in 0.0001 0.001 0.01 0.1; do
                               HYDRO=distributed
-                          
-	                      SCRIPT="do_${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}.sh"
-	                      rm -f $SCRIPT
+
 	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_${HYDRO}
-	                      OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}.nc
+                              SCRIPT=do_${EXPERIMENT}.sh
+	                      rm -f $SCRIPT
+
+	                      OUTFILE=g${GRID}km_${EXPERIMENT}.nc
 
 	                      # insert preamble
 	                      echo $SHEBANGLINE >> $SCRIPT
@@ -119,10 +120,11 @@ for PPQ in 0.25; do
 	                      echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 
 	                      echo "($SPAWNSCRIPT)  $SCRIPT written"
-	                      SCRIPT="do_${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}_lnbwat.sh"
-	                      rm -f $SCRIPT
 	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_${HYDRO}_lnbwat
-	                      OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}_lnbwat.nc
+                              SCRIPT=do_${EXPERIMENT}.sh
+	                      rm -f $SCRIPT
+
+	                      OUTFILE=g${GRID}km_${EXPERIMENT}.nc
 
 	                      # insert preamble
 	                      echo $SHEBANGLINE >> $SCRIPT
@@ -151,10 +153,10 @@ for PPQ in 0.25; do
 
       HYDRO=null
 
-      SCRIPT="do_${GRID}km_${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_hydro_${HYDRO}.sh"
-      rm -f $SCRIPT
       EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_hydro_${HYDRO}
-      OUTFILE=g${GRID}km_${CLIMATE}_${TYPE}_${PPQ}_${TEFO}_hydro_${HYDRO}.nc
+      SCRIPT=do_${EXPERIMENT}.sh
+      rm -f $SCRIPT
+      OUTFILE=g${GRID}km_${EXPERIMENT}.nc
 
       # insert preamble
       echo $SHEBANGLINE >> $SCRIPT
