@@ -71,6 +71,7 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_CLOSE  sets -hydrology_creep_closure_coefficient \$PARAM_CLOSE"
   echo "                 [default=0.04] for [distributed]"
   echo "    PISM_DO      set to 'echo' if no run desired; defaults to empty"
+  echo "    PISM_OFORMAT set -o_format; defaults to netcdf3"
   echo "    PISM_MPIDO   defaults to 'mpiexec -n'"
   echo "    PISM_PREFIX  set to path to pismr executable if desired; defaults to empty"
   echo "    PISM_EXEC    defaults to 'pismr'"
@@ -313,6 +314,16 @@ done
 
 echo "$SCRIPTNAME              NN = $NN"
 
+# set output format:
+#  $ export PISM_OFORMAT="netcdf4_parallel "
+if [ -n "${PISM_OFORMAT:+1}" ] ; then  # check if env var is already set
+  echo "$SCRIPTNAME                      PISM_OFORMAT = $PISM_OFORMAT  (already set)"
+else
+  PISM_OFORMAT="netcdf3"
+  echo "$SCRIPTNAME                      PISM_OFORMAT = $PISM_OFORMAT"
+fi
+OFORMAT=$PISM_OFORMAT
+
 # set MPIDO if using different MPI execution command, for example:
 #  $ export PISM_MPIDO="aprun -n "
 if [ -n "${PISM_MPIDO:+1}" ] ; then  # check if env var is already set
@@ -366,9 +377,9 @@ fi
 if [ -n "${EXVARS:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME          EXVARS = $EXVARS  (already set)"
 else
-  EXVARS="bwat,bwatvel,wallmelt,diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,csurf,mask,thk,topg,usurf,taud_mag"
+  EXVARS="bwat,bwatvel,wallmelt,diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,taud_mag"
   if [ "$5" = "hybrid" ]; then
-    EXVARS="${EXVARS},hardav,cbase,tauc,taub_mag"
+    EXVARS="${EXVARS},hardav,velvase_mag,tauc,taub_mag"
   fi
   echo "$SCRIPTNAME          EXVARS = $EXVARS"
 fi

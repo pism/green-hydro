@@ -16,8 +16,6 @@ netcdf pism_overrides {
 
     pism_overrides:backup_interval = 5.0;
     pism_overrides:backup_interval_doc = "hours; wall-clock time between automatic backups";
-
-    pism_overrides:output_medium = "bwat bwatvel climatic_mass_balance tillwat cbar cbase csurf cflx climatic_mass_balance diffusivity ice_surface_temp mask schoofs_theta tauc taud_mag topgsmooth usurf wvelsurf temp_pa liqfrac enthalpy IcebergMask edot_1 edot_2 taud_mag taub_mag";
     
     pism_overrides:till_log_factor_transportable_water = 0.01;
     pism_overrides:till_log_factor_transportable_water_doc = "m; If tauc_add_transportable_water = yes then the water amount in the transport system is added to tillwat in determining tauc.  Normally only the water in the till is used.  This factor multiplies the logarithm in that formula.";
