@@ -295,7 +295,7 @@ INLIST="${INLIST} $INNAME $REGRIDFILE $CONFIG"
 # now we have read options ... we know enough to report to user ...
 echo
 echo "# ======================================================================="
-echo "# PISM std Greenland spinup:"
+echo "# PISM Greenland run:"
 echo "#    $NN processors, $DURATION a run, $dx km grid, $climname, $5 dynamics"
 echo "# ======================================================================="
 
@@ -366,9 +366,9 @@ fi
 if [ -n "${EXVARS:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME          EXVARS = $EXVARS  (already set)"
 else
-  EXVARS="bwat,bwatvel,wallmelt,diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,csurf,mask,thk,topg,usurf"
+  EXVARS="bwat,bwatvel,wallmelt,diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,csurf,mask,thk,topg,usurf,taud_mag"
   if [ "$5" = "hybrid" ]; then
-    EXVARS="${EXVARS},hardav,cbase,tauc"
+    EXVARS="${EXVARS},hardav,cbase,tauc,taub_mag"
   fi
   echo "$SCRIPTNAME          EXVARS = $EXVARS"
 fi

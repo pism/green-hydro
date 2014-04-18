@@ -97,7 +97,7 @@ for PPQ in 0.25; do
                           for COND in 0.0001 0.001 0.01 0.1; do
                               HYDRO=distributed
                               
-	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_${HYDRO}_bwatfrac
+	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}_bwatfrac0.01
                               SCRIPT=do_${EXPERIMENT}.sh
 	                      rm -f $SCRIPT
 

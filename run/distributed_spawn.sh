@@ -97,7 +97,7 @@ for PPQ in 0.25; do
                           for COND in 0.0001 0.001 0.01 0.1; do
                               HYDRO=distributed
 
-	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_${HYDRO}
+	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}
                               SCRIPT=do_${EXPERIMENT}.sh
 	                      rm -f $SCRIPT
 
@@ -120,7 +120,7 @@ for PPQ in 0.25; do
 	                      echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 
 	                      echo "($SPAWNSCRIPT)  $SCRIPT written"
-	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_${HYDRO}_lnbwat
+	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}_lnbwat
                               SCRIPT=do_${EXPERIMENT}.sh
 	                      rm -f $SCRIPT
 
