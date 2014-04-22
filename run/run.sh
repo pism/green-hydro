@@ -76,6 +76,7 @@ if [ $# -lt 5 ] ; then
   echo "    PISM_PREFIX  set to path to pismr executable if desired; defaults to empty"
   echo "    PISM_EXEC    defaults to 'pismr'"
   echo "    PISM_CONFIG  config file, defaults to hydro_config.nc"
+  echo "    PISM_SAVE    set -save_times, defaults to None"
   echo "    REGRIDFILE   set to file name to regrid from; defaults to empty (no regrid)"
   echo "    REGRIDVARS   desired -regrid_vars; applies *if* REGRIDFILE set;"
   echo "                   defaults to 'bmelt,enthalpy,litho_temp,thk,tillwat'"
@@ -284,6 +285,7 @@ if [ -z "$7" ]; then
 else
   OUTNAME=$7
 fi
+OUTNAMESANS=`basename $OUTNAME .nc`
 
 # set bootstrapping input filename from argument 8
 if [ -z "$8" ]; then
@@ -399,6 +401,16 @@ else
   regridcommand=""
 fi
 
+# set save times:
+if [ -n "${PISM_SAVE:+1}" ] ; then  # check if env var is already set
+  echo "$SCRIPTNAME                      PISM_SAVE = $PISM_SAVE  (already set)"
+  OUTNAMESANS=`basename $OUTNAME .nc`
+  SAVE="-save_times $PISM_SAVE -save_split -save_file snap_$OUTNAMESANS"
+else
+  SAVE=""
+fi
+
+
 # show remaining setup options:
 PISM="${PISM_PREFIX}${PISM_EXEC}"
 echo "$SCRIPTNAME      executable = '$PISM'"
@@ -418,7 +430,7 @@ else
 fi
 
 # construct command
-cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG -boot_file $INNAME -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $COUPLER $PHYS $HYDRO $DIAGNOSTICS -o $OUTNAME"
+cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG -boot_file $INNAME -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE -o $OUTNAME"
 echo
 $PISM_DO $cmd
 

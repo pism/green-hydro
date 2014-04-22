@@ -98,7 +98,7 @@ for PPQ in 0.25; do
                               HYDRO=distributed
 
 	                      EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}
-                              SCRIPT=do_${EXPERIMENT}.sh
+                              SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
 	                      rm -f $SCRIPT
 
 	                      OUTFILE=g${GRID}km_${EXPERIMENT}.nc
@@ -154,7 +154,7 @@ for PPQ in 0.25; do
       HYDRO=null
 
       EXPERIMENT=${CLIMATE}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_hydro_${HYDRO}
-      SCRIPT=do_${EXPERIMENT}.sh
+      SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
       rm -f $SCRIPT
       OUTFILE=g${GRID}km_${EXPERIMENT}.nc
 
