@@ -26,7 +26,7 @@ set -e # exit on error
 
 CLIMLIST=(const, paleo)
 TYPELIST=(ctrl, 970mW_hs)
-GRIDLIST=(20 10 5 2.5 2)
+GRIDLIST=(20 10 5 2.5 2 1)
 if [ $# -lt 2 ] ; then
   echo "spinup.sh ERROR: needs 4 positional arguments ... ENDING NOW"
   echo
@@ -36,9 +36,9 @@ if [ $# -lt 2 ] ; then
   echo
   echo "  where:"
   echo "    PROCS     = 1,2,3,... is number of MPI processes"
-  echo "    GRID      in ${GRIDLIST[@]}"
-  echo "    CLIMATE   in ${CLIMLIST[@]}"
-  echo "    TYPE      in ${TYPELIST[@]}"
+  echo "    GRID      in (${GRIDLIST[@]})"
+  echo "    CLIMATE   in (${CLIMLIST[@]})"
+  echo "    TYPE      in (${TYPELIST[@]})"
   echo
   echo
   exit
@@ -79,7 +79,7 @@ elif [ "$2" = "2" ]; then
 elif [ "$2" = "1" ]; then
     GRID=$2
 else
-  echo "invalid first argument; must be in $GRIDLIST"
+  echo "invalid first argument; must be in (${GRIDLIST[@]})"
   exit
 fi
 
@@ -91,7 +91,7 @@ elif [ "$3" = "paleo" ]; then
     CLIMATE=$3
     FTT="PISM_FTT=foo"
 else
-  echo "invalid second argument; must be in $CLIMLIST"
+  echo "invalid second argument; must be in (${CLIMLIST[@]})"
   exit
 fi
 
@@ -101,7 +101,7 @@ if [ "$4" = "ctrl" ]; then
 elif [ "$4" = "970mW_hs" ]; then
     TYPE=$4
 else
-  echo "invalid third argument; must be in $TYPELIST"
+  echo "invalid third argument; must be in (${TYPELIST[@]})"
   exit
 fi
 
