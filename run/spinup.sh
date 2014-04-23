@@ -86,10 +86,8 @@ fi
 # set CLIMATE from argument 3
 if [ "$3" = "const" ]; then
     CLIMATE=$3
-    FTT=""
 elif [ "$3" = "paleo" ]; then
     CLIMATE=$3
-    FTT="PISM_FTT=foo"
 else
   echo "invalid second argument; must be in (${CLIMLIST[@]})"
   exit
@@ -197,7 +195,7 @@ MKA=$(($END/-1000))
 OUTFILE=g${GRID}km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
       
 if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") ]]; then      
-    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE $FTT ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_b.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -5ka" >> $SCRIPT
@@ -220,7 +218,7 @@ MA=$(($END/-1))
 OUTFILE=g${GRID}km_m${MA}a_${CLIMATE}_${TYPE}.nc
 
 if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") || ($GRID == "2.5") ]]; then      
-    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE $FTT ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_c.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -1ka" >> $SCRIPT
@@ -242,7 +240,7 @@ MA=$(($END/-1))
 OUTFILE=g${GRID}km_m${MA}a_${CLIMATE}_${TYPE}.nc
       
 if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") || ($GRID == "2.5") || ($GRID == "2") ]]; then      
-    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE $FTT ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_d.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -500a" >> $SCRIPT
@@ -261,7 +259,7 @@ fi
 
 OUTFILE=g${GRID}km_0_${CLIMATE}_${TYPE}.nc
       
-cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE $FTT ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
 echo "$cmd 2>&1 | tee job_e.\${PBS_JOBID}" >> $SCRIPT
 echo >> $SCRIPT
 
