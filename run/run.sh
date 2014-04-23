@@ -399,8 +399,7 @@ if [ -n "${REGRIDFILE:+1}" ] ; then  # check if env var is already set
   if [ -n "${REGRIDVARS:+1}" ] ; then  # check if env var is already set
     echo "$SCRIPTNAME      REGRIDVARS = $REGRIDVARS  (already set)"
   else
-    REGRIDVARS='litho_temp,thk,enthalpy,tillwat,bmelt'
-    # note: other vars which are "state":  Href, dbdt, shelfbtemp, shelfbmassflux
+    REGRIDVARS='litho_temp,thk,enthalpy,tillwat,bmelt,Href'
     echo "$SCRIPTNAME      REGRIDVARS = $REGRIDVARS"
   fi
   regridcommand="-regrid_file $REGRIDFILE -regrid_vars $REGRIDVARS"
