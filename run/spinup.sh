@@ -12,6 +12,8 @@ set -e  # exit on error
 #     and 16 processors
 #     or
 #     $ ./spinup.sh 128 1 const ctrl    ## do constant-climate ctrl spinup on 1km and 128 processors
+#     or you can also choose nodes and walltime to do runs on different queues on pacman and fish
+#     $ PISM_WALLTIME=12:00:00 PISM_QUEUE=standard_16 PISM_PROCS_PER_NODE=16 ./spinup.sh 16 20 const ctrl
 #  then, assuming you like the resulting scripts:
 #     $ qsub do-climate-spinup.sh      ### <--- REALLY SUBMITS using qsub
 #
@@ -171,7 +173,7 @@ OUTFILE=g${GRID}km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
 
 if [[ ($GRID == "20") || ($GRID == "10") ]]; then      
     cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
-    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+    echo "$cmd 2>&1 | tee job_a.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -25ka" >> $SCRIPT
 fi
@@ -194,7 +196,7 @@ OUTFILE=g${GRID}km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
       
 if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") ]]; then      
     cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
-    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+    echo "$cmd 2>&1 | tee job_b.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -5ka" >> $SCRIPT
 fi
@@ -217,7 +219,7 @@ OUTFILE=g${GRID}km_m${MA}a_${CLIMATE}_${TYPE}.nc
 
 if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") || ($GRID == "2.5") ]]; then      
     cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
-    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+    echo "$cmd 2>&1 | tee job_c.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -1ka" >> $SCRIPT
 fi
@@ -239,7 +241,7 @@ OUTFILE=g${GRID}km_m${MA}a_${CLIMATE}_${TYPE}.nc
       
 if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") || ($GRID == "2.5") || ($GRID == "2") ]]; then      
     cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
-    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+    echo "$cmd 2>&1 | tee job_d.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -500a" >> $SCRIPT
 fi
@@ -258,7 +260,7 @@ fi
 OUTFILE=g${GRID}km_0_${CLIMATE}_${TYPE}.nc
       
 cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
-echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+echo "$cmd 2>&1 | tee job_e.\${PBS_JOBID}" >> $SCRIPT
 echo >> $SCRIPT
 
 
