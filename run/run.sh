@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# Copyright (C) 2009-2014 The PISM Authors
+# Copyright (C) 2014 The PISM Authors
 
 # PISM Greenland spinup using either constant present-day climate or modeled
-# paleoclimate.  See README.md.
+# paleoclimate.
 
-# Before using this script, run preprocess.sh to download and adjust metadata
-# in the SeaRISE "Present Day Greenland" master dataset.
+# Before using this script, run preprocess.sh to download and 
+# prepare data sets.
 
 set -e  # exit on error
 
-GRIDLIST="{40, 20, 10, 5, 3, 2}"
+GRIDLIST="{40, 20, 10, 5, 2.5, 2, 1}"
 CLIMLIST="{const, paleo, pdd}"
 DYNALIST="{sia, hybrid}"
 HYDROLIST="{null, routing, distributed}"
@@ -159,10 +159,12 @@ fi
 
 # decide on grid and skip from argument 4
 COARSESKIP=10
-FINESKIP=20
-FINESTSKIP=50
+MEDIUMSKIP=20
+FINESKIP=50
+FINESTSKIP=200
 VDIMS="-Lz 4000 -Lbz 2000 -skip -skip_max "
 COARSEVGRID="-Mz 101 -Mbz 11 -z_spacing equal ${VDIMS} ${COARSESKIP}"
+MEDIUMVGRID="-Mz 201 -Mbz 21 -z_spacing equal ${VDIMS} ${MEDIUMSKIP}"
 FINEVGRID="-Mz 201 -Mbz 21 -z_spacing equal ${VDIMS} ${FINESKIP}"
 FINESTVGRID="-Mz 401 -Mbz 41 -z_spacing equal ${VDIMS} ${FINESTSKIP}"
 if [ "$4" -eq "40" ]; then
@@ -179,22 +181,27 @@ elif [ "$4" -eq "10" ]; then
   dx=10
   myMx=151
   myMy=281
-  vgrid=$FINEVGRID
+  vgrid=$MEDIUMVGRID
 elif [ "$4" -eq "5" ]; then
   # "native" resolution in data file, with 561 x 301 grid
   dx=5
   myMx=301
   myMy=561
-  vgrid=$FINEVGRID
+  vgrid=$MEDIUMVGRID
 elif [ "$4" -eq "3" ]; then
   dx=3
   myMx=501
   myMy=934
-  vgrid=$FINESTVGRID
+  vgrid=$FINEVGRID
 elif [ "$4" -eq "2" ]; then
   dx=2
-  myMx=750
-  myMy=1400
+  myMx=751
+  myMy=1401
+  vgrid=$FINEVGRID
+elif [ "$4" -eq "1" ]; then
+  dx=1
+  myMx=1501
+  myMy=2801
   vgrid=$FINESTVGRID
 else
   echo "invalid fourth argument: must be in $GRIDLIST"

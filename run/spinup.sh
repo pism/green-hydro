@@ -4,67 +4,100 @@
 
 set -e  # exit on error
 
-#  creates spinup scripts using grid sequencing 20->10->5km.
+#  creates spinup scripts using grid sequencing 20->10->5->2.5->2->1km.
 #  scripts are suitable for PBS job scheduler
 #  (see  http://www.adaptivecomputing.com/products/open-source/torque/)
 #
-#     $ ./spinup.sh paleo 970mW_hs    ## do paleo-climate spinup with 970mW hotspot
+#     $ ./spinup.sh 16 20 paleo 970mW_hs    ## do paleo-climate spinup with 970mW hotspot on 20km grid
+#     and 16 processors
 #     or
-#     $ ./spinup.sh const     ## do constant -climate spinup
+#     $ ./spinup.sh 128 1 const ctrl    ## do constant-climate ctrl spinup on 1km and 128 processors
 #  then, assuming you like the resulting scripts:
 #     $ qsub do-climate-spinup.sh      ### <--- REALLY SUBMITS using qsub
-
+#
+#  For high-resolution (1km < GRID < 5km) runs 'PISM_OFORMAT=pnetcdf' is recommended,
+#  and for GRID = 1km, make sure to use 'PISM_OFORMAT=netcdf4_parallel' (slow) or 
+#  'PISM_OFORMAT=quilt' (fast, but needs messy postprocessing)
+#
 
 set -e # exit on error
 
-CLIMLIST="{const, paleo}"
-TYPELIST="{ctrl, 970mW_hs}"
+CLIMLIST=(const, paleo)
+TYPELIST=(ctrl, 970mW_hs)
+GRIDLIST=(20 10 5 2.5 2)
 if [ $# -lt 2 ] ; then
-  echo "spinup.sh ERROR: needs 2 positional arguments ... ENDING NOW"
+  echo "spinup.sh ERROR: needs 4 positional arguments ... ENDING NOW"
   echo
   echo "usage:"
   echo
-  echo "    spinup.sh CLIMATE TYPE"
+  echo "    spinup.sh PROCS GRID CLIMATE TYPE"
   echo
   echo "  where:"
-  echo "    CLIMATE   in $CLIMLIST"
-  echo "    TYPE      in $TYPELIST"
+  echo "    PROCS     = 1,2,3,... is number of MPI processes"
+  echo "    GRID      in ${GRIDLIST[@]}"
+  echo "    CLIMATE   in ${CLIMLIST[@]}"
+  echo "    TYPE      in ${TYPELIST[@]}"
   echo
   echo
   exit
 fi
 
 if [ -n "${PISM_PROC_PER_NODE:+1}" ] ; then  # check if env var is already set
-    PISM_PROC_PER_NODE=$PISM_PROC_PER_NODE
+    PROC_PER_NODE=$PISM_PROC_PER_NODE
 else
-    PISM_PROC_PER_NODE=4
+    PROC_PER_NODE=4
 fi
-PROC_PER_NODE=$PISM_PROC_PER_NODE
 
 if [ -n "${PISM_QUEUE:+1}" ] ; then  # check if env var is already set
-    PISM_QUEUE=$PISM_QUEUE
+    QUEUE=$PISM_QUEUE
 else
-    PISM_QUEUE=standard_4
+    QUEUE=standard_4
 fi
-QUEUE=$PISM_QUEUE
 
-# set CLIMATE from argument 1
-if [ "$1" = "const" ]; then
-    CLIMATE=$1
-elif [ "$1" = "paleo" ]; then
-    CLIMATE=$1
+if [ -n "${PISM_WALLTIME:+1}" ] ; then  # check if env var is already set
+    WALLTIME=$PISM_WALLTIME
+else
+    WALLTIME=12:00:00
+fi
+
+# first arg is number of processes
+NN="$1"
+
+# set GRID from argument 2
+if [ "$2" = "20" ]; then
+    GRID=$2
+elif [ "$2" = "10" ]; then
+    GRID=$2
+elif [ "$2" = "5" ]; then
+    GRID=$2
+elif [ "$2" = "2.5" ]; then
+    GRID=$2
+elif [ "$2" = "2" ]; then
+    GRID=$2
+elif [ "$2" = "1" ]; then
+    GRID=$2
+else
+  echo "invalid first argument; must be in $GRIDLIST"
+  exit
+fi
+
+# set CLIMATE from argument 3
+if [ "$3" = "const" ]; then
+    CLIMATE=$3
+elif [ "$3" = "paleo" ]; then
+    CLIMATE=$3
 else
   echo "invalid second argument; must be in $CLIMLIST"
   exit
 fi
 
-# set TYPE from argument 2
-if [ "$2" = "ctrl" ]; then
-    TYPE=$2
-elif [ "$2" = "970mW_hs" ]; then
-    TYPE=$2
+# set TYPE from argument 4
+if [ "$4" = "ctrl" ]; then
+    TYPE=$4
+elif [ "$4" = "970mW_hs" ]; then
+    TYPE=$4
 else
-  echo "invalid second argument; must be in $TYPELIST"
+  echo "invalid third argument; must be in $TYPELIST"
   exit
 fi
 
@@ -72,20 +105,14 @@ SCRIPTNAME=${CLIMATE}-spinup-${TYPE}.sh
 export PISM_EXPERIMENT=$EXPERIMENT
 export PISM_TITLE="Greenland Parameter Study"
 
-# ###############################
-# 20 km run
-# ###############################
 
-GRID=20
 INFILE=pism_Greenland_${GRID}km_v2_${TYPE}.nc
 PISM_DATANAME=$INFILE
-PISM_SAVE="-25000,-10000,-5000,-2000,-1000,-500,-100"
-DURA=125000
+DURA=100000
 START=-125000
-END=0
+END=-25000
+MKA=$(($END/-1000))
 
-WALLTIME=12:00:00
-NN=16
 NODES=$(( $NN/$PROC_PER_NODE))
 
  SHEBANGLINE="#!/bin/bash"
@@ -96,9 +123,9 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 
 SCRIPT="do_${GRID}km_${CLIMATE}-spinup-${TYPE}.sh"
 rm -f $SCRIPT
-EXPERIMENT="${CLIMATE}-climate initialization $TYPE"
+EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization $TYPE"
 
-OUTFILE=g${GRID}km_0_${CLIMATE}_${TYPE}.nc
+OUTFILE=g${GRID}km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
 
 # insert preamble
 echo $SHEBANGLINE >> $SCRIPT
@@ -110,197 +137,129 @@ echo $MPIOUTLINE >> $SCRIPT
 echo >> $SCRIPT # add newline
 echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
 echo >> $SCRIPT # add newline
-      
-cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME PISM_SAVE=$PISM_SAVE ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
-echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 
-echo "($SPAWNSCRIPT)  $SCRIPT written"
+# NOTE
+#
+# The first 'if' statement ensure that only runs that are on the grid
+# refinement path 20->10->5->2.5->2->1km are being written to the 'do' script.
+# For example on the 10km grid the first run from -125ka to -25ka is not done.
+# The second 'if' statment makes sure the appropriate file is chosen for regridding.
+# I wish I knew a cleaner way to achieve this in bash.
 
-# ###############################
-# 10 km run
-# ###############################
+ 
+if [ $GRID == "20" ]; then      
+    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME  ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+else
+    echo "# not starting from -125ka" >> $SCRIPT
+fi
+echo >> $SCRIPT
 
-GRID=10
-SCRIPTNAME=${GRID}km_${CLIMATE}-spinup-${TYPE}.sh
-INFILE=pism_Greenland_${GRID}km_v2_${TYPE}.nc
-FILE=`basename $OUTFILE .nc`
-REGRIDFILE=snap_${FILE}--0025000.000.nc
-PISM_DATANAME=$INFILE
-PISM_SAVE="-10000,-5000,-2000,-1000,-500,-100"
-DUAR=25000
+if [ $GRID == "10" ]; then
+    REGRIDFILE=g20km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
+else
+    REGRIDFILE=$OUTFILE
+fi
+
+DURA=20000
 START=-25000
-END=0
+END=-5000
+MKA=$(($END/-1000))
 
-WALLTIME=24:00:00
-NN=32
-NODES=$(( $NN/$PROC_PER_NODE))
 
- SHEBANGLINE="#!/bin/bash"
-MPIQUEUELINE="#PBS -q $QUEUE"
- MPITIMELINE="#PBS -l walltime=$WALLTIME"
- MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
-  MPIOUTLINE="#PBS -j oe"
+OUTFILE=g${GRID}km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
 
-SCRIPT="do_${GRID}km_${CLIMATE}-spinup-${TYPE}.sh"
-rm -f $SCRIPT
-EXPERIMENT="${CLIMATE}-climate initialization $TYPE"
-
-OUTFILE=g${GRID}km_0_${CLIMATE}_${TYPE}.nc
-
-# insert preamble
-echo $SHEBANGLINE >> $SCRIPT
-echo >> $SCRIPT # add newline
-echo $MPIQUEUELINE >> $SCRIPT
-echo $MPITIMELINE >> $SCRIPT
-echo $MPISIZELINE >> $SCRIPT
-echo $MPIOUTLINE >> $SCRIPT
-echo >> $SCRIPT # add newline
-echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-echo >> $SCRIPT # add newline
-      
+if [[ ($GRID == "20") || ($GRID == "10") ]]; then      
+    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+else
+    echo "# not starting from -25ka" >> $SCRIPT
+fi
 echo >> $SCRIPT
-cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PISM_SAVE=$PISM_SAVE ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
-echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-echo "($SPAWNSCRIPT)  $SCRIPT written"
 
 
-# ###############################
-# 5 km run
-# ###############################
-	      
-GRID=5
-SCRIPTNAME=${GRID}km_${CLIMATE}-spinup-${TYPE}.sh
-INFILE=pism_Greenland_${GRID}km_v2_${TYPE}.nc
-FILE=`basename $OUTFILE .nc`
-REGRIDFILE=snap_${FILE}--0005000.000.nc
-PISM_DATANAME=$INFILE
-PISM_SAVE="-2000,-1000,-500,-100"
-DURA=5000
+if [ $GRID == "5" ]; then
+    REGRIDFILE=g10km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
+else
+    REGRIDFILE=$OUTFILE
+fi
+
+DURA=4000
 START=-5000
-END=0
+END=-1000
+MKA=$(($END/-1000))
 
-WALLTIME=48:00:00
-NN=64
-NODES=$(( $NN/$PROC_PER_NODE))
 
- SHEBANGLINE="#!/bin/bash"
-MPIQUEUELINE="#PBS -q $QUEUE"
- MPITIMELINE="#PBS -l walltime=$WALLTIME"
- MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
-  MPIOUTLINE="#PBS -j oe"
-
-SCRIPT="do_${GRID}km_${CLIMATE}-spinup-${TYPE}.sh"
-rm -f $SCRIPT
-EXPERIMENT="${CLIMATE}-climate initialization with hotspot"
-
-OUTFILE=g${GRID}km_0_${CLIMATE}_${TYPE}.nc
-
-# insert preamble
-echo $SHEBANGLINE >> $SCRIPT
-echo >> $SCRIPT # add newline
-echo $MPIQUEUELINE >> $SCRIPT
-echo $MPITIMELINE >> $SCRIPT
-echo $MPISIZELINE >> $SCRIPT
-echo $MPIOUTLINE >> $SCRIPT
-echo >> $SCRIPT # add newline
-echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-echo >> $SCRIPT # add newline
+OUTFILE=g${GRID}km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
       
+if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") ]]; then      
+    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+else
+    echo "# not starting from -5ka" >> $SCRIPT
+fi
 echo >> $SCRIPT
-cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
-echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-echo "($SPAWNSCRIPT)  $SCRIPT written"
 
-# ###############################
-# 3 km run
-# ###############################
-	      
-GRID=3
-SCRIPTNAME=${GRID}km_${CLIMATE}-spinup-${TYPE}.sh
-INFILE=pism_Greenland_${GRID}km_v2_${TYPE}.nc
-FILE=`basename $OUTFILE .nc`
-REGRIDFILE=snap_${FILE}--0001000.000.nc
-PISM_DATANAME=$INFILE
-PISM_SAVE="-500,-100"
-DURA=1000
-START=-1000
-END=0
+if [ $GRID == "2.5" ]; then
+    REGRIDFILE=g5km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
+else
+    REGRIDFILE=$OUTFILE
+fi
 
-WALLTIME=96:00:00
-NN=96
-NODES=$(( $NN/$PROC_PER_NODE))
 
- SHEBANGLINE="#!/bin/bash"
-MPIQUEUELINE="#PBS -q $QUEUE"
- MPITIMELINE="#PBS -l walltime=$WALLTIME"
- MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
-  MPIOUTLINE="#PBS -j oe"
-
-SCRIPT="do_${GRID}km_${CLIMATE}-spinup-${TYPE}.sh"
-rm -f $SCRIPT
-EXPERIMENT="${CLIMATE}-climate initialization with hotspot"
-
-OUTFILE=g${GRID}km_0_${CLIMATE}_${TYPE}.nc
-
-# insert preamble
-echo $SHEBANGLINE >> $SCRIPT
-echo >> $SCRIPT # add newline
-echo $MPIQUEUELINE >> $SCRIPT
-echo $MPITIMELINE >> $SCRIPT
-echo $MPISIZELINE >> $SCRIPT
-echo $MPIOUTLINE >> $SCRIPT
-echo >> $SCRIPT # add newline
-echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-echo >> $SCRIPT # add newline
-      
-echo >> $SCRIPT
-cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
-echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-echo "($SPAWNSCRIPT)  $SCRIPT written"
-
-# ###############################
-# 2 km run
-# ###############################
-	      
-GRID=2
-SCRIPTNAME=${GRID}km_${CLIMATE}-spinup-${TYPE}.sh
-INFILE=pism_Greenland_${GRID}km_v2_${TYPE}.nc
-FILE=`basename $OUTFILE .nc`
-REGRIDFILE=snap_${FILE}--0000500.000.nc
-PISM_DATANAME=$INFILE
-PISM_SAVE="-100"
 DURA=500
+START=-1000
+END=-500
+MA=$(($END/-1))
+
+
+OUTFILE=g${GRID}km_m${MA}a_${CLIMATE}_${TYPE}.nc
+
+if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") || ($GRID == "2.5") ]]; then      
+    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+else
+    echo "# not starting from -1ka" >> $SCRIPT
+fi
+echo >> $SCRIPT
+
+if [ $GRID == "2" ]; then
+    REGRIDFILE=g2.5km_m${MA}a_${CLIMATE}_${TYPE}.nc
+else
+    REGRIDFILE=$OUTFILE
+fi
+
+DURA=400
 START=-500
+END=-100
+MA=$(($END/-1))
+
+
+OUTFILE=g${GRID}km_m${MA}a_${CLIMATE}_${TYPE}.nc
+      
+if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") || ($GRID == "2.5") || ($GRID == "2") ]]; then      
+    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+else
+    echo "# not starting from -500a" >> $SCRIPT
+fi
+echo >> $SCRIPT
+
+DURA=100
+START=-100
 END=0
 
-WALLTIME=96:00:00
-NN=128
-NODES=$(( $NN/$PROC_PER_NODE))
-
- SHEBANGLINE="#!/bin/bash"
-MPIQUEUELINE="#PBS -q $QUEUE"
- MPITIMELINE="#PBS -l walltime=$WALLTIME"
- MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
-  MPIOUTLINE="#PBS -j oe"
-
-SCRIPT="do_${GRID}km_${CLIMATE}-spinup-${TYPE}.sh"
-rm -f $SCRIPT
-EXPERIMENT="${CLIMATE}-climate initialization with hotspot"
+if [ $GRID == "1" ]; then
+    REGRIDFILE=g2km_m${MA}a_${CLIMATE}_${TYPE}.nc
+else
+    REGRIDFILE=$OUTFILE
+fi
 
 OUTFILE=g${GRID}km_0_${CLIMATE}_${TYPE}.nc
-
-# insert preamble
-echo $SHEBANGLINE >> $SCRIPT
-echo >> $SCRIPT # add newline
-echo $MPIQUEUELINE >> $SCRIPT
-echo $MPITIMELINE >> $SCRIPT
-echo $MPISIZELINE >> $SCRIPT
-echo $MPIOUTLINE >> $SCRIPT
-echo >> $SCRIPT # add newline
-echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-echo >> $SCRIPT # add newline
       
-echo >> $SCRIPT
-cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+echo >> $SCRIPT
+
+
 echo "($SPAWNSCRIPT)  $SCRIPT written"
