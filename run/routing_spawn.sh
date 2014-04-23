@@ -17,9 +17,9 @@
 set -e # exit on error
 SCRIPTNAME=routing_spawn.sh
 
-CLIMLIST="{const, pdd}"
-TYPELIST="{ctrl, 970mW_hs}"
-GRIDLIST="{10,5}"
+CLIMLIST=(const, paleo)
+TYPELIST=(ctrl, 970mW_hs)
+GRIDLIST=(20 10 5 2.5 2 1)
 if [ $# -lt 5 ] ; then
   echo "paramspawn.sh ERROR: needs 5 positional arguments ... ENDING NOW"
   echo
@@ -29,9 +29,9 @@ if [ $# -lt 5 ] ; then
   echo
   echo "  where:"
   echo "    PROCS       = 1,2,3,... is number of MPI processes"
-  echo "    GRID        in $GRIDLIST (km)"
-  echo "    CLIMATE     in $CLIMLIST"
-  echo "    TYPE        in $TYPELIST"
+  echo "    GRID      in (${GRIDLIST[@]})"
+  echo "    CLIMATE   in (${CLIMLIST[@]})"
+  echo "    TYPE      in (${TYPELIST[@]})"
   echo "    REGRIDFILE  name of regrid file"
   echo
   echo
