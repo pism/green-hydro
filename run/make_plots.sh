@@ -27,7 +27,7 @@ for q in 0.25; do
 		                    if [ -f ${filepre}.nc ]; then
 		                        # because QGIS doesn't like (x,y) ordering
  		                        ncpdq -O -a time,y,x,z,zb ${filepre}.nc ${filepre}.nc
-                                        ncap2 -O -s "tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${filepre}.nc ${filepre}.nc
+                                        ncap2 -O -s "tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${Filepre}.nc ${filepre}.nc
                                         ncatted -a units,tau_rel,o,c,"1" ${filepre}.nc
                                         title="q=$q;"'$\delta$'"=$delta;"'$\phi_{l}$'"=$philow"'$\omega$'"=$omega;"'$\mu$'"=$mu;"'$c_1$'"=$open;"'$c_2$'"=$close;k=$cond"
                                         for var in  "velbase_mag" "velsurf_mag"; do

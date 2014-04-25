@@ -174,33 +174,33 @@ if [ "$4" -eq "40" ]; then
   myMx=38
   myMy=71
   vgrid=$COARSEVGRID
-elif [ "$4" -eq "20" ]; then
+elif [ "$4" == "20" ]; then
   dx=20
   myMx=76
   myMy=141
   vgrid=$COARSEVGRID
-elif [ "$4" -eq "10" ]; then
+elif [ "$4" == "10" ]; then
   dx=10
   myMx=151
   myMy=281
   vgrid=$MEDIUMVGRID
-elif [ "$4" -eq "5" ]; then
+elif [ "$4" == "5" ]; then
   # "native" resolution in data file, with 561 x 301 grid
   dx=5
   myMx=301
   myMy=561
   vgrid=$MEDIUMVGRID
-elif [ "$4" -eq "3" ]; then
+elif [ "$4" == "2.5" ]; then
   dx=3
   myMx=501
   myMy=934
   vgrid=$FINEVGRID
-elif [ "$4" -eq "2" ]; then
+elif [ "$4" == "2" ]; then
   dx=2
   myMx=751
   myMy=1401
   vgrid=$FINEVGRID
-elif [ "$4" -eq "1" ]; then
+elif [ "$4" == "1" ]; then
   dx=1
   myMx=1501
   myMy=2801
