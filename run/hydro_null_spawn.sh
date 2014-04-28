@@ -17,7 +17,7 @@
 set -e # exit on error
 SCRIPTNAME=hydro_null_spawn.sh
 
-CLIMLIST=(const, paleo)
+CLIMLIST=(const, pdd)
 TYPELIST=(ctrl, 970mW_hs)
 GRIDLIST=(20 10 5 2.5 2 1)
 if [ $# -lt 5 ] ; then
