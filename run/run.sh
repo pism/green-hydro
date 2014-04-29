@@ -130,7 +130,7 @@ PISM_FTT_FILE=$PISM_DATANAME
 if [ -z "${PARAM_FTT}" ] ; then  # check if env var is NOT set
     FTT=""
 else
-    FTT=",forcing -force_to_thk $PISM_FTT_FILE"
+    FTT=",forcing -force_to_thickness_file $PISM_FTT_FILE"
 fi
 
 # override config file?

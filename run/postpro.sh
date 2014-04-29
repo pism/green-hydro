@@ -16,7 +16,7 @@ mres=l
 
 hydro=null
 for E in 1 2 3 ; do
-#    for PPQ in 0.1 0.25 0.33 0.8 ; do
+    for PPQ in 0.1 0.25 0.33 0.8 ; do
         for TEFO in 0.01 0.02 0.25 0.05 ; do
             filepre=g${GRID}km_${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_hydro_null
 	    if [ -f ${filepre}.nc ]; then
@@ -67,6 +67,6 @@ EOF
 		echo "file ${filepre}.nc does not exist, skipping"
 	    fi
         done
-#    done
+    done
 done
 exit
