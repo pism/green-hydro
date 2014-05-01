@@ -79,7 +79,7 @@ if [ $# -lt 5 ] ; then
   echo "    PISM_SAVE    set -save_times, defaults to None"
   echo "    REGRIDFILE   set to file name to regrid from; defaults to empty (no regrid)"
   echo "    REGRIDVARS   desired -regrid_vars; applies *if* REGRIDFILE set;"
-  echo "                   defaults to 'bmelt,enthalpy,litho_temp,thk,tillwat'"
+  echo "                   defaults to 'bmelt,enthalpy,litho_temp,thk,tillwat,Href'"
   echo "    STARTEND     sets START and END year of a simulation. If used, overwrites DURA. e.g. -50000,2500 for a run from -50000 to 2500 years"
   echo
   echo "example usage 1:"
