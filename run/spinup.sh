@@ -79,7 +79,7 @@ elif [ "$2" = "2" ]; then
 elif [ "$2" = "1" ]; then
     GRID=$2
 else
-  echo "invalid first argument; must be in (${GRIDLIST[@]})"
+  echo "invalid second argument; must be in (${GRIDLIST[@]})"
   exit
 fi
 
@@ -89,7 +89,7 @@ if [ "$3" = "const" ]; then
 elif [ "$3" = "paleo" ]; then
     CLIMATE=$3
 else
-  echo "invalid second argument; must be in (${CLIMLIST[@]})"
+  echo "invalid third argument; must be in (${CLIMLIST[@]})"
   exit
 fi
 
@@ -99,7 +99,7 @@ if [ "$4" = "ctrl" ]; then
 elif [ "$4" = "970mW_hs" ]; then
     TYPE=$4
 else
-  echo "invalid third argument; must be in (${TYPELIST[@]})"
+  echo "invalid forth argument; must be in (${TYPELIST[@]})"
   exit
 fi
 
