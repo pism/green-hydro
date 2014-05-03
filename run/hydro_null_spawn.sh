@@ -114,6 +114,9 @@ for E in 1 2 3 ; do
             echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
       
             echo "($SPAWNSCRIPT)  $SCRIPT written"
+
+            source run-postpro.sh
+
         done
     done
 done

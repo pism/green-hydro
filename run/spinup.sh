@@ -62,6 +62,16 @@ else
     WALLTIME=12:00:00
 fi
 
+# set output format:
+#  $ export PISM_OFORMAT="netcdf4_parallel "
+if [ -n "${PISM_OFORMAT:+1}" ] ; then  # check if env var is already set
+  echo "$SCRIPTNAME                      PISM_OFORMAT = $PISM_OFORMAT  (already set)"
+else
+  PISM_OFORMAT="netcdf3"
+  echo "$SCRIPTNAME                      PISM_OFORMAT = $PISM_OFORMAT"
+fi
+OFORMAT=$PISM_OFORMAT
+
 # first arg is number of processes
 NN="$1"
 
@@ -150,7 +160,7 @@ echo >> $SCRIPT # add newline
 
  
 if [ $GRID == "20" ]; then      
-    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME  ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME  ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -125ka" >> $SCRIPT
