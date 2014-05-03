@@ -13,6 +13,9 @@ geotiff="--geotiff_file MODISGreenland1kmclean_cut.tif"
 #geotiff=""
 res=300
 mres=f
+fill=-2e9
+filepre=g${GRID}km_${EXPERIMENT}
+title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO"
 
 nc_dir=processed
 if [ ! -d $nc_dir ]; then
@@ -28,11 +31,6 @@ spc_dir=speed_contours
 if [ ! -d $spc_dir ]; then
     mkdir $spc_dir
 fi
-
-fill=-2e9
-
-filepre=g${GRID}km_${EXPERIMENT}
-
 
 cat - > $SCRIPT <<EOF
 
@@ -70,8 +68,6 @@ if [ -f ${filepre}.nc ]; then
     gdal_contour -a speed -fl 100 200 1000 NETCDF:${nc_dir}/${filepre}.nc:velsurf_mag ${spc_dir}/${filepre}_speed_contours.shp
 
     ogr2ogr -overwrite -t_srs EPSG:4326 ${spc_dir}/${filepre}_speed_contours_epsg4326.shp ${spc_dir}/${filepre}_speed_contours.shp
-
-    title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO"
 
     basemap-plot.py -v velsurf_mag --inner_titles $title --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap ~/base/pypismtools/colormaps/Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODIS$Jakobshavn1km.tif -o ${fig_dir}/Jakobshavn_${filepre}_velsurf_mag.pdf ${nc_dir}/${filepre}.nc
 
