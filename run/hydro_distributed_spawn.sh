@@ -96,7 +96,7 @@ for E in 1 ; do
 				for COND in 0.0001 0.001 0.01 0.1; do
 				    HYDRO=distributed
             
-				    EXPERIMENT=${CLIMATE}_e_${E}_${TYPE}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}            
+				    EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}            
 				    SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
 				    rm -f $SCRIPT
             
