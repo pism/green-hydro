@@ -3,11 +3,11 @@
 SCRIPT=do_g${GRID}km_${EXPERIMENT}_post.sh
 rm -f $SCRIPT
 
- SHEBANGLINE="#!/bin/bash"
-MPIQUEUELINE="#PBS -q shared"
- MPITIMELINE="#PBS -l walltime=12:00:00"
- MPISIZELINE="#PBS -l nodes=1:ppn=1"
-  MPIOUTLINE="#PBS -j oe"
+ MYSHEBANGLINE="#!/bin/bash"
+MYMPIQUEUELINE="#PBS -q shared"
+ MYMPITIMELINE="#PBS -l walltime=12:00:00"
+ MYMPISIZELINE="#PBS -l nodes=1:ppn=1"
+  MYMPIOUTLINE="#PBS -j oe"
 
 geotiff="--geotiff_file MODISGreenland1kmclean_cut.tif"
 #geotiff=""
@@ -15,7 +15,6 @@ res=300
 mres=f
 fill=-2e9
 filepre=g${GRID}km_${EXPERIMENT}
-title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO"
 
 nc_dir=processed
 if [ ! -d $nc_dir ]; then
@@ -34,11 +33,11 @@ fi
 
 cat - > $SCRIPT <<EOF
 
-$SHEBANGLINE
-$MPIQUEUELINE
-$MPITIMELINE
-$MPISIZELINE
-$MPIOUTLINE
+$MYSHEBANGLINE
+$MYMPIQUEUELINE
+$MYMPITIMELINE
+$MYMPISIZELINE
+$MYMPIOUTLINE
 
 source ~/python/bin/activate
 
