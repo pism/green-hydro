@@ -66,9 +66,46 @@ else
 fi
 QUEUE=$PISM_QUEUE
 
-GRID=$2
-CLIMATE=$3
-TYPE=$4
+# set GRID from argument 2
+if [ "$2" = "20" ]; then
+    GRID=$2
+elif [ "$2" = "10" ]; then
+    GRID=$2
+elif [ "$2" = "5" ]; then
+    GRID=$2
+elif [ "$2" = "2.5" ]; then
+    GRID=$2
+elif [ "$2" = "2" ]; then
+    GRID=$2
+elif [ "$2" = "1" ]; then
+    GRID=$2
+else
+  echo "invalid second argument; must be in (${GRIDLIST[@]})"
+  exit
+fi
+
+# set CLIMATE from argument 3
+if [ "$3" = "const" ]; then
+    CLIMATE=$3
+elif [ "$3" = "pdd" ]; then
+    CLIMATE=$3
+else
+  echo "invalid third argument; must be in (${CLIMLIST[@]})"
+  exit
+fi
+
+# set TYPE from argument 4
+if [ "$4" = "ctrl" ]; then
+    TYPE=$4
+elif [ "$4" = "old_bed" ]; then
+    TYPE=$4
+elif [ "$4" = "970mW_hs" ]; then
+    TYPE=$4
+else
+  echo "invalid forth argument; must be in (${TYPELIST[@]})"
+  exit
+fi
+
 REGRIDFILE=$5
 PISM_DATANAME=pism_Greenland_${GRID}km_v2_${TYPE}.nc
 DURA=100

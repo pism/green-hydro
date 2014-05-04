@@ -106,7 +106,7 @@ fi
 # set TYPE from argument 4
 if [ "$4" = "ctrl" ]; then
     TYPE=$4
-elif [ "$4" = "old" ]; then
+elif [ "$4" = "old_bed" ]; then
     TYPE=$4
 elif [ "$4" = "970mW_hs" ]; then
     TYPE=$4

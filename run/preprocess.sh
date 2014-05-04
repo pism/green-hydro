@@ -6,7 +6,7 @@
 # downloads "hotspot" master dataset
 # adds climatic mass balance and precip from SeaRISE to hotspot data set
 
-set -e  # exit on error
+set -e -x  # exit on error
 
 # run ./preprocess.sh 1 if you havent CDO compiled with OpenMP
 NN=1  # default number of processors
@@ -44,7 +44,7 @@ ncatted -O -a long_name,precipitation,c,c,"ice-equivalent mean annual precipitat
 # delete incorrect standard_name attribute from bheatflx; there is no known standard_name
 ncatted -a standard_name,bheatflx,d,, $PISMVERSION
 # use pism-recognized name for 2m air temp
-ncrename -O -v airtemp2m,ice_surface_temp -v usrf,usurf $PISMVERSION
+ncrename -O -v airtemp2m,ice_surface_temp  $PISMVERSION
 ncatted -O -a units,ice_surface_temp,c,c,"Celsius" $PISMVERSION
 # use pism-recognized name and standard_name for surface mass balance, after
 # converting from liquid water equivalent thickness per year to [kg m-2 year-1]
@@ -104,7 +104,7 @@ for GS in "20" "10" "5" "2.5" "2" "1"; do
     wget -nc http://pism-docs.org/download/${DATANAME}.nc
     nc2cdo.py ${DATANAME}.nc
     ncks -O $DATANAME.nc ${DATANAME}_${CTRL}.nc
-    ncks -O $DATANAME.nc ${DATANAME}_${OLD}.nc
+    ncks -O -v topg,thk -x $DATANAME.nc ${DATANAME}_${OLD}.nc
     echo
     echo "Creating hotspot"
     echo 
@@ -121,6 +121,6 @@ for GS in "20" "10" "5" "2.5" "2" "1"; do
     echo
     ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${CTRL}.nc
     ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${HS}.nc
-    ncks -A -v thk,topg,usurf,climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
+    ncks -A -v thk,topg,climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
 done
 
