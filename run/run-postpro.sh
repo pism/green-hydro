@@ -40,6 +40,8 @@ $MPITIMELINE
 $MPISIZELINE
 $MPIOUTLINE
 
+source ~/python/bin/activate
+
 cd \$PBS_O_WORKDIR
   
 if [ ! -d $nc_dir ]; then
