@@ -69,7 +69,7 @@ if [ -f ${filepre}.nc ]; then
 
     ogr2ogr -overwrite -t_srs EPSG:4326 ${spc_dir}/${filepre}_speed_contours_epsg4326.shp ${spc_dir}/${filepre}_speed_contours.shp
 
-    basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODIS$Jakobshavn1km.tif -o ${fig_dir}/Jakobshavn_${filepre}_velsurf_mag.pdf ${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISJakobshavn1km.tif -o ${fig_dir}/Jakobshavn_${filepre}_velsurf_mag.pdf ${nc_dir}/${filepre}.nc
 
     basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISKangerdlugssuaq1km.tif -o ${fig_dir}/Kangerdlugssuaq_${filepre}_velsurf_mag.pdf ${nc_dir}/${filepre}.nc
 
