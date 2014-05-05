@@ -89,7 +89,7 @@ if [ -f ${filepre}.nc ]; then
 \usepackage[multidot]{grffile}
 \parindent0pt
 \\begin{document}
-\includepdfmerge[nup=1x3,pagecommand={\thispagestyle{myheadings}\markright{\huge{$title}}}]{${fig_dir}/Greenland_${filepre}_velsurf_mag.pdf,1,${fig_dir}/Greenland_${filepre}_velbase_mag.pdf,1,${fig_dir}/Greenland_${filepre}_tau_r.pdf,1}
+\includepdfmerge[nup=3x1,pagecommand={\thispagestyle{myheadings}\markright{\huge{$title}}}]{${fig_dir}/Greenland_${filepre}_velsurf_mag.pdf,1,${fig_dir}/Greenland_${filepre}_velbase_mag.pdf,1,${fig_dir}/Greenland_${filepre}_tau_r.pdf,1}
 \end{document}
 EOLF
     pdflatex Greenland_${filepre}
