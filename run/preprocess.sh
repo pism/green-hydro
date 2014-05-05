@@ -33,6 +33,7 @@ wget -nc ${DATAURL}${DATANAME}   # -nc is "no clobber"
 echo "  ... done."
 echo
 
+
 PISMVERSION=pism_$DATANAME
 echo -n "creating bootstrapable $PISMVERSION from $DATANAME ... "
 # copy the vars we want, and preserve history and global attrs
@@ -95,6 +96,26 @@ ncatted -O -a calendar,time,c,c,"365_day" $SLSERIES
 echo "done."
 echo
 
+# get old Bamber topograpy
+DATAVERSION=0.93
+DATAURL=http://websrv.cs.umt.edu/isis/images/8/86/
+DATANAME=Greenland_5km_v$DATAVERSION.nc
+
+echo "fetching master file ... "
+wget -nc ${DATAURL}${DATANAME}   # -nc is "no clobber"
+echo "  ... done."
+echo
+
+PISMVERSIONOLD=pism_$DATANAME
+echo -n "creating bootstrapable $PISMVERSIONOLD from $DATANAME ... "
+# copy the vars we want, and preserve history and global attrs
+ncks -O -v mapping,lat,lon,topg,thk $DATANAME $PISMVERSIONOLD
+# straighten dimension names
+ncrename -O -d x1,x -d y1,y -v x1,x -v y1,y $PISMVERSIONOLD $PISMVERSIONOLD
+nc2cdo.py $PISMVERSIONOLD
+echo "done."
+echo
+
 nc2cdo.py $PISMVERSION
 HS=970mW_hs
 CTRL=ctrl
@@ -114,13 +135,17 @@ for GS in "20" "10" "5" "2.5" "2" "1"; do
     echo
     if [[ $NN == 1 ]] ; then
 	cdo remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}km.nc
+	cdo remapbil,${DATANAME}.nc $PISMVERSIONOLD old_Greenland_${GS}km.nc
     else
 	cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}km.nc
+	cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSIONOLD old_Greenland_${GS}km.nc
     fi
     ncks -A -v x,y ${DATANAME}.nc tmp_Greenland_${GS}km.nc
     echo
     ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${CTRL}.nc
     ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${HS}.nc
-    ncks -A -v thk,topg,climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
+    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
+    ncks -A -v thk,topg old_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
+    ncap2 -O -s "where(thk<0) thk=0;" ${DATANAME}_${OLD}.nc ${DATANAME}_${OLD}.nc
 done
 
