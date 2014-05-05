@@ -123,38 +123,40 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 
 for E in 1 2 3 ; do
     for PPQ in 0.1 0.25 0.33 0.8 ; do
-        for TEFO in 0.01 0.02 0.25 0.05 ; do
+        for TEFO in 0.01 0.02 0.05 ; do
+	    for PHILOW in 5 10 15; do
+		PARAM_TTPHI="${PHILOW}.0,40.0,-300.0,700.0"
 
-            HYDRO=null
+                HYDRO=null
             
-            EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_hydro_${HYDRO}
-            SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
-            rm -f $SCRIPT
+                EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_hydro_${HYDRO}
+                SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
+                rm -f $SCRIPT
             
-            OUTFILE=g${GRID}km_${EXPERIMENT}.nc
+                OUTFILE=g${GRID}km_${EXPERIMENT}.nc
 
-            # insert preamble
-            echo $SHEBANGLINE >> $SCRIPT
-            echo >> $SCRIPT # add newline
-            echo $MPIQUEUELINE >> $SCRIPT
-            echo $MPITIMELINE >> $SCRIPT
-            echo $MPISIZELINE >> $SCRIPT
-            echo $MPIOUTLINE >> $SCRIPT
-            echo >> $SCRIPT # add newline
-            echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-            echo >> $SCRIPT # add newline
-
-            export PISM_EXPERIMENT=$EXPERIMENT
-            export PISM_TITLE="Greenland Parameter Study"
-
-            cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
-            echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-      
-            echo "($SPAWNSCRIPT)  $SCRIPT written"
-
-	    title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO"
-            source run-postpro.sh
-
+                # insert preamble
+                echo $SHEBANGLINE >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                echo $MPIQUEUELINE >> $SCRIPT
+                echo $MPITIMELINE >> $SCRIPT
+                echo $MPISIZELINE >> $SCRIPT
+                echo $MPIOUTLINE >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                
+                export PISM_EXPERIMENT=$EXPERIMENT
+                export PISM_TITLE="Greenland Parameter Study"
+                
+                cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+                
+                echo "($SPAWNSCRIPT)  $SCRIPT written"
+            
+	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$\phi_l$'"=$PHILOW"
+                source run-postpro.sh
+            done
         done
     done
 done

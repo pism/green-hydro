@@ -15,7 +15,7 @@
 
 
 set -e # exit on error
-SCRIPTNAME=hydro_distributed_spawn.sh
+SCRIPTNAME=hydro_null_spawn.sh
 
 CLIMLIST=(const, pdd)
 TYPELIST=(ctrl, old_bed, 970mW_hs)
@@ -47,7 +47,7 @@ fi
 if [ -n "${PISM_WALLTIME:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME                    PISM_WALLTIME = $PISM_WALLTIME  (already set)"
 else
-  PISM_WALLTIME=24:00:00
+  PISM_WALLTIME=12:00:00
   echo "$SCRIPTNAME                     PISM_WALLTIME = $PISM_WALLTIME"
 fi
 WALLTIME=$PISM_WALLTIME
@@ -118,56 +118,40 @@ MPIQUEUELINE="#PBS -q $QUEUE"
   MPIOUTLINE="#PBS -j oe"
 
 # ########################################################
-# set up parameter sensitivity study: distributed
+# set up parameter sensitivity study: Shallow Ice Approximation
 # ########################################################
 
-for E in 1 ; do
-    for PPQ in 0.25 ; do
-        for TEFO in 0.02 ; do
-	    for PHILOW in 15; do
-		PARAM_TTPHI="${PHILOW}.0,40.0,-300.0,700.0"
-		for RATE in 1e-6; do
-		    for PROP in 100 500 1000 ; do
-			for OPEN in 0.5; do
-			    for CLOSE in 0.04; do
-				for COND in 0.0001 0.001 0.005 0.01 0.1; do
-				    HYDRO=distributed
-            
-				    EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}            
-				    SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
-				    rm -f $SCRIPT
-            
-				    OUTFILE=g${GRID}km_${EXPERIMENT}.nc
+for E in 1 2 3 ; do
+    HYDRO=null
+    
+    EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_sia_hydro_${HYDRO}
+    SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
+    rm -f $SCRIPT
+    
+    OUTFILE=g${GRID}km_${EXPERIMENT}.nc
+    
+    # insert preamble
+    echo $SHEBANGLINE >> $SCRIPT
+    echo >> $SCRIPT # add newline
+    echo $MPIQUEUELINE >> $SCRIPT
+    echo $MPITIMELINE >> $SCRIPT
+    echo $MPISIZELINE >> $SCRIPT
+    echo $MPIOUTLINE >> $SCRIPT
+    echo >> $SCRIPT # add newline
+    echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
+    echo >> $SCRIPT # add newline
+    
+    export PISM_EXPERIMENT=$EXPERIMENT
+    export PISM_TITLE="Greenland Parameter Study"
 
-				    # insert preamble
-				    echo $SHEBANGLINE >> $SCRIPT
-				    echo >> $SCRIPT # add newline
-				    echo $MPIQUEUELINE >> $SCRIPT
-				    echo $MPITIMELINE >> $SCRIPT
-				    echo $MPISIZELINE >> $SCRIPT
-				    echo $MPIOUTLINE >> $SCRIPT
-				    echo >> $SCRIPT # add newline
-				    echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-				    echo >> $SCRIPT # add newline
-				    
-				    export PISM_EXPERIMENT=$EXPERIMENT
-				    export PISM_TITLE="Greenland Parameter Study"
-
-				    cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_TWRATE=$RATE PARAM_TWPROP=$PROP PARAM_COND=$COND PARAM_OPEN=$OPEN PARAM_CLOSE=$CLOSE ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
-				    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+    cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E  ./run.sh $NN $CLIMATE $DURA $GRID sia $HYDRO $OUTFILE $INFILE"
+    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
       
-				    echo "($SPAWNSCRIPT)  $SCRIPT written"
+    echo "($SPAWNSCRIPT)  $SCRIPT written"
 
-				    title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$c_1$'"=$OPEN;"'$c_2$'"=$CLOSE;"'$\omega$'"=$PROP;k=$COND"'$\phi_l$'"=$PHILOW"
-				    source run-postpro.sh
-				done
-			    done
-			done
-		    done
-		done
-	    done
-        done
-    done
+    title="E=$E"
+    source run-postpro.sh
+
 done
 
 
