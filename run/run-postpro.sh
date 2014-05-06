@@ -83,13 +83,13 @@ if [ -f ${filepre}.nc ]; then
     # create latex file
     rm -f Greenland_${filepre}.tex
     cat - > Greenland_${filepre}.tex <<EOLF
-\documentclass[a4paper]{article}
+\documentclass[a4paper,landscape]{article}
 \usepackage[margin=2mm,nohead,nofoot]{geometry}
 \usepackage{pdfpages}
 \usepackage[multidot]{grffile}
 \parindent0pt
 \\begin{document}
-\includepdfmerge[nup=3x1,pagecommand={\thispagestyle{myheadings}\markright{\huge{$title}}}]{${fig_dir}/Greenland_${filepre}_velsurf_mag.pdf,1,${fig_dir}/Greenland_${filepre}_velbase_mag.pdf,1,${fig_dir}/Greenland_${filepre}_tau_r.pdf,1}
+\includepdfmerge[nup=1x3,landscape,pagecommand={\thispagestyle{myheadings}\markright{\huge{$title}}}]{${fig_dir}/Greenland_${filepre}_velsurf_mag.pdf,1,${fig_dir}/Greenland_${filepre}_velbase_mag.pdf,1,${fig_dir}/Greenland_${filepre}_tau_r.pdf,1}
 \end{document}
 EOLF
     pdflatex Greenland_${filepre}
