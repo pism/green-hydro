@@ -44,10 +44,10 @@ if [ $# -lt 2 ] ; then
   exit
 fi
 
-if [ -n "${PISM_PROC_PER_NODE:+1}" ] ; then  # check if env var is already set
-    PROC_PER_NODE=$PISM_PROC_PER_NODE
+if [ -n "${PISM_PROCS_PER_NODE:+1}" ] ; then  # check if env var is already set
+    PROCS_PER_NODE=$PISM_PROCS_PER_NODE
 else
-    PROC_PER_NODE=4
+    PROCS_PER_NODE=4
 fi
 
 if [ -n "${PISM_QUEUE:+1}" ] ; then  # check if env var is already set
@@ -127,12 +127,12 @@ START=-125000
 END=-25000
 MKA=$(($END/-1000))
 
-NODES=$(( $NN/$PROC_PER_NODE))
+NODES=$(( $NN/$PROCS_PER_NODE))
 
  SHEBANGLINE="#!/bin/bash"
 MPIQUEUELINE="#PBS -q $QUEUE"
  MPITIMELINE="#PBS -l walltime=$WALLTIME"
- MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
+ MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROCS_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
 SCRIPT="do_${GRID}km_${CLIMATE}-spinup-${TYPE}.sh"
@@ -184,7 +184,7 @@ MKA=$(($END/-1000))
 OUTFILE=g${GRID}km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
 
 if [[ ($GRID == "20") || ($GRID == "10") ]]; then      
-    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_a.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -25ka" >> $SCRIPT
@@ -207,7 +207,7 @@ MKA=$(($END/-1000))
 OUTFILE=g${GRID}km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
       
 if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") ]]; then      
-    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_b.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -5ka" >> $SCRIPT
@@ -230,7 +230,7 @@ MA=$(($END/-1))
 OUTFILE=g${GRID}km_m${MA}a_${CLIMATE}_${TYPE}.nc
 
 if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") || ($GRID == "2.5") ]]; then      
-    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_c.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -1ka" >> $SCRIPT
@@ -252,7 +252,7 @@ MA=$(($END/-1))
 OUTFILE=g${GRID}km_m${MA}a_${CLIMATE}_${TYPE}.nc
       
 if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") || ($GRID == "2.5") || ($GRID == "2") ]]; then      
-    cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_d.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -500a" >> $SCRIPT
@@ -271,7 +271,7 @@ fi
 
 OUTFILE=g${GRID}km_0_${CLIMATE}_${TYPE}.nc
       
-cmd="PISM_DO="" STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
 echo "$cmd 2>&1 | tee job_e.\${PBS_JOBID}" >> $SCRIPT
 echo >> $SCRIPT
 

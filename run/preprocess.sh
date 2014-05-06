@@ -146,6 +146,7 @@ for GS in "20" "10" "5" "2.5" "2" "1"; do
     ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${HS}.nc
     ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
     ncks -A -v thk,topg old_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
+    ncatted -O -a _FillValue,thk,d,, -a missing_value,thk,d,, ${DATANAME}_${OLD}.nc
     ncap2 -O -s "where(thk<0) thk=0;" ${DATANAME}_${OLD}.nc ${DATANAME}_${OLD}.nc
 done
 

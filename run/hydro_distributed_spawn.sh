@@ -28,7 +28,7 @@ if [ $# -lt 5 ] ; then
   echo "    paramspawn.sh NN GRID CLIMATE TYPE REGRIDFILE"
   echo
   echo "  where:"
-  echo "    PROCS       = 1,2,3,... is number of MPI processes"
+  echo "    PROCSS       = 1,2,3,... is number of MPI processes"
   echo "    GRID      in (${GRIDLIST[@]})"
   echo "    CLIMATE   in (${CLIMLIST[@]})"
   echo "    TYPE      in (${TYPELIST[@]})"
@@ -52,12 +52,12 @@ else
 fi
 WALLTIME=$PISM_WALLTIME
 
-if [ -n "${PISM_PROC_PER_NODE:+1}" ] ; then  # check if env var is already set
-    PISM_PROC_PER_NODE=$PISM_PROC_PER_NODE
+if [ -n "${PISM_PROCS_PER_NODE:+1}" ] ; then  # check if env var is already set
+    PISM_PROCS_PER_NODE=$PISM_PROCS_PER_NODE
 else
-    PISM_PROC_PER_NODE=4
+    PISM_PROCS_PER_NODE=4
 fi
-PROC_PER_NODE=$PISM_PROC_PER_NODE
+PROCS_PER_NODE=$PISM_PROCS_PER_NODE
 
 if [ -n "${PISM_QUEUE:+1}" ] ; then  # check if env var is already set
     PISM_QUEUE=$PISM_QUEUE
@@ -109,12 +109,12 @@ fi
 REGRIDFILE=$5
 PISM_DATANAME=pism_Greenland_${GRID}km_v2_${TYPE}.nc
 DURA=100
-NODES=$(( $NN/$PROC_PER_NODE))
+NODES=$(( $NN/$PROCS_PER_NODE))
 
  SHEBANGLINE="#!/bin/bash"
 MPIQUEUELINE="#PBS -q $QUEUE"
  MPITIMELINE="#PBS -l walltime=$WALLTIME"
- MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROC_PER_NODE"
+ MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROCS_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
 # ########################################################
@@ -158,7 +158,7 @@ for E in 1 ; do
       
 				    echo "($SPAWNSCRIPT)  $SCRIPT written"
 
-				    title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$c_1$'"=$OPEN;"'$c_2$'"=$CLOSE;"'$\omega$'"=$PROP;k=$COND"'$\phi_l$'"=$PHILOW"
+				    title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$c_1$'"=$OPEN;"'$c_2$'"=$CLOSE;"'$\omega$'"=$PROP;k=$COND;"'$\phi_l$'"=$PHILOW"
 				    source run-postpro.sh
 				done
 			    done
