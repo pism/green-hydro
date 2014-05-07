@@ -129,7 +129,7 @@ for E in 1 2 3 ; do
 
                 HYDRO=null
             
-                EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_m700__hydro_${HYDRO}
+                EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_m700_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
                 rm -f $SCRIPT
             
