@@ -6,7 +6,7 @@
 # boot_file : netcdf file
 #             containing 'thk' variable
 # obs_file : netcdf file
-#            containing 'magnitude' variable
+#            containing 'surfvels_mag' variable
 #
 # Arguments
 # ---------
@@ -34,9 +34,9 @@ except:
     import pypismtools as ppt
 
 # Number of bins
-NBINS = 30
+NBINS = 50
 # Maximum surface speed to be considered in histogram
-HISTMAX = 3000.0            # m/a
+HISTMAX = 5000.0            # m/a
 # A threshold for outliers. Values where
 # abs(obs-experiment)>OUTLIER_THRESHOLD will be excluded from comparison
 OUTLIER_THRESHOLD = 500.0   # m/a
@@ -289,7 +289,7 @@ if __name__ == "__main__":
     print_mode = options.print_mode
     out_formats = options.out_formats.split(',')
     out_res = options.out_res
-    thk_min = 100.
+    thk_min = 25.
     params = ('pseudo_plastic_q', 'till_effective_fraction_overburden',
               'sia_enhancement_factor')
     params_abbr = ('q', '$\\delta$', 'e', 'cold', 'SSA')

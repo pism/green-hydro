@@ -124,12 +124,12 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 for E in 1 2 3 ; do
     for PPQ in 0.1 0.25 0.33 0.8 ; do
         for TEFO in 0.01 0.02 0.05 ; do
-	    for PHILOW in 5 10 15; do
-		PARAM_TTPHI="${PHILOW}.0,40.0,-300.0,700.0"
+	    for PHILOW in 5; do
+		PARAM_TTPHI="${PHILOW}.0,40.0,-700.0,700.0"
 
                 HYDRO=null
             
-                EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_hydro_${HYDRO}
+                EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_m700__hydro_${HYDRO}
                 SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
                 rm -f $SCRIPT
             
