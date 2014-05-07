@@ -70,6 +70,10 @@ if [ -f ${filepre}.nc ]; then
 
     basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISKangerdlugssuaq1km.tif -o ${tl_dir}/${fig_dir}/Kangerdlugssuaq_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
+    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISJakobshavn1km.tif -o ${tl_dir}/${fig_dir}/Jakobshavn_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+
+    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISKangerdlugssuaq1km.tif -o ${tl_dir}/${fig_dir}/Kangerdlugssuaq_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+
     basemap-plot.py -v velsurf_mag --inner_titles velsurf_mag --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
     basemap-plot.py -v velbase_mag --inner_titles velsurf_mag --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc

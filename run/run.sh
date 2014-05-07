@@ -19,7 +19,7 @@ HYDROLIST="{null, routing, distributed}"
 if [ -n "${PISM_DATANAME:+1}" ] ; then  # check if env var is already set
     PISM_DATANAME=$PISM_DATANAME
 else
-    PISM_DATANAME=pism_Greenland_5km_v2_ctrl.nc
+    PISM_DATANAME=pism_Greenland_5km_v3_ctrl.nc
 fi
 
 PISM_TEMPSERIES=pism_dT.nc

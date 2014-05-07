@@ -45,7 +45,7 @@ if [ $# -gt 1 ] ; then
   GRID="$2"
 fi
 
-DATANAME=Greenland_${GRID}km_v2_ctrl
+DATANAME=Greenland_${GRID}km_v3_ctrl
 if [ $# -gt 2 ] ; then
   DATANME="$3"
 fi

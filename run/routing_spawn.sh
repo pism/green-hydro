@@ -70,7 +70,7 @@ GRID=$2
 CLIMATE=$3
 TYPE=$4
 REGRIDFILE=$5
-PISM_DATANAME=pism_Greenland_${GRID}km_v2_${TYPE}.nc
+PISM_DATANAME=pism_Greenland_${GRID}km_v3_${TYPE}.nc
 DURA=100
 NODES=$(( $NN/$PROC_PER_NODE))
 

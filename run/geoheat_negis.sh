@@ -10,7 +10,7 @@
 
 set -e # exit on error
 
-INFILE=pism_Greenland_20km_v2_970mW_hs.nc
+INFILE=pism_Greenland_20km_v3_970mW_hs.nc
 if [ $# -gt 0 ] ; then
   INFILE="$1"
 fi

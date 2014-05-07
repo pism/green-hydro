@@ -120,8 +120,9 @@ nc2cdo.py $PISMVERSION
 HS=970mW_hs
 CTRL=ctrl
 OLD=old_bed
+VERSION=3
 for GS in "20" "10" "5" "2.5" "2" "1"; do
-    DATANAME=pism_Greenland_${GS}km_v2
+    DATANAME=pism_Greenland_${GS}km_v${VERSION}
     wget -nc http://pism-docs.org/download/${DATANAME}.nc
     nc2cdo.py ${DATANAME}.nc
     ncks -O $DATANAME.nc ${DATANAME}_${CTRL}.nc
