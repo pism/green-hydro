@@ -66,6 +66,17 @@ else
 fi
 QUEUE=$PISM_QUEUE
 
+# set output format:
+#  $ export PISM_OFORMAT="netcdf4_parallel "
+if [ -n "${PISM_OFORMAT:+1}" ] ; then  # check if env var is already set
+  echo "$SCRIPTNAME                      PISM_OFORMAT = $PISM_OFORMAT  (already set)"
+else
+  PISM_OFORMAT="netcdf3"
+  echo "$SCRIPTNAME                      PISM_OFORMAT = $PISM_OFORMAT"
+fi
+OFORMAT=$PISM_OFORMAT
+
+
 # set GRID from argument 2
 if [ "$2" = "20" ]; then
     GRID=$2
@@ -149,7 +160,7 @@ for E in 1 2 3 ; do
                 export PISM_EXPERIMENT=$EXPERIMENT
                 export PISM_TITLE="Greenland Parameter Study"
                 
-                cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                 
                 echo "($SPAWNSCRIPT)  $SCRIPT written"
