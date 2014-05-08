@@ -53,7 +53,7 @@ fi
 if [ -f ${filepre}.nc ]; then
     # because QGIS doesn't like (x,y) ordering
     ncpdq -O -a time,y,x,z,zb ${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
-    ncap2 -O -s "where(thk<25) {velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
+    ncap2 -O -s "where(thk<1) {velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
     ncatted -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}.nc
     # remove files, gdal_contour can't overwrite?
     if [ -f ${tl_dir}/${spc_dir}/${filepre}_speed_contours.shp ]; then
