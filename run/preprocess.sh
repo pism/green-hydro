@@ -135,17 +135,18 @@ for GS in "20" "10" "5" "2.5" "2" "1"; do
     echo "Adding climatic fields"
     echo
     if [[ $NN == 1 ]] ; then
-	cdo remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}km.nc
-	cdo remapbil,${DATANAME}.nc $PISMVERSIONOLD old_Greenland_${GS}km.nc
+	REMAP_EXTRAPOLATE=on cdo remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}km.nc
+	REMAP_EXTRAPOLATE=on cdo remapbil,${DATANAME}.nc $PISMVERSIONOLD old_Greenland_${GS}km.nc
     else
-	cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}km.nc
-	cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSIONOLD old_Greenland_${GS}km.nc
+	REMAP_EXTRAPOLATE=on cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}km.nc
+	REMAP_EXTRAPOLATE=on cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSIONOLD old_Greenland_${GS}km.nc
     fi
     ncks -A -v x,y ${DATANAME}.nc tmp_Greenland_${GS}km.nc
+    fill_missing.py -v climatic_mass_balance,precipitation,ice_surface_temp -f tmp_Greenland_${GS}km.nc -o filled_Greenland_${GS}km.nc
     echo
-    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${CTRL}.nc
-    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${HS}.nc
-    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
+    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}km.nc ${DATANAME}_${CTRL}.nc
+    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}km.nc ${DATANAME}_${HS}.nc
+    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
     ncks -A -v thk,topg old_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
     ncatted -O -a _FillValue,thk,d,, -a missing_value,thk,d,, ${DATANAME}_${OLD}.nc
     ncap2 -O -s "where(thk<0) thk=0;" ${DATANAME}_${OLD}.nc ${DATANAME}_${OLD}.nc
