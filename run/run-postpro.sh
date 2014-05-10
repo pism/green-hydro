@@ -1,8 +1,4 @@
 
-
-SCRIPT=do_g${GRID}km_${EXPERIMENT}_post.sh
-rm -f $SCRIPT
-
  MYSHEBANGLINE="#!/bin/bash"
 MYMPIQUEUELINE="#PBS -q shared"
  MYMPITIMELINE="#PBS -l walltime=12:00:00"
@@ -21,7 +17,7 @@ nc_dir=processed
 fig_dir=figures
 spc_dir=speed_contours
 
-cat - > $SCRIPT <<EOF
+cat - > $POST <<EOF
 
 $MYSHEBANGLINE
 $MYMPIQUEUELINE
@@ -103,4 +99,4 @@ fi
 
 EOF
 
- echo "$SCRIPT written"
+ echo "$POST written"
