@@ -166,7 +166,7 @@ for E in 1 2 3 ; do
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$\phi_l$'"=$PHILOW"
                 source run-postpro.sh
                 
-                cmd="PISM_DO"" qsub $POST
+                cmd="PISM_DO"" qsub $POST"
                 echo "$cmd 2>&1 | tee job_post.\${PBS_JOBID}" >> $SCRIPT
                 echo "($SPAWNSCRIPT)  $SCRIPT written"
 
