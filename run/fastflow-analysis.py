@@ -88,6 +88,8 @@ def make_psd_plot(study, **kwargs):
             out_file = out_file + "_psd." + out_format
         print "  - writing image %s ..." % out_file
         fig.savefig(out_file , bbox_inches='tight', pad_inches=pad_inches, dpi=out_res)
+        plt.close()
+        del fig
 
 
 def make_histogram_plot(study, **kwargs):
@@ -150,6 +152,8 @@ def make_histogram_plot(study, **kwargs):
             out_file = out_file + "." + out_format
         print "  - writing image %s ..." % out_file
         fig.savefig(out_file , bbox_inches='tight', pad_inches=pad_inches, dpi=out_res)
+        plt.close()
+        del fig
 
             
 if __name__ == "__main__":

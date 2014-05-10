@@ -8,10 +8,8 @@
 #
 #  usage: to use NN=8 processors, 2 4-core nodes, and duration 4:00:00,
 #     $ export PISM_WALLTIME=4:00:00
-#     $ export PISM_NODES=2
-#     $ ./paramspawn.sh 8 FIXME
-#  then, assuming you like the resulting scripts:
-#     $ ./paramsubmit.sh      ### <--- REALLY SUBMITS using qsub
+#     $ export PISM_PROCS_PER_NODE=4
+#     $ export PISM_QUEUE=standard_4
 
 
 set -e # exit on error
@@ -143,7 +141,8 @@ for E in 1 2 3 ; do
                 # EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_m700_hydro_${HYDRO}
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
-                rm -f $SCRIPT
+                POST=do_g${GRID}km_${EXPERIMENT}_post.sh
+                rm -f $SCRIPT $$POST
             
                 OUTFILE=g${GRID}km_${EXPERIMENT}.nc
 
@@ -163,11 +162,14 @@ for E in 1 2 3 ; do
                 
                 cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-                
-                echo "($SPAWNSCRIPT)  $SCRIPT written"
-            
+                            
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$\phi_l$'"=$PHILOW"
                 source run-postpro.sh
+                
+                cmd="PISM_DO"" qsub $POST
+                echo "$cmd 2>&1 | tee job_post.\${PBS_JOBID}" >> $SCRIPT
+                echo "($SPAWNSCRIPT)  $SCRIPT written"
+
             done
         done
     done
@@ -176,6 +178,5 @@ done
 
 
 echo
-echo "($SPAWNSCRIPT)  use paramsubmit.sh to submit the scripts"
 echo
 
