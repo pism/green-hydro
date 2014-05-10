@@ -130,13 +130,13 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 # set up parameter sensitivity study: null
 # ########################################################
 
+HYDRO=null
+
 for E in 1 2 3 ; do
     for PPQ in 0.1 0.25 0.33 0.8 ; do
         for TEFO in 0.01 0.02 0.05 ; do
 	    for PHILOW in 5; do
 		PARAM_TTPHI="${PHILOW}.0,40.0,-700.0,700.0"
-
-                HYDRO=null
             
                 # EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_m700_hydro_${HYDRO}
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_hydro_${HYDRO}
@@ -165,7 +165,8 @@ for E in 1 2 3 ; do
                             
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$\phi_l$'"=$PHILOW"
                 source run-postpro.sh
-                
+
+                echo >> $SCRIPT
                 cmd="qsub $POST"
                 echo "$cmd 2>&1 | tee job_post.\${PBS_JOBID}" >> $SCRIPT
                 echo "($SPAWNSCRIPT)  $SCRIPT written"
@@ -174,9 +175,18 @@ for E in 1 2 3 ; do
         done
     done
 done
+SUBMIT=submit_g${GRID}km_hydro_${HYDRO}.sh
+rm -f $SUBMIT
+cat - > $SUBMIT <<EOF
+$SHEBANGLINE
+for FILE in do_g${GRID}km_${CLIMATE}_${TYPE}_*${HYDRO}.sh; do
+    qsub \$FILE
+done
+EOF
 
-
-
+echo
+echo
+echo "Run $SUBMIT to submit all jobs to the scheduler"
 echo
 echo
 
