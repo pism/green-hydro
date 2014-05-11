@@ -164,12 +164,13 @@ for E in 1 2 3 ; do
                 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                             
                 echo >> $SCRIPT
-                echo $SCRIPT written"
-
+                echo "# $SCRIPT written"
+                echo
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$\phi_l$'"=$PHILOW"
                 source run-postpro.sh
-                echo "$POST written"
-
+                echo "## $POST written"
+                echo
+                echo
             done
         done
     done
