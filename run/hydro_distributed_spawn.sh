@@ -173,9 +173,6 @@ for E in 1 ; do
 				    title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$c_1$'"=$OPEN;"'$c_2$'"=$CLOSE;"'$\omega$'"=$PROP;k=$COND;"'$\phi_l$'"=$PHILOW"
 				    source run-postpro.sh
 
-                                    echo >> $SCRIPT
-                                    cmd="qsub $POST"
-                                    echo "$cmd 2>&1 | tee job_post.\${PBS_JOBID}" >> $SCRIPT
                                     echo "($SPAWNSCRIPT)  $SCRIPT written"
 
 				done
