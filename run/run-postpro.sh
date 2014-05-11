@@ -98,5 +98,3 @@ EOLF
 fi
 
 EOF
-
- echo "$POST written"

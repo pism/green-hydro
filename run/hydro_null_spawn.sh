@@ -163,11 +163,12 @@ for E in 1 2 3 ; do
                 cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                             
+                echo >> $SCRIPT
+                echo $SCRIPT written"
+
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$\phi_l$'"=$PHILOW"
                 source run-postpro.sh
-
-                echo >> $SCRIPT
-                echo "($SPAWNSCRIPT)  $SCRIPT written"
+                echo "$POST written"
 
             done
         done
