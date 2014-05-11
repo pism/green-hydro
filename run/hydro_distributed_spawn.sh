@@ -47,7 +47,7 @@ fi
 if [ -n "${PISM_WALLTIME:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME                    PISM_WALLTIME = $PISM_WALLTIME  (already set)"
 else
-  PISM_WALLTIME=24:00:00
+  PISM_WALLTIME=48:00:00
   echo "$SCRIPTNAME                     PISM_WALLTIME = $PISM_WALLTIME"
 fi
 WALLTIME=$PISM_WALLTIME
@@ -55,14 +55,14 @@ WALLTIME=$PISM_WALLTIME
 if [ -n "${PISM_PROCS_PER_NODE:+1}" ] ; then  # check if env var is already set
     PISM_PROCS_PER_NODE=$PISM_PROCS_PER_NODE
 else
-    PISM_PROCS_PER_NODE=4
+    PISM_PROCS_PER_NODE=16
 fi
 PROCS_PER_NODE=$PISM_PROCS_PER_NODE
 
 if [ -n "${PISM_QUEUE:+1}" ] ; then  # check if env var is already set
     PISM_QUEUE=$PISM_QUEUE
 else
-    PISM_QUEUE=standard_4
+    PISM_QUEUE=gpu
 fi
 QUEUE=$PISM_QUEUE
 
@@ -131,21 +131,23 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 # set up parameter sensitivity study: distributed
 # ########################################################
 
+HYDRO=distributed
+
 for E in 1 ; do
     for PPQ in 0.25 ; do
         for TEFO in 0.02 ; do
-	    for PHILOW in 15; do
-		PARAM_TTPHI="${PHILOW}.0,40.0,-300.0,700.0"
+	    for PHILOW in 5; do
+		PARAM_TTPHI="${PHILOW}.0,40.0,-700.0,700.0"
 		for RATE in 1e-6; do
-		    for PROP in 100 500 1000 ; do
+		    for PROP in 100 1000 ; do
 			for OPEN in 0.5; do
 			    for CLOSE in 0.04; do
-				for COND in 0.0001 0.001 0.005 0.01 0.1; do
-				    HYDRO=distributed
+				for COND in 0.0001 0.001 0.01 0.1; do
             
 				    EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}            
 				    SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
-				    rm -f $SCRIPT
+                                    POST=do_g${GRID}km_${EXPERIMENT}_post.sh
+                                    rm -f $SCRIPT $$POST
             
 				    OUTFILE=g${GRID}km_${EXPERIMENT}.nc
 
@@ -170,6 +172,12 @@ for E in 1 ; do
 
 				    title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$c_1$'"=$OPEN;"'$c_2$'"=$CLOSE;"'$\omega$'"=$PROP;k=$COND;"'$\phi_l$'"=$PHILOW"
 				    source run-postpro.sh
+
+                                    echo >> $SCRIPT
+                                    cmd="qsub $POST"
+                                    echo "$cmd 2>&1 | tee job_post.\${PBS_JOBID}" >> $SCRIPT
+                                    echo "($SPAWNSCRIPT)  $SCRIPT written"
+
 				done
 			    done
 			done
@@ -180,9 +188,20 @@ for E in 1 ; do
     done
 done
 
-
+SUBMIT=submit_g${GRID}km_hydro_${HYDRO}.sh
+rm -f $SUBMIT
+cat - > $SUBMIT <<EOF
+$SHEBANGLINE
+for FILE in do_g${GRID}km_${CLIMATE}_${TYPE}_*${HYDRO}.sh; do
+  JOBID=$(qsub \$FILE)
+  fbname=$(basename "\$FILE" .sh)
+  POST=\${fbname}_post.sh
+  qsub -W depend=afterok:\${JOBID} \$POST
+done
+EOF
 
 echo
-echo "($SPAWNSCRIPT)  use paramsubmit.sh to submit the scripts"
 echo
-
+echo "Run $SUBMIT to submit all jobs to the scheduler"
+echo
+echo

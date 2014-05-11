@@ -167,20 +167,22 @@ for E in 1 2 3 ; do
                 source run-postpro.sh
 
                 echo >> $SCRIPT
-                cmd="qsub $POST"
-                echo "$cmd 2>&1 | tee job_post.\${PBS_JOBID}" >> $SCRIPT
                 echo "($SPAWNSCRIPT)  $SCRIPT written"
 
             done
         done
     done
 done
+
 SUBMIT=submit_g${GRID}km_hydro_${HYDRO}.sh
 rm -f $SUBMIT
 cat - > $SUBMIT <<EOF
 $SHEBANGLINE
 for FILE in do_g${GRID}km_${CLIMATE}_${TYPE}_*${HYDRO}.sh; do
-    qsub \$FILE
+  JOBID=$(qsub \$FILE)
+  fbname=$(basename "\$FILE" .sh)
+  POST=\${fbname}_post.sh
+  qsub -W depend=afterok:\${JOBID} \$POST
 done
 EOF
 
