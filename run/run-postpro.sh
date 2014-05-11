@@ -51,6 +51,41 @@ if [ -f ${filepre}.nc ]; then
     ncpdq -O -a time,y,x,z,zb ${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
     ncap2 -O -s "where(thk<1) {velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
     ncatted -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}.nc
+fi
+
+EOF
+
+cat - > $PLOT <<EOF
+
+$MYSHEBANGLINE
+$MYMPIQUEUELINE
+$MYMPITIMELINE
+$MYMPISIZELINE
+$MYMPIOUTLINE
+
+source ~/python/bin/activate
+
+cd \$PBS_O_WORKDIR
+  
+if [ ! -d $tl_dir ]; then
+    mkdir $tl_dir
+fi
+
+if [ ! -d ${tl_dir}/$nc_dir ]; then
+    mkdir ${tl_dir}/$nc_dir
+fi
+
+if [ ! -d ${tl_dir}/$fig_dir ]; then
+    mkdir ${tl_dir}/$fig_dir
+fi
+
+if [ ! -d ${tl_dir}/$spc_dir ]; then
+    mkdir ${tl_dir}/$spc_dir
+fi
+
+
+if [ -f ${filepre}.nc ]; then
+
     # remove files, gdal_contour can't overwrite?
     if [ -f ${tl_dir}/${spc_dir}/${filepre}_speed_contours.shp ]; then
         rm ${tl_dir}/${spc_dir}/${filepre}_speed_contours.*
@@ -62,17 +97,17 @@ if [ -f ${filepre}.nc ]; then
 
     rm ${tl_dir}/${spc_dir}/${filepre}_speed_contours.*
 
-    basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISJakobshavn1km.tif -o ${tl_dir}/${fig_dir}/Jakobshavn_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISJakobshavn250m.tif -o ${tl_dir}/${fig_dir}/Jakobshavn_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
-    basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISKangerdlugssuaq1km.tif -o ${tl_dir}/${fig_dir}/Kangerdlugssuaq_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISKangerdlugssuaq250m.tif -o ${tl_dir}/${fig_dir}/Kangerdlugssuaq_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
-   basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISHelheim1km.tif -o ${tl_dir}/${fig_dir}/Helheim_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+   basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISHelheim250m.tif -o ${tl_dir}/${fig_dir}/Helheim_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
-    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISJakobshavn1km.tif -o ${tl_dir}/${fig_dir}/Jakobshavn_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISJakobshavn250m.tif -o ${tl_dir}/${fig_dir}/Jakobshavn_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
-    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISKangerdlugssuaq1km.tif -o ${tl_dir}/${fig_dir}/Kangerdlugssuaq_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow  --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISKangerdlugssuaq250m.tif -o ${tl_dir}/${fig_dir}/Kangerdlugssuaq_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
-    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISHelheim1km.tif -o ${tl_dir}/${fig_dir}/Helheim_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow  --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISHelheim250m.tif -o ${tl_dir}/${fig_dir}/Helheim_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
     basemap-plot.py -v velsurf_mag --inner_titles velsurf_mag --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 

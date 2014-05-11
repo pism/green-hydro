@@ -142,7 +142,8 @@ for E in 1 2 3 ; do
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
                 POST=do_g${GRID}km_${EXPERIMENT}_post.sh
-                rm -f $SCRIPT $$POST
+                PLOT=do_g${GRID}km_${EXPERIMENT}_plot.sh
+                rm -f $SCRIPT $$POST $PLOT
             
                 OUTFILE=g${GRID}km_${EXPERIMENT}.nc
 
@@ -166,9 +167,10 @@ for E in 1 2 3 ; do
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
                 echo
-	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$\phi_l$'"=$PHILOW"
+	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO"
                 source run-postpro.sh
                 echo "## $POST written"
+                echo "### $PLOT written"
                 echo
                 echo
             done
@@ -184,7 +186,9 @@ for FILE in do_g${GRID}km_${CLIMATE}_${TYPE}_*${HYDRO}.sh; do
   JOBID=\$(qsub \$FILE)
   fbname=$(basename "\$FILE" .sh)
   POST=\${fbname}_post.sh
-  qsub -W depend=afterok:\${JOBID} \$POST
+  ID=\$(qsub -W depend=afterok:\${JOBID} \$POST)
+  PLOT=\${fbname}_plot.sh
+  qsub -W depend=afterok:\${ID} \$PLOT
 done
 EOF
 

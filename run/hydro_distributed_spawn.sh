@@ -146,8 +146,9 @@ for E in 1 ; do
             
 				    EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}            
 				    SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
-                                    POST=do_g${GRID}km_${EXPERIMENT}_post.sh
-                                    rm -f $SCRIPT $$POST
+				    POST=do_g${GRID}km_${EXPERIMENT}_post.sh
+				    PLOT=do_g${GRID}km_${EXPERIMENT}_plot.sh
+				    rm -f $SCRIPT $$POST $PLOT
             
 				    OUTFILE=g${GRID}km_${EXPERIMENT}.nc
 
@@ -172,8 +173,8 @@ for E in 1 ; do
                                     echo
 				    title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$c_1$'"=$OPEN;"'$c_2$'"=$CLOSE;"'$\omega$'"=$PROP;k=$COND;"'$\phi_l$'"=$PHILOW"
 				    source run-postpro.sh
-
-                                    echo "## $POST written"
+				    echo "## $POST written"
+				    echo "### $PLOT written"
                                     echo
                                     echo
 				done
