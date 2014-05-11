@@ -179,7 +179,7 @@ rm -f $SUBMIT
 cat - > $SUBMIT <<EOF
 $SHEBANGLINE
 for FILE in do_g${GRID}km_${CLIMATE}_${TYPE}_*${HYDRO}.sh; do
-  JOBID=$(qsub \$FILE)
+  JOBID=\$(qsub \$FILE)
   fbname=$(basename "\$FILE" .sh)
   POST=\${fbname}_post.sh
   qsub -W depend=afterok:\${JOBID} \$POST
