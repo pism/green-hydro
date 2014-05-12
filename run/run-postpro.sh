@@ -18,7 +18,6 @@ fig_dir=figures
 spc_dir=speed_contours
 
 cat - > $POST <<EOF
-
 $MYSHEBANGLINE
 $MYMPIQUEUELINE
 $MYMPITIMELINE
@@ -29,22 +28,21 @@ source ~/python/bin/activate
 
 cd \$PBS_O_WORKDIR
   
-if [ ! -d $tl_dir ]; then
-    mkdir $tl_dir
+if [ ! -d ${tl_dir} ]; then
+    mkdir ${tl_dir}
 fi
 
-if [ ! -d ${tl_dir}/$nc_dir ]; then
-    mkdir ${tl_dir}/$nc_dir
+if [ ! -d ${tl_dir}/${nc_dir} ]; then
+    mkdir ${tl_dir}/${nc_dir}
 fi
 
-if [ ! -d ${tl_dir}/$fig_dir ]; then
-    mkdir ${tl_dir}/$fig_dir
+if [ ! -d ${tl_dir}/${fig_dir} ]; then
+    mkdir ${tl_dir}/${fig_dir}
 fi
 
-if [ ! -d ${tl_dir}/$spc_dir ]; then
-    mkdir ${tl_dir}/$spc_dir
+if [ ! -d ${tl_dir}/${spc_dir} ]; then
+    mkdir ${tl_dir}/${spc_dir}
 fi
-
 
 if [ -f ${filepre}.nc ]; then
     # because QGIS doesn't like (x,y) ordering
@@ -56,7 +54,6 @@ fi
 EOF
 
 cat - > $PLOT <<EOF
-
 $MYSHEBANGLINE
 $MYMPIQUEUELINE
 $MYMPITIMELINE
@@ -67,35 +64,29 @@ source ~/python/bin/activate
 
 cd \$PBS_O_WORKDIR
   
-if [ ! -d $tl_dir ]; then
-    mkdir $tl_dir
+if [ ! -d ${tl_dir} ]; then
+    mkdir ${tl_dir}
 fi
 
-if [ ! -d ${tl_dir}/$nc_dir ]; then
-    mkdir ${tl_dir}/$nc_dir
+if [ ! -d ${tl_dir}/${nc_dir} ]; then
+    mkdir ${tl_dir}/${nc_dir}
 fi
 
-if [ ! -d ${tl_dir}/$fig_dir ]; then
-    mkdir ${tl_dir}/$fig_dir
+if [ ! -d ${tl_dir}/${fig_dir} ]; then
+    mkdir ${tl_dir}/${fig_dir}
 fi
 
-if [ ! -d ${tl_dir}/$spc_dir ]; then
-    mkdir ${tl_dir}/$spc_dir
+if [ ! -d ${tl_dir}/${spc_dir} ]; then
+    mkdir ${tl_dir}/${spc_dir}
 fi
-
-
-if [ -f ${filepre}.nc ]; then
-
-    # remove files, gdal_contour can't overwrite?
-    if [ -f ${tl_dir}/${spc_dir}/${filepre}_speed_contours.shp ]; then
-        rm ${tl_dir}/${spc_dir}/${filepre}_speed_contours.*
-    fi
-
+if [ -f ${tl_dir}/${nc_dir}/${filepre}.nc ]; then
+    rm -f ${tl_dir}/${spc_dir}/${filepre}_speed_contours.*
+ 
     gdal_contour -a speed -fl 100 200 1000 NETCDF:${tl_dir}/${nc_dir}/${filepre}.nc:velsurf_mag ${tl_dir}/${spc_dir}/${filepre}_speed_contours.shp
 
     ogr2ogr -overwrite -t_srs EPSG:4326 ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours.shp
 
-    rm ${tl_dir}/${spc_dir}/${filepre}_speed_contours.*
+    rm -f ${tl_dir}/${spc_dir}/${filepre}_speed_contours.*
 
     basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISJakobshavn250m.tif -o ${tl_dir}/${fig_dir}/Jakobshavn_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
@@ -103,7 +94,7 @@ if [ -f ${filepre}.nc ]; then
 
    basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISHelheim250m.tif -o ${tl_dir}/${fig_dir}/Helheim_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
-    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file surf_vels_mag_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISJakobshavn250m.tif -o ${tl_dir}/${fig_dir}/Jakobshavn_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISJakobshavn250m.tif -o ${tl_dir}/${fig_dir}/Jakobshavn_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
     basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow  --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISKangerdlugssuaq250m.tif -o ${tl_dir}/${fig_dir}/Kangerdlugssuaq_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
