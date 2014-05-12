@@ -193,9 +193,11 @@ cat - > $SUBMIT <<EOF
 $SHEBANGLINE
 for FILE in do_g${GRID}km_${CLIMATE}_${TYPE}_*${HYDRO}.sh; do
   JOBID=\$(qsub \$FILE)
-  fbname=$(basename "\$FILE" .sh)
+  fbname=\$(basename "\$FILE" .sh)
   POST=\${fbname}_post.sh
-  qsub -W depend=afterok:\${JOBID} \$POST
+  ID=\$(qsub -W depend=afterok:\${JOBID} \$POST)
+  PLOT=\${fbname}_plot.sh
+  qsub -W depend=afterok:\${ID} \$PLOT
 done
 EOF
 
