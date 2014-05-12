@@ -1,6 +1,6 @@
 
  MYSHEBANGLINE="#!/bin/bash"
-MYMPIQUEUELINE="#PBS -q shared"
+MYMPIQUEUELINE="#PBS -q transfer"
  MYMPITIMELINE="#PBS -l walltime=12:00:00"
  MYMPISIZELINE="#PBS -l nodes=1:ppn=1"
   MYMPIOUTLINE="#PBS -j oe"
