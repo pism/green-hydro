@@ -137,7 +137,9 @@ for E in 1 2 3 ; do
     
     EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_sia_hydro_${HYDRO}
     SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
-    rm -f $SCRIPT
+    POST=do_g${GRID}km_${EXPERIMENT}_post.sh
+    PLOT=do_g${GRID}km_${EXPERIMENT}_plot.sh
+    rm -f $SCRIPT $$POST $PLOT
     
     OUTFILE=g${GRID}km_${EXPERIMENT}.nc
     
@@ -162,12 +164,27 @@ for E in 1 2 3 ; do
 
     title="E=$E"
     source run-postpro.sh
+    echo "## $POST written"
+    echo "### $PLOT written"
 
 done
 
-
+SUBMIT=submit_g${GRID}km_hydro_${HYDRO}.sh
+rm -f $SUBMIT
+cat - > $SUBMIT <<EOF
+$SHEBANGLINE
+for FILE in do_g${GRID}km_${CLIMATE}_${TYPE}_*sia_hydro_${HYDRO}.sh; do
+  JOBID=\$(qsub \$FILE)
+  fbname=\$(basename "\$FILE" .sh)
+  POST=\${fbname}_post.sh
+  ID=\$(qsub -W depend=afterok:\${JOBID} \$POST)
+  PLOT=\${fbname}_plot.sh
+  qsub -W depend=afterok:\${ID} \$PLOT
+done
+EOF
 
 echo
-echo "($SPAWNSCRIPT)  use paramsubmit.sh to submit the scripts"
 echo
-
+echo "Run $SUBMIT to submit all jobs to the scheduler"
+echo
+echo
