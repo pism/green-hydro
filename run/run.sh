@@ -11,7 +11,7 @@
 set -e  # exit on error
 
 GRIDLIST="{40, 20, 10, 5, 2.5, 2, 1}"
-CLIMLIST="{const, paleo, pdd}"
+CLIMLIST="{const, paleo, pdd, forcing}"
 DYNALIST="{sia, hybrid}"
 HYDROLIST="{null, routing, distributed}"
 
@@ -154,6 +154,11 @@ elif [ "$2" = "paleo" ]; then
 elif [ "$2" = "pdd" ]; then
   climname="pdd-climate"
   COUPLER=" -atmosphere searise_greenland -surface pdd$FTT -ocean constant"
+elif [ "$2" = "forcing" ]; then
+  climname="rcm-forcing"
+  INLIST=""
+  COUPLER="-surface given -surface_given_file $PISM_BCFILE -ocean given -ocean_given_file $PISM_BCFILE -time_file $PISM_TIMEFILE"
+
 else
   echo "invalid second argument; must be in $CLIMLIST"
   exit
