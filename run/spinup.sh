@@ -110,6 +110,8 @@ elif [ "$4" = "old_bed" ]; then
     TYPE=$4
 elif [ "$4" = "970mW_hs" ]; then
     TYPE=$4
+elif [ "$4" = "jak_1985" ]; then
+    TYPE=$4
 else
   echo "invalid forth argument; must be in (${TYPELIST[@]})"
   exit
