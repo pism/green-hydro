@@ -77,8 +77,10 @@ def make_psd_plot(study, **kwargs):
         ax.plot(study[k].contour_values)
         slope, intercept, r_value, p_value, std_err = linregress(speed_obs.contour_values, study[k].contour_values)
         r = pearsonr(speed_obs.contour_values, study[k].contour_values)
-    corr = ("r = %1.4f"  %r_value)
-    ax.text(0.05, 0.35, corr, transform = ax.transAxes)
+        corr = "linregress r = {:1.4f}".format(r_value)
+        ax.text(0.05, 0.35, corr, transform = ax.transAxes)
+        corr = "pearson r = {:1.4f}".format(r[0])
+        ax.text(0.05, 0.25, corr, transform = ax.transAxes)
     ax.set_ylim(0, 50)
 
     for out_format in out_formats:
