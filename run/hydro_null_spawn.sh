@@ -16,7 +16,7 @@ set -e # exit on error
 SCRIPTNAME=hydro_null_spawn.sh
 
 CLIMLIST=(const, pdd)
-TYPELIST=(ctrl, old_bed, 970mW_hs)
+TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
 GRIDLIST=(20 10 5 2.5 2 1)
 if [ $# -lt 5 ] ; then
   echo "paramspawn.sh ERROR: needs 5 positional arguments ... ENDING NOW"

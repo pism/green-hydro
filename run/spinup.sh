@@ -25,7 +25,7 @@ set -e  # exit on error
 set -e # exit on error
 
 CLIMLIST=(const, paleo)
-TYPELIST=(ctrl, old_bed, 970mW_hs)
+TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
 GRIDLIST=(20 10 5 2.5 2 1)
 if [ $# -lt 2 ] ; then
   echo "spinup.sh ERROR: needs 4 positional arguments ... ENDING NOW"

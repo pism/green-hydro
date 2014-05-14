@@ -120,13 +120,17 @@ nc2cdo.py $PISMVERSION
 HS=970mW_hs
 CTRL=ctrl
 OLD=old_bed
+V85=jak_1985
 VERSION=3
 for GS in "20" "10" "5" "2.5" "2" "1"; do
     DATANAME=pism_Greenland_${GS}km_v${VERSION}
     wget -nc http://pism-docs.org/download/${DATANAME}.nc
+    wget -nc http://pism-docs.org/download/pism_Greenland_${GS}km_1985.nc
     nc2cdo.py ${DATANAME}.nc
     ncks -O $DATANAME.nc ${DATANAME}_${CTRL}.nc
     ncks -O -v topg,thk -x $DATANAME.nc ${DATANAME}_${OLD}.nc
+    ncks -O -v usurf,thk,topg -x $DATANAME.nc ${DATANAME}_${V85}.nc
+
     echo
     echo "Creating hotspot"
     echo 
@@ -147,8 +151,11 @@ for GS in "20" "10" "5" "2.5" "2" "1"; do
     ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}km.nc ${DATANAME}_${CTRL}.nc
     ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}km.nc ${DATANAME}_${HS}.nc
     ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
+    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}km.nc ${DATANAME}_${V85}.nc
+
     ncks -A -v thk,topg old_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
     ncatted -O -a _FillValue,thk,d,, -a missing_value,thk,d,, ${DATANAME}_${OLD}.nc
     ncap2 -O -s "where(thk<0) thk=0;" ${DATANAME}_${OLD}.nc ${DATANAME}_${OLD}.nc
+    ncks -A -v thk,usurf,topg pism_Greenland_${GS}km_1985.nc ${DATANAME}_${V85}.nc
 done
 
