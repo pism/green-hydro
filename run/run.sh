@@ -114,23 +114,20 @@ fi
 
 NN="$1" # first arg is number of processes
 
-if [ -z "${STARTEND}" ] ; then  # check if env var is NOT set
-    DURATION=$3
-    START=-$(($DURATION))
-    END=0
-    RUNSTARTEND="-ys $START -ye $END"
-else
-    STARTEND=$STARTEND
-    IFS=',' read START END <<<"$STARTEND"
-    RUNSTARTEND="-ys $START -ye $END"
-fi
-
 # are we doing force to thickness?
 PISM_FTT_FILE=$PISM_DATANAME
 if [ -z "${PARAM_FTT}" ] ; then  # check if env var is NOT set
     FTT=""
 else
     FTT=",forcing -force_to_thickness_file $PISM_FTT_FILE"
+fi
+
+
+# are we using a time file for forcing?
+if [ -z "${PISM_BCFILE}" ] ; then  # check if env var is NOT set
+    PISM_BCFILE=RACMO_CLRUN_10KM_CON_MM_06.nc
+else
+    PISM_BCFILE=$PISM_BCFILE
 fi
 
 # override config file?
@@ -157,7 +154,7 @@ elif [ "$2" = "pdd" ]; then
 elif [ "$2" = "forcing" ]; then
   climname="rcm-forcing"
   INLIST=""
-  COUPLER="-surface given -surface_given_file $PISM_BCFILE -ocean given -ocean_given_file $PISM_BCFILE -time_file $PISM_TIMEFILE"
+  COUPLER="-surface given -surface_given_file $PISM_BCFILE -ocean given -ocean_given_file $PISM_BCFILE"
 
 else
   echo "invalid second argument; must be in $CLIMLIST"
@@ -393,7 +390,7 @@ fi
 if [ -n "${EXVARS:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME          EXVARS = $EXVARS  (already set)"
 else
-  EXVARS="bwat,bwatvel,wallmelt,diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,taud_mag"
+  EXVARS="bwat,bwatvel,wallmelt,diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,taud_mag,flux_divergence"
   if [ "$5" = "hybrid" ]; then
     EXVARS="${EXVARS},hardav,velbase_mag,tauc,taub_mag"
   fi
@@ -432,12 +429,30 @@ echo "$SCRIPTNAME        dynamics = '$PHYS'"
 
 # set up diagnostics
 if [ -z "${NODIAGS}" ] ; then  # check if env var is NOT set
-  TSNAME=ts_$OUTNAME
-  TSTIMES=$START:$TSSTEP:$END
-  EXNAME=ex_$OUTNAME
-  EXTIMES=$START:$EXSTEP:$END
-  # check_stationarity.py can be applied to $EXNAME
-  DIAGNOSTICS="-ts_file $TSNAME -ts_times $TSTIMES -extra_file $EXNAME -extra_times $EXTIMES -extra_vars $EXVARS"
+
+    # are we using a time file for forcing?
+    if [ -z "${PISM_TIMEFILE}" ] ; then  # check if env var is NOT set
+        if [ -z "${STARTEND}" ] ; then  # check if env var is NOT set
+            DURATION=$3
+            START=-$(($DURATION))
+            END=0
+            RUNSTARTEND="-ys $START -ye $END"
+        else
+            STARTEND=$STARTEND
+            IFS=',' read START END <<<"$STARTEND"
+            RUNSTARTEND="-ys $START -ye $END"
+        fi
+        TSTIMES=$START:$TSSTEP:$END
+        EXTIMES=$START:$EXSTEP:$END
+    else
+        TSTIMES=$TSSTEP
+        EXTIMES=$EXSTEP
+        RUNSTARTEND="-time_file $PISM_TIMEFILE"
+    fi
+    TSNAME=ts_$OUTNAME
+    EXNAME=ex_$OUTNAME
+    # check_stationarity.py can be applied to $EXNAME
+    DIAGNOSTICS="-ts_file $TSNAME -ts_times $TSTIMES -extra_file $EXNAME -extra_times $EXTIMES -extra_vars $EXVARS"
 else
   DIAGNOSTICS=""
 fi

@@ -67,7 +67,7 @@ cdo sub $OUT.nc geoid_correction.nc ${OUT}_corrected.nc
 ncks -O  -v usurf -x pism_Greenland_1km_v3.nc $THK.nc
 ncks -A -v usurf  ${OUT}_corrected.nc $THK.nc
 # Calculate thickness of floating tongue following Motyka et al (2011)
-ncap2 -O -s "thk=usurf-topg; where(LandMask!=2) thk=0; thk_shelf=(1/((1028./910)-1)+1)*usurf; where(LandMask==0 && thk_shelf>300) thk=thk_shelf; where(LandMask==0 && (usurf-thk)<topg) topg=usurf-thk-200;" $THK.nc $THK.nc
+ncap2 -O -s "thk=usurf-topg; where(LandMask!=2) thk=0; thk_shelf=(1/((1028./910)-1)+1)*usurf; where(LandMask==0 && thk_shelf>300) thk=thk_shelf; where(LandMask==0) topg=-2000;" $THK.nc $THK.nc
 ncks -A -v x,y pism_Greenland_1km_v3.nc $THK.nc
 ncatted -a missing_value,,d,, -a _FillValue,,d,, -a grid_mapping,topg,o,c,"mapping" -a grid_mapping,usurf,o,c,"mapping" -a grid_mapping,thk_shelf,o,c,"mapping" $THK.nc
 OUTNAME=pism_Greenland_1km_1985
