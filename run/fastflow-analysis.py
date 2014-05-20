@@ -44,6 +44,46 @@ OUTLIER_THRESHOLD = 500.0   # m/a
 # define line colors
 colors = ppt.colorList()
 
+def write_file(fname, array, rasterOrigin, pixelWidth, pixelHeight, _FillValue, proj4str):
+
+    import gdal
+    import osr
+
+    cols = array.shape[1]
+    rows = array.shape[0]
+
+    driver = gdal.GetDriverByName('netCDF')
+    outRaster = driver.Create(fname, cols, rows, 1, gdal.GDT_Float32)
+    outband = outRaster.GetRasterBand(1)
+    outband.SetNoDataValue(_FillValue)
+    outband.WriteArray(array)
+    outRasterSRS = osr.SpatialReference()
+    outRasterSRS.ImportFromProj4(proj4str)
+    outRaster.SetProjection(outRasterSRS.ExportToWkt())
+    outband.FlushCache()
+
+
+def get_indices(x, y, x0, y0):
+    j = np.arange(len(x))
+    i = np.arange(len(y))
+    j_ind, i_ind = (np.max(j * (x < x0)), np.max(i * (y < y0)))
+    return i_ind, j_ind
+
+def cross_correlation(obs, exp, ij_bbox):
+
+    from scipy.signal import correlate2d
+
+    i0, j0, i1, j1 = ij_bbox
+
+    print(("i = %d, j = %d" %  (i0, j0)))
+    print(("i = %d, j = %d" %  (i1, j1)))
+    fill_value = 0
+    obs_vals = np.ma.filled(obs.values[i0:i1, j0:j1], fill_value=fill_value)
+    exp_vals = np.ma.filled(exp.values[i0:i1, j0:j1], fill_value=fill_value)
+    cor = np.squeeze(correlate2d(exp_vals, obs_vals, mode='valid'))
+    cor_mat = np.squeeze(correlate2d(exp_vals, obs_vals, mode='full'))
+    return cor, cor_mat
+
 def make_psd_plot(study, **kwargs):
     '''Make a power spectrum plot with observations and experiments'''
 
@@ -228,6 +268,8 @@ if __name__ == "__main__":
     speed_obs = ppt.Observation(obs_file, obs_variable, bins)
 
     xdim, ydim, zdim, tdim = ppt.get_dims(thk_obs.nc)
+    proj4 = ppt.get_projection_from_file(speed_obs.nc)
+    proj4str = proj4.srs
 
     x_var = np.squeeze(thk_obs.nc.variables[xdim])
     y_var = np.squeeze(thk_obs.nc.variables[ydim])
@@ -276,7 +318,7 @@ if __name__ == "__main__":
     width = (vmax - vmin) / (Nbins)
     x = bins[:-1:] + width / 2
 
-    label_param_list = ['q', 'e', '$\\alpha$']
+    label_param_list = ['q', 'e', '$\\alpha$', 'thermo', 'stress']
     
     experiments = []
     no_experiments = len(args)
@@ -294,6 +336,30 @@ if __name__ == "__main__":
         contour_speed_f = RectBivariateSpline(y_var, x_var, experiment.values)
         experiment.contour_values = contour_speed_f.ev(contour_yf, contour_xf)
 
+        # Some statistics
+        print("  * Cross correlation tatistics")
+
+        bbox = [-440000, -2276500, -360000, -2227000]
+        xmin, ymin, xmax, ymax = bbox
+        i0, j0 = get_indices(x_var, y_var, xmin, ymin)
+        i1, j1 = get_indices(x_var, y_var, xmax, ymax)
+        ij_bbox = [i0, j0, i1, j1]
+        origin = [bbox[0] - 1000, bbox[1] - 1000]
+        pixelWidth = 2000
+        pixelHeight = 2000
+
+        cor, cor_mat = cross_correlation(speed_obs, experiment, ij_bbox)
+        print ("chi = {}".format(cor))
+
+        out_file = ("cor_sia_enhancement_factor_" +
+                    str(experiment.parameter_dict['sia_enhancement_factor']) +
+                    "_pseudo_plastic_q_" +
+                    str(experiment.parameter_dict['pseudo_plastic_q']) +
+                    "_till_effective_fraction_overburden_" +
+                    str(experiment.parameter_dict['till_effective_fraction_overburden']) + '.nc')
+        write_file(out_file, cor_mat, origin, pixelWidth, pixelHeight, -2e9, proj4str)
+
+        experiment.cor = cor
         # Some statistics
         print("  * Statistics")
         rmse = ppt.get_rmse(experiment.values, speed_obs.values, valid_cells)
