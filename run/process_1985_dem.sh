@@ -34,6 +34,7 @@ gdalwarp -overwrite -srcnodata 1.70141e+038 -dstnodata 0 -s_srs EPSG:32622 -t_sr
 ncrename -v Band1,surface_1985 ${DATANAME}_epsg3413.nc
 ncatted -a _FillValue,surface_1985,d,, ${DATANAME}_epsg3413.nc
 
+
 mcbfile=Greenland_150m_mcb_jpl_v1.1
 for var in "surface" "bed"; do
     gdalwarp -overwrite  -tr 150 150 -te $xmin $ymin $xmax $ymax -r average  -of GTiff  NETCDF:${mcbfile}.nc:${var} ${mcbfile}_ext_${var}.tif
