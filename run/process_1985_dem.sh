@@ -18,24 +18,36 @@ fi
 CUT=../outlines/dem_clean.shp
 DATANAME=DEM_5.5_july_24_85
 wget -nc http://pism-docs.org/download/${DATANAME}.dat
-gdal_translate -a_nodata 1.70141e38 -of GTiff -a_srs EPSG:32622 ${DATANAME}.dat ${DATANAME}.tif
-gdal_translate -of netCDF ${DATANAME}.tif ${DATANAME}.nc
-ncap2 -O -s "thk=(1/((1028./910)-1)+1)*Band1" ${DATANAME}.nc ${DATANAME}.nc
+#ncap2 -O -s "thk=(1/((1028./910)-1)+1)*Band1" ${DATANAME}.nc ${DATANAME}.nc
+gdalwarp -overwrite -t_srs EPSG:32622 -of GTiff $DATANAME.dat $DATANAME.tif
 
-# Remap 1985 to GIMP DEM projection, dimensions, and resolution
-# gdalwarp -overwrite -srcnodata 1.69971e+38 -dstnodata 0 -s_srs EPSG:32622 -t_srs EPSG:3413 -tr 90 90 -te -639955 -3355595 855845 -655595 -r bilinear -cutline $CUT -of GTiff  ${DATANAME}.tif ${DATANAME}_epsg3413.tif
 
-gdalwarp -overwrite -srcnodata 1.70141e+038 -dstnodata 0 -s_srs EPSG:32622 -t_srs EPSG:3413 -tr 90 90 -te -639955 -3355595 855845 -655595 -r bilinear -cutline $CUT -of netCDF  ${DATANAME}.dat ${DATANAME}_epsg3413.nc
-ncrename -v Band1,usurf_1985 ${DATANAME}_epsg3413.nc
-ncatted -a _FillValue,usurf_1985,d,, ${DATANAME}_epsg3413.nc
+# Create a buffer that is a multiple of the grid resolution
+buffer=15000
+xmin=$((-638000 - $buffer))
+ymin=$((-3349600 - $buffer))
+xmax=$((865000 + $buffer))
+ymax=$((-657600 + $buffer))
 
-GIMP=gimpdem_90m
-wget -nc ftp://ftp-bprc.mps.ohio-state.edu/downloads/gdg/gimpdem/${GIMP}.tif
-gdal_translate -of netCDF ${GIMP}.tif ${GIMP}.nc
-ncks -O ${GIMP}.nc  ${GIMP}_merged.nc
-ncrename -v Band1,usurf ${GIMP}_merged.nc
-ncks -A -v usurf_1985 ${DATANAME}_epsg3413.nc ${GIMP}_merged.nc
-ncap2 -O -s "where(usurf_1985>0) usurf=usurf_1985;" ${GIMP}_merged.nc ${GIMP}_merged.nc
+gdalwarp -overwrite -srcnodata 1.70141e+038 -dstnodata 0 -s_srs EPSG:32622 -t_srs EPSG:3413 -tr 150 150 -te $xmin $ymin $xmax $ymax -r average -cutline $CUT -of netCDF  ${DATANAME}.tif ${DATANAME}_epsg3413.nc
+
+ncrename -v Band1,surface_1985 ${DATANAME}_epsg3413.nc
+ncatted -a _FillValue,surface_1985,d,, ${DATANAME}_epsg3413.nc
+
+mcbfile=Greenland_150m_mcb_jpl_v1.1
+for var in "surface" "bed"; do
+    gdalwarp -overwrite  -tr 150 150 -te $xmin $ymin $xmax $ymax -r average  -of GTiff  NETCDF:${mcbfile}.nc:${var} ${mcbfile}_ext_${var}.tif
+    gdal_translate -of netCDF ${mcbfile}_ext_${var}.tif ${mcbfile}_ext_${var}.nc
+    ncrename -O -v Band1,$var ${mcbfile}_ext_${var}.nc ${mcbfile}_ext_${var}.nc 
+done
+
+ncks -O ${mcbfile}_ext_surface.nc  ${mcbfile}_merged.nc
+ncks -A ${mcbfile}_ext_bed.nc  ${mcbfile}_merged.nc
+ncks -A ${DATANAME}_epsg3413.nc  ${mcbfile}_merged.nc
+ncap2 -O -s "where(surface_1985>0) surface=surface_1985;" ${mcbfile}_merged.nc ${mcbfile}_merged.nc
+
+
+exit
 
 #
 OUT=usurf_1km_1985
@@ -74,9 +86,9 @@ OUTNAME=pism_Greenland_1km_1985
 ncks -O -v thk_shelf -x $THK.nc ${OUTNAME}.nc
 nc2cdo.py ${OUTNAME}.nc
 
-for GRID in "20" "10" "2.5" "2"; do
-    SRGRID=searise_${GRID}km_grid.nc
-    create_greenland_grid.py -g $GRID $SRGRID
+for GRID in 18000 9000 4500 3600 1800 900 450; do
+    SRGRID=epsg3413_${GRID}m_grid.nc
+    create_greenland_epsg3413_grid.py -g $GRID $SRGRID
     nc2cdo.py $SRGRID
     
     if [[ $NN == 1 ]] ; then
@@ -89,19 +101,3 @@ for GRID in "20" "10" "2.5" "2"; do
     ncatted -a grid_mapping,thk,o,c,"mapping" -a grid_mapping,LandMask,o,c,"mapping" -a grid_mapping,usurf,o,c,"mapping" -a grid_mapping,topg,o,c,"mapping" pism_Greenland_${GRID}km_1985.nc
 done
 
-# remapcon has problems with generating weights for 5km grid.
-# Use bilinear
-for GRID in "5"; do
-    SRGRID=searise_${GRID}km_grid.nc
-    create_greenland_grid.py -g $GRID $SRGRID
-    nc2cdo.py $SRGRID
-    
-    if [[ $NN == 1 ]] ; then
-	cdo -v remapbil,$SRGRID ${OUTNAME}.nc pism_Greenland_${GRID}km_1985.nc
-    else
-	cdo -v -P $NN remapbil,$SRGRID ${OUTNAME}.nc pism_Greenland_${GRID}km_1985.nc
-    fi
-    ncap2 -O -s "where(thk<0) thk=0." pism_Greenland_${GRID}km_1985.nc pism_Greenland_${GRID}km_1985.nc
-    ncks -A -v x,y,mapping $SRGRID pism_Greenland_${GRID}km_1985.nc
-    ncatted -a grid_mapping,thk,o,c,"mapping" -a grid_mapping,LandMask,o,c,"mapping" -a grid_mapping,usurf,o,c,"mapping" -a grid_mapping,topg,o,c,"mapping" pism_Greenland_${GRID}km_1985.nc
-done
