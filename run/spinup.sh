@@ -26,7 +26,7 @@ set -e # exit on error
 
 CLIMLIST=(const, paleo)
 TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
-GRIDLIST=(20 10 5 2.5 2 1)
+GRIDLIST=(18000 9000 4500 3600 1800 900)
 if [ $# -lt 2 ] ; then
   echo "spinup.sh ERROR: needs 4 positional arguments ... ENDING NOW"
   echo
@@ -76,17 +76,17 @@ OFORMAT=$PISM_OFORMAT
 NN="$1"
 
 # set GRID from argument 2
-if [ "$2" = "20" ]; then
+if [ "$2" = "18000" ]; then
     GRID=$2
-elif [ "$2" = "10" ]; then
+elif [ "$2" = "9000" ]; then
     GRID=$2
-elif [ "$2" = "5" ]; then
+elif [ "$2" = "4500" ]; then
     GRID=$2
-elif [ "$2" = "2.5" ]; then
+elif [ "$2" = "3600" ]; then
     GRID=$2
-elif [ "$2" = "2" ]; then
+elif [ "$2" = "1800" ]; then
     GRID=$2
-elif [ "$2" = "1" ]; then
+elif [ "$2" = "900" ]; then
     GRID=$2
 else
   echo "invalid second argument; must be in (${GRIDLIST[@]})"
@@ -122,7 +122,7 @@ export PISM_EXPERIMENT=$EXPERIMENT
 export PISM_TITLE="Greenland Parameter Study"
 
 
-INFILE=pism_Greenland_${GRID}km_v3_${TYPE}.nc
+INFILE=pism_Greenland_${GRID}m_mcb_jpl_v1.1_${TYPE}.nc
 PISM_DATANAME=$INFILE
 DURA=100000
 START=-125000
@@ -137,11 +137,11 @@ MPIQUEUELINE="#PBS -q $QUEUE"
  MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROCS_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
-SCRIPT="do_${GRID}km_${CLIMATE}-spinup-${TYPE}.sh"
+SCRIPT="do_${GRID}m_${CLIMATE}-spinup-${TYPE}.sh"
 rm -f $SCRIPT
 EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization $TYPE"
 
-OUTFILE=g${GRID}km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
+OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}.nc
 
 # insert preamble
 echo $SHEBANGLINE >> $SCRIPT
@@ -157,13 +157,13 @@ echo >> $SCRIPT # add newline
 # NOTE
 #
 # The first 'if' statement ensure that only runs that are on the grid
-# refinement path 20->10->5->2.5->2->1km are being written to the 'do' script.
-# For example on the 10km grid the first run from -125ka to -25ka is not done.
+# refinement path 18000->9000->4500->3600->1800->900m are being written to the 'do' script.
+# For example on the 9000m grid the first run from -125ka to -25ka is not done.
 # The second 'if' statment makes sure the appropriate file is chosen for regridding.
 # I wish I knew a cleaner way to achieve this in bash.
 
  
-if [ $GRID == "20" ]; then      
+if [ $GRID == "18000" ]; then      
     cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME  ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 else
@@ -171,8 +171,8 @@ else
 fi
 echo >> $SCRIPT
 
-if [ $GRID == "10" ]; then
-    REGRIDFILE=g20km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
+if [ $GRID == "9000" ]; then
+    REGRIDFILE=g18000m_m${MA}ka_${CLIMATE}_${TYPE}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
@@ -183,9 +183,9 @@ END=-5000
 MKA=$(($END/-1000))
 
 
-OUTFILE=g${GRID}km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
+OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}.nc
 
-if [[ ($GRID == "20") || ($GRID == "10") ]]; then      
+if [[ ($GRID == "18000") || ($GRID == "9000") ]]; then      
     cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_a.\${PBS_JOBID}" >> $SCRIPT
 else
@@ -194,8 +194,8 @@ fi
 echo >> $SCRIPT
 
 
-if [ $GRID == "5" ]; then
-    REGRIDFILE=g10km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
+if [ $GRID == "4500" ]; then
+    REGRIDFILE=g9000m_m${MA}ka_${CLIMATE}_${TYPE}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
@@ -203,12 +203,12 @@ fi
 DURA=4000
 START=-5000
 END=-1000
-MKA=$(($END/-1000))
+MKA=$(($END/-1))
 
 
-OUTFILE=g${GRID}km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
+OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}.nc
       
-if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") ]]; then      
+if [[ ($GRID == "18000") || ($GRID == "9000") || ($GRID == "4500") ]]; then      
     cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_b.\${PBS_JOBID}" >> $SCRIPT
 else
@@ -216,8 +216,8 @@ else
 fi
 echo >> $SCRIPT
 
-if [ $GRID == "2.5" ]; then
-    REGRIDFILE=g5km_m${MKA}ka_${CLIMATE}_${TYPE}.nc
+if [ $GRID == "3600" ]; then
+    REGRIDFILE=g4500m_m${MKA}ka_${CLIMATE}_${TYPE}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
@@ -226,12 +226,12 @@ fi
 DURA=500
 START=-1000
 END=-500
-MA=$(($END/-1))
+MKA=$(($END/-1000))
 
 
-OUTFILE=g${GRID}km_m${MA}a_${CLIMATE}_${TYPE}.nc
+OUTFILE=g${GRID}m_m${MKA}a_${CLIMATE}_${TYPE}.nc
 
-if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") || ($GRID == "2.5") ]]; then      
+if [[ ($GRID == "18000") || ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") ]]; then      
     cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_c.\${PBS_JOBID}" >> $SCRIPT
 else
@@ -240,7 +240,7 @@ fi
 echo >> $SCRIPT
 
 if [ $GRID == "2" ]; then
-    REGRIDFILE=g2.5km_m${MA}a_${CLIMATE}_${TYPE}.nc
+    REGRIDFILE=g3600m_m${MKA}a_${CLIMATE}_${TYPE}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
@@ -251,9 +251,9 @@ END=-100
 MA=$(($END/-1))
 
 
-OUTFILE=g${GRID}km_m${MA}a_${CLIMATE}_${TYPE}.nc
+OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}.nc
       
-if [[ ($GRID == "20") || ($GRID == "10") || ($GRID == "5") || ($GRID == "2.5") || ($GRID == "2") ]]; then      
+if [[ ($GRID == "18000") || ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800") ]]; then      
     cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_d.\${PBS_JOBID}" >> $SCRIPT
 else
@@ -266,12 +266,12 @@ START=-100
 END=0
 
 if [ $GRID == "1" ]; then
-    REGRIDFILE=g2km_m${MA}a_${CLIMATE}_${TYPE}.nc
+    REGRIDFILE=g1800m_m${MA}a_${CLIMATE}_${TYPE}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
 
-OUTFILE=g${GRID}km_0_${CLIMATE}_${TYPE}.nc
+OUTFILE=g${GRID}m_0_${CLIMATE}_${TYPE}.nc
       
 cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
 echo "$cmd 2>&1 | tee job_e.\${PBS_JOBID}" >> $SCRIPT

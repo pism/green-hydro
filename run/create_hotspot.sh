@@ -33,34 +33,27 @@
 #   (x,y) = (-32000m, -1751180m)  in projection already used in $DATANAME
 # parameters: radius of spot = 50000m and heat is 970 mW m-2 from Fahnstock et al 2001
 
-set -e  # exit on error
+# NOTE 5/20/2014:
+# Switch to EPSG:3413, use coordinates in EPSG:3413 projection
+# 207000 -1630000
 
-NN=1  # default no of processors
+set -e  -x # exit on error
+
+INFILE=foo.nc
 if [ $# -gt 0 ] ; then
-  NN="$1"
+  INFILE="$1"
 fi
 
-GRID=5  # default grid resolution in km
+OUTFILE=bar.nc
 if [ $# -gt 1 ] ; then
-  GRID="$2"
+  OUTFILE="$2"
 fi
 
-DATANAME=Greenland_${GRID}km_v3_ctrl
-if [ $# -gt 2 ] ; then
-  DATANME="$3"
-fi
-PISMVERSION=pism_${DATANAME}.nc
-
-OUTNAME=pism_${DATANAME}_970mW_hs.nc
-if [ $# -gt 3 ] ; then
-  OUTNAME="$4"
-fi
-
-cp $PISMVERSION $OUTNAME
+cp $INFILE $OUTFILE
 
 # center:
-XSPOT=35500
-NEGYSPOT=1647755
+XSPOT=20700
+NEGYSPOT=1630000
 
 # parameters for ellipse and rotation in m and heat to apply there
 ASPOT=123500
@@ -70,39 +63,39 @@ SINTHETA=0.83743
 
 GHFSPOT=0.970   # from Fahnstock et al 2001; in W m-2
 
-ncrename -v bheatflx,bheatflxSR $OUTNAME  # keep Shapiro & Ritzwoller
+ncrename -v bheatflx,bheatflxSR $OUTFILE  # keep Shapiro & Ritzwoller
 
 # do equivalent of Matlab's:  [xx,yy] = meshgrid(x,y)
-ncap2 -t $NN -O -s 'zero=0.0*lat' $OUTNAME $OUTNAME # note lat=lat(x,y)
-ncap2 -t $NN -O -s 'xx=zero+x' $OUTNAME $OUTNAME
-ncap2 -t $NN -O -s 'yy=zero+y' $OUTNAME $OUTNAME
+ncap2 -O -s 'zero=0.0*lat' $OUTFILE $OUTFILE # note lat=lat(x,y)
+ncap2 -O -s 'xx=zero+x' $OUTFILE $OUTFILE
+ncap2 -O -s 'yy=zero+y' $OUTFILE $OUTFILE
 XIROT="xi=${COSTHETA}*(xx-${XSPOT})+${SINTHETA}*(yy+${NEGYSPOT})"
-ncap2 -t $NN -O -s $XIROT $OUTNAME $OUTNAME
+ncap2 -O -s $XIROT $OUTFILE $OUTFILE
 ETAROT="eta=-${SINTHETA}*(xx-${XSPOT})+${COSTHETA}*(yy+${NEGYSPOT})"
-ncap2 -t $NN -O -s $ETAROT $OUTNAME $OUTNAME
+ncap2 -O -s $ETAROT $OUTFILE $OUTFILE
 
 # filled ellipse is:   xi^2/a^2 + eta^2/b^2 < 1
 ELLLEFT="eleft=(xi*xi)/(${ASPOT}*${ASPOT})"
-ncap2 -t $NN -O -s $ELLLEFT $OUTNAME $OUTNAME
+ncap2 -O -s $ELLLEFT $OUTFILE $OUTFILE
 ELLRIGHT="eright=(eta*eta)/(${BSPOT}*${BSPOT})"
-ncap2 -t $NN -O -s $ELLRIGHT $OUTNAME $OUTNAME
-ncap2 -t $NN -O -s 'hotmask=(-eleft+eright-1<0)' $OUTNAME $OUTNAME
+ncap2 -O -s $ELLRIGHT $OUTFILE $OUTFILE
+ncap2 -O -s 'hotmask=(-eleft+eright-1<0)' $OUTFILE $OUTFILE
 
 # actually create hot spot
 NEWBHEATFLX="bheatflx=hotmask*${GHFSPOT}+!hotmask*bheatflxSR"
-ncap2 -t $NN -O -s $NEWBHEATFLX $OUTNAME $OUTNAME
+ncap2 -O -s $NEWBHEATFLX $OUTFILE $OUTFILE
 
 # ncap2 leaves hosed attributes; start over
-ncatted -a ,bheatflx,d,, $OUTNAME   # delete all attributes
-ncatted -a units,bheatflx,c,c,"W m-2" $OUTNAME
-ncatted -a long_name,bheatflx,c,c,"basal geothermal flux" $OUTNAME
-ncatted -a propose_standard_name,bheatflx,c,c,"lithosphere_upward_heat_flux" $OUTNAME
+ncatted -a ,bheatflx,d,, $OUTFILE   # delete all attributes
+ncatted -a units,bheatflx,c,c,"W m-2" $OUTFILE
+ncatted -a long_name,bheatflx,c,c,"basal geothermal flux" $OUTFILE
+ncatted -a propose_standard_name,bheatflx,c,c,"lithosphere_upward_heat_flux" $OUTFILE
 
 # clear out the temporary variables and only leave additional 'bheatflxSR'
-ncks -O -x -v xx,yy,xi,eta,eleft,eright,hotmask,zero,bheatflxSR $OUTNAME $OUTNAME
+ncks -O -x -v xx,yy,xi,eta,eleft,eright,hotmask,zero,bheatflxSR $OUTFILE $OUTFILE
 
-echo "PISM-readable file '$OUTNAME' created from '$PISMVERSION':"
-echo "  * variable 'bheatflxSR' is copy of 'bheatflx' from '$PISMVERSION'"
+echo "PISM-readable file '$OUTFILE' created from '$INFILE':"
+echo "  * variable 'bheatflxSR' is copy of 'bheatflx' from '$INFILE'"
 echo "  * variable 'bheatflx' has added hot spot near source of NE Greenland ice stream:"
 echo "      center: (74 deg N lat, -40 W lon)"
 echo "      radius: $RSPOT m"

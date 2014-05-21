@@ -10,7 +10,7 @@
 
 set -e  # exit on error
 
-GRIDLIST="{40, 20, 10, 5, 2.5, 2, 1}"
+GRIDLIST="{36000, 18000, 9000, 4500, 3600, 1800, 900}"
 CLIMLIST="{const, paleo, pdd, forcing}"
 DYNALIST="{sia, hybrid}"
 HYDROLIST="{null, routing, distributed}"
@@ -36,7 +36,7 @@ if [ $# -lt 5 ] ; then
   echo "    PROCS     = 1,2,3,... is number of MPI processes"
   echo "    CLIMATE   in $CLIMLIST"
   echo "    DURATION  = model run time in years; does '-ys -DURATION -ye 0'"
-  echo "    GRID      in $GRIDLIST (km)"
+  echo "    GRID      in $GRIDLIST (m)"
   echo "    DYNAMICS  in $DYNALIST; sia is non-sliding; default = sia"
   echo "    HYDRO     in $HYDROLIST; default = null"
   echo "    OUTFILE   optional name of output file; default = unnamed.nc"
@@ -84,7 +84,7 @@ if [ $# -lt 5 ] ; then
   echo
   echo "example usage 1:"
   echo
-  echo "    $ ./spinup.sh 4 const 1000 20 sia"
+  echo "    $ ./spinup.sh 4 const 1000 18000 sia"
   echo
   echo "  Does spinup with 4 processors, constant-climate, 1000 year run, 20 km"
   echo "  grid, and non-sliding SIA stress balance.  Bootstraps from and outputs to"
@@ -92,7 +92,7 @@ if [ $# -lt 5 ] ; then
   echo
   echo "example usage 2:"
   echo
-  echo "    $ PISM_DO=echo ./spinup.sh 128 paleo 100.0 5 hybrid out.nc boot.nc &> foo.sh"
+  echo "    $ PISM_DO=echo ./spinup.sh 128 paleo 100.0 4500 hybrid out.nc boot.nc &> foo.sh"
   echo
   echo "  Creates a script foo.sh for spinup with 128 processors, simulated paleo-climate,"
   echo "  5 km grid, sliding with SIA+SSA hybrid, output to {out.nc,ts_out.nc,ex_out.nc},"
@@ -125,7 +125,7 @@ fi
 
 # are we using a time file for forcing?
 if [ -z "${PISM_BCFILE}" ] ; then  # check if env var is NOT set
-    PISM_BCFILE=RACMO_CLRUN_10KM_CON_MM_06.nc
+    PISM_BCFILE=RACMO_CLRUN_10KM_CON_MM_EPSG3413.nc
 else
     PISM_BCFILE=$PISM_BCFILE
 fi
@@ -171,41 +171,40 @@ COARSEVGRID="-Mz 101 -Mbz 11 -z_spacing equal ${VDIMS} ${COARSESKIP}"
 MEDIUMVGRID="-Mz 201 -Mbz 21 -z_spacing equal ${VDIMS} ${MEDIUMSKIP}"
 FINEVGRID="-Mz 201 -Mbz 21 -z_spacing equal ${VDIMS} ${FINESKIP}"
 FINESTVGRID="-Mz 401 -Mbz 41 -z_spacing equal ${VDIMS} ${FINESTSKIP}"
-if [ "$4" == "40" ]; then
-  dx=40
+if [ "$4" == "36000" ]; then
+  dx=$4
   myMx=38
   myMy=71
   vgrid=$COARSEVGRID
-elif [ "$4" == "20" ]; then
-  dx=20
-  myMx=76
-  myMy=141
+elif [ "$4" == "18000" ]; then
+  dx=$4
+  myMx=85
+  myMy=151
   vgrid=$COARSEVGRID
-elif [ "$4" == "10" ]; then
-  dx=10
-  myMx=151
-  myMy=281
+elif [ "$4" == "9000" ]; then
+  dx=$4
+  myMx=170
+  myMy=302
   vgrid=$MEDIUMVGRID
-elif [ "$4" == "5" ]; then
-  # "native" resolution in data file, with 561 x 301 grid
-  dx=5
-  myMx=301
-  myMy=561
+elif [ "$4" == "4500" ]; then
+  dx=$4
+  myMx=341
+  myMy=605
   vgrid=$MEDIUMVGRID
-elif [ "$4" == "2.5" ]; then
-  dx=3
-  myMx=501
-  myMy=934
+elif [ "$4" == "3600" ]; then
+  dx=$4
+  myMx=426
+  myMy=756
   vgrid=$FINEVGRID
-elif [ "$4" == "2" ]; then
-  dx=2
-  myMx=751
-  myMy=1401
+elif [ "$4" == "1800" ]; then
+  dx=$4
+  myMx=852
+  myMy=1512
   vgrid=$FINEVGRID
-elif [ "$4" == "1" ]; then
-  dx=1
-  myMx=1501
-  myMy=2801
+elif [ "$4" == "900" ]; then
+  dx=$4
+  myMx=1703
+  myMy=3024
   vgrid=$FINESTVGRID
 else
   echo "invalid fourth argument: must be in $GRIDLIST"
@@ -310,7 +309,7 @@ INLIST="${INLIST} $INNAME $REGRIDFILE $CONFIG"
 echo
 echo "# ======================================================================="
 echo "# PISM Greenland run:"
-echo "#    $NN processors, $DURATION a run, $dx km grid, $climname, $5 dynamics"
+echo "#    $NN processors, $DURATION a run, $dx m grid, $climname, $5 dynamics"
 echo "# ======================================================================="
 
 # actually check for input files

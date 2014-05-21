@@ -121,41 +121,42 @@ HS=970mW_hs
 CTRL=ctrl
 OLD=old_bed
 V85=jak_1985
-VERSION=3
-for GS in "20" "10" "5" "2.5" "2" "1"; do
-    DATANAME=pism_Greenland_${GS}km_v${VERSION}
+VERSION=1.1
+for GS in "18000" "9000" "4500" "3600" "1800" "900"; do
+    DATANAME=pism_Greenland_${GS}m_mcb_jpl_v${VERSION}
     wget -nc http://pism-docs.org/download/${DATANAME}.nc
-    wget -nc http://pism-docs.org/download/pism_Greenland_${GS}km_1985.nc
+    # wget -nc http://pism-docs.org/download/pism_Greenland_${GS}m_1985.nc
     nc2cdo.py ${DATANAME}.nc
     ncks -O $DATANAME.nc ${DATANAME}_${CTRL}.nc
-    ncks -O -v topg,thk -x $DATANAME.nc ${DATANAME}_${OLD}.nc
-    ncks -O -v usurf,thk,topg -x $DATANAME.nc ${DATANAME}_${V85}.nc
+    ncks -O -v bed,thickness -x $DATANAME.nc ${DATANAME}_${OLD}.nc
+    # ncks -O -v usurf,thk,topg -x $DATANAME.nc ${DATANAME}_${V85}.nc
 
     echo
     echo "Creating hotspot"
     echo 
-    sh create_hotspot.sh $NN $GS ${DATANAME}.nc ${DATANAME}_${HS}.nc
+    sh create_hotspot.sh ${DATANAME}.nc ${DATANAME}_${HS}.nc
     echo
     echo "Adding climatic fields"
     echo
     if [[ $NN == 1 ]] ; then
-	REMAP_EXTRAPOLATE=on cdo remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}km.nc
-	REMAP_EXTRAPOLATE=on cdo remapbil,${DATANAME}.nc $PISMVERSIONOLD old_Greenland_${GS}km.nc
+	REMAP_EXTRAPOLATE=on cdo remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}m.nc
+	REMAP_EXTRAPOLATE=on cdo remapbil,${DATANAME}.nc $PISMVERSIONOLD old_Greenland_${GS}m.nc
     else
-	REMAP_EXTRAPOLATE=on cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}km.nc
-	REMAP_EXTRAPOLATE=on cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSIONOLD old_Greenland_${GS}km.nc
+	REMAP_EXTRAPOLATE=on cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}m.nc
+	REMAP_EXTRAPOLATE=on cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSIONOLD old_Greenland_${GS}m.nc
     fi
-    ncks -A -v x,y ${DATANAME}.nc tmp_Greenland_${GS}km.nc
-    fill_missing.py -v climatic_mass_balance,precipitation,ice_surface_temp -f tmp_Greenland_${GS}km.nc -o filled_Greenland_${GS}km.nc
+    ncks -A -v x,y ${DATANAME}.nc tmp_Greenland_${GS}m.nc
+    fill_missing.py -v climatic_mass_balance,precipitation,ice_surface_temp -f tmp_Greenland_${GS}m.nc -o filled_Greenland_${GS}m.nc
     echo
-    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}km.nc ${DATANAME}_${CTRL}.nc
-    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}km.nc ${DATANAME}_${HS}.nc
-    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
-    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}km.nc ${DATANAME}_${V85}.nc
+    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}m.nc ${DATANAME}_${CTRL}.nc
+    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}m.nc ${DATANAME}_${HS}.nc
+    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}m.nc ${DATANAME}_${OLD}.nc
+    # ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}m.nc ${DATANAME}_${V85}.nc
 
-    ncks -A -v thk,topg old_Greenland_${GS}km.nc ${DATANAME}_${OLD}.nc
-    ncatted -O -a _FillValue,thk,d,, -a missing_value,thk,d,, ${DATANAME}_${OLD}.nc
-    ncap2 -O -s "where(thk<0) thk=0;" ${DATANAME}_${OLD}.nc ${DATANAME}_${OLD}.nc
-    ncks -A -v thk,usurf,topg pism_Greenland_${GS}km_1985.nc ${DATANAME}_${V85}.nc
+    ncks -A -v thk,topg old_Greenland_${GS}m.nc ${DATANAME}_${OLD}.nc
+    ncrename -O -v topg,bed -v thk,thickness ${DATANAME}_${OLD}.nc ${DATANAME}_${OLD}.nc
+    ncatted -O -a _FillValue,thickness,d,, -a missing_value,thickness,d,, ${DATANAME}_${OLD}.nc
+    ncap2 -O -s "where(thickness<0) thickness=0;" ${DATANAME}_${OLD}.nc ${DATANAME}_${OLD}.nc
+    # ncks -A -v thk,usurf,topg pism_Greenland_${GS}m_1985.nc ${DATANAME}_${V85}.nc
 done
 
