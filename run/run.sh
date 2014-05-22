@@ -173,38 +173,38 @@ FINEVGRID="-Mz 201 -Mbz 21 -z_spacing equal ${VDIMS} ${FINESKIP}"
 FINESTVGRID="-Mz 401 -Mbz 41 -z_spacing equal ${VDIMS} ${FINESTSKIP}"
 if [ "$4" == "36000" ]; then
   dx=$4
-  myMx=38
-  myMy=71
+  myMx=43
+  myMy=76
   vgrid=$COARSEVGRID
 elif [ "$4" == "18000" ]; then
   dx=$4
-  myMx=85
-  myMy=151
+  myMx=86
+  myMy=152
   vgrid=$COARSEVGRID
 elif [ "$4" == "9000" ]; then
   dx=$4
-  myMx=170
-  myMy=302
+  myMx=172
+  myMy=304
   vgrid=$MEDIUMVGRID
 elif [ "$4" == "4500" ]; then
   dx=$4
-  myMx=341
-  myMy=605
+  myMx=344
+  myMy=608
   vgrid=$MEDIUMVGRID
 elif [ "$4" == "3600" ]; then
   dx=$4
-  myMx=426
-  myMy=756
+  myMx=430
+  myMy=760
   vgrid=$FINEVGRID
 elif [ "$4" == "1800" ]; then
   dx=$4
-  myMx=852
-  myMy=1512
+  myMx=860
+  myMy=1520
   vgrid=$FINEVGRID
 elif [ "$4" == "900" ]; then
   dx=$4
-  myMx=1703
-  myMy=3024
+  myMx=1720
+  myMy=3040
   vgrid=$FINESTVGRID
 else
   echo "invalid fourth argument: must be in $GRIDLIST"

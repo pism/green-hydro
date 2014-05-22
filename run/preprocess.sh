@@ -122,11 +122,12 @@ CTRL=ctrl
 OLD=old_bed
 V85=jak_1985
 VERSION=1.1
-for GS in "18000" "9000" "4500" "3600" "1800" "900"; do
+for GS in "36000" "18000" "9000" "4500" "3600" "1800" "900"; do
+# for GS in "36000"; do
     DATANAME=pism_Greenland_${GS}m_mcb_jpl_v${VERSION}
-    wget -nc http://pism-docs.org/download/${DATANAME}.nc
+ #   wget -nc http://pism-docs.org/download/${DATANAME}.nc
     # wget -nc http://pism-docs.org/download/pism_Greenland_${GS}m_1985.nc
-    nc2cdo.py ${DATANAME}.nc
+    create_greenland_epsg3413_grid.py -g ${GS} epsg_${GS}m_grid.nc
     ncks -O $DATANAME.nc ${DATANAME}_${CTRL}.nc
     ncks -O -v bed,thickness -x $DATANAME.nc ${DATANAME}_${OLD}.nc
     # ncks -O -v usurf,thk,topg -x $DATANAME.nc ${DATANAME}_${V85}.nc
@@ -139,11 +140,11 @@ for GS in "18000" "9000" "4500" "3600" "1800" "900"; do
     echo "Adding climatic fields"
     echo
     if [[ $NN == 1 ]] ; then
-	REMAP_EXTRAPOLATE=on cdo remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}m.nc
-	REMAP_EXTRAPOLATE=on cdo remapbil,${DATANAME}.nc $PISMVERSIONOLD old_Greenland_${GS}m.nc
+	REMAP_EXTRAPOLATE=on cdo remapbil,epsg_${GS}m_grid.nc $PISMVERSION tmp_Greenland_${GS}m.nc
+	REMAP_EXTRAPOLATE=on cdo remapbil,epsg_${GS}m_grid.nc $PISMVERSIONOLD old_Greenland_${GS}m.nc
     else
-	REMAP_EXTRAPOLATE=on cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSION tmp_Greenland_${GS}m.nc
-	REMAP_EXTRAPOLATE=on cdo -P $NN remapbil,${DATANAME}.nc $PISMVERSIONOLD old_Greenland_${GS}m.nc
+	REMAP_EXTRAPOLATE=on cdo -P $NN remapbil,epsg_${GS}m_grid.nc $PISMVERSION tmp_Greenland_${GS}m.nc
+	REMAP_EXTRAPOLATE=on cdo -P $NN remapbil,epsg_${GS}m_grid.nc $PISMVERSIONOLD old_Greenland_${GS}m.nc
     fi
     ncks -A -v x,y ${DATANAME}.nc tmp_Greenland_${GS}m.nc
     fill_missing.py -v climatic_mass_balance,precipitation,ice_surface_temp -f tmp_Greenland_${GS}m.nc -o filled_Greenland_${GS}m.nc
