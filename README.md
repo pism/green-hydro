@@ -10,3 +10,5 @@ NOTE: MCBs are not yet publicly available. You need to have an account on beaure
 $ ./process.sh 4 aaschwanden
 
 to use 4 cores for remapping and user aaschwanden.
+
+PS: Due to long processing times, the processed data are also available on beauregard as a courtesy.
