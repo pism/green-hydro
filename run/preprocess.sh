@@ -14,6 +14,12 @@ if [ $# -gt 0 ] ; then
   NN="$1"
 fi
 
+# username to download MCBs from beauregard
+user=aaschwanden  # default number of processors
+if [ $# -gt 1 ] ; then
+  NN="$2"
+fi
+
 # generate config file
 echo "  Generating config files..."
 for CONFIG in "hydro_config"; do
@@ -125,7 +131,7 @@ VERSION=1.1
 for GS in "36000" "18000" "9000" "4500" "3600" "1800" "900"; do
 # for GS in "36000"; do
     DATANAME=pism_Greenland_${GS}m_mcb_jpl_v${VERSION}
- #   wget -nc http://pism-docs.org/download/${DATANAME}.nc
+    rsync -rvu --progress  $user@beauregard.gi.alaska.edu:/home2/tmp/mcbs/${DATANAME}.nc
     # wget -nc http://pism-docs.org/download/pism_Greenland_${GS}m_1985.nc
     create_greenland_epsg3413_grid.py -g ${GS} epsg_${GS}m_grid.nc
     nc2cdo.py --srs "+init=EPSG:3413" epsg_${GS}m_grid.nc
