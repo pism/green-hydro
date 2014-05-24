@@ -128,6 +128,7 @@ for GS in "36000" "18000" "9000" "4500" "3600" "1800" "900"; do
  #   wget -nc http://pism-docs.org/download/${DATANAME}.nc
     # wget -nc http://pism-docs.org/download/pism_Greenland_${GS}m_1985.nc
     create_greenland_epsg3413_grid.py -g ${GS} epsg_${GS}m_grid.nc
+    nc2cdo.py --srs "+init=EPSG:3413" epsg_${GS}m_grid.nc
     ncks -O $DATANAME.nc ${DATANAME}_${CTRL}.nc
     ncks -O -v bed,thickness -x $DATANAME.nc ${DATANAME}_${OLD}.nc
     # ncks -O -v usurf,thk,topg -x $DATANAME.nc ${DATANAME}_${V85}.nc
@@ -147,7 +148,7 @@ for GS in "36000" "18000" "9000" "4500" "3600" "1800" "900"; do
 	REMAP_EXTRAPOLATE=on cdo -P $NN remapbil,epsg_${GS}m_grid.nc $PISMVERSIONOLD old_Greenland_${GS}m.nc
     fi
     ncks -A -v x,y ${DATANAME}.nc tmp_Greenland_${GS}m.nc
-    fill_missing.py -v climatic_mass_balance,precipitation,ice_surface_temp -f tmp_Greenland_${GS}m.nc -o filled_Greenland_${GS}m.nc
+    mpiexec -np $NN fill_missing_petsc.py -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}m.nc  filled_Greenland_${GS}m.nc
     echo
     ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}m.nc ${DATANAME}_${CTRL}.nc
     ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}m.nc ${DATANAME}_${HS}.nc

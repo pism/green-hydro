@@ -173,37 +173,37 @@ FINEVGRID="-Mz 201 -Mbz 21 -z_spacing equal ${VDIMS} ${FINESKIP}"
 FINESTVGRID="-Mz 401 -Mbz 41 -z_spacing equal ${VDIMS} ${FINESTSKIP}"
 if [ "$4" == "36000" ]; then
   dx=$4
-  myMx=43
+  myMx=44
   myMy=76
   vgrid=$COARSEVGRID
 elif [ "$4" == "18000" ]; then
   dx=$4
-  myMx=86
+  myMx=88
   myMy=152
   vgrid=$COARSEVGRID
 elif [ "$4" == "9000" ]; then
   dx=$4
-  myMx=172
+  myMx=176
   myMy=304
   vgrid=$MEDIUMVGRID
 elif [ "$4" == "4500" ]; then
   dx=$4
-  myMx=344
+  myMx=352
   myMy=608
   vgrid=$MEDIUMVGRID
 elif [ "$4" == "3600" ]; then
   dx=$4
-  myMx=430
+  myMx=440
   myMy=760
   vgrid=$FINEVGRID
 elif [ "$4" == "1800" ]; then
   dx=$4
-  myMx=860
+  myMx=880
   myMy=1520
   vgrid=$FINEVGRID
 elif [ "$4" == "900" ]; then
   dx=$4
-  myMx=1720
+  myMx=1760
   myMy=3040
   vgrid=$FINESTVGRID
 else
