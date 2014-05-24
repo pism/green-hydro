@@ -36,11 +36,13 @@ echo $cmd
 echo
 
 INNAME=$NAME
+# redefine for -hydrology routing,distributed runs which are decoupled:
+EXVAR="mask,thk,topg,usurf,tillwat,bwat,hydrobmelt,bwatvel"
 
 # now try -hydrology routing with default params
 DURATION=10
 NAME=routing.nc
-cmd="$MPIDO pismr -i $INNAME -no_mass $CLIMATE $PHYS -ts_file ts_$NAME -ts_times 0:1:$DURATION -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars ${EXVAR},bwat,bwp,bwprel,bwatvel -hydrology routing -report_mass_accounting -ys 0 -y $DURATION -o $NAME"
+cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -ts_file ts_$NAME -ts_times 0:1:$DURATION -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars ${EXVAR} -hydrology routing -hydrology_bmelt_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.1 -o $NAME"
 #echo $cmd
 $cmd
 echo
@@ -48,7 +50,8 @@ echo
 # now try -hydrology distributed with default params
 DURATION=10
 NAME=distributed.nc
-cmd="$MPIDO pismr -i $INNAME -no_mass $CLIMATE $PHYS -ts_file ts_$NAME -ts_times 0:1:$DURATION -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars $EXVAR,bwat,bwp,bwprel,bwatvel -hydrology distributed -report_mass_accounting -ys 0 -y $DURATION -o $NAME"
+cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -ts_file ts_$NAME -ts_times 0:1:$DURATION -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars ${EXVAR},bwp,bwprel,hydrovelbase_mag -hydrology distributed -hydrology_bmelt_file $INNAME -hydrology_velbase_mag_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.1 -o $NAME"
 #echo $cmd
 $cmd
 echo
+
