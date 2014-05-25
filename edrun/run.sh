@@ -41,16 +41,16 @@ echo
 EXVAR="mask,thk,topg,usurf,tillwat,bwat,hydrobmelt,bwatvel"
 
 # -hydrology routing with default params
-DURATION=10
+DURATION=50
 NAME=routing.nc
-cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars ${EXVAR} -hydrology routing -hydrology_bmelt_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.05 -o_size big -o $NAME"
+cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars ${EXVAR} -hydrology routing -hydrology_bmelt_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.05 -o $NAME"
 $PISM_DO $cmd
 echo
 
 # -hydrology distributed with default params
-DURATION=10
+DURATION=50
 NAME=distributed.nc
-cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars ${EXVAR},bwp,bwprel,hydrovelbase_mag -hydrology distributed -hydrology_bmelt_file $INNAME -hydrology_velbase_mag_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.05 -o_size big -o $NAME"
+cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars ${EXVAR},bwp,bwprel,hydrovelbase_mag -hydrology distributed -hydrology_bmelt_file $INNAME -hydrology_velbase_mag_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.05 -o $NAME"
 $PISM_DO $cmd
 echo
 
