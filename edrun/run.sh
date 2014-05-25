@@ -1,14 +1,23 @@
 #!/bin/bash
 
-# uses 3 files:
+# uses 2 files:
 #    pism_Greenland_5km_v1.1.nc  from examples/std-greenland/
 #    g5km_gridseq.nc             ditto
-#    g5km_m1ka_const_ctrl.nc     beauregard.gi.alaska.edu:
-#                                   /home2/tmp/green-hydro/g5km_m1ka_const_ctrl.nc/
-# the first two files are documented in the PISM User's Manual, chapter 1
-# the only significance of the last file is the new bedrock (topg)
+# these files are documented in the PISM User's Manual, chapter 1
+#
+# it would be reasonable to re-generate g5km_gridseq.nc so that it is closer
+# to steady state
+#
+# it would be reasonable to generate g3km_gridseq.nc or even g1km_gridseq.nc
 
 set -e  # exit on error
+
+# check if env var PISM_DO was set (i.e. set PISM_DO=echo for a 'dry' run)
+if [ -n "${PISM_DO:+1}" ] ; then  # check if env var is already set
+  echo "#   PISM_DO = $PISM_DO  (already set)"
+else
+  PISM_DO=""
+fi
 
 MPIDO="mpiexec -n 6"
 
@@ -19,39 +28,29 @@ CALVING="-calving ocean_kill -ocean_kill_file pism_Greenland_5km_v1.1.nc"
 # these suffice for -hydrology null runs
 EXVAR="diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,velbase_mag,tauc"
 
-# continue g5km_gridseq.nc run with old bedrock (check for no shock):
+INNAME=g5km_gridseq.nc
+
+# run this to check for no shock: continue g5km_gridseq.nc run
 DURATION=2
 NAME=cont.nc
-cmd="$MPIDO pismr -i g5km_gridseq.nc -skip -skip_max 20 $CLIMATE $PHYS $CALVING -ts_file ts_$NAME -ts_times 0:yearly:$DURATION -extra_file ex_$NAME -extra_times 0:10:$DURATION -extra_vars $EXVAR -y $DURATION -o $NAME"
-echo $cmd
-#$cmd
+cmd="$MPIDO pismr -i $INNAME -skip -skip_max 20 $CLIMATE $PHYS $CALVING -ts_file ts_$NAME -ts_times 0:yearly:$DURATION -extra_file ex_$NAME -extra_times 0:10:$DURATION -extra_vars $EXVAR -y $DURATION -o $NAME"
+#$PISM_DO $cmd
 echo
 
-# extend g5km_gridseq.nc run using new bedrock:
-DURATION=200
-NAME=g5km_v2bed.nc
-cmd="$MPIDO pismr -i g5km_gridseq.nc -skip -skip_max 20 $CLIMATE $PHYS $CALVING -ts_file ts_$NAME -ts_times 0:yearly:$DURATION -extra_file ex_$NAME -extra_times 0:10:$DURATION -extra_vars $EXVAR -regrid_file g5km_m1ka_const_ctrl.nc -regrid_vars topg -y $DURATION -o $NAME"
-echo $cmd
-#$cmd
-echo
-
-INNAME=$NAME
-# redefine for -hydrology routing,distributed runs which are decoupled:
+# suitable for -hydrology routing,distributed runs which are decoupled:
 EXVAR="mask,thk,topg,usurf,tillwat,bwat,hydrobmelt,bwatvel"
 
-# now try -hydrology routing with default params
+# -hydrology routing with default params
 DURATION=10
 NAME=routing.nc
-cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -ts_file ts_$NAME -ts_times 0:1:$DURATION -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars ${EXVAR} -hydrology routing -hydrology_bmelt_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.1 -o $NAME"
-#echo $cmd
-$cmd
+cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars ${EXVAR} -hydrology routing -hydrology_bmelt_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.05 -o_size big -o $NAME"
+$PISM_DO $cmd
 echo
 
-# now try -hydrology distributed with default params
+# -hydrology distributed with default params
 DURATION=10
 NAME=distributed.nc
-cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -ts_file ts_$NAME -ts_times 0:1:$DURATION -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars ${EXVAR},bwp,bwprel,hydrovelbase_mag -hydrology distributed -hydrology_bmelt_file $INNAME -hydrology_velbase_mag_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.1 -o $NAME"
-#echo $cmd
-$cmd
+cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars ${EXVAR},bwp,bwprel,hydrovelbase_mag -hydrology distributed -hydrology_bmelt_file $INNAME -hydrology_velbase_mag_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.05 -o_size big -o $NAME"
+$PISM_DO $cmd
 echo
 
