@@ -18,9 +18,9 @@ parser = OptionParser()
 parser.usage = "usage: %prog [options] FILE"
 parser.description = "Script adds ocean forcing to HIRHAM atmosphere/surface forcing file. Sets a constant, spatially-uniform basal melt rate of b_a before time t_a, and b_e after time t_a."
 parser.add_option("-a",dest="b_a",
-                  help="basal melt rate until t_a, in km m-2 s-1",default=150)
+                  help="basal melt rate until t_a, in km m-2 s-1",default=228e3)
 parser.add_option("-e",dest="b_e",
-                  help="basal melt rate from t_e on, in kg m-2 s-1",default=150000)
+                  help="basal melt rate from t_e on, in kg m-2 s-1",default=285e3)
 parser.add_option("--ta",dest="t_a",
                   help="time t_e, udunits string, e.g. 1989-1-1",default="1997-1-31")
 
@@ -66,7 +66,7 @@ idx = np.squeeze(np.nonzero(dates>t_a_date))
 nte = len(idx)
 var = "shelfbmassflux"
 if (var not in nc.variables.keys()):
-    bmelt_var = def_var(nc, var, "kg m-2 s-1")
+    bmelt_var = def_var(nc, var, "kg m-2 yr-1")
     bmelt_var[:] = b_a*np.ones_like(acab)
     bmelt_var[idx,:,:] = b_e*np.ones((nte,ny,nx))
 

@@ -131,7 +131,7 @@ VERSION=1.1
 for GS in "36000" "18000" "9000" "4500" "3600" "1800" "900"; do
 # for GS in "36000"; do
     DATANAME=pism_Greenland_${GS}m_mcb_jpl_v${VERSION}
-    rsync -rvu --progress  $user@beauregard.gi.alaska.edu:/home2/tmp/mcbs/${DATANAME}.nc
+    rsync -rvu --progress  $user@beauregard.gi.alaska.edu:/home2/tmp/data_sets/mc_beds/${DATANAME}.nc
     # wget -nc http://pism-docs.org/download/pism_Greenland_${GS}m_1985.nc
     create_greenland_epsg3413_grid.py -g ${GS} epsg_${GS}m_grid.nc
     nc2cdo.py --srs "+init=EPSG:3413" epsg_${GS}m_grid.nc
