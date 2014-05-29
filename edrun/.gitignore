@@ -2,3 +2,4 @@
 *.nc
 out.*
 *~
+showPvsW.py
