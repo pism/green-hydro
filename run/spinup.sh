@@ -59,7 +59,7 @@ fi
 if [ -n "${PISM_WALLTIME:+1}" ] ; then  # check if env var is already set
     WALLTIME=$PISM_WALLTIME
 else
-    WALLTIME=12:00:00
+    WALLTIME=16:00:00
 fi
 
 # set output format:
@@ -203,7 +203,7 @@ fi
 DURA=4000
 START=-5000
 END=-1000
-MKA=$(($END/-1))
+MKA=$(($END/-1000))
 
 
 OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}.nc

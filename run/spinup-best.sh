@@ -180,7 +180,7 @@ fi
 echo >> $SCRIPT
 
 if [ $GRID == "9000" ]; then
-    REGRIDFILE=g18000m_m${MA}ka_${CLIMATE}_${TYPE}.nc
+    REGRIDFILE=g18000m_m${MKA}ka_${CLIMATE}_${TYPE}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
@@ -203,7 +203,7 @@ echo >> $SCRIPT
 
 
 if [ $GRID == "4500" ]; then
-    REGRIDFILE=g9000m_m${MA}ka_${CLIMATE}_${TYPE}.nc
+    REGRIDFILE=g9000m_m${MKA}ka_${CLIMATE}_${TYPE}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
@@ -211,7 +211,7 @@ fi
 DURA=4000
 START=-5000
 END=-1000
-MKA=$(($END/-1))
+MKA=$(($END/-1000))
 
 
 OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}.nc
@@ -234,7 +234,7 @@ fi
 DURA=500
 START=-1000
 END=-500
-MKA=$(($END/-1000))
+MA=$(($END/-1))
 
 
 OUTFILE=g${GRID}m_m${MKA}a_${CLIMATE}_${TYPE}.nc
@@ -248,7 +248,7 @@ fi
 echo >> $SCRIPT
 
 if [ $GRID == "2" ]; then
-    REGRIDFILE=g3600m_m${MKA}a_${CLIMATE}_${TYPE}.nc
+    REGRIDFILE=g3600m_m${MA}a_${CLIMATE}_${TYPE}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
