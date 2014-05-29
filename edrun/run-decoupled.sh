@@ -5,6 +5,8 @@
 #    g5km_gridseq.nc             ditto
 # these files are documented in the PISM User's Manual, chapter 1
 #
+# run preprocess.sh first
+#
 # it would be reasonable to re-generate g5km_gridseq.nc so that it is closer
 # to steady state
 #
@@ -28,7 +30,7 @@ CALVING="-calving ocean_kill -ocean_kill_file pism_Greenland_5km_v1.1.nc"
 # these suffice for -hydrology null runs
 EXVAR="diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,velbase_mag,tauc"
 
-INNAME=g5km_gridseq.nc
+INNAME=g5km-init.nc
 
 # run this to check for no shock: continue g5km_gridseq.nc run
 DURATION=2
@@ -40,17 +42,17 @@ echo
 # suitable for -hydrology routing,distributed runs which are decoupled:
 EXVAR="mask,thk,topg,usurf,tillwat,bwat,hydrobmelt,bwatvel"
 
-# -hydrology routing with default params
-DURATION=50
-NAME=routing.nc
-cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars ${EXVAR} -hydrology routing -hydrology_bmelt_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.05 -o $NAME"
+# -hydrology routing with   k=0.001
+DURATION=5
+NAME=routing-decoupled.nc
+cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -extra_file ex_$NAME -extra_times 0:monthly:$DURATION -extra_vars ${EXVAR} -hydrology_hydraulic_conductivity 0.001 -hydrology routing -hydrology_bmelt_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.05 -o $NAME"
 $PISM_DO $cmd
 echo
 
-# -hydrology distributed with default params
-DURATION=50
-NAME=distributed.nc
-cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -extra_file ex_$NAME -extra_times 0:1:$DURATION -extra_vars ${EXVAR},bwp,bwprel,hydrovelbase_mag -hydrology distributed -hydrology_bmelt_file $INNAME -hydrology_velbase_mag_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.05 -o $NAME"
+# -hydrology distributed with   k=0.001, Wr=1.0
+DURATION=5
+NAME=distributed-decoupled.nc
+cmd="$MPIDO pismr -i $INNAME -no_mass -energy none -stress_balance none $CLIMATE -extra_file ex_$NAME -extra_times 0:monthly:$DURATION -extra_vars ${EXVAR},bwp,bwprel,hydrovelbase_mag -hydrology_hydraulic_conductivity 0.001 -hydrology_roughness_scale 1.0 -hydrology distributed -hydrology_bmelt_file $INNAME -hydrology_velbase_mag_file $INNAME -report_mass_accounting -ys 0 -y $DURATION -max_dt 0.05 -o $NAME"
 $PISM_DO $cmd
 echo
 
