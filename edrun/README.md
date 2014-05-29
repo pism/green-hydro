@@ -12,3 +12,7 @@ Do
     $ ln -s ~/pism/examples/std-greenland/g5km_gridseq.nc
     $ ./preprocess.sh
     $ ./run.sh
+
+For analysis I am using
+
+    $ ln -s ~/pism/examples/nbreen/showPvsW.py
