@@ -239,7 +239,7 @@ else
 fi
 echo >> $SCRIPT
 
-if [ $GRID == "2" ]; then
+if [ $GRID == "1800" ]; then
     REGRIDFILE=g3600m_m${MA}a_${CLIMATE}_${TYPE}.nc
 else
     REGRIDFILE=$OUTFILE
