@@ -77,17 +77,17 @@ fi
 OFORMAT=$PISM_OFORMAT
 
 # set GRID from argument 2
-if [ "$2" = "20" ]; then
+if [ "$2" = "18000" ]; then
     GRID=$2
-elif [ "$2" = "10" ]; then
+elif [ "$2" = "9000" ]; then
     GRID=$2
-elif [ "$2" = "5" ]; then
+elif [ "$2" = "4500" ]; then
     GRID=$2
-elif [ "$2" = "2.5" ]; then
+elif [ "$2" = "3600" ]; then
     GRID=$2
-elif [ "$2" = "2" ]; then
+elif [ "$2" = "1800" ]; then
     GRID=$2
-elif [ "$2" = "1" ]; then
+elif [ "$2" = "900" ]; then
     GRID=$2
 else
   echo "invalid second argument; must be in (${GRIDLIST[@]})"
@@ -147,12 +147,12 @@ for E in 1 ; do
 				for COND in 0.0001 0.001 0.01 0.1; do
             
 				    EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}            
-				    SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
-				    POST=do_g${GRID}km_${EXPERIMENT}_post.sh
-				    PLOT=do_g${GRID}km_${EXPERIMENT}_plot.sh
+				    SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
+				    POST=do_g${GRID}m_${EXPERIMENT}_post.sh
+				    PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
 				    rm -f $SCRIPT $$POST $PLOT
             
-				    OUTFILE=g${GRID}km_${EXPERIMENT}.nc
+				    OUTFILE=g${GRID}m_${EXPERIMENT}.nc
 
 				    # insert preamble
 				    echo $SHEBANGLINE >> $SCRIPT
@@ -189,11 +189,11 @@ for E in 1 ; do
     done
 done
 
-SUBMIT=submit_g${GRID}km_hydro_${HYDRO}.sh
+SUBMIT=submit_g${GRID}m_hydro_${HYDRO}.sh
 rm -f $SUBMIT
 cat - > $SUBMIT <<EOF
 $SHEBANGLINE
-for FILE in do_g${GRID}km_${CLIMATE}_${TYPE}_*${HYDRO}.sh; do
+for FILE in do_g${GRID}m_${CLIMATE}_${TYPE}_*${HYDRO}.sh; do
   JOBID=\$(qsub \$FILE)
   fbname=\$(basename "\$FILE" .sh)
   POST=\${fbname}_post.sh
