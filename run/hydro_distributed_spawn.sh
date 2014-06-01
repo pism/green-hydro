@@ -170,7 +170,6 @@ for E in 1 ; do
 			    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                             
 			    echo "# $SCRIPT written"
-                            echo
 			    title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$c_1$'"=$OPEN;"'$c_2$'"=$CLOSE;"'$\omega$'"=$PROP;k=$COND;"'$\phi_l$'"=$PHILOW"
 			    source run-postpro.sh
 			    echo "## $POST written"

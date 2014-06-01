@@ -189,11 +189,11 @@ for E in 1 2 3 ; do
                 # echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT2                            
                 # echo >> $SCRIPT2
                 # echo "# $SCRIPT2 written"
-                echo
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO"
                 source run-postpro.sh
                 echo "## $POST written"
                 echo "### $PLOT written"
+                echo
             done
         done
     done
