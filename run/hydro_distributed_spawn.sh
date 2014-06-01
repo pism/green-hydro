@@ -119,7 +119,7 @@ else
 fi
 
 REGRIDFILE=$5
-PISM_DATANAME=pism_Greenland_${GRID}km_v3_${TYPE}.nc
+PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v1.1_${TYPE}.nc
 DURA=100
 NODES=$(( $NN/$PROCS_PER_NODE))
 
