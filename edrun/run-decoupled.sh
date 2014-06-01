@@ -6,11 +6,13 @@
 # these files are documented in the PISM User's Manual, chapter 1
 #
 # run preprocess.sh first
-#
-# it would be reasonable to re-generate g5km_gridseq.nc so that it is closer
-# to steady state
-#
-# it would be reasonable to generate g3km_gridseq.nc or even g1km_gridseq.nc
+# then do
+#   $ ./run-decoupled.sh 5 g5km-init.nc
+# for 5 year run
+
+# FIXME: it would be reasonable to re-generate g5km_gridseq.nc so that it is
+# closer to steady state, and it would be reasonable to generate
+# g3km_gridseq.nc or even g1km_gridseq.nc
 
 set -e  # exit on error
 
@@ -21,17 +23,16 @@ else
   PISM_DO=""
 fi
 
+DURATION=$1
+INNAME=$2
+
 MPIDO="mpiexec -n 6"
 
 CLIMATE="-surface given -surface_given_file pism_Greenland_5km_v1.1.nc"
 PHYS="-sia_e 3.0 -stress_balance ssa+sia -topg_to_phi 15.0,40.0,-300.0,700.0 -pseudo_plastic -pseudo_plastic_q 0.5 -till_effective_fraction_overburden 0.02 -tauc_slippery_grounding_lines"
 CALVING="-calving ocean_kill -ocean_kill_file pism_Greenland_5km_v1.1.nc"
 
-
-INNAME=g5km-init.nc
-
 # run this to check for no shock: continue g5km_gridseq.nc run
-DURATION=2
 NAME=cont.nc
 cmd="$MPIDO pismr -i $INNAME -skip -skip_max 20 $CLIMATE $PHYS $CALVING -ts_file ts_$NAME -ts_times 0:yearly:$DURATION -y $DURATION -o $NAME"
 #$PISM_DO $cmd
@@ -40,8 +41,6 @@ echo
 # suitable for -hydrology routing,distributed runs which are decoupled:
 EXVAR="mask,thk,topg,usurf,tillwat,bwat,hydrobmelt,bwatvel"
 EXVARDIST="${EXVAR},bwp,bwprel,hydrovelbase_mag"
-
-DURATION=5
 
 # -hydrology routing
 NAME=routing-decoupled.nc
