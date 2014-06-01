@@ -1,5 +1,7 @@
 .gitignore
 *.nc
+*.png
+*.pdf
 out.*
 *~
 showPvsW.py
