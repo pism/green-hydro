@@ -10,9 +10,9 @@ geotiff="--geotiff_file MODISGreenland1kmclean_cut.tif"
 res=300
 mres=l
 fill=-2e9
-filepre=g${GRID}km_${EXPERIMENT}
+filepre=g${GRID}m_${EXPERIMENT}
 
-tl_dir=${GRID}km_${CLIMATE}_${TYPE}
+tl_dir=${GRID}m_${CLIMATE}_${TYPE}
 nc_dir=processed
 fig_dir=figures
 spc_dir=speed_contours
