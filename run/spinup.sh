@@ -265,7 +265,7 @@ DURA=100
 START=-100
 END=0
 
-if [ $GRID == "1" ]; then
+if [ $GRID == "900" ]; then
     REGRIDFILE=g1800m_m${MA}a_${CLIMATE}_${TYPE}.nc
 else
     REGRIDFILE=$OUTFILE
