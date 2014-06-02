@@ -140,11 +140,11 @@ for E in 1 ; do
         for TEFO in 0.02 ; do
 	    for PHILOW in 5; do
 		PARAM_TTPHI="${PHILOW}.0,40.0,-700.0,700.0"
-		for OPEN in 0.5; do
-		    for CLOSE in 0.04; do
-			for COND in 0.0001 0.001 0.01 0.1; do
+		for OMEGA in 0.1 1.0 10; do
+		    for ALPHA in 1.0 1.5 3.0 ; do
+			for K in 0.0001 0.001 0.01 0.1; do
             
-			    EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_rate_${RATE}_prop_${PROP}_open_${OPEN}_close_${CLOSE}_cond_${COND}_hydro_${HYDRO}            
+			    EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_omega_${OMEGA}_alpha_${ALPHA}_k_${K}_hydro_${HYDRO}            
 			    SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
 			    POST=do_g${GRID}m_${EXPERIMENT}_post.sh
 			    PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
@@ -166,11 +166,11 @@ for E in 1 ; do
 			    export PISM_EXPERIMENT=$EXPERIMENT
 			    export PISM_TITLE="Greenland Parameter Study"
                             
-			    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_COND=$COND PARAM_OPEN=$OPEN PARAM_CLOSE=$CLOSE ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+			    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_K=$K PARAM_OMEGA=$OMEGA PARAM_ALPHA=$ALPHA ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
 			    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                             
 			    echo "# $SCRIPT written"
-			    title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$c_1$'"=$OPEN;"'$c_2$'"=$CLOSE;"'$\omega$'"=$PROP;k=$COND;"'$\phi_l$'"=$PHILOW"
+			    title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$\omega$'"=$OMEGA;"'$\alpha$'"=$ALPHA;k=$K;"'$\phi_l$'"=$PHILOW"
 			    source run-postpro.sh
 			    echo "## $POST written"
 			    echo "### $PLOT written"

@@ -52,7 +52,7 @@ fi
 cp $INFILE $OUTFILE
 
 # center:
-XSPOT=20700
+XSPOT=206500
 NEGYSPOT=1630000
 
 # parameters for ellipse and rotation in m and heat to apply there

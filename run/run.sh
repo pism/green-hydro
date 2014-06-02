@@ -58,14 +58,13 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_TTPHI  sets (hybrid-only) option -topg_to_phi \$PARAM_TTPHI"
   echo "                   [default=15.0,40.0,-300.0,700.0]"
   echo "    PARAM_NOSGL  if set, DON'T use -tauc_slippery_grounding_lines"
-  echo "    PARAM_ADDBWAT if set, use -tauc_add_transportable_water"
   echo "    PARAM_FTT    if set, use force-to-thickness method"
-  echo "    PARAM_COND   sets -hydrology_cavitation_opening_coefficient \$PARAM_COND"
+  echo "    PARAM_K      sets -hydraulic_conductivity \$PARAM_K"
   echo "                 [default=0.01] for [routing,distributed]"
-  echo "    PARAM_OPEN   sets -hydrology_cavitation_opening_coefficient \$PARAM_OPEN"
-  echo "                 [default=0.5] for [distributed]"
-  echo "    PARAM_CLOSE  sets -hydrology_creep_closure_coefficient \$PARAM_CLOSE"
-  echo "                 [default=0.04] for [distributed]"
+  echo "    PARAM_ALPHA   sets -hydrology_thickness_power_in_flux \$PARAM_ALPHA"
+  echo "                 [default=0.5] for [routing, distributed]"
+  echo "    PARAM_OMEGA  sets -tauc_add_transportable_water -till_log_factor_transportable_water \$PARAM_OMEGA"
+  echo "                 [default=0.04] for [routing, distributed]"
   echo "    PISM_DO      set to 'echo' if no run desired; defaults to empty"
   echo "    PISM_OFORMAT set -o_format; defaults to netcdf3"
   echo "    PISM_MPIDO   defaults to 'mpiexec -n'"
@@ -82,7 +81,7 @@ if [ $# -lt 5 ] ; then
   echo
   echo "    $ ./spinup.sh 4 const 1000 18000 sia"
   echo
-  echo "  Does spinup with 4 processors, constant-climate, 1000 year run, 20 km"
+  echo "  Does spinup with 4 processors, constant-climate, 1000 year run, 18 km"
   echo "  grid, and non-sliding SIA stress balance.  Bootstraps from and outputs to"
   echo "  default files."
   echo
@@ -91,7 +90,7 @@ if [ $# -lt 5 ] ; then
   echo "    $ PISM_DO=echo ./spinup.sh 128 paleo 100.0 4500 hybrid out.nc boot.nc &> foo.sh"
   echo
   echo "  Creates a script foo.sh for spinup with 128 processors, simulated paleo-climate,"
-  echo "  5 km grid, sliding with SIA+SSA hybrid, output to {out.nc,ts_out.nc,ex_out.nc},"
+  echo "  4.5 km grid, sliding with SIA+SSA hybrid, output to {out.nc,ts_out.nc,ex_out.nc},"
   echo "  and bootstrapping from boot.nc."
   echo
   exit
@@ -239,40 +238,23 @@ else
   fi
 fi
 
-
-if [ -n "${PARAM_TWRATE+1}" ] ; then  # check if env var is set
-  PARAM_TWRATE=$PARAM_TWRATE
+if [ -n "${PARAM_ALPHA+1}" ] ; then  # check if env var is set
+  PARAM_ALPHA=$PARAM_ALPHA
 else
-  PARAM_TWRATE="1e-6"
+  PARAM_ALPHA="1.25"
 fi
-if [ -n "${PARAM_TWPROP+1}" ] ; then  # check if env var is set
-  PARAM_TWPROP=$PARAM_TWPROP
+if [ -n "${PARAM_OMEGA+1}" ] ; then  # check if env var is set
+  PARAM_OMEGA=$PARAM_OMEGA
 else
-  PARAM_TWPROP="100"
+  PARAM_OMEGA="0.1"
 fi
-if [ -n "${PARAM_OPEN+1}" ] ; then  # check if env var is set
-  PARAM_OPEN=$PARAM_OPEN
+if [ -n "${PARAM_K+1}" ] ; then  # check if env var is set
+  PARAM_K=$PARAM_K
 else
-  PARAM_OPEN="0.5"
-fi
-if [ -n "${PARAM_CLOSE+1}" ] ; then  # check if env var is set
-  PARAM_CLOSE=$PARAM_CLOSE
-else
-  PARAM_CLOSE="0.04"
-fi
-if [ -n "${PARAM_COND+1}" ] ; then  # check if env var is set
-  PARAM_COND=$PARAM_COND
-else
-  PARAM_COND="0.01"
+  PARAM_K="0.01"
 fi
 
-if [ -z "${PARAM_ADDBWAT}" ] ; then  # check if env var is NOT set
-    ADDBWAT=""
-else
-    ADDBWAT="-tauc_add_transportable_water"
-fi
-
-HYDROPARAMS="-hydrology_tillwat_rate ${PARAM_TWRATE} -hydrology_tillwat_transfer_proportion ${PARAM_TWPROP} -hydrology_cavitation_opening_coefficient ${PARAM_OPEN} -hydrology_creep_closure_coefficient ${PARAM_CLOSE} -hydrology_hydraulic_conductivity ${PARAM_COND} $ADDBWAT"
+HYDROPARAMS="-hydrology_thickness_power_in_flux ${PARAM_ALPHA} -tauc_add_transportable_water -till_log_factor_transportable_water ${PARAM_OMEGA} -hydrology_hydraulic_conductivity ${PARAM_K}"
 
 # set output filename from argument 6
 if [ "$6" = "null" ]; then
