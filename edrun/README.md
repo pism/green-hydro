@@ -10,8 +10,8 @@ Do
 
     $ ln -s ~/pism/examples/std-greenland/pism_Greenland_5km_v1.1.nc
     $ ln -s ~/pism/examples/std-greenland/g5km_gridseq.nc
-    $ ./preprocess g5km_gridseq.nc g5km-init.nc   # generate g5km-init.nc
-    $ ./run-decoupled.sh 5 g5km-init.nc           # 5 year runs
+    $ ./preprocess.sh g5km_gridseq.nc g5km-init.nc       # generate g5km-init.nc
+    $ ./run-decoupled.sh 5 g5km-init.nc                  # 5 year runs
 
 For analysis I am using
 
