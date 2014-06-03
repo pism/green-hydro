@@ -181,6 +181,7 @@ plt.gca().set_xlim((wwmin,wwmax))
 plt.gca().set_ylim((-0.02,1.05))
 plt.gca().set_xticks((0.0,0.05,0.10,0.15))
 plt.gca().set_xticklabels(('0','.05','.10','.15'))
+plt.text(0.07, 0.25, '%d' % int(args.smin) + r'$ < |\mathbf{v}_b| < $' + '%d' % int(args.smax))
 if args.colorbar:
   plt.colorbar()
 plt.xlabel(r'$W$  (m)')
