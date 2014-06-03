@@ -49,7 +49,7 @@ fi
 if [ -f ${filepre}.nc ]; then
     # because QGIS doesn't like (x,y) ordering
     add_epsg3413_mapping.sh ${filepre}.nc
-    ncpdq -O -a time,y,x,z,zb ${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
+    ncpdq -O -v enthalpy,litho_temp,temp_pa,liqfrac -x -a time,y,x ${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
     ncap2 -O -s "where(thk<1) {velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
     ncatted -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}.nc
     extract-profiles.py $fluxgates ${filepre}.nc ${tl_dir}/${pr_dir}/profiles_${filepre}.nc
