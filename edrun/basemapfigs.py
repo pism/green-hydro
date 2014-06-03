@@ -93,6 +93,13 @@ elif field == 'mask':
   myvmin     = 0.0
   myvmax     = 4.0
   ticklist   = [0, 1, 2, 3, 4]
+elif field == 'tillwat':
+  fill       = -2.0e+09
+  logscale   = False
+  contour100 = False
+  myvmin     = 0.0
+  myvmax     = 2.0
+  ticklist   = [0.0, 0.5, 1.0, 1.5, 2.0]
 elif field == 'bwat':
   fill       = -2.0e+09
   logscale   = True
@@ -187,7 +194,7 @@ else:
 if (field == 'bmelt') | (field == 'bwat'):
     cb = plt.colorbar(extend='both',ticks=ticklist)
     cb.set_ticklabels(('0.0001','0.001','0.01','0.1','1'))
-elif field == 'bwprel':
+elif (field == 'bwprel') | (field == 'tillwat'):
     cb = plt.colorbar(extend='neither',ticks=ticklist,format="%.1f")
 else:
     cb = plt.colorbar(extend='both',ticks=ticklist,format="%d")
