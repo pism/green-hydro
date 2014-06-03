@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-# generate figures in Getting Started section of User's Manual
+# generate figures in hydrolakes paper; this script is derived from
+# pism/examples/std-greenland/basemapfigs.py
 
 # usage:
 #   $ python basemapfigs.py FILEROOT [FIELD] [DPI]
@@ -13,17 +14,7 @@
 #   $ python basemapfigs.py g20km_10ka_hy velsurf_mag 200
 #   $ python basemapfigs.py g20km_10ka_hy velsurf_mag
 #   $ python basemapfigs.py g20km_10ka_hy
-#
-# generate figs like those in Getting Started section of User's Manual:
-#   $ for FLD in velsurf_mag usurf velbase_mag mask; do ./basemapfigs.py g20km_10ka_hy ${FLD}; done
-#
-# crop out western Greenland with command like this (uses ImageMagick):
-#   $ ./basemapfigs.py g20km_10ka_hy velsurf_mag 500
-#   $ convert -crop 600x800+400+800 +repage g20km_10ka_hy-velsurf_mag.png g20km-detail.png
-#
-# batch generate figures from a parameter study like this:
-#   $ for QQ in 0.1 0.5 1.0; do for EE in 1 3 6; do ../basemapfigs.py p10km_q${QQ}_e${EE} velsurf_mag 100; done; done
-#   $ for QQ in 0.1 0.5 1.0; do for EE in 1 3 6; do convert -crop 274x486+50+6 +repage p10km_q${QQ}_e${EE}-velsurf_mag.png p10km-${QQ}-${EE}-csurf.png; done; done
+
 
 from mpl_toolkits.basemap import Basemap
 
@@ -58,7 +49,7 @@ if len(sys.argv) >= 4:
 else:
   mydpi = 200
 
-bluemarble = True  # FIXME: m.basemap() inverts earth!
+bluemarble = True
 
 if field == 'velsurf_mag':
   fill       = nc.variables[field]._FillValue
@@ -82,12 +73,12 @@ elif field == 'surfvelmag':
   myvmax     = 6.0e3
   ticklist   = [2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000]
 elif field == 'bmelt':
-  fill       = 0.0
+  fill       = -2.0e+09
   logscale   = True
   contour100 = False
-  myvmin     = 1.0e-3
-  myvmax     = 1.0
-  ticklist   = [0.001, 0.01, 0.1, 1.0]
+  myvmin     = 0.9e-4
+  myvmax     = 1.1
+  ticklist   = [0.0001, 0.001, 0.01, 0.1, 1.0]
 elif field == 'usurf':
   fill       = 0.0
   logscale   = False
@@ -102,6 +93,20 @@ elif field == 'mask':
   myvmin     = 0.0
   myvmax     = 4.0
   ticklist   = [0, 1, 2, 3, 4]
+elif field == 'bwat':
+  fill       = -2.0e+09
+  logscale   = True
+  contour100 = False
+  myvmin     = 0.9e-4
+  myvmax     = 1.1
+  ticklist   = [0.0001, 0.001, 0.01, 0.1, 1.0]
+elif field == 'bwprel':
+  fill       = -2.0e+09
+  logscale   = False
+  contour100 = False
+  myvmin     = 0.0
+  myvmax     = 1.0
+  ticklist   = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
 else:
   print 'invalid choice for FIELD option'
   sys.exit(3)
@@ -124,15 +129,27 @@ else:
 width  = x.max() - x.min()
 height = y.max() - y.min()
 
-# load data and mask out ice-free areas
-myvar = np.squeeze(nc.variables[field][:])
+# load data
+if field == 'bwprel':
+    thkvar = np.squeeze(nc.variables['thk'][:])
+    myvar = np.squeeze(nc.variables['bwp'][:])
+    myvar = np.ma.array(myvar, mask=(thkvar == 0.0))
+    thkvar = np.ma.array(thkvar, mask=(thkvar == 0.0))
+    myvar = myvar / (910.0 * 9.81 * thkvar)
+else:
+    myvar = np.squeeze(nc.variables[field][:])
+
+# mask out ice free etc.
 if field == 'surfvelmag':
     myvar = myvar.transpose()
     thkvar = np.squeeze(nc.variables['thk'][:]).transpose()
     myvar = np.ma.array(myvar, mask=(thkvar == 0.0))
-elif field == 'bmelt':
-    thkvar = np.squeeze(nc.variables['thk'][:])
-    myvar = np.ma.array(myvar, mask=((myvar < 1.0e-3) | (thkvar == 0.0)))
+elif (field == 'bmelt') | (field == 'bwat'):
+    myvar[myvar < myvmin] = myvmin
+    #thkvar = np.squeeze(nc.variables['thk'][:])
+    #myvar = np.ma.array(myvar, mask=(thkvar == 0.0))
+    maskvar = np.squeeze(nc.variables['mask'][:])
+    myvar = np.ma.array(myvar, mask=(maskvar != 2))
 else:
     maskvar = np.squeeze(nc.variables['mask'][:])
     myvar = np.ma.array(myvar, mask=(maskvar != 2))
@@ -149,7 +166,7 @@ m = Basemap(width=1.1*width,    # width in projection coordinates, in meters
 #m.drawcoastlines()
 
 # draw the Blue Marble background (requires PIL, the Python Imaging Library)
-if bluemarble:  # seems to reverse N and S
+if bluemarble:
     m.bluemarble()
 
 # convert longitudes and latitudes to x and y:
@@ -167,10 +184,13 @@ else:
   m.pcolormesh(xx,yy,myvar,vmin=myvmin,vmax=myvmax)
 
 # add a colorbar:
-if field == 'bmelt':
-    plt.colorbar(extend='both',ticks=ticklist,format="%.3f")
+if (field == 'bmelt') | (field == 'bwat'):
+    cb = plt.colorbar(extend='both',ticks=ticklist)
+    cb.set_ticklabels(('0.0001','0.001','0.01','0.1','1'))
+elif field == 'bwprel':
+    cb = plt.colorbar(extend='neither',ticks=ticklist,format="%.1f")
 else:
-    plt.colorbar(extend='both',ticks=ticklist,format="%d")
+    cb = plt.colorbar(extend='both',ticks=ticklist,format="%d")
 
 # draw parallels and meridians
 # labels kwarg is where to draw ticks: [left, right, top, bottom]

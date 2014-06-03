@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# these figures show "inputs" to hydrology model, i.e. fields
+# these figures show "inputs" to the hydrology model, i.e. fields
 #   velsurf_mag, velbase_mag, bmelt
 # and surfvelmag from Greenland_5km_v1.1.nc
 # run as:
