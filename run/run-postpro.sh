@@ -108,7 +108,7 @@ if [ -f ${tl_dir}/${nc_dir}/${filepre}.nc ]; then
 
     basemap-plot.py -v velbase_mag --inner_titles velsurf_mag --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
-    basemap-plot.py -v velbase_mag --inner_titles velshear_mag --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_velshear_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velshear_mag --inner_titles velshear_mag --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_velshear_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
     basemap-plot.py -v tau_r --inner_titles tau_r --colorbar_label -p medium --singlerow -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_tau_r.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
 
