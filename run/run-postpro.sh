@@ -52,7 +52,7 @@ if [ -f ${filepre}.nc ]; then
     ncpdq -O -v enthalpy,litho_temp,temp_pa,liqfrac -x -a time,y,x ${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
     ncap2 -O -s "velshear_mag=velsurf_mag-velbase_mag; where(thk<1) {velshear_mag=$fill; velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
     ncatted -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}.nc
-    extract-profiles.py $fluxgates ${filepre}.nc ${tl_dir}/${pr_dir}/profiles_${filepre}.nc
+    # extract-profiles.py $fluxgates ${filepre}.nc ${tl_dir}/${pr_dir}/profiles_${filepre}.nc
 fi
 
 EOF
