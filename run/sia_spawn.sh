@@ -19,7 +19,7 @@ SCRIPTNAME=hydro_null_spawn.sh
 
 CLIMLIST=(const, pdd)
 TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
-GRIDLIST=(20 10 5 2.5 2 1)
+GRIDLIST=(18000 9000 4500 3600 1800 900)
 if [ $# -lt 5 ] ; then
   echo "paramspawn.sh ERROR: needs 5 positional arguments ... ENDING NOW"
   echo
@@ -161,9 +161,7 @@ for E in 1 2 3 ; do
 
     cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E  ./run.sh $NN $CLIMATE $DURA $GRID sia $HYDRO $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-      
     echo "($SPAWNSCRIPT)  $SCRIPT written"
-
     title="E=$E"
     source run-postpro.sh
     echo "## $POST written"
