@@ -76,19 +76,18 @@ else
 fi
 OFORMAT=$PISM_OFORMAT
 
-
 # set GRID from argument 2
-if [ "$2" = "20" ]; then
+if [ "$2" = "18000" ]; then
     GRID=$2
-elif [ "$2" = "10" ]; then
+elif [ "$2" = "9000" ]; then
     GRID=$2
-elif [ "$2" = "5" ]; then
+elif [ "$2" = "4500" ]; then
     GRID=$2
-elif [ "$2" = "2.5" ]; then
+elif [ "$2" = "3600" ]; then
     GRID=$2
-elif [ "$2" = "2" ]; then
+elif [ "$2" = "1800" ]; then
     GRID=$2
-elif [ "$2" = "1" ]; then
+elif [ "$2" = "900" ]; then
     GRID=$2
 else
   echo "invalid second argument; must be in (${GRIDLIST[@]})"

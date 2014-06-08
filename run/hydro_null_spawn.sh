@@ -74,7 +74,6 @@ else
 fi
 OFORMAT=$PISM_OFORMAT
 
-
 # set GRID from argument 2
 if [ "$2" = "18000" ]; then
     GRID=$2
