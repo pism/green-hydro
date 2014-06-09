@@ -1,7 +1,7 @@
 
  MYSHEBANGLINE="#!/bin/bash"
 MYMPIQUEUELINE="#PBS -q transfer"
- MYMPITIMELINE="#PBS -l walltime=12:00:00"
+ MYMPITIMELINE="#PBS -l walltime=2:00:00"
  MYMPISIZELINE="#PBS -l nodes=1:ppn=1"
   MYMPIOUTLINE="#PBS -j oe"
 
