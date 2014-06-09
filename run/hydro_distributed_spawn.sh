@@ -184,7 +184,7 @@ for E in 1 ; do
     done
 done
 
-SUBMIT=submit_g${GRID}m_hydro_${HYDRO}.sh
+SUBMIT=submit_g${GRID}m_${CLIMATE}_${TYPE}_sia_hydro_${HYDRO}.sh
 rm -f $SUBMIT
 cat - > $SUBMIT <<EOF
 $SHEBANGLINE
