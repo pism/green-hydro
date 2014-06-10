@@ -16,9 +16,10 @@ set -e # exit on error
 SCRIPTNAME=hindcast.sh
 
 CLIMLIST=(forcing)
-GRIDLIST=(20 10 5 2.5 2 1)
-if [ $# -lt 4 ] ; then
-  echo "paramspawn.sh ERROR: needs 4 positional arguments ... ENDING NOW"
+TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
+GRIDLIST=(18000 9000 4500 3600 1800 900)
+if [ $# -lt 5 ] ; then
+  echo "paramspawn.sh ERROR: needs 5 positional arguments ... ENDING NOW"
   echo
   echo "usage:"
   echo
@@ -28,6 +29,7 @@ if [ $# -lt 4 ] ; then
   echo "    PROCSS       = 1,2,3,... is number of MPI processes"
   echo "    GRID      in (${GRIDLIST[@]})"
   echo "    CLIMATE   in (${CLIMLIST[@]})"
+  echo "    TYPE      in (${TYPELIST[@]})"
   echo "    REGRIDFILE  name of regrid file"
   echo
   echo
@@ -74,17 +76,17 @@ OFORMAT=$PISM_OFORMAT
 
 
 # set GRID from argument 2
-if [ "$2" = "20" ]; then
+if [ "$2" = "18000" ]; then
     GRID=$2
-elif [ "$2" = "10" ]; then
+elif [ "$2" = "9000" ]; then
     GRID=$2
-elif [ "$2" = "5" ]; then
+elif [ "$2" = "4500" ]; then
     GRID=$2
-elif [ "$2" = "2.5" ]; then
+elif [ "$2" = "3600" ]; then
     GRID=$2
-elif [ "$2" = "2" ]; then
+elif [ "$2" = "1800" ]; then
     GRID=$2
-elif [ "$2" = "1" ]; then
+elif [ "$2" = "900" ]; then
     GRID=$2
 else
   echo "invalid second argument; must be in (${GRIDLIST[@]})"
@@ -99,17 +101,29 @@ else
   exit
 fi
 
+# set TYPE from argument 4
+if [ "$4" = "ctrl" ]; then
+    TYPE=$4
+elif [ "$4" = "old_bed" ]; then
+    TYPE=$4
+elif [ "$4" = "970mW_hs" ]; then
+    TYPE=$4
+elif [ "$4" = "jak_1985" ]; then
+    TYPE=$4
+else
+  echo "invalid forth argument; must be in (${TYPELIST[@]})"
+  exit
+fi
+
 # make this resolution dependent
-PISM_BCFILE=RACMO_CLRUN_10KM_CON_MM_06.nc
+PISM_BCFILE=RACMO_CLRUN_${GRID}M_BIL_MM_EPSG314.nc
 STARTYEAR=1985
 ENDYEAR=2012
 PISM_TIMEFILE=time_${STARTYEAR}-${ENDYEAR}.nc
 create_timeline.py -a ${STARTYEAR}-1-1 -e ${ENDYAR}-1-1 $PISM_TIMEFILE
 
-TYPE=jak_1985
-
-REGRIDFILE=$4
-PISM_DATANAME=pism_Greenland_${GRID}km_v3_${TYPE}.nc
+REGRIDFILE=$5
+PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v1.1_${TYPE}.nc
 NODES=$(( $NN/$PROCS_PER_NODE))
 
  SHEBANGLINE="#!/bin/bash"
@@ -124,15 +138,15 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 
 HYDRO=null
 E=1
-PPQ=0.33
+PPQ=0.25
 TEFO=0.02
 PHILOW=5
 PARAM_TTPHI="${PHILOW}.0,40.0,-700.0,700.0"
             
 EXPERIMENT=hydro_${HYDRO}_${START}-${END}
-SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
-POST=do_g${GRID}km_${EXPERIMENT}_post.sh
-PLOT=do_g${GRID}km_${EXPERIMENT}_plot.sh
+SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
+POST=do_g${GRID}m_${EXPERIMENT}_post.sh
+PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
 rm -f $SCRIPT $$POST $PLOT
 
 OUTFILE=g${GRID}km_${EXPERIMENT}.nc
@@ -151,7 +165,7 @@ echo >> $SCRIPT # add newline
 export PISM_EXPERIMENT=$EXPERIMENT
 export PISM_TITLE="Greenland Parameter Study"
 
-cmd="PISM_DO="" PISM_BCFILE=$PISM_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=monthly SAVE=yearly   PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
+cmd="PISM_DO="" PISM_BCFILE=$PISM_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=daily SAVE=yearly   PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 
 echo >> $SCRIPT

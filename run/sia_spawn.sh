@@ -138,8 +138,8 @@ for E in 1 2 3 ; do
     
     EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_sia_hydro_${HYDRO}
     SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
-    POST=${SCRIPT}_post.sh
-    PLOT=${SCRIPT}_plot.sh
+    POST=do_g${GRID}m_${EXPERIMENT}_post.sh
+    PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
     rm -f $SCRIPT $$POST $PLOT
     
     OUTFILE=g${GRID}m_${EXPERIMENT}.nc
