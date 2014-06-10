@@ -137,12 +137,12 @@ for E in 1 2 3 ; do
     HYDRO=null
     
     EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_sia_hydro_${HYDRO}
-    SCRIPT=do_g${GRID}km_${EXPERIMENT}.sh
-    POST=do_g${GRID}km_${EXPERIMENT}_post.sh
-    PLOT=do_g${GRID}km_${EXPERIMENT}_plot.sh
+    SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
+    POST=${SCRIPT}_post.sh
+    PLOT=${SCRIPT}_plot.sh
     rm -f $SCRIPT $$POST $PLOT
     
-    OUTFILE=g${GRID}km_${EXPERIMENT}.nc
+    OUTFILE=g${GRID}m_${EXPERIMENT}.nc
     
     # insert preamble
     echo $SHEBANGLINE >> $SCRIPT
