@@ -178,7 +178,7 @@ echo "### $PLOT written"
 echo
 echo
 
-SUBMIT=submit_g${GRID}km_hindcast.sh
+SUBMIT=submit_g${GRID}m_hindcast.sh
 rm -f $SUBMIT
 cat - > $SUBMIT <<EOF
 $SHEBANGLINE
