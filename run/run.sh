@@ -137,8 +137,8 @@ if [ "$2" = "const" ]; then
   climname="constant-climate"
   INLIST=""
   # use this if you want constant-climate with force-to-thickness
-  # COUPLER="-surface given$FTT -surface_given_file $PISM_DATANAME"
-  COUPLER="-surface given -surface_given_file $PISM_DATANAME"
+  COUPLER="-surface given$FTT -surface_given_file $PISM_DATANAME"
+  # COUPLER="-surface given -surface_given_file $PISM_DATANAME"
 elif [ "$2" = "paleo" ]; then
   climname="paleo-climate"
   INLIST="$PISM_TEMPSERIES $PISM_SLSERIES"
