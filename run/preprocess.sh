@@ -2,9 +2,9 @@
 
 # Copyright (C) 2014 Andy Aschwanden
 
+# generates config file
 # downloads "SeaRISE" master dataset
-# downloads "hotspot" master dataset
-# adds climatic mass balance and precip from SeaRISE to hotspot data set
+# downloads various MCB master datasets
 
 set -e -x  # exit on error
 
@@ -127,48 +127,11 @@ echo "done."
 echo
 
 nc2cdo.py $PISMVERSION
-HS=970mW_hs
-CTRL=ctrl
-OLD=old_bed
-V85=jak_1985
 VERSION=1.1
 for GS in "36000" "18000" "9000" "4500" "3600" "1800" "900"; do
-# for GS in "36000"; do
-    DATANAME=pism_Greenland_${GS}m_mcb_jpl_v${VERSION}
-    rsync -rvu --progress  $user@beauregard.gi.alaska.edu:/home2/tmp/data_sets/mc_beds/${DATANAME}.nc
-    # wget -nc http://pism-docs.org/download/pism_Greenland_${GS}m_1985.nc
-    create_greenland_epsg3413_grid.py -g ${GS} epsg_${GS}m_grid.nc
-    nc2cdo.py --srs "+init=EPSG:3413" epsg_${GS}m_grid.nc
-    ncks -O $DATANAME.nc ${DATANAME}_${CTRL}.nc
-    ncks -O -v bed,thickness -x $DATANAME.nc ${DATANAME}_${OLD}.nc
-    # ncks -O -v usurf,thk,topg -x $DATANAME.nc ${DATANAME}_${V85}.nc
-
-    echo
-    echo "Creating hotspot"
-    echo 
-    sh create_hotspot.sh ${DATANAME}.nc ${DATANAME}_${HS}.nc
-    echo
-    echo "Adding climatic fields"
-    echo
-    if [[ $NN == 1 ]] ; then
-	REMAP_EXTRAPOLATE=on cdo remapbil,epsg_${GS}m_grid.nc $PISMVERSION tmp_Greenland_${GS}m.nc
-	REMAP_EXTRAPOLATE=on cdo remapbil,epsg_${GS}m_grid.nc $PISMVERSIONOLD old_Greenland_${GS}m.nc
-    else
-	REMAP_EXTRAPOLATE=on cdo -P $NN remapbil,epsg_${GS}m_grid.nc $PISMVERSION tmp_Greenland_${GS}m.nc
-	REMAP_EXTRAPOLATE=on cdo -P $NN remapbil,epsg_${GS}m_grid.nc $PISMVERSIONOLD old_Greenland_${GS}m.nc
-    fi
-    ncks -A -v x,y ${DATANAME}.nc tmp_Greenland_${GS}m.nc
-    mpiexec -np $NN fill_missing_petsc.py -v climatic_mass_balance,precipitation,ice_surface_temp tmp_Greenland_${GS}m.nc  filled_Greenland_${GS}m.nc
-    echo
-    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}m.nc ${DATANAME}_${CTRL}.nc
-    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}m.nc ${DATANAME}_${HS}.nc
-    ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}m.nc ${DATANAME}_${OLD}.nc
-    # ncks -A -v climatic_mass_balance,precipitation,ice_surface_temp filled_Greenland_${GS}m.nc ${DATANAME}_${V85}.nc
-
-    ncks -A -v thk,topg old_Greenland_${GS}m.nc ${DATANAME}_${OLD}.nc
-    ncrename -O -v topg,bed -v thk,thickness ${DATANAME}_${OLD}.nc ${DATANAME}_${OLD}.nc
-    ncatted -O -a _FillValue,thickness,d,, -a missing_value,thickness,d,, ${DATANAME}_${OLD}.nc
-    ncap2 -O -s "where(thickness<0) thickness=0;" ${DATANAME}_${OLD}.nc ${DATANAME}_${OLD}.nc
-    # ncks -A -v thk,usurf,topg pism_Greenland_${GS}m_1985.nc ${DATANAME}_${V85}.nc
+    for TYPE in "ctrl" "970mW_hs" "old_bed"; do 
+    DATANAME=pism_Greenland_${GS}m_mcb_jpl_v${VERSION}_${TYPE}
+    rsync -rvu --progress  $user@beauregard.gi.alaska.edu:/home2/tmp/data_sets/mc_beds/${DATANAME}.nc .
+    done
 done
 
