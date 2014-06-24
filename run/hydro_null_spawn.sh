@@ -148,6 +148,7 @@ for E in 1 2 3 ; do
             
                 OUTFILE=g${GRID}m_${EXPERIMENT}.nc
                 OUTFILE2=g${GRID}m_${EXPERIMENT}_2.nc
+                OUTFILE3=g${GRID}m_${EXPERIMENT}_3.nc
 
                 # insert preamble
                 echo $SHEBANGLINE >> $SCRIPT
@@ -183,16 +184,21 @@ for E in 1 2 3 ; do
                 export PISM_EXPERIMENT=$EXPERIMENT
                 export PISM_TITLE="Greenland Parameter Study"
 
-                # echo >> $SCRIPT2
-                # cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$OUTFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE2 $INFILE"
-                # echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT2                            
-                # echo >> $SCRIPT2
-                # echo "# $SCRIPT2 written"
+                echo >> $SCRIPT2
+                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$OUTFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE2 $INFILE"
+                echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT2                            
+                echo >> $SCRIPT2
+                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$OUTFILE3 PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=daily PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI ./run.sh $NN $CLIMATE 0.25 $GRID hybrid $HYDRO $OUTFILE3 $INFILE"
+                echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT2                            
+                echo >> $SCRIPT2
+                echo "# $SCRIPT2 written"
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO"
+
                 source run-postpro.sh
                 echo "## $POST written"
                 echo "### $PLOT written"
                 echo
+
             done
         done
     done
