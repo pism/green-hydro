@@ -145,7 +145,8 @@ for E in 1 2 3 ; do
                 POST=do_g${GRID}m_${EXPERIMENT}_post.sh
                 PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
                 rm -f $SCRIPT $$POST $PLOT
-            
+                rm -f $SCRIPT2
+
                 OUTFILE=g${GRID}m_${EXPERIMENT}.nc
                 OUTFILE2=g${GRID}m_${EXPERIMENT}_2.nc
                 OUTFILE3=g${GRID}m_${EXPERIMENT}_3.nc
