@@ -19,7 +19,7 @@ SCRIPTNAME=hydro_distributed_spawn.sh
 
 CLIMLIST=(const, pdd)
 TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
-GRIDLIST=(18000 9000 4500 3600 1800 900)
+GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900)
 if [ $# -lt 5 ] ; then
   echo "paramspawn.sh ERROR: needs 5 positional arguments ... ENDING NOW"
   echo
@@ -86,6 +86,10 @@ elif [ "$2" = "4500" ]; then
 elif [ "$2" = "3600" ]; then
     GRID=$2
 elif [ "$2" = "1800" ]; then
+    GRID=$2
+elif [ "$2" = "1500" ]; then
+    GRID=$2
+elif [ "$2" = "1200" ]; then
     GRID=$2
 elif [ "$2" = "900" ]; then
     GRID=$2

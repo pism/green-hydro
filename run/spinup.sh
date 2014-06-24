@@ -26,7 +26,7 @@ set -e # exit on error
 
 CLIMLIST=(const, paleo)
 TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
-GRIDLIST=(18000 9000 4500 3600 1800 900)
+GRIDLIST="{36000, 18000, 9000, 4500, 3600, 1800, 1500, 1200, 900}"
 if [ $# -lt 2 ] ; then
   echo "spinup.sh ERROR: needs 4 positional arguments ... ENDING NOW"
   echo
@@ -85,6 +85,10 @@ elif [ "$2" = "4500" ]; then
 elif [ "$2" = "3600" ]; then
     GRID=$2
 elif [ "$2" = "1800" ]; then
+    GRID=$2
+elif [ "$2" = "1500" ]; then
+    GRID=$2
+elif [ "$2" = "1200" ]; then
     GRID=$2
 elif [ "$2" = "900" ]; then
     GRID=$2
@@ -245,15 +249,59 @@ else
     REGRIDFILE=$OUTFILE
 fi
 
-DURA=400
+DURA=200
 START=-500
-END=-100
+END=-300
 MA=$(($END/-1))
 
 
 OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}.nc
       
 if [[ ($GRID == "18000") || ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800") ]]; then      
+    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    echo "$cmd 2>&1 | tee job_d.\${PBS_JOBID}" >> $SCRIPT
+else
+    echo "# not starting from -300a" >> $SCRIPT
+fi
+echo >> $SCRIPT
+
+if [ $GRID == "1500" ]; then
+    REGRIDFILE=g1800m_m${MA}a_${CLIMATE}_${TYPE}.nc
+else
+    REGRIDFILE=$OUTFILE
+fi
+
+DURA=100
+START=-300
+END=-200
+MA=$(($END/-1))
+
+
+OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}.nc
+      
+if [[ ($GRID == "18000") || ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800")  || ($GRID == "1500") ]]; then      
+    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    echo "$cmd 2>&1 | tee job_d.\${PBS_JOBID}" >> $SCRIPT
+else
+    echo "# not starting from -200a" >> $SCRIPT
+fi
+echo >> $SCRIPT
+
+if [ $GRID == "1200" ]; then
+    REGRIDFILE=g1500m_m${MA}a_${CLIMATE}_${TYPE}.nc
+else
+    REGRIDFILE=$OUTFILE
+fi
+
+DURA=100
+START=-200
+END=-100
+MA=$(($END/-1))
+
+
+OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}.nc
+      
+if [[ ($GRID == "18000") || ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800")  || ($GRID == "1200") ]]; then      
     cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_d.\${PBS_JOBID}" >> $SCRIPT
 else

@@ -131,7 +131,7 @@ VERSION=1.1
 for GS in "36000" "18000" "9000" "4500" "3600" "1800" "900"; do
     for TYPE in "ctrl" "970mW_hs" "old_bed"; do 
     DATANAME=pism_Greenland_${GS}m_mcb_jpl_v${VERSION}_${TYPE}
-    rsync -rvu --progress  $user@beauregard.gi.alaska.edu:/home2/tmp/data_sets/mc_beds/${DATANAME}.nc .
+    rsync -rvu --progress  $user@beauregard.gi.alaska.edu:/home2/tmp/data_sets/boot-files/${DATANAME}.nc .
     done
 done
 

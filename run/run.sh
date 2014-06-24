@@ -10,7 +10,7 @@
 
 set -e  # exit on error
 
-GRIDLIST="{36000, 18000, 9000, 4500, 3600, 1800, 900}"
+GRIDLIST="{36000, 18000, 9000, 4500, 3600, 1800, 1500, 1200, 900}"
 CLIMLIST="{const, paleo, pdd, forcing}"
 DYNALIST="{sia, hybrid}"
 HYDROLIST="{null, routing, distributed}"
@@ -195,6 +195,16 @@ elif [ "$4" == "1800" ]; then
   dx=$4
   myMx=880
   myMy=1520
+  vgrid=$FINEVGRID
+elif [ "$4" == "1500" ]; then
+  dx=$4
+  myMx=1056
+  myMy=1824
+  vgrid=$FINEVGRID
+elif [ "$4" == "1200" ]; then
+  dx=$4
+  myMx=1320
+  myMy=2280
   vgrid=$FINEVGRID
 elif [ "$4" == "900" ]; then
   dx=$4
