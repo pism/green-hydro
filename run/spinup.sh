@@ -301,7 +301,7 @@ MA=$(($END/-1))
 
 OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}.nc
       
-if [[ ($GRID == "18000") || ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800")  || ($GRID == "1200") ]]; then      
+if [[ ($GRID == "18000") || ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800")  || ($GRID == "1500") || ($GRID == "1200") ]]; then      
     cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" EXSTEP=10 ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_f.\${PBS_JOBID}" >> $SCRIPT
 else
@@ -322,7 +322,7 @@ fi
 OUTFILE=g${GRID}m_0_${CLIMATE}_${TYPE}.nc
       
 cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_FTT="foo" EXSTEP=10 ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
-echo "$cmd 2>&1 | tee job_e.\${PBS_JOBID}" >> $SCRIPT
+echo "$cmd 2>&1 | tee job_g.\${PBS_JOBID}" >> $SCRIPT
 echo >> $SCRIPT
 
 
