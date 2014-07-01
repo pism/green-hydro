@@ -49,7 +49,7 @@ fi
 if [ -f ${filepre}_1.nc ]; then
     # because QGIS doesn't like (x,y) ordering
     sh add_epsg3413_mapping.sh ${filepre}_1.nc
-    ncpdq -O -v enthalpy,litho_temp,temp_pa,liqfrac -x -a time,y,x ${filepre}_1.nc ${tl_dir}/${nc_dir}/${filepre}_1.nc
+    ncpdq -O -3 -v enthalpy,litho_temp,temp_pa,liqfrac -x -a time,y,x ${filepre}_1.nc ${tl_dir}/${nc_dir}/${filepre}_1.nc
     ncap2 -O -s "velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {velshear_mag=$fill; velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}_1.nc ${tl_dir}/${nc_dir}/${filepre}_1.nc
     ncatted -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}_1.nc
 fi
@@ -57,7 +57,7 @@ fi
 if [ -f ${filepre}_2.nc ]; then
     # because QGIS doesn't like (x,y) ordering
     sh add_epsg3413_mapping.sh ${filepre}_2.nc
-    ncpdq -O -v enthalpy,litho_temp,temp_pa,liqfrac -x -a time,y,x ${filepre}_2.nc ${tl_dir}/${nc_dir}/${filepre}_2.nc
+    ncpdq -O -3 -v enthalpy,litho_temp,temp_pa,liqfrac -x -a time,y,x ${filepre}_2.nc ${tl_dir}/${nc_dir}/${filepre}_2.nc
     ncap2 -O -s "velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {velshear_mag=$fill; velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}_2.nc ${tl_dir}/${nc_dir}/${filepre}_2.nc
     ncatted -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}_2.nc
 fi
@@ -65,7 +65,7 @@ fi
 if [ -f ${filepre}_3.nc ]; then
     # because QGIS doesn't like (x,y) ordering
     sh add_epsg3413_mapping.sh ${filepre}_3.nc
-    ncpdq -O -v enthalpy,litho_temp,temp_pa,liqfrac -x -a time,y,x ${filepre}_3.nc ${tl_dir}/${nc_dir}/${filepre}_3.nc
+    ncpdq -O -3 -v enthalpy,litho_temp,temp_pa,liqfrac -x -a time,y,x ${filepre}_3.nc ${tl_dir}/${nc_dir}/${filepre}_3.nc
     ncap2 -O -s "velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {velshear_mag=$fill; velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}_3.nc ${tl_dir}/${nc_dir}/${filepre}_3.nc
     ncatted -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}_3.nc
 fi
