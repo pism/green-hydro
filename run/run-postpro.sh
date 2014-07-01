@@ -46,13 +46,28 @@ if [ ! -d ${tl_dir}/${spc_dir} ]; then
     mkdir ${tl_dir}/${spc_dir}
 fi
 
-if [ -f ${filepre}.nc ]; then
+if [ -f ${filepre}_1.nc ]; then
     # because QGIS doesn't like (x,y) ordering
-    sh add_epsg3413_mapping.sh ${filepre}.nc
-    ncpdq -O -v enthalpy,litho_temp,temp_pa,liqfrac -x -a time,y,x ${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
-    ncap2 -O -s "velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {velshear_mag=$fill; velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
-    ncatted -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}.nc
-    # extract-profiles.py $fluxgates ${filepre}.nc ${tl_dir}/${pr_dir}/profiles_${filepre}.nc
+    sh add_epsg3413_mapping.sh ${filepre}_1.nc
+    ncpdq -O -v enthalpy,litho_temp,temp_pa,liqfrac -x -a time,y,x ${filepre}_1.nc ${tl_dir}/${nc_dir}/${filepre}_1.nc
+    ncap2 -O -s "velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {velshear_mag=$fill; velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}_1.nc ${tl_dir}/${nc_dir}/${filepre}_1.nc
+    ncatted -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}_1.nc
+fi
+
+if [ -f ${filepre}_2.nc ]; then
+    # because QGIS doesn't like (x,y) ordering
+    sh add_epsg3413_mapping.sh ${filepre}_2.nc
+    ncpdq -O -v enthalpy,litho_temp,temp_pa,liqfrac -x -a time,y,x ${filepre}_2.nc ${tl_dir}/${nc_dir}/${filepre}_2.nc
+    ncap2 -O -s "velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {velshear_mag=$fill; velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}_2.nc ${tl_dir}/${nc_dir}/${filepre}_2.nc
+    ncatted -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}_2.nc
+fi
+
+if [ -f ${filepre}_3.nc ]; then
+    # because QGIS doesn't like (x,y) ordering
+    sh add_epsg3413_mapping.sh ${filepre}_3.nc
+    ncpdq -O -v enthalpy,litho_temp,temp_pa,liqfrac -x -a time,y,x ${filepre}_3.nc ${tl_dir}/${nc_dir}/${filepre}_3.nc
+    ncap2 -O -s "velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {velshear_mag=$fill; velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}_3.nc ${tl_dir}/${nc_dir}/${filepre}_3.nc
+    ncatted -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}_3.nc
 fi
 
 EOF
@@ -83,36 +98,36 @@ fi
 if [ ! -d ${tl_dir}/${spc_dir} ]; then
     mkdir ${tl_dir}/${spc_dir}
 fi
-if [ -f ${tl_dir}/${nc_dir}/${filepre}.nc ]; then
+if [ -f ${tl_dir}/${nc_dir}/${filepre}_3.nc ]; then
     rm -f ${tl_dir}/${spc_dir}/${filepre}_speed_contours.*
  
-    gdal_contour -a speed -fl 100 200 1000 NETCDF:${tl_dir}/${nc_dir}/${filepre}.nc:velsurf_mag ${tl_dir}/${spc_dir}/${filepre}_speed_contours.shp
+    gdal_contour -a speed -fl 100 200 1000 NETCDF:${tl_dir}/${nc_dir}/${filepre}_3.nc:velsurf_mag ${tl_dir}/${spc_dir}/${filepre}_speed_contours.shp
 
     ogr2ogr -overwrite -t_srs EPSG:4326 ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours.shp
 
     rm -f ${tl_dir}/${spc_dir}/${filepre}_speed_contours.*
 
-    basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file greenland_sar_velocities_500m_2005-2009_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISJakobshavn250m.tif -o ${tl_dir}/${fig_dir}/Jakobshavn_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file greenland_sar_velocities_500m_2005-2009_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISJakobshavn250m.tif -o ${tl_dir}/${fig_dir}/Jakobshavn_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}_3.nc
 
-    basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file greenland_sar_velocities_500m_2005-2009_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISKangerdlugssuaq250m.tif -o ${tl_dir}/${fig_dir}/Kangerdlugssuaq_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file greenland_sar_velocities_500m_2005-2009_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISKangerdlugssuaq250m.tif -o ${tl_dir}/${fig_dir}/Kangerdlugssuaq_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}_3.nc
 
-   basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file greenland_sar_velocities_500m_2005-2009_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISHelheim250m.tif -o ${tl_dir}/${fig_dir}/Helheim_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+   basemap-plot.py -v velsurf_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --shape_file greenland_sar_velocities_500m_2005-2009_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_speed_contours_epsg4326.shp --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISHelheim250m.tif -o ${tl_dir}/${fig_dir}/Helheim_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}_3.nc
 
-    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISJakobshavn250m.tif -o ${tl_dir}/${fig_dir}/Jakobshavn_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISJakobshavn250m.tif -o ${tl_dir}/${fig_dir}/Jakobshavn_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}_3.nc
 
-    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow  --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISKangerdlugssuaq250m.tif -o ${tl_dir}/${fig_dir}/Kangerdlugssuaq_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow  --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISKangerdlugssuaq250m.tif -o ${tl_dir}/${fig_dir}/Kangerdlugssuaq_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}_3.nc
 
-    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow  --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISHelheim250m.tif -o ${tl_dir}/${fig_dir}/Helheim_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velbase_mag --inner_titles "$title" --colorbar_label -p medium --singlerow  --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res --map_resolution $mres --geotiff_file MODISHelheim250m.tif -o ${tl_dir}/${fig_dir}/Helheim_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}_3.nc
 
-    basemap-plot.py -v velsurf_mag --inner_titles velsurf_mag --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velsurf_mag --inner_titles velsurf_mag --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_velsurf_mag.pdf ${tl_dir}/${nc_dir}/${filepre}_3.nc
 
-    basemap-plot.py -v velbase_mag --inner_titles velbase_mag --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velbase_mag --inner_titles velbase_mag --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_velbase_mag.pdf ${tl_dir}/${nc_dir}/${filepre}_3.nc
 
-    basemap-plot.py -v velshear_mag --inner_titles velshear_mag --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_velshear_mag.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v velshear_mag --inner_titles velshear_mag --colorbar_label -p medium --singlerow --colormap Full_saturation_spectrum_CCW_orange.cpt -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_velshear_mag.pdf ${tl_dir}/${nc_dir}/${filepre}_3.nc
 
-    basemap-plot.py -v tau_r --inner_titles tau_r --colorbar_label -p medium --singlerow -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_tau_r.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v tau_r --inner_titles tau_r --colorbar_label -p medium --singlerow -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_tau_r.pdf ${tl_dir}/${nc_dir}/${filepre}_3.nc
 
-    basemap-plot.py -v sliding_r --inner_titles sliding_r --colorbar_label -p medium --singlerow -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_sliding_r.pdf ${tl_dir}/${nc_dir}/${filepre}.nc
+    basemap-plot.py -v sliding_r --inner_titles sliding_r --colorbar_label -p medium --singlerow -r $res  $geotiff -o ${tl_dir}/${fig_dir}/Greenland_${filepre}_sliding_r.pdf ${tl_dir}/${nc_dir}/${filepre}_3.nc
 
     # create latex file
     rm -f Greenland_${filepre}.tex
