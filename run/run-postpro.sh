@@ -104,7 +104,7 @@ if [ -f ${tl_dir}/${nc_dir}/${filepre}_1.nc ]; then
  
     gdal_contour -a speed -fl 100 200 1000 NETCDF:${tl_dir}/${nc_dir}/${filepre}_1.nc:velsurf_mag ${tl_dir}/${spc_dir}/${filepre}_1_speed_contours.shp
 
-    ogr2ogr -overwrite -t_srs EPSG:4326 ${tl_dir}/${spc_dir}/${filepre}_1_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_1_speed_contours_1.shp
+    ogr2ogr -overwrite -t_srs EPSG:4326 ${tl_dir}/${spc_dir}/${filepre}_1_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_1_speed_contours.shp
 
     rm -f ${tl_dir}/${spc_dir}/${filepre}_1_speed_contours.*
 
@@ -152,7 +152,7 @@ if [ -f ${tl_dir}/${nc_dir}/${filepre}_2.nc ]; then
  
     gdal_contour -a speed -fl 100 200 1000 NETCDF:${tl_dir}/${nc_dir}/${filepre}_2.nc:velsurf_mag ${tl_dir}/${spc_dir}/${filepre}_2_speed_contours.shp
 
-    ogr2ogr -overwrite -t_srs EPSG:4326 ${tl_dir}/${spc_dir}/${filepre}_2_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_2_speed_contours_2.shp
+    ogr2ogr -overwrite -t_srs EPSG:4326 ${tl_dir}/${spc_dir}/${filepre}_2_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_2_speed_contours.shp
 
     rm -f ${tl_dir}/${spc_dir}/${filepre}_2_speed_contours.*
 
@@ -200,7 +200,7 @@ if [ -f ${tl_dir}/${nc_dir}/${filepre}_3.nc ]; then
  
     gdal_contour -a speed -fl 100 200 1000 NETCDF:${tl_dir}/${nc_dir}/${filepre}_3.nc:velsurf_mag ${tl_dir}/${spc_dir}/${filepre}_3_speed_contours.shp
 
-    ogr2ogr -overwrite -t_srs EPSG:4326 ${tl_dir}/${spc_dir}/${filepre}_3_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_3_speed_contours_3.shp
+    ogr2ogr -overwrite -t_srs EPSG:4326 ${tl_dir}/${spc_dir}/${filepre}_3_speed_contours_epsg4326.shp ${tl_dir}/${spc_dir}/${filepre}_3_speed_contours.shp
 
     rm -f ${tl_dir}/${spc_dir}/${filepre}_3_speed_contours.*
 
