@@ -87,6 +87,10 @@ elif [ "$2" = "3600" ]; then
     GRID=$2
 elif [ "$2" = "1800" ]; then
     GRID=$2
+elif [ "$2" = "1500" ]; then
+    GRID=$2
+elif [ "$2" = "1200" ]; then
+    GRID=$2
 elif [ "$2" = "900" ]; then
     GRID=$2
 else
@@ -142,7 +146,9 @@ for E in 1 2 3 ; do
     PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
     rm -f $SCRIPT $$POST $PLOT
     
-    OUTFILE=g${GRID}m_${EXPERIMENT}.nc
+    OUTFILE=g${GRID}m_${EXPERIMENT}_1.nc
+    OUTFILE2=g${GRID}m_${EXPERIMENT}_2.nc
+    OUTFILE3=g${GRID}m_${EXPERIMENT}_3.nc
     
     # insert preamble
     echo $SHEBANGLINE >> $SCRIPT
@@ -158,14 +164,26 @@ for E in 1 2 3 ; do
     export PISM_EXPERIMENT=$EXPERIMENT
     export PISM_TITLE="Greenland Parameter Study"
 
-    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E  ./run.sh $NN $CLIMATE $DURA $GRID sia $HYDRO $OUTFILE $INFILE"
-    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-    echo "($SPAWNSCRIPT)  $SCRIPT written"
-    title="E=$E"
-    source run-postpro.sh
-    echo "## $POST written"
-    echo "### $PLOT written"
+    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E ./run.sh $NN $CLIMATE $DURA $GRID sia $HYDRO $OUTFILE $INFILE"
+    echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
+    echo >> $SCRIPT
 
+    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$OUTFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E ./run.sh $NN $CLIMATE $DURA $GRID sia $HYDRO $OUTFILE2 $INFILE"
+    echo "$cmd 2>&1 | tee job_2.\${PBS_JOBID}" >> $SCRIPT                         
+    echo >> $SCRIPT
+
+    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$OUTFILE2 PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E ./run.sh $NN $CLIMATE $DURA $GRID sia $HYDRO $OUTFILE3 $INFILE"
+    echo "$cmd 2>&1 | tee job_3.\${PBS_JOBID}" >> $SCRIPT                         
+    echo >> $SCRIPT
+    echo "# $SCRIPT written"
+    
+    title="E=$E"
+    
+    source run-postpro.sh
+    echo "# $POST written"
+    echo "# $PLOT written"
+    echo
+    
 done
 
 SUBMIT=submit_g${GRID}m_${CLIMATE}_${TYPE}_sia_hydro_${HYDRO}.sh
