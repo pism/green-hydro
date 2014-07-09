@@ -193,6 +193,64 @@ for E in 1 2 3 ; do
     done
 done
 
+# Extra runs
+
+for E in 1 ; do
+    for PPQ in  0.8 ; do
+        for TEFO in 0.005 ; do
+	    for PHILOW in 5; do
+		PARAM_TTPHI="${PHILOW}.0,40.0,-700.0,700.0"
+                EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_hydro_${HYDRO}
+                SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
+                POST=do_g${GRID}m_${EXPERIMENT}_post.sh
+                PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
+                rm -f $SCRIPT $$POST $PLOT
+                rm -f $SCRIPT2
+
+                OUTFILE=g${GRID}m_${EXPERIMENT}_1.nc
+                OUTFILE2=g${GRID}m_${EXPERIMENT}_2.nc
+                OUTFILE3=g${GRID}m_${EXPERIMENT}_3.nc
+
+                # insert preamble
+                echo $SHEBANGLINE >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                echo $MPIQUEUELINE >> $SCRIPT
+                echo $MPITIMELINE >> $SCRIPT
+                echo $MPISIZELINE >> $SCRIPT
+                echo $MPIOUTLINE >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                
+                export PISM_EXPERIMENT=$EXPERIMENT
+                export PISM_TITLE="Greenland Parameter Study"
+                
+                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
+                echo >> $SCRIPT
+
+                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$OUTFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE2 $INFILE"
+                echo "$cmd 2>&1 | tee job_2.\${PBS_JOBID}" >> $SCRIPT                         
+                echo >> $SCRIPT
+
+                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$OUTFILE2 PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE3 $INFILE"
+                echo "$cmd 2>&1 | tee job_3.\${PBS_JOBID}" >> $SCRIPT                         
+                echo >> $SCRIPT
+                echo "# $SCRIPT written"
+
+	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO"
+
+                source run-postpro.sh
+                echo "# $POST written"
+                echo "# $PLOT written"
+                echo
+
+            done
+        done
+    done
+done
+
+
 SUBMIT=submit_g${GRID}m_${CLIMATE}_${TYPE}_hydro_${HYDRO}.sh
 rm -f $SUBMIT
 cat - > $SUBMIT <<EOF
