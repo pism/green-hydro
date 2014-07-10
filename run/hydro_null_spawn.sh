@@ -252,7 +252,7 @@ done
 
 for E in 1 ; do
     for PPQ in  0.1 ; do
-        for TEFO in 0.04 ; do
+        for TEFO in 0.03 0.04 ; do
 	    for PHILOW in 5; do
 		PARAM_TTPHI="${PHILOW}.0,40.0,-700.0,700.0"
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_hydro_${HYDRO}
