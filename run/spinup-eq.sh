@@ -141,7 +141,7 @@ MPIQUEUELINE="#PBS -q $QUEUE"
  MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROCS_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
-SCRIPT="do_${GRID}m_${CLIMATE}-spinup-${TYPE}.sh"
+SCRIPT="do_${GRID}m_${CLIMATE}-spinup-eq-${TYPE}.sh"
 rm -f $SCRIPT
 EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization $TYPE"
 
