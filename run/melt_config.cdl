@@ -23,7 +23,7 @@ netcdf pism_overrides {
     pism_overrides:force_to_thickness_ice_free_alpha_factor = 10.0;
     pism_overrides:force_to_thickness_ice_free_alpha_factor_doc = "; force_to_thickness_alpha is multiplied by this factor in areas that are ice-free according to the target ice thickness and force_to_thickness_ice_free_thickness_threshold";
 
-    pism_overrides:ocean_sub_shelf_heat_flux_into_ice = 50.0;
+    pism_overrides:ocean_sub_shelf_heat_flux_into_ice = 1000.0;
     pism_overrides:ocean_sub_shelf_heat_flux_into_ice_doc = "W m-2; = J m-2 s-1; naively chosen default value for heat from ocean; see comments in @ref pism::POConstant::shelf_base_mass_flux().";
 
 }
