@@ -364,7 +364,7 @@ done
 for E in 1 ; do
     for PPQ in  0.1 0.25 0.33 0.8; do
         for TEFO in 0.02 ; do
-	    for SSA_N in 4; do
+	    for SSA_N in 4 6; do
 		PARAM_TTPHI="5.0,40.0,-700.0,700.0"
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
