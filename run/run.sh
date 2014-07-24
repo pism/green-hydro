@@ -65,6 +65,10 @@ if [ $# -lt 5 ] ; then
   echo "                 [default=0.5] for [routing, distributed]"
   echo "    PARAM_OMEGA  sets -tauc_add_transportable_water -till_log_factor_transportable_water \$PARAM_OMEGA"
   echo "                 [default=0.04] for [routing, distributed]"
+  echo "    PARAM_SSA_N  sets -sia_n \$PARAM_SIA_N"
+  echo "                 [default=3] for Glen exponent in SIA"
+  echo "    PARAM_SSA_N  sets -ssa_n \$PARAM_SSA_N"
+  echo "                 [default=3] for Glen exponent in SSA"
   echo "    PISM_DO      set to 'echo' if no run desired; defaults to empty"
   echo "    PISM_OFORMAT set -o_format; defaults to netcdf3"
   echo "    PISM_MPIDO   defaults to 'mpiexec -n'"
@@ -79,7 +83,7 @@ if [ $# -lt 5 ] ; then
   echo
   echo "example usage 1:"
   echo
-  echo "    $ ./spinup.sh 4 const 1000 18000 sia"
+  echo "    $ ./run.sh 4 const 1000 18000 sia"
   echo
   echo "  Does spinup with 4 processors, constant-climate, 1000 year run, 18 km"
   echo "  grid, and non-sliding SIA stress balance.  Bootstraps from and outputs to"
@@ -87,7 +91,7 @@ if [ $# -lt 5 ] ; then
   echo
   echo "example usage 2:"
   echo
-  echo "    $ PISM_DO=echo ./spinup.sh 128 paleo 100.0 4500 hybrid out.nc boot.nc &> foo.sh"
+  echo "    $ PISM_DO=echo ./run.sh 128 paleo 100.0 4500 hybrid out.nc boot.nc &> foo.sh"
   echo
   echo "  Creates a script foo.sh for spinup with 128 processors, simulated paleo-climate,"
   echo "  4.5 km grid, sliding with SIA+SSA hybrid, output to {out.nc,ts_out.nc,ex_out.nc},"
@@ -217,10 +221,15 @@ else
 fi
 
 # set stress balance from argument 5
-if [ -n "${PARAM_SIAE:+1}" ] ; then  # check if env var is already set
-  PHYS="-calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e ${PARAM_SIAE}"
+if [ -n "${PARAM_SIA_N:+1}" ] ; then  # check if env var is NOT set
+    SIA_N="-sia_n ${PARAM_SIA_N}"
 else
-  PHYS="-calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e 3.0"
+    SIA_N="-sia_n 3"
+fi
+if [ -n "${PARAM_SIAE:+1}" ] ; then  # check if env var is already set
+  PHYS="-calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e ${PARAM_SIAE} ${SIA_N}"
+else
+  PHYS="-calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e 3.0 ${SIA_N}"
 fi
 # done forming $PHYS if "$5" = "sia"
 if [ "$5" = "hybrid" ]; then
@@ -238,7 +247,12 @@ if [ "$5" = "hybrid" ]; then
   else
     SGL=""
   fi
-  PHYS="${PHYS} -stress_balance ssa+sia -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL}"
+  if [ -n "${PARAM_SSA_N:+1}" ] ; then  # check if env var is NOT set
+    SSA_N="-ssa_n ${PARAM_SSA_N}"
+  else
+    SSA_N="-ssa_n 3"
+  fi
+  PHYS="${PHYS} -stress_balance ssa+sia -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N}"
 else
   if [ "$5" = "sia" ]; then
     echo "$SCRIPTNAME  sia-only case: ignoring PARAM_TTPHI, PARAM_PPQ, PARAM_TEFO ..."
