@@ -153,7 +153,7 @@ POST=do_g${GRID}m_${EXPERIMENT}_post.sh
 PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
 rm -f $SCRIPT $$POST $PLOT
 
-OUTFILE=g${GRID}km_${EXPERIMENT}.nc
+OUTFILE=g${GRID}m_${EXPERIMENT}.nc
 
 # insert preamble
 echo $SHEBANGLINE >> $SCRIPT
