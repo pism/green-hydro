@@ -141,7 +141,7 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 # ########################################################
 
 HYDRO=null
-E=1
+E=3
 PPQ=0.25
 TEFO=0.02
 PHILOW=5
