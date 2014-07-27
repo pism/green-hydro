@@ -138,10 +138,10 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 
 HYDRO=null
 
-for E in 1 2; do
+for E in 1; do
     for PPQ in 0.1 0.25 0.33 0.8 ; do
         for TEFO in 0.01 0.02 0.05 ; do
-	    for SSA_N in 3.0 3.25 3.5 4; do
+	    for SSA_N in 3.0 3.25 3.5 3.75 4; do
 		PARAM_TTPHI="15.0,40.0,-700.0,700.0"
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
