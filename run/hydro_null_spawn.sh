@@ -172,13 +172,14 @@ for E in 1; do
                 echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
                 echo >> $SCRIPT
 
-                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$OUTFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE2 $INFILE"
-                echo "$cmd 2>&1 | tee job_2.\${PBS_JOBID}" >> $SCRIPT                         
-                echo >> $SCRIPT
+                # cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$OUTFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE2 $INFILE"
+                # echo "$cmd 2>&1 | tee job_2.\${PBS_JOBID}" >> $SCRIPT                         
+                # echo >> $SCRIPT
 
-                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$OUTFILE2 PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE3 $INFILE"
-                echo "$cmd 2>&1 | tee job_3.\${PBS_JOBID}" >> $SCRIPT                         
-                echo >> $SCRIPT
+                # cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$OUTFILE2 PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE3 $INFILE"
+                # echo "$cmd 2>&1 | tee job_3.\${PBS_JOBID}" >> $SCRIPT                         
+                # echo >> $SCRIPT
+
                 echo "# $SCRIPT written"
 
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO"
