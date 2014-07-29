@@ -9,12 +9,12 @@ MYMPIQUEUELINE="#PBS -q transfer"
 out_dir=1500m_hindcast/processed/greenland/yearly
 reg_dir=1500m_hindcast/processed/regional/yearly
 
-start=1960
-while [ $start -lt 1969 ]; do
+start=1969
+while [ $start -lt 1978 ]; do
     echo $start
     end=$[$start+1]
     for var in "bmelt" "bwat" "sigma_xx" "sigma_yy" "sigma_xy" "diffusivity" "h_x_i" "h_x_j" "h_y_i" "h_y_j" "mask" "eigen1" "eigen2" "taub_x" "taub_y" "taud_x" "taud_y" "taud_mag" "tempicethk_basal" "tempabase" "thk" "topg" "usurf" "uvelbase" "vvelbase" "uvelsurf" "vvelsurf" "velsurf_mag" "velbase_mag" "wvelbase" "wvelsurf" "tillwat"; do
-      
+     
         echo $var
         POST=post_${start}-${end}_${var}.sh
 
