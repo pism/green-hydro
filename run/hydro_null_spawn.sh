@@ -182,7 +182,7 @@ for E in 1 2; do
 
                 echo "# $SCRIPT written"
 
-	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO"
+	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;SSA n=$SSA_N"
 
                 source run-postpro.sh
                 echo "# $POST written"
@@ -238,7 +238,7 @@ for E in 1; do
 
                 echo "# $SCRIPT written"
 
-	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO"
+	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;SSA n=$SSA_N"
 
                 source run-postpro.sh
                 echo "# $POST written"
