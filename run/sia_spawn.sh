@@ -47,7 +47,7 @@ fi
 if [ -n "${PISM_WALLTIME:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME                    PISM_WALLTIME = $PISM_WALLTIME  (already set)"
 else
-  PISM_WALLTIME=12:00:00
+  PISM_WALLTIME=48:00:00
   echo "$SCRIPTNAME                     PISM_WALLTIME = $PISM_WALLTIME"
 fi
 WALLTIME=$PISM_WALLTIME
@@ -137,7 +137,7 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 # set up parameter sensitivity study: Shallow Ice Approximation
 # ########################################################
 
-for E in 1 2 3 ; do
+for E in 1 3; do
     HYDRO=null
     
     EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_sia_hydro_${HYDRO}
@@ -146,9 +146,7 @@ for E in 1 2 3 ; do
     PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
     rm -f $SCRIPT $$POST $PLOT
     
-    OUTFILE=g${GRID}m_${EXPERIMENT}_1.nc
-    OUTFILE2=g${GRID}m_${EXPERIMENT}_2.nc
-    OUTFILE3=g${GRID}m_${EXPERIMENT}_3.nc
+    OUTFILE=g${GRID}m_${EXPERIMENT}_100a.nc
     
     # insert preamble
     echo $SHEBANGLINE >> $SCRIPT
@@ -168,14 +166,6 @@ for E in 1 2 3 ; do
     echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
     echo >> $SCRIPT
 
-    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$OUTFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E ./run.sh $NN $CLIMATE $DURA $GRID sia $HYDRO $OUTFILE2 $INFILE"
-    echo "$cmd 2>&1 | tee job_2.\${PBS_JOBID}" >> $SCRIPT                         
-    echo >> $SCRIPT
-
-    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$OUTFILE2 PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E ./run.sh $NN $CLIMATE $DURA $GRID sia $HYDRO $OUTFILE3 $INFILE"
-    echo "$cmd 2>&1 | tee job_3.\${PBS_JOBID}" >> $SCRIPT                         
-    echo >> $SCRIPT
-    echo "# $SCRIPT written"
     
     title="E=$E"
     
