@@ -140,8 +140,8 @@ HYDRO=null
 
 
 philow=5.0
-for E in 1 ; do
-    for PPQ in 0.1 0.25 0.8 ; do
+for E in 1 2 3; do
+    for PPQ in 0.1 0.25 0.6 0.8 ; do
         for TEFO in 0.01 0.02 0.04 ; do
 	    for SSA_N in 3.0 3.5 3.75 4; do
 		PARAM_TTPHI="${philow},40.0,-700.0,700.0"
@@ -184,6 +184,7 @@ for E in 1 ; do
         done
     done
 done
+
 
 
 SUBMIT=submit_g${GRID}m_${CLIMATE}_${TYPE}_hydro_${HYDRO}.sh
