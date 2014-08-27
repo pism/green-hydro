@@ -137,7 +137,7 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 # set up parameter sensitivity study: Shallow Ice Approximation
 # ########################################################
 
-for E in 1 1.25 1.5 2 3; do
+for E in 1 1.25 1.5 1.75 2 3; do
     HYDRO=null
     
     EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_sia_hydro_${HYDRO}
