@@ -183,7 +183,7 @@ for E in 1.25; do
             done
         done
     done
-    for PPQ in 0.6 0.7 0.8 ; do
+    for PPQ in 0.5 0.6 0.7 0.8 ; do
         for TEFO in 0.02; do
 	    for SSA_N in 3.0 3.25 3.5 3.75; do
 		PARAM_TTPHI="${philow},40.0,-700.0,700.0"
