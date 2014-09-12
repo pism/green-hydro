@@ -146,7 +146,7 @@ for E in 1.25; do
         for TEFO in 0.02; do
 	    for SSA_N in 3.25; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
-                PISM_BCFILE=RACMO_HadGEM2_RCP45_${GRID}M_CON_YM_${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}.nc
+                PISM_BCFILE=RACMO_HadGEM2_RCP45_${GRID}M_CON_YM_${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}.0_hydro_${HYDRO}.nc
                 EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                 SCRIPT=forecast_g${GRID}m_${EXPERIMENT}.sh
                 rm -f $SCRIPT
