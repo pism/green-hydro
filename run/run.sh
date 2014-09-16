@@ -10,7 +10,7 @@
 
 set -e  # exit on error
 
-GRIDLIST="{36000, 18000, 9000, 4500, 3600, 1800, 1500, 1200, 900}"
+GRIDLIST="{36000, 18000, 9000, 4500, 3600, 1800, 1500, 1200, 900, 600, 450}"
 CLIMLIST="{const, paleo, pdd, forcing}"
 DYNALIST="{sia, hybrid}"
 HYDROLIST="{null, routing, distributed}"
@@ -216,6 +216,16 @@ elif [ "$4" == "900" ]; then
   dx=$4
   myMx=1760
   myMy=3040
+  vgrid=$FINESTVGRID
+elif [ "$4" == "600" ]; then
+  dx=$4
+  myMx=2640
+  myMy=4560
+  vgrid=$FINESTVGRID
+elif [ "$4" == "450" ]; then
+  dx=$4
+  myMx=3520
+  myMy=6080
   vgrid=$FINESTVGRID
 else
   echo "invalid fourth argument: must be in $GRIDLIST"
