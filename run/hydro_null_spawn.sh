@@ -91,6 +91,10 @@ elif [ "$2" = "1200" ]; then
     GRID=$2
 elif [ "$2" = "900" ]; then
     GRID=$2
+elif [ "$2" = "600" ]; then
+    GRID=$2
+elif [ "$2" = "450" ]; then
+    GRID=$2
 else
   echo "invalid second argument; must be in (${GRIDLIST[@]})"
   exit
