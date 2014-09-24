@@ -236,20 +236,20 @@ fi
 if [ -n "${PARAM_SIA_N:+1}" ] ; then  # check if env var is NOT set
     SIA_N="-sia_n ${PARAM_SIA_N}"
 else
-    SIA_N="-sia_n 3"
+    SIA_N="-sia_n 1.25"
 fi
 if [ -n "${PARAM_SIAE:+1}" ] ; then  # check if env var is already set
   PHYS="-calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e ${PARAM_SIAE} ${SIA_N}"
 else
-  PHYS="-calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e 3.0 ${SIA_N}"
+  PHYS="-calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e ${SIA_N}"
 fi
 # done forming $PHYS if "$5" = "sia"
 if [ "$5" = "hybrid" ]; then
   if [ -z "${PARAM_TTPHI}" ] ; then  # check if env var is NOT set
-    PARAM_TTPHI="15.0,40.0,-300.0,700.0"
+    PARAM_TTPHI="5.0,40.0,-300.0,700.0"
   fi
   if [ -z "${PARAM_PPQ}" ] ; then  # check if env var is NOT set
-    PARAM_PPQ="0.25"
+    PARAM_PPQ="0.5"
   fi
   if [ -z "${PARAM_TEFO}" ] ; then  # check if env var is NOT set
     PARAM_TEFO="0.02"
@@ -262,7 +262,7 @@ if [ "$5" = "hybrid" ]; then
   if [ -n "${PARAM_SSA_N:+1}" ] ; then  # check if env var is NOT set
     SSA_N="-ssa_n ${PARAM_SSA_N}"
   else
-    SSA_N="-ssa_n 3"
+    SSA_N="-ssa_n 3.25"
   fi
   PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N}"
 else
