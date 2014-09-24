@@ -4,7 +4,7 @@
 
 set -e  # exit on error
 
-#  creates spinup scripts using grid sequencing 20->10->5->2.5->2->1km.
+#  creates spinup scripts using grid sequencing.
 #  scripts are suitable for PBS job scheduler
 #  (see  http://www.adaptivecomputing.com/products/open-source/torque/)
 #

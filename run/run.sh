@@ -236,12 +236,12 @@ fi
 if [ -n "${PARAM_SIA_N:+1}" ] ; then  # check if env var is NOT set
     SIA_N="-sia_n ${PARAM_SIA_N}"
 else
-    SIA_N="-sia_n 1.25"
+    SIA_N="-sia_n 3"
 fi
 if [ -n "${PARAM_SIAE:+1}" ] ; then  # check if env var is already set
   PHYS="-calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e ${PARAM_SIAE} ${SIA_N}"
 else
-  PHYS="-calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e ${SIA_N}"
+  PHYS="-calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e 1.25 ${SIA_N}"
 fi
 # done forming $PHYS if "$5" = "sia"
 if [ "$5" = "hybrid" ]; then
