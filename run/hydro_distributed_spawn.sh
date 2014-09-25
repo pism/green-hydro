@@ -6,12 +6,11 @@
 #  scripts are suitable for PBS job scheduler
 #  (see  http://www.adaptivecomputing.com/products/open-source/torque/)
 #
-#  usage: to use NN=8 processors, 2 4-core nodes, and duration 4:00:00,
+#  usage: to use NN=64 processors, 16 4-core nodes, and duration 4:00:00,
 #     $ export PISM_WALLTIME=4:00:00
-#     $ export PISM_NODES=2
-#     $ ./paramspawn.sh 8 FIXME
-#  then, assuming you like the resulting scripts:
-#     $ ./paramsubmit.sh      ### <--- REALLY SUBMITS using qsub
+#     $ export PISM_PROCS_PER_NODE=4
+#     $ export PISM_QUEUE=standard_4
+#     $ ./hydro_null_spawn.sh 64 9000 const ctrl input.nc 
 
 
 set -e # exit on error
@@ -47,7 +46,7 @@ fi
 if [ -n "${PISM_WALLTIME:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME                    PISM_WALLTIME = $PISM_WALLTIME  (already set)"
 else
-  PISM_WALLTIME=48:00:00
+  PISM_WALLTIME=12:00:00
   echo "$SCRIPTNAME                     PISM_WALLTIME = $PISM_WALLTIME"
 fi
 WALLTIME=$PISM_WALLTIME
@@ -55,14 +54,14 @@ WALLTIME=$PISM_WALLTIME
 if [ -n "${PISM_PROCS_PER_NODE:+1}" ] ; then  # check if env var is already set
     PISM_PROCS_PER_NODE=$PISM_PROCS_PER_NODE
 else
-    PISM_PROCS_PER_NODE=16
+    PISM_PROCS_PER_NODE=4
 fi
 PROCS_PER_NODE=$PISM_PROCS_PER_NODE
 
 if [ -n "${PISM_QUEUE:+1}" ] ; then  # check if env var is already set
     PISM_QUEUE=$PISM_QUEUE
 else
-    PISM_QUEUE=gpu
+    PISM_QUEUE=standard_4
 fi
 QUEUE=$PISM_QUEUE
 
@@ -93,10 +92,15 @@ elif [ "$2" = "1200" ]; then
     GRID=$2
 elif [ "$2" = "900" ]; then
     GRID=$2
+elif [ "$2" = "600" ]; then
+    GRID=$2
+elif [ "$2" = "450" ]; then
+    GRID=$2
 else
   echo "invalid second argument; must be in (${GRIDLIST[@]})"
   exit
 fi
+
 
 # set CLIMATE from argument 3
 if [ "$3" = "const" ]; then
@@ -139,51 +143,43 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 
 HYDRO=distributed
 
-for E in 1 ; do
-    for PPQ in 0.25 ; do
-        for TEFO in 0.02 ; do
-	    for PHILOW in 5; do
-		PARAM_TTPHI="${PHILOW}.0,40.0,-700.0,700.0"
-		for OMEGA in 0.1 1.0 10; do
-		    for ALPHA in 1.0 1.5 3.0 ; do
-			for K in 0.0001 0.001 0.01 0.1; do
+for OMEGA in 0.1 1.0 10; do
+    for ALPHA in 1.0 1.5 3.0 ; do
+	for K in 0.0001 0.001 0.01 0.1; do
             
-			    EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_philow_${PHILOW}_omega_${OMEGA}_alpha_${ALPHA}_k_${K}_hydro_${HYDRO}            
-			    SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
-			    POST=do_g${GRID}m_${EXPERIMENT}_post.sh
-			    PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
-			    rm -f $SCRIPT $$POST $PLOT
+	    EXPERIMENT=${CLIMATE}_${TYPE}_omega_${OMEGA}_alpha_${ALPHA}_k_${K}_hydro_${HYDRO}            
+	    SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
+	    POST=do_g${GRID}m_${EXPERIMENT}_post.sh
+	    PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
+
+	    rm -f $SCRIPT $$POST $PLOT
             
-			    OUTFILE=g${GRID}m_${EXPERIMENT}.nc
-                            
-			    # insert preamble
-			    echo $SHEBANGLINE >> $SCRIPT
-			    echo >> $SCRIPT # add newline
-			    echo $MPIQUEUELINE >> $SCRIPT
-			    echo $MPITIMELINE >> $SCRIPT
-			    echo $MPISIZELINE >> $SCRIPT
-			    echo $MPIOUTLINE >> $SCRIPT
-			    echo >> $SCRIPT # add newline
-			    echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-			    echo >> $SCRIPT # add newline
-			    
-			    export PISM_EXPERIMENT=$EXPERIMENT
-			    export PISM_TITLE="Greenland Parameter Study"
-                            
-			    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_K=$K PARAM_OMEGA=$OMEGA PARAM_ALPHA=$ALPHA ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
-			    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-                            
-			    echo "# $SCRIPT written"
-			    title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;"'$\omega$'"=$OMEGA;"'$\alpha$'"=$ALPHA;k=$K;"'$\phi_l$'"=$PHILOW"
-			    source run-postpro.sh
-			    echo "## $POST written"
-			    echo "### $PLOT written"
-                            echo
-                            echo
-			done
-		    done
-		done
-	    done
+	    OUTFILE=g${GRID}m_${EXPERIMENT}.nc
+            
+	    # insert preamble
+	    echo $SHEBANGLINE >> $SCRIPT
+	    echo >> $SCRIPT # add newline
+	    echo $MPIQUEUELINE >> $SCRIPT
+	    echo $MPITIMELINE >> $SCRIPT
+	    echo $MPISIZELINE >> $SCRIPT
+	    echo $MPIOUTLINE >> $SCRIPT
+	    echo >> $SCRIPT # add newline
+	    echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
+	    echo >> $SCRIPT # add newline
+	    
+	    export PISM_EXPERIMENT=$EXPERIMENT
+	    export PISM_TITLE="Greenland Parameter Study"
+            
+	    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_K=$K PARAM_OMEGA=$OMEGA PARAM_ALPHA=$ALPHA ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+	    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+            
+	    echo "# $SCRIPT written"
+	    title="'$\omega$'"=$OMEGA;"'$\alpha$'"=$ALPHA;k=$K;"'$\phi_l$'"=$PHILOW"
+
+	    source run-postpro.sh
+	    echo "## $POST written"
+            echo
+            echo
 	done
     done
 done

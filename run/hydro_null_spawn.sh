@@ -6,10 +6,11 @@
 #  scripts are suitable for PBS job scheduler
 #  (see  http://www.adaptivecomputing.com/products/open-source/torque/)
 #
-#  usage: to use NN=8 processors, 2 4-core nodes, and duration 4:00:00,
+#  usage: to use NN=64 processors, 16 4-core nodes, and duration 4:00:00,
 #     $ export PISM_WALLTIME=4:00:00
 #     $ export PISM_PROCS_PER_NODE=4
 #     $ export PISM_QUEUE=standard_4
+#     $ ./hydro_null_spawn.sh 64 9000 const ctrl input.nc 
 
 
 set -e # exit on error
