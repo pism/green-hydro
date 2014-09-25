@@ -174,7 +174,7 @@ for OMEGA in 0.1 1.0 10; do
 	    echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
             
 	    echo "# $SCRIPT written"
-	    title="'$\omega$'"=$OMEGA;"'$\alpha$'"=$ALPHA;k=$K;"'$\phi_l$'"=$PHILOW"
+	    title='$\omega$'"=$OMEGA;"'$\alpha$'"=$ALPHA;k=$K;"'$\phi_l$'"=$PHILOW"
 
 	    source run-postpro.sh
 	    echo "## $POST written"
