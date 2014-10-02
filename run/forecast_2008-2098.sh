@@ -150,7 +150,9 @@ for E in 1.25; do
                 # PISM_BCFILE=RACMO_HadGEM2_RCP45_1500M_CON_MM_EPSG314_XY.nc
                 EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                 SCRIPT=forecast_g${GRID}m_${EXPERIMENT}.sh
-                rm -f $SCRIPT
+                POST=forecast_g${GRID}m_${EXPERIMENT}_post.sh
+                PLOT=forecast_g${GRID}m_${EXPERIMENT}_plot.sh
+                rm -f $SCRIPT $POST $PLOT
                 
                 OUTFILE=g${GRID}m_${EXPERIMENT}.nc
                 
@@ -173,6 +175,9 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
+                source run-postpro.sh
+                echo "# $POST written"
+                echo "# $PLOT written"
                 echo
             done
         done
@@ -185,7 +190,9 @@ for E in 1.25; do
                 # PISM_BCFILE=RACMO_HadGEM2_RCP45_1500M_CON_MM_EPSG314_XY.nc
                 EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                 SCRIPT=forecast_g${GRID}m_${EXPERIMENT}.sh
-                rm -f $SCRIPT
+                POST=forecast_g${GRID}m_${EXPERIMENT}_post.sh
+                PLOT=forecast_g${GRID}m_${EXPERIMENT}_plot.sh
+                rm -f $SCRIPT $POST $PLOT
                 
                 OUTFILE=g${GRID}m_${EXPERIMENT}.nc
                 
