@@ -175,7 +175,7 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
-                source run-postpro.sh
+                source run-postpro-fc.sh
                 echo "# $POST written"
                 echo "# $PLOT written"
                 echo
@@ -215,7 +215,7 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
-                source run-postpro.sh
+                source run-postpro-fc.sh
                 echo "# $POST written"
                 echo "# $PLOT written"
                 echo
