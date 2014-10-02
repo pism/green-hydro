@@ -208,6 +208,9 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
+                source run-postpro.sh
+                echo "# $POST written"
+                echo "# $PLOT written"
                 echo
             done
         done
