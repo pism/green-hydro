@@ -129,7 +129,7 @@ fi
 REGRIDFILE=$5
 PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v1.1_${TYPE}.nc
 DURA=100
-DURA2=2
+DURA2=5
 NODES=$(( $NN/$PROCS_PER_NODE))
 
  SHEBANGLINE="#!/bin/bash"
@@ -189,7 +189,7 @@ for E in 1.25; do
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;SSA n=$SSA_N"
 
                 #source run-postpro.sh
-                source run-postpro-2a.sh
+                source run-postpro-2.sh
                 echo "# $POST written"
                 echo "# $PLOT written"
                 echo
@@ -240,7 +240,7 @@ for E in 1.25; do
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;SSA n=$SSA_N"
 
                 #source run-postpro.sh
-                source run-postpro-2a.sh
+                source run-postpro-2.sh
                 echo "# $POST written"
                 echo "# $PLOT written"
                 echo
@@ -290,7 +290,7 @@ for E in 1.25; do
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;SSA n=$SSA_N"
 
                 #source run-postpro.sh
-                source run-postpro-2a.sh
+                source run-postpro-2.sh
                 echo "# $POST written"
                 echo "# $PLOT written"
                 echo
