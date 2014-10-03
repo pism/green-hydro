@@ -11,7 +11,7 @@ fluxgates=greenland-flux-gates-250m.shp
 res=300
 mres=l
 fill=-2e9
-filepre=g${GRID}m_${EXPERIMENT}_2a
+filepre=g${GRID}m_${EXPERIMENT}_${DURA2}a
 
 tl_dir=${GRID}m_${CLIMATE}_${TYPE}
 nc_dir=processed
