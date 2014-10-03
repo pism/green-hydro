@@ -129,6 +129,7 @@ fi
 REGRIDFILE=$5
 PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v1.1_${TYPE}.nc
 DURA=100
+DURA2=2
 NODES=$(( $NN/$PROCS_PER_NODE))
 
  SHEBANGLINE="#!/bin/bash"
@@ -156,8 +157,6 @@ for E in 1.25; do
                 PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
                 rm -f $SCRIPT $$POST $PLOT
 
-                OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
-
                 # insert preamble
                 echo $SHEBANGLINE >> $SCRIPT
                 echo >> $SCRIPT # add newline
@@ -171,6 +170,15 @@ for E in 1.25; do
                 
                 export PISM_EXPERIMENT=$EXPERIMENT
                 export PISM_TITLE="Greenland Parameter Study"
+
+                OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
+                
+                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                #echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
+                echo >> $SCRIPT
+
+                REGRIDFILE=$OUTFILE
+                OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA2}a.nc
                 
                 cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
@@ -180,7 +188,8 @@ for E in 1.25; do
 
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;SSA n=$SSA_N"
 
-                source run-postpro.sh
+                #source run-postpro.sh
+                source run-postpro-2a.sh
                 echo "# $POST written"
                 echo "# $PLOT written"
                 echo
@@ -193,12 +202,11 @@ for E in 1.25; do
 	    for SSA_N in 3.0 3.25 3.5 3.75; do
 		PARAM_TTPHI="${philow},40.0,-700.0,700.0"
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
+
                 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
                 POST=do_g${GRID}m_${EXPERIMENT}_post.sh
                 PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
                 rm -f $SCRIPT $$POST $PLOT
-
-                OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
 
                 # insert preamble
                 echo $SHEBANGLINE >> $SCRIPT
@@ -213,6 +221,15 @@ for E in 1.25; do
                 
                 export PISM_EXPERIMENT=$EXPERIMENT
                 export PISM_TITLE="Greenland Parameter Study"
+
+                OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
+                
+                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                #echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
+                echo >> $SCRIPT
+
+                REGRIDFILE=$OUTFILE
+                OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA2}a.nc
                 
                 cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
@@ -222,7 +239,8 @@ for E in 1.25; do
 
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;SSA n=$SSA_N"
 
-                source run-postpro.sh
+                #source run-postpro.sh
+                source run-postpro-2a.sh
                 echo "# $POST written"
                 echo "# $PLOT written"
                 echo
@@ -240,8 +258,6 @@ for E in 1.25; do
                 PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
                 rm -f $SCRIPT $$POST $PLOT
 
-                OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
-
                 # insert preamble
                 echo $SHEBANGLINE >> $SCRIPT
                 echo >> $SCRIPT # add newline
@@ -255,6 +271,15 @@ for E in 1.25; do
                 
                 export PISM_EXPERIMENT=$EXPERIMENT
                 export PISM_TITLE="Greenland Parameter Study"
+
+                OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
+                
+                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                #echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
+                echo >> $SCRIPT
+
+                REGRIDFILE=$OUTFILE
+                OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA2}a.nc
                 
                 cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
@@ -264,7 +289,8 @@ for E in 1.25; do
 
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;SSA n=$SSA_N"
 
-                source run-postpro.sh
+                #source run-postpro.sh
+                source run-postpro-2a.sh
                 echo "# $POST written"
                 echo "# $PLOT written"
                 echo
