@@ -199,7 +199,7 @@ for E in 1.25; do
     done
     for PPQ in 0.5 0.6 0.7 0.8 ; do
         for TEFO in 0.02; do
-	    for SSA_N in 3.0 3.25 3.5 3.75; do
+	    for SSA_N in 3.0 3.20 3.25 3.5 3.75; do
 		PARAM_TTPHI="${philow},40.0,-700.0,700.0"
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
 
