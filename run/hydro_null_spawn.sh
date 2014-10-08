@@ -154,6 +154,7 @@ for E in 1.25; do
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
                 POST=do_g${GRID}m_${EXPERIMENT}_post.sh
+                POST2=do_g${GRID}m_${EXPERIMENT}_post2.sh
                 PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
                 rm -f $SCRIPT $$POST $PLOT
 
@@ -205,6 +206,7 @@ for E in 1.25; do
 
                 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
                 POST=do_g${GRID}m_${EXPERIMENT}_post.sh
+                POST2=do_g${GRID}m_${EXPERIMENT}_post2.sh
                 PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
                 rm -f $SCRIPT $$POST $PLOT
 
@@ -255,6 +257,7 @@ for E in 1.25; do
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
                 POST=do_g${GRID}m_${EXPERIMENT}_post.sh
+                POST2=do_g${GRID}m_${EXPERIMENT}_post2.sh
                 PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
                 rm -f $SCRIPT $$POST $PLOT
 
@@ -311,6 +314,8 @@ for FILE in do_g${GRID}m_${CLIMATE}_${TYPE}_*${HYDRO}.sh; do
   fbname=\$(basename "\$FILE" .sh)
   POST=\${fbname}_post.sh
   ID=\$(qsub -W depend=afterok:\${JOBID} \$POST)
+  POST2=\${fbname}_post2.sh
+  ID=\$(qsub -W depend=afterok:\${JOBID} \$POST2)
   PLOT=\${fbname}_plot.sh
   qsub -W depend=afterok:\${ID} \$PLOT
 done
