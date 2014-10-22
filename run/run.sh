@@ -53,6 +53,7 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
   echo "                   [default=0.25]"
   echo "    PARAM_SIAE   sets option -sia_e \$PARAM_SIAE   [default=3.0]"
+  echo "    PARAM_UTHR   sets option -pseudo_platic_uthreshold \$PARAM_UTHR [default=100 m/a]"
   echo "    PARAM_TEFO   sets (hybrid-only) option -till_effective_fraction_overburden"
   echo "                   \$PARAM_TEFO   [default=0.02]"
   echo "    PARAM_TTPHI  sets (hybrid-only) option -topg_to_phi \$PARAM_TTPHI"
@@ -254,6 +255,9 @@ if [ "$5" = "hybrid" ]; then
   if [ -z "${PARAM_TEFO}" ] ; then  # check if env var is NOT set
     PARAM_TEFO="0.02"
   fi
+  if [ -z "${PARAM_UTHR}" ] ; then  # check if env var is NOT set
+    PARAM_UTHR="100"
+  fi
   if [ -z "${PARAM_NOSGL}" ] ; then  # check if env var is NOT set
     SGL="-tauc_slippery_grounding_lines"
   else
@@ -264,7 +268,7 @@ if [ "$5" = "hybrid" ]; then
   else
     SSA_N="-ssa_n 3.25"
   fi
-  PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N}"
+  PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N}"
 else
   if [ "$5" = "sia" ]; then
     echo "$SCRIPTNAME  sia-only case: ignoring PARAM_TTPHI, PARAM_PPQ, PARAM_TEFO ..."
