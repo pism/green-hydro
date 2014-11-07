@@ -126,6 +126,12 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" name="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_temppa_base_wa">
             <customproperties/>
         </layer-tree-layer>
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="bmelt20141107113257031" name="bmelt">
+            <customproperties/>
+        </layer-tree-layer>
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bmelt20141107114746197" name="bmelt">
+            <customproperties/>
+        </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="sliding_r20141022152859356" name="sliding_r 900m MO14">
             <customproperties/>
         </layer-tree-layer>
@@ -176,7 +182,7 @@
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20141027091940408" name="velsurf_mag 900m MO14 uthr=150">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140920122835449" name="velsurf_mag 900m MO14">
+            <layer-tree-layer expanded="0" checked="Qt::Checked" id="velsurf_mag20140920122835449" name="velsurf_mag 900m MO14">
                 <customproperties/>
             </layer-tree-layer>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140920153100571" name="velsurf_mag 900m BA01">
@@ -188,7 +194,10 @@
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_velsurf_mag20141104153558790" name="velsurf_mag 450m MO14">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="0" checked="Qt::Checked" id="velsurf_mag20140918150111433" name="velsurf_mag obs 2008-2009 150m">
+            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140918150111433" name="velsurf_mag obs 2008-2009 150m">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" name="velsurf_mag obs 2008-2009 150m copy">
                 <customproperties/>
             </layer-tree-layer>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20141012160122662" name="velsurf_mag obs 2005-2009 500m">
@@ -260,10 +269,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-618457.30129390058573335</xmin>
-            <ymin>-1333191.49722735653631389</ymin>
-            <xmax>18098.89094269822817296</xmax>
-            <ymax>-974091.49722735653631389</ymax>
+            <xmin>-2808569.03881700523197651</xmin>
+            <ymin>-3304258.87245841044932604</ymin>
+            <xmax>2283880.49907578527927399</xmax>
+            <ymax>-431458.87245841021649539</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -292,6 +301,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_speed_contours20140919172435422"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g900m_const_ctrl_e_120140922132753983"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="ftt_target_thk20141006161355955"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20141107110943738"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="grid_3600m20140925173614606"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="cresis_gr_small20141014102028245"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_10a_velsurf_mag20141019141514028"/>
@@ -326,6 +336,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="uvelsurf20140925174212183"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="thk20141006153337480"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kong_Oscar_Gletscher_flowlines20140925175341417"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag_obs_2008_2009_150m_copy20141107113717475"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="sliding_r20141022152859356"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="climatic_mass_balance20140929114036617"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="errbed20140930085553715"/>
@@ -399,6 +410,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20141001195828741"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kong_Oscar_Gletscher_flowlines20140925174944486"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_velsurf_mag20141104153558790"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="bmelt20141107111602389"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g1800m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_speed_contours20140920154051987"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="tauc20140926152209295"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="flux_mag20141019142914674"/>
@@ -415,6 +427,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Densified_layer20140925174649243"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="cresis_mcb20141002172647129"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_10a_thk20141020163625219"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="bmelt20141107114746197"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141014120259986"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20140930085519859"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_flux_gates20140917193117675"/>
@@ -423,6 +436,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_1a_velsurf_mag20141013143720226"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="mask20140925145924615"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="NW_surface_grad_lines_obs20141023160434717"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="bmelt20141107113257031"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="strain_rate20141021131427261"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g1500m_forcing_ctrl_2008_2099_e_1_25_ppq_0_33_tefo_0_02_ssa_n_3_0_philow_5_hydro_null_speed_contours20141001200008692"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="climatic_mass_balance20140929113739972"/>
@@ -564,6 +578,9 @@
             <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_velsurf_mag20141104153558790</item>
             <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_speed_contours20141104153728443</item>
             <item>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383</item>
+            <item>bmelt20141107113257031</item>
+            <item>velsurf_mag_obs_2008_2009_150m_copy20141107113717475</item>
+            <item>bmelt20141107114746197</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
@@ -766,6 +783,16 @@
                 <legendlayerfile isInOverview="0" layerid="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" visible="0"/>
             </filegroup>
         </legendlayer>
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="bmelt" showFeatureCount="0">
+            <filegroup open="false" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="bmelt20141107113257031" visible="1"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bmelt" showFeatureCount="0">
+            <filegroup open="false" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="bmelt20141107114746197" visible="0"/>
+            </filegroup>
+        </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="sliding_r 900m MO14" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="sliding_r20141022152859356" visible="0"/>
@@ -847,9 +874,9 @@
                     <legendlayerfile isInOverview="0" layerid="velsurf_mag20141027091940408" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 900m MO14" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="velsurf_mag 900m MO14" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920122835449" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920122835449" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 900m BA01" showFeatureCount="0">
@@ -867,9 +894,14 @@
                     <legendlayerfile isInOverview="0" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_velsurf_mag20141104153558790" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="velsurf_mag obs 2008-2009 150m" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag obs 2008-2009 150m" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="velsurf_mag20140918150111433" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="velsurf_mag20140918150111433" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag obs 2005-2009 500m" showFeatureCount="0">
@@ -1023,8 +1055,37 @@
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                     </LayerItem>
+                    <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                    </LayerItem>
+                    <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#ffffff" text="271.218"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#1e5cb3" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#0b8ed8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#66ccce" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#cce64b" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#fede27" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
+                    </LayerItem>
+                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    </LayerItem>
                 </Model>
-                <ComposerItem pagey="2" page="1" id="" lastValidViewScaleFactor="8.66337" positionMode="0" positionLock="false" x="71.4555" y="2" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="137.956" outlineWidth="0.3" uuid="{c04337ba-a795-452c-bbbf-0843b1054545}" height="242.553" itemRotation="0" frame="true" pagex="71.4555">
+                <ComposerItem pagey="2" page="1" id="" lastValidViewScaleFactor="8.66337" positionMode="0" positionLock="false" x="71.4555" y="2" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="137.956" outlineWidth="0.3" uuid="{c04337ba-a795-452c-bbbf-0843b1054545}" height="754.517" itemRotation="0" frame="true" pagex="71.4555">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1416,8 +1477,37 @@
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                     </LayerItem>
+                    <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                    </LayerItem>
+                    <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#ffffff" text="271.218"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#1e5cb3" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#0b8ed8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#66ccce" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#cce64b" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#fede27" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
+                    </LayerItem>
+                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    </LayerItem>
                 </Model>
-                <ComposerItem pagey="114.939" page="1" id="" lastValidViewScaleFactor="4.93617" positionMode="0" positionLock="true" x="176.034" y="114.939" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{664a93f5-d3ec-4a09-8103-f87e27f1243a}" height="239.559" itemRotation="0" frame="true" pagex="176.034">
+                <ComposerItem pagey="114.939" page="1" id="" lastValidViewScaleFactor="4.93617" positionMode="0" positionLock="true" x="176.034" y="114.939" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{664a93f5-d3ec-4a09-8103-f87e27f1243a}" height="757.237" itemRotation="0" frame="true" pagex="176.034">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1737,8 +1827,37 @@
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                     </LayerItem>
+                    <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                    </LayerItem>
+                    <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#ffffff" text="271.218"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#1e5cb3" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#0b8ed8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#66ccce" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#cce64b" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#fede27" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
+                    </LayerItem>
+                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    </LayerItem>
                 </Model>
-                <ComposerItem pagey="0.15" page="1" id="" lastValidViewScaleFactor="19.5969" positionMode="0" positionLock="false" x="0.15" y="0.15" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="102.466" outlineWidth="0.3" uuid="{6e460de6-e161-447b-a3a8-e9116a07063f}" height="213.116" itemRotation="0" frame="true" pagex="0.15">
+                <ComposerItem pagey="0.15" page="1" id="" lastValidViewScaleFactor="19.5969" positionMode="0" positionLock="false" x="0.15" y="0.15" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="102.466" outlineWidth="0.3" uuid="{6e460de6-e161-447b-a3a8-e9116a07063f}" height="674.462" itemRotation="0" frame="true" pagex="0.15">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="230" blue="230" green="230"/>
                 </ComposerItem>
@@ -3576,8 +3695,37 @@
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                     </LayerItem>
+                    <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                    </LayerItem>
+                    <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#ffffff" text="271.218"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#1e5cb3" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#0b8ed8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#66ccce" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#cce64b" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#fede27" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
+                    </LayerItem>
+                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    </LayerItem>
                 </Model>
-                <ComposerItem pagey="4.27629" page="1" id="" lastValidViewScaleFactor="3.50771" positionMode="0" positionLock="false" x="180.156" y="4.27629" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{19319cdc-85a7-4bf8-ad4f-a5719148e664}" height="239.559" itemRotation="0" frame="false" pagex="180.156">
+                <ComposerItem pagey="4.27629" page="1" id="" lastValidViewScaleFactor="3.50771" positionMode="0" positionLock="false" x="180.156" y="4.27629" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{19319cdc-85a7-4bf8-ad4f-a5719148e664}" height="757.237" itemRotation="0" frame="false" pagex="180.156">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -3753,8 +3901,37 @@
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                     </LayerItem>
+                    <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                    </LayerItem>
+                    <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#ffffff" text="271.218"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#1e5cb3" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#0b8ed8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#66ccce" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#cce64b" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#fede27" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
+                    </LayerItem>
+                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    </LayerItem>
                 </Model>
-                <ComposerItem pagey="2.51775" page="1" id="" lastValidViewScaleFactor="3.41127" positionMode="0" positionLock="false" x="2.34517" y="2.51775" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{a3ddd3ff-ce56-4111-a77d-cf9c6731e392}" height="239.559" itemRotation="0" frame="false" pagex="2.34517">
+                <ComposerItem pagey="2.51775" page="1" id="" lastValidViewScaleFactor="3.41127" positionMode="0" positionLock="false" x="2.34517" y="2.51775" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{a3ddd3ff-ce56-4111-a77d-cf9c6731e392}" height="757.237" itemRotation="0" frame="false" pagex="2.34517">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -3852,8 +4029,37 @@
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                     </LayerItem>
+                    <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                    </LayerItem>
+                    <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#ffffff" text="271.218"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#1e5cb3" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#0b8ed8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#66ccce" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#cce64b" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#fede27" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
+                    </LayerItem>
+                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    </LayerItem>
                 </Model>
-                <ComposerItem pagey="2.48314" page="1" id="" lastValidViewScaleFactor="2.4163" positionMode="0" positionLock="false" x="2.48314" y="2.48314" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{f9916ddc-f335-45c2-97b1-c6ce12619d95}" height="239.559" itemRotation="0" frame="false" pagex="2.48314">
+                <ComposerItem pagey="2.48314" page="1" id="" lastValidViewScaleFactor="2.4163" positionMode="0" positionLock="false" x="2.48314" y="2.48314" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{f9916ddc-f335-45c2-97b1-c6ce12619d95}" height="757.237" itemRotation="0" frame="false" pagex="2.48314">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -3951,8 +4157,37 @@
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                         <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" userText="" color="#002673" text=""/>
                     </LayerItem>
+                    <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                    </LayerItem>
+                    <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#ffffff" text="271.218"/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#1e5cb3" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#176fc1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#0b8ed8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#19b5f1" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#66ccce" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#99dbb8" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#cce64b" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f3f01d" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#fede27" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f89d0e" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
+                        <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
+                    </LayerItem>
+                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
+                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    </LayerItem>
                 </Model>
-                <ComposerItem pagey="177.447" page="1" id="" lastValidViewScaleFactor="3.80096" positionMode="0" positionLock="false" x="2.46942" y="177.447" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{8c07d3ef-bee5-4b83-946d-db9104638d6d}" height="239.559" itemRotation="0" frame="false" pagex="2.46942">
+                <ComposerItem pagey="177.447" page="1" id="" lastValidViewScaleFactor="3.80096" positionMode="0" positionLock="false" x="2.46942" y="177.447" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{8c07d3ef-bee5-4b83-946d-db9104638d6d}" height="757.237" itemRotation="0" frame="false" pagex="2.46942">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -4090,7 +4325,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="82">
+    <projectlayers layercount="85">
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>Greenland_mc_bed_v120140618125656554</id>
             <datasource>../../data_sets/mc_beds/Greenland_150m_mcb_jpl_v1.1_bed_hs.tif</datasource>
@@ -6620,6 +6855,112 @@
                 <rasterresampler maxOversampling="2"/>
             </pipe>
             <blendMode>6</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>bmelt20141107113257031</id>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/additional_files/900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_thkmask.nc":bmelt</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>bmelt</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>100001</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100001</authid>
+                    <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="1"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="0" classificationMax="0.1" classificationMinMaxOrigin="User" band="1" classificationMin="-0.1" type="singlebandpseudocolor">
+                    <rasterTransparency/>
+                    <rastershader>
+                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
+                            <item alpha="255" value="-0.1" label="-0.100000" color="#3a4959"/>
+                            <item alpha="255" value="-0.08" label="-0.080000" color="#3a4959"/>
+                            <item alpha="255" value="-0.06" label="-0.060000" color="#405a79"/>
+                            <item alpha="255" value="-0.04" label="-0.040000" color="#456c99"/>
+                            <item alpha="255" value="-0.02" label="-0.020000" color="#96a6b4"/>
+                            <item alpha="255" value="0" label="0.000000" color="#e6dfcf"/>
+                            <item alpha="255" value="0.02" label="0.020000" color="#e0887d"/>
+                            <item alpha="255" value="0.04" label="0.040000" color="#d9312b"/>
+                            <item alpha="255" value="0.06" label="0.060000" color="#b2221c"/>
+                            <item alpha="255" value="0.08" label="0.080000" color="#8c120e"/>
+                            <item alpha="255" value="0.1" label="0.100000" color="#8c120e"/>
+                        </colorrampshader>
+                    </rastershader>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>bmelt20141107114746197</id>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.8_tefo_0.02_ssa_n_3.75_philow_5.0_hydro_null_100a.nc":bmelt</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>bmelt</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>100001</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100001</authid>
+                    <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="1"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="0" classificationMax="0.1" classificationMinMaxOrigin="User" band="1" classificationMin="-0.1" type="singlebandpseudocolor">
+                    <rasterTransparency/>
+                    <rastershader>
+                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
+                            <item alpha="255" value="-0.1" label="-0.100000" color="#3a4959"/>
+                            <item alpha="255" value="-0.08" label="-0.080000" color="#3a4959"/>
+                            <item alpha="255" value="-0.06" label="-0.060000" color="#405a79"/>
+                            <item alpha="255" value="-0.04" label="-0.040000" color="#456c99"/>
+                            <item alpha="255" value="-0.02" label="-0.020000" color="#96a6b4"/>
+                            <item alpha="255" value="0" label="0.000000" color="#e6dfcf"/>
+                            <item alpha="255" value="0.02" label="0.020000" color="#e0887d"/>
+                            <item alpha="255" value="0.04" label="0.040000" color="#d9312b"/>
+                            <item alpha="255" value="0.06" label="0.060000" color="#b2221c"/>
+                            <item alpha="255" value="0.08" label="0.080000" color="#8c120e"/>
+                            <item alpha="255" value="0.1" label="0.100000" color="#8c120e"/>
+                        </colorrampshader>
+                    </rastershader>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>cresis_mcb20141002172647129</id>
@@ -36474,6 +36815,67 @@
                             <item alpha="255" value="2985.55" label="" color="#ff0000"/>
                             <item alpha="255" value="3000" label="" color="#ff0000"/>
                             <item alpha="255" value="30000" label="" color="#ff0000"/>
+                        </colorrampshader>
+                    </rastershader>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>6</blendMode>
+        </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>velsurf_mag_obs_2008_2009_150m_copy20141107113717475</id>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":velsurf_mag</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>velsurf_mag obs 2008-2009 150m copy</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>100001</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100001</authid>
+                    <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="1"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="0.796078" alphaBand="-1" classificationMax="400" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
+                    <rasterTransparency/>
+                    <rastershader>
+                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
+                            <item alpha="255" value="0" label="0.000000" color="#1e5cb3"/>
+                            <item alpha="255" value="22" label="22.000000" color="#176fc1"/>
+                            <item alpha="255" value="44.68" label="44.680000" color="#176fc1"/>
+                            <item alpha="255" value="66.68" label="66.680000" color="#0b8ed8"/>
+                            <item alpha="255" value="88.68" label="88.680000" color="#19b5f1"/>
+                            <item alpha="255" value="111.32" label="111.320000" color="#19b5f1"/>
+                            <item alpha="255" value="133.32" label="133.320000" color="#66ccce"/>
+                            <item alpha="255" value="155.32" label="155.320000" color="#99dbb8"/>
+                            <item alpha="255" value="178" label="178.000000" color="#99dbb8"/>
+                            <item alpha="255" value="200" label="200.000000" color="#cce64b"/>
+                            <item alpha="255" value="222" label="222.000000" color="#f3f01d"/>
+                            <item alpha="255" value="244.68" label="244.680000" color="#f3f01d"/>
+                            <item alpha="255" value="266.68" label="266.680000" color="#fede27"/>
+                            <item alpha="255" value="288.68" label="288.680000" color="#f89d0e"/>
+                            <item alpha="255" value="311.32" label="311.320000" color="#f89d0e"/>
+                            <item alpha="255" value="333.32" label="333.320000" color="#f1471c"/>
+                            <item alpha="255" value="355.32" label="355.320000" color="#db1e26"/>
+                            <item alpha="255" value="378" label="378.000000" color="#db1e26"/>
+                            <item alpha="255" value="400" label="400.000000" color="#a4262c"/>
                         </colorrampshader>
                     </rastershader>
                 </rasterrenderer>
