@@ -260,10 +260,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>25234.42698706052033231</xmin>
-            <ymin>-2857043.29944547079503536</ymin>
-            <xmax>343512.52310535992728546</xmax>
-            <ymax>-2677493.29944547079503536</ymax>
+            <xmin>-618457.30129390058573335</xmin>
+            <ymin>-1333191.49722735653631389</ymin>
+            <xmax>18098.89094269822817296</xmax>
+            <ymax>-974091.49722735653631389</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -2507,7 +2507,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="Gate Koge Bugt C" visible="1">
+    <Composer title="Gate Koge Bugt C" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="150" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -2585,7 +2585,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="Gate Koge Bugt S" visible="1">
+    <Composer title="Gate Koge Bugt S" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="150" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -2663,7 +2663,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="Gate Kong Oscar" visible="1">
+    <Composer title="Gate Kong Oscar" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="150" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -2741,7 +2741,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="Gate Nioghalvfierdsfiorden" visible="1">
+    <Composer title="Gate Nioghalvfierdsfiorden" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="150" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -2819,7 +2819,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="Gate Petermann" visible="1">
+    <Composer title="Gate Petermann" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="150" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -2897,7 +2897,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="Gate Rink" visible="1">
+    <Composer title="Gate Rink" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="150" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -2975,7 +2975,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="Gate Ryder" visible="1">
+    <Composer title="Gate Ryder" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="150" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -3053,7 +3053,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="Gate Sermeq Avannarleq" visible="1">
+    <Composer title="Gate Sermeq Avannarleq" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="150" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -3131,7 +3131,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="Gate Steenstrup" visible="1">
+    <Composer title="Gate Steenstrup" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="150" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -3209,7 +3209,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="Gate Store" visible="1">
+    <Composer title="Gate Store" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="150" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -3287,7 +3287,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="Gate Sverdrup" visible="1">
+    <Composer title="Gate Sverdrup" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="150" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -3365,7 +3365,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="Gate Upernavik N" visible="1">
+    <Composer title="Gate Upernavik N" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="150" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -3443,7 +3443,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="Gate Zachariae" visible="1">
+    <Composer title="Gate Zachariae" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="150" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
