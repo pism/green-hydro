@@ -24,7 +24,7 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="greenland_flux_gates_selection20140701140628869" name="greenland-flux-gates-selection">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="greenland_glacier_names_selection_201420140920134214401" name="greenland-glacier-names-selection-2014">
+        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="greenland_glacier_names_selection_201420140920134214401" name="greenland-glacier-names-selection-2014">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-group expanded="0" checked="Qt::Unchecked" name="PISM-grids">
@@ -126,16 +126,16 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" name="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_temppa_base_wa">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="bmelt20141107113257031" name="bmelt">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" name="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bmelt20141107114746197" name="bmelt">
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="bmelt20141107113257031" name="bmelt">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="sliding_r20141022152859356" name="sliding_r 900m MO14">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="velocities">
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="velocities">
             <customproperties/>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20141001195824676" name="velsurf_mag 1500m MO14 RCP45 q=0.5">
                 <customproperties/>
@@ -182,10 +182,13 @@
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20141027091940408" name="velsurf_mag 900m MO14 uthr=150">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="0" checked="Qt::Checked" id="velsurf_mag20140920122835449" name="velsurf_mag 900m MO14">
+            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140920122835449" name="velsurf_mag 900m MO14">
                 <customproperties/>
             </layer-tree-layer>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140920153100571" name="velsurf_mag 900m BA01">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" name="g600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_p_velsurf_mag">
                 <customproperties/>
             </layer-tree-layer>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_velsurf_mag20141031103815123" name="velsurf_mag 600m MO14">
@@ -269,10 +272,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-2808569.03881700523197651</xmin>
-            <ymin>-3304258.87245841044932604</ymin>
-            <xmax>2283880.49907578527927399</xmax>
-            <ymax>-431458.87245841021649539</ymax>
+            <xmin>-670231.42329020367469639</xmin>
+            <ymin>-1556882.25508317910134792</ymin>
+            <xmax>602880.96118299395311624</xmax>
+            <ymax>-838682.25508317910134792</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -348,8 +351,10 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="vvelsurf20141022111436368"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20140921153109627"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20141013143452035"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_520141111180907537"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="cresis_gr20140921144308348"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="climatic_mass_balance20140929113525292"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Kong_Oscar_Gletscher_flowlines20140925175703980"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20140925152317426"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20140920153100571"/>
@@ -368,6 +373,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="strain_rate20141021131242299"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20140930085612863"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="flux_divergence20141016094518802"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20141111132830248"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="climatic_mass_balance20140929114934425"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="tillwat20140926152215986"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="enderlin_fluxes_ts20140929171921844"/>
@@ -413,6 +419,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="bmelt20141107111602389"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g1800m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_speed_contours20140920154051987"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="tauc20140926152209295"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="flux_mag20141019142914674"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20140923164605882"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="jakobshavn_sb_channel20140922091419249"/>
@@ -469,6 +476,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Upernavik20140921145437857"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="flux_divergence20141016161917126"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base20141106093132360"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181047579"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="exp_obs_1500m_ice_thickness20141006153522779"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="climatic_mass_balance20140929105141283"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="jakosites20140927121804631"/>
@@ -580,7 +588,8 @@
             <item>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383</item>
             <item>bmelt20141107113257031</item>
             <item>velsurf_mag_obs_2008_2009_150m_copy20141107113717475</item>
-            <item>bmelt20141107114746197</item>
+            <item>g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515</item>
+            <item>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
@@ -619,9 +628,9 @@
                 <legendlayerfile isInOverview="0" layerid="greenland_flux_gates_selection20140701140628869" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="greenland-glacier-names-selection-2014" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="greenland-glacier-names-selection-2014" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="greenland_glacier_names_selection_201420140920134214401" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="greenland_glacier_names_selection_201420140920134214401" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendgroup open="false" checked="Qt::Unchecked" name="PISM-grids">
@@ -783,14 +792,14 @@
                 <legendlayerfile isInOverview="0" layerid="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" visible="0"/>
             </filegroup>
         </legendlayer>
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" visible="1"/>
+            </filegroup>
+        </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="bmelt" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="bmelt20141107113257031" visible="1"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bmelt" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="bmelt20141107114746197" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="sliding_r 900m MO14" showFeatureCount="0">
@@ -798,7 +807,7 @@
                 <legendlayerfile isInOverview="0" layerid="sliding_r20141022152859356" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="velocities">
+        <legendgroup open="true" checked="Qt::Unchecked" name="velocities">
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 1500m MO14 RCP45 q=0.5" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="velsurf_mag20141001195824676" visible="0"/>
@@ -874,14 +883,19 @@
                     <legendlayerfile isInOverview="0" layerid="velsurf_mag20141027091940408" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="velsurf_mag 900m MO14" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 900m MO14" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920122835449" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920122835449" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 900m BA01" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920153100571" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="g600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_p_velsurf_mag" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 600m MO14" showFeatureCount="0">
@@ -1058,6 +1072,15 @@
                     <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#405a79" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#456c99" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#96a6b4" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e6dfcf" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e0887d" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#d9312b" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#b2221c" text=""/>
                     </LayerItem>
                     <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
@@ -1080,12 +1103,19 @@
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
                     </LayerItem>
-                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    <LayerItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" style="subgroup" text="g600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_p_velsurf_mag" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#000000" text="0.00140415"/>
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#ffffff" text="325.227"/>
+                    </LayerItem>
+                    <LayerItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" style="subgroup" text="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#d01c8b" text="-10.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f1b6da" text="-5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f7f7f7" text="0.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#b8e186" text="5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#4dac26" text="10.000000"/>
                     </LayerItem>
                 </Model>
-                <ComposerItem pagey="2" page="1" id="" lastValidViewScaleFactor="8.66337" positionMode="0" positionLock="false" x="71.4555" y="2" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="137.956" outlineWidth="0.3" uuid="{c04337ba-a795-452c-bbbf-0843b1054545}" height="754.517" itemRotation="0" frame="true" pagex="71.4555">
+                <ComposerItem pagey="2" page="1" id="" lastValidViewScaleFactor="8.66337" positionMode="0" positionLock="false" x="71.4555" y="2" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="137.956" outlineWidth="0.3" uuid="{c04337ba-a795-452c-bbbf-0843b1054545}" height="1033.17" itemRotation="0" frame="true" pagex="71.4555">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1384,6 +1414,45 @@
                     <prop k="width_border" v="0.26"/>
                 </layer>
             </symbol>
+            <ComposerLegend symbolWidth="7" title="basal melt" boxSpace="2" splitLayer="0" equalColumnWidth="0" titleAlignment="1" symbolHeight="4" wmsLegendHeight="25" wrapChar="" fontColor="#000000" columnSpace="2" wmsLegendWidth="50" columnCount="1">
+                <styles>
+                    <style marginBottom="2" name="title" font="Helvetica,12,-1,5,50,0,0,0,0,0"/>
+                    <style marginTop="2" name="group" font=".Lucida Grande UI,14,-1,5,50,0,0,0,0,0"/>
+                    <style marginTop="2" name="subgroup" font=".Lucida Grande UI,12,-1,5,50,0,0,0,0,0"/>
+                    <style marginTop="2" name="symbol" font=".Lucida Grande UI,13,-1,5,50,0,0,0,0,0"/>
+                    <style marginTop="2" marginLeft="2" name="symbolLabel" font="Helvetica,12,-1,5,50,0,0,0,0,0"/>
+                </styles>
+                <Model autoUpdate="1">
+                    <LayerItem layerId="bmelt20141107113257031" userText="(m/yr)" style="subgroup" text="(m/yr)" showFeatureCount="0">
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text="&lt;-0.1"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text="-0.08"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#405a79" text="-0.06"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#456c99" text="-0.04"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#96a6b4" text="-0.02"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e6dfcf" text="0"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e0887d" text="0.02"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#d9312b" text="0.04"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#b2221c" text="0.06"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#8c120e" text="0.08"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#8c120e" text=">0.1"/>
+                    </LayerItem>
+                    <LayerItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" style="subgroup" text="g600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_p_velsurf_mag" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#000000" text="0.00140415"/>
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#ffffff" text="325.227"/>
+                    </LayerItem>
+                    <LayerItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" style="subgroup" text="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#d01c8b" text="-10.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f1b6da" text="-5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f7f7f7" text="0.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#b8e186" text="5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#4dac26" text="10.000000"/>
+                    </LayerItem>
+                </Model>
+                <ComposerItem pagey="2.83753" page="1" id="" lastValidViewScaleFactor="3.52419" positionMode="0" positionLock="false" x="122.014" y="2.83753" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="213.147" outlineWidth="0.3" uuid="{cecd8264-280d-4ae0-978b-a445842276c3}" height="140.277" itemRotation="0" frame="false" pagex="122.014">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLegend>
             <ComposerMap mapRotation="0" keepLayerSet="false" overviewFrameMap="-1" id="0" previewMode="Cache" drawCanvasItems="true">
                 <overviewFrame overviewBlendMode="0" overviewFrameMap="-1" overviewCentered="false" overviewInverted="false">
                     <symbol alpha="0.3" type="fill" name="">
@@ -1480,6 +1549,15 @@
                     <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#405a79" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#456c99" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#96a6b4" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e6dfcf" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e0887d" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#d9312b" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#b2221c" text=""/>
                     </LayerItem>
                     <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
@@ -1502,12 +1580,19 @@
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
                     </LayerItem>
-                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    <LayerItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" style="subgroup" text="g600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_p_velsurf_mag" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#000000" text="0.00140415"/>
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#ffffff" text="325.227"/>
+                    </LayerItem>
+                    <LayerItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" style="subgroup" text="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#d01c8b" text="-10.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f1b6da" text="-5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f7f7f7" text="0.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#b8e186" text="5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#4dac26" text="10.000000"/>
                     </LayerItem>
                 </Model>
-                <ComposerItem pagey="114.939" page="1" id="" lastValidViewScaleFactor="4.93617" positionMode="0" positionLock="true" x="176.034" y="114.939" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{664a93f5-d3ec-4a09-8103-f87e27f1243a}" height="757.237" itemRotation="0" frame="true" pagex="176.034">
+                <ComposerItem pagey="114.939" page="1" id="" lastValidViewScaleFactor="4.93617" positionMode="0" positionLock="true" x="176.034" y="114.939" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{664a93f5-d3ec-4a09-8103-f87e27f1243a}" height="1037.8" itemRotation="0" frame="true" pagex="176.034">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1830,6 +1915,15 @@
                     <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#405a79" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#456c99" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#96a6b4" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e6dfcf" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e0887d" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#d9312b" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#b2221c" text=""/>
                     </LayerItem>
                     <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
@@ -1852,12 +1946,19 @@
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
                     </LayerItem>
-                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    <LayerItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" style="subgroup" text="g600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_p_velsurf_mag" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#000000" text="0.00140415"/>
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#ffffff" text="325.227"/>
+                    </LayerItem>
+                    <LayerItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" style="subgroup" text="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#d01c8b" text="-10.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f1b6da" text="-5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f7f7f7" text="0.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#b8e186" text="5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#4dac26" text="10.000000"/>
                     </LayerItem>
                 </Model>
-                <ComposerItem pagey="0.15" page="1" id="" lastValidViewScaleFactor="19.5969" positionMode="0" positionLock="false" x="0.15" y="0.15" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="102.466" outlineWidth="0.3" uuid="{6e460de6-e161-447b-a3a8-e9116a07063f}" height="674.462" itemRotation="0" frame="true" pagex="0.15">
+                <ComposerItem pagey="0.15" page="1" id="" lastValidViewScaleFactor="19.5969" positionMode="0" positionLock="false" x="0.15" y="0.15" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="102.466" outlineWidth="0.3" uuid="{6e460de6-e161-447b-a3a8-e9116a07063f}" height="923.578" itemRotation="0" frame="true" pagex="0.15">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="230" blue="230" green="230"/>
                 </ComposerItem>
@@ -3698,6 +3799,15 @@
                     <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#405a79" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#456c99" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#96a6b4" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e6dfcf" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e0887d" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#d9312b" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#b2221c" text=""/>
                     </LayerItem>
                     <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
@@ -3720,12 +3830,19 @@
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
                     </LayerItem>
-                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    <LayerItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" style="subgroup" text="g600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_p_velsurf_mag" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#000000" text="0.00140415"/>
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#ffffff" text="325.227"/>
+                    </LayerItem>
+                    <LayerItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" style="subgroup" text="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#d01c8b" text="-10.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f1b6da" text="-5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f7f7f7" text="0.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#b8e186" text="5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#4dac26" text="10.000000"/>
                     </LayerItem>
                 </Model>
-                <ComposerItem pagey="4.27629" page="1" id="" lastValidViewScaleFactor="3.50771" positionMode="0" positionLock="false" x="180.156" y="4.27629" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{19319cdc-85a7-4bf8-ad4f-a5719148e664}" height="757.237" itemRotation="0" frame="false" pagex="180.156">
+                <ComposerItem pagey="4.27629" page="1" id="" lastValidViewScaleFactor="3.50771" positionMode="0" positionLock="false" x="180.156" y="4.27629" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{19319cdc-85a7-4bf8-ad4f-a5719148e664}" height="1037.8" itemRotation="0" frame="false" pagex="180.156">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -3904,6 +4021,15 @@
                     <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#405a79" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#456c99" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#96a6b4" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e6dfcf" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e0887d" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#d9312b" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#b2221c" text=""/>
                     </LayerItem>
                     <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
@@ -3926,12 +4052,19 @@
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
                     </LayerItem>
-                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    <LayerItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" style="subgroup" text="g600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_p_velsurf_mag" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#000000" text="0.00140415"/>
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#ffffff" text="325.227"/>
+                    </LayerItem>
+                    <LayerItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" style="subgroup" text="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#d01c8b" text="-10.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f1b6da" text="-5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f7f7f7" text="0.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#b8e186" text="5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#4dac26" text="10.000000"/>
                     </LayerItem>
                 </Model>
-                <ComposerItem pagey="2.51775" page="1" id="" lastValidViewScaleFactor="3.41127" positionMode="0" positionLock="false" x="2.34517" y="2.51775" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{a3ddd3ff-ce56-4111-a77d-cf9c6731e392}" height="757.237" itemRotation="0" frame="false" pagex="2.34517">
+                <ComposerItem pagey="2.51775" page="1" id="" lastValidViewScaleFactor="3.41127" positionMode="0" positionLock="false" x="2.34517" y="2.51775" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{a3ddd3ff-ce56-4111-a77d-cf9c6731e392}" height="1037.8" itemRotation="0" frame="false" pagex="2.34517">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -4032,6 +4165,15 @@
                     <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#405a79" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#456c99" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#96a6b4" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e6dfcf" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e0887d" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#d9312b" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#b2221c" text=""/>
                     </LayerItem>
                     <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
@@ -4054,12 +4196,19 @@
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
                     </LayerItem>
-                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    <LayerItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" style="subgroup" text="g600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_p_velsurf_mag" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#000000" text="0.00140415"/>
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#ffffff" text="325.227"/>
+                    </LayerItem>
+                    <LayerItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" style="subgroup" text="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#d01c8b" text="-10.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f1b6da" text="-5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f7f7f7" text="0.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#b8e186" text="5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#4dac26" text="10.000000"/>
                     </LayerItem>
                 </Model>
-                <ComposerItem pagey="2.48314" page="1" id="" lastValidViewScaleFactor="2.4163" positionMode="0" positionLock="false" x="2.48314" y="2.48314" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{f9916ddc-f335-45c2-97b1-c6ce12619d95}" height="757.237" itemRotation="0" frame="false" pagex="2.48314">
+                <ComposerItem pagey="2.48314" page="1" id="" lastValidViewScaleFactor="2.4163" positionMode="0" positionLock="false" x="2.48314" y="2.48314" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{f9916ddc-f335-45c2-97b1-c6ce12619d95}" height="1037.8" itemRotation="0" frame="false" pagex="2.48314">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -4160,6 +4309,15 @@
                     <LayerItem layerId="bmelt20141107113257031" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#000000" text="-0.0199943"/>
                         <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#ffffff" text="0.0849766"/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#3a4959" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#405a79" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#456c99" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#96a6b4" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e6dfcf" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#e0887d" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#d9312b" text=""/>
+                        <RasterClassificationItem layerId="bmelt20141107113257031" userText="" color="#b2221c" text=""/>
                     </LayerItem>
                     <LayerItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" style="subgroup" text="velsurf_mag obs 2008-2009 150m copy" showFeatureCount="0">
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#000000" text="0.00304657"/>
@@ -4182,12 +4340,19 @@
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#f1471c" text=""/>
                         <RasterClassificationItem layerId="velsurf_mag_obs_2008_2009_150m_copy20141107113717475" userText="" color="#db1e26" text=""/>
                     </LayerItem>
-                    <LayerItem layerId="bmelt20141107114746197" userText="" style="subgroup" text="bmelt" showFeatureCount="0">
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#000000" text="-0.00688114"/>
-                        <RasterClassificationItem layerId="bmelt20141107114746197" userText="" color="#ffffff" text="10.3778"/>
+                    <LayerItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" style="subgroup" text="g600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_p_velsurf_mag" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#000000" text="0.00140415"/>
+                        <RasterClassificationItem layerId="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515" userText="" color="#ffffff" text="325.227"/>
+                    </LayerItem>
+                    <LayerItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" style="subgroup" text="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf" showFeatureCount="0">
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#d01c8b" text="-10.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f1b6da" text="-5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#f7f7f7" text="0.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#b8e186" text="5.000000"/>
+                        <RasterClassificationItem layerId="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" userText="" color="#4dac26" text="10.000000"/>
                     </LayerItem>
                 </Model>
-                <ComposerItem pagey="177.447" page="1" id="" lastValidViewScaleFactor="3.80096" positionMode="0" positionLock="false" x="2.46942" y="177.447" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{8c07d3ef-bee5-4b83-946d-db9104638d6d}" height="757.237" itemRotation="0" frame="false" pagex="2.46942">
+                <ComposerItem pagey="177.447" page="1" id="" lastValidViewScaleFactor="3.80096" positionMode="0" positionLock="false" x="2.46942" y="177.447" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" uuid="{8c07d3ef-bee5-4b83-946d-db9104638d6d}" height="1037.8" itemRotation="0" frame="false" pagex="2.46942">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -4325,7 +4490,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="85">
+    <projectlayers layercount="86">
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>Greenland_mc_bed_v120140618125656554</id>
             <datasource>../../data_sets/mc_beds/Greenland_150m_mcb_jpl_v1.1_bed_hs.tif</datasource>
@@ -6856,7 +7021,7 @@
             </pipe>
             <blendMode>6</blendMode>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bmelt20141107113257031</id>
             <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/additional_files/900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_thkmask.nc":bmelt</datasource>
             <title></title>
@@ -6885,74 +7050,21 @@
                 <noDataList bandNo="1" useSrcNoData="1"/>
             </noData>
             <pipe>
-                <rasterrenderer opacity="1" alphaBand="0" classificationMax="0.1" classificationMinMaxOrigin="User" band="1" classificationMin="-0.1" type="singlebandpseudocolor">
+                <rasterrenderer opacity="1" alphaBand="-1" classificationMax="0.1" classificationMinMaxOrigin="User" band="1" classificationMin="-0.1" type="singlebandpseudocolor">
                     <rasterTransparency/>
                     <rastershader>
                         <colorrampshader colorRampType="INTERPOLATED" clip="0">
-                            <item alpha="255" value="-0.1" label="-0.100000" color="#3a4959"/>
-                            <item alpha="255" value="-0.08" label="-0.080000" color="#3a4959"/>
-                            <item alpha="255" value="-0.06" label="-0.060000" color="#405a79"/>
-                            <item alpha="255" value="-0.04" label="-0.040000" color="#456c99"/>
-                            <item alpha="255" value="-0.02" label="-0.020000" color="#96a6b4"/>
-                            <item alpha="255" value="0" label="0.000000" color="#e6dfcf"/>
-                            <item alpha="255" value="0.02" label="0.020000" color="#e0887d"/>
-                            <item alpha="255" value="0.04" label="0.040000" color="#d9312b"/>
-                            <item alpha="255" value="0.06" label="0.060000" color="#b2221c"/>
-                            <item alpha="255" value="0.08" label="0.080000" color="#8c120e"/>
-                            <item alpha="255" value="0.1" label="0.100000" color="#8c120e"/>
-                        </colorrampshader>
-                    </rastershader>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>bmelt20141107114746197</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.8_tefo_0.02_ssa_n_3.75_philow_5.0_hydro_null_100a.nc":bmelt</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>bmelt</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
-                    <srid>0</srid>
-                    <authid>USER:100001</authid>
-                    <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
-                    <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="1"/>
-            </noData>
-            <pipe>
-                <rasterrenderer opacity="1" alphaBand="0" classificationMax="0.1" classificationMinMaxOrigin="User" band="1" classificationMin="-0.1" type="singlebandpseudocolor">
-                    <rasterTransparency/>
-                    <rastershader>
-                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
-                            <item alpha="255" value="-0.1" label="-0.100000" color="#3a4959"/>
-                            <item alpha="255" value="-0.08" label="-0.080000" color="#3a4959"/>
-                            <item alpha="255" value="-0.06" label="-0.060000" color="#405a79"/>
-                            <item alpha="255" value="-0.04" label="-0.040000" color="#456c99"/>
-                            <item alpha="255" value="-0.02" label="-0.020000" color="#96a6b4"/>
-                            <item alpha="255" value="0" label="0.000000" color="#e6dfcf"/>
-                            <item alpha="255" value="0.02" label="0.020000" color="#e0887d"/>
-                            <item alpha="255" value="0.04" label="0.040000" color="#d9312b"/>
-                            <item alpha="255" value="0.06" label="0.060000" color="#b2221c"/>
-                            <item alpha="255" value="0.08" label="0.080000" color="#8c120e"/>
-                            <item alpha="255" value="0.1" label="0.100000" color="#8c120e"/>
+                            <item alpha="255" value="-0.1" label="&lt;-0.1" color="#3a4959"/>
+                            <item alpha="255" value="-0.08" label="-0.08" color="#3a4959"/>
+                            <item alpha="255" value="-0.06" label="-0.06" color="#405a79"/>
+                            <item alpha="255" value="-0.04" label="-0.04" color="#456c99"/>
+                            <item alpha="255" value="-0.02" label="-0.02" color="#96a6b4"/>
+                            <item alpha="255" value="0" label="0" color="#e6dfcf"/>
+                            <item alpha="255" value="0.02" label="0.02" color="#e0887d"/>
+                            <item alpha="255" value="0.04" label="0.04" color="#d9312b"/>
+                            <item alpha="255" value="0.06" label="0.06" color="#b2221c"/>
+                            <item alpha="255" value="0.08" label="0.08" color="#8c120e"/>
+                            <item alpha="255" value="0.1" label=">0.1" color="#8c120e"/>
                         </colorrampshader>
                     </rastershader>
                 </rasterrenderer>
@@ -10883,6 +10995,939 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_p_velsurf_mag20141111133212515</id>
+            <datasource>./600m_const_ctrl/additional_files/g600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_p_velsurf_mag.nc</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>g600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_p_velsurf_mag</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="1"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="0.796078" alphaBand="0" classificationMax="269.361" classificationMinMaxOrigin="CumulativeCutFullExtentEstimated" band="1" classificationMin="0.0405029" type="singlebandpseudocolor">
+                    <rasterTransparency/>
+                    <rastershader>
+                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
+                            <item alpha="255" value="0" label="" color="#d57a64"/>
+                            <item alpha="255" value="1" label="" color="#d57a64"/>
+                            <item alpha="255" value="1.00906" label="" color="#d57b63"/>
+                            <item alpha="255" value="1.01821" label="" color="#d67d62"/>
+                            <item alpha="255" value="1.02743" label="" color="#d67e62"/>
+                            <item alpha="255" value="1.03674" label="" color="#d78061"/>
+                            <item alpha="255" value="1.04614" label="" color="#d78261"/>
+                            <item alpha="255" value="1.05562" label="" color="#d88360"/>
+                            <item alpha="255" value="1.06518" label="" color="#d88560"/>
+                            <item alpha="255" value="1.07484" label="" color="#d9875f"/>
+                            <item alpha="255" value="1.08457" label="" color="#d9885e"/>
+                            <item alpha="255" value="1.0944" label="" color="#da8a5e"/>
+                            <item alpha="255" value="1.10432" label="" color="#da8c5d"/>
+                            <item alpha="255" value="1.11433" label="" color="#db8d5d"/>
+                            <item alpha="255" value="1.12442" label="" color="#db8f5c"/>
+                            <item alpha="255" value="1.13461" label="" color="#dc915c"/>
+                            <item alpha="255" value="1.1449" label="" color="#dc925b"/>
+                            <item alpha="255" value="1.15527" label="" color="#dd945a"/>
+                            <item alpha="255" value="1.16574" label="" color="#dd965a"/>
+                            <item alpha="255" value="1.1763" label="" color="#de9759"/>
+                            <item alpha="255" value="1.18696" label="" color="#de9959"/>
+                            <item alpha="255" value="1.19772" label="" color="#df9b58"/>
+                            <item alpha="255" value="1.20857" label="" color="#df9c58"/>
+                            <item alpha="255" value="1.21952" label="" color="#e09e57"/>
+                            <item alpha="255" value="1.23057" label="" color="#e0a057"/>
+                            <item alpha="255" value="1.24173" label="" color="#e1a156"/>
+                            <item alpha="255" value="1.25298" label="" color="#e1a355"/>
+                            <item alpha="255" value="1.26433" label="" color="#e2a555"/>
+                            <item alpha="255" value="1.27579" label="" color="#e2a654"/>
+                            <item alpha="255" value="1.28735" label="" color="#e3a854"/>
+                            <item alpha="255" value="1.29901" label="" color="#e3aa53"/>
+                            <item alpha="255" value="1.31079" label="" color="#e4ab53"/>
+                            <item alpha="255" value="1.32266" label="" color="#e4ad52"/>
+                            <item alpha="255" value="1.33465" label="" color="#e5af51"/>
+                            <item alpha="255" value="1.34674" label="" color="#e5b051"/>
+                            <item alpha="255" value="1.35895" label="" color="#e6b250"/>
+                            <item alpha="255" value="1.37126" label="" color="#e6b450"/>
+                            <item alpha="255" value="1.38369" label="" color="#e7b54f"/>
+                            <item alpha="255" value="1.39623" label="" color="#e7b74f"/>
+                            <item alpha="255" value="1.40888" label="" color="#e8b94e"/>
+                            <item alpha="255" value="1.42165" label="" color="#e9ba4e"/>
+                            <item alpha="255" value="1.43453" label="" color="#e9bc4d"/>
+                            <item alpha="255" value="1.44753" label="" color="#eabe4c"/>
+                            <item alpha="255" value="1.46064" label="" color="#eabf4c"/>
+                            <item alpha="255" value="1.47388" label="" color="#ebc14b"/>
+                            <item alpha="255" value="1.48724" label="" color="#ebc34b"/>
+                            <item alpha="255" value="1.50071" label="" color="#ecc44a"/>
+                            <item alpha="255" value="1.51431" label="" color="#ecc64a"/>
+                            <item alpha="255" value="1.52803" label="" color="#edc849"/>
+                            <item alpha="255" value="1.54188" label="" color="#edc948"/>
+                            <item alpha="255" value="1.55585" label="" color="#eecb48"/>
+                            <item alpha="255" value="1.56995" label="" color="#eecd47"/>
+                            <item alpha="255" value="1.58418" label="" color="#efce47"/>
+                            <item alpha="255" value="1.59853" label="" color="#efd046"/>
+                            <item alpha="255" value="1.61302" label="" color="#f0d246"/>
+                            <item alpha="255" value="1.62764" label="" color="#f0d345"/>
+                            <item alpha="255" value="1.64239" label="" color="#f1d545"/>
+                            <item alpha="255" value="1.65727" label="" color="#f1d744"/>
+                            <item alpha="255" value="1.67229" label="" color="#f2d843"/>
+                            <item alpha="255" value="1.68744" label="" color="#f2da43"/>
+                            <item alpha="255" value="1.70273" label="" color="#f3dc42"/>
+                            <item alpha="255" value="1.71816" label="" color="#f3dd42"/>
+                            <item alpha="255" value="1.73373" label="" color="#f4df41"/>
+                            <item alpha="255" value="1.74944" label="" color="#f4e141"/>
+                            <item alpha="255" value="1.76529" label="" color="#f5e240"/>
+                            <item alpha="255" value="1.78129" label="" color="#f5e43f"/>
+                            <item alpha="255" value="1.79743" label="" color="#f6e63f"/>
+                            <item alpha="255" value="1.81372" label="" color="#f6e73e"/>
+                            <item alpha="255" value="1.83015" label="" color="#f7e93e"/>
+                            <item alpha="255" value="1.84674" label="" color="#f7eb3d"/>
+                            <item alpha="255" value="1.86347" label="" color="#f8ec3d"/>
+                            <item alpha="255" value="1.88036" label="" color="#f8ee3c"/>
+                            <item alpha="255" value="1.8974" label="" color="#f9f03c"/>
+                            <item alpha="255" value="1.91459" label="" color="#f9f13b"/>
+                            <item alpha="255" value="1.93194" label="" color="#faf33a"/>
+                            <item alpha="255" value="1.94945" label="" color="#faf53a"/>
+                            <item alpha="255" value="1.96711" label="" color="#fbf639"/>
+                            <item alpha="255" value="1.98494" label="" color="#fbf839"/>
+                            <item alpha="255" value="2.00293" label="" color="#fcfa38"/>
+                            <item alpha="255" value="2.02108" label="" color="#fdfb38"/>
+                            <item alpha="255" value="2.03939" label="" color="#fdfd37"/>
+                            <item alpha="255" value="2.05787" label="" color="#fdfe37"/>
+                            <item alpha="255" value="2.07652" label="" color="#fbfd37"/>
+                            <item alpha="255" value="2.09534" label="" color="#fafc37"/>
+                            <item alpha="255" value="2.11432" label="" color="#f8fb37"/>
+                            <item alpha="255" value="2.13348" label="" color="#f6fa38"/>
+                            <item alpha="255" value="2.15282" label="" color="#f4f938"/>
+                            <item alpha="255" value="2.17232" label="" color="#f2f838"/>
+                            <item alpha="255" value="2.19201" label="" color="#f0f738"/>
+                            <item alpha="255" value="2.21187" label="" color="#eef639"/>
+                            <item alpha="255" value="2.23192" label="" color="#ecf539"/>
+                            <item alpha="255" value="2.25214" label="" color="#eaf439"/>
+                            <item alpha="255" value="2.27255" label="" color="#e8f33a"/>
+                            <item alpha="255" value="2.29314" label="" color="#e6f23a"/>
+                            <item alpha="255" value="2.31392" label="" color="#e4f13a"/>
+                            <item alpha="255" value="2.33489" label="" color="#e3ef3a"/>
+                            <item alpha="255" value="2.35605" label="" color="#e1ee3b"/>
+                            <item alpha="255" value="2.3774" label="" color="#dfed3b"/>
+                            <item alpha="255" value="2.39894" label="" color="#ddec3b"/>
+                            <item alpha="255" value="2.42068" label="" color="#dbeb3c"/>
+                            <item alpha="255" value="2.44262" label="" color="#d9ea3c"/>
+                            <item alpha="255" value="2.46475" label="" color="#d7e93c"/>
+                            <item alpha="255" value="2.48708" label="" color="#d5e83c"/>
+                            <item alpha="255" value="2.50962" label="" color="#d3e73d"/>
+                            <item alpha="255" value="2.53236" label="" color="#d1e63d"/>
+                            <item alpha="255" value="2.55531" label="" color="#cfe53d"/>
+                            <item alpha="255" value="2.57847" label="" color="#cde43e"/>
+                            <item alpha="255" value="2.60183" label="" color="#cce33e"/>
+                            <item alpha="255" value="2.62541" label="" color="#cae23e"/>
+                            <item alpha="255" value="2.6492" label="" color="#c8e03e"/>
+                            <item alpha="255" value="2.67321" label="" color="#c6df3f"/>
+                            <item alpha="255" value="2.69743" label="" color="#c4de3f"/>
+                            <item alpha="255" value="2.72187" label="" color="#c2dd3f"/>
+                            <item alpha="255" value="2.74654" label="" color="#c0dc40"/>
+                            <item alpha="255" value="2.77143" label="" color="#bedb40"/>
+                            <item alpha="255" value="2.79654" label="" color="#bcda40"/>
+                            <item alpha="255" value="2.82188" label="" color="#bad940"/>
+                            <item alpha="255" value="2.84745" label="" color="#b8d841"/>
+                            <item alpha="255" value="2.87325" label="" color="#b7d741"/>
+                            <item alpha="255" value="2.89929" label="" color="#b5d641"/>
+                            <item alpha="255" value="2.92556" label="" color="#b3d542"/>
+                            <item alpha="255" value="2.95207" label="" color="#b1d442"/>
+                            <item alpha="255" value="2.97883" label="" color="#afd342"/>
+                            <item alpha="255" value="3.00582" label="" color="#add142"/>
+                            <item alpha="255" value="3.03306" label="" color="#abd043"/>
+                            <item alpha="255" value="3.06054" label="" color="#a9cf43"/>
+                            <item alpha="255" value="3.08827" label="" color="#a7ce43"/>
+                            <item alpha="255" value="3.11626" label="" color="#a5cd43"/>
+                            <item alpha="255" value="3.1445" label="" color="#a3cc44"/>
+                            <item alpha="255" value="3.17299" label="" color="#a1cb44"/>
+                            <item alpha="255" value="3.20175" label="" color="#a0ca44"/>
+                            <item alpha="255" value="3.23076" label="" color="#9ec945"/>
+                            <item alpha="255" value="3.26004" label="" color="#9cc845"/>
+                            <item alpha="255" value="3.28958" label="" color="#9ac745"/>
+                            <item alpha="255" value="3.31939" label="" color="#98c645"/>
+                            <item alpha="255" value="3.34947" label="" color="#96c546"/>
+                            <item alpha="255" value="3.37982" label="" color="#94c446"/>
+                            <item alpha="255" value="3.41044" label="" color="#92c346"/>
+                            <item alpha="255" value="3.44135" label="" color="#90c147"/>
+                            <item alpha="255" value="3.47253" label="" color="#8ec047"/>
+                            <item alpha="255" value="3.504" label="" color="#8cbf47"/>
+                            <item alpha="255" value="3.53575" label="" color="#8abe47"/>
+                            <item alpha="255" value="3.56779" label="" color="#89bd48"/>
+                            <item alpha="255" value="3.60012" label="" color="#87bc48"/>
+                            <item alpha="255" value="3.63275" label="" color="#85bb48"/>
+                            <item alpha="255" value="3.66567" label="" color="#83ba49"/>
+                            <item alpha="255" value="3.69888" label="" color="#81b949"/>
+                            <item alpha="255" value="3.7324" label="" color="#7fb849"/>
+                            <item alpha="255" value="3.76622" label="" color="#7db749"/>
+                            <item alpha="255" value="3.80035" label="" color="#7bb64a"/>
+                            <item alpha="255" value="3.83479" label="" color="#79b54a"/>
+                            <item alpha="255" value="3.86954" label="" color="#77b44a"/>
+                            <item alpha="255" value="3.9046" label="" color="#75b24b"/>
+                            <item alpha="255" value="3.93999" label="" color="#74b14b"/>
+                            <item alpha="255" value="3.97569" label="" color="#72b04b"/>
+                            <item alpha="255" value="4.01171" label="" color="#70af4b"/>
+                            <item alpha="255" value="4.04807" label="" color="#6eae4c"/>
+                            <item alpha="255" value="4.08475" label="" color="#6cad4c"/>
+                            <item alpha="255" value="4.12177" label="" color="#6aac4c"/>
+                            <item alpha="255" value="4.15912" label="" color="#68ab4c"/>
+                            <item alpha="255" value="4.1968" label="" color="#66aa4d"/>
+                            <item alpha="255" value="4.23483" label="" color="#64a94d"/>
+                            <item alpha="255" value="4.27321" label="" color="#62a84d"/>
+                            <item alpha="255" value="4.31193" label="" color="#60a74e"/>
+                            <item alpha="255" value="4.35101" label="" color="#5ea64e"/>
+                            <item alpha="255" value="4.39043" label="" color="#5da54e"/>
+                            <item alpha="255" value="4.43022" label="" color="#5ba34e"/>
+                            <item alpha="255" value="4.47036" label="" color="#59a24f"/>
+                            <item alpha="255" value="4.51087" label="" color="#57a14f"/>
+                            <item alpha="255" value="4.55175" label="" color="#55a04f"/>
+                            <item alpha="255" value="4.593" label="" color="#539f4f"/>
+                            <item alpha="255" value="4.63462" label="" color="#539f4f"/>
+                            <item alpha="255" value="4.67661" label="" color="#539f4f"/>
+                            <item alpha="255" value="4.71899" label="" color="#529e4f"/>
+                            <item alpha="255" value="4.76175" label="" color="#529e4e"/>
+                            <item alpha="255" value="4.8049" label="" color="#529d4e"/>
+                            <item alpha="255" value="4.84844" label="" color="#519d4e"/>
+                            <item alpha="255" value="4.89238" label="" color="#519d4d"/>
+                            <item alpha="255" value="4.93671" label="" color="#519c4d"/>
+                            <item alpha="255" value="4.98145" label="" color="#509c4d"/>
+                            <item alpha="255" value="5.02659" label="" color="#509c4c"/>
+                            <item alpha="255" value="5.07214" label="" color="#4f9b4c"/>
+                            <item alpha="255" value="5.1181" label="" color="#4f9b4c"/>
+                            <item alpha="255" value="5.16448" label="" color="#4f9a4c"/>
+                            <item alpha="255" value="5.21128" label="" color="#4e9a4b"/>
+                            <item alpha="255" value="5.2585" label="" color="#4e9a4b"/>
+                            <item alpha="255" value="5.30615" label="" color="#4e994b"/>
+                            <item alpha="255" value="5.35423" label="" color="#4d994a"/>
+                            <item alpha="255" value="5.40275" label="" color="#4d984a"/>
+                            <item alpha="255" value="5.45171" label="" color="#4d984a"/>
+                            <item alpha="255" value="5.50111" label="" color="#4c9849"/>
+                            <item alpha="255" value="5.55096" label="" color="#4c9749"/>
+                            <item alpha="255" value="5.60126" label="" color="#4c9749"/>
+                            <item alpha="255" value="5.65202" label="" color="#4b9749"/>
+                            <item alpha="255" value="5.70324" label="" color="#4b9648"/>
+                            <item alpha="255" value="5.75492" label="" color="#4a9648"/>
+                            <item alpha="255" value="5.80707" label="" color="#4a9548"/>
+                            <item alpha="255" value="5.85969" label="" color="#4a9547"/>
+                            <item alpha="255" value="5.91279" label="" color="#499547"/>
+                            <item alpha="255" value="5.96637" label="" color="#499447"/>
+                            <item alpha="255" value="6.02043" label="" color="#499446"/>
+                            <item alpha="255" value="6.07499" label="" color="#489346"/>
+                            <item alpha="255" value="6.13004" label="" color="#489346"/>
+                            <item alpha="255" value="6.18559" label="" color="#489346"/>
+                            <item alpha="255" value="6.24164" label="" color="#479245"/>
+                            <item alpha="255" value="6.2982" label="" color="#479245"/>
+                            <item alpha="255" value="6.35527" label="" color="#479245"/>
+                            <item alpha="255" value="6.41286" label="" color="#469144"/>
+                            <item alpha="255" value="6.47097" label="" color="#469144"/>
+                            <item alpha="255" value="6.52961" label="" color="#459044"/>
+                            <item alpha="255" value="6.58878" label="" color="#459043"/>
+                            <item alpha="255" value="6.64849" label="" color="#459043"/>
+                            <item alpha="255" value="6.70873" label="" color="#448f43"/>
+                            <item alpha="255" value="6.76953" label="" color="#448f43"/>
+                            <item alpha="255" value="6.83087" label="" color="#448e42"/>
+                            <item alpha="255" value="6.89277" label="" color="#438e42"/>
+                            <item alpha="255" value="6.95523" label="" color="#438e42"/>
+                            <item alpha="255" value="7.01826" label="" color="#438d41"/>
+                            <item alpha="255" value="7.08185" label="" color="#428d41"/>
+                            <item alpha="255" value="7.14603" label="" color="#428d41"/>
+                            <item alpha="255" value="7.21078" label="" color="#428c40"/>
+                            <item alpha="255" value="7.27612" label="" color="#418c40"/>
+                            <item alpha="255" value="7.34206" label="" color="#418b40"/>
+                            <item alpha="255" value="7.40859" label="" color="#418b40"/>
+                            <item alpha="255" value="7.47572" label="" color="#408b3f"/>
+                            <item alpha="255" value="7.54347" label="" color="#408a3f"/>
+                            <item alpha="255" value="7.61182" label="" color="#3f8a3f"/>
+                            <item alpha="255" value="7.6808" label="" color="#3f893e"/>
+                            <item alpha="255" value="7.7504" label="" color="#3f893e"/>
+                            <item alpha="255" value="7.82063" label="" color="#3e893e"/>
+                            <item alpha="255" value="7.8915" label="" color="#3e883d"/>
+                            <item alpha="255" value="7.96301" label="" color="#3e883d"/>
+                            <item alpha="255" value="8.03517" label="" color="#3d883d"/>
+                            <item alpha="255" value="8.10798" label="" color="#3d873c"/>
+                            <item alpha="255" value="8.18146" label="" color="#3d873c"/>
+                            <item alpha="255" value="8.25559" label="" color="#3c863c"/>
+                            <item alpha="255" value="8.3304" label="" color="#3c863c"/>
+                            <item alpha="255" value="8.40589" label="" color="#3c863b"/>
+                            <item alpha="255" value="8.48206" label="" color="#3b853b"/>
+                            <item alpha="255" value="8.55892" label="" color="#3b853b"/>
+                            <item alpha="255" value="8.63648" label="" color="#3a843a"/>
+                            <item alpha="255" value="8.71474" label="" color="#3a843a"/>
+                            <item alpha="255" value="8.79371" label="" color="#3a843a"/>
+                            <item alpha="255" value="8.8734" label="" color="#398339"/>
+                            <item alpha="255" value="8.95381" label="" color="#398339"/>
+                            <item alpha="255" value="9.03495" label="" color="#398339"/>
+                            <item alpha="255" value="9.11682" label="" color="#388239"/>
+                            <item alpha="255" value="9.19943" label="" color="#388238"/>
+                            <item alpha="255" value="9.28279" label="" color="#388138"/>
+                            <item alpha="255" value="9.36691" label="" color="#378138"/>
+                            <item alpha="255" value="9.45179" label="" color="#378137"/>
+                            <item alpha="255" value="9.53744" label="" color="#378037"/>
+                            <item alpha="255" value="9.62387" label="" color="#368037"/>
+                            <item alpha="255" value="9.71108" label="" color="#367f36"/>
+                            <item alpha="255" value="9.79908" label="" color="#357f36"/>
+                            <item alpha="255" value="9.88787" label="" color="#357f36"/>
+                            <item alpha="255" value="9.97747" label="" color="#357e36"/>
+                            <item alpha="255" value="10.0679" label="" color="#347e35"/>
+                            <item alpha="255" value="10.1591" label="" color="#347e35"/>
+                            <item alpha="255" value="10.2512" label="" color="#347d35"/>
+                            <item alpha="255" value="10.3441" label="" color="#337d34"/>
+                            <item alpha="255" value="10.4378" label="" color="#337c34"/>
+                            <item alpha="255" value="10.5324" label="" color="#337c34"/>
+                            <item alpha="255" value="10.6278" label="" color="#327c33"/>
+                            <item alpha="255" value="10.7241" label="" color="#327b33"/>
+                            <item alpha="255" value="10.8213" label="" color="#327b33"/>
+                            <item alpha="255" value="10.9194" label="" color="#317a33"/>
+                            <item alpha="255" value="11.0183" label="" color="#317a32"/>
+                            <item alpha="255" value="11.1182" label="" color="#307a32"/>
+                            <item alpha="255" value="11.2189" label="" color="#307932"/>
+                            <item alpha="255" value="11.3206" label="" color="#307931"/>
+                            <item alpha="255" value="11.4232" label="" color="#2f7931"/>
+                            <item alpha="255" value="11.5267" label="" color="#2f7831"/>
+                            <item alpha="255" value="11.6311" label="" color="#2f7830"/>
+                            <item alpha="255" value="11.7365" label="" color="#2e7730"/>
+                            <item alpha="255" value="11.8429" label="" color="#2e7730"/>
+                            <item alpha="255" value="11.9502" label="" color="#2e7730"/>
+                            <item alpha="255" value="12.0585" label="" color="#2d7730"/>
+                            <item alpha="255" value="12.1678" label="" color="#2d7832"/>
+                            <item alpha="255" value="12.278" label="" color="#2d7933"/>
+                            <item alpha="255" value="12.3893" label="" color="#2c7a34"/>
+                            <item alpha="255" value="12.5015" label="" color="#2c7a35"/>
+                            <item alpha="255" value="12.6148" label="" color="#2c7b36"/>
+                            <item alpha="255" value="12.7291" label="" color="#2c7c38"/>
+                            <item alpha="255" value="12.8445" label="" color="#2b7d39"/>
+                            <item alpha="255" value="12.9609" label="" color="#2b7e3a"/>
+                            <item alpha="255" value="13.0783" label="" color="#2b7f3b"/>
+                            <item alpha="255" value="13.1968" label="" color="#2a7f3c"/>
+                            <item alpha="255" value="13.3164" label="" color="#2a803e"/>
+                            <item alpha="255" value="13.4371" label="" color="#2a813f"/>
+                            <item alpha="255" value="13.5589" label="" color="#2a8240"/>
+                            <item alpha="255" value="13.6817" label="" color="#298341"/>
+                            <item alpha="255" value="13.8057" label="" color="#298443"/>
+                            <item alpha="255" value="13.9308" label="" color="#298444"/>
+                            <item alpha="255" value="14.0571" label="" color="#298545"/>
+                            <item alpha="255" value="14.1844" label="" color="#288646"/>
+                            <item alpha="255" value="14.313" label="" color="#288747"/>
+                            <item alpha="255" value="14.4427" label="" color="#288849"/>
+                            <item alpha="255" value="14.5735" label="" color="#27884a"/>
+                            <item alpha="255" value="14.7056" label="" color="#27894b"/>
+                            <item alpha="255" value="14.8389" label="" color="#278a4c"/>
+                            <item alpha="255" value="14.9733" label="" color="#278b4d"/>
+                            <item alpha="255" value="15.109" label="" color="#268c4f"/>
+                            <item alpha="255" value="15.2459" label="" color="#268d50"/>
+                            <item alpha="255" value="15.3841" label="" color="#268d51"/>
+                            <item alpha="255" value="15.5235" label="" color="#258e52"/>
+                            <item alpha="255" value="15.6641" label="" color="#258f53"/>
+                            <item alpha="255" value="15.8061" label="" color="#259055"/>
+                            <item alpha="255" value="15.9493" label="" color="#259156"/>
+                            <item alpha="255" value="16.0939" label="" color="#249257"/>
+                            <item alpha="255" value="16.2397" label="" color="#249258"/>
+                            <item alpha="255" value="16.3868" label="" color="#24935a"/>
+                            <item alpha="255" value="16.5354" label="" color="#24945b"/>
+                            <item alpha="255" value="16.6852" label="" color="#23955c"/>
+                            <item alpha="255" value="16.8364" label="" color="#23965d"/>
+                            <item alpha="255" value="16.9889" label="" color="#23975e"/>
+                            <item alpha="255" value="17.1429" label="" color="#229760"/>
+                            <item alpha="255" value="17.2982" label="" color="#229861"/>
+                            <item alpha="255" value="17.455" label="" color="#229962"/>
+                            <item alpha="255" value="17.6132" label="" color="#229a63"/>
+                            <item alpha="255" value="17.7728" label="" color="#219b64"/>
+                            <item alpha="255" value="17.9338" label="" color="#219c66"/>
+                            <item alpha="255" value="18.0963" label="" color="#219c67"/>
+                            <item alpha="255" value="18.2603" label="" color="#209d68"/>
+                            <item alpha="255" value="18.4258" label="" color="#209e69"/>
+                            <item alpha="255" value="18.5928" label="" color="#209f6b"/>
+                            <item alpha="255" value="18.7612" label="" color="#20a06c"/>
+                            <item alpha="255" value="18.9312" label="" color="#1fa06d"/>
+                            <item alpha="255" value="19.1028" label="" color="#1fa16e"/>
+                            <item alpha="255" value="19.2759" label="" color="#1fa26f"/>
+                            <item alpha="255" value="19.4506" label="" color="#1ea371"/>
+                            <item alpha="255" value="19.6268" label="" color="#1ea472"/>
+                            <item alpha="255" value="19.8047" label="" color="#1ea573"/>
+                            <item alpha="255" value="19.9841" label="" color="#1ea574"/>
+                            <item alpha="255" value="20.1652" label="" color="#1da675"/>
+                            <item alpha="255" value="20.348" label="" color="#1da777"/>
+                            <item alpha="255" value="20.5324" label="" color="#1da878"/>
+                            <item alpha="255" value="20.7184" label="" color="#1da979"/>
+                            <item alpha="255" value="20.9062" label="" color="#1caa7a"/>
+                            <item alpha="255" value="21.0956" label="" color="#1caa7b"/>
+                            <item alpha="255" value="21.2868" label="" color="#1cab7d"/>
+                            <item alpha="255" value="21.4797" label="" color="#1bac7e"/>
+                            <item alpha="255" value="21.6743" label="" color="#1bad7f"/>
+                            <item alpha="255" value="21.8707" label="" color="#1bae80"/>
+                            <item alpha="255" value="22.0689" label="" color="#1baf82"/>
+                            <item alpha="255" value="22.2689" label="" color="#1aaf83"/>
+                            <item alpha="255" value="22.4707" label="" color="#1ab084"/>
+                            <item alpha="255" value="22.6743" label="" color="#1ab185"/>
+                            <item alpha="255" value="22.8798" label="" color="#19b286"/>
+                            <item alpha="255" value="23.0871" label="" color="#19b388"/>
+                            <item alpha="255" value="23.2963" label="" color="#19b489"/>
+                            <item alpha="255" value="23.5074" label="" color="#19b48a"/>
+                            <item alpha="255" value="23.7204" label="" color="#18b58b"/>
+                            <item alpha="255" value="23.9354" label="" color="#18b68c"/>
+                            <item alpha="255" value="24.1523" label="" color="#18b78e"/>
+                            <item alpha="255" value="24.3711" label="" color="#17b88f"/>
+                            <item alpha="255" value="24.592" label="" color="#17b890"/>
+                            <item alpha="255" value="24.8148" label="" color="#17b991"/>
+                            <item alpha="255" value="25.0397" label="" color="#17ba92"/>
+                            <item alpha="255" value="25.2666" label="" color="#16bb94"/>
+                            <item alpha="255" value="25.4955" label="" color="#16bc95"/>
+                            <item alpha="255" value="25.7266" label="" color="#16bd96"/>
+                            <item alpha="255" value="25.9597" label="" color="#16bd97"/>
+                            <item alpha="255" value="26.1949" label="" color="#15be99"/>
+                            <item alpha="255" value="26.4323" label="" color="#15bf9a"/>
+                            <item alpha="255" value="26.6718" label="" color="#15c09b"/>
+                            <item alpha="255" value="26.9135" label="" color="#14c19c"/>
+                            <item alpha="255" value="27.1574" label="" color="#14c29d"/>
+                            <item alpha="255" value="27.4035" label="" color="#14c29f"/>
+                            <item alpha="255" value="27.6518" label="" color="#14c3a0"/>
+                            <item alpha="255" value="27.9024" label="" color="#13c4a1"/>
+                            <item alpha="255" value="28.1552" label="" color="#13c5a2"/>
+                            <item alpha="255" value="28.4104" label="" color="#13c6a3"/>
+                            <item alpha="255" value="28.6678" label="" color="#12c7a5"/>
+                            <item alpha="255" value="28.9276" label="" color="#12c7a6"/>
+                            <item alpha="255" value="29.1897" label="" color="#12c8a7"/>
+                            <item alpha="255" value="29.4542" label="" color="#12c9a8"/>
+                            <item alpha="255" value="29.7212" label="" color="#11caa9"/>
+                            <item alpha="255" value="29.9905" label="" color="#11cbab"/>
+                            <item alpha="255" value="30.2622" label="" color="#11ccac"/>
+                            <item alpha="255" value="30.5365" label="" color="#10ccad"/>
+                            <item alpha="255" value="30.8132" label="" color="#10cdae"/>
+                            <item alpha="255" value="31.0924" label="" color="#10ceb0"/>
+                            <item alpha="255" value="31.3742" label="" color="#10cfb1"/>
+                            <item alpha="255" value="31.6584" label="" color="#0fd0b2"/>
+                            <item alpha="255" value="31.9453" label="" color="#0fd0b3"/>
+                            <item alpha="255" value="32.2348" label="" color="#0fd1b4"/>
+                            <item alpha="255" value="32.5269" label="" color="#0fd2b6"/>
+                            <item alpha="255" value="32.8217" label="" color="#0ed3b7"/>
+                            <item alpha="255" value="33.1191" label="" color="#0ed4b8"/>
+                            <item alpha="255" value="33.4192" label="" color="#0ed5b9"/>
+                            <item alpha="255" value="33.722" label="" color="#0dd5ba"/>
+                            <item alpha="255" value="34.0276" label="" color="#0dd6bc"/>
+                            <item alpha="255" value="34.336" label="" color="#0dd7bd"/>
+                            <item alpha="255" value="34.6471" label="" color="#0dd8be"/>
+                            <item alpha="255" value="34.9611" label="" color="#0cd9bf"/>
+                            <item alpha="255" value="35.2779" label="" color="#0cdac0"/>
+                            <item alpha="255" value="35.5976" label="" color="#0cdac2"/>
+                            <item alpha="255" value="35.9201" label="" color="#0bdbc3"/>
+                            <item alpha="255" value="36.2456" label="" color="#0bdcc4"/>
+                            <item alpha="255" value="36.5741" label="" color="#0bddc5"/>
+                            <item alpha="255" value="36.9055" label="" color="#0bdec7"/>
+                            <item alpha="255" value="37.2399" label="" color="#0adfc8"/>
+                            <item alpha="255" value="37.5774" label="" color="#0adfc9"/>
+                            <item alpha="255" value="37.9179" label="" color="#0ae0ca"/>
+                            <item alpha="255" value="38.2615" label="" color="#09e1cb"/>
+                            <item alpha="255" value="38.6082" label="" color="#09e2cd"/>
+                            <item alpha="255" value="38.9581" label="" color="#09e3ce"/>
+                            <item alpha="255" value="39.3111" label="" color="#09e4cf"/>
+                            <item alpha="255" value="39.6673" label="" color="#08e4d0"/>
+                            <item alpha="255" value="40.0268" label="" color="#08e5d1"/>
+                            <item alpha="255" value="40.3895" label="" color="#08e6d3"/>
+                            <item alpha="255" value="40.7555" label="" color="#08e7d4"/>
+                            <item alpha="255" value="41.1248" label="" color="#07e8d5"/>
+                            <item alpha="255" value="41.4975" label="" color="#07e8d6"/>
+                            <item alpha="255" value="41.8735" label="" color="#07e9d7"/>
+                            <item alpha="255" value="42.2529" label="" color="#06ead9"/>
+                            <item alpha="255" value="42.6358" label="" color="#06ebda"/>
+                            <item alpha="255" value="43.0222" label="" color="#06ecdb"/>
+                            <item alpha="255" value="43.412" label="" color="#06eddc"/>
+                            <item alpha="255" value="43.8054" label="" color="#05edde"/>
+                            <item alpha="255" value="44.2024" label="" color="#05eedf"/>
+                            <item alpha="255" value="44.6029" label="" color="#05efe0"/>
+                            <item alpha="255" value="45.0071" label="" color="#04f0e1"/>
+                            <item alpha="255" value="45.4149" label="" color="#04f1e2"/>
+                            <item alpha="255" value="45.8265" label="" color="#04f2e4"/>
+                            <item alpha="255" value="46.2418" label="" color="#04f2e5"/>
+                            <item alpha="255" value="46.6608" label="" color="#03f3e6"/>
+                            <item alpha="255" value="47.0836" label="" color="#03f4e7"/>
+                            <item alpha="255" value="47.5103" label="" color="#03f5e8"/>
+                            <item alpha="255" value="47.9408" label="" color="#02f6ea"/>
+                            <item alpha="255" value="48.3752" label="" color="#02f7eb"/>
+                            <item alpha="255" value="48.8136" label="" color="#02f7ec"/>
+                            <item alpha="255" value="49.2559" label="" color="#02f8ed"/>
+                            <item alpha="255" value="49.7023" label="" color="#01f9ef"/>
+                            <item alpha="255" value="50.1526" label="" color="#01faf0"/>
+                            <item alpha="255" value="50.6071" label="" color="#01fbf1"/>
+                            <item alpha="255" value="51.0657" label="" color="#01fcf2"/>
+                            <item alpha="255" value="51.5284" label="" color="#00fcf3"/>
+                            <item alpha="255" value="51.9954" label="" color="#00fdf5"/>
+                            <item alpha="255" value="52.4665" label="" color="#00fef6"/>
+                            <item alpha="255" value="52.942" label="" color="#00fef7"/>
+                            <item alpha="255" value="53.4217" label="" color="#00fdf8"/>
+                            <item alpha="255" value="53.9058" label="" color="#00fcf9"/>
+                            <item alpha="255" value="54.3943" label="" color="#00fbfa"/>
+                            <item alpha="255" value="54.8872" label="" color="#00fbfa"/>
+                            <item alpha="255" value="55.3846" label="" color="#00fafb"/>
+                            <item alpha="255" value="55.8865" label="" color="#00f9fc"/>
+                            <item alpha="255" value="56.3929" label="" color="#00f8fd"/>
+                            <item alpha="255" value="56.9039" label="" color="#00f7fe"/>
+                            <item alpha="255" value="57.4195" label="" color="#00f5ff"/>
+                            <item alpha="255" value="57.9399" label="" color="#00f3ff"/>
+                            <item alpha="255" value="58.4649" label="" color="#00f0ff"/>
+                            <item alpha="255" value="58.9947" label="" color="#00eeff"/>
+                            <item alpha="255" value="59.5293" label="" color="#00ecff"/>
+                            <item alpha="255" value="60.0687" label="" color="#00eaff"/>
+                            <item alpha="255" value="60.6131" label="" color="#00e7ff"/>
+                            <item alpha="255" value="61.1623" label="" color="#00e5ff"/>
+                            <item alpha="255" value="61.7165" label="" color="#00e3ff"/>
+                            <item alpha="255" value="62.2758" label="" color="#00e0ff"/>
+                            <item alpha="255" value="62.8401" label="" color="#00deff"/>
+                            <item alpha="255" value="63.4096" label="" color="#00dcff"/>
+                            <item alpha="255" value="63.9842" label="" color="#00d9ff"/>
+                            <item alpha="255" value="64.564" label="" color="#00d7ff"/>
+                            <item alpha="255" value="65.149" label="" color="#00d5ff"/>
+                            <item alpha="255" value="65.7394" label="" color="#00d2ff"/>
+                            <item alpha="255" value="66.3351" label="" color="#00d0ff"/>
+                            <item alpha="255" value="66.9362" label="" color="#00ceff"/>
+                            <item alpha="255" value="67.5428" label="" color="#00ccff"/>
+                            <item alpha="255" value="68.1548" label="" color="#00c9ff"/>
+                            <item alpha="255" value="68.7724" label="" color="#00c7ff"/>
+                            <item alpha="255" value="69.3956" label="" color="#00c5ff"/>
+                            <item alpha="255" value="70.0245" label="" color="#00c2ff"/>
+                            <item alpha="255" value="70.659" label="" color="#00c0ff"/>
+                            <item alpha="255" value="71.2993" label="" color="#00beff"/>
+                            <item alpha="255" value="71.9454" label="" color="#00bbff"/>
+                            <item alpha="255" value="72.5973" label="" color="#00b9ff"/>
+                            <item alpha="255" value="73.2552" label="" color="#00b7ff"/>
+                            <item alpha="255" value="73.919" label="" color="#00b4ff"/>
+                            <item alpha="255" value="74.5888" label="" color="#00b2ff"/>
+                            <item alpha="255" value="75.2647" label="" color="#00b0ff"/>
+                            <item alpha="255" value="75.9468" label="" color="#00adff"/>
+                            <item alpha="255" value="76.635" label="" color="#00abff"/>
+                            <item alpha="255" value="77.3294" label="" color="#00a9ff"/>
+                            <item alpha="255" value="78.0302" label="" color="#00a7ff"/>
+                            <item alpha="255" value="78.7373" label="" color="#00a4ff"/>
+                            <item alpha="255" value="79.4507" label="" color="#00a2ff"/>
+                            <item alpha="255" value="80.1707" label="" color="#00a0ff"/>
+                            <item alpha="255" value="80.8972" label="" color="#009dff"/>
+                            <item alpha="255" value="81.6303" label="" color="#009bff"/>
+                            <item alpha="255" value="82.37" label="" color="#0099ff"/>
+                            <item alpha="255" value="83.1164" label="" color="#0096ff"/>
+                            <item alpha="255" value="83.8696" label="" color="#0094ff"/>
+                            <item alpha="255" value="84.6295" label="" color="#0092ff"/>
+                            <item alpha="255" value="85.3964" label="" color="#008fff"/>
+                            <item alpha="255" value="86.1703" label="" color="#008dff"/>
+                            <item alpha="255" value="86.9511" label="" color="#008bff"/>
+                            <item alpha="255" value="87.7391" label="" color="#0088ff"/>
+                            <item alpha="255" value="88.5341" label="" color="#0086ff"/>
+                            <item alpha="255" value="89.3364" label="" color="#0084ff"/>
+                            <item alpha="255" value="90.1459" label="" color="#0082ff"/>
+                            <item alpha="255" value="90.9628" label="" color="#007fff"/>
+                            <item alpha="255" value="91.7871" label="" color="#007dff"/>
+                            <item alpha="255" value="92.6188" label="" color="#007bff"/>
+                            <item alpha="255" value="93.4581" label="" color="#0078ff"/>
+                            <item alpha="255" value="94.305" label="" color="#0076ff"/>
+                            <item alpha="255" value="95.1596" label="" color="#0074ff"/>
+                            <item alpha="255" value="96.0219" label="" color="#0071ff"/>
+                            <item alpha="255" value="96.892" label="" color="#006fff"/>
+                            <item alpha="255" value="97.77" label="" color="#006dff"/>
+                            <item alpha="255" value="98.656" label="" color="#006aff"/>
+                            <item alpha="255" value="99.55" label="" color="#0068ff"/>
+                            <item alpha="255" value="100.452" label="" color="#0066ff"/>
+                            <item alpha="255" value="101.362" label="" color="#0064ff"/>
+                            <item alpha="255" value="102.281" label="" color="#0061ff"/>
+                            <item alpha="255" value="103.208" label="" color="#005fff"/>
+                            <item alpha="255" value="104.143" label="" color="#005dff"/>
+                            <item alpha="255" value="105.087" label="" color="#005aff"/>
+                            <item alpha="255" value="106.039" label="" color="#0058ff"/>
+                            <item alpha="255" value="107" label="" color="#0056ff"/>
+                            <item alpha="255" value="107.969" label="" color="#0053ff"/>
+                            <item alpha="255" value="108.948" label="" color="#0051ff"/>
+                            <item alpha="255" value="109.935" label="" color="#004fff"/>
+                            <item alpha="255" value="110.931" label="" color="#004cff"/>
+                            <item alpha="255" value="111.936" label="" color="#004aff"/>
+                            <item alpha="255" value="112.951" label="" color="#0048ff"/>
+                            <item alpha="255" value="113.974" label="" color="#0045ff"/>
+                            <item alpha="255" value="115.007" label="" color="#0043ff"/>
+                            <item alpha="255" value="116.049" label="" color="#0041ff"/>
+                            <item alpha="255" value="117.101" label="" color="#003fff"/>
+                            <item alpha="255" value="118.162" label="" color="#003cff"/>
+                            <item alpha="255" value="119.233" label="" color="#003aff"/>
+                            <item alpha="255" value="120.313" label="" color="#0038ff"/>
+                            <item alpha="255" value="121.403" label="" color="#0035ff"/>
+                            <item alpha="255" value="122.504" label="" color="#0033ff"/>
+                            <item alpha="255" value="123.614" label="" color="#0031ff"/>
+                            <item alpha="255" value="124.734" label="" color="#002eff"/>
+                            <item alpha="255" value="125.864" label="" color="#002cff"/>
+                            <item alpha="255" value="127.005" label="" color="#002aff"/>
+                            <item alpha="255" value="128.156" label="" color="#0027ff"/>
+                            <item alpha="255" value="129.317" label="" color="#0025ff"/>
+                            <item alpha="255" value="130.489" label="" color="#0023ff"/>
+                            <item alpha="255" value="131.671" label="" color="#0021ff"/>
+                            <item alpha="255" value="132.864" label="" color="#001eff"/>
+                            <item alpha="255" value="134.068" label="" color="#001cff"/>
+                            <item alpha="255" value="135.283" label="" color="#001aff"/>
+                            <item alpha="255" value="136.509" label="" color="#0017ff"/>
+                            <item alpha="255" value="137.746" label="" color="#0015ff"/>
+                            <item alpha="255" value="138.994" label="" color="#0013ff"/>
+                            <item alpha="255" value="140.254" label="" color="#0010ff"/>
+                            <item alpha="255" value="141.525" label="" color="#000eff"/>
+                            <item alpha="255" value="142.807" label="" color="#000cff"/>
+                            <item alpha="255" value="144.101" label="" color="#0009ff"/>
+                            <item alpha="255" value="145.407" label="" color="#0007ff"/>
+                            <item alpha="255" value="146.725" label="" color="#0005ff"/>
+                            <item alpha="255" value="148.054" label="" color="#0003ff"/>
+                            <item alpha="255" value="149.396" label="" color="#0003ff"/>
+                            <item alpha="255" value="150.75" label="" color="#0003ff"/>
+                            <item alpha="255" value="152.116" label="" color="#0003ff"/>
+                            <item alpha="255" value="153.494" label="" color="#0003ff"/>
+                            <item alpha="255" value="154.885" label="" color="#0103ff"/>
+                            <item alpha="255" value="156.289" label="" color="#0103ff"/>
+                            <item alpha="255" value="157.705" label="" color="#0103ff"/>
+                            <item alpha="255" value="159.134" label="" color="#0103ff"/>
+                            <item alpha="255" value="160.576" label="" color="#0103ff"/>
+                            <item alpha="255" value="162.031" label="" color="#0203ff"/>
+                            <item alpha="255" value="163.499" label="" color="#0202ff"/>
+                            <item alpha="255" value="164.981" label="" color="#0202ff"/>
+                            <item alpha="255" value="166.476" label="" color="#0202ff"/>
+                            <item alpha="255" value="167.985" label="" color="#0202ff"/>
+                            <item alpha="255" value="169.507" label="" color="#0302ff"/>
+                            <item alpha="255" value="171.043" label="" color="#0302ff"/>
+                            <item alpha="255" value="172.593" label="" color="#0302ff"/>
+                            <item alpha="255" value="174.157" label="" color="#0302ff"/>
+                            <item alpha="255" value="175.735" label="" color="#0302ff"/>
+                            <item alpha="255" value="177.327" label="" color="#0402ff"/>
+                            <item alpha="255" value="178.934" label="" color="#0402ff"/>
+                            <item alpha="255" value="180.556" label="" color="#0401ff"/>
+                            <item alpha="255" value="182.192" label="" color="#0401ff"/>
+                            <item alpha="255" value="183.843" label="" color="#0401ff"/>
+                            <item alpha="255" value="185.509" label="" color="#0501ff"/>
+                            <item alpha="255" value="187.19" label="" color="#0501ff"/>
+                            <item alpha="255" value="188.886" label="" color="#0501ff"/>
+                            <item alpha="255" value="190.598" label="" color="#0501ff"/>
+                            <item alpha="255" value="192.325" label="" color="#0501ff"/>
+                            <item alpha="255" value="194.068" label="" color="#0601ff"/>
+                            <item alpha="255" value="195.826" label="" color="#0601ff"/>
+                            <item alpha="255" value="197.601" label="" color="#0601ff"/>
+                            <item alpha="255" value="199.391" label="" color="#0600ff"/>
+                            <item alpha="255" value="201.198" label="" color="#0600ff"/>
+                            <item alpha="255" value="203.021" label="" color="#0700ff"/>
+                            <item alpha="255" value="204.861" label="" color="#0700ff"/>
+                            <item alpha="255" value="206.717" label="" color="#0700ff"/>
+                            <item alpha="255" value="208.591" label="" color="#0700ff"/>
+                            <item alpha="255" value="210.481" label="" color="#0800ff"/>
+                            <item alpha="255" value="212.388" label="" color="#0800ff"/>
+                            <item alpha="255" value="214.313" label="" color="#0800ff"/>
+                            <item alpha="255" value="216.255" label="" color="#0800ff"/>
+                            <item alpha="255" value="218.214" label="" color="#0800ff"/>
+                            <item alpha="255" value="220.192" label="" color="#0900ff"/>
+                            <item alpha="255" value="222.187" label="" color="#0a00ff"/>
+                            <item alpha="255" value="224.201" label="" color="#0c00ff"/>
+                            <item alpha="255" value="226.232" label="" color="#0e00ff"/>
+                            <item alpha="255" value="228.282" label="" color="#1000ff"/>
+                            <item alpha="255" value="230.351" label="" color="#1100ff"/>
+                            <item alpha="255" value="232.438" label="" color="#1300ff"/>
+                            <item alpha="255" value="234.545" label="" color="#1500ff"/>
+                            <item alpha="255" value="236.67" label="" color="#1800ff"/>
+                            <item alpha="255" value="238.815" label="" color="#1a00ff"/>
+                            <item alpha="255" value="240.979" label="" color="#1c00ff"/>
+                            <item alpha="255" value="243.162" label="" color="#1d00ff"/>
+                            <item alpha="255" value="245.366" label="" color="#1f00ff"/>
+                            <item alpha="255" value="247.589" label="" color="#2100ff"/>
+                            <item alpha="255" value="249.833" label="" color="#2300ff"/>
+                            <item alpha="255" value="252.097" label="" color="#2400ff"/>
+                            <item alpha="255" value="254.381" label="" color="#2600ff"/>
+                            <item alpha="255" value="256.686" label="" color="#2800ff"/>
+                            <item alpha="255" value="259.012" label="" color="#2a00ff"/>
+                            <item alpha="255" value="261.359" label="" color="#2b00ff"/>
+                            <item alpha="255" value="263.728" label="" color="#2d00ff"/>
+                            <item alpha="255" value="266.118" label="" color="#2f00ff"/>
+                            <item alpha="255" value="268.529" label="" color="#3000ff"/>
+                            <item alpha="255" value="270.962" label="" color="#3200ff"/>
+                            <item alpha="255" value="273.418" label="" color="#3400ff"/>
+                            <item alpha="255" value="275.895" label="" color="#3600ff"/>
+                            <item alpha="255" value="278.395" label="" color="#3700ff"/>
+                            <item alpha="255" value="280.918" label="" color="#3900ff"/>
+                            <item alpha="255" value="283.464" label="" color="#3b00ff"/>
+                            <item alpha="255" value="286.032" label="" color="#3d00ff"/>
+                            <item alpha="255" value="288.624" label="" color="#3e00ff"/>
+                            <item alpha="255" value="291.24" label="" color="#4000ff"/>
+                            <item alpha="255" value="293.879" label="" color="#4200ff"/>
+                            <item alpha="255" value="296.542" label="" color="#4300ff"/>
+                            <item alpha="255" value="299.229" label="" color="#4500ff"/>
+                            <item alpha="255" value="301.941" label="" color="#4700ff"/>
+                            <item alpha="255" value="304.677" label="" color="#4900ff"/>
+                            <item alpha="255" value="307.438" label="" color="#4a00ff"/>
+                            <item alpha="255" value="310.224" label="" color="#4c00ff"/>
+                            <item alpha="255" value="313.035" label="" color="#4e00ff"/>
+                            <item alpha="255" value="315.871" label="" color="#5000ff"/>
+                            <item alpha="255" value="318.734" label="" color="#5100ff"/>
+                            <item alpha="255" value="321.622" label="" color="#5300ff"/>
+                            <item alpha="255" value="324.536" label="" color="#5500ff"/>
+                            <item alpha="255" value="327.477" label="" color="#5600ff"/>
+                            <item alpha="255" value="330.445" label="" color="#5800ff"/>
+                            <item alpha="255" value="333.439" label="" color="#5a00ff"/>
+                            <item alpha="255" value="336.461" label="" color="#5c00ff"/>
+                            <item alpha="255" value="339.51" label="" color="#5d00ff"/>
+                            <item alpha="255" value="342.586" label="" color="#5f00ff"/>
+                            <item alpha="255" value="345.691" label="" color="#6100ff"/>
+                            <item alpha="255" value="348.823" label="" color="#6300ff"/>
+                            <item alpha="255" value="351.984" label="" color="#6400ff"/>
+                            <item alpha="255" value="355.174" label="" color="#6600ff"/>
+                            <item alpha="255" value="358.392" label="" color="#6800ff"/>
+                            <item alpha="255" value="361.64" label="" color="#6900ff"/>
+                            <item alpha="255" value="364.917" label="" color="#6b00ff"/>
+                            <item alpha="255" value="368.224" label="" color="#6d00ff"/>
+                            <item alpha="255" value="371.56" label="" color="#6f00ff"/>
+                            <item alpha="255" value="374.927" label="" color="#7000ff"/>
+                            <item alpha="255" value="378.325" label="" color="#7200ff"/>
+                            <item alpha="255" value="381.753" label="" color="#7400ff"/>
+                            <item alpha="255" value="385.212" label="" color="#7600ff"/>
+                            <item alpha="255" value="388.703" label="" color="#7700ff"/>
+                            <item alpha="255" value="392.225" label="" color="#7900ff"/>
+                            <item alpha="255" value="395.78" label="" color="#7b00ff"/>
+                            <item alpha="255" value="399.366" label="" color="#7c00ff"/>
+                            <item alpha="255" value="402.985" label="" color="#7e00ff"/>
+                            <item alpha="255" value="406.637" label="" color="#8000ff"/>
+                            <item alpha="255" value="410.322" label="" color="#8200ff"/>
+                            <item alpha="255" value="414.04" label="" color="#8300ff"/>
+                            <item alpha="255" value="417.792" label="" color="#8500ff"/>
+                            <item alpha="255" value="421.578" label="" color="#8700ff"/>
+                            <item alpha="255" value="425.398" label="" color="#8900ff"/>
+                            <item alpha="255" value="429.253" label="" color="#8a00ff"/>
+                            <item alpha="255" value="433.142" label="" color="#8c00ff"/>
+                            <item alpha="255" value="437.067" label="" color="#8e00ff"/>
+                            <item alpha="255" value="441.028" label="" color="#8f00ff"/>
+                            <item alpha="255" value="445.025" label="" color="#9100ff"/>
+                            <item alpha="255" value="449.057" label="" color="#9300ff"/>
+                            <item alpha="255" value="453.126" label="" color="#9500ff"/>
+                            <item alpha="255" value="457.233" label="" color="#9600ff"/>
+                            <item alpha="255" value="461.376" label="" color="#9800ff"/>
+                            <item alpha="255" value="465.557" label="" color="#9a00ff"/>
+                            <item alpha="255" value="469.775" label="" color="#9c00ff"/>
+                            <item alpha="255" value="474.032" label="" color="#9d00ff"/>
+                            <item alpha="255" value="478.328" label="" color="#9f00ff"/>
+                            <item alpha="255" value="482.662" label="" color="#a100ff"/>
+                            <item alpha="255" value="487.036" label="" color="#a200ff"/>
+                            <item alpha="255" value="491.45" label="" color="#a400ff"/>
+                            <item alpha="255" value="495.903" label="" color="#a600ff"/>
+                            <item alpha="255" value="500.397" label="" color="#a800ff"/>
+                            <item alpha="255" value="504.931" label="" color="#a900ff"/>
+                            <item alpha="255" value="509.507" label="" color="#ab00ff"/>
+                            <item alpha="255" value="514.124" label="" color="#ad00ff"/>
+                            <item alpha="255" value="518.782" label="" color="#af00ff"/>
+                            <item alpha="255" value="523.484" label="" color="#b000ff"/>
+                            <item alpha="255" value="528.227" label="" color="#b200ff"/>
+                            <item alpha="255" value="533.014" label="" color="#b400ff"/>
+                            <item alpha="255" value="537.844" label="" color="#b500ff"/>
+                            <item alpha="255" value="542.718" label="" color="#b700ff"/>
+                            <item alpha="255" value="547.636" label="" color="#b900ff"/>
+                            <item alpha="255" value="552.598" label="" color="#bb00ff"/>
+                            <item alpha="255" value="557.606" label="" color="#bc00ff"/>
+                            <item alpha="255" value="562.658" label="" color="#be00ff"/>
+                            <item alpha="255" value="567.757" label="" color="#c000ff"/>
+                            <item alpha="255" value="572.902" label="" color="#c200ff"/>
+                            <item alpha="255" value="578.093" label="" color="#c300ff"/>
+                            <item alpha="255" value="583.332" label="" color="#c500ff"/>
+                            <item alpha="255" value="588.618" label="" color="#c700ff"/>
+                            <item alpha="255" value="593.952" label="" color="#c800ff"/>
+                            <item alpha="255" value="599.334" label="" color="#ca00ff"/>
+                            <item alpha="255" value="604.765" label="" color="#cc00ff"/>
+                            <item alpha="255" value="610.245" label="" color="#ce00ff"/>
+                            <item alpha="255" value="615.775" label="" color="#cf00ff"/>
+                            <item alpha="255" value="621.355" label="" color="#d100ff"/>
+                            <item alpha="255" value="626.986" label="" color="#d300ff"/>
+                            <item alpha="255" value="632.667" label="" color="#d500ff"/>
+                            <item alpha="255" value="638.4" label="" color="#d600ff"/>
+                            <item alpha="255" value="644.185" label="" color="#d800ff"/>
+                            <item alpha="255" value="650.023" label="" color="#da00ff"/>
+                            <item alpha="255" value="655.913" label="" color="#db00ff"/>
+                            <item alpha="255" value="661.857" label="" color="#dd00ff"/>
+                            <item alpha="255" value="667.854" label="" color="#df00ff"/>
+                            <item alpha="255" value="673.906" label="" color="#e100ff"/>
+                            <item alpha="255" value="680.013" label="" color="#e200ff"/>
+                            <item alpha="255" value="686.175" label="" color="#e400ff"/>
+                            <item alpha="255" value="692.393" label="" color="#e600ff"/>
+                            <item alpha="255" value="698.667" label="" color="#e800ff"/>
+                            <item alpha="255" value="704.998" label="" color="#e900ff"/>
+                            <item alpha="255" value="711.387" label="" color="#eb00ff"/>
+                            <item alpha="255" value="717.833" label="" color="#ed00ff"/>
+                            <item alpha="255" value="724.338" label="" color="#ee00ff"/>
+                            <item alpha="255" value="730.902" label="" color="#f000ff"/>
+                            <item alpha="255" value="737.525" label="" color="#f200ff"/>
+                            <item alpha="255" value="744.208" label="" color="#f400ff"/>
+                            <item alpha="255" value="750.952" label="" color="#f500ff"/>
+                            <item alpha="255" value="757.757" label="" color="#f700ff"/>
+                            <item alpha="255" value="764.623" label="" color="#f900ff"/>
+                            <item alpha="255" value="771.552" label="" color="#fb00ff"/>
+                            <item alpha="255" value="778.544" label="" color="#fc00fe"/>
+                            <item alpha="255" value="785.599" label="" color="#fc00fc"/>
+                            <item alpha="255" value="792.718" label="" color="#fc00fb"/>
+                            <item alpha="255" value="799.901" label="" color="#fd00f9"/>
+                            <item alpha="255" value="807.149" label="" color="#fd00f8"/>
+                            <item alpha="255" value="814.464" label="" color="#fd00f6"/>
+                            <item alpha="255" value="821.844" label="" color="#fe00f5"/>
+                            <item alpha="255" value="829.291" label="" color="#fe00f3"/>
+                            <item alpha="255" value="836.806" label="" color="#fe00f2"/>
+                            <item alpha="255" value="844.389" label="" color="#ff00f0"/>
+                            <item alpha="255" value="852.041" label="" color="#ff00ef"/>
+                            <item alpha="255" value="859.762" label="" color="#ff00ed"/>
+                            <item alpha="255" value="867.553" label="" color="#ff00eb"/>
+                            <item alpha="255" value="875.414" label="" color="#ff00e9"/>
+                            <item alpha="255" value="883.347" label="" color="#ff00e8"/>
+                            <item alpha="255" value="891.351" label="" color="#ff00e6"/>
+                            <item alpha="255" value="899.429" label="" color="#ff00e4"/>
+                            <item alpha="255" value="907.579" label="" color="#ff00e3"/>
+                            <item alpha="255" value="915.803" label="" color="#ff00e1"/>
+                            <item alpha="255" value="924.102" label="" color="#ff00df"/>
+                            <item alpha="255" value="932.476" label="" color="#ff00dd"/>
+                            <item alpha="255" value="940.926" label="" color="#ff00dc"/>
+                            <item alpha="255" value="949.452" label="" color="#ff00da"/>
+                            <item alpha="255" value="958.056" label="" color="#ff00d8"/>
+                            <item alpha="255" value="966.737" label="" color="#ff00d7"/>
+                            <item alpha="255" value="975.498" label="" color="#ff00d5"/>
+                            <item alpha="255" value="984.337" label="" color="#ff00d3"/>
+                            <item alpha="255" value="993.257" label="" color="#ff00d1"/>
+                            <item alpha="255" value="1002.26" label="" color="#ff00d0"/>
+                            <item alpha="255" value="1011.34" label="" color="#ff00ce"/>
+                            <item alpha="255" value="1020.5" label="" color="#ff00cc"/>
+                            <item alpha="255" value="1029.75" label="" color="#ff00ca"/>
+                            <item alpha="255" value="1039.08" label="" color="#ff00c9"/>
+                            <item alpha="255" value="1048.5" label="" color="#ff00c7"/>
+                            <item alpha="255" value="1058" label="" color="#ff00c5"/>
+                            <item alpha="255" value="1067.59" label="" color="#ff00c4"/>
+                            <item alpha="255" value="1077.26" label="" color="#ff00c2"/>
+                            <item alpha="255" value="1087.02" label="" color="#ff00c0"/>
+                            <item alpha="255" value="1096.87" label="" color="#ff00be"/>
+                            <item alpha="255" value="1106.81" label="" color="#ff00bd"/>
+                            <item alpha="255" value="1116.84" label="" color="#ff00bb"/>
+                            <item alpha="255" value="1126.96" label="" color="#ff00b9"/>
+                            <item alpha="255" value="1137.18" label="" color="#ff00b8"/>
+                            <item alpha="255" value="1147.48" label="" color="#ff00b6"/>
+                            <item alpha="255" value="1157.88" label="" color="#ff00b4"/>
+                            <item alpha="255" value="1168.37" label="" color="#ff00b2"/>
+                            <item alpha="255" value="1178.96" label="" color="#ff00b1"/>
+                            <item alpha="255" value="1189.64" label="" color="#ff00af"/>
+                            <item alpha="255" value="1200.42" label="" color="#ff00ad"/>
+                            <item alpha="255" value="1211.3" label="" color="#ff00ac"/>
+                            <item alpha="255" value="1222.28" label="" color="#ff00aa"/>
+                            <item alpha="255" value="1233.35" label="" color="#ff00a8"/>
+                            <item alpha="255" value="1244.53" label="" color="#ff00a6"/>
+                            <item alpha="255" value="1255.81" label="" color="#ff00a5"/>
+                            <item alpha="255" value="1267.19" label="" color="#ff00a3"/>
+                            <item alpha="255" value="1278.67" label="" color="#ff00a1"/>
+                            <item alpha="255" value="1290.26" label="" color="#ff009f"/>
+                            <item alpha="255" value="1301.95" label="" color="#ff009e"/>
+                            <item alpha="255" value="1313.75" label="" color="#ff009c"/>
+                            <item alpha="255" value="1325.65" label="" color="#ff009a"/>
+                            <item alpha="255" value="1337.66" label="" color="#ff0099"/>
+                            <item alpha="255" value="1349.78" label="" color="#ff0097"/>
+                            <item alpha="255" value="1362.02" label="" color="#ff0095"/>
+                            <item alpha="255" value="1374.36" label="" color="#ff0093"/>
+                            <item alpha="255" value="1386.81" label="" color="#ff0092"/>
+                            <item alpha="255" value="1399.38" label="" color="#ff0090"/>
+                            <item alpha="255" value="1412.06" label="" color="#ff008e"/>
+                            <item alpha="255" value="1424.86" label="" color="#ff008d"/>
+                            <item alpha="255" value="1437.77" label="" color="#ff008b"/>
+                            <item alpha="255" value="1450.8" label="" color="#ff0089"/>
+                            <item alpha="255" value="1463.94" label="" color="#ff0087"/>
+                            <item alpha="255" value="1477.21" label="" color="#ff0086"/>
+                            <item alpha="255" value="1490.59" label="" color="#ff0084"/>
+                            <item alpha="255" value="1504.1" label="" color="#ff0082"/>
+                            <item alpha="255" value="1517.73" label="" color="#ff0081"/>
+                            <item alpha="255" value="1531.48" label="" color="#ff007f"/>
+                            <item alpha="255" value="1545.36" label="" color="#ff007d"/>
+                            <item alpha="255" value="1559.37" label="" color="#ff007b"/>
+                            <item alpha="255" value="1573.5" label="" color="#ff007a"/>
+                            <item alpha="255" value="1587.76" label="" color="#ff0078"/>
+                            <item alpha="255" value="1602.14" label="" color="#ff0076"/>
+                            <item alpha="255" value="1616.66" label="" color="#ff0074"/>
+                            <item alpha="255" value="1631.31" label="" color="#ff0073"/>
+                            <item alpha="255" value="1646.09" label="" color="#ff0071"/>
+                            <item alpha="255" value="1661.01" label="" color="#ff006f"/>
+                            <item alpha="255" value="1676.06" label="" color="#ff006e"/>
+                            <item alpha="255" value="1691.25" label="" color="#ff006c"/>
+                            <item alpha="255" value="1706.57" label="" color="#ff006a"/>
+                            <item alpha="255" value="1722.04" label="" color="#ff0068"/>
+                            <item alpha="255" value="1737.64" label="" color="#ff0067"/>
+                            <item alpha="255" value="1753.39" label="" color="#ff0065"/>
+                            <item alpha="255" value="1769.28" label="" color="#ff0063"/>
+                            <item alpha="255" value="1785.31" label="" color="#ff0062"/>
+                            <item alpha="255" value="1801.49" label="" color="#ff0060"/>
+                            <item alpha="255" value="1817.81" label="" color="#ff005e"/>
+                            <item alpha="255" value="1834.29" label="" color="#ff005c"/>
+                            <item alpha="255" value="1850.91" label="" color="#ff005b"/>
+                            <item alpha="255" value="1867.68" label="" color="#ff0059"/>
+                            <item alpha="255" value="1884.61" label="" color="#ff0057"/>
+                            <item alpha="255" value="1901.68" label="" color="#ff0056"/>
+                            <item alpha="255" value="1918.92" label="" color="#ff0054"/>
+                            <item alpha="255" value="1936.3" label="" color="#ff0052"/>
+                            <item alpha="255" value="1953.85" label="" color="#ff0050"/>
+                            <item alpha="255" value="1971.56" label="" color="#ff004f"/>
+                            <item alpha="255" value="1989.42" label="" color="#ff004d"/>
+                            <item alpha="255" value="2007.45" label="" color="#ff004b"/>
+                            <item alpha="255" value="2025.64" label="" color="#ff0049"/>
+                            <item alpha="255" value="2044" label="" color="#ff0048"/>
+                            <item alpha="255" value="2062.52" label="" color="#ff0046"/>
+                            <item alpha="255" value="2081.21" label="" color="#ff0044"/>
+                            <item alpha="255" value="2100.07" label="" color="#ff0043"/>
+                            <item alpha="255" value="2119.1" label="" color="#ff0041"/>
+                            <item alpha="255" value="2138.3" label="" color="#ff003f"/>
+                            <item alpha="255" value="2157.68" label="" color="#ff003d"/>
+                            <item alpha="255" value="2177.23" label="" color="#ff003c"/>
+                            <item alpha="255" value="2196.96" label="" color="#ff003a"/>
+                            <item alpha="255" value="2216.87" label="" color="#ff0038"/>
+                            <item alpha="255" value="2236.95" label="" color="#ff0037"/>
+                            <item alpha="255" value="2257.23" label="" color="#ff0035"/>
+                            <item alpha="255" value="2277.68" label="" color="#ff0033"/>
+                            <item alpha="255" value="2298.32" label="" color="#ff0031"/>
+                            <item alpha="255" value="2319.15" label="" color="#ff0030"/>
+                            <item alpha="255" value="2340.16" label="" color="#ff002e"/>
+                            <item alpha="255" value="2361.37" label="" color="#ff002c"/>
+                            <item alpha="255" value="2382.77" label="" color="#ff002b"/>
+                            <item alpha="255" value="2404.36" label="" color="#ff0029"/>
+                            <item alpha="255" value="2426.14" label="" color="#ff0027"/>
+                            <item alpha="255" value="2448.13" label="" color="#ff0025"/>
+                            <item alpha="255" value="2470.31" label="" color="#ff0024"/>
+                            <item alpha="255" value="2492.7" label="" color="#ff0022"/>
+                            <item alpha="255" value="2515.29" label="" color="#ff0020"/>
+                            <item alpha="255" value="2538.08" label="" color="#ff001e"/>
+                            <item alpha="255" value="2561.08" label="" color="#ff001d"/>
+                            <item alpha="255" value="2584.29" label="" color="#ff001b"/>
+                            <item alpha="255" value="2607.71" label="" color="#ff0019"/>
+                            <item alpha="255" value="2631.34" label="" color="#ff0018"/>
+                            <item alpha="255" value="2655.18" label="" color="#ff0016"/>
+                            <item alpha="255" value="2679.24" label="" color="#ff0014"/>
+                            <item alpha="255" value="2703.52" label="" color="#ff0012"/>
+                            <item alpha="255" value="2728.02" label="" color="#ff0011"/>
+                            <item alpha="255" value="2752.74" label="" color="#ff000f"/>
+                            <item alpha="255" value="2777.68" label="" color="#ff000d"/>
+                            <item alpha="255" value="2802.85" label="" color="#ff000c"/>
+                            <item alpha="255" value="2828.25" label="" color="#ff000a"/>
+                            <item alpha="255" value="2853.88" label="" color="#ff0008"/>
+                            <item alpha="255" value="2879.74" label="" color="#ff0006"/>
+                            <item alpha="255" value="2905.84" label="" color="#ff0005"/>
+                            <item alpha="255" value="2932.17" label="" color="#ff0003"/>
+                            <item alpha="255" value="2958.74" label="" color="#ff0001"/>
+                            <item alpha="255" value="2985.55" label="" color="#ff0000"/>
+                            <item alpha="255" value="3000" label="" color="#ff0000"/>
+                            <item alpha="255" value="30000" label="" color="#ff0000"/>
+                        </colorrampshader>
+                    </rastershader>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>6</blendMode>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_speed_contours20141103144328969</id>
             <datasource>./600m_const_ctrl/speed_contours/g600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_speed_contours.shp</datasource>
@@ -12652,6 +13697,53 @@
                 <rasterresampler maxOversampling="2"/>
             </pipe>
             <blendMode>6</blendMode>
+        </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038</id>
+            <datasource>./900m_const_ctrl/additional_files/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf.nc</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="1"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="0" classificationMax="1" classificationMinMaxOrigin="User" band="1" classificationMin="-1" type="singlebandpseudocolor">
+                    <rasterTransparency/>
+                    <rastershader>
+                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
+                            <item alpha="255" value="-1" label="-1.000000" color="#d01c8b"/>
+                            <item alpha="255" value="-0.5" label="-0.500000" color="#f1b6da"/>
+                            <item alpha="255" value="0" label="0.000000" color="#f7f7f7"/>
+                            <item alpha="255" value="0.5" label="0.500000" color="#b8e186"/>
+                            <item alpha="255" value="1" label="1.000000" color="#4dac26"/>
+                        </colorrampshader>
+                    </rastershader>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>g900m_const_old_bed_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_speed_contours20140920153446695</id>
