@@ -50,6 +50,7 @@ if [ $# -lt 5 ] ; then
   echo "                   tempicethk_basal,bmelt,tillwat,csurf,mask,thk,topg,usurf'"
   echo "                   plus ',hardav,cbase,tauc' if DYNAMICS=hybrid"
   echo "    NODIAGS      if set, DON'T use -ts_file or -extra_file"
+  echo "    PARAM_NOENERGY if set, DON'T use energy updates"
   echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
   echo "                   [default=0.25]"
   echo "    PARAM_SIAE   sets option -sia_e \$PARAM_SIAE   [default=3.0]"
@@ -233,6 +234,12 @@ else
   exit
 fi
 
+if [ -n "${PARAM_NOENERGY+1}" ] ; then  # check if env var is set
+    ENERGY="-energy none"
+else
+    ENERGY=""
+fi
+
 # set stress balance from argument 5
 if [ -n "${PARAM_SIA_N:+1}" ] ; then  # check if env var is NOT set
     SIA_N="-sia_n ${PARAM_SIA_N}"
@@ -240,9 +247,9 @@ else
     SIA_N="-sia_n 3"
 fi
 if [ -n "${PARAM_SIAE:+1}" ] ; then  # check if env var is already set
-  PHYS="-calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e ${PARAM_SIAE} ${SIA_N}"
+  PHYS="$ENERGY -calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e ${PARAM_SIAE} ${SIA_N}"
 else
-  PHYS="-calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e 1.25 ${SIA_N}"
+  PHYS="$ENERGY -calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e 3.0 ${SIA_N}"
 fi
 # done forming $PHYS if "$5" = "sia"
 if [ "$5" = "hybrid" ]; then
