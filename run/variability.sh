@@ -8,8 +8,8 @@ SCRIPTNAME=Variability.sh
 CLIMLIST=(const, pdd)
 TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900 600 450)
-if [ $# -lt 5 ] ; then
-  echo "paramspawn.sh ERROR: needs 5 positional arguments ... ENDING NOW"
+if [ $# -lt 4 ] ; then
+  echo "paramspawn.sh ERROR: needs 4 positional arguments ... ENDING NOW"
   echo
   echo "usage:"
   echo
@@ -20,7 +20,6 @@ if [ $# -lt 5 ] ; then
   echo "    GRID      in (${GRIDLIST[@]})"
   echo "    CLIMATE   in (${CLIMLIST[@]})"
   echo "    TYPE      in (${TYPELIST[@]})"
-  echo "    REGRERIDFILE  name of regrid file"
   echo
   echo
   exit
@@ -35,7 +34,7 @@ fi
 if [ -n "${PISM_WALLTIME:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME                    PISM_WALLTIME = $PISM_WALLTIME  (already set)"
 else
-  PISM_WALLTIME=12:00:00
+  PISM_WALLTIME=240:00:00
   echo "$SCRIPTNAME                     PISM_WALLTIME = $PISM_WALLTIME"
 fi
 WALLTIME=$PISM_WALLTIME
