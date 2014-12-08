@@ -411,10 +411,10 @@ else
   echo "$SCRIPTNAME          EXSTEP = $EXSTEP"
 fi
 # set EXSPLIT to default if not set
-if [ -n "${EXSTEP:+1}" ] ; then  # check if env var is already set
-  EXSPLIT="-extra_split"
+if [ -n "${EXSPLIT:+1}" ] ; then  # check if env var is already set
+    EXSPLIT="-extra_split"
 else
-  EXSPLIT=""
+    EXSPLIT=""
 fi
 
 # set EXVARS list to defaults if not set
