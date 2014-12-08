@@ -46,6 +46,7 @@ if [ $# -lt 5 ] ; then
   echo "    PISM_DATANAME sets DATANAME file used for input data"
   echo "    TSSTEP       spacing between -ts_files outputs; defaults to yearly"
   echo "    EXSTEP       spacing in years between -extra_files outputs; defaults to 100"
+  echo "    EXSPLIT      if set, extra files are split"
   echo "    EXVARS       desired -extra_vars; defaults to 'diffusivity,temppabase,"
   echo "                   tempicethk_basal,bmelt,tillwat,csurf,mask,thk,topg,usurf'"
   echo "                   plus ',hardav,cbase,tauc' if DYNAMICS=hybrid"
@@ -408,6 +409,12 @@ if [ -n "${EXSTEP:+1}" ] ; then  # check if env var is already set
 else
   EXSTEP="100"
   echo "$SCRIPTNAME          EXSTEP = $EXSTEP"
+fi
+# set EXSPLIT to default if not set
+if [ -n "${EXSTEP:+1}" ] ; then  # check if env var is already set
+  EXSPLIT="-extra_split"
+else
+  EXSPLIT=""
 fi
 
 # set EXVARS list to defaults if not set
