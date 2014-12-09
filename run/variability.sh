@@ -149,7 +149,7 @@ echo >> $SCRIPT # add newline
 export PISM_EXPERIMENT=$EXPERIMENT
 export PISM_TITLE="Greenland Internal Variability Study"
 INFILE=$PISM_DATANAME
-OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}ka.nc
+OUTFILE=g${GRID}m_${EXPERIMENT}.nc
                 
 cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=yearly EXSTEP=10 PISM_SAVE=$SAVE EXSPLIT=foo ./run.sh $NN $CLIMATE $DURA $GRID sia null $OUTFILE $INFILE"
 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT                            
