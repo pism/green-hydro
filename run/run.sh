@@ -410,11 +410,12 @@ else
   EXSTEP="100"
   echo "$SCRIPTNAME          EXSTEP = $EXSTEP"
 fi
-# set EXSPLIT to default if not set
-if [ -n "${EXSPLIT:+1}" ] ; then  # check if env var is already set
-    EXSPLIT="-extra_split"
-else
+
+
+if [ -z "${EXSPLIT}" ] ; then  # check if env var is NOT set
     EXSPLIT=""
+else
+    EXSPLIT="-extra_split"
 fi
 
 # set EXVARS list to defaults if not set
@@ -483,7 +484,7 @@ if [ -z "${NODIAGS}" ] ; then  # check if env var is NOT set
     TSNAME=ts_$OUTNAME
     EXNAME=ex_$OUTNAME
     # check_stationarity.py can be applied to $EXNAME
-    DIAGNOSTICS="-ts_file $TSNAME -ts_times $TSTIMES -extra_file $EXNAME -extra_times $EXTIMES -extra_vars $EXVARS"
+    DIAGNOSTICS="-ts_file $TSNAME -ts_times $TSTIMES $EXSPLIT -extra_file $EXNAME -extra_times $EXTIMES -extra_vars $EXVARS"
 else
   DIAGNOSTICS=""
 fi
