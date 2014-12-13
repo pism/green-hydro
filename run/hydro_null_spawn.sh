@@ -154,9 +154,7 @@ for E in 1.25; do
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
                 POST=do_g${GRID}m_${EXPERIMENT}_post.sh
-                POST2=do_g${GRID}m_${EXPERIMENT}_post2.sh
-                PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
-                rm -f $SCRIPT $$POST $PLOT
+                rm -f $SCRIPT $$POST
 
                 # insert preamble
                 echo $SHEBANGLINE >> $SCRIPT
@@ -190,7 +188,6 @@ for E in 1.25; do
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;SSA n=$SSA_N"
 
                 source run-postpro.sh
-                source run-postpro-2.sh
                 echo "# $POST written"
                 echo "# $PLOT written"
                 echo
@@ -205,9 +202,7 @@ for E in 1.25; do
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
                 POST=do_g${GRID}m_${EXPERIMENT}_post.sh
-                POST2=do_g${GRID}m_${EXPERIMENT}_post2.sh
-                PLOT=do_g${GRID}m_${EXPERIMENT}_plot.sh
-                rm -f $SCRIPT $$POST $PLOT
+                rm -f $SCRIPT $$POST
 
                 # insert preamble
                 echo $SHEBANGLINE >> $SCRIPT
