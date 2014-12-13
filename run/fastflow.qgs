@@ -117,9 +117,6 @@
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="dHdt20141204125452903" name="dHdt">
-            <customproperties/>
-        </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" name="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_temppa_base_wa">
             <customproperties/>
         </layer-tree-layer>
@@ -353,10 +350,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-555069.04632624727673829</xmin>
-            <ymin>-2372862.13551293918862939</ymin>
-            <xmax>71226.86518022220116109</xmax>
-            <ymax>-2019550.26051293918862939</ymax>
+            <xmin>-538415.71395563730038702</xmin>
+            <ymin>-2363066.05764787457883358</ymin>
+            <xmax>87880.19755083217751235</xmax>
+            <ymax>-2009754.18264787457883358</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -497,7 +494,6 @@
             <item>MODISKangerdlugssuaq250m20140521183413832</item>
             <item>Upernavik250m20140920104430750</item>
             <item>MODISGreenland250mclean_cut20140521183412526</item>
-            <item>dHdt20141204125452903</item>
             <item>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_velbase_mag20141204131340853</item>
             <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_velbase_mag20141204131635260</item>
             <item>uvelsurf20141204144104390</item>
@@ -704,11 +700,6 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="dHdt" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="dHdt20141204125452903" visible="0"/>
-            </filegroup>
-        </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_temppa_base_wa" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" visible="0"/>
@@ -4888,7 +4879,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="104">
+    <projectlayers layercount="103">
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>2003_200920141201134459345</id>
             <datasource>file:../../data_sets/GreenlandICESat/Sorensen/2003_2009.txt?type=csv&amp;delimiter=,%20&amp;skipLines=5&amp;useHeader=No&amp;skipEmptyFields=Yes&amp;xField=field_1&amp;yField=field_2&amp;spatialIndex=yes&amp;subsetIndex=no&amp;watchFile=yes</datasource>
@@ -16284,53 +16275,6 @@
                             <item alpha="255" value="0" label="0" color="#f7f7f7"/>
                             <item alpha="255" value="250" label="250" color="#92c5de"/>
                             <item alpha="255" value="500" label=">500" color="#0571b0"/>
-                        </colorrampshader>
-                    </rastershader>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>dHdt20141204125452903</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/additional_files/ex_g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_5a_year_1.nc":dHdt</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>dHdt</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
-                    <srsid>1371</srsid>
-                    <srid>3413</srid>
-                    <authid>EPSG:3413</authid>
-                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
-                    <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="1"/>
-            </noData>
-            <pipe>
-                <rasterrenderer opacity="1" alphaBand="-1" classificationMax="10" classificationMinMaxOrigin="User" band="1" classificationMin="-10" type="singlebandpseudocolor">
-                    <rasterTransparency/>
-                    <rastershader>
-                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
-                            <item alpha="255" value="-10" label="-10.000000" color="#ca0020"/>
-                            <item alpha="255" value="-5" label="-5.000000" color="#f4a582"/>
-                            <item alpha="255" value="0" label="0.000000" color="#f7f7f7"/>
-                            <item alpha="255" value="5" label="5.000000" color="#92c5de"/>
-                            <item alpha="255" value="10" label="10.000000" color="#0571b0"/>
                         </colorrampshader>
                     </rastershader>
                 </rasterrenderer>
