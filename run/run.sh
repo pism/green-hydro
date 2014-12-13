@@ -74,6 +74,7 @@ if [ $# -lt 5 ] ; then
   echo "                 [default=3] for Glen exponent in SSA"
   echo "    PISM_DO      set to 'echo' if no run desired; defaults to empty"
   echo "    PISM_OFORMAT set -o_format; defaults to netcdf3"
+  echo "    PISM_OSIZE   set -o_size; default big"
   echo "    PISM_MPIDO   defaults to 'mpiexec -n'"
   echo "    PISM_PREFIX  set to path to pismr executable if desired; defaults to empty"
   echo "    PISM_EXEC    defaults to 'pismr'"
@@ -452,6 +453,11 @@ else
   SAVE=""
 fi
 
+if [ -n "${PISM_OSIZE+1}" ] ; then  # check if env var is set
+  OSIZE=$PISM_OSIZE
+else
+  OSIZE="big"
+fi
 
 # show remaining setup options:
 PISM="${PISM_PREFIX}${PISM_EXEC}"
@@ -490,7 +496,7 @@ else
 fi
 
 # construct command
-cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG -boot_file $INNAME -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE -o_format $OFORMAT -o $OUTNAME"
+cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG -boot_file $INNAME -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
 echo
 $PISM_DO $cmd
 
