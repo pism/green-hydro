@@ -141,7 +141,10 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_bmelt20141204131735263" name="bmelt 450m">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827" name="thickness 450m">
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="thickness20141212171847057" name="thickness 450m new">
+            <customproperties/>
+        </layer-tree-layer>
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827" name="thickness 450m">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_target_thk20141203151503428" name="target thickness 450m">
@@ -159,23 +162,53 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="climatic_mass_balance20141201123500455" name="climatic_mass_balance">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="basal topography">
+        <layer-tree-group expanded="0" checked="Qt::Unchecked" name="basal topography">
             <customproperties/>
-            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20141212150015737" name="bed 4500m">
+            <layer-tree-group expanded="0" checked="Qt::Unchecked" name="4500m">
                 <customproperties/>
-            </layer-tree-layer>
-            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20141212145959405" name="bed 3600m">
+                <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20141212150015737" name="bed 4500m">
+                    <customproperties/>
+                </layer-tree-layer>
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="bed_4500m_hs20141212150439046" name="bed_4500m_hs">
+                    <customproperties/>
+                </layer-tree-layer>
+            </layer-tree-group>
+            <layer-tree-group expanded="0" checked="Qt::Unchecked" name="3600m">
                 <customproperties/>
-            </layer-tree-layer>
-            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20141212145944711" name="bed 1800m">
+                <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20141212145959405" name="bed 3600m">
+                    <customproperties/>
+                </layer-tree-layer>
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="bed_3600m_hs20141212150429762" name="bed_3600m_hs">
+                    <customproperties/>
+                </layer-tree-layer>
+            </layer-tree-group>
+            <layer-tree-group expanded="0" checked="Qt::Unchecked" name="1800m">
                 <customproperties/>
-            </layer-tree-layer>
-            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20141212145932399" name="bed 900m">
+                <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20141212145944711" name="bed 1800m">
+                    <customproperties/>
+                </layer-tree-layer>
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="bed_1800m_hs20141212150420540" name="bed_1800m_hs">
+                    <customproperties/>
+                </layer-tree-layer>
+            </layer-tree-group>
+            <layer-tree-group expanded="0" checked="Qt::Unchecked" name="900m">
                 <customproperties/>
-            </layer-tree-layer>
-            <layer-tree-layer expanded="0" checked="Qt::Checked" id="bed20141212150253639" name="bed 450m">
+                <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20141212145932399" name="bed 900m">
+                    <customproperties/>
+                </layer-tree-layer>
+                <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="bed_900m_hs20141212150411033" name="bed_900m_hs">
+                    <customproperties/>
+                </layer-tree-layer>
+            </layer-tree-group>
+            <layer-tree-group expanded="0" checked="Qt::Unchecked" name="450m">
                 <customproperties/>
-            </layer-tree-layer>
+                <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20141212150253639" name="bed 450m">
+                    <customproperties/>
+                </layer-tree-layer>
+                <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed_450m_hs20141212150400660" name="bed_450m_hs">
+                    <customproperties/>
+                </layer-tree-layer>
+            </layer-tree-group>
         </layer-tree-group>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="sliding_r20141022152859356" name="sliding_r 900m MO14">
             <customproperties/>
@@ -326,10 +359,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-349962.01478743064217269</xmin>
-            <ymin>-2377966.72828096151351929</ymin>
-            <xmax>-31683.91866913123521954</xmax>
-            <ymax>-2198416.72828096151351929</ymax>
+            <xmin>-675567.5</xmin>
+            <ymin>-3416797.5</ymin>
+            <xmax>902267.5</xmax>
+            <ymax>-590302.5</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -345,38 +378,46 @@
             </spatialrefsys>
         </destinationsrs>
         <layer_coordinate_transform_info>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_basal_450m20141209150958442"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag_450m_MO14_copy20141124114059731"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_starting_points20141204144242788"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_sar_velocities_150m_2008_2009_speed_contours20140919165126946"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="surface_150m_hs20140909191930698"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212145932399"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_450m20141209151459985"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_bmelt20141204131735263"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_starting_points_copy20141209153527240"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_glacier_names20140916172904908"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="Greenland_150m_2008_2009_velsurf_mag_thkmask20141122150631942"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_basal_450m20141204151608340"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="petermann_flux_gates20141202132333501"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_temppa_base20141209163518121"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212150015737"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LC80090112014216LGN00_B820141211180950029"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20140920122835449"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="foo20141212173236613"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed_1800m_hs20141212150420540"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_basal_450m20141209150958442"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_450m20141209151459985"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212145959405"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212145944711"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_velsurf_mag20141104153558790"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_mod100_epsg3413_geojson20141202115642273"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141203144633743"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_flux_gates20141202181100760"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_velsurf_mag20141031103815123"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_450m_copy20141209153324311"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20140920153721559"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_glacier_names_selection_copy20141128151435374"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212150253639"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212145932399"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_basal_450m_copy20141209153418230"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141212171847057"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="surface_150m_hs20140909191930698"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212145944711"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_temppa_base20141209163518121"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="Greenland_150m_2008_2009_velsurf_mag_thkmask20141122150631942"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_mod100_epsg3413_geojson20141202115642273"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed_4500m_hs20141212150439046"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag_450m_MO14_copy20141124114059731"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed_900m_hs20141212150411033"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212150253639"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed_3600m_hs20141212150429762"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_starting_points20141204144242788"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_basal_450m20141204151608340"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_glacier_names20140916172904908"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LC80090112014216LGN00_B820141211180950029"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_glacier_names_selection_copy20141128151435374"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_450m20141204144827714"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20140920122835449"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_sar_velocities_150m_2008_2009_speed_contours20140919165126946"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_bmelt20141204131735263"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141212151630746"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="petermann_flux_gates20141202132333501"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed_450m_hs20141212150400660"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20140920153721559"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141203144633743"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_450m_copy20141209153324311"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_velsurf_mag20141104153558790"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212150015737"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_flux_gates20141202181100760"/>
         </layer_coordinate_transform_info>
     </mapcanvas>
     <visibility-presets/>
@@ -481,6 +522,12 @@
             <item>bed20141212145959405</item>
             <item>bed20141212150015737</item>
             <item>bed20141212150253639</item>
+            <item>bed_450m_hs20141212150400660</item>
+            <item>bed_900m_hs20141212150411033</item>
+            <item>bed_1800m_hs20141212150420540</item>
+            <item>bed_3600m_hs20141212150429762</item>
+            <item>bed_4500m_hs20141212150439046</item>
+            <item>thickness20141212171847057</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
@@ -702,9 +749,14 @@
                 <legendlayerfile isInOverview="0" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_bmelt20141204131735263" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness 450m" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="thickness 450m new" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827" visible="0"/>
+                <legendlayerfile isInOverview="0" layerid="thickness20141212171847057" visible="1"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="thickness 450m" showFeatureCount="0">
+            <filegroup open="false" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="target thickness 450m" showFeatureCount="0">
@@ -732,32 +784,67 @@
                 <legendlayerfile isInOverview="0" layerid="climatic_mass_balance20141201123500455" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="basal topography">
-            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed 4500m" showFeatureCount="0">
-                <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="bed20141212150015737" visible="0"/>
-                </filegroup>
-            </legendlayer>
-            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed 3600m" showFeatureCount="0">
-                <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="bed20141212145959405" visible="0"/>
-                </filegroup>
-            </legendlayer>
-            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed 1800m" showFeatureCount="0">
-                <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="bed20141212145944711" visible="0"/>
-                </filegroup>
-            </legendlayer>
-            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed 900m" showFeatureCount="0">
-                <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="bed20141212145932399" visible="0"/>
-                </filegroup>
-            </legendlayer>
-            <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="bed 450m" showFeatureCount="0">
-                <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="bed20141212150253639" visible="1"/>
-                </filegroup>
-            </legendlayer>
+        <legendgroup open="false" checked="Qt::Unchecked" name="basal topography">
+            <legendgroup open="false" checked="Qt::Unchecked" name="4500m">
+                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed 4500m" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="bed20141212150015737" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="bed_4500m_hs" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="bed_4500m_hs20141212150439046" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+            </legendgroup>
+            <legendgroup open="false" checked="Qt::Unchecked" name="3600m">
+                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed 3600m" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="bed20141212145959405" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="bed_3600m_hs" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="bed_3600m_hs20141212150429762" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+            </legendgroup>
+            <legendgroup open="false" checked="Qt::Unchecked" name="1800m">
+                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed 1800m" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="bed20141212145944711" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="bed_1800m_hs" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="bed_1800m_hs20141212150420540" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+            </legendgroup>
+            <legendgroup open="false" checked="Qt::Unchecked" name="900m">
+                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed 900m" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="bed20141212145932399" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+                <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="bed_900m_hs" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="bed_900m_hs20141212150411033" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+            </legendgroup>
+            <legendgroup open="false" checked="Qt::Unchecked" name="450m">
+                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed 450m" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="bed20141212150253639" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed_450m_hs" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="bed_450m_hs20141212150400660" visible="0"/>
+                    </filegroup>
+                </legendlayer>
+            </legendgroup>
         </legendgroup>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="sliding_r 900m MO14" showFeatureCount="0">
             <filegroup open="false" hidden="false">
@@ -4816,7 +4903,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="100">
+    <projectlayers layercount="106">
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>2003_200920141201134459345</id>
             <datasource>file:../../data_sets/GreenlandICESat/Sorensen/2003_2009.txt?type=csv&amp;delimiter=,%20&amp;skipLines=5&amp;useHeader=No&amp;skipEmptyFields=Yes&amp;xField=field_1&amp;yField=field_2&amp;spatialIndex=yes&amp;subsetIndex=no&amp;watchFile=yes</datasource>
@@ -15807,6 +15894,221 @@
                 <rasterresampler maxOversampling="2"/>
             </pipe>
             <blendMode>6</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>bed_1800m_hs20141212150420540</id>
+            <datasource>./observed/figures/bed_1800m_hs.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>bed_1800m_hs</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="1"/>
+            </noData>
+            <pipe>
+                <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
+                    <rasterTransparency/>
+                    <contrastEnhancement>
+                        <minValue>152</minValue>
+                        <maxValue>199</maxValue>
+                        <algorithm>StretchToMinimumMaximum</algorithm>
+                    </contrastEnhancement>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>bed_3600m_hs20141212150429762</id>
+            <datasource>./observed/figures/bed_3600m_hs.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>bed_3600m_hs</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="1"/>
+            </noData>
+            <pipe>
+                <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
+                    <rasterTransparency/>
+                    <contrastEnhancement>
+                        <minValue>161</minValue>
+                        <maxValue>194</maxValue>
+                        <algorithm>StretchToMinimumMaximum</algorithm>
+                    </contrastEnhancement>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>bed_4500m_hs20141212150439046</id>
+            <datasource>./observed/figures/bed_4500m_hs.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>bed_4500m_hs</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="1"/>
+            </noData>
+            <pipe>
+                <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
+                    <rasterTransparency/>
+                    <contrastEnhancement>
+                        <minValue>164</minValue>
+                        <maxValue>192</maxValue>
+                        <algorithm>StretchToMinimumMaximum</algorithm>
+                    </contrastEnhancement>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>bed_450m_hs20141212150400660</id>
+            <datasource>./observed/figures/bed_450m_hs.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>bed_450m_hs</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="1"/>
+            </noData>
+            <pipe>
+                <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
+                    <rasterTransparency/>
+                    <contrastEnhancement>
+                        <minValue>138</minValue>
+                        <maxValue>204</maxValue>
+                        <algorithm>StretchToMinimumMaximum</algorithm>
+                    </contrastEnhancement>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>bed_900m_hs20141212150411033</id>
+            <datasource>./observed/figures/bed_900m_hs.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>bed_900m_hs</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="1"/>
+            </noData>
+            <pipe>
+                <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
+                    <rasterTransparency/>
+                    <contrastEnhancement>
+                        <minValue>146</minValue>
+                        <maxValue>202</maxValue>
+                        <algorithm>StretchToMinimumMaximum</algorithm>
+                    </contrastEnhancement>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bmelt20141107113257031</id>
@@ -29778,6 +30080,81 @@
             </noData>
             <pipe>
                 <rasterrenderer opacity="1" alphaBand="0" classificationMax="3200" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
+                    <rasterTransparency/>
+                    <rastershader>
+                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
+                            <item alpha="255" value="0" label="0.000000" color="#0a0079"/>
+                            <item alpha="255" value="99.84" label="99.840000" color="#280096"/>
+                            <item alpha="255" value="200" label="200.000000" color="#1405af"/>
+                            <item alpha="255" value="300.16" label="300.160000" color="#1405af"/>
+                            <item alpha="255" value="400" label="400.000000" color="#0019d4"/>
+                            <item alpha="255" value="499.84" label="499.840000" color="#0028e0"/>
+                            <item alpha="255" value="600" label="600.000000" color="#1a66f0"/>
+                            <item alpha="255" value="700.16" label="700.160000" color="#1a66f0"/>
+                            <item alpha="255" value="800" label="800.000000" color="#19afff"/>
+                            <item alpha="255" value="899.84" label="899.840000" color="#32beff"/>
+                            <item alpha="255" value="1000" label="1000.000000" color="#44caff"/>
+                            <item alpha="255" value="1100.16" label="1100.160000" color="#44caff"/>
+                            <item alpha="255" value="1200" label="1200.000000" color="#6aebe1"/>
+                            <item alpha="255" value="1299.84" label="1299.840000" color="#7cebc8"/>
+                            <item alpha="255" value="1400" label="1400.000000" color="#8aecae"/>
+                            <item alpha="255" value="1500.16" label="1500.160000" color="#8aecae"/>
+                            <item alpha="255" value="1600" label="1600.000000" color="#cdffa2"/>
+                            <item alpha="255" value="1699.84" label="1699.840000" color="#dff58d"/>
+                            <item alpha="255" value="1800" label="1800.000000" color="#f0ec79"/>
+                            <item alpha="255" value="1900.16" label="1900.160000" color="#f0ec79"/>
+                            <item alpha="255" value="2000" label="2000.000000" color="#ffbd57"/>
+                            <item alpha="255" value="2099.84" label="2099.840000" color="#ffa045"/>
+                            <item alpha="255" value="2200" label="2200.000000" color="#f4754b"/>
+                            <item alpha="255" value="2300.16" label="2300.160000" color="#f4754b"/>
+                            <item alpha="255" value="2400" label="2400.000000" color="#ff5a5a"/>
+                            <item alpha="255" value="2499.84" label="2499.840000" color="#ff7c7c"/>
+                            <item alpha="255" value="2600" label="2600.000000" color="#ff9e9e"/>
+                            <item alpha="255" value="2700.16" label="2700.160000" color="#ff9e9e"/>
+                            <item alpha="255" value="2800" label="2800.000000" color="#ffc4c4"/>
+                            <item alpha="255" value="2899.84" label="2899.840000" color="#ffd7d7"/>
+                            <item alpha="255" value="3000" label="3000.000000" color="#ffebeb"/>
+                            <item alpha="255" value="3100.16" label="3100.160000" color="#ffebeb"/>
+                            <item alpha="255" value="3200" label="3200.000000" color="#ffffff"/>
+                        </colorrampshader>
+                    </rastershader>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>thickness20141212171847057</id>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/data_sets/mc_beds/pism_Greenland_450m_mcb_jpl_v1.1.nc":thickness</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>thickness 450m new</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="1"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="-1" classificationMax="3200" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
                     <rasterTransparency/>
                     <rastershader>
                         <colorrampshader colorRampType="INTERPOLATED" clip="0">
