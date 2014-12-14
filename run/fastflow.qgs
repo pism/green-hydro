@@ -78,10 +78,10 @@
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="greenland_glacier_names_selection_copy20141128151435374" name="greenland-glacier-names-selection points">
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="greenland_glacier_names_selection_copy20141128151435374" name="greenland-glacier-names-selection points">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="greenland_glacier_names20140916172904908" name="greenland-glacier-names">
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="greenland_glacier_names20140916172904908" name="greenland-glacier-names">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="2003_200920141201134459345" name="2003_2009">
@@ -141,10 +141,10 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_bmelt20141204131735263" name="bmelt 450m">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="thickness20141212171847057" name="thickness 450m new">
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20141212171847057" name="thickness 450m new">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827" name="thickness 450m">
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827" name="thickness 450m">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_target_thk20141203151503428" name="target thickness 450m">
@@ -240,7 +240,7 @@
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-group expanded="0" checked="Qt::Unchecked" name="speeds">
+        <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="speeds">
             <customproperties/>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20141001195824676" name="velsurf_mag 1500m MO14 RCP45 q=0.5">
                 <customproperties/>
@@ -275,7 +275,7 @@
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140920153721559" name="velsurf_mag 1200m MO14">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140920122835449" name="velsurf_mag 900m MO14">
+            <layer-tree-layer expanded="0" checked="Qt::Checked" id="velsurf_mag20140920122835449" name="velsurf_mag 900m MO14">
                 <customproperties/>
             </layer-tree-layer>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140920153100571" name="velsurf_mag 900m BA01">
@@ -333,9 +333,6 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Greenland_mc_bed_v120140618125656554" name="Greenland_mc_bed_v1">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="LC80090112014216LGN00_B820141211180950029" name="LC80090112014216LGN00_B8">
-            <customproperties/>
-        </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Kangerdlugssuaq_small250m20140920105059010" name="Kangerdlugssuaq_small250m">
             <customproperties/>
         </layer-tree-layer>
@@ -385,9 +382,9 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_450m20141209151459985"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212145959405"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_velsurf_mag20141031103815123"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141212171847057"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212145932399"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_basal_450m_copy20141209153418230"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141212171847057"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="surface_150m_hs20140909191930698"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212145944711"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_temppa_base20141209163518121"/>
@@ -423,12 +420,10 @@
     <visibility-presets/>
     <layer-tree-canvas>
         <custom-order enabled="0">
-            <item>petermann_flux_gates20141202132333501</item>
             <item>greenland_glacier_names_selection20140918145826595</item>
             <item>greenland_mod100_epsg3413_geojson20141202115642273</item>
             <item>jakosites20140927123349265</item>
             <item>enderlin_fluxes_ts20140929171921844</item>
-            <item>greenland_flux_gates20141202181100760</item>
             <item>grid_4500m20140928152639294</item>
             <item>grid_3600m20140925173614606</item>
             <item>grid_1500m20141121115831006</item>
@@ -451,15 +446,48 @@
             <item>greenland_glacier_names_selection_copy20141128151435374</item>
             <item>greenland_glacier_names20140916172904908</item>
             <item>2003_200920141201134459345</item>
+            <item>Jakobshavn_starting_points20141204144242788</item>
+            <item>Jakobshavn_starting_points_copy20141209153527240</item>
+            <item>Jakobshavn_flowlines_exp_450m20141209151459985</item>
+            <item>Jakobshavn_flowlines_exp_450m_copy20141209153324311</item>
+            <item>Jakobshavn_flowlines_exp_basal_450m20141209150958442</item>
+            <item>Jakobshavn_flowlines_exp_basal_450m_copy20141209153418230</item>
+            <item>greenland_flux_gates20141202181100760</item>
+            <item>petermann_flux_gates20141202132333501</item>
+            <item>dHdt20141204125452903</item>
             <item>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383</item>
             <item>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038</item>
-            <item>bmelt20141107113257031</item>
+            <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_velbase_mag20141204131635260</item>
+            <item>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_velbase_mag20141204131340853</item>
+            <item>mask20141207181829718</item>
+            <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_mask20141207175607917</item>
+            <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_bmelt20141204131735263</item>
+            <item>thickness20141212171847057</item>
             <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827</item>
             <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_target_thk20141203151503428</item>
             <item>thickness20141203144633743</item>
+            <item>bmelt20141107113257031</item>
             <item>climatic_mass_balance20141201123922207</item>
             <item>climatic_mass_balance20141201123500455</item>
+            <item>bed20141212150015737</item>
+            <item>bed_4500m_hs20141212150439046</item>
+            <item>bed20141212145959405</item>
+            <item>bed_3600m_hs20141212150429762</item>
+            <item>bed20141212145944711</item>
+            <item>bed_1800m_hs20141212150420540</item>
+            <item>bed20141212145932399</item>
+            <item>bed_900m_hs20141212150411033</item>
+            <item>bed20141212150253639</item>
+            <item>bed_450m_hs20141212150400660</item>
             <item>sliding_r20141022152859356</item>
+            <item>uvelsurf20140925174212183</item>
+            <item>vvelsurf20140925174213820</item>
+            <item>uvelsurf20141022111432950</item>
+            <item>vvelsurf20141022111436368</item>
+            <item>v_ssa20141204145509529</item>
+            <item>u_ssa20141204145500993</item>
+            <item>uvelsurf20141204144104390</item>
+            <item>vvelsurf20141204144105888</item>
             <item>velsurf_mag20141001195824676</item>
             <item>velsurf_mag20141001195828741</item>
             <item>velsurf_mag20141203183922908</item>
@@ -482,10 +510,6 @@
             <item>velsurf_mag_obs_2008_2009_150m_copy20141107113717475</item>
             <item>velsurf_mag20141012160122662</item>
             <item>velsurf_mag20141002125944167</item>
-            <item>uvelsurf20140925174212183</item>
-            <item>vvelsurf20140925174213820</item>
-            <item>uvelsurf20141022111432950</item>
-            <item>vvelsurf20141022111436368</item>
             <item>topg20140919123515112</item>
             <item>surface_150m_hs20140909191930698</item>
             <item>cresis_mcb20141002172647129</item>
@@ -500,34 +524,6 @@
             <item>MODISKangerdlugssuaq250m20140521183413832</item>
             <item>Upernavik250m20140920104430750</item>
             <item>MODISGreenland250mclean_cut20140521183412526</item>
-            <item>dHdt20141204125452903</item>
-            <item>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_velbase_mag20141204131340853</item>
-            <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_velbase_mag20141204131635260</item>
-            <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_bmelt20141204131735263</item>
-            <item>uvelsurf20141204144104390</item>
-            <item>vvelsurf20141204144105888</item>
-            <item>Jakobshavn_starting_points20141204144242788</item>
-            <item>u_ssa20141204145500993</item>
-            <item>v_ssa20141204145509529</item>
-            <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_mask20141207175607917</item>
-            <item>mask20141207181829718</item>
-            <item>Jakobshavn_flowlines_exp_basal_450m20141209150958442</item>
-            <item>Jakobshavn_flowlines_exp_450m20141209151459985</item>
-            <item>Jakobshavn_flowlines_exp_450m_copy20141209153324311</item>
-            <item>Jakobshavn_flowlines_exp_basal_450m_copy20141209153418230</item>
-            <item>Jakobshavn_starting_points_copy20141209153527240</item>
-            <item>LC80090112014216LGN00_B820141211180950029</item>
-            <item>bed20141212145932399</item>
-            <item>bed20141212145944711</item>
-            <item>bed20141212145959405</item>
-            <item>bed20141212150015737</item>
-            <item>bed20141212150253639</item>
-            <item>bed_450m_hs20141212150400660</item>
-            <item>bed_900m_hs20141212150411033</item>
-            <item>bed_1800m_hs20141212150420540</item>
-            <item>bed_3600m_hs20141212150429762</item>
-            <item>bed_4500m_hs20141212150439046</item>
-            <item>thickness20141212171847057</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
@@ -650,14 +646,14 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="greenland-glacier-names-selection points" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="greenland_glacier_names_selection_copy20141128151435374" visible="0"/>
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="greenland-glacier-names-selection points" showFeatureCount="0">
+            <filegroup open="false" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="greenland_glacier_names_selection_copy20141128151435374" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="greenland-glacier-names" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="greenland-glacier-names" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="greenland_glacier_names20140916172904908" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="greenland_glacier_names20140916172904908" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="2003_2009" showFeatureCount="0">
@@ -749,14 +745,14 @@
                 <legendlayerfile isInOverview="0" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_bmelt20141204131735263" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="thickness 450m new" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness 450m new" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="thickness20141212171847057" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="thickness20141212171847057" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="thickness 450m" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness 450m" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="target thickness 450m" showFeatureCount="0">
@@ -893,7 +889,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::Unchecked" name="speeds">
+        <legendgroup open="false" checked="Qt::PartiallyChecked" name="speeds">
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 1500m MO14 RCP45 q=0.5" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="velsurf_mag20141001195824676" visible="0"/>
@@ -949,9 +945,9 @@
                     <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920153721559" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 900m MO14" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="velsurf_mag 900m MO14" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920122835449" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920122835449" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 900m BA01" showFeatureCount="0">
@@ -1043,11 +1039,6 @@
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Greenland_mc_bed_v1" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="Greenland_mc_bed_v120140618125656554" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="LC80090112014216LGN00_B8" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="LC80090112014216LGN00_B820141211180950029" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Kangerdlugssuaq_small250m" showFeatureCount="0">
@@ -1350,7 +1341,7 @@
                     </symbol>
                 </ComposerMapOverview>
                 <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="3.66532" positionMode="0" positionLock="false" x="-9.5" y="0" visibility="1" zValue="1" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="159" outlineWidth="0.3" excludeFromExports="0" uuid="{e7a9ad06-bac7-4455-9f4b-aa04a72fe4fa}" height="230.15" itemRotation="0" frame="false" pagex="-9.5">
+                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="2.62097" positionMode="0" positionLock="false" x="-9.5" y="0" visibility="1" zValue="1" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="159" outlineWidth="0.3" excludeFromExports="0" uuid="{e7a9ad06-bac7-4455-9f4b-aa04a72fe4fa}" height="230.15" itemRotation="0" frame="false" pagex="-9.5">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -4903,7 +4894,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="106">
+    <projectlayers layercount="105">
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>2003_200920141201134459345</id>
             <datasource>file:../../data_sets/GreenlandICESat/Sorensen/2003_2009.txt?type=csv&amp;delimiter=,%20&amp;skipLines=5&amp;useHeader=No&amp;skipEmptyFields=Yes&amp;xField=field_1&amp;yField=field_2&amp;spatialIndex=yes&amp;subsetIndex=no&amp;watchFile=yes</datasource>
@@ -5356,12 +5347,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -8152,49 +8143,6 @@
             <blendMode>0</blendMode>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>LC80090112014216LGN00_B820141211180950029</id>
-            <datasource>../../../LC80090112014216LGN00/LC80090112014216LGN00_B8.TIF</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>LC80090112014216LGN00_B8</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=utm +zone=22 +datum=WGS84 +units=m +no_defs</proj4>
-                    <srsid>3106</srsid>
-                    <srid>32622</srid>
-                    <authid>EPSG:32622</authid>
-                    <description>WGS 84 / UTM zone 22N</description>
-                    <projectionacronym>utm</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="0"/>
-            </noData>
-            <pipe>
-                <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
-                    <rasterTransparency/>
-                    <contrastEnhancement>
-                        <minValue>0</minValue>
-                        <maxValue>31878</maxValue>
-                        <algorithm>StretchToMinimumMaximum</algorithm>
-                    </contrastEnhancement>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>MODISGreenland250mclean_cut20140521183412526</id>
             <datasource>../../data_sets/GreenlandMODIS/MODISGreenland250mclean_cut.tif</datasource>
             <title></title>
@@ -8414,7 +8362,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20140930085612863</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_150m_mcb_jpl_v1.1.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_150m_mcb_jpl_v1.1.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -8424,12 +8372,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -9483,7 +9431,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20141014120259986</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/old_bed.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/old_bed.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -10552,7 +10500,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20141212145932399</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_900m_2008-2009_observed_flux.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_900m_2008-2009_observed_flux.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -11621,7 +11569,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20141212145944711</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_1800m_2008-2009_observed_flux.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_1800m_2008-2009_observed_flux.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -12690,7 +12638,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20141212145959405</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_3600m_2008-2009_observed_flux.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_3600m_2008-2009_observed_flux.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -13759,7 +13707,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20141212150015737</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_4500m_2008-2009_observed_flux.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_4500m_2008-2009_observed_flux.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -14828,7 +14776,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20141212150253639</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_450m_2008-2009_observed_flux.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_450m_2008-2009_observed_flux.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -16112,7 +16060,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bmelt20141107113257031</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/additional_files/900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_thkmask.nc":bmelt</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/additional_files/900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_thkmask.nc":bmelt</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -16122,12 +16070,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -16165,7 +16113,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>climatic_mass_balance20141201123500455</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":climatic_mass_balance</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":climatic_mass_balance</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -16175,12 +16123,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -16212,7 +16160,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>climatic_mass_balance20141201123922207</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.1_tefo_0.02_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":climatic_mass_balance</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.1_tefo_0.02_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":climatic_mass_balance</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -16222,12 +16170,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -16269,12 +16217,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -16310,7 +16258,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>dHdt20141204125452903</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/additional_files/ex_g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_5a_year_1.nc":dHdt</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/additional_files/ex_g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_5a_year_1.nc":dHdt</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -26485,7 +26433,7 @@
                 </spatialrefsys>
             </srs>
             <provider encoding="System">ogr</provider>
-            <previewExpression></previewExpression>
+            <previewExpression>COALESCE( "Name", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
             <edittypes>
@@ -26495,9 +26443,132 @@
                 <edittype widgetv2type="TextEdit" name="Descriptio">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="Skill">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="lat">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="lon">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
-            <renderer-v2 symbollevels="0" type="singleSymbol">
+            <renderer-v2 attr="Skill" symbollevels="0" type="graduatedSymbol">
+                <ranges>
+                    <range render="true" symbol="0" lower="0.000000" upper="0.100000" label=" 0.0000 - 0.1"/>
+                    <range render="true" symbol="1" lower="0.100000" upper="0.200000" label=" 0.1600 - 0.3200 "/>
+                    <range render="true" symbol="2" lower="0.200000" upper="0.000000" label=" 0.3200 - 0.4800 "/>
+                    <range render="true" symbol="3" lower="0.000000" upper="0.750000" label=" 0.4800 - 0.6400 "/>
+                    <range render="true" symbol="4" lower="0.750000" upper="1.000000" label=" 0.6400 - 0.8000 "/>
+                </ranges>
                 <symbols>
+                    <symbol alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="43,131,186,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2.6"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="1">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="171,221,164,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2.6"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="2">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="255,255,191,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2.6"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="3">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="253,174,97,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2.6"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="4">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="215,25,28,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2.6"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <source-symbol>
                     <symbol alpha="1" type="marker" name="0">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
@@ -26513,15 +26584,22 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1"/>
+                            <prop k="size" v="2.6"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
                     </symbol>
-                </symbols>
+                </source-symbol>
+                <colorramp type="colorbrewer" name="[source]">
+                    <prop k="colors" v="5"/>
+                    <prop k="schemeName" v="Spectral"/>
+                </colorramp>
+                <invertedcolorramp value="1"/>
+                <mode name="equal"/>
                 <rotation/>
                 <sizescale scalemethod="area"/>
+                <labelformat format=" %1 - %2 " trimtrailingzeroes="false" decimalplaces="2"/>
             </renderer-v2>
             <customproperties>
                 <property key="labeling" value="pal"/>
@@ -26707,6 +26785,15 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="Descriptio">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="Skill">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="lat">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="lon">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -27593,12 +27680,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -27694,12 +27781,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -27937,12 +28024,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -28180,12 +28267,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -28423,12 +28510,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -29579,7 +29666,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>mask20141207181829718</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.33_tefo_0.02_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":mask</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.33_tefo_0.02_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":mask</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -29589,12 +29676,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -29956,7 +30043,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>sliding_r20141022152859356</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":sliding_r</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":sliding_r</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -29966,12 +30053,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -30050,7 +30137,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>thickness20141203144633743</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_150m_mcb_jpl_v1.1.nc":thickness</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_150m_mcb_jpl_v1.1.nc":thickness</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -30060,12 +30147,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -30127,7 +30214,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>thickness20141212171847057</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/data_sets/mc_beds/pism_Greenland_450m_mcb_jpl_v1.1.nc":thickness</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/data_sets/mc_beds/pism_Greenland_450m_mcb_jpl_v1.1.nc":thickness</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -30202,7 +30289,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>topg20140919123515112</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/processed_all/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":topg</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/processed_all/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":topg</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -30212,12 +30299,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -30249,7 +30336,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>u_ssa20141204145500993</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velbase.nc":u_ssa</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velbase.nc":u_ssa</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -30259,12 +30346,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -30292,7 +30379,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>uvelsurf20140925174212183</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":uvelsurf</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":uvelsurf</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -30302,12 +30389,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -30339,7 +30426,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>uvelsurf20141022111432950</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":uvelsurf</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":uvelsurf</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -30349,12 +30436,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -30382,7 +30469,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>uvelsurf20141204144104390</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velsurf.nc":uvelsurf</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velsurf.nc":uvelsurf</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -30392,12 +30479,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -30425,7 +30512,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>v_ssa20141204145509529</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velbase.nc":v_ssa</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velbase.nc":v_ssa</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -30435,12 +30522,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -30468,7 +30555,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140918150111433</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -30478,12 +30565,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -31401,7 +31488,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140920122835449</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -31411,12 +31498,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -32334,7 +32421,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140920153100571</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_old_bed/processed/g900m_const_old_bed_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_old_bed/processed/g900m_const_old_bed_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -32344,12 +32431,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -33267,7 +33354,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140920153721559</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1200m_const_ctrl/processed/g1200m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1200m_const_ctrl/processed/g1200m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -33277,12 +33364,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -34200,7 +34287,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140920153915870</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1800m_const_ctrl/processed/g1800m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1800m_const_ctrl/processed/g1800m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -34210,12 +34297,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -35133,7 +35220,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140921105902662</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/3600m_const_ctrl/processed/g3600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/3600m_const_ctrl/processed/g3600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -35143,12 +35230,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -36066,7 +36153,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140921152444130</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/4500m_const_ctrl/processed/g4500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/4500m_const_ctrl/processed/g4500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -36076,12 +36163,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -36999,7 +37086,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140923164828683</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.6_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.6_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -37009,12 +37096,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -37932,7 +38019,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141001182519908</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/5000m_const_searise/processed/g5000m_const_searise_0_ftt.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/5000m_const_searise/processed/g5000m_const_searise_0_ftt.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -38865,7 +38952,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141001195824676</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_forcing_ctrl/processed/g1500m_forcing_ctrl_2008_2099_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5_hydro_null.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_forcing_ctrl/processed/g1500m_forcing_ctrl_2008_2099_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5_hydro_null.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -38875,12 +38962,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -39798,7 +39885,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141001195828741</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_forcing_ctrl/processed/g1500m_forcing_ctrl_2008_2099_e_1.25_ppq_0.33_tefo_0.02_ssa_n_3.0_philow_5_hydro_null.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_forcing_ctrl/processed/g1500m_forcing_ctrl_2008_2099_e_1.25_ppq_0.33_tefo_0.02_ssa_n_3.0_philow_5_hydro_null.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -39808,12 +39895,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -40731,7 +40818,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141002125944167</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/greenland_sar_velocities_900m_2008-2009.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/greenland_sar_velocities_900m_2008-2009.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -41664,7 +41751,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141012160122662</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/data_sets/GreenlandSARJoughin/greenland_sar_velocities_500m_2005-2009.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/data_sets/GreenlandSARJoughin/greenland_sar_velocities_500m_2005-2009.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -42597,7 +42684,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141020101339085</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.6_tefo_0.01_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.6_tefo_0.01_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -42607,12 +42694,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -43530,7 +43617,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141117172441989</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.5_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.5_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -43540,12 +43627,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -44463,7 +44550,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141203183922908</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.33_tefo_0.02_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.33_tefo_0.02_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -44473,12 +44560,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -45457,7 +45544,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag_obs_2008_2009_150m_copy20141107113717475</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -45467,12 +45554,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -45518,7 +45605,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>vvelsurf20140925174213820</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":vvelsurf</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":vvelsurf</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -45528,12 +45615,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -45565,7 +45652,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>vvelsurf20141022111436368</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":vvelsurf</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":vvelsurf</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -45575,12 +45662,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -45612,7 +45699,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>vvelsurf20141204144105888</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velsurf.nc":vvelsurf</datasource>
+            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velsurf.nc":vvelsurf</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -45622,12 +45709,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
+                    <srsid>100001</srsid>
                     <srid>0</srid>
-                    <authid>USER:100005</authid>
+                    <authid>USER:100001</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
