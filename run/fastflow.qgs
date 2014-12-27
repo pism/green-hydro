@@ -8481,7 +8481,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20140930085612863</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_150m_mcb_jpl_v1.1.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_150m_mcb_jpl_v1.1.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -9550,7 +9550,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20141014120259986</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/old_bed.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/old_bed.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -10619,7 +10619,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20141212145932399</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_900m_2008-2009_observed_flux.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_900m_2008-2009_observed_flux.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -11688,7 +11688,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20141212145944711</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_1800m_2008-2009_observed_flux.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_1800m_2008-2009_observed_flux.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -12757,7 +12757,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20141212145959405</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_3600m_2008-2009_observed_flux.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_3600m_2008-2009_observed_flux.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -13826,7 +13826,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20141212150015737</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_4500m_2008-2009_observed_flux.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_4500m_2008-2009_observed_flux.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -14895,7 +14895,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bed20141212150253639</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_450m_2008-2009_observed_flux.nc":bed</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_450m_2008-2009_observed_flux.nc":bed</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -16179,7 +16179,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>bmelt20141107113257031</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/additional_files/900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_thkmask.nc":bmelt</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/additional_files/900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_thkmask.nc":bmelt</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -16232,7 +16232,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>climatic_mass_balance20141201123500455</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":climatic_mass_balance</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":climatic_mass_balance</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -16279,7 +16279,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>climatic_mass_balance20141201123922207</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.1_tefo_0.02_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":climatic_mass_balance</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.1_tefo_0.02_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":climatic_mass_balance</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -16377,7 +16377,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>dHdt20141204125452903</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/additional_files/ex_g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_5a_year_1.nc":dHdt</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/additional_files/ex_g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_5a_year_1.nc":dHdt</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -29827,7 +29827,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>mask20141207181829718</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.33_tefo_0.02_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":mask</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.33_tefo_0.02_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":mask</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -31100,7 +31100,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>sliding_r20141022152859356</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":sliding_r</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":sliding_r</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -31194,7 +31194,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>thickness20141203144633743</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/Greenland_150m_mcb_jpl_v1.1.nc":thickness</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/Greenland_150m_mcb_jpl_v1.1.nc":thickness</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -31271,7 +31271,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>thickness20141212171847057</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/data_sets/mc_beds/pism_Greenland_450m_mcb_jpl_v1.1.nc":thickness</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/data_sets/mc_beds/pism_Greenland_450m_mcb_jpl_v1.1.nc":thickness</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -31346,7 +31346,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>topg20140919123515112</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/processed_all/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":topg</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/processed_all/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":topg</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -31393,7 +31393,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>u_ssa20141204145500993</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velbase.nc":u_ssa</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velbase.nc":u_ssa</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -31436,7 +31436,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>uvelsurf20140925174212183</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":uvelsurf</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":uvelsurf</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -31483,7 +31483,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>uvelsurf20141022111432950</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":uvelsurf</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":uvelsurf</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -31526,7 +31526,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>uvelsurf20141204144104390</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velsurf.nc":uvelsurf</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velsurf.nc":uvelsurf</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -31569,7 +31569,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>v_ssa20141204145509529</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velbase.nc":v_ssa</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velbase.nc":v_ssa</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -31612,7 +31612,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140918150111433</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -32545,7 +32545,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140920122835449</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -33478,7 +33478,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140920153100571</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_old_bed/processed/g900m_const_old_bed_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_old_bed/processed/g900m_const_old_bed_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -34411,7 +34411,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140920153721559</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1200m_const_ctrl/processed/g1200m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1200m_const_ctrl/processed/g1200m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -35344,7 +35344,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140920153915870</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1800m_const_ctrl/processed/g1800m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1800m_const_ctrl/processed/g1800m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -36277,7 +36277,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140921105902662</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/3600m_const_ctrl/processed/g3600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/3600m_const_ctrl/processed/g3600m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -37210,7 +37210,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140921152444130</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/4500m_const_ctrl/processed/g4500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/4500m_const_ctrl/processed/g4500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -38143,7 +38143,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20140923164828683</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.6_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.6_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -39076,7 +39076,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141001182519908</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/5000m_const_searise/processed/g5000m_const_searise_0_ftt.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/5000m_const_searise/processed/g5000m_const_searise_0_ftt.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -40009,7 +40009,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141001195824676</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_forcing_ctrl/processed/g1500m_forcing_ctrl_2008_2099_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5_hydro_null.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_forcing_ctrl/processed/g1500m_forcing_ctrl_2008_2099_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5_hydro_null.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -40942,7 +40942,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141001195828741</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_forcing_ctrl/processed/g1500m_forcing_ctrl_2008_2099_e_1.25_ppq_0.33_tefo_0.02_ssa_n_3.0_philow_5_hydro_null.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_forcing_ctrl/processed/g1500m_forcing_ctrl_2008_2099_e_1.25_ppq_0.33_tefo_0.02_ssa_n_3.0_philow_5_hydro_null.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -41875,7 +41875,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141002125944167</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/greenland_sar_velocities_900m_2008-2009.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/greenland_sar_velocities_900m_2008-2009.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -42808,7 +42808,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141012160122662</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/data_sets/GreenlandSARJoughin/greenland_sar_velocities_500m_2005-2009.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/data_sets/GreenlandSARJoughin/greenland_sar_velocities_500m_2005-2009.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -43741,7 +43741,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141020101339085</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.6_tefo_0.01_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.6_tefo_0.01_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -44674,7 +44674,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141117172441989</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.5_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.5_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -45607,7 +45607,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag20141203183922908</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.33_tefo_0.02_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.33_tefo_0.02_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -46601,7 +46601,7 @@
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>velsurf_mag_obs_2008_2009_150m_copy20141107113717475</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":velsurf_mag</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":velsurf_mag</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -46662,7 +46662,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>vvelsurf20140925174213820</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":vvelsurf</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/observed/processed/greenland_sar_velocities_150m_2008-2009.nc":vvelsurf</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -46709,7 +46709,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>vvelsurf20141022111436368</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":vvelsurf</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":vvelsurf</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -46756,7 +46756,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>vvelsurf20141204144105888</id>
-            <datasource>NETCDF:"/Volumes/tonsina/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velsurf.nc":vvelsurf</datasource>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/450m_const_ctrl/additional_files/g450m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_20a_velsurf.nc":vvelsurf</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
