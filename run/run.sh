@@ -51,7 +51,7 @@ if [ $# -lt 5 ] ; then
   echo "                   tempicethk_basal,bmelt,tillwat,csurf,mask,thk,topg,usurf'"
   echo "                   plus ',hardav,cbase,tauc' if DYNAMICS=hybrid"
   echo "    NODIAGS      if set, DON'T use -ts_file or -extra_file"
-  echo "    PARAM_AGE    if set, calculate age"
+  echo "    PARAM_NOAGE    if set, DON'T calculate age"
   echo "    PARAM_NOENERGY if set, DON'T use energy updates"
   echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
   echo "                   [default=0.25]"
@@ -128,10 +128,10 @@ fi
 
 
 # are we calculating the age of the ice?
-if [ -z "${PARAM_AGE}" ] ; then  # check if env var is NOT set
-    AGE=""
-else
+if [ -z "${PARAM_NOAGE}" ] ; then  # check if env var is NOT set
     AGE="-age"
+else
+    AGE=""
 fi
 
 
