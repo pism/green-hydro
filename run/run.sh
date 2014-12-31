@@ -284,7 +284,7 @@ if [ "$5" = "hybrid" ]; then
   if [ -n "${PARAM_SSA_N:+1}" ] ; then  # check if env var is NOT set
     SSA_N="-ssa_n ${PARAM_SSA_N}"
   else
-    SSA_N="-ssa_n 3.25"
+    SSA_N="-ssa_n 3.0"
   fi
   PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N}"
 else
