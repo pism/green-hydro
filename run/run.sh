@@ -51,6 +51,7 @@ if [ $# -lt 5 ] ; then
   echo "                   tempicethk_basal,bmelt,tillwat,csurf,mask,thk,topg,usurf'"
   echo "                   plus ',hardav,cbase,tauc' if DYNAMICS=hybrid"
   echo "    NODIAGS      if set, DON'T use -ts_file or -extra_file"
+  echo "    PARAM_NOAGE    if set, DON'T calculate age"
   echo "    PARAM_NOENERGY if set, DON'T use energy updates"
   echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
   echo "                   [default=0.25]"
@@ -123,6 +124,14 @@ if [ -z "${PARAM_FTT}" ] ; then  # check if env var is NOT set
     FTT=""
 else
     FTT=",forcing -force_to_thickness_file $PISM_FTT_FILE"
+fi
+
+
+# are we calculating the age of the ice?
+if [ -z "${PARAM_NOAGE}" ] ; then  # check if env var is NOT set
+    AGE="-age"
+else
+    AGE=""
 fi
 
 
@@ -275,7 +284,7 @@ if [ "$5" = "hybrid" ]; then
   if [ -n "${PARAM_SSA_N:+1}" ] ; then  # check if env var is NOT set
     SSA_N="-ssa_n ${PARAM_SSA_N}"
   else
-    SSA_N="-ssa_n 3.25"
+    SSA_N="-ssa_n 3.0"
   fi
   PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N}"
 else
@@ -334,10 +343,10 @@ INLIST="${INLIST} $INNAME $REGRIDFILE $CONFIG"
 
 # now we have read options ... we know enough to report to user ...
 echo
-echo "# ======================================================================="
+echo "# ===================================================================="
 echo "# PISM Greenland run:"
 echo "#    $NN processors, $DURATION a run, $dx m grid, $climname, $5 dynamics"
-echo "# ======================================================================="
+echo "# ===================================================================="
 
 # actually check for input files
 for INPUT in $INLIST; do
@@ -412,7 +421,6 @@ else
   echo "$SCRIPTNAME          EXSTEP = $EXSTEP"
 fi
 
-
 if [ -z "${EXSPLIT}" ] ; then  # check if env var is NOT set
     EXSPLIT=""
 else
@@ -436,7 +444,7 @@ if [ -n "${REGRIDFILE:+1}" ] ; then  # check if env var is already set
   if [ -n "${REGRIDVARS:+1}" ] ; then  # check if env var is already set
     echo "$SCRIPTNAME      REGRIDVARS = $REGRIDVARS  (already set)"
   else
-    REGRIDVARS='litho_temp,thk,enthalpy,tillwat,bmelt,Href'
+    REGRIDVARS='litho_temp,thk,enthalpy,tillwat,bmelt,Href,age'
     echo "$SCRIPTNAME      REGRIDVARS = $REGRIDVARS"
   fi
   regridcommand="-regrid_file $REGRIDFILE -regrid_vars $REGRIDVARS"
@@ -496,7 +504,7 @@ else
 fi
 
 # construct command
-cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG -boot_file $INNAME -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
+cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG $AGE -boot_file $INNAME -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
 echo
 $PISM_DO $cmd
 
