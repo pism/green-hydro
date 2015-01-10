@@ -3,10 +3,22 @@
     <title></title>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
         <customproperties/>
+        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Petermann_flowlines20141231110646174" name="Petermann_flowlines">
+            <customproperties/>
+        </layer-tree-layer>
+        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Petermann_Gletscher_flowline_epsg341320141231111700165" name="Petermann_Gletscher_flowline_epsg3413">
+            <customproperties/>
+        </layer-tree-layer>
+        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Petermann_flowlines20141230135224247" name="Petermann_flowlines">
+            <customproperties/>
+        </layer-tree-layer>
+        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Petermann_starting_points20141230134813935" name="Petermann_starting_points">
+            <customproperties/>
+        </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="skill20141220162245782" name="skill">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="skill_copy20141222142105060" name="skill copy">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="skill_copy20141222142105060" name="skill copy">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="greenland_glacier_names_selection20140918145826595" name="greenland-glacier-names-selection">
@@ -219,7 +231,7 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="sliding_r20141022152859356" name="sliding_r 900m MO14">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-group expanded="0" checked="Qt::Unchecked" name="velocities">
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="velocities">
             <customproperties/>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="uvelsurf20140925174212183" name="uvelsurf obs 2008-2009 150m">
                 <customproperties/>
@@ -362,10 +374,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>167885.41653300862526521</xmin>
-            <ymin>-2728112.29589026281610131</ymin>
-            <xmax>310199.66686152096372098</xmax>
-            <ymax>-2623825.33512321533635259</ymax>
+            <xmin>-546772.23753909347578883</xmin>
+            <ymin>-1390019.98874708451330662</ymin>
+            <xmax>192682.07207716454286128</xmax>
+            <ymax>-972872.14567889296449721</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -387,6 +399,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed_1800m_hs20141212150420540"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_basal_450m20141209150958442"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20141012160122662"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Petermann_Gletscher_flowline_epsg341320141231111700165"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_450m20141209151459985"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Densified_layer20141214170635794"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212145959405"/>
@@ -394,7 +407,9 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141212171847057"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212145932399"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_basal_450m_copy20141209153418230"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141229121905214"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill20141220152653716"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Petermann_flowlines20141230135149338"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="surface_150m_hs20140909191930698"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20141212145944711"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20140920153100571"/>
@@ -405,6 +420,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill20141220162245782"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed_4500m_hs20141212150439046"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20140918150111433"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Petermann_Gletscher_flowline20141230135417176"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag_450m_MO14_copy20141124114059731"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill_copy20141222142105060"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill20141220144510919"/>
@@ -418,12 +434,15 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LC80090112014216LGN00_B820141211180950029"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_glacier_names_selection_copy20141128151435374"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_450m20141204144827714"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Petermann_flowlines20141230135224247"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill20141220152005996"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Petermann_starting_points20141230134813935"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20140920122835449"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_sar_velocities_150m_2008_2009_speed_contours20140919165126946"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_bmelt20141204131735263"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141212151630746"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Petermann_flowlines20141231110646174"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="petermann_flux_gates20141202132333501"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill20141220153049504"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill20141220153556770"/>
@@ -550,16 +569,40 @@
             <item>MODISGreenland250mclean_cut20140521183412526</item>
             <item>skill20141220162245782</item>
             <item>skill_copy20141222142105060</item>
+            <item>Petermann_starting_points20141230134813935</item>
+            <item>Petermann_flowlines20141230135224247</item>
+            <item>Petermann_flowlines20141231110646174</item>
+            <item>Petermann_Gletscher_flowline_epsg341320141231111700165</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Petermann_flowlines" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="Petermann_flowlines20141231110646174" visible="0"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Petermann_Gletscher_flowline_epsg3413" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="Petermann_Gletscher_flowline_epsg341320141231111700165" visible="0"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Petermann_flowlines" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="Petermann_flowlines20141230135224247" visible="0"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Petermann_starting_points" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="Petermann_starting_points20141230134813935" visible="0"/>
+            </filegroup>
+        </legendlayer>
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="skill" showFeatureCount="0">
             <filegroup open="true" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="skill20141220162245782" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="skill copy" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="skill copy" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="skill_copy20141222142105060" visible="1"/>
             </filegroup>
         </legendlayer>
@@ -883,7 +926,7 @@
                 <legendlayerfile isInOverview="0" layerid="sliding_r20141022152859356" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendgroup open="false" checked="Qt::Unchecked" name="velocities">
+        <legendgroup open="true" checked="Qt::Unchecked" name="velocities">
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="uvelsurf obs 2008-2009 150m" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="uvelsurf20140925174212183" visible="0"/>
@@ -1377,7 +1420,7 @@
                     </symbol>
                 </ComposerMapOverview>
                 <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="2.62097" positionMode="0" positionLock="false" x="-9.5" y="0" visibility="1" zValue="1" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="159" outlineWidth="0.3" excludeFromExports="0" uuid="{e7a9ad06-bac7-4455-9f4b-aa04a72fe4fa}" height="230.15" itemRotation="0" frame="false" pagex="-9.5">
+                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="3.68145" positionMode="0" positionLock="false" x="-9.5" y="0" visibility="1" zValue="1" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="159" outlineWidth="0.3" excludeFromExports="0" uuid="{e7a9ad06-bac7-4455-9f4b-aa04a72fe4fa}" height="230.15" itemRotation="0" frame="false" pagex="-9.5">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1653,7 +1696,7 @@
                         </customproperties>
                     </layer-tree-layer>
                 </layer-tree-group>
-                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="19.5969" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="17.2812" outlineWidth="0.3" excludeFromExports="0" uuid="{6e460de6-e161-447b-a3a8-e9116a07063f}" height="33.1156" itemRotation="0" frame="false" pagex="0">
+                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="19.5969" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="18.4484" outlineWidth="0.3" excludeFromExports="0" uuid="{6e460de6-e161-447b-a3a8-e9116a07063f}" height="33.1156" itemRotation="0" frame="false" pagex="0">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="230" blue="230" green="230"/>
                 </ComposerItem>
@@ -5013,7 +5056,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="107">
+    <projectlayers layercount="111">
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>2003_200920141201134459345</id>
             <datasource>file:../../data_sets/GreenlandICESat/Sorensen/2003_2009.txt?type=csv&amp;delimiter=,%20&amp;skipLines=5&amp;useHeader=No&amp;skipEmptyFields=Yes&amp;xField=field_1&amp;yField=field_2&amp;spatialIndex=yes&amp;subsetIndex=no&amp;watchFile=yes</datasource>
@@ -5466,12 +5509,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -8347,6 +8390,548 @@
             </pipe>
             <blendMode>0</blendMode>
         </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>Petermann_Gletscher_flowline_epsg341320141231111700165</id>
+            <datasource>../../data_sets/GreenlandFlowlines/Petermann_Gletscher_flowline_epsg3413.shp</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>Petermann_Gletscher_flowline_epsg3413</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="System">ogr</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="clon">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="clat">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="length">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol alpha="1" type="line" name="0">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="square"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_map_unit_scale" v="0,0"/>
+                            <prop k="customdash_unit" v="MM"/>
+                            <prop k="draw_inside_polygon" v="0"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="line_color" v="31,236,239,255"/>
+                            <prop k="line_style" v="solid"/>
+                            <prop k="line_width" v="0.26"/>
+                            <prop k="line_width_unit" v="MM"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width_map_unit_scale" v="0,0"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+            </renderer-v2>
+            <customproperties/>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>name</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name=".Lucida Grande UI"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="clon">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="clat">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="length">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>Petermann_flowlines20141230135224247</id>
+            <datasource>../../data_sets/GreenlandFlowlines/Petermann_flowlines.shp</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>Petermann_flowlines</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="System">ogr</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="path_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="point_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="x">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="y">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ds">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="s">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vx">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vy">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vmagn">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="d_time">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="t">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="error">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="137,201,203,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+            </renderer-v2>
+            <customproperties/>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>path_id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name=".Lucida Grande UI"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="path_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="point_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="x">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="y">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ds">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="s">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vx">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vy">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vmagn">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="d_time">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="t">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="error">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>Petermann_flowlines20141231110646174</id>
+            <datasource>../../data_sets/GreenlandFlowlines/Petermann_flowlines.shp</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>Petermann_flowlines</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="System">ogr</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="path_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="point_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="x">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="y">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ds">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="s">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vx">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vy">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vmagn">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="d_time">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="t">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="error">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="82,187,82,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+            </renderer-v2>
+            <customproperties/>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>path_id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name=".Lucida Grande UI"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="path_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="point_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="x">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="y">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ds">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="s">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vx">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vy">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vmagn">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="d_time">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="t">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="error">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>Petermann_starting_points20141230134813935</id>
+            <datasource>../../data_sets/GreenlandFlowlines/Petermann_starting_points.shp</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>Petermann_starting_points</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="System">ogr</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="251,32,120,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+            </renderer-v2>
+            <customproperties/>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name=".Lucida Grande UI"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>Upernavik250m20140920104430750</id>
             <datasource>../../data_sets/GreenlandMODIS/Upernavik250m.tif</datasource>
@@ -8491,12 +9076,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -16189,12 +16774,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -16242,12 +16827,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -16289,12 +16874,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -16336,12 +16921,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -26263,18 +26848,6 @@
                 <edittype widgetv2type="TextEdit" name="Descriptio">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="Skill">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="clon">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="clat">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
             </edittypes>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
@@ -26552,18 +27125,6 @@
                 <edittype widgetv2type="TextEdit" name="Descriptio">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="Skill">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="clon">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="clat">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
             </edittypes>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
@@ -26596,18 +27157,6 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="Descriptio">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="Skill">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="clon">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="clat">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -26943,18 +27492,6 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="Descriptio">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="Skill">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="clon">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="clat">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -27841,12 +28378,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -27942,12 +28479,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -28185,12 +28722,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -28428,12 +28965,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -28671,12 +29208,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -29837,12 +30374,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -30202,7 +30739,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>skill20141220162245782</id>
             <datasource>./skill.shp</datasource>
             <title></title>
@@ -30255,10 +30792,10 @@
             </edittypes>
             <renderer-v2 attr="skill_0" symbollevels="0" type="graduatedSymbol">
                 <ranges>
-                    <range render="true" symbol="0" lower="0.000000" upper="0.100000" label=" &lt;0.1"/>
-                    <range render="true" symbol="1" lower="0.100000" upper="0.200000" label=" 0.1 - 0.2"/>
-                    <range render="true" symbol="2" lower="0.200000" upper="0.400000" label=" 0.2 - 0.4"/>
-                    <range render="true" symbol="3" lower="0.400000" upper="0.600000" label=" 0.4 - 0.6"/>
+                    <range render="true" symbol="0" lower="0.000000" upper="0.010000" label=" &lt;0.01"/>
+                    <range render="true" symbol="1" lower="0.010000" upper="0.100000" label=" 0.01 - 0.1"/>
+                    <range render="true" symbol="2" lower="0.100000" upper="0.300000" label="0.1 - 0.3"/>
+                    <range render="true" symbol="3" lower="0.300000" upper="0.600000" label=" 0.3 - 0.6"/>
                     <range render="true" symbol="4" lower="0.600000" upper="0.800000" label=" 0.6 - 0.8"/>
                     <range render="true" symbol="5" lower="0.800000" upper="1.000000" label=" 0.8 - &lt;1"/>
                     <range render="true" symbol="6" lower="1.000000" upper="1.100000" label="1"/>
@@ -30279,7 +30816,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1.4"/>
+                            <prop k="size" v="1"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30300,7 +30837,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1.4"/>
+                            <prop k="size" v="1"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30321,7 +30858,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1.4"/>
+                            <prop k="size" v="1"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30342,7 +30879,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1.4"/>
+                            <prop k="size" v="1"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30363,7 +30900,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1.4"/>
+                            <prop k="size" v="1"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30384,7 +30921,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1.4"/>
+                            <prop k="size" v="1"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30405,7 +30942,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1.4"/>
+                            <prop k="size" v="1"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30428,7 +30965,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1.4"/>
+                            <prop k="size" v="1"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30477,7 +31014,7 @@
                 <property key="labeling/fieldName" value=""/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
-                <property key="labeling/fontFamily" value=".Helvetica Neue DeskInterface"/>
+                <property key="labeling/fontFamily" value=".Lucida Grande UI"/>
                 <property key="labeling/fontItalic" value="false"/>
                 <property key="labeling/fontLetterSpacing" value="0"/>
                 <property key="labeling/fontLimitPixelSize" value="false"/>
@@ -30703,10 +31240,10 @@
             </edittypes>
             <renderer-v2 attr="skill_0" symbollevels="0" type="graduatedSymbol">
                 <ranges>
-                    <range render="true" symbol="0" lower="0.000000" upper="0.100000" label=" &lt;0.1"/>
-                    <range render="true" symbol="1" lower="0.100000" upper="0.200000" label=" 0.1 - 0.2"/>
-                    <range render="true" symbol="2" lower="0.200000" upper="0.400000" label=" 0.2 - 0.4"/>
-                    <range render="true" symbol="3" lower="0.400000" upper="0.600000" label=" 0.4 - 0.6"/>
+                    <range render="true" symbol="0" lower="0.000000" upper="0.010000" label=" &lt;0.01"/>
+                    <range render="true" symbol="1" lower="0.010000" upper="0.100000" label=" 0.01 - 0.1"/>
+                    <range render="true" symbol="2" lower="0.100000" upper="0.300000" label="0.1 - 0.3"/>
+                    <range render="true" symbol="3" lower="0.300000" upper="0.600000" label=" 0.3 - 0.6"/>
                     <range render="true" symbol="4" lower="0.600000" upper="0.800000" label=" 0.6 - 0.8"/>
                     <range render="true" symbol="5" lower="0.800000" upper="1.000000" label=" 0.8 - &lt;1"/>
                     <range render="true" symbol="6" lower="1.000000" upper="1.100000" label="1"/>
@@ -30727,7 +31264,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
+                            <prop k="size" v="3"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30748,7 +31285,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
+                            <prop k="size" v="3"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30769,7 +31306,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
+                            <prop k="size" v="3"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30790,7 +31327,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
+                            <prop k="size" v="3"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30811,7 +31348,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
+                            <prop k="size" v="3"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30832,7 +31369,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
+                            <prop k="size" v="3"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30853,7 +31390,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
+                            <prop k="size" v="3"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30925,7 +31462,7 @@
                 <property key="labeling/fieldName" value=""/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
-                <property key="labeling/fontFamily" value=".Helvetica Neue DeskInterface"/>
+                <property key="labeling/fontFamily" value=".Lucida Grande UI"/>
                 <property key="labeling/fontItalic" value="false"/>
                 <property key="labeling/fontLetterSpacing" value="0"/>
                 <property key="labeling/fontLimitPixelSize" value="false"/>
@@ -31110,12 +31647,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -31204,12 +31741,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -31356,12 +31893,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -31403,12 +31940,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -31446,12 +31983,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -31493,12 +32030,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -31536,12 +32073,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -31579,12 +32116,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -31622,12 +32159,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -32555,12 +33092,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -33488,12 +34025,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -34421,12 +34958,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -35354,12 +35891,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -36287,12 +36824,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -37220,12 +37757,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -38153,12 +38690,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -40019,12 +40556,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -40952,12 +41489,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -43751,12 +44288,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -44684,12 +45221,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -45617,12 +46154,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -46611,12 +47148,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -46672,12 +47209,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -46719,12 +47256,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -46766,12 +47303,12 @@
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100001</srsid>
+                    <srsid>100005</srsid>
                     <srid>0</srid>
-                    <authid>USER:100001</authid>
+                    <authid>USER:100005</authid>
                     <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                     <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
@@ -46861,6 +47398,8 @@
                 <value>Jakobshavn_flowlines_exp_basal_450m_copy20141209153418230</value>
                 <value>Jakobshavn_starting_points20141204144242788</value>
                 <value>Jakobshavn_starting_points_copy20141209153527240</value>
+                <value>Petermann_flowlines20141230135224247</value>
+                <value>Petermann_starting_points20141230134813935</value>
                 <value>_cadinput_techical_snap_layer_20140918172903071</value>
                 <value>enderlin_fluxes_ts20140929171921844</value>
                 <value>g1200m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_speed_contours20140919172511519</value>
@@ -46891,8 +47430,14 @@
                 <value>petermann_flux_gates20141202132333501</value>
                 <value>skill20141220162245782</value>
                 <value>skill_copy20141222142105060</value>
+                <value>Petermann_flowlines20141231110646174</value>
+                <value>Petermann_Gletscher_flowline_epsg341320141231111700165</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
@@ -46970,6 +47515,10 @@
                 <value>0</value>
                 <value>0</value>
                 <value>0</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
             </LayerSnappingToleranceUnitList>
             <LayerSnapToList type="QStringList">
                 <value>to_vertex_and_segment</value>
@@ -47009,8 +47558,16 @@
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
             </LayerSnapToList>
             <LayerSnappingToleranceList type="QStringList">
+                <value>0.000000</value>
+                <value>0.000000</value>
+                <value>0.000000</value>
+                <value>0.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
