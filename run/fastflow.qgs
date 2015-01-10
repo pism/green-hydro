@@ -30741,7 +30741,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>skill20141220162245782</id>
-            <datasource>./skill.shp</datasource>
+            <datasource>./skill_250m_greenland_2008-2009_900m_best.shp</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -31189,7 +31189,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>skill_copy20141222142105060</id>
-            <datasource>./skill.shp</datasource>
+            <datasource>./skill_250m_greenland_2008-2009_900m_best.shp</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
