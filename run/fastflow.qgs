@@ -30739,7 +30739,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>skill_copy20141222142105060</id>
             <datasource>./skill_250m_greenland_2008-2009_900m_best.shp</datasource>
             <title></title>
@@ -30793,9 +30793,9 @@
             <renderer-v2 attr="skill_0" symbollevels="0" type="graduatedSymbol">
                 <ranges>
                     <range render="true" symbol="0" lower="0.000000" upper="0.010000" label=" &lt;0.01 "/>
-                    <range render="true" symbol="1" lower="0.010000" upper="0.100000" label=" 0.01 - 0.10 "/>
-                    <range render="true" symbol="2" lower="0.100000" upper="0.500000" label=" 0.10 - 0.50 "/>
-                    <range render="true" symbol="3" lower="0.500000" upper="1.000000" label=" 0.50 - 1.00 "/>
+                    <range render="true" symbol="1" lower="0.010000" upper="0.350000" label=" 0.01 - 0.35 "/>
+                    <range render="true" symbol="2" lower="0.350000" upper="0.700000" label=" 0.35 - 0.70 "/>
+                    <range render="true" symbol="3" lower="0.700000" upper="1.000000" label=" 0.70 - 1.00 "/>
                 </ranges>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
