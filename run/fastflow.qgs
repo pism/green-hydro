@@ -135,9 +135,6 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="dHdt20141204125452903" name="dHdt">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" name="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_temppa_base_wa">
-            <customproperties/>
-        </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038" name="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf">
             <customproperties/>
         </layer-tree-layer>
@@ -499,7 +496,6 @@
             <item>greenland_flux_gates20141202181100760</item>
             <item>petermann_flux_gates20141202132333501</item>
             <item>dHdt20141204125452903</item>
-            <item>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383</item>
             <item>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_wvelsurf20141111181433038</item>
             <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_velbase_mag20141204131635260</item>
             <item>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_velbase_mag20141204131340853</item>
@@ -782,11 +778,6 @@
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="dHdt" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="dHdt20141204125452903" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_temppa_base_wa" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_wvelsurf" showFeatureCount="0">
@@ -5056,7 +5047,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="110">
+    <projectlayers layercount="109">
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>2003_200920141201134459345</id>
             <datasource>file:../../data_sets/GreenlandICESat/Sorensen/2003_2009.txt?type=csv&amp;delimiter=,%20&amp;skipLines=5&amp;useHeader=No&amp;skipEmptyFields=Yes&amp;xField=field_1&amp;yField=field_2&amp;spatialIndex=yes&amp;subsetIndex=no&amp;watchFile=yes</datasource>
@@ -24954,58 +24945,6 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
-        </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_temppa_base_wa20141106093202383</id>
-            <datasource>./900m_const_ctrl/additional_files/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_temppa_base_wa.nc</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a_temppa_base_wa</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
-                    <srsid>1371</srsid>
-                    <srid>3413</srid>
-                    <authid>EPSG:3413</authid>
-                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
-                    <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="1"/>
-            </noData>
-            <pipe>
-                <rasterrenderer opacity="1" alphaBand="-1" classificationMax="-0.01" classificationMinMaxOrigin="User" band="1" classificationMin="-20" type="singlebandpseudocolor">
-                    <rasterTransparency/>
-                    <rastershader>
-                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
-                            <item alpha="255" value="-20" label="-20.000000" color="#08306b"/>
-                            <item alpha="255" value="-16" label="-16" color="#0d57a1"/>
-                            <item alpha="255" value="-12" label="-12" color="#2878b8"/>
-                            <item alpha="255" value="-8" label="-8" color="#4997c9"/>
-                            <item alpha="255" value="-4" label="-4" color="#72b2d7"/>
-                            <item alpha="255" value="-3" label="-3" color="#a2cbe2"/>
-                            <item alpha="255" value="-2" label="-2" color="#c7dcef"/>
-                            <item alpha="255" value="-1" label="-1" color="#deebf7"/>
-                            <item alpha="255" value="-0.01" label="-0.01" color="#f7fbff"/>
-                            <item alpha="255" value="0" label="0" color="#ff2c03"/>
-                        </colorrampshader>
-                    </rastershader>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>6</blendMode>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_velbase_mag20141204131340853</id>
