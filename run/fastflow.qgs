@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="2.6.0-Brighton">
+<qgis projectname="" version="2.6.1-Brighton">
     <title></title>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
         <customproperties/>
@@ -15,10 +15,10 @@
         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Petermann_starting_points20141230134813935" name="Petermann_starting_points">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="skill20141220162245782" name="skill">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="skill_copy20141222142105060" name="skill">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="skill_copy20141222142105060" name="skill copy">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="skill_copy20150116120324674" name="skill legend">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="greenland_glacier_names_selection20140918145826595" name="greenland-glacier-names-selection">
@@ -126,9 +126,9 @@
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Flux Gates">
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Flux Gates">
             <customproperties/>
-            <layer-tree-layer expanded="1" checked="Qt::Checked" id="greenland_flux_gates20141202181100760" name="greenland-flux-gates">
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="greenland_flux_gates20141202181100760" name="greenland-flux-gates">
                 <customproperties/>
             </layer-tree-layer>
             <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="petermann_flux_gates20141202132333501" name="petermann-flux-gates">
@@ -258,7 +258,7 @@
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="speeds">
+        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="speeds">
             <customproperties/>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20141001195824676" name="velsurf_mag 1500m MO14 RCP45 q=0.5">
                 <customproperties/>
@@ -293,7 +293,7 @@
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140920153721559" name="velsurf_mag 1200m MO14">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140920122835449" name="velsurf_mag 900m MO14">
+            <layer-tree-layer expanded="0" checked="Qt::Checked" id="velsurf_mag20140920122835449" name="velsurf_mag 900m MO14">
                 <customproperties/>
             </layer-tree-layer>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140920153100571" name="velsurf_mag 900m BA01">
@@ -330,7 +330,7 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="topg20140919123515112" name="topg">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="surface_150m_hs20140909191930698" name="surface_150m_hs">
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="surface_150m_hs20140909191930698" name="surface_150m_hs">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="cresis_mcb20141002172647129" name="cresis-mcb">
@@ -345,7 +345,7 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="old_bed_hs20141014120435686" name="old_bed_hs">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="bed20140930085612863" name="bed">
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20140930085612863" name="bed">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Greenland_mc_bed_v120140618125656554" name="Greenland_mc_bed_v1">
@@ -374,10 +374,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-1107338.74754015682265162</xmin>
-            <ymin>-1989910.97193941893056035</ymin>
-            <xmax>371569.87169235944747925</xmax>
-            <ymax>-1155615.28580303583294153</ymax>
+            <xmin>-1479764.64070454961620271</xmin>
+            <ymin>-3355472.58020885847508907</ymin>
+            <xmax>1478052.59776048292405903</xmax>
+            <ymax>-1686881.20793609227985144</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -394,6 +394,7 @@
         </destinationsrs>
         <layer_coordinate_transform_info>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Petermann_flowlines20141230135149338"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill_copy20150116120324674"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill20141220152334075"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Densified_layer20141214170635794"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20140918150111433"/>
@@ -570,12 +571,12 @@
             <item>MODISKangerdlugssuaq250m20140521183413832</item>
             <item>Upernavik250m20140920104430750</item>
             <item>MODISGreenland250mclean_cut20140521183412526</item>
-            <item>skill20141220162245782</item>
             <item>skill_copy20141222142105060</item>
             <item>Petermann_starting_points20141230134813935</item>
             <item>Petermann_flowlines20141230135224247</item>
             <item>Petermann_flowlines20141231110646174</item>
             <item>Petermann_Gletscher_flowline_epsg341320141231111700165</item>
+            <item>skill_copy20150116120324674</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
@@ -599,14 +600,14 @@
                 <legendlayerfile isInOverview="0" layerid="Petermann_starting_points20141230134813935" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="skill" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="skill20141220162245782" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="skill copy" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="skill" showFeatureCount="0">
             <filegroup open="true" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="skill_copy20141222142105060" visible="1"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="skill legend" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="skill_copy20150116120324674" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="greenland-glacier-names-selection" showFeatureCount="0">
@@ -775,10 +776,10 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Flux Gates">
-            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="greenland-flux-gates" showFeatureCount="0">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Flux Gates">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="greenland-flux-gates" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="greenland_flux_gates20141202181100760" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="greenland_flux_gates20141202181100760" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="petermann-flux-gates" showFeatureCount="0">
@@ -971,7 +972,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Unchecked" name="speeds">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="speeds">
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 1500m MO14 RCP45 q=0.5" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="velsurf_mag20141001195824676" visible="0"/>
@@ -1027,9 +1028,9 @@
                     <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920153721559" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 900m MO14" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="velsurf_mag 900m MO14" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920122835449" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920122835449" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 900m BA01" showFeatureCount="0">
@@ -1088,9 +1089,9 @@
                 <legendlayerfile isInOverview="0" layerid="topg20140919123515112" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="surface_150m_hs" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="surface_150m_hs" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="surface_150m_hs20140909191930698" visible="0"/>
+                <legendlayerfile isInOverview="0" layerid="surface_150m_hs20140909191930698" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="cresis-mcb" showFeatureCount="0">
@@ -1113,9 +1114,9 @@
                 <legendlayerfile isInOverview="0" layerid="old_bed_hs20141014120435686" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="bed" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="bed20140930085612863" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="bed20140930085612863" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Greenland_mc_bed_v1" showFeatureCount="0">
@@ -1355,7 +1356,7 @@
                     <prop k="style" v="solid"/>
                 </layer>
             </symbol>
-            <ComposerMap mapRotation="0" keepLayerSet="false" id="0" previewMode="Cache" drawCanvasItems="true">
+            <ComposerMap mapRotation="0" keepLayerSet="false" id="0" previewMode="Render" drawCanvasItems="true">
                 <Extent ymin="-3383475.00140770245343447" xmin="-840725.00097308924887329" ymax="-621674.99859066680073738" xmax="1067275.00097307050600648"/>
                 <LayerSet/>
                 <Grid/>
@@ -1665,8 +1666,8 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="legend" visible="0">
-        <Composition gridVisible="0" printResolution="300" paperWidth="17" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="31.5" smartGuides="1" printAsRaster="0" generateWorldFile="0">
+    <Composer title="legend" visible="1">
+        <Composition gridVisible="0" printResolution="300" paperWidth="20" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="20.5" smartGuides="1" printAsRaster="0" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
                     <prop k="border_width_map_unit_scale" v="0,0"/>
@@ -1690,7 +1691,7 @@
                     <style name="symbol" font=".Lucida Grande UI,13,-1,5,50,0,0,0,0,0"/>
                     <style name="symbolLabel" font="Helvetica,6,-1,5,50,0,0,0,0,0"/>
                 </styles>
-                <layer-tree-group expanded="1" checked="Qt::Unchecked" name="">
+                <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
                     <customproperties/>
                     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="skill20141220162245782" name="skill">
                         <customproperties>
@@ -1698,8 +1699,13 @@
                             <property key="showFeatureCount" value="0"/>
                         </customproperties>
                     </layer-tree-layer>
+                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="skill_copy20150116120324674" name="skill legend">
+                        <customproperties>
+                            <property key="legend/title-label" value=""/>
+                        </customproperties>
+                    </layer-tree-layer>
                 </layer-tree-group>
-                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="19.5969" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="18.4484" outlineWidth="0.3" excludeFromExports="0" uuid="{6e460de6-e161-447b-a3a8-e9116a07063f}" height="33.1156" itemRotation="0" frame="false" pagex="0">
+                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="19.5969" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="20.1984" outlineWidth="0.3" excludeFromExports="0" uuid="{6e460de6-e161-447b-a3a8-e9116a07063f}" height="21.1156" itemRotation="0" frame="false" pagex="0">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="230" blue="230" green="230"/>
                 </ComposerItem>
@@ -30742,8 +30748,8 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>skill20141220162245782</id>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>skill_copy20141222142105060</id>
             <datasource>./skill_250m_greenland_2008-2009_900m_best.shp</datasource>
             <title></title>
             <abstract></abstract>
@@ -30795,13 +30801,10 @@
             </edittypes>
             <renderer-v2 attr="skill_0" symbollevels="0" type="graduatedSymbol">
                 <ranges>
-                    <range render="true" symbol="0" lower="0.000000" upper="0.010000" label=" &lt;0.01"/>
-                    <range render="true" symbol="1" lower="0.010000" upper="0.100000" label=" 0.01 - 0.1"/>
-                    <range render="true" symbol="2" lower="0.100000" upper="0.300000" label="0.1 - 0.3"/>
-                    <range render="true" symbol="3" lower="0.300000" upper="0.600000" label=" 0.3 - 0.6"/>
-                    <range render="true" symbol="4" lower="0.600000" upper="0.800000" label=" 0.6 - 0.8"/>
-                    <range render="true" symbol="5" lower="0.800000" upper="1.000000" label=" 0.8 - &lt;1"/>
-                    <range render="true" symbol="6" lower="1.000000" upper="1.100000" label="1"/>
+                    <range render="true" symbol="0" lower="0.000000" upper="0.010000" label=" &lt;0.01 "/>
+                    <range render="true" symbol="1" lower="0.010000" upper="0.100000" label=" 0.01 - 0.10 "/>
+                    <range render="true" symbol="2" lower="0.100000" upper="0.500000" label=" 0.10 - 0.50 "/>
+                    <range render="true" symbol="3" lower="0.500000" upper="1.000000" label=" 0.50 - 1.00 "/>
                 </ranges>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -30819,34 +30822,13 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1"/>
+                            <prop k="size" v="2.5"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
                     </symbol>
                     <symbol alpha="1" type="marker" name="1">
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="color" v="240,124,74,255"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="0,0,0,255"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                    <symbol alpha="1" type="marker" name="2">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="color" v="253,201,128,255"/>
@@ -30861,34 +30843,13 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1"/>
+                            <prop k="size" v="2.5"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
                     </symbol>
-                    <symbol alpha="1" type="marker" name="3">
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="color" v="255,255,192,255"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="0,0,0,255"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                    <symbol alpha="1" type="marker" name="4">
+                    <symbol alpha="1" type="marker" name="2">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="color" v="195,229,134,255"/>
@@ -30903,34 +30864,13 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1"/>
+                            <prop k="size" v="2.5"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
                     </symbol>
-                    <symbol alpha="1" type="marker" name="5">
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="color" v="119,194,92,255"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="0,0,0,255"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                    <symbol alpha="1" type="marker" name="6">
+                    <symbol alpha="1" type="marker" name="3">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="color" v="26,150,65,255"/>
@@ -30945,7 +30885,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1"/>
+                            <prop k="size" v="2.5"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -30968,7 +30908,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1"/>
+                            <prop k="size" v="2.5"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -31190,15 +31130,15 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>skill_copy20141222142105060</id>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>skill_copy20150116120324674</id>
             <datasource>./skill_250m_greenland_2008-2009_900m_best.shp</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
                 <value></value>
             </keywordList>
-            <layername>skill copy</layername>
+            <layername>skill legend</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
@@ -31212,7 +31152,7 @@
                 </spatialrefsys>
             </srs>
             <provider encoding="System">ogr</provider>
-            <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
+            <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
             <edittypes>
@@ -31243,13 +31183,10 @@
             </edittypes>
             <renderer-v2 attr="skill_0" symbollevels="0" type="graduatedSymbol">
                 <ranges>
-                    <range render="true" symbol="0" lower="0.000000" upper="0.010000" label=" &lt;0.01"/>
-                    <range render="true" symbol="1" lower="0.010000" upper="0.100000" label=" 0.01 - 0.1"/>
-                    <range render="true" symbol="2" lower="0.100000" upper="0.300000" label="0.1 - 0.3"/>
-                    <range render="true" symbol="3" lower="0.300000" upper="0.600000" label=" 0.3 - 0.6"/>
-                    <range render="true" symbol="4" lower="0.600000" upper="0.800000" label=" 0.6 - 0.8"/>
-                    <range render="true" symbol="5" lower="0.800000" upper="1.000000" label=" 0.8 - &lt;1"/>
-                    <range render="true" symbol="6" lower="1.000000" upper="1.100000" label="1"/>
+                    <range render="true" symbol="0" lower="0.000000" upper="0.010000" label=" &lt;0.01 "/>
+                    <range render="true" symbol="1" lower="0.010000" upper="0.100000" label=" 0.01 - 0.10 "/>
+                    <range render="true" symbol="2" lower="0.100000" upper="0.500000" label=" 0.10 - 0.50 "/>
+                    <range render="true" symbol="3" lower="0.500000" upper="1.000000" label=" 0.50 - 1.00 "/>
                 </ranges>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -31267,34 +31204,13 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="3"/>
+                            <prop k="size" v="1"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
                     </symbol>
                     <symbol alpha="1" type="marker" name="1">
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="color" v="240,124,74,255"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="0,0,0,255"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="3"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                    <symbol alpha="1" type="marker" name="2">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="color" v="253,201,128,255"/>
@@ -31309,34 +31225,13 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="3"/>
+                            <prop k="size" v="1"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
                     </symbol>
-                    <symbol alpha="1" type="marker" name="3">
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="color" v="255,255,192,255"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="0,0,0,255"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="3"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                    <symbol alpha="1" type="marker" name="4">
+                    <symbol alpha="1" type="marker" name="2">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="color" v="195,229,134,255"/>
@@ -31351,34 +31246,13 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="3"/>
+                            <prop k="size" v="1"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
                     </symbol>
-                    <symbol alpha="1" type="marker" name="5">
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="color" v="119,194,92,255"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="0,0,0,255"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="3"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                    <symbol alpha="1" type="marker" name="6">
+                    <symbol alpha="1" type="marker" name="3">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="color" v="26,150,65,255"/>
@@ -31393,7 +31267,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="3"/>
+                            <prop k="size" v="1"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -31416,7 +31290,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
+                            <prop k="size" v="1"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -47401,7 +47275,9 @@
                 <value>Jakobshavn_flowlines_exp_basal_450m_copy20141209153418230</value>
                 <value>Jakobshavn_starting_points20141204144242788</value>
                 <value>Jakobshavn_starting_points_copy20141209153527240</value>
+                <value>Petermann_Gletscher_flowline_epsg341320141231111700165</value>
                 <value>Petermann_flowlines20141230135224247</value>
+                <value>Petermann_flowlines20141231110646174</value>
                 <value>Petermann_starting_points20141230134813935</value>
                 <value>_cadinput_techical_snap_layer_20140918172903071</value>
                 <value>enderlin_fluxes_ts20140929171921844</value>
@@ -47431,13 +47307,9 @@
                 <value>grid_900m20140925141721375</value>
                 <value>jakosites20140927123349265</value>
                 <value>petermann_flux_gates20141202132333501</value>
-                <value>skill20141220162245782</value>
                 <value>skill_copy20141222142105060</value>
-                <value>Petermann_flowlines20141231110646174</value>
-                <value>Petermann_Gletscher_flowline_epsg341320141231111700165</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
-                <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
@@ -47521,7 +47393,6 @@
                 <value>0</value>
                 <value>0</value>
                 <value>0</value>
-                <value>0</value>
             </LayerSnappingToleranceUnitList>
             <LayerSnapToList type="QStringList">
                 <value>to_vertex_and_segment</value>
@@ -47564,10 +47435,8 @@
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
             </LayerSnapToList>
             <LayerSnappingToleranceList type="QStringList">
-                <value>0.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
