@@ -18,7 +18,7 @@
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="skill_copy20141222142105060" name="skill">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="skill_copy20150117173340718" name="skill-legend">
+        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="skill_copy20150117173340718" name="skill-legend">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="greenland_glacier_names_selection20140918145826595" name="greenland-glacier-names-selection">
@@ -344,10 +344,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-1062231.26358546619303524</xmin>
-            <ymin>-2465274.45669272821396589</ymin>
-            <xmax>416677.35564705613069236</xmax>
-            <ymax>-1630978.77055634162388742</ymax>
+            <xmin>-737611.59273202961776406</xmin>
+            <ymin>-3152296.13538729446008801</ymin>
+            <xmax>741297.02650049317162484</xmax>
+            <ymax>-2318000.44925090810284019</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -569,9 +569,9 @@
                 <legendlayerfile isInOverview="0" layerid="skill_copy20141222142105060" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="skill-legend" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="skill-legend" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="skill_copy20150117173340718" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="skill_copy20150117173340718" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="greenland-glacier-names-selection" showFeatureCount="0">
@@ -30303,7 +30303,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>skill_copy20141222142105060</id>
             <datasource>./skill_250m_greenland_2008-2009_900m_best.shp</datasource>
             <title></title>
@@ -30360,8 +30360,8 @@
                     <range render="true" symbol="1" lower="0.100000" upper="0.250000" label=" 0.10 - 0.25 "/>
                     <range render="true" symbol="2" lower="0.250000" upper="0.500000" label=" 0.25 - 0.50 "/>
                     <range render="true" symbol="3" lower="0.500000" upper="0.750000" label=" 0.50 - 0.75 "/>
-                    <range render="true" symbol="4" lower="0.750000" upper="1.000000" label=" 0.75 - &lt;1 "/>
-                    <range render="true" symbol="5" lower="1.000000" upper="2.000000" label="1"/>
+                    <range render="true" symbol="4" lower="0.750000" upper="0.999900" label=" 0.75 - &lt;1 "/>
+                    <range render="true" symbol="5" lower="0.999900" upper="2.000000" label="1"/>
                 </ranges>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -30727,7 +30727,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>skill_copy20150117173340718</id>
             <datasource>./skill_250m_greenland_2008-2009_900m_best.shp</datasource>
             <title></title>
@@ -30784,8 +30784,8 @@
                     <range render="true" symbol="1" lower="0.100000" upper="0.250000" label=" 0.10 - 0.25 "/>
                     <range render="true" symbol="2" lower="0.250000" upper="0.500000" label=" 0.25 - 0.50 "/>
                     <range render="true" symbol="3" lower="0.500000" upper="0.750000" label=" 0.50 - 0.75 "/>
-                    <range render="true" symbol="4" lower="0.750000" upper="1.000000" label=" 0.75 - &lt;1 "/>
-                    <range render="true" symbol="5" lower="1.000000" upper="2.000000" label="1"/>
+                    <range render="true" symbol="4" lower="0.750000" upper="0.999900" label=" 0.75 - &lt;1 "/>
+                    <range render="true" symbol="5" lower="0.999900" upper="2.000000" label="1"/>
                 </ranges>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
