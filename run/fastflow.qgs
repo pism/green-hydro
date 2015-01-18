@@ -18,7 +18,10 @@
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="skill_copy20141222142105060" name="skill">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="greenland_glacier_names_selection20140918145826595" name="greenland-glacier-names-selection">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="skill_copy20150117173340718" name="skill-legend">
+            <customproperties/>
+        </layer-tree-layer>
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="greenland_glacier_names_selection20140918145826595" name="greenland-glacier-names-selection">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="greenland_mod100_epsg3413_geojson20141202115642273" name="greenland_mod100_epsg3413.geojson">
@@ -123,8 +126,11 @@
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Flux Gates">
+        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Flux Gates">
             <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="greenland_flux_gates_250m20150117153710708" name="greenland-flux-gates-250m">
+                <customproperties/>
+            </layer-tree-layer>
             <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="greenland_flux_gates20141202181100760" name="greenland-flux-gates">
                 <customproperties/>
             </layer-tree-layer>
@@ -150,9 +156,6 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_bmelt20141204131735263" name="bmelt 450m">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20141212171847057" name="thickness 450m new">
-            <customproperties/>
-        </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827" name="thickness 450m">
             <customproperties/>
         </layer-tree-layer>
@@ -163,12 +166,6 @@
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bmelt20141107113257031" name="bmelt 900m">
-            <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="climatic_mass_balance20141201123922207" name="climatic_mass_balance">
-            <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="climatic_mass_balance20141201123500455" name="climatic_mass_balance">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-group expanded="0" checked="Qt::Unchecked" name="basal topography">
@@ -219,10 +216,7 @@
                 </layer-tree-layer>
             </layer-tree-group>
         </layer-tree-group>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="sliding_r20141022152859356" name="sliding_r 900m MO14">
-            <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="velocities">
+        <layer-tree-group expanded="0" checked="Qt::Unchecked" name="velocities">
             <customproperties/>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="uvelsurf20140925174212183" name="uvelsurf obs 2008-2009 150m">
                 <customproperties/>
@@ -249,7 +243,7 @@
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="speeds">
+        <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="speeds">
             <customproperties/>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20141001195824676" name="velsurf_mag 1500m MO14 RCP45 q=0.5">
                 <customproperties/>
@@ -342,21 +336,6 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Greenland_mc_bed_v120140618125656554" name="Greenland_mc_bed_v1">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Kangerdlugssuaq_small250m20140920105059010" name="Kangerdlugssuaq_small250m">
-            <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Helheim_small250m20140920105306718" name="Helheim_small250m">
-            <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Jakobshavn_small250m20140920104723630" name="Jakobshavn_small250m">
-            <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="MODISKangerdlugssuaq250m20140521183413832" name="MODISKangerdlugssuaq250m">
-            <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Upernavik250m20140920104430750" name="Upernavik250m">
-            <customproperties/>
-        </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="MODISGreenland250mclean_cut20140521183412526" name="MODISGreenland250mclean_cut">
             <customproperties/>
         </layer-tree-layer>
@@ -402,10 +381,12 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Petermann_flowlines20141230135224247"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill20141220152448326"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_glacier_names_selection20140918145826595"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill_copy20150117173340718"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141203144633743"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141229121905214"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LC80090112014216LGN00_B820141211180950029"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20141012160122662"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="mask20141207181829718"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill20141220152005996"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="petermann_flux_gates20141202132333501"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141212151630746"/>
@@ -438,6 +419,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed_900m_hs20141212150411033"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_starting_points20141204144242788"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_450m20141209151459985"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="gates_points20150117122942618"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_basal_450m20141209150958442"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill20141220150534636"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill20141220144223115"/>
@@ -448,6 +430,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g600m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_velsurf_mag20141031103815123"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_basal_450m_copy20141209153418230"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag_450m_MO14_copy20141124114059731"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_flux_gates_250m20150117153710708"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_temppa_base20141209163518121"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_flux_gates20141202181100760"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20140920153100571"/>
@@ -498,13 +481,10 @@
             <item>mask20141207181829718</item>
             <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_mask20141207175607917</item>
             <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_bmelt20141204131735263</item>
-            <item>thickness20141212171847057</item>
             <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827</item>
             <item>g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_target_thk20141203151503428</item>
             <item>thickness20141203144633743</item>
             <item>bmelt20141107113257031</item>
-            <item>climatic_mass_balance20141201123922207</item>
-            <item>climatic_mass_balance20141201123500455</item>
             <item>bed20141212150015737</item>
             <item>bed_4500m_hs20141212150439046</item>
             <item>bed20141212145959405</item>
@@ -515,7 +495,6 @@
             <item>bed_900m_hs20141212150411033</item>
             <item>bed20141212150253639</item>
             <item>bed_450m_hs20141212150400660</item>
-            <item>sliding_r20141022152859356</item>
             <item>uvelsurf20140925174212183</item>
             <item>vvelsurf20140925174213820</item>
             <item>uvelsurf20141022111432950</item>
@@ -554,17 +533,14 @@
             <item>old_bed_hs20141014120435686</item>
             <item>bed20140930085612863</item>
             <item>Greenland_mc_bed_v120140618125656554</item>
-            <item>Kangerdlugssuaq_small250m20140920105059010</item>
-            <item>Helheim_small250m20140920105306718</item>
-            <item>Jakobshavn_small250m20140920104723630</item>
-            <item>MODISKangerdlugssuaq250m20140521183413832</item>
-            <item>Upernavik250m20140920104430750</item>
             <item>MODISGreenland250mclean_cut20140521183412526</item>
             <item>skill_copy20141222142105060</item>
             <item>Petermann_starting_points20141230134813935</item>
             <item>Petermann_flowlines20141230135224247</item>
             <item>Petermann_flowlines20141231110646174</item>
             <item>Petermann_Gletscher_flowline_epsg341320141231111700165</item>
+            <item>greenland_flux_gates_250m20150117153710708</item>
+            <item>skill_copy20150117173340718</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
@@ -593,9 +569,14 @@
                 <legendlayerfile isInOverview="0" layerid="skill_copy20141222142105060" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="greenland-glacier-names-selection" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="skill-legend" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="skill_copy20150117173340718" visible="1"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="greenland-glacier-names-selection" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="greenland_glacier_names_selection20140918145826595" visible="0"/>
+                <legendlayerfile isInOverview="0" layerid="greenland_glacier_names_selection20140918145826595" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="greenland_mod100_epsg3413.geojson" showFeatureCount="0">
@@ -759,7 +740,12 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Unchecked" name="Flux Gates">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Flux Gates">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="greenland-flux-gates-250m" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="greenland_flux_gates_250m20150117153710708" visible="1"/>
+                </filegroup>
+            </legendlayer>
             <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="greenland-flux-gates" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="greenland_flux_gates20141202181100760" visible="0"/>
@@ -801,11 +787,6 @@
                 <legendlayerfile isInOverview="0" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_bmelt20141204131735263" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness 450m new" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="thickness20141212171847057" visible="0"/>
-            </filegroup>
-        </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness 450m" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_thk20141203151505827" visible="0"/>
@@ -824,16 +805,6 @@
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bmelt 900m" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="bmelt20141107113257031" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="climatic_mass_balance" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="climatic_mass_balance20141201123922207" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="climatic_mass_balance" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="climatic_mass_balance20141201123500455" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendgroup open="false" checked="Qt::Unchecked" name="basal topography">
@@ -898,12 +869,7 @@
                 </legendlayer>
             </legendgroup>
         </legendgroup>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="sliding_r 900m MO14" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="sliding_r20141022152859356" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendgroup open="true" checked="Qt::Unchecked" name="velocities">
+        <legendgroup open="false" checked="Qt::Unchecked" name="velocities">
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="uvelsurf obs 2008-2009 150m" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="uvelsurf20140925174212183" visible="0"/>
@@ -945,7 +911,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="speeds">
+        <legendgroup open="false" checked="Qt::PartiallyChecked" name="speeds">
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 1500m MO14 RCP45 q=0.5" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="velsurf_mag20141001195824676" visible="0"/>
@@ -1095,31 +1061,6 @@
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Greenland_mc_bed_v1" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="Greenland_mc_bed_v120140618125656554" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Kangerdlugssuaq_small250m" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="Kangerdlugssuaq_small250m20140920105059010" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Helheim_small250m" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="Helheim_small250m20140920105306718" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Jakobshavn_small250m" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="Jakobshavn_small250m20140920104723630" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="MODISKangerdlugssuaq250m" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="MODISKangerdlugssuaq250m20140521183413832" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Upernavik250m" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="Upernavik250m20140920104430750" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="MODISGreenland250mclean_cut" showFeatureCount="0">
@@ -1457,7 +1398,7 @@
                         </customproperties>
                     </layer-tree-layer>
                 </layer-tree-group>
-                <ComposerItem pagey="114.939" page="1" id="" lastValidViewScaleFactor="4.93617" positionMode="0" positionLock="true" x="176.034" y="114.939" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" excludeFromExports="0" uuid="{664a93f5-d3ec-4a09-8103-f87e27f1243a}" height="5657.8" itemRotation="0" frame="true" pagex="176.034">
+                <ComposerItem pagey="114.939" page="1" id="" lastValidViewScaleFactor="4.93617" positionMode="0" positionLock="true" x="176.034" y="114.939" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" excludeFromExports="0" uuid="{664a93f5-d3ec-4a09-8103-f87e27f1243a}" height="5567.8" itemRotation="0" frame="true" pagex="176.034">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1640,7 +1581,7 @@
         </Composition>
     </Composer>
     <Composer title="legend" visible="0">
-        <Composition gridVisible="0" printResolution="300" paperWidth="20" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="20.5" smartGuides="1" printAsRaster="0" generateWorldFile="0">
+        <Composition gridVisible="0" printResolution="300" paperWidth="20" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="28" smartGuides="1" printAsRaster="0" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
                     <prop k="border_width_map_unit_scale" v="0,0"/>
@@ -1672,13 +1613,13 @@
                             <property key="showFeatureCount" value="0"/>
                         </customproperties>
                     </layer-tree-layer>
-                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="skill_copy20150116120324674" name="skill legend">
+                    <layer-tree-layer expanded="1" checked="Qt::Checked" id="skill_copy20150117173340718" name="skill-legend">
                         <customproperties>
                             <property key="legend/title-label" value=""/>
                         </customproperties>
                     </layer-tree-layer>
                 </layer-tree-group>
-                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="19.5969" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="11.9125" outlineWidth="0.3" excludeFromExports="0" uuid="{6e460de6-e161-447b-a3a8-e9116a07063f}" height="5.11562" itemRotation="0" frame="false" pagex="0">
+                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="19.5969" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="20.1984" outlineWidth="0.3" excludeFromExports="0" uuid="{6e460de6-e161-447b-a3a8-e9116a07063f}" height="29.1156" itemRotation="0" frame="false" pagex="0">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="230" blue="230" green="230"/>
                 </ComposerItem>
@@ -3571,7 +3512,7 @@
                         </customproperties>
                     </layer-tree-layer>
                 </layer-tree-group>
-                <ComposerItem pagey="2.51775" page="1" id="" lastValidViewScaleFactor="3.41127" positionMode="0" positionLock="false" x="2.34517" y="2.51775" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" excludeFromExports="0" uuid="{a3ddd3ff-ce56-4111-a77d-cf9c6731e392}" height="5657.8" itemRotation="0" frame="false" pagex="2.34517">
+                <ComposerItem pagey="2.51775" page="1" id="" lastValidViewScaleFactor="3.41127" positionMode="0" positionLock="false" x="2.34517" y="2.51775" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" excludeFromExports="0" uuid="{a3ddd3ff-ce56-4111-a77d-cf9c6731e392}" height="5567.8" itemRotation="0" frame="false" pagex="2.34517">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -3704,7 +3645,7 @@
                         </customproperties>
                     </layer-tree-layer>
                 </layer-tree-group>
-                <ComposerItem pagey="2.48314" page="1" id="" lastValidViewScaleFactor="2.4163" positionMode="0" positionLock="false" x="2.48314" y="2.48314" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" excludeFromExports="0" uuid="{f9916ddc-f335-45c2-97b1-c6ce12619d95}" height="5657.8" itemRotation="0" frame="false" pagex="2.48314">
+                <ComposerItem pagey="2.48314" page="1" id="" lastValidViewScaleFactor="2.4163" positionMode="0" positionLock="false" x="2.48314" y="2.48314" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" excludeFromExports="0" uuid="{f9916ddc-f335-45c2-97b1-c6ce12619d95}" height="5567.8" itemRotation="0" frame="false" pagex="2.48314">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -3837,7 +3778,7 @@
                         </customproperties>
                     </layer-tree-layer>
                 </layer-tree-group>
-                <ComposerItem pagey="177.447" page="1" id="" lastValidViewScaleFactor="3.80096" positionMode="0" positionLock="false" x="2.46942" y="177.447" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" excludeFromExports="0" uuid="{8c07d3ef-bee5-4b83-946d-db9104638d6d}" height="5657.8" itemRotation="0" frame="false" pagex="2.46942">
+                <ComposerItem pagey="177.447" page="1" id="" lastValidViewScaleFactor="3.80096" positionMode="0" positionLock="false" x="2.46942" y="177.447" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="218.341" outlineWidth="0.3" excludeFromExports="0" uuid="{8c07d3ef-bee5-4b83-946d-db9104638d6d}" height="5567.8" itemRotation="0" frame="false" pagex="2.46942">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -5038,7 +4979,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="108">
+    <projectlayers layercount="101">
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>2003_200920141201134459345</id>
             <datasource>file:../../data_sets/GreenlandICESat/Sorensen/2003_2009.txt?type=csv&amp;delimiter=,%20&amp;skipLines=5&amp;useHeader=No&amp;skipEmptyFields=Yes&amp;xField=field_1&amp;yField=field_2&amp;spatialIndex=yes&amp;subsetIndex=no&amp;watchFile=yes</datasource>
@@ -6455,49 +6396,6 @@
             </pipe>
             <blendMode>6</blendMode>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>Helheim_small250m20140920105306718</id>
-            <datasource>../../data_sets/GreenlandMODIS/Helheim_small250m.tif</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>Helheim_small250m</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
-                    <srsid>1371</srsid>
-                    <srid>3413</srid>
-                    <authid>EPSG:3413</authid>
-                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
-                    <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="0"/>
-            </noData>
-            <pipe>
-                <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
-                    <rasterTransparency/>
-                    <contrastEnhancement>
-                        <minValue>149</minValue>
-                        <maxValue>252</maxValue>
-                        <algorithm>StretchToMinimumMaximum</algorithm>
-                    </contrastEnhancement>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>Jakobshavn_flowlines_exp_450m20141209151459985</id>
             <datasource>../../data_sets/GreenlandFlowlines/Jakobshavn_flowlines_exp_450m.shp</datasource>
@@ -7718,53 +7616,6 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>Jakobshavn_small250m20140920104723630</id>
-            <datasource>../../data_sets/GreenlandMODIS/Jakobshavn_small250m.tif</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>Jakobshavn_small250m</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
-                    <srsid>1371</srsid>
-                    <srid>3413</srid>
-                    <authid>EPSG:3413</authid>
-                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
-                    <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="0"/>
-            </noData>
-            <pipe>
-                <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
-                    <rasterTransparency>
-                        <singleValuePixelList>
-                            <pixelListEntry min="0" max="20" percentTransparent="100"/>
-                        </singleValuePixelList>
-                    </rasterTransparency>
-                    <contrastEnhancement>
-                        <minValue>112</minValue>
-                        <maxValue>214</maxValue>
-                        <algorithm>StretchToMinimumMaximum</algorithm>
-                    </contrastEnhancement>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>Jakobshavn_starting_points20141204144242788</id>
             <datasource>../../data_sets/GreenlandFlowlines/Jakobshavn_starting_points.shp</datasource>
@@ -8244,49 +8095,6 @@
             </edittypes>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>Kangerdlugssuaq_small250m20140920105059010</id>
-            <datasource>../../data_sets/GreenlandMODIS/Kangerdlugssuaq_small250m.tif</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>Kangerdlugssuaq_small250m</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
-                    <srsid>1371</srsid>
-                    <srid>3413</srid>
-                    <authid>EPSG:3413</authid>
-                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
-                    <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="0"/>
-            </noData>
-            <pipe>
-                <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
-                    <rasterTransparency/>
-                    <contrastEnhancement>
-                        <minValue>75</minValue>
-                        <maxValue>229</maxValue>
-                        <algorithm>StretchToMinimumMaximum</algorithm>
-                    </contrastEnhancement>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>MODISGreenland250mclean_cut20140521183412526</id>
             <datasource>../../data_sets/GreenlandMODIS/MODISGreenland250mclean_cut.tif</datasource>
             <title></title>
@@ -8295,49 +8103,6 @@
                 <value></value>
             </keywordList>
             <layername>MODISGreenland250mclean_cut</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
-                    <srsid>1371</srsid>
-                    <srid>3413</srid>
-                    <authid>EPSG:3413</authid>
-                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
-                    <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="0"/>
-            </noData>
-            <pipe>
-                <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
-                    <rasterTransparency/>
-                    <contrastEnhancement>
-                        <minValue>0</minValue>
-                        <maxValue>222.129</maxValue>
-                        <algorithm>StretchToMinimumMaximum</algorithm>
-                    </contrastEnhancement>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>MODISKangerdlugssuaq250m20140521183413832</id>
-            <datasource>../../data_sets/GreenlandMODIS/MODISKangerdlugssuaq250m.tif</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>MODISKangerdlugssuaq250m</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
@@ -8913,49 +8678,6 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
-        </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>Upernavik250m20140920104430750</id>
-            <datasource>../../data_sets/GreenlandMODIS/Upernavik250m.tif</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>Upernavik250m</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
-                    <srsid>1371</srsid>
-                    <srid>3413</srid>
-                    <authid>EPSG:3413</authid>
-                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
-                    <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="0"/>
-            </noData>
-            <pipe>
-                <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
-                    <rasterTransparency/>
-                    <contrastEnhancement>
-                        <minValue>73</minValue>
-                        <maxValue>248</maxValue>
-                        <algorithm>StretchToMinimumMaximum</algorithm>
-                    </contrastEnhancement>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>_cadinput_techical_snap_layer_20140918172903071</id>
@@ -16788,100 +16510,6 @@
                             <item alpha="255" value="0.06" label="0.06" color="#b2221c"/>
                             <item alpha="255" value="0.08" label="0.08" color="#8c120e"/>
                             <item alpha="255" value="0.1" label=">0.1" color="#8c120e"/>
-                        </colorrampshader>
-                    </rastershader>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>climatic_mass_balance20141201123500455</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":climatic_mass_balance</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>climatic_mass_balance</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
-                    <srid>0</srid>
-                    <authid>USER:100005</authid>
-                    <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
-                    <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="1"/>
-            </noData>
-            <pipe>
-                <rasterrenderer opacity="1" alphaBand="-1" classificationMax="20000" classificationMinMaxOrigin="User" band="1" classificationMin="-20000" type="singlebandpseudocolor">
-                    <rasterTransparency/>
-                    <rastershader>
-                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
-                            <item alpha="255" value="-20000" label="-20000.000000" color="#ca0020"/>
-                            <item alpha="255" value="-10000" label="-10000.000000" color="#f4a582"/>
-                            <item alpha="255" value="0" label="0.000000" color="#f7f7f7"/>
-                            <item alpha="255" value="10000" label="10000.000000" color="#92c5de"/>
-                            <item alpha="255" value="20000" label="20000.000000" color="#0571b0"/>
-                        </colorrampshader>
-                    </rastershader>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>climatic_mass_balance20141201123922207</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/1500m_const_ctrl/processed/g1500m_const_ctrl_e_1.25_ppq_0.1_tefo_0.02_ssa_n_3.0_philow_5.0_hydro_null_100a.nc":climatic_mass_balance</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>climatic_mass_balance</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
-                    <srid>0</srid>
-                    <authid>USER:100005</authid>
-                    <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
-                    <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="1"/>
-            </noData>
-            <pipe>
-                <rasterrenderer opacity="1" alphaBand="-1" classificationMax="20000" classificationMinMaxOrigin="User" band="1" classificationMin="-20000" type="singlebandpseudocolor">
-                    <rasterTransparency/>
-                    <rastershader>
-                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
-                            <item alpha="255" value="-20000" label="-20000.000000" color="#ca0020"/>
-                            <item alpha="255" value="-10000" label="-10000.000000" color="#f4a582"/>
-                            <item alpha="255" value="0" label="0.000000" color="#f7f7f7"/>
-                            <item alpha="255" value="10000" label="10000.000000" color="#92c5de"/>
-                            <item alpha="255" value="20000" label="20000.000000" color="#0571b0"/>
                         </colorrampshader>
                     </rastershader>
                 </rasterrenderer>
@@ -26451,6 +26079,125 @@
                 </edittype>
             </edittypes>
         </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>greenland_flux_gates_250m20150117153710708</id>
+            <datasource>../../data_sets/GreenlandFluxGates/greenland-flux-gates-250m.shp</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>greenland-flux-gates-250m</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="System">ogr</provider>
+            <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="length">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="clon">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="clat">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol alpha="1" type="line" name="0">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="square"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_map_unit_scale" v="0,0"/>
+                            <prop k="customdash_unit" v="MM"/>
+                            <prop k="draw_inside_polygon" v="0"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="line_color" v="80,75,215,255"/>
+                            <prop k="line_style" v="solid"/>
+                            <prop k="line_width" v="0.26"/>
+                            <prop k="line_width_unit" v="MM"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width_map_unit_scale" v="0,0"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+            </renderer-v2>
+            <customproperties/>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>name</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name=".Lucida Grande UI"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="length">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="clon">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="clat">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>greenland_glacier_names20140916172904908</id>
             <datasource>../../data_sets/GreenlandGlacierNames/greenland-glacier-names.shp</datasource>
@@ -26699,7 +26446,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>greenland_glacier_names_selection20140918145826595</id>
             <datasource>../../data_sets/GreenlandGlacierNames/greenland-glacier-names-selection.shp</datasource>
             <title></title>
@@ -26734,91 +26481,25 @@
             </edittypes>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
-                    <symbol alpha="1" type="line" name="0">
-                        <layer pass="0" class="SimpleLine" locked="0">
-                            <prop k="capstyle" v="square"/>
-                            <prop k="customdash" v="5;2"/>
-                            <prop k="customdash_map_unit_scale" v="0,0"/>
-                            <prop k="customdash_unit" v="MM"/>
-                            <prop k="draw_inside_polygon" v="0"/>
-                            <prop k="joinstyle" v="bevel"/>
-                            <prop k="line_color" v="0,0,0,255"/>
-                            <prop k="line_style" v="solid"/>
-                            <prop k="line_width" v="0.26"/>
-                            <prop k="line_width_unit" v="MM"/>
-                            <prop k="offset" v="0"/>
+                    <symbol alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="255,255,255,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
-                            <prop k="use_custom_dash" v="0"/>
-                            <prop k="width_map_unit_scale" v="0,0"/>
-                        </layer>
-                        <layer pass="0" class="MarkerLine" locked="0">
-                            <prop k="interval" v="3"/>
-                            <prop k="interval_map_unit_scale" v="0,0"/>
-                            <prop k="interval_unit" v="MM"/>
-                            <prop k="offset" v="0"/>
-                            <prop k="offset_along_line" v="0"/>
-                            <prop k="offset_along_line_map_unit_scale" v="0,0"/>
-                            <prop k="offset_along_line_unit" v="MM"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="placement" v="lastvertex"/>
-                            <prop k="rotate" v="1"/>
-                            <symbol alpha="1" type="marker" name="@0@1">
-                                <layer pass="0" class="SimpleMarker" locked="0">
-                                    <prop k="angle" v="0"/>
-                                    <prop k="color" v="0,0,0,255"/>
-                                    <prop k="horizontal_anchor_point" v="1"/>
-                                    <prop k="name" v="filled_arrowhead"/>
-                                    <prop k="offset" v="2,0"/>
-                                    <prop k="offset_map_unit_scale" v="0,0"/>
-                                    <prop k="offset_unit" v="MM"/>
-                                    <prop k="outline_color" v="0,0,0,255"/>
-                                    <prop k="outline_style" v="solid"/>
-                                    <prop k="outline_width" v="0"/>
-                                    <prop k="outline_width_map_unit_scale" v="0,0"/>
-                                    <prop k="outline_width_unit" v="MM"/>
-                                    <prop k="scale_method" v="area"/>
-                                    <prop k="size" v="750"/>
-                                    <prop k="size_map_unit_scale" v="0,0"/>
-                                    <prop k="size_unit" v="MapUnit"/>
-                                    <prop k="vertical_anchor_point" v="1"/>
-                                </layer>
-                            </symbol>
-                        </layer>
-                        <layer pass="0" class="MarkerLine" locked="0">
-                            <prop k="interval" v="3"/>
-                            <prop k="interval_map_unit_scale" v="0,0"/>
-                            <prop k="interval_unit" v="MM"/>
-                            <prop k="offset" v="0"/>
-                            <prop k="offset_along_line" v="0"/>
-                            <prop k="offset_along_line_map_unit_scale" v="0,0"/>
-                            <prop k="offset_along_line_unit" v="MM"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="placement" v="firstvertex"/>
-                            <prop k="rotate" v="1"/>
-                            <symbol alpha="1" type="marker" name="@0@2">
-                                <layer pass="0" class="SimpleMarker" locked="0">
-                                    <prop k="angle" v="0"/>
-                                    <prop k="color" v="0,0,0,255"/>
-                                    <prop k="horizontal_anchor_point" v="1"/>
-                                    <prop k="name" v="line"/>
-                                    <prop k="offset" v="0,0"/>
-                                    <prop k="offset_map_unit_scale" v="0,0"/>
-                                    <prop k="offset_unit" v="MapUnit"/>
-                                    <prop k="outline_color" v="0,0,0,255"/>
-                                    <prop k="outline_style" v="solid"/>
-                                    <prop k="outline_width" v="20"/>
-                                    <prop k="outline_width_map_unit_scale" v="0,0"/>
-                                    <prop k="outline_width_unit" v="MapUnit"/>
-                                    <prop k="scale_method" v="area"/>
-                                    <prop k="size" v="2000"/>
-                                    <prop k="size_map_unit_scale" v="0,0"/>
-                                    <prop k="size_unit" v="MapUnit"/>
-                                    <prop k="vertical_anchor_point" v="1"/>
-                                </layer>
-                            </symbol>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="1"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
                         </layer>
                     </symbol>
                 </symbols>
@@ -26851,7 +26532,7 @@
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/distMapUnitMaxScale" value="0"/>
                 <property key="labeling/distMapUnitMinScale" value="0"/>
-                <property key="labeling/enabled" value="true"/>
+                <property key="labeling/enabled" value="false"/>
                 <property key="labeling/fieldName" value="name"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
@@ -26870,7 +26551,7 @@
                 <property key="labeling/fontWeight" value="50"/>
                 <property key="labeling/fontWordSpacing" value="0"/>
                 <property key="labeling/formatNumbers" value="false"/>
-                <property key="labeling/isExpression" value="false"/>
+                <property key="labeling/isExpression" value="true"/>
                 <property key="labeling/labelOffsetInMapUnits" value="true"/>
                 <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
                 <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
@@ -26887,7 +26568,7 @@
                 <property key="labeling/namedStyle" value="Regular"/>
                 <property key="labeling/obstacle" value="true"/>
                 <property key="labeling/placeDirectionSymbol" value="0"/>
-                <property key="labeling/placement" value="4"/>
+                <property key="labeling/placement" value="0"/>
                 <property key="labeling/placementFlags" value="0"/>
                 <property key="labeling/plussign" value="false"/>
                 <property key="labeling/preserveRotation" value="true"/>
@@ -30622,7 +30303,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>skill_copy20141222142105060</id>
             <datasource>./skill_250m_greenland_2008-2009_900m_best.shp</datasource>
             <title></title>
@@ -30675,10 +30356,12 @@
             </edittypes>
             <renderer-v2 attr="skill_0" symbollevels="0" type="graduatedSymbol">
                 <ranges>
-                    <range render="true" symbol="0" lower="0.000000" upper="0.010000" label=" &lt;0.01 "/>
-                    <range render="true" symbol="1" lower="0.010000" upper="0.350000" label=" 0.01 - 0.35 "/>
-                    <range render="true" symbol="2" lower="0.350000" upper="0.700000" label=" 0.35 - 0.70 "/>
-                    <range render="true" symbol="3" lower="0.700000" upper="1.000000" label=" 0.70 - 1.00 "/>
+                    <range render="true" symbol="0" lower="0.000000" upper="0.100000" label="&lt;0.1"/>
+                    <range render="true" symbol="1" lower="0.100000" upper="0.250000" label=" 0.10 - 0.25 "/>
+                    <range render="true" symbol="2" lower="0.250000" upper="0.500000" label=" 0.25 - 0.50 "/>
+                    <range render="true" symbol="3" lower="0.500000" upper="0.750000" label=" 0.50 - 0.75 "/>
+                    <range render="true" symbol="4" lower="0.750000" upper="1.000000" label=" 0.75 - &lt;1 "/>
+                    <range render="true" symbol="5" lower="1.000000" upper="2.000000" label="1"/>
                 </ranges>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -30705,7 +30388,7 @@
                     <symbol alpha="1" type="marker" name="1">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="color" v="253,201,128,255"/>
+                            <prop k="color" v="253,174,97,255"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
@@ -30726,7 +30409,7 @@
                     <symbol alpha="1" type="marker" name="2">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="color" v="195,229,134,255"/>
+                            <prop k="color" v="255,255,191,255"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
@@ -30747,6 +30430,27 @@
                     <symbol alpha="1" type="marker" name="3">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
+                            <prop k="color" v="166,217,106,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2.5"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="4">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
                             <prop k="color" v="26,150,65,255"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="circle"/>
@@ -30756,6 +30460,27 @@
                             <prop k="outline_color" v="0,0,0,255"/>
                             <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2.5"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="5">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="26,150,65,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0.5"/>
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -30789,11 +30514,433 @@
                         </layer>
                     </symbol>
                 </source-symbol>
-                <colorramp type="gradient" name="[source]">
-                    <prop k="color1" v="215,25,28,255"/>
-                    <prop k="color2" v="26,150,65,255"/>
-                    <prop k="discrete" v="0"/>
-                    <prop k="stops" v="0.25;253,174,97,255:0.5;255,255,192,255:0.75;166,217,106,255"/>
+                <colorramp type="colorbrewer" name="[source]">
+                    <prop k="colors" v="5"/>
+                    <prop k="schemeName" v="RdYlGn"/>
+                </colorramp>
+                <invertedcolorramp value="0"/>
+                <mode name="equal"/>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+                <labelformat format=" %1 - %2 " trimtrailingzeroes="false" decimalplaces="2"/>
+            </renderer-v2>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/angleOffset" value="0"/>
+                <property key="labeling/blendMode" value="0"/>
+                <property key="labeling/bufferBlendMode" value="0"/>
+                <property key="labeling/bufferColorA" value="255"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferDraw" value="false"/>
+                <property key="labeling/bufferJoinStyle" value="64"/>
+                <property key="labeling/bufferNoFill" value="false"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/bufferSizeInMapUnits" value="false"/>
+                <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/bufferTransp" value="0"/>
+                <property key="labeling/centroidInside" value="false"/>
+                <property key="labeling/centroidWhole" value="false"/>
+                <property key="labeling/decimals" value="3"/>
+                <property key="labeling/displayAll" value="false"/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/distMapUnitMaxScale" value="0"/>
+                <property key="labeling/distMapUnitMinScale" value="0"/>
+                <property key="labeling/enabled" value="false"/>
+                <property key="labeling/fieldName" value=""/>
+                <property key="labeling/fontBold" value="false"/>
+                <property key="labeling/fontCapitals" value="0"/>
+                <property key="labeling/fontFamily" value=".Lucida Grande UI"/>
+                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontLetterSpacing" value="0"/>
+                <property key="labeling/fontLimitPixelSize" value="false"/>
+                <property key="labeling/fontMaxPixelSize" value="10000"/>
+                <property key="labeling/fontMinPixelSize" value="3"/>
+                <property key="labeling/fontSize" value="13"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="50"/>
+                <property key="labeling/fontWordSpacing" value="0"/>
+                <property key="labeling/formatNumbers" value="false"/>
+                <property key="labeling/isExpression" value="true"/>
+                <property key="labeling/labelOffsetInMapUnits" value="true"/>
+                <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+                <property key="labeling/limitNumLabels" value="false"/>
+                <property key="labeling/maxCurvedCharAngleIn" value="20"/>
+                <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
+                <property key="labeling/maxNumLabels" value="2000"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multilineAlign" value="0"/>
+                <property key="labeling/multilineHeight" value="1"/>
+                <property key="labeling/namedStyle" value=""/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placeDirectionSymbol" value="0"/>
+                <property key="labeling/placement" value="0"/>
+                <property key="labeling/placementFlags" value="0"/>
+                <property key="labeling/plussign" value="false"/>
+                <property key="labeling/preserveRotation" value="true"/>
+                <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/quadOffset" value="4"/>
+                <property key="labeling/repeatDistance" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+                <property key="labeling/repeatDistanceUnit" value="1"/>
+                <property key="labeling/reverseDirectionSymbol" value="false"/>
+                <property key="labeling/rightDirectionSymbol" value=">"/>
+                <property key="labeling/scaleMax" value="10000000"/>
+                <property key="labeling/scaleMin" value="1"/>
+                <property key="labeling/scaleVisibility" value="false"/>
+                <property key="labeling/shadowBlendMode" value="6"/>
+                <property key="labeling/shadowColorB" value="0"/>
+                <property key="labeling/shadowColorG" value="0"/>
+                <property key="labeling/shadowColorR" value="0"/>
+                <property key="labeling/shadowDraw" value="false"/>
+                <property key="labeling/shadowOffsetAngle" value="135"/>
+                <property key="labeling/shadowOffsetDist" value="1"/>
+                <property key="labeling/shadowOffsetGlobal" value="true"/>
+                <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowOffsetUnits" value="1"/>
+                <property key="labeling/shadowRadius" value="1.5"/>
+                <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+                <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowRadiusUnits" value="1"/>
+                <property key="labeling/shadowScale" value="100"/>
+                <property key="labeling/shadowTransparency" value="30"/>
+                <property key="labeling/shadowUnder" value="0"/>
+                <property key="labeling/shapeBlendMode" value="0"/>
+                <property key="labeling/shapeBorderColorA" value="255"/>
+                <property key="labeling/shapeBorderColorB" value="128"/>
+                <property key="labeling/shapeBorderColorG" value="128"/>
+                <property key="labeling/shapeBorderColorR" value="128"/>
+                <property key="labeling/shapeBorderWidth" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeBorderWidthUnits" value="1"/>
+                <property key="labeling/shapeDraw" value="false"/>
+                <property key="labeling/shapeFillColorA" value="255"/>
+                <property key="labeling/shapeFillColorB" value="255"/>
+                <property key="labeling/shapeFillColorG" value="255"/>
+                <property key="labeling/shapeFillColorR" value="255"/>
+                <property key="labeling/shapeJoinStyle" value="64"/>
+                <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeOffsetUnits" value="1"/>
+                <property key="labeling/shapeOffsetX" value="0"/>
+                <property key="labeling/shapeOffsetY" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeRadiiUnits" value="1"/>
+                <property key="labeling/shapeRadiiX" value="0"/>
+                <property key="labeling/shapeRadiiY" value="0"/>
+                <property key="labeling/shapeRotation" value="0"/>
+                <property key="labeling/shapeRotationType" value="0"/>
+                <property key="labeling/shapeSVGFile" value=""/>
+                <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeSizeType" value="0"/>
+                <property key="labeling/shapeSizeUnits" value="1"/>
+                <property key="labeling/shapeSizeX" value="0"/>
+                <property key="labeling/shapeSizeY" value="0"/>
+                <property key="labeling/shapeTransparency" value="0"/>
+                <property key="labeling/shapeType" value="0"/>
+                <property key="labeling/textColorA" value="255"/>
+                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
+                <property key="labeling/textTransp" value="0"/>
+                <property key="labeling/upsidedownLabels" value="0"/>
+                <property key="labeling/wrapChar" value=""/>
+                <property key="labeling/xOffset" value="0"/>
+                <property key="labeling/yOffset" value="0"/>
+            </customproperties>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>name</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name=".Helvetica Neue DeskInterface"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="obs_flux">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="obs_flux_e">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="skill_0">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="rmsd_0">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="sigma_0">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="exp_flux_0">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>skill_copy20150117173340718</id>
+            <datasource>./skill_250m_greenland_2008-2009_900m_best.shp</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>skill-legend</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="System">ogr</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="obs_flux">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="obs_flux_e">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="skill_0">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="rmsd_0">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="sigma_0">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="exp_flux_0">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <renderer-v2 attr="skill_0" symbollevels="0" type="graduatedSymbol">
+                <ranges>
+                    <range render="true" symbol="0" lower="0.000000" upper="0.100000" label="&lt;0.1"/>
+                    <range render="true" symbol="1" lower="0.100000" upper="0.250000" label=" 0.10 - 0.25 "/>
+                    <range render="true" symbol="2" lower="0.250000" upper="0.500000" label=" 0.25 - 0.50 "/>
+                    <range render="true" symbol="3" lower="0.500000" upper="0.750000" label=" 0.50 - 0.75 "/>
+                    <range render="true" symbol="4" lower="0.750000" upper="1.000000" label=" 0.75 - &lt;1 "/>
+                    <range render="true" symbol="5" lower="1.000000" upper="2.000000" label="1"/>
+                </ranges>
+                <symbols>
+                    <symbol alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="215,25,28,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="1"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="1">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="253,174,97,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="1"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="2">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="255,255,191,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="1"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="3">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="166,217,106,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="1"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="4">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="26,150,65,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="1"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="5">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="26,150,65,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0.25"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="1"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <source-symbol>
+                    <symbol alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="248,166,89,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="1"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                </source-symbol>
+                <colorramp type="colorbrewer" name="[source]">
+                    <prop k="colors" v="5"/>
+                    <prop k="schemeName" v="RdYlGn"/>
                 </colorramp>
                 <invertedcolorramp value="0"/>
                 <mode name="equal"/>
@@ -31005,53 +31152,6 @@
             </edittypes>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>sliding_r20141022152859356</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/green-hydro/run/900m_const_ctrl/processed/g900m_const_ctrl_e_1.25_ppq_0.5_tefo_0.02_ssa_n_3.25_philow_5.0_hydro_null_100a.nc":sliding_r</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>sliding_r 900m MO14</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>100005</srsid>
-                    <srid>0</srid>
-                    <authid>USER:100005</authid>
-                    <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
-                    <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym></ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="1"/>
-            </noData>
-            <pipe>
-                <rasterrenderer opacity="1" alphaBand="0" classificationMax="1" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
-                    <rasterTransparency/>
-                    <rastershader>
-                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
-                            <item alpha="255" value="0" label="0.000000" color="#edf8fb"/>
-                            <item alpha="255" value="0.25" label="0.250000" color="#b3cde3"/>
-                            <item alpha="255" value="0.5" label="0.500000" color="#8c96c6"/>
-                            <item alpha="255" value="0.75" label="0.750000" color="#8856a7"/>
-                            <item alpha="255" value="1" label="1.000000" color="#810f7c"/>
-                        </colorrampshader>
-                    </rastershader>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>surface_150m_hs20140909191930698</id>
             <datasource>../../data_sets/mc_beds/surface_150m_hs.tif</datasource>
             <title></title>
@@ -31130,81 +31230,6 @@
             </noData>
             <pipe>
                 <rasterrenderer opacity="1" alphaBand="0" classificationMax="3200" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
-                    <rasterTransparency/>
-                    <rastershader>
-                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
-                            <item alpha="255" value="0" label="0.000000" color="#0a0079"/>
-                            <item alpha="255" value="99.84" label="99.840000" color="#280096"/>
-                            <item alpha="255" value="200" label="200.000000" color="#1405af"/>
-                            <item alpha="255" value="300.16" label="300.160000" color="#1405af"/>
-                            <item alpha="255" value="400" label="400.000000" color="#0019d4"/>
-                            <item alpha="255" value="499.84" label="499.840000" color="#0028e0"/>
-                            <item alpha="255" value="600" label="600.000000" color="#1a66f0"/>
-                            <item alpha="255" value="700.16" label="700.160000" color="#1a66f0"/>
-                            <item alpha="255" value="800" label="800.000000" color="#19afff"/>
-                            <item alpha="255" value="899.84" label="899.840000" color="#32beff"/>
-                            <item alpha="255" value="1000" label="1000.000000" color="#44caff"/>
-                            <item alpha="255" value="1100.16" label="1100.160000" color="#44caff"/>
-                            <item alpha="255" value="1200" label="1200.000000" color="#6aebe1"/>
-                            <item alpha="255" value="1299.84" label="1299.840000" color="#7cebc8"/>
-                            <item alpha="255" value="1400" label="1400.000000" color="#8aecae"/>
-                            <item alpha="255" value="1500.16" label="1500.160000" color="#8aecae"/>
-                            <item alpha="255" value="1600" label="1600.000000" color="#cdffa2"/>
-                            <item alpha="255" value="1699.84" label="1699.840000" color="#dff58d"/>
-                            <item alpha="255" value="1800" label="1800.000000" color="#f0ec79"/>
-                            <item alpha="255" value="1900.16" label="1900.160000" color="#f0ec79"/>
-                            <item alpha="255" value="2000" label="2000.000000" color="#ffbd57"/>
-                            <item alpha="255" value="2099.84" label="2099.840000" color="#ffa045"/>
-                            <item alpha="255" value="2200" label="2200.000000" color="#f4754b"/>
-                            <item alpha="255" value="2300.16" label="2300.160000" color="#f4754b"/>
-                            <item alpha="255" value="2400" label="2400.000000" color="#ff5a5a"/>
-                            <item alpha="255" value="2499.84" label="2499.840000" color="#ff7c7c"/>
-                            <item alpha="255" value="2600" label="2600.000000" color="#ff9e9e"/>
-                            <item alpha="255" value="2700.16" label="2700.160000" color="#ff9e9e"/>
-                            <item alpha="255" value="2800" label="2800.000000" color="#ffc4c4"/>
-                            <item alpha="255" value="2899.84" label="2899.840000" color="#ffd7d7"/>
-                            <item alpha="255" value="3000" label="3000.000000" color="#ffebeb"/>
-                            <item alpha="255" value="3100.16" label="3100.160000" color="#ffebeb"/>
-                            <item alpha="255" value="3200" label="3200.000000" color="#ffffff"/>
-                        </colorrampshader>
-                    </rastershader>
-                </rasterrenderer>
-                <brightnesscontrast brightness="0" contrast="0"/>
-                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-                <rasterresampler maxOversampling="2"/>
-            </pipe>
-            <blendMode>0</blendMode>
-        </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-            <id>thickness20141212171847057</id>
-            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/data_sets/mc_beds/pism_Greenland_450m_mcb_jpl_v1.1.nc":thickness</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>thickness 450m new</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
-                    <srsid>1371</srsid>
-                    <srid>3413</srid>
-                    <authid>EPSG:3413</authid>
-                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
-                    <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="identify/format" value="Value"/>
-            </customproperties>
-            <provider>gdal</provider>
-            <noData>
-                <noDataList bandNo="1" useSrcNoData="1"/>
-            </noData>
-            <pipe>
-                <rasterrenderer opacity="1" alphaBand="-1" classificationMax="3200" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
                     <rasterTransparency/>
                     <rastershader>
                         <colorrampshader colorRampType="INTERPOLATED" clip="0">
@@ -46787,6 +46812,7 @@
                 <value>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_speed_contours_100ma20141022145151843</value>
                 <value>g900m_const_old_bed_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_speed_contours20140920153446695</value>
                 <value>greenland_flux_gates20141202181100760</value>
+                <value>greenland_flux_gates_250m20150117153710708</value>
                 <value>greenland_glacier_names20140916172904908</value>
                 <value>greenland_glacier_names_selection20140918145826595</value>
                 <value>greenland_glacier_names_selection_copy20141128151435374</value>
@@ -46802,6 +46828,7 @@
                 <value>skill_copy20141222142105060</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
+                <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
@@ -46885,6 +46912,7 @@
                 <value>0</value>
                 <value>0</value>
                 <value>0</value>
+                <value>0</value>
             </LayerSnappingToleranceUnitList>
             <LayerSnapToList type="QStringList">
                 <value>to_vertex_and_segment</value>
@@ -46927,8 +46955,10 @@
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
             </LayerSnapToList>
             <LayerSnappingToleranceList type="QStringList">
+                <value>0.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
