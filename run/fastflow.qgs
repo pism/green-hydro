@@ -15,13 +15,13 @@
         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Petermann_starting_points20141230134813935" name="Petermann_starting_points">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="skill_copy20141222142105060" name="skill">
+        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="skill_copy20141222142105060" name="skill">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="skill_copy20150117173340718" name="skill-legend">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="greenland_glacier_names_selection20140918145826595" name="greenland-glacier-names-selection">
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="greenland_glacier_names_selection20140918145826595" name="greenland-glacier-names-selection">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="greenland_mod100_epsg3413_geojson20141202115642273" name="greenland_mod100_epsg3413.geojson">
@@ -126,11 +126,8 @@
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Flux Gates">
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Flux Gates">
             <customproperties/>
-            <layer-tree-layer expanded="1" checked="Qt::Checked" id="greenland_flux_gates_250m20150117153710708" name="greenland-flux-gates-250m">
-                <customproperties/>
-            </layer-tree-layer>
             <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="greenland_flux_gates20141202181100760" name="greenland-flux-gates">
                 <customproperties/>
             </layer-tree-layer>
@@ -243,7 +240,7 @@
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="speeds">
+        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="speeds">
             <customproperties/>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20141001195824676" name="velsurf_mag 1500m MO14 RCP45 q=0.5">
                 <customproperties/>
@@ -278,7 +275,7 @@
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140920153721559" name="velsurf_mag 1200m MO14">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="0" checked="Qt::Checked" id="velsurf_mag20140920122835449" name="velsurf_mag 900m MO14">
+            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140920122835449" name="velsurf_mag 900m MO14">
                 <customproperties/>
             </layer-tree-layer>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140920153100571" name="velsurf_mag 900m BA01">
@@ -296,7 +293,7 @@
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag_450m_MO14_copy20141124114118075" name="velsurf_mag 450m MO14 copy">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Greenland_150m_2008_2009_velsurf_mag_thkmask20141122150631942" name="Greenland_150m_2008-2009_velsurf_mag_thkmask">
+            <layer-tree-layer expanded="0" checked="Qt::Checked" id="Greenland_150m_2008_2009_velsurf_mag_thkmask20141122150631942" name="Greenland_150m_2008-2009_velsurf_mag_thkmask">
                 <customproperties/>
             </layer-tree-layer>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140918150111433" name="velsurf_mag obs 2008-2009 150m">
@@ -539,7 +536,6 @@
             <item>Petermann_flowlines20141230135224247</item>
             <item>Petermann_flowlines20141231110646174</item>
             <item>Petermann_Gletscher_flowline_epsg341320141231111700165</item>
-            <item>greenland_flux_gates_250m20150117153710708</item>
             <item>skill_copy20150117173340718</item>
         </custom-order>
     </layer-tree-canvas>
@@ -564,9 +560,9 @@
                 <legendlayerfile isInOverview="0" layerid="Petermann_starting_points20141230134813935" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="skill" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="skill" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="skill_copy20141222142105060" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="skill_copy20141222142105060" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="skill-legend" showFeatureCount="0">
@@ -574,9 +570,9 @@
                 <legendlayerfile isInOverview="0" layerid="skill_copy20150117173340718" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="greenland-glacier-names-selection" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="greenland-glacier-names-selection" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="greenland_glacier_names_selection20140918145826595" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="greenland_glacier_names_selection20140918145826595" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="greenland_mod100_epsg3413.geojson" showFeatureCount="0">
@@ -740,12 +736,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Flux Gates">
-            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="greenland-flux-gates-250m" showFeatureCount="0">
-                <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="greenland_flux_gates_250m20150117153710708" visible="1"/>
-                </filegroup>
-            </legendlayer>
+        <legendgroup open="true" checked="Qt::Unchecked" name="Flux Gates">
             <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="greenland-flux-gates" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="greenland_flux_gates20141202181100760" visible="0"/>
@@ -911,7 +902,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::PartiallyChecked" name="speeds">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="speeds">
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 1500m MO14 RCP45 q=0.5" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="velsurf_mag20141001195824676" visible="0"/>
@@ -967,9 +958,9 @@
                     <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920153721559" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="velsurf_mag 900m MO14" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 900m MO14" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920122835449" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="velsurf_mag20140920122835449" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 900m BA01" showFeatureCount="0">
@@ -997,9 +988,9 @@
                     <legendlayerfile isInOverview="0" layerid="velsurf_mag_450m_MO14_copy20141124114118075" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Greenland_150m_2008-2009_velsurf_mag_thkmask" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="Greenland_150m_2008-2009_velsurf_mag_thkmask" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="Greenland_150m_2008_2009_velsurf_mag_thkmask20141122150631942" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="Greenland_150m_2008_2009_velsurf_mag_thkmask20141122150631942" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag obs 2008-2009 150m" showFeatureCount="0">
@@ -4979,7 +4970,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="101">
+    <projectlayers layercount="100">
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>2003_200920141201134459345</id>
             <datasource>file:../../data_sets/GreenlandICESat/Sorensen/2003_2009.txt?type=csv&amp;delimiter=,%20&amp;skipLines=5&amp;useHeader=No&amp;skipEmptyFields=Yes&amp;xField=field_1&amp;yField=field_2&amp;spatialIndex=yes&amp;subsetIndex=no&amp;watchFile=yes</datasource>
@@ -26079,125 +26070,6 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>greenland_flux_gates_250m20150117153710708</id>
-            <datasource>../../data_sets/GreenlandFluxGates/greenland-flux-gates-250m.shp</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>greenland-flux-gates-250m</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
-                    <srsid>1371</srsid>
-                    <srid>3413</srid>
-                    <authid>EPSG:3413</authid>
-                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
-                    <projectionacronym>stere</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <provider encoding="System">ogr</provider>
-            <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
-            <vectorjoins/>
-            <expressionfields/>
-            <edittypes>
-                <edittype widgetv2type="TextEdit" name="id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="name">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="length">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="clon">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="clat">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-            </edittypes>
-            <renderer-v2 symbollevels="0" type="singleSymbol">
-                <symbols>
-                    <symbol alpha="1" type="line" name="0">
-                        <layer pass="0" class="SimpleLine" locked="0">
-                            <prop k="capstyle" v="square"/>
-                            <prop k="customdash" v="5;2"/>
-                            <prop k="customdash_map_unit_scale" v="0,0"/>
-                            <prop k="customdash_unit" v="MM"/>
-                            <prop k="draw_inside_polygon" v="0"/>
-                            <prop k="joinstyle" v="bevel"/>
-                            <prop k="line_color" v="80,75,215,255"/>
-                            <prop k="line_style" v="solid"/>
-                            <prop k="line_width" v="0.26"/>
-                            <prop k="line_width_unit" v="MM"/>
-                            <prop k="offset" v="0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="use_custom_dash" v="0"/>
-                            <prop k="width_map_unit_scale" v="0,0"/>
-                        </layer>
-                    </symbol>
-                </symbols>
-                <rotation/>
-                <sizescale scalemethod="area"/>
-            </renderer-v2>
-            <customproperties/>
-            <blendMode>0</blendMode>
-            <featureBlendMode>0</featureBlendMode>
-            <layerTransparency>0</layerTransparency>
-            <displayfield>name</displayfield>
-            <label>0</label>
-            <labelattributes>
-                <label fieldname="" text="Label"/>
-                <family fieldname="" name=".Lucida Grande UI"/>
-                <size fieldname="" units="pt" value="12"/>
-                <bold fieldname="" on="0"/>
-                <italic fieldname="" on="0"/>
-                <underline fieldname="" on="0"/>
-                <strikeout fieldname="" on="0"/>
-                <color fieldname="" red="0" blue="0" green="0"/>
-                <x fieldname=""/>
-                <y fieldname=""/>
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-                <angle fieldname="" value="0" auto="0"/>
-                <alignment fieldname="" value="center"/>
-                <buffercolor fieldname="" red="255" blue="255" green="255"/>
-                <buffersize fieldname="" units="pt" value="1"/>
-                <bufferenabled fieldname="" on=""/>
-                <multilineenabled fieldname="" on=""/>
-                <selectedonly on=""/>
-            </labelattributes>
-            <editform>.</editform>
-            <editforminit></editforminit>
-            <featformsuppress>0</featformsuppress>
-            <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
-            <excludeAttributesWMS/>
-            <excludeAttributesWFS/>
-            <attributeactions/>
-            <edittypes>
-                <edittype widgetv2type="TextEdit" name="id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="name">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="length">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="clon">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="clat">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-            </edittypes>
-        </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>greenland_glacier_names20140916172904908</id>
             <datasource>../../data_sets/GreenlandGlacierNames/greenland-glacier-names.shp</datasource>
@@ -46812,7 +46684,6 @@
                 <value>g900m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_speed_contours_100ma20141022145151843</value>
                 <value>g900m_const_old_bed_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_speed_contours20140920153446695</value>
                 <value>greenland_flux_gates20141202181100760</value>
-                <value>greenland_flux_gates_250m20150117153710708</value>
                 <value>greenland_glacier_names20140916172904908</value>
                 <value>greenland_glacier_names_selection20140918145826595</value>
                 <value>greenland_glacier_names_selection_copy20141128151435374</value>
@@ -46826,6 +46697,7 @@
                 <value>jakosites20140927123349265</value>
                 <value>petermann_flux_gates20141202132333501</value>
                 <value>skill_copy20141222142105060</value>
+                <value>skill_copy20150117173340718</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
                 <value>disabled</value>
