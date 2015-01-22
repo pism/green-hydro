@@ -185,6 +185,7 @@ COARSEVGRID="-Mz 101 -Mbz 11 -z_spacing equal ${VDIMS} ${COARSESKIP}"
 MEDIUMVGRID="-Mz 201 -Mbz 21 -z_spacing equal ${VDIMS} ${MEDIUMSKIP}"
 FINEVGRID="-Mz 201 -Mbz 21 -z_spacing equal ${VDIMS} ${FINESKIP}"
 FINESTVGRID="-Mz 401 -Mbz 41 -z_spacing equal ${VDIMS} ${FINESTSKIP}"
+HIGHRESPETSC=""
 if [ "$4" == "36000" ]; then
   dx=$4
   myMx=44
@@ -235,11 +236,13 @@ elif [ "$4" == "600" ]; then
   myMx=2640
   myMy=4560
   vgrid=$FINESTVGRID
+  HIGHRESPETSC="-ssafd_ksp_type gmres -ssafd_ksp_norm_type unpreconditioned -ssafd_ksp_pc_side right -ssafd_pc_type asm -ssafd_sub_pc_type lu"
 elif [ "$4" == "450" ]; then
   dx=$4
   myMx=3520
   myMy=6080
   vgrid=$FINESTVGRID
+  HIGHRESPETSC="-ssafd_ksp_type gmres -ssafd_ksp_norm_type unpreconditioned -ssafd_ksp_pc_side right -ssafd_pc_type asm -ssafd_sub_pc_type lu"
 else
   echo "invalid fourth argument: must be in $GRIDLIST"
   exit
@@ -504,7 +507,7 @@ else
 fi
 
 # construct command
-cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG $AGE -boot_file $INNAME -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
+cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG $AGE -boot_file $INNAME -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE $HIGHRESPETSC -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
 echo
 $PISM_DO $cmd
 
