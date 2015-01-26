@@ -14,12 +14,14 @@ Do
 Run a grid sequencing like in Chapter 1 of User's Manual to get
 `g2km_gridseq.nc`.  Then do
 
-    $ ./preprocess.sh g2km_gridseq.nc g2km-init.nc
-    $ ./run-decoupled.sh 5 g2km-init.nc                  # 5 year runs
+    $ ./run-decoupled.sh 5 g2km_gridseq.nc                  # 5 year runs
+
+This run produces four files of importance, namely `routing-decoupled.nc`,
+`ex_routing-decoupled.nc`, `distributed-decoupled.nc`, `ex_distributed-decoupled.nc`.
 
 To generate figures do:
 
-    $ ./allfigs.sh
+    $ ./allfigs.sh g2km_gridseq
 
 Then move all *.png into hydrolakes/figs.
 
