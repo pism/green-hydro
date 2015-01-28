@@ -225,8 +225,8 @@ for E in 1.25; do
                 echo "# $PLOT written"
                 echo
 
-                PARAM_TTPHI="15,15,-700.0,700.0"
-                EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_const_15_hydro_${HYDRO}
+                PARAM_TTPHI="15,20,-3000,-2900.0"
+                EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_const_20_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
                 POST=do_g${GRID}m_${EXPERIMENT}_post.sh
                 rm -f $SCRIPT $$POST
