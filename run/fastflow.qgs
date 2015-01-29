@@ -18,10 +18,10 @@
         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="statistics_velsurf_normal_250m_greenland_2008_2009_1500m_delta_002_e_12520150122173843431" name="statistics_velsurf_normal_250m_greenland_2008-2009_1500m_delta_002_e_125">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="statistics_velsurf_normal_250m_greenland_2008_2009_m_grid_mo14_flow20150120190036088" name="statistics best flow">
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="statistics_velsurf_normal_250m_greenland_2008_2009_m_grid_mo14_flow20150120190036088" name="statistics best flow">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="statistics_best_flow_copy20150121125053013" name="statistics best flow legend">
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="statistics_best_flow_copy20150121125053013" name="statistics best flow legend">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="greenland_glacier_names_selection20140918145826595" name="greenland-glacier-names-selection">
@@ -136,7 +136,7 @@
             </layer-tree-layer>
             <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="best flow">
                 <customproperties/>
-                <layer-tree-layer expanded="0" checked="Qt::Checked" id="velsurf_mag20150121080758874" name="velsurf_mag 4500m MO14">
+                <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20150121080758874" name="velsurf_mag 4500m MO14">
                     <customproperties/>
                 </layer-tree-layer>
                 <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20150121080707634" name="velsurf_mag 3600m MO14">
@@ -151,7 +151,7 @@
                 <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20150121080519833" name="velsurf_mag 1200m MO14">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20150121080433939" name="velsurf_mag 900m MO14">
+                <layer-tree-layer expanded="0" checked="Qt::Checked" id="velsurf_mag20150121080433939" name="velsurf_mag 900m MO14">
                     <customproperties/>
                 </layer-tree-layer>
             </layer-tree-group>
@@ -185,7 +185,7 @@
                     <customproperties/>
                 </layer-tree-layer>
             </layer-tree-group>
-            <layer-tree-group expanded="0" checked="Qt::Unchecked" name="observed">
+            <layer-tree-group expanded="1" checked="Qt::Unchecked" name="observed">
                 <customproperties/>
                 <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Greenland_150m_2008_2009_velsurf_mag_thkmask20141122150631942" name="Greenland_150m_2008-2009_velsurf_mag_thkmask">
                     <customproperties/>
@@ -207,7 +207,7 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="topg20140919123515112" name="topg">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="surface_150m_hs20140909191930698" name="surface_150m_hs">
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="surface_150m_hs20140909191930698" name="surface_150m_hs">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="cresis_mcb20141002172647129" name="cresis-mcb">
@@ -222,7 +222,7 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20150122103744319" name="bed">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="old_bed_hs20141014120435686" name="old_bed_hs">
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="old_bed_hs20141014120435686" name="old_bed_hs">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20140930085612863" name="bed">
@@ -231,7 +231,7 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Greenland_mc_bed_v120140618125656554" name="Greenland_mc_bed_v1">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="basal topography">
+        <layer-tree-group expanded="0" checked="Qt::Unchecked" name="basal topography">
             <customproperties/>
             <layer-tree-group expanded="1" checked="Qt::Unchecked" name="4500m">
                 <customproperties/>
@@ -289,10 +289,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-2465685.01920614577829838</xmin>
-            <ymin>-3046504.48143405886366963</ymin>
-            <xmax>2040307.29833546723239124</xmax>
-            <ymax>-106504.48143405886366963</ymax>
+            <xmin>219392.25809158582706004</xmin>
+            <ymin>-2688850.87703235819935799</ymin>
+            <xmax>260706.18786944274324924</xmax>
+            <ymax>-2650711.18535800091922283</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -333,8 +333,8 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill_copy20150117173340718"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141203144633743"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20141229121905214"/>
-            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LC80090112014216LGN00_B820141211180950029"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="MODISGreenland250mclean_cut20140521183412526"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LC80090112014216LGN00_B820141211180950029"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20150122103744319"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20150121080606153"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20150121080758874"/>
@@ -399,6 +399,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag_450m_MO14_copy20141124114059731"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_flux_gates_250m20150117153710708"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill_velsurf_normal_250m_greenland_2008_2009_900m_best20150118154705262"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100001" srcDatumTransform="-1" destDatumTransform="-1" layerid="topg20140919123515112"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="g450m_const_ctrl_e_1_25_ppq_0_5_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_20a_temppa_base20141209163518121"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_andy20150121105218321"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_flux_gates20141202181100760"/>
@@ -519,13 +520,13 @@
                 <legendlayerfile isInOverview="0" layerid="statistics_velsurf_normal_250m_greenland_2008_2009_1500m_delta_002_e_12520150122173843431" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="statistics best flow" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="statistics_velsurf_normal_250m_greenland_2008_2009_m_grid_mo14_flow20150120190036088" visible="0"/>
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="statistics best flow" showFeatureCount="0">
+            <filegroup open="false" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="statistics_velsurf_normal_250m_greenland_2008_2009_m_grid_mo14_flow20150120190036088" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="statistics best flow legend" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="statistics best flow legend" showFeatureCount="0">
+            <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="statistics_best_flow_copy20150121125053013" visible="0"/>
             </filegroup>
         </legendlayer>
@@ -699,9 +700,9 @@
                 </filegroup>
             </legendlayer>
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="best flow">
-                <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="velsurf_mag 4500m MO14" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 4500m MO14" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="velsurf_mag20150121080758874" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="velsurf_mag20150121080758874" visible="0"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 3600m MO14" showFeatureCount="0">
@@ -724,9 +725,9 @@
                         <legendlayerfile isInOverview="0" layerid="velsurf_mag20150121080519833" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag 900m MO14" showFeatureCount="0">
+                <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="velsurf_mag 900m MO14" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="velsurf_mag20150121080433939" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="velsurf_mag20150121080433939" visible="1"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
@@ -777,7 +778,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::Unchecked" name="observed">
+            <legendgroup open="true" checked="Qt::Unchecked" name="observed">
                 <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Greenland_150m_2008-2009_velsurf_mag_thkmask" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="Greenland_150m_2008_2009_velsurf_mag_thkmask20141122150631942" visible="0"/>
@@ -810,9 +811,9 @@
                 <legendlayerfile isInOverview="0" layerid="topg20140919123515112" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="surface_150m_hs" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="surface_150m_hs" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="surface_150m_hs20140909191930698" visible="0"/>
+                <legendlayerfile isInOverview="0" layerid="surface_150m_hs20140909191930698" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="cresis-mcb" showFeatureCount="0">
@@ -835,9 +836,9 @@
                 <legendlayerfile isInOverview="0" layerid="bed20150122103744319" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="old_bed_hs" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="old_bed_hs" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="old_bed_hs20141014120435686" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="old_bed_hs20141014120435686" visible="0"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed" showFeatureCount="0">
@@ -850,7 +851,7 @@
                 <legendlayerfile isInOverview="0" layerid="Greenland_mc_bed_v120140618125656554" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendgroup open="true" checked="Qt::Unchecked" name="basal topography">
+        <legendgroup open="false" checked="Qt::Unchecked" name="basal topography">
             <legendgroup open="true" checked="Qt::Unchecked" name="4500m">
                 <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed 4500m" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
@@ -1103,7 +1104,7 @@
         </Composition>
     </Composer>
     <Composer title="greenland-overview" visible="0">
-        <Composition gridVisible="0" printResolution="600" paperWidth="140" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="230" smartGuides="1" printAsRaster="0" generateWorldFile="0">
+        <Composition gridVisible="0" printResolution="300" paperWidth="140" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="230" smartGuides="1" printAsRaster="0" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
                     <prop k="border_width_map_unit_scale" v="0,0"/>
@@ -1187,7 +1188,7 @@
                     </symbol>
                 </ComposerMapOverview>
                 <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="3.68145" positionMode="0" positionLock="false" x="-9.5" y="0" visibility="1" zValue="1" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="159" outlineWidth="0.3" excludeFromExports="0" uuid="{e7a9ad06-bac7-4455-9f4b-aa04a72fe4fa}" height="230.15" itemRotation="0" frame="false" pagex="-9.5">
+                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="2.62097" positionMode="0" positionLock="false" x="-9.5" y="0" visibility="1" zValue="1" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="159" outlineWidth="0.3" excludeFromExports="0" uuid="{e7a9ad06-bac7-4455-9f4b-aa04a72fe4fa}" height="230.15" itemRotation="0" frame="false" pagex="-9.5">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -4891,7 +4892,7 @@
                     </markerStyle>
                 </ComposerMapGrid>
                 <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="5.95858" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="150" outlineWidth="0.3" excludeFromExports="0" uuid="{ca4df10f-a75b-4c41-907b-ff0f7c5b0aa4}" height="45" itemRotation="0" frame="false" pagex="0">
+                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="5.97633" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="150" outlineWidth="0.3" excludeFromExports="0" uuid="{ca4df10f-a75b-4c41-907b-ff0f7c5b0aa4}" height="45" itemRotation="0" frame="false" pagex="0">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -5047,11 +5048,57 @@
                 </layer>
             </symbol>
             <ComposerMap mapRotation="0" keepLayerSet="true" id="1" previewMode="Cache" drawCanvasItems="true">
-                <Extent ymin="-3274846.51292824745178223" xmin="-840000.0008568000048399" ymax="-725153.48707175115123391" xmax="840000.0008568000048399"/>
+                <Extent ymin="-3274846.51292824745178223" xmin="-840000.0008568000048399" ymax="-725153.86018115375190973" xmax="840000.0008568000048399"/>
                 <LayerSet>
                     <Layer>MODISGreenland250mclean_cut20140521183412526</Layer>
                 </LayerSet>
                 <Grid/>
+                <ComposerMapGrid leftAnnotationDirection="0" annotationFont=".Helvetica Neue DeskInterface,13,-1,5,50,0,0,0,0,0" gridFramePenThickness="0.5" showAnnotation="0" bottomAnnotationDirection="0" bottomAnnotationPosition="1" name="Grid 1" gridStyle="0" intervalX="0" intervalY="0" gridFrameStyle="0" rightAnnotationPosition="1" topAnnotationDirection="0" leftAnnotationPosition="1" blendMode="0" show="0" frameFillColor1="255,255,255,255" gridFrameWidth="2" frameFillColor2="0,0,0,255" annotationFontColor="0,0,0,255" gridFrameSideFlags="15" gridFramePenColor="0,0,0,255" offsetX="0" annotationPrecision="3" offsetY="0" frameAnnotationDistance="1" unit="0" uuid="{9d02c638-c209-4d62-8924-159f3700d894}" topAnnotationPosition="1" rightAnnotationDirection="0" annotationFormat="0" crossLength="3">
+                    <lineStyle>
+                        <symbol alpha="1" type="line" name="">
+                            <layer pass="0" class="SimpleLine" locked="0">
+                                <prop k="capstyle" v="square"/>
+                                <prop k="customdash" v="5;2"/>
+                                <prop k="customdash_map_unit_scale" v="0,0"/>
+                                <prop k="customdash_unit" v="MM"/>
+                                <prop k="draw_inside_polygon" v="0"/>
+                                <prop k="joinstyle" v="bevel"/>
+                                <prop k="line_color" v="0,0,0,255"/>
+                                <prop k="line_style" v="solid"/>
+                                <prop k="line_width" v="0"/>
+                                <prop k="line_width_unit" v="MM"/>
+                                <prop k="offset" v="0"/>
+                                <prop k="offset_map_unit_scale" v="0,0"/>
+                                <prop k="offset_unit" v="MM"/>
+                                <prop k="use_custom_dash" v="0"/>
+                                <prop k="width_map_unit_scale" v="0,0"/>
+                            </layer>
+                        </symbol>
+                    </lineStyle>
+                    <markerStyle>
+                        <symbol alpha="1" type="marker" name="">
+                            <layer pass="0" class="SimpleMarker" locked="0">
+                                <prop k="angle" v="0"/>
+                                <prop k="color" v="0,0,0,255"/>
+                                <prop k="horizontal_anchor_point" v="1"/>
+                                <prop k="name" v="circle"/>
+                                <prop k="offset" v="0,0"/>
+                                <prop k="offset_map_unit_scale" v="0,0"/>
+                                <prop k="offset_unit" v="MM"/>
+                                <prop k="outline_color" v="0,0,0,255"/>
+                                <prop k="outline_style" v="solid"/>
+                                <prop k="outline_width" v="0"/>
+                                <prop k="outline_width_map_unit_scale" v="0,0"/>
+                                <prop k="outline_width_unit" v="MM"/>
+                                <prop k="scale_method" v="area"/>
+                                <prop k="size" v="2"/>
+                                <prop k="size_map_unit_scale" v="0,0"/>
+                                <prop k="size_unit" v="MM"/>
+                                <prop k="vertical_anchor_point" v="1"/>
+                            </layer>
+                        </symbol>
+                    </markerStyle>
+                </ComposerMapGrid>
                 <ComposerMapOverview frameMap="0" centered="0" inverted="0" uuid="{30993a85-ba5e-4593-81cb-a437758ca4de}" name="Overview 1" show="1" blendMode="0">
                     <symbol alpha="0.3" type="fill" name="">
                         <layer pass="0" class="SimpleFill" locked="0">
@@ -23130,7 +23177,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_0">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_0">
+                <edittype widgetv2type="TextEdit" name="r_0">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_0">
@@ -23148,7 +23195,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_1">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_1">
+                <edittype widgetv2type="TextEdit" name="r_1">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_1">
@@ -23166,7 +23213,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_2">
+                <edittype widgetv2type="TextEdit" name="r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_2">
@@ -23184,7 +23231,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_3">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_3">
+                <edittype widgetv2type="TextEdit" name="r_3">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_3">
@@ -23202,7 +23249,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_4">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_4">
+                <edittype widgetv2type="TextEdit" name="r_4">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_4">
@@ -23220,7 +23267,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_5">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_5">
+                <edittype widgetv2type="TextEdit" name="r_5">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_5">
@@ -23554,7 +23601,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_0">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_0">
+                <edittype widgetv2type="TextEdit" name="r_0">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_0">
@@ -23572,7 +23619,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_1">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_1">
+                <edittype widgetv2type="TextEdit" name="r_1">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_1">
@@ -23590,7 +23637,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_2">
+                <edittype widgetv2type="TextEdit" name="r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_2">
@@ -23608,7 +23655,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_3">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_3">
+                <edittype widgetv2type="TextEdit" name="r_3">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_3">
@@ -23626,7 +23673,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_4">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_4">
+                <edittype widgetv2type="TextEdit" name="r_4">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_4">
@@ -23644,7 +23691,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_5">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_5">
+                <edittype widgetv2type="TextEdit" name="r_5">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_5">
@@ -24357,7 +24404,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_0">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_0">
+                <edittype widgetv2type="TextEdit" name="r_0">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_0">
@@ -24375,7 +24422,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_1">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_1">
+                <edittype widgetv2type="TextEdit" name="r_1">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_1">
@@ -24393,7 +24440,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_2">
+                <edittype widgetv2type="TextEdit" name="r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_2">
@@ -24411,7 +24458,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_3">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_3">
+                <edittype widgetv2type="TextEdit" name="r_3">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_3">
@@ -24429,7 +24476,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_4">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_4">
+                <edittype widgetv2type="TextEdit" name="r_4">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_4">
@@ -24447,7 +24494,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_5">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_5">
+                <edittype widgetv2type="TextEdit" name="r_5">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_5">
@@ -24460,7 +24507,7 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
-            <renderer-v2 attr="pearsonr_0" symbollevels="0" type="graduatedSymbol">
+            <renderer-v2 attr="r_0" symbollevels="0" type="graduatedSymbol">
                 <ranges>
                     <range render="true" symbol="0" lower="-1.000000" upper="0.500000" label=" -1 - 0.5"/>
                     <range render="true" symbol="1" lower="0.500000" upper="0.700000" label=" 0.5 - 0.7"/>
@@ -24483,7 +24530,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="7"/>
+                            <prop k="size" v="5"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -24504,7 +24551,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="7"/>
+                            <prop k="size" v="5"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -24525,7 +24572,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="7"/>
+                            <prop k="size" v="5"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -24546,7 +24593,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="7"/>
+                            <prop k="size" v="5"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -24569,7 +24616,7 @@
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="7"/>
+                            <prop k="size" v="5"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -24616,7 +24663,7 @@
                 <property key="labeling/fieldName" value=""/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
-                <property key="labeling/fontFamily" value=".Lucida Grande UI"/>
+                <property key="labeling/fontFamily" value=".Helvetica Neue DeskInterface"/>
                 <property key="labeling/fontItalic" value="false"/>
                 <property key="labeling/fontLetterSpacing" value="0"/>
                 <property key="labeling/fontLimitPixelSize" value="false"/>
@@ -24781,7 +24828,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_0">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_0">
+                <edittype widgetv2type="TextEdit" name="r_0">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_0">
@@ -24799,7 +24846,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_1">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_1">
+                <edittype widgetv2type="TextEdit" name="r_1">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_1">
@@ -24817,7 +24864,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_2">
+                <edittype widgetv2type="TextEdit" name="r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_2">
@@ -24835,7 +24882,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_3">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_3">
+                <edittype widgetv2type="TextEdit" name="r_3">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_3">
@@ -24853,7 +24900,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_4">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_4">
+                <edittype widgetv2type="TextEdit" name="r_4">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_4">
@@ -24871,7 +24918,7 @@
                 <edittype widgetv2type="TextEdit" name="r2_5">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="pearsonr_5">
+                <edittype widgetv2type="TextEdit" name="r_5">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="rmsd_5">
