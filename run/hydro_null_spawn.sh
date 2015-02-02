@@ -145,11 +145,11 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 HYDRO=null
 
 
-philow=5.0
 for E in 1.25; do
     for PPQ in 0.1 0.25 0.33; do
         for TEFO in 0.02 ; do
 	    for SSA_N in 3.0; do
+                philow=5.0
 		PARAM_TTPHI="${philow},40.0,-700.0,700.0"
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
@@ -190,6 +190,7 @@ for E in 1.25; do
     for PPQ in 0.5 0.6 0.7 0.8 ; do
         for TEFO in 0.02; do
 	    for SSA_N in 3.0 3.25 3.5; do
+                philow=5.0
 		PARAM_TTPHI="${philow},40.0,-700.0,700.0"
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
