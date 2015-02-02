@@ -217,6 +217,33 @@ for E in 1.25; do
                 echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
+                phihighalt=1000
+                PARAM_TTPHI="${philow},40.0,-700.0,${phihighalt}"
+                EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_phihighalt_${phihighalt}_hydro_${HYDRO}
+                SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
+                POST=do_g${GRID}m_${EXPERIMENT}_post.sh
+                rm -f $SCRIPT $$POST
+
+                # insert preamble
+                echo $SHEBANGLINE >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                echo $MPIQUEUELINE >> $SCRIPT
+                echo $MPITIMELINE >> $SCRIPT
+                echo $MPISIZELINE >> $SCRIPT
+                echo $MPIOUTLINE >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                
+                export PISM_EXPERIMENT=$EXPERIMENT
+                export PISM_TITLE="Greenland Parameter Study"
+
+                OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
+                
+                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly PARAM_FTT=foo REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_NOENERGY=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
+                echo >> $SCRIPT
+                echo "# $SCRIPT written"
 
 	        title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;SSA n=$SSA_N"
 
