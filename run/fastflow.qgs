@@ -18,10 +18,10 @@
         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="statistics_velsurf_normal_250m_greenland_2008_2009_1500m_delta_002_e_12520150122173843431" name="statistics_velsurf_normal_250m_greenland_2008-2009_1500m_delta_002_e_125">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="statistics_velsurf_normal_250m_greenland_2008_2009_m_grid_mo14_flow20150120190036088" name="statistics best flow">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="statistics_velsurf_normal_250m_greenland_2008_2009_m_grid_mo14_flow20150120190036088" name="statistics best flow">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="statistics_best_flow_copy20150121125053013" name="statistics best flow legend">
+        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="statistics_best_flow_copy20150121125053013" name="statistics best flow legend">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="greenland_glacier_names_selection20140918145826595" name="greenland-glacier-names-selection">
@@ -191,9 +191,9 @@
                     <customproperties/>
                 </layer-tree-layer>
             </layer-tree-group>
-            <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="observed">
+            <layer-tree-group expanded="1" checked="Qt::Unchecked" name="observed">
                 <customproperties/>
-                <layer-tree-layer expanded="0" checked="Qt::Checked" id="Greenland_150m_2008_2009_velsurf_mag_thkmask20141122150631942" name="Greenland_150m_2008-2009_velsurf_mag_thkmask">
+                <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Greenland_150m_2008_2009_velsurf_mag_thkmask20141122150631942" name="Greenland_150m_2008-2009_velsurf_mag_thkmask">
                     <customproperties/>
                 </layer-tree-layer>
                 <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20140918150111433" name="velsurf_mag obs 2008-2009 150m">
@@ -213,7 +213,13 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="topg20140919123515112" name="topg">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="surface_150m_hs20140909191930698" name="GIMPDEM hillshade">
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="surface_150m_slope20150203101308489" name="surface_150m_slope">
+            <customproperties/>
+        </layer-tree-layer>
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="surface20150203101130311" name="GIMPDEM surface 150m">
+            <customproperties/>
+        </layer-tree-layer>
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="surface_150m_hs20140909191930698" name="GIMPDEM 150m hillshade">
             <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="cresis_mcb20141002172647129" name="cresis-mcb">
@@ -237,7 +243,7 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Greenland_mc_bed_v120140618125656554" name="Greenland_mc_bed_v1">
             <customproperties/>
         </layer-tree-layer>
-        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="basal topography">
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="basal topography">
             <customproperties/>
             <layer-tree-group expanded="0" checked="Qt::Unchecked" name="4500m">
                 <customproperties/>
@@ -275,9 +281,9 @@
                     <customproperties/>
                 </layer-tree-layer>
             </layer-tree-group>
-            <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="600m">
+            <layer-tree-group expanded="1" checked="Qt::Unchecked" name="600m">
                 <customproperties/>
-                <layer-tree-layer expanded="0" checked="Qt::Checked" id="bed20150131143238099" name="bed">
+                <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20150131143238099" name="bed">
                     <customproperties/>
                 </layer-tree-layer>
                 <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed_600m_hs20150131143422948" name="bed_600m_hs">
@@ -304,10 +310,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-747211.8531889874720946</xmin>
-            <ymin>-2636188.49314929218962789</ymin>
-            <xmax>334517.22084306774195284</xmax>
-            <ymax>-2025953.42635957198217511</ymax>
+            <xmin>-1239294.20772948232479393</xmin>
+            <ymin>-2915779.27190840616822243</ymin>
+            <xmax>1430049.32281995960511267</xmax>
+            <ymax>-645853.2682716476265341</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -336,6 +342,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="cresis_mcb20141002172647129"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20150131143238099"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="skill20141220153049504"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="surface20150203101130311"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_mod1020150121083550674"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20141002125944167"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_starting_points_copy20141209153527240"/>
@@ -376,6 +383,7 @@
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_basal_450m20141204151608340"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20140920122835449"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20140923164828683"/>
+            <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="surface_150m_slope20150203101308489"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Petermann_flowlines20141231110646174"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20150121160711832"/>
             <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Jakobshavn_flowlines_exp_450m20141204144827714"/>
@@ -515,6 +523,8 @@
             <item>bed20150131143238099</item>
             <item>bed_600m_hs20150131143422948</item>
             <item>g900m_const_ctrl_e_1_25_ppq_0_6_tefo_0_02_ssa_n_3_25_philow_const_20_hydro_null_100a_velsurf_mag20150201130233243</item>
+            <item>surface20150203101130311</item>
+            <item>surface_150m_slope20150203101308489</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
@@ -543,13 +553,13 @@
                 <legendlayerfile isInOverview="0" layerid="statistics_velsurf_normal_250m_greenland_2008_2009_1500m_delta_002_e_12520150122173843431" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="statistics best flow" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="statistics_velsurf_normal_250m_greenland_2008_2009_m_grid_mo14_flow20150120190036088" visible="0"/>
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="statistics best flow" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="statistics_velsurf_normal_250m_greenland_2008_2009_m_grid_mo14_flow20150120190036088" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="statistics best flow legend" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="statistics best flow legend" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="statistics_best_flow_copy20150121125053013" visible="0"/>
             </filegroup>
         </legendlayer>
@@ -811,10 +821,10 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="observed">
-                <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="Greenland_150m_2008-2009_velsurf_mag_thkmask" showFeatureCount="0">
+            <legendgroup open="true" checked="Qt::Unchecked" name="observed">
+                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Greenland_150m_2008-2009_velsurf_mag_thkmask" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="Greenland_150m_2008_2009_velsurf_mag_thkmask20141122150631942" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="Greenland_150m_2008_2009_velsurf_mag_thkmask20141122150631942" visible="0"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="velsurf_mag obs 2008-2009 150m" showFeatureCount="0">
@@ -844,7 +854,17 @@
                 <legendlayerfile isInOverview="0" layerid="topg20140919123515112" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="GIMPDEM hillshade" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="surface_150m_slope" showFeatureCount="0">
+            <filegroup open="false" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="surface_150m_slope20150203101308489" visible="0"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="GIMPDEM surface 150m" showFeatureCount="0">
+            <filegroup open="false" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="surface20150203101130311" visible="0"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="GIMPDEM 150m hillshade" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="surface_150m_hs20140909191930698" visible="1"/>
             </filegroup>
@@ -884,7 +904,7 @@
                 <legendlayerfile isInOverview="0" layerid="Greenland_mc_bed_v120140618125656554" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="basal topography">
+        <legendgroup open="true" checked="Qt::Unchecked" name="basal topography">
             <legendgroup open="false" checked="Qt::Unchecked" name="4500m">
                 <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed 4500m" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
@@ -933,10 +953,10 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="600m">
-                <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="bed" showFeatureCount="0">
+            <legendgroup open="true" checked="Qt::Unchecked" name="600m">
+                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="bed20150131143238099" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="bed20150131143238099" visible="0"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed_600m_hs" showFeatureCount="0">
@@ -1476,7 +1496,7 @@
         </Composition>
     </Composer>
     <Composer title="legend" visible="0">
-        <Composition gridVisible="0" printResolution="300" paperWidth="20" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="28.5" smartGuides="1" printAsRaster="0" generateWorldFile="0">
+        <Composition gridVisible="0" printResolution="300" paperWidth="21.5" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="23" smartGuides="1" printAsRaster="0" generateWorldFile="0">
             <symbol alpha="0" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
                     <prop k="border_width_map_unit_scale" v="0,0"/>
@@ -1509,7 +1529,7 @@
                         </customproperties>
                     </layer-tree-layer>
                 </layer-tree-group>
-                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="19.5969" positionMode="0" positionLock="false" x="-0.0390625" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="20.0391" outlineWidth="0.3" excludeFromExports="0" uuid="{6e460de6-e161-447b-a3a8-e9116a07063f}" height="28.6" itemRotation="0" frame="false" pagex="-0.0390625">
+                <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="19.5969" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="21.5953" outlineWidth="0.3" excludeFromExports="0" uuid="{6e460de6-e161-447b-a3a8-e9116a07063f}" height="23.1" itemRotation="0" frame="false" pagex="0">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="230" blue="230" green="230"/>
                 </ComposerItem>
@@ -4869,7 +4889,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="NW Greenland outlets" visible="1">
+    <Composer title="NW Greenland outlets" visible="0">
         <Composition gridVisible="0" printResolution="300" paperWidth="150" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="5" numPages="1" paperHeight="45" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="1" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -5225,7 +5245,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="84">
+    <projectlayers layercount="86">
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>2003_200920141201134459345</id>
             <datasource>file:../../data_sets/GreenlandICESat/Sorensen/2003_2009.txt?type=csv&amp;delimiter=,%20&amp;skipLines=5&amp;useHeader=No&amp;skipEmptyFields=Yes&amp;xField=field_1&amp;yField=field_2&amp;spatialIndex=yes&amp;subsetIndex=no&amp;watchFile=yes</datasource>
@@ -26282,12 +26302,11 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
-            <renderer-v2 attr="pearsonr_0" symbollevels="0" type="graduatedSymbol">
+            <renderer-v2 attr="r_0" symbollevels="0" type="graduatedSymbol">
                 <ranges>
                     <range render="true" symbol="0" lower="-1.000000" upper="0.500000" label=" -1 - 0.5"/>
-                    <range render="true" symbol="1" lower="0.500000" upper="0.700000" label=" 0.5 - 0.7"/>
-                    <range render="true" symbol="2" lower="0.700000" upper="0.900000" label=" 0.7 - 0.9"/>
-                    <range render="true" symbol="3" lower="0.900000" upper="1.000000" label=" 0.9 - 1"/>
+                    <range render="true" symbol="1" lower="0.500000" upper="0.850000" label=" 0.5 - 0.85"/>
+                    <range render="true" symbol="2" lower="0.850000" upper="1.000000" label=" 0.85 - 1"/>
                 </ranges>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -26314,7 +26333,7 @@
                     <symbol alpha="1" type="marker" name="1">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="color" v="253,174,97,255"/>
+                            <prop k="color" v="253,191,111,255"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
@@ -26333,27 +26352,6 @@
                         </layer>
                     </symbol>
                     <symbol alpha="1" type="marker" name="2">
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="color" v="166,217,106,255"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="0,0,0,255"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0.2"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="3"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                    <symbol alpha="1" type="marker" name="3">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="color" v="26,150,65,255"/>
@@ -26387,11 +26385,11 @@
                             <prop k="offset_unit" v="MM"/>
                             <prop k="outline_color" v="0,0,0,255"/>
                             <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0.2"/>
+                            <prop k="outline_width" v="0.5"/>
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="3"/>
+                            <prop k="size" v="5"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -27566,9 +27564,8 @@
             <renderer-v2 attr="r_0" symbollevels="0" type="graduatedSymbol">
                 <ranges>
                     <range render="true" symbol="0" lower="-1.000000" upper="0.500000" label=" -1 - 0.5"/>
-                    <range render="true" symbol="1" lower="0.500000" upper="0.700000" label=" 0.5 - 0.7"/>
-                    <range render="true" symbol="2" lower="0.700000" upper="0.900000" label=" 0.7 - 0.9"/>
-                    <range render="true" symbol="3" lower="0.900000" upper="1.000000" label=" 0.9 - 1"/>
+                    <range render="true" symbol="1" lower="0.500000" upper="0.850000" label=" 0.5 - 0.85"/>
+                    <range render="true" symbol="2" lower="0.850000" upper="1.000000" label=" 0.85 - 1"/>
                 </ranges>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -27595,7 +27592,7 @@
                     <symbol alpha="1" type="marker" name="1">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="color" v="253,174,97,255"/>
+                            <prop k="color" v="253,191,111,255"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
@@ -27614,27 +27611,6 @@
                         </layer>
                     </symbol>
                     <symbol alpha="1" type="marker" name="2">
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="color" v="166,217,106,255"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="0,0,0,255"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0.5"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="5"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                    <symbol alpha="1" type="marker" name="3">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="color" v="26,150,65,255"/>
@@ -27719,7 +27695,7 @@
                 <property key="labeling/fieldName" value=""/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
-                <property key="labeling/fontFamily" value=".Helvetica Neue DeskInterface"/>
+                <property key="labeling/fontFamily" value=".Lucida Grande UI"/>
                 <property key="labeling/fontItalic" value="false"/>
                 <property key="labeling/fontLetterSpacing" value="0"/>
                 <property key="labeling/fontLimitPixelSize" value="false"/>
@@ -28015,6 +27991,49 @@
                 </edittype>
             </edittypes>
         </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>surface20150203101130311</id>
+            <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/data_sets/mc_beds/Greenland_150m_mcb_jpl_v1.1.nc":surface</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>GIMPDEM surface 150m</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>100005</srsid>
+                    <srid>0</srid>
+                    <authid>USER:100005</authid>
+                    <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym></ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="1"/>
+            </noData>
+            <pipe>
+                <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
+                    <rasterTransparency/>
+                    <contrastEnhancement>
+                        <minValue>0</minValue>
+                        <maxValue>3087</maxValue>
+                        <algorithm>StretchToMinimumMaximum</algorithm>
+                    </contrastEnhancement>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
             <id>surface_150m_hs20140909191930698</id>
             <datasource>../../data_sets/mc_beds/surface_150m_hs.tif</datasource>
@@ -28023,7 +28042,7 @@
             <keywordList>
                 <value></value>
             </keywordList>
-            <layername>GIMPDEM hillshade</layername>
+            <layername>GIMPDEM 150m hillshade</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
@@ -28055,6 +28074,176 @@
                         <maxValue>183</maxValue>
                         <algorithm>StretchToMinimumMaximum</algorithm>
                     </contrastEnhancement>
+                </rasterrenderer>
+                <brightnesscontrast brightness="0" contrast="0"/>
+                <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+                <rasterresampler maxOversampling="2"/>
+            </pipe>
+            <blendMode>0</blendMode>
+        </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+            <id>surface_150m_slope20150203101308489</id>
+            <datasource>../../data_sets/mc_beds/surface_150m_slope.tif</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>surface_150m_slope</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+                    <srsid>1371</srsid>
+                    <srid>3413</srid>
+                    <authid>EPSG:3413</authid>
+                    <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+                    <projectionacronym>stere</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="identify/format" value="Value"/>
+            </customproperties>
+            <provider>gdal</provider>
+            <noData>
+                <noDataList bandNo="1" useSrcNoData="1"/>
+            </noData>
+            <pipe>
+                <rasterrenderer opacity="1" alphaBand="0" classificationMax="3" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
+                    <rasterTransparency/>
+                    <rastershader>
+                        <colorrampshader colorRampType="INTERPOLATED" clip="0">
+                            <item alpha="255" value="0" label="0.000000" color="#e0e0e0"/>
+                            <item alpha="255" value="0.0237" label="0.023700" color="#e0e0e0"/>
+                            <item alpha="255" value="0.0477" label="0.047700" color="#e0e0e0"/>
+                            <item alpha="255" value="0.0714" label="0.071400" color="#d4c6b4"/>
+                            <item alpha="255" value="0.0951" label="0.095100" color="#d3c5b3"/>
+                            <item alpha="255" value="0.1191" label="0.119100" color="#ccb391"/>
+                            <item alpha="255" value="0.1428" label="0.142800" color="#cbb290"/>
+                            <item alpha="255" value="0.1668" label="0.166800" color="#bf9c6b"/>
+                            <item alpha="255" value="0.1905" label="0.190500" color="#bf9c6b"/>
+                            <item alpha="255" value="0.2142" label="0.214200" color="#b88b4d"/>
+                            <item alpha="255" value="0.2382" label="0.238200" color="#b88b4d"/>
+                            <item alpha="255" value="0.2619" label="0.261900" color="#ad792f"/>
+                            <item alpha="255" value="0.2856" label="0.285600" color="#ac782e"/>
+                            <item alpha="255" value="0.3096" label="0.309600" color="#a36815"/>
+                            <item alpha="255" value="0.3333" label="0.333300" color="#a26714"/>
+                            <item alpha="255" value="0.357" label="0.357000" color="#9c5b00"/>
+                            <item alpha="255" value="0.381" label="0.381000" color="#9c5b00"/>
+                            <item alpha="255" value="0.4047" label="0.404700" color="#a66100"/>
+                            <item alpha="255" value="0.4287" label="0.428700" color="#a66100"/>
+                            <item alpha="255" value="0.4524" label="0.452400" color="#b26a00"/>
+                            <item alpha="255" value="0.4761" label="0.476100" color="#b36b00"/>
+                            <item alpha="255" value="0.5001" label="0.500100" color="#bc7300"/>
+                            <item alpha="255" value="0.5238" label="0.523800" color="#bd7400"/>
+                            <item alpha="255" value="0.5475" label="0.547500" color="#c77e00"/>
+                            <item alpha="255" value="0.5715" label="0.571500" color="#c77e00"/>
+                            <item alpha="255" value="0.5952" label="0.595200" color="#d18400"/>
+                            <item alpha="255" value="0.6189" label="0.618900" color="#d18400"/>
+                            <item alpha="255" value="0.6429" label="0.642900" color="#dd8f00"/>
+                            <item alpha="255" value="0.6666" label="0.666600" color="#de9000"/>
+                            <item alpha="255" value="0.6906" label="0.690600" color="#e59800"/>
+                            <item alpha="255" value="0.7143" label="0.714300" color="#e69900"/>
+                            <item alpha="255" value="0.738" label="0.738000" color="#e8a600"/>
+                            <item alpha="255" value="0.762" label="0.762000" color="#e8a600"/>
+                            <item alpha="255" value="0.7857" label="0.785700" color="#edb600"/>
+                            <item alpha="255" value="0.8094" label="0.809400" color="#edb600"/>
+                            <item alpha="255" value="0.8334" label="0.833400" color="#efc300"/>
+                            <item alpha="255" value="0.8571" label="0.857100" color="#f0c400"/>
+                            <item alpha="255" value="0.8811" label="0.881100" color="#f4d300"/>
+                            <item alpha="255" value="0.9048" label="0.904800" color="#f5d400"/>
+                            <item alpha="255" value="0.9285" label="0.928500" color="#f7e300"/>
+                            <item alpha="255" value="0.9525" label="0.952500" color="#f7e300"/>
+                            <item alpha="255" value="0.9762" label="0.976200" color="#fbf300"/>
+                            <item alpha="255" value="0.9999" label="0.999900" color="#fbf400"/>
+                            <item alpha="255" value="1.0239" label="1.023900" color="#f8fb09"/>
+                            <item alpha="255" value="1.0476" label="1.047600" color="#f7fb0a"/>
+                            <item alpha="255" value="1.0713" label="1.071300" color="#ebfa20"/>
+                            <item alpha="255" value="1.0953" label="1.095300" color="#ebfa20"/>
+                            <item alpha="255" value="1.119" label="1.119000" color="#e1f739"/>
+                            <item alpha="255" value="1.143" label="1.143000" color="#e1f739"/>
+                            <item alpha="255" value="1.1667" label="1.166700" color="#d7f550"/>
+                            <item alpha="255" value="1.1904" label="1.190400" color="#d6f451"/>
+                            <item alpha="255" value="1.2144" label="1.214400" color="#d2f267"/>
+                            <item alpha="255" value="1.2381" label="1.238100" color="#d2f268"/>
+                            <item alpha="255" value="1.2618" label="1.261800" color="#cff07d"/>
+                            <item alpha="255" value="1.2858" label="1.285800" color="#cff07d"/>
+                            <item alpha="255" value="1.3095" label="1.309500" color="#ceed93"/>
+                            <item alpha="255" value="1.3332" label="1.333200" color="#cdec92"/>
+                            <item alpha="255" value="1.3572" label="1.357200" color="#c6e691"/>
+                            <item alpha="255" value="1.3809" label="1.380900" color="#c5e590"/>
+                            <item alpha="255" value="1.4049" label="1.404900" color="#b3d973"/>
+                            <item alpha="255" value="1.4286" label="1.428600" color="#b3d973"/>
+                            <item alpha="255" value="1.4523" label="1.452300" color="#a3cc58"/>
+                            <item alpha="255" value="1.4763" label="1.476300" color="#a3cc58"/>
+                            <item alpha="255" value="1.5" label="1.500000" color="#92bf3f"/>
+                            <item alpha="255" value="1.5237" label="1.523700" color="#91be3e"/>
+                            <item alpha="255" value="1.5477" label="1.547700" color="#85b52b"/>
+                            <item alpha="255" value="1.5714" label="1.571400" color="#84b42a"/>
+                            <item alpha="255" value="1.5951" label="1.595100" color="#76a617"/>
+                            <item alpha="255" value="1.6191" label="1.619100" color="#76a617"/>
+                            <item alpha="255" value="1.6428" label="1.642800" color="#6a9c08"/>
+                            <item alpha="255" value="1.6668" label="1.666800" color="#6a9c08"/>
+                            <item alpha="255" value="1.6905" label="1.690500" color="#5e9400"/>
+                            <item alpha="255" value="1.7142" label="1.714200" color="#5d9300"/>
+                            <item alpha="255" value="1.7382" label="1.738200" color="#559100"/>
+                            <item alpha="255" value="1.7619" label="1.761900" color="#549000"/>
+                            <item alpha="255" value="1.7856" label="1.785600" color="#4a8f00"/>
+                            <item alpha="255" value="1.8096" label="1.809600" color="#4a8f00"/>
+                            <item alpha="255" value="1.8333" label="1.833300" color="#3e8a00"/>
+                            <item alpha="255" value="1.857" label="1.857000" color="#3d8900"/>
+                            <item alpha="255" value="1.881" label="1.881000" color="#348700"/>
+                            <item alpha="255" value="1.9047" label="1.904700" color="#338600"/>
+                            <item alpha="255" value="1.9287" label="1.928700" color="#2a8500"/>
+                            <item alpha="255" value="1.9524" label="1.952400" color="#2a8500"/>
+                            <item alpha="255" value="1.9761" label="1.976100" color="#238200"/>
+                            <item alpha="255" value="2.0001" label="2.000100" color="#238200"/>
+                            <item alpha="255" value="2.0238" label="2.023800" color="#1e8000"/>
+                            <item alpha="255" value="2.0475" label="2.047500" color="#1e8000"/>
+                            <item alpha="255" value="2.0715" label="2.071500" color="#1e8000"/>
+                            <item alpha="255" value="2.0952" label="2.095200" color="#1d7f00"/>
+                            <item alpha="255" value="2.1189" label="2.118900" color="#1b7d00"/>
+                            <item alpha="255" value="2.1429" label="2.142900" color="#1b7d00"/>
+                            <item alpha="255" value="2.1666" label="2.166600" color="#187a00"/>
+                            <item alpha="255" value="2.1906" label="2.190600" color="#187a00"/>
+                            <item alpha="255" value="2.2143" label="2.214300" color="#187a00"/>
+                            <item alpha="255" value="2.238" label="2.238000" color="#177900"/>
+                            <item alpha="255" value="2.262" label="2.262000" color="#167800"/>
+                            <item alpha="255" value="2.2857" label="2.285700" color="#167800"/>
+                            <item alpha="255" value="2.3094" label="2.309400" color="#167800"/>
+                            <item alpha="255" value="2.3334" label="2.333400" color="#167800"/>
+                            <item alpha="255" value="2.3571" label="2.357100" color="#127500"/>
+                            <item alpha="255" value="2.3811" label="2.381100" color="#127500"/>
+                            <item alpha="255" value="2.4048" label="2.404800" color="#0f7000"/>
+                            <item alpha="255" value="2.4285" label="2.428500" color="#0e6f00"/>
+                            <item alpha="255" value="2.4525" label="2.452500" color="#0b6e00"/>
+                            <item alpha="255" value="2.4762" label="2.476200" color="#0b6e00"/>
+                            <item alpha="255" value="2.4999" label="2.499900" color="#096b00"/>
+                            <item alpha="255" value="2.5239" label="2.523900" color="#096b00"/>
+                            <item alpha="255" value="2.5476" label="2.547600" color="#076900"/>
+                            <item alpha="255" value="2.5713" label="2.571300" color="#066800"/>
+                            <item alpha="255" value="2.5953" label="2.595300" color="#036600"/>
+                            <item alpha="255" value="2.619" label="2.619000" color="#026500"/>
+                            <item alpha="255" value="2.643" label="2.643000" color="#026300"/>
+                            <item alpha="255" value="2.6667" label="2.666700" color="#026300"/>
+                            <item alpha="255" value="2.6904" label="2.690400" color="#006100"/>
+                            <item alpha="255" value="2.7144" label="2.714400" color="#006100"/>
+                            <item alpha="255" value="2.7381" label="2.738100" color="#005c00"/>
+                            <item alpha="255" value="2.7618" label="2.761800" color="#005b00"/>
+                            <item alpha="255" value="2.7858" label="2.785800" color="#005900"/>
+                            <item alpha="255" value="2.8095" label="2.809500" color="#005800"/>
+                            <item alpha="255" value="2.8332" label="2.833200" color="#005700"/>
+                            <item alpha="255" value="2.8572" label="2.857200" color="#005700"/>
+                            <item alpha="255" value="2.8809" label="2.880900" color="#005400"/>
+                            <item alpha="255" value="2.9049" label="2.904900" color="#005400"/>
+                            <item alpha="255" value="2.9286" label="2.928600" color="#005200"/>
+                            <item alpha="255" value="2.9523" label="2.952300" color="#005100"/>
+                            <item alpha="255" value="2.9763" label="2.976300" color="#004f00"/>
+                            <item alpha="255" value="3" label="3.000000" color="#004f00"/>
+                            <item alpha="255" value="30" label="Custom color map entry" color="#003f00"/>
+                        </colorrampshader>
+                    </rastershader>
                 </rasterrenderer>
                 <brightnesscontrast brightness="0" contrast="0"/>
                 <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
