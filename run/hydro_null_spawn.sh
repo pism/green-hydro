@@ -16,7 +16,7 @@
 set -e # exit on error
 SCRIPTNAME=hydro_null_spawn.sh
 
-ver=1.2
+VERSION=1.2
 CLIMLIST=(const, pdd)
 TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900 600 450)
@@ -126,9 +126,9 @@ else
   echo "invalid forth argument; must be in (${TYPELIST[@]})"
   exit
 fi
-
+TYPE=${TYPE}_v${VERSION}
 REGRIDFILE=$5
-PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v${ver}_${TYPE}.nc
+PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v${VERSION}_${TYPE}.nc
 DURA=100
 DURA2=5
 NODES=$(( $NN/$PROCS_PER_NODE))
@@ -152,7 +152,7 @@ for E in 1.25; do
 	    for SSA_N in 3.0; do
                 philow=5.0
 		PARAM_TTPHI="${philow},40.0,-700.0,700.0"
-                EXPERIMENT=${CLIMATE}_${TYPE}_${ver}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
+                EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
                 POST=do_g${GRID}m_${EXPERIMENT}_post.sh
                 rm -f $SCRIPT $$POST
