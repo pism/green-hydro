@@ -126,9 +126,9 @@ else
   echo "invalid forth argument; must be in (${TYPELIST[@]})"
   exit
 fi
-TYPE=${TYPE}_v${VERSION}
 REGRIDFILE=$5
 PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v${VERSION}_${TYPE}.nc
+TYPE=${TYPE}_v${VERSION}
 DURA=100
 DURA2=5
 NODES=$(( $NN/$PROCS_PER_NODE))
