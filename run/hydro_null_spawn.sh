@@ -218,6 +218,11 @@ for E in 1.25; do
                 echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
+
+                title="E=$E;q=$PPQ;"'$\delta$'"=$TEFO;SSA n=$SSA_N"
+                
+                source run-postpro.sh
+                
                 phihighalt=1000
                 PARAM_TTPHI="${philow},40.0,-700.0,${phihighalt}"
                 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_phihighalt_${phihighalt}_hydro_${HYDRO}
