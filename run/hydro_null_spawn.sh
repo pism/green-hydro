@@ -228,7 +228,7 @@ for E in 1.25; do
                 alow=-500
                 ahigh=500
                 PARAM_TTPHI="${philow},30.0,${alow},${ahigh}"
-                EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_alow_${alow}_ahigh_${ahigh}_hydro_${HYDRO}
+                EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_alowhigh_${ahigh}_hydro_${HYDRO}
                 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
                 POST=do_g${GRID}m_${EXPERIMENT}_post.sh
                 rm -f $SCRIPT $$POST
