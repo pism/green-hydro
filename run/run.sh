@@ -51,6 +51,8 @@ if [ $# -lt 5 ] ; then
   echo "                   tempicethk_basal,bmelt,tillwat,csurf,mask,thk,topg,usurf'"
   echo "                   plus ',hardav,cbase,tauc' if DYNAMICS=hybrid"
   echo "    NODIAGS      if set, DON'T use -ts_file or -extra_file"
+  echo "    PARAM_CALVING  sets the calving mechanism"
+  echo "                 [default=ocean_kill] for [float_kill,ocean_kill,eigen_calving,thickness_calving]"
   echo "    PARAM_NOAGE    if set, DON'T calculate age"
   echo "    PARAM_NOENERGY if set, DON'T use energy updates"
   echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
@@ -260,12 +262,38 @@ if [ -n "${PARAM_SIA_N:+1}" ] ; then  # check if env var is NOT set
 else
     SIA_N="-sia_n 3"
 fi
-if [ -n "${PARAM_SIAE:+1}" ] ; then  # check if env var is already set
-  PHYS="$ENERGY -calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e ${PARAM_SIAE} ${SIA_N}"
+
+if [ -n "${PARAM_CALVING+1}" ] ; then  # check if env var is set
+  PARAM_CALVING=$PARAM_CALVING
 else
-  PHYS="$ENERGY -calving ocean_kill -ocean_kill_file ${PISM_DATANAME} -sia_e 3.0 ${SIA_N}"
+  PARAM_CALVING="ocean_kill"
+fi
+
+if [ "$PARAM_CALVING" == "ocean_kill" ]; then
+  CALVING="-calving $PARAM_CALVING -ocean_kill_file $PISM_DATANAME"
+elif [ "$PARAM_CALVING" == "float_kill" ]; then
+    CALVING="-calving $PARAM_CALVING"
+elif [ "$PARAM_CALVING" == "eigen_calving" ]; then
+    CALVING="-calving $PARAM_CALVING"
+    echo "Make sure you set the eigen-calving parameters"
+    echo "This option is untested"
+elif [ "$PARAM_CALVING" == "thickness_calving" ]; then
+    CALVING="-calving $PARAM_CALVING"
+    echo "Make sure you set the thickness-calving parameters"
+    echo "This option is untested"
+else
+    echo "invalid calving model $PARAM_CALVING"
+    exit
+fi
+
+if [ -n "${PARAM_SIAE:+1}" ] ; then  # check if env var is already set
+  PHYS="$ENERGY $CALVING -sia_e ${PARAM_SIAE} ${SIA_N}"
+else
+  PHYS="$ENERGY $CALVING -sia_e 3.0 ${SIA_N}"
 fi
 # done forming $PHYS if "$5" = "sia"
+
+
 if [ "$5" = "hybrid" ]; then
   if [ -z "${PARAM_TTPHI}" ] ; then  # check if env var is NOT set
     PARAM_TTPHI="5.0,40.0,-300.0,700.0"
