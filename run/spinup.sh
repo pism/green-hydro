@@ -127,7 +127,7 @@ export PISM_EXPERIMENT=$EXPERIMENT
 export PISM_TITLE="Greenland Parameter Study"
 
 
-INFILE=pism_Greenland_${GRID}m_mcb_jpl_v{VERSION}_${TYPE}.nc
+INFILE=pism_Greenland_${GRID}m_mcb_jpl_v${VERSION}_${TYPE}.nc
 PISM_DATANAME=$INFILE
 DURA=100000
 START=-125000
