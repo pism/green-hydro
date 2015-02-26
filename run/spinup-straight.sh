@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (C) 2014 Andy Aschwanden and Ed Bueler
+# Copyright (C) 2015 Andy Aschwanden and Ed Bueler
 
 set -e  # exit on error
 
@@ -122,7 +122,6 @@ else
   exit
 fi
 
-SCRIPTNAME=${CLIMATE}-spinup-${TYPE}.sh
 export PISM_EXPERIMENT=$EXPERIMENT
 export PISM_TITLE="Greenland Parameter Study"
 
@@ -142,7 +141,7 @@ MPIQUEUELINE="#PBS -q $QUEUE"
  MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROCS_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
-SCRIPT="do_g${GRID}m_${CLIMATE}-spinup-${TYPE}_v${VERSION}.sh"
+SCRIPT="do_g${GRID}m_straight-${CLIMATE}-spinup-${TYPE}_v${VERSION}.sh"
 rm -f $SCRIPT
 EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization $TYPE"
 
