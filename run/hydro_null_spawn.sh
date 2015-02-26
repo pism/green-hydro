@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (C) 2009-2014 Ed Bueler and Andy Aschwanden
+# Copyright (C) 2009-2015 Ed Bueler and Andy Aschwanden
 
 #  creates a bunch of scripts, each with NN processors, for a parameter study
 #  scripts are suitable for PBS job scheduler
@@ -11,7 +11,6 @@
 #     $ export PISM_PROCS_PER_NODE=4
 #     $ export PISM_QUEUE=standard_4
 #     $ ./hydro_null_spawn.sh 64 9000 const ctrl input.nc 
-
 
 set -e # exit on error
 SCRIPTNAME=hydro_null_spawn.sh
