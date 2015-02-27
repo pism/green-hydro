@@ -159,5 +159,6 @@ echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
 echo >> $SCRIPT # add newline
     
 cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME  ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+echo >> $SCRIPT
 
 echo "($SPAWNSCRIPT)  $SCRIPT written"
