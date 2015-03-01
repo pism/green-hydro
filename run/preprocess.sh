@@ -22,7 +22,7 @@ fi
 
 # generate config file
 echo "  Generating config files..."
-for CONFIG in "hydro_config" "melt_config"; do
+for CONFIG in "hydro_config" "spinup_config" "melt_config"; do
 ncgen -o ${CONFIG}.nc ${CONFIG}.cdl
 done
 echo "  Done generating config file."

@@ -1,24 +1,23 @@
 #!/bin/bash
 
-# Copyright (C) 2009-2014 Ed Bueler and Andy Aschwanden
+# Copyright (C) 2009-2015 Ed Bueler and Andy Aschwanden
 
 #  creates a bunch of scripts, each with NN processors, for a parameter study
 #  scripts are suitable for PBS job scheduler
 #  (see  http://www.adaptivecomputing.com/products/open-source/torque/)
 #
-#  usage: to use NN=8 processors, 2 4-core nodes, and duration 4:00:00,
+#  usage: to use NN=64 processors, 16 4-core nodes, and duration 4:00:00,
 #     $ export PISM_WALLTIME=4:00:00
-#     $ export PISM_NODES=2
-#     $ ./paramspawn.sh 8 FIXME
-#  then, assuming you like the resulting scripts:
-#     $ ./paramsubmit.sh      ### <--- REALLY SUBMITS using qsub
-
+#     $ export PISM_PROCS_PER_NODE=4
+#     $ export PISM_QUEUE=standard_4
+#     $ ./hydro_null_spawn.sh 64 9000 const ctrl input.nc 
 
 set -e # exit on error
 SCRIPTNAME=hydro_null_spawn.sh
 
+VERSION=1.2
 CLIMLIST=(const, pdd)
-TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
+TYPELIST=(ctrl, old_bed, ba01_bed, 970mW_hs, jak_1985)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900)
 if [ $# -lt 5 ] ; then
   echo "paramspawn.sh ERROR: needs 5 positional arguments ... ENDING NOW"
@@ -113,6 +112,8 @@ if [ "$4" = "ctrl" ]; then
     TYPE=$4
 elif [ "$4" = "old_bed" ]; then
     TYPE=$4
+elif [ "$4" = "ba01_bed" ]; then
+    TYPE=$4
 elif [ "$4" = "970mW_hs" ]; then
     TYPE=$4
 elif [ "$4" = "jak_1985" ]; then
@@ -123,7 +124,8 @@ else
 fi
 
 REGRIDFILE=$5
-PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v1.1_${TYPE}.nc
+PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v${VERSION}_${TYPE}.nc
+TYPE=${TYPE}_v${VERSION}
 DURA=100
 NODES=$(( $NN/$PROCS_PER_NODE))
 
@@ -166,7 +168,6 @@ for E in 1 1.25 1.5 1.75 2 3; do
     echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT                            
     echo >> $SCRIPT
 
-    
     title="E=$E"
     
     source run-postpro.sh
