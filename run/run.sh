@@ -228,11 +228,13 @@ elif [ "$4" == "1200" ]; then
   myMx=1320
   myMy=2280
   vgrid=$FINEVGRID
+  HIGHRESPETSC="-ssafd_ksp_type gmres -ssafd_ksp_norm_type unpreconditioned -ssafd_ksp_pc_side right -ssafd_pc_type asm -ssafd_sub_pc_type lu"
 elif [ "$4" == "900" ]; then
   dx=$4
   myMx=1760
   myMy=3040
   vgrid=$FINESTVGRID
+  HIGHRESPETSC="-ssafd_ksp_type gmres -ssafd_ksp_norm_type unpreconditioned -ssafd_ksp_pc_side right -ssafd_pc_type asm -ssafd_sub_pc_type lu"
 elif [ "$4" == "600" ]; then
   dx=$4
   myMx=2640
