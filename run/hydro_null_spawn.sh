@@ -193,7 +193,7 @@ for E in 1.25 1.5; do
     for PPQ in 0.5 0.6 0.7 0.8 ; do
         for TEFO in 0.02; do
 	    for SSA_N in 3.0 3.25 3.5; do
-                for philow in 2.5 4 5; do
+                for philow in 5; do
 		    PARAM_TTPHI="${philow},40.0,-700.0,700.0"
                     EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                     SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
@@ -216,7 +216,7 @@ for E in 1.25 1.5; do
                     
                     OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
                     
-                    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT PARAM_NOAGE=foo REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $INFILE"
+                    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT PARAM_NOAGE=foo REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
                     echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT
                                    
                     echo >> $SCRIPT
