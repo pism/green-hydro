@@ -174,7 +174,7 @@ for E in 1.25 1.5; do
 
                 OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
                 
-                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT PARAM_NOAGE=foo REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT
            
                 echo >> $SCRIPT
@@ -216,7 +216,7 @@ for E in 1.25 1.5; do
                     
                     OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
                     
-                    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $INFILE"
+                    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT PARAM_NOAGE=foo REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $INFILE"
                     echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT
                                    
                     echo >> $SCRIPT
