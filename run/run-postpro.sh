@@ -63,7 +63,7 @@ if [ -f ${filepre}.nc ]; then
     # because QGIS doesn't like (x,y) ordering
     sh add_epsg3413_mapping.sh ${filepre}.nc
     rm -f tmp_$filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
-    ncks -v enthalpy,litho_temp,temp_pa,liqfrac,cts -x ${filepre}.nc tmp_${filepre}.nc
+    ncks -v enthalpy,litho_temp,temp_pa,liqfrac,cts,temp,temp_pa,uvel,vvel,wvel,wvel_rel -x ${filepre}.nc tmp_${filepre}.nc
     ncpdq -O --64 -a time,y,x tmp_${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
     ncap2 -O -s "uflux=ubar*thk; vflux=vbar*thk; velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {velshear_mag=$fill; velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
     ncatted -a bed_data_set,run_stats,o,c,"$MYTYPE" -a grid_dx_meters,run_stats,o,f,$GRID -a grid_dy_meters,run_stats,o,f,$GRID -a long_name,uflux,o,c,"Vertically-integrated horizontal flux of ice in the X direction" -a long_name,vflux,o,c,"Vertically-integrated horizontal flux of ice in the Y direction" -a units,uflux,o,c,"m2 year-1" -a units,vflux,o,c,"m2 year-1" -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}.nc
