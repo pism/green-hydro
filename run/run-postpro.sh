@@ -50,7 +50,7 @@ if [ -f ${filepre}.nc ]; then
     # because QGIS doesn't like (x,y) ordering
     sh add_epsg3413_mapping.sh ${filepre}.nc
     rm -f tmp_$filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
-    ncks -v enthalpy,litho_temp,temp_pa,liqfrac -x ${filepre}.nc tmp_${filepre}.nc
+    ncks -v enthalpy,litho_temp,temp_pa,liqfrac,cts -x ${filepre}.nc tmp_${filepre}.nc
     ncpdq -O --64 -a time,y,x tmp_${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
     ncap2 -O -s "velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {velshear_mag=$fill; velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag)" ${tl_dir}/${nc_dir}/${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
     ncatted -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}.nc
