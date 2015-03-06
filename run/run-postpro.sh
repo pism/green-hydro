@@ -26,6 +26,8 @@ fig_dir=figures
 spc_dir=speed_contours
 pr_dir=profiles
 
+fill=-2e9
+
 cat - > $POST <<EOF
 $MYSHEBANGLINE
 $MYMPIQUEUELINE
