@@ -139,7 +139,7 @@ PARAM_TTPHI="${philow},40.0,-700.0,700.0"
 E=1.25
 PPQ=0.6
 TEFO=0.02
-SSA_N=3.0
+SSA_N=3.25
 EXPERIMENT=${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}_500ka
 SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
 rm -f $SCRIPT
