@@ -75,6 +75,16 @@ else
 fi
 OFORMAT=$PISM_OFORMAT
 
+# set output format:
+#  $ export PISM_OSIZE="netcdf4_parallel "
+if [ -n "${PISM_OSIZE:+1}" ] ; then  # check if env var is already set
+  echo "$SCRIPTNAME                      PISM_OSIZE = $PISM_OSIZE  (already set)"
+else
+  PISM_OSIZE="big"
+  echo "$SCRIPTNAME                      PISM_OSIZE = $PISM_OSIZE"
+fi
+OSIZE=$PISM_OSIZE
+
 # set GRID from argument 2
 if [ "$2" = "18000" ]; then
     GRID=$2
@@ -174,7 +184,7 @@ for E in 1.25 1.5; do
 
                 OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
                 
-                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT PARAM_NOAGE=foo REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT PISM_OSIZE=$OSIZE PARAM_NOAGE=foo REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT
            
                 echo >> $SCRIPT
@@ -216,7 +226,7 @@ for E in 1.25 1.5; do
                     
                     OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
                     
-                    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT PARAM_NOAGE=foo REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT PISM_OSIZE=$OSIZE PARAM_NOAGE=foo REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
                     echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT
                                    
                     echo >> $SCRIPT
@@ -248,7 +258,7 @@ for E in 1.25 1.5; do
                     
                     OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
                     
-                    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT PARAM_NOAGE=foo REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT PISM_OSIZE=$OSIZE PARAM_NOAGE=foo REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
                     echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT
                                    
                     echo >> $SCRIPT
