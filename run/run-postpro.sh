@@ -8,9 +8,9 @@ MYMPIQUEUELINE="#PBS -q transfer"
 filepre=g${GRID}m_${EXPERIMENT}_${DURA}a
 
 if [ "$TYPE" = "ctrl_v1.2" ]; then
-    MYTYPE="MO14"
+    MYTYPE="MO14 2014-11-19"
 elif [ "$TYPE" = "ctrl" ]; then
-    MYTYPE="MO14"
+    MYTYPE="MO14 2014-06-26"
 elif [ "$TYPE" = "old_bed" ]; then
     MYTYPE="BA01"
 elif [ "$TYPE" = "searise" ]; then
@@ -64,5 +64,4 @@ if [ -f ${filepre}.nc ]; then
     ncap2 -O -s "uflux=ubar*thk; vflux=vbar*thk; velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {velshear_mag=$fill; velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag);" ${tl_dir}/${nc_dir}/${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
     ncatted -a bed_data_set,run_stats,o,c,"$MYTYPE" -a grid_dx_meters,run_stats,o,f,$GRID -a grid_dy_meters,run_stats,o,f,$GRID -a long_name,uflux,o,c,"Vertically-integrated horizontal flux of ice in the X direction" -a long_name,vflux,o,c,"Vertically-integrated horizontal flux of ice in the Y direction" -a units,uflux,o,c,"m2 year-1" -a units,vflux,o,c,"m2 year-1" -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}.nc
 fi
-
 EOF

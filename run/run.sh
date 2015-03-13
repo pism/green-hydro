@@ -71,7 +71,7 @@ if [ $# -lt 5 ] ; then
   echo "                 [default=0.5] for [routing, distributed]"
   echo "    PARAM_OMEGA  sets -tauc_add_transportable_water -till_log_factor_transportable_water \$PARAM_OMEGA"
   echo "                 [default=0.04] for [routing, distributed]"
-  echo "    PARAM_SSA_N  sets -sia_n \$PARAM_SIA_N"
+  echo "    PARAM_SIA_N  sets -sia_n \$PARAM_SIA_N"
   echo "                 [default=3] for Glen exponent in SIA"
   echo "    PARAM_SSA_N  sets -ssa_n \$PARAM_SSA_N"
   echo "                 [default=3] for Glen exponent in SSA"

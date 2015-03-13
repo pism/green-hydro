@@ -172,7 +172,6 @@ for E in 1 1.25 1.5 1.75 2 3; do
     
     source run-postpro.sh
     echo "# $POST written"
-    echo "# $PLOT written"
     echo
     
 done
@@ -186,8 +185,6 @@ for FILE in do_g${GRID}m_${CLIMATE}_${TYPE}_*sia_hydro_${HYDRO}.sh; do
   fbname=\$(basename "\$FILE" .sh)
   POST=\${fbname}_post.sh
   ID=\$(qsub -W depend=afterok:\${JOBID} \$POST)
-  PLOT=\${fbname}_plot.sh
-  qsub -W depend=afterok:\${ID} \$PLOT
 done
 EOF
 
