@@ -18,8 +18,8 @@ SCRIPTNAME=hindcast.sh
 CLIMLIST=(forcing)
 TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900)
-if [ $# -lt 5 ] ; then
-  echo "paramspawn.sh ERROR: needs 5 positional arguments ... ENDING NOW"
+if [ $# -lt 4 ] ; then
+  echo "paramspawn.sh ERROR: needs 4 positional arguments ... ENDING NOW"
   echo
   echo "usage:"
   echo
@@ -28,7 +28,6 @@ if [ $# -lt 5 ] ; then
   echo "  where:"
   echo "    PROCSS       = 1,2,3,... is number of MPI processes"
   echo "    GRID      in (${GRIDLIST[@]})"
-  echo "    CLIMATE   in (${CLIMLIST[@]})"
   echo "    TYPE      in (${TYPELIST[@]})"
   echo "    REGRIDFILE  name of regrid file"
   echo
@@ -132,7 +131,7 @@ ENDYEAR=2099
 PISM_TIMEFILE=time_${STARTYEAR}-${ENDYEAR}.nc
 create_timeline.py -a ${STARTYEAR}-1-1 -e ${ENDYEAR}-1-1 $PISM_TIMEFILE
 
-REGRIDFILE=$5
+REGRIDFILE=$4
 PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v1.1_${TYPE}.nc
 NODES=$(( $NN/$PROCS_PER_NODE))
 
