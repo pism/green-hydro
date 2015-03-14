@@ -131,7 +131,9 @@ PISM_TIMEFILE=time_${STARTYEAR}-${ENDYEAR}.nc
 create_timeline.py -a ${STARTYEAR}-1-1 -e ${ENDYEAR}-1-1 $PISM_TIMEFILE
 
 REGRIDFILE=$4
-PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v1.1_${TYPE}.nc
+PISM_BCFILE=RACMO_HadGEM2_RCP45_10000M_CON_MM_EPSG314_XY.nc
+VERSION=1.1
+PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v${VERSION}_${TYPE}.nc
 NODES=$(( $NN/$PROCS_PER_NODE))
 
  SHEBANGLINE="#!/bin/bash"
@@ -151,7 +153,6 @@ for E in 1.25; do
         for TEFO in 0.02; do
 	    for SSA_N in 3.25; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
-                PISM_BCFILE=RACMO_HadGEM2_RCP45_1000M_CON_MM_EPSG314_XY.nc
                 EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                 SCRIPT=forecast_g${GRID}m_${EXPERIMENT}.sh
                 POST=forecast_g${GRID}m_${EXPERIMENT}_post.sh
