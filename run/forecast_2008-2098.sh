@@ -13,9 +13,7 @@
 
 
 set -e # exit on error
-SCRIPTNAME=hindcast.sh
-
-CLIMLIST=(forcing)
+SCRIPTNAME=forecast
 TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900)
 if [ $# -lt 4 ] ; then
@@ -153,11 +151,10 @@ for E in 1.25; do
 	    for SSA_N in 3.25; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
                 PISM_BCFILE=RACMO_HadGEM2_RCP45_1000M_CON_MM_EPSG314_XY.nc
-                EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
+                EXPERIMENT=${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                 SCRIPT=forecast_g${GRID}m_${EXPERIMENT}.sh
                 POST=forecast_g${GRID}m_${EXPERIMENT}_post.sh
-                PLOT=forecast_g${GRID}m_${EXPERIMENT}_plot.sh
-                rm -f $SCRIPT $POST $PLOT
+                rm -f $SCRIPT $POST
                 
                 OUTFILE=g${GRID}m_${EXPERIMENT}.nc
                 
@@ -182,7 +179,6 @@ for E in 1.25; do
                 echo "# $SCRIPT written"
                 source run-postpro-fc.sh
                 echo "# $POST written"
-                echo "# $PLOT written"
                 echo
             done
         done
