@@ -13,22 +13,20 @@
 
 
 set -e # exit on error
-SCRIPTNAME=hindcast.sh
-
-CLIMLIST=(forcing)
+SCRIPTNAME=forecast
+CLIMATE=forcing
 TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900)
-if [ $# -lt 5 ] ; then
-  echo "paramspawn.sh ERROR: needs 5 positional arguments ... ENDING NOW"
+if [ $# -lt 4 ] ; then
+  echo "paramspawn.sh ERROR: needs 4 positional arguments ... ENDING NOW"
   echo
   echo "usage:"
   echo
-  echo "    paramspawn.sh NN GRID CLIMATE TYPE REGRIDFILE"
+  echo "    paramspawn.sh NN GRID TYPE REGRIDFILE"
   echo
   echo "  where:"
   echo "    PROCSS       = 1,2,3,... is number of MPI processes"
   echo "    GRID      in (${GRIDLIST[@]})"
-  echo "    CLIMATE   in (${CLIMLIST[@]})"
   echo "    TYPE      in (${TYPELIST[@]})"
   echo "    REGRIDFILE  name of regrid file"
   echo
@@ -74,6 +72,15 @@ else
 fi
 OFORMAT=$PISM_OFORMAT
 
+# set output format:
+#  $ export PISM_OSIZE="netcdf4_parallel "
+if [ -n "${PISM_OSIZE:+1}" ] ; then  # check if env var is already set
+  echo "$SCRIPTNAME                      PISM_OSIZE = $PISM_OSIZE  (already set)"
+else
+  PISM_OSIZE="big"
+  echo "$SCRIPTNAME                      PISM_OSIZE = $PISM_OSIZE"
+fi
+OSIZE=$PISM_OSIZE
 
 # set GRID from argument 2
 if [ "$2" = "18000" ]; then
@@ -92,41 +99,41 @@ elif [ "$2" = "1200" ]; then
     GRID=$2
 elif [ "$2" = "900" ]; then
     GRID=$2
+elif [ "$2" = "600" ]; then
+    GRID=$2
+elif [ "$2" = "450" ]; then
+    GRID=$2
 else
   echo "invalid second argument; must be in (${GRIDLIST[@]})"
   exit
 fi
 
-# set CLIMATE from argument 3
-if [ "$3" = "forcing" ]; then
-    CLIMATE=$3
-else
-  echo "invalid third argument; must be in (${CLIMLIST[@]})"
-  exit
-fi
 
-# set TYPE from argument 4
-if [ "$4" = "ctrl" ]; then
-    TYPE=$4
-elif [ "$4" = "old_bed" ]; then
-    TYPE=$4
-elif [ "$4" = "970mW_hs" ]; then
-    TYPE=$4
-elif [ "$4" = "jak_1985" ]; then
-    TYPE=$4
+# set TYPE from argument 3
+if [ "$3" = "ctrl" ]; then
+    TYPE=$3
+elif [ "$3" = "old_bed" ]; then
+    TYPE=$3
+elif [ "$3" = "ba01_bed" ]; then
+    TYPE=$3
+elif [ "$3" = "970mW_hs" ]; then
+    TYPE=$3
+elif [ "$3" = "jak_1985" ]; then
+    TYPE=$3
 else
   echo "invalid forth argument; must be in (${TYPELIST[@]})"
   exit
 fi
-
 
 STARTYEAR=2008
 ENDYEAR=2099
 PISM_TIMEFILE=time_${STARTYEAR}-${ENDYEAR}.nc
 create_timeline.py -a ${STARTYEAR}-1-1 -e ${ENDYEAR}-1-1 $PISM_TIMEFILE
 
-REGRIDFILE=$5
-PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v1.1_${TYPE}.nc
+REGRIDFILE=$4
+PISM_BCFILE=RACMO_HadGEM2_RCP45_10000M_CON_MM_EPSG314_XY.nc
+VERSION=1.1
+PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v${VERSION}_${TYPE}.nc
 NODES=$(( $NN/$PROCS_PER_NODE))
 
  SHEBANGLINE="#!/bin/bash"
@@ -142,17 +149,14 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 HYDRO=null
 philow=5
 for E in 1.25; do
-    for PPQ in 0.5; do
+    for PPQ in 0.6; do
         for TEFO in 0.02; do
 	    for SSA_N in 3.25; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
-                PISM_BCFILE=RACMO_HadGEM2_RCP45_${GRID}M_CON_YM_${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}.0_hydro_${HYDRO}.nc
-                # PISM_BCFILE=RACMO_HadGEM2_RCP45_1500M_CON_MM_EPSG314_XY.nc
                 EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
                 SCRIPT=forecast_g${GRID}m_${EXPERIMENT}.sh
                 POST=forecast_g${GRID}m_${EXPERIMENT}_post.sh
-                PLOT=forecast_g${GRID}m_${EXPERIMENT}_plot.sh
-                rm -f $SCRIPT $POST $PLOT
+                rm -f $SCRIPT $POST
                 
                 OUTFILE=g${GRID}m_${EXPERIMENT}.nc
                 
@@ -175,49 +179,8 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
-                source run-postpro-fc.sh
+                # source run-postpro-fc.sh
                 echo "# $POST written"
-                echo "# $PLOT written"
-                echo
-            done
-        done
-    done
-    for PPQ in 0.33; do
-        for TEFO in 0.02; do
-	    for SSA_N in 3.0; do
-                PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
-                PISM_BCFILE=RACMO_HadGEM2_RCP45_${GRID}M_CON_YM_${CLIMATE}_${TYPE}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}.0_hydro_${HYDRO}.nc
-                # PISM_BCFILE=RACMO_HadGEM2_RCP45_1500M_CON_MM_EPSG314_XY.nc
-                EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}
-                SCRIPT=forecast_g${GRID}m_${EXPERIMENT}.sh
-                POST=forecast_g${GRID}m_${EXPERIMENT}_post.sh
-                PLOT=forecast_g${GRID}m_${EXPERIMENT}_plot.sh
-                rm -f $SCRIPT $POST $PLOT
-                
-                OUTFILE=g${GRID}m_${EXPERIMENT}.nc
-                
-                # insert preamble
-                echo $SHEBANGLINE >> $SCRIPT
-                echo >> $SCRIPT # add newline
-                echo $MPIQUEUELINE >> $SCRIPT
-                echo $MPITIMELINE >> $SCRIPT
-                echo $MPISIZELINE >> $SCRIPT
-                echo $MPIOUTLINE >> $SCRIPT
-                echo >> $SCRIPT # add newline
-                echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-                echo >> $SCRIPT # add newline
-                
-                export PISM_EXPERIMENT=$EXPERIMENT
-                export PISM_TITLE="Greenland Parameter Study"
-                
-                cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=monthly SAVE=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
-                echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-                
-                echo >> $SCRIPT
-                echo "# $SCRIPT written"
-                source run-postpro-fc.sh
-                echo "# $POST written"
-                echo "# $PLOT written"
                 echo
             done
         done
