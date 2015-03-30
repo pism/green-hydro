@@ -130,7 +130,7 @@ if [ "$5" = "iso" ]; then
     BD=$$5
 elif [ "$5" = "lc" ]; then
     BEDDEF="PARAM_BEDDEF=$5"
-    BD=$5[[[
+    BD=$5
 elif [ "$5" = "none" ]; then
     BEDDEF=""
     BD=$5
