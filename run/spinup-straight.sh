@@ -27,19 +27,21 @@ set -e # exit on error
 VERSION=1.2
 CLIMLIST=(const, paleo)
 TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
+BEDDEFLIST=(none, lc, iso)
 GRIDLIST="{36000, 18000, 9000, 4500, 3600, 1800, 1500, 1200, 900}"
 if [ $# -lt 2 ] ; then
   echo "spinup.sh ERROR: needs 4 positional arguments ... ENDING NOW"
   echo
   echo "usage:"
   echo
-  echo "    spinup.sh PROCS GRID CLIMATE TYPE"
+  echo "    spinup.sh PROCS GRID CLIMATE TYPE BEDDEF"
   echo
   echo "  where:"
   echo "    PROCS     = 1,2,3,... is number of MPI processes"
   echo "    GRID      in (${GRIDLIST[@]})"
   echo "    CLIMATE   in (${CLIMLIST[@]})"
   echo "    TYPE      in (${TYPELIST[@]})"
+  echo "    BEDDEF    in (${BEDDEFLIST[@]})"
   echo
   echo
   exit
@@ -122,6 +124,21 @@ else
   exit
 fi
 
+# set BEDDEF from argument 5
+if [ "$4" = "iso" ]; then
+    BEDDEF="PARAM_BEDDEF=$4"
+    BD=$$4
+elif [ "$4" = "lc" ]; then
+    BEDDEF="PARAM_BEDDEF=$4"
+    BD=$4[[[
+elif [ "$4" = "none" ]; then
+    BEDDEF=""
+    BD=$4
+else
+  echo "invalid forth argument; must be in (${BEDDEFLIST[@]})"
+  exit
+fi
+
 export PISM_EXPERIMENT=$EXPERIMENT
 export PISM_TITLE="Greenland Parameter Study"
 
@@ -141,7 +158,7 @@ MPIQUEUELINE="#PBS -q $QUEUE"
  MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROCS_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
-SCRIPT="do_g${GRID}m_straight-${CLIMATE}-spinup-${TYPE}_v${VERSION}.sh"
+SCRIPT="do_g${GRID}m_straight-${CLIMATE}-spinup-${TYPE}_v${VERSION}_BEDDEF_${BD}.sh"
 rm -f $SCRIPT
 EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization $TYPE"
 
@@ -158,7 +175,7 @@ echo >> $SCRIPT # add newline
 echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
 echo >> $SCRIPT # add newline
     
-cmd="PISM_DO="" PARAM_SIAE=2 PARAM_PPQ=0.50 PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME  ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+cmd="PISM_DO="" PARAM_SIAE=2 PARAM_PPQ=0.50 PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME $BEDDEF ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 echo >> $SCRIPT
 
