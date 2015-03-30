@@ -162,7 +162,7 @@ SCRIPT="do_g${GRID}m_straight-${CLIMATE}-spinup-${TYPE}_v${VERSION}_beddef_${BD}
 rm -f $SCRIPT
 EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization $TYPE"
 
-OUTFILE=g${GRID}m_0_straight_${CLIMATE}_${TYPE}_v${VERSION}.nc
+OUTFILE=g${GRID}m_0_straight_${CLIMATE}_${TYPE}_beddef_${BD}_v${VERSION}.nc
 
 # insert preamble
 echo $SHEBANGLINE >> $SCRIPT
