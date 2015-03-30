@@ -125,15 +125,15 @@ else
 fi
 
 # set BEDDEF from argument 5
-if [ "$4" = "iso" ]; then
-    BEDDEF="PARAM_BEDDEF=$4"
-    BD=$$4
-elif [ "$4" = "lc" ]; then
-    BEDDEF="PARAM_BEDDEF=$4"
-    BD=$4[[[
-elif [ "$4" = "none" ]; then
+if [ "$5" = "iso" ]; then
+    BEDDEF="PARAM_BEDDEF=$5"
+    BD=$$5
+elif [ "$5" = "lc" ]; then
+    BEDDEF="PARAM_BEDDEF=$5"
+    BD=$5[[[
+elif [ "$5" = "none" ]; then
     BEDDEF=""
-    BD=$4
+    BD=$5
 else
   echo "invalid forth argument; must be in (${BEDDEFLIST[@]})"
   exit
