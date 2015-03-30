@@ -127,7 +127,7 @@ fi
 # set BEDDEF from argument 5
 if [ "$5" = "iso" ]; then
     BEDDEF="PARAM_BEDDEF=$5"
-    BD=$$5
+    BD=$5
 elif [ "$5" = "lc" ]; then
     BEDDEF="PARAM_BEDDEF=$5"
     BD=$5
