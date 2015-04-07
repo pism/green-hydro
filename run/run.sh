@@ -51,8 +51,10 @@ if [ $# -lt 5 ] ; then
   echo "                   tempicethk_basal,bmelt,tillwat,csurf,mask,thk,topg,usurf'"
   echo "                   plus ',hardav,cbase,tauc' if DYNAMICS=hybrid"
   echo "    NODIAGS      if set, DON'T use -ts_file or -extra_file"
-  echo "    PARAM_CALVING  sets the calving mechanism"
-  echo "                 [default=ocean_kill] for [float_kill,ocean_kill,eigen_calving,thickness_calving]"
+  echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
+  echo "                   [default=0.25]"
+  echo "    PARAM_BEDDEF  sets the bed deformation method"
+  echo "                 [default=not set] for [iso,lc]"
   echo "    PARAM_NOAGE    if set, DON'T calculate age"
   echo "    PARAM_NOENERGY if set, DON'T use energy updates"
   echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
@@ -128,6 +130,11 @@ else
     FTT=",forcing -force_to_thickness_file $PISM_FTT_FILE"
 fi
 
+if [ -z "${PARAM_BEDDEF}" ] ; then  # check if env var is NOT set
+    BEDDEF=""
+else
+    BEDDEF="-bed_def $PARAM_BEDDEF"
+fi
 
 # are we calculating the age of the ice?
 if [ -z "${PARAM_NOAGE}" ] ; then  # check if env var is NOT set
@@ -289,9 +296,9 @@ else
 fi
 
 if [ -n "${PARAM_SIAE:+1}" ] ; then  # check if env var is already set
-  PHYS="$ENERGY $CALVING -sia_e ${PARAM_SIAE} ${SIA_N}"
+  PHYS="$BEDDEF $ENERGY $CALVING -sia_e ${PARAM_SIAE} ${SIA_N}"
 else
-  PHYS="$ENERGY $CALVING -sia_e 3.0 ${SIA_N}"
+  PHYS="$BEDDEF $ENERGY $CALVING -sia_e 3.0 ${SIA_N}"
 fi
 # done forming $PHYS if "$5" = "sia"
 
