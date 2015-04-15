@@ -149,7 +149,7 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 HYDRO=null
 philow=5
 for E in 1.25; do
-    for PPQ in 0.6; do
+    for PPQ in 0.6 0.7; do
         for TEFO in 0.02; do
 	    for SSA_N in 3.25; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
