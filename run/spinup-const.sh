@@ -169,7 +169,7 @@ echo >> $SCRIPT # add newline
 
  
 if [ $GRID == "18000" ]; then      
-    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME PARAM_SIAE=1.25 PARAM_PPQ=0.7  PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME PARAM_SIAE=1.25 PARAM_PPQ=0.7 PARAM_SSA_N=3.25 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -125ka" >> $SCRIPT
