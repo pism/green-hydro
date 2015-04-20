@@ -13,6 +13,8 @@ elif [ "$TYPE" = "ctrl" ]; then
     MYTYPE="MO14 2014-06-26"
 elif [ "$TYPE" = "old_bed" ]; then
     MYTYPE="BA01"
+elif [ "$TYPE" = "old_bed_v1.2" ]; then
+    MYTYPE="BA01"
 elif [ "$TYPE" = "searise" ]; then
     MYTYPE="SR13"
 else
