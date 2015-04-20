@@ -544,7 +544,7 @@ else
 fi
 
 # construct command
-cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG $AGE -boot_file $INNAME -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE $HIGHRESPETSC -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
+cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG $AGE -i $INNAME -bootstrap -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE $HIGHRESPETSC -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
 echo
 $PISM_DO $cmd
 
