@@ -25,9 +25,9 @@ set -e  # exit on error
 set -e # exit on error
 
 VERSION=1.2
-CLIMLIST=(const, paleo)
+CLIMLIST=(const)
 TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
-GRIDLIST="{36000, 18000, 9000, 4500, 3600, 1800, 1500, 1200, 900}"
+GRIDLIST="{9000, 4500, 3600, 1800, 1500, 1200, 900, 600}"
 if [ $# -lt 2 ] ; then
   echo "spinup.sh ERROR: needs 4 positional arguments ... ENDING NOW"
   echo
@@ -77,9 +77,8 @@ OFORMAT=$PISM_OFORMAT
 NN="$1"
 
 # set GRID from argument 2
-if [ "$2" = "18000" ]; then
-    GRID=$2
-elif [ "$2" = "9000" ]; then
+
+if [ "$2" = "9000" ]; then
     GRID=$2
 elif [ "$2" = "4500" ]; then
     GRID=$2
@@ -92,6 +91,8 @@ elif [ "$2" = "1500" ]; then
 elif [ "$2" = "1200" ]; then
     GRID=$2
 elif [ "$2" = "900" ]; then
+    GRID=$2
+elif [ "$2" = "600" ]; then
     GRID=$2
 else
   echo "invalid second argument; must be in (${GRIDLIST[@]})"
@@ -162,22 +163,22 @@ echo >> $SCRIPT # add newline
 # NOTE
 #
 # The first 'if' statement ensure that only runs that are on the grid
-# refinement path 18000->9000->4500->3600->1800->900m are being written to the 'do' script.
+# refinement path 9000->4500->3600->1800->900m are being written to the 'do' script.
 # For example on the 9000m grid the first run from -125ka to -25ka is not done.
 # The second 'if' statment makes sure the appropriate file is chosen for regridding.
 # I wish I knew a cleaner way to achieve this in bash.
 
  
-if [ $GRID == "18000" ]; then      
-    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME PARAM_SIAE=1.25 PARAM_PPQ=0.7 PARAM_SSA_N=3.25 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+if [ $GRID == "9000" ]; then      
+    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME PARAM_SIAE=1.25 PARAM_PPQ=0.6 PARAM_SSA_N=3.25 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -125ka" >> $SCRIPT
 fi
 echo >> $SCRIPT
 
-if [ $GRID == "9000" ]; then
-    REGRIDFILE=g18000m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
+if [ $GRID == "4500" ]; then
+    REGRIDFILE=g9000m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
@@ -189,8 +190,8 @@ MKA=$(($END/-1000))
 
 OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
 
-if [[ ($GRID == "18000") || ($GRID == "9000") ]]; then      
-    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.7 PARAM_SSA_N=3.25 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+if [[ ($GRID == "9000") || ($GRID == "4500") ]]; then      
+    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.6 PARAM_SSA_N=3.25 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_a.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -25ka" >> $SCRIPT
@@ -198,8 +199,8 @@ fi
 echo >> $SCRIPT
 
 
-if [ $GRID == "4500" ]; then
-    REGRIDFILE=g9000m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
+if [ $GRID == "3600" ]; then
+    REGRIDFILE=g4500m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
@@ -212,16 +213,16 @@ MKA=$(($END/-1000))
 
 OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
       
-if [[ ($GRID == "18000") || ($GRID == "9000") || ($GRID == "4500") ]]; then      
-    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.7  PARAM_SSA_N=3.25 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+if [[ ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") ]]; then      
+    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.6  PARAM_SSA_N=3.25 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_b.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -5ka" >> $SCRIPT
 fi
 echo >> $SCRIPT
 
-if [ $GRID == "3600" ]; then
-    REGRIDFILE=g4500m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
+if [ $GRID == "1800" ]; then
+    REGRIDFILE=g3600m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
@@ -235,16 +236,16 @@ MA=$(($END/-1))
 
 OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
 
-if [[ ($GRID == "18000") || ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") ]]; then      
-    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.7 PARAM_SSA_N=3.25 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+if [[ ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800") ]]; then      
+    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.6 PARAM_SSA_N=3.25 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_c.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -1ka" >> $SCRIPT
 fi
 echo >> $SCRIPT
 
-if [ $GRID == "1800" ]; then
-    REGRIDFILE=g3600m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
+if [ $GRID == "1500" ]; then
+    REGRIDFILE=g1800m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
@@ -257,16 +258,16 @@ MA=$(($END/-1))
 
 OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
       
-if [[ ($GRID == "18000") || ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800") ]]; then      
-    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.7 PARAM_SSA_N=3.25 EXSTEP=20 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+if [[ ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800") || ($GRID == "1500") ]]; then      
+    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.6 PARAM_SSA_N=3.25 EXSTEP=20 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_d.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -500a" >> $SCRIPT
 fi
 echo >> $SCRIPT
 
-if [ $GRID == "1500" ]; then
-    REGRIDFILE=g1800m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
+if [ $GRID == "1200" ]; then
+    REGRIDFILE=g1500m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
@@ -279,16 +280,16 @@ MA=$(($END/-1))
 
 OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
       
-if [[ ($GRID == "18000") || ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800")  || ($GRID == "1500") ]]; then      
-    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.7 PARAM_SSA_N=3.25 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+if [[ ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800") || ($GRID == "1500")  || ($GRID == "1200") ]]; then      
+    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.6 PARAM_SSA_N=3.25 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_e.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -300a" >> $SCRIPT
 fi
 echo >> $SCRIPT
 
-if [ $GRID == "1200" ]; then
-    REGRIDFILE=g1500m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
+if [ $GRID == "900" ]; then
+    REGRIDFILE=g1200m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
@@ -301,8 +302,8 @@ MA=$(($END/-1))
 
 OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
       
-if [[ ($GRID == "18000") || ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800")  || ($GRID == "1500") || ($GRID == "1200") ]]; then      
-    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.7 EXSTEP=10 PARAM_SSA_N=3.25 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+if [[ ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800") || ($GRID == "1500")  || ($GRID == "1200") || ($GRID == "900") ]]; then      
+    cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.6 EXSTEP=10 PARAM_SSA_N=3.25 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
     echo "$cmd 2>&1 | tee job_f.\${PBS_JOBID}" >> $SCRIPT
 else
     echo "# not starting from -200a" >> $SCRIPT
@@ -313,15 +314,15 @@ DURA=100
 START=-100
 END=0
 
-if [ $GRID == "900" ]; then
-    REGRIDFILE=g1200m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
+if [ $GRID == "600" ]; then
+    REGRIDFILE=g900m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
 else
     REGRIDFILE=$OUTFILE
 fi
 
 OUTFILE=g${GRID}m_0_${CLIMATE}_${TYPE}_v${VERSION}.nc
       
-cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.7 PARAM_SSA_N=3.25 EXSTEP=10 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=1.25 PARAM_PPQ=0.6 PARAM_SSA_N=3.25 EXSTEP=10 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
 echo "$cmd 2>&1 | tee job_g.\${PBS_JOBID}" >> $SCRIPT
 echo >> $SCRIPT
 
