@@ -51,8 +51,6 @@ if [ $# -lt 5 ] ; then
   echo "                   tempicethk_basal,bmelt,tillwat,csurf,mask,thk,topg,usurf'"
   echo "                   plus ',hardav,cbase,tauc' if DYNAMICS=hybrid"
   echo "    NODIAGS      if set, DON'T use -ts_file or -extra_file"
-  echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
-  echo "                   [default=0.25]"
   echo "    PARAM_BEDDEF  sets the bed deformation method"
   echo "                 [default=not set] for [iso,lc]"
   echo "    PARAM_NOAGE    if set, DON'T calculate age"
