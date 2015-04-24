@@ -151,7 +151,7 @@ for SIAE in 1.25 2; do
             rm -f $SCRIPT
             EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization $TYPE"
             
-            OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
+            OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
             
             # insert preamble
             echo $SHEBANGLINE >> $SCRIPT
