@@ -130,10 +130,6 @@ export PISM_TITLE="Greenland Parameter Study"
 
 INFILE=pism_Greenland_${GRID}m_mcb_jpl_v${VERSION}_${TYPE}.nc
 PISM_DATANAME=$INFILE
-DURA=100000
-START=-125000
-END=-25000
-MKA=$(($END/-1000))
 
 NODES=$(( $NN/$PROCS_PER_NODE))
 
@@ -171,7 +167,11 @@ for SIAE in 1.25 2; do
             # For example on the 9000m grid the first run from -125ka to -25ka is not done.
             # The second 'if' statment makes sure the appropriate file is chosen for regridding.
             # I wish I knew a cleaner way to achieve this in bash.
-            
+
+            DURA=100000
+            START=-125000
+            END=-25000
+            MKA=$(($END/-1000))
             
             if [ $GRID == "9000" ]; then      
                 cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME PARAM_SIAE=${SIAE} PARAM_PPQ=${PPQ} PARAM_SSA_N=${SSA_N} PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
