@@ -142,13 +142,7 @@ MPIOUTLINE="#PBS -j oe"
 for SIAE in 1.25 2; do
     for PPQ in 0.5 0.6; do
         for SSA_N in 3 3.25; do
-            
-            SCRIPT="do_g${GRID}m_${CLIMATE}-spinup-${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.sh"
-            rm -f $SCRIPT
-            EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization $TYPE"
-            
-            OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
-            
+
             # insert preamble
             echo $SHEBANGLINE >> $SCRIPT
             echo >> $SCRIPT # add newline
@@ -160,6 +154,19 @@ for SIAE in 1.25 2; do
             echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
             echo >> $SCRIPT # add newline
             
+            SCRIPT="do_g${GRID}m_${CLIMATE}-spinup-${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.sh"
+            rm -f $SCRIPT
+
+            DURA=100000
+            START=-125000
+            END=-25000
+            MKA=$(($END/-1000))
+            
+            EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization $TYPE"
+            
+            OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
+            
+            
             # NOTE
             #
             # The first 'if' statement ensure that only runs that are on the grid
@@ -168,10 +175,6 @@ for SIAE in 1.25 2; do
             # The second 'if' statment makes sure the appropriate file is chosen for regridding.
             # I wish I knew a cleaner way to achieve this in bash.
 
-            DURA=100000
-            START=-125000
-            END=-25000
-            MKA=$(($END/-1000))
             
             if [ $GRID == "9000" ]; then      
                 cmd="PISM_DO="" PARAM_CALVING=ocean_kill PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME PARAM_SIAE=${SIAE} PARAM_PPQ=${PPQ} PARAM_SSA_N=${SSA_N} PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
