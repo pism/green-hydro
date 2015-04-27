@@ -143,6 +143,9 @@ for SIAE in 1.25 2; do
     for PPQ in 0.5 0.6; do
         for SSA_N in 3 3.25; do
 
+            rm -f $SCRIPT
+            SCRIPT="do_g${GRID}m_${CLIMATE}-spinup-${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.sh"
+            
             # insert preamble
             echo $SHEBANGLINE >> $SCRIPT
             echo >> $SCRIPT # add newline
@@ -154,9 +157,6 @@ for SIAE in 1.25 2; do
             echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
             echo >> $SCRIPT # add newline
             
-            SCRIPT="do_g${GRID}m_${CLIMATE}-spinup-${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.sh"
-            rm -f $SCRIPT
-
             DURA=100000
             START=-125000
             END=-25000
