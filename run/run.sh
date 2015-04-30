@@ -75,6 +75,8 @@ if [ $# -lt 5 ] ; then
   echo "                 [default=3] for Glen exponent in SIA"
   echo "    PARAM_SSA_N  sets -ssa_n \$PARAM_SSA_N"
   echo "                 [default=3] for Glen exponent in SSA"
+  echo "    PISM_PARAM   gives you the flexibility of adding options"
+  echo "                 [default=none]"
   echo "    PISM_DO      set to 'echo' if no run desired; defaults to empty"
   echo "    PISM_OFORMAT set -o_format; defaults to netcdf3"
   echo "    PISM_OSIZE   set -o_size; default big"
@@ -410,6 +412,13 @@ else
 fi
 OFORMAT=$PISM_OFORMAT
 
+# check if env var PISM_DO was set (i.e. PISM_DO=echo for a 'dry' run)
+if [ -n "${PISM_PARAM,:+1}" ] ; then  # check if env var DO is already set
+  echo "$SCRIPTNAME        PISM_DO = $PISM_DO  (already set)"
+else
+  PISM_PARAM="" 
+fi
+
 # set MPIDO if using different MPI execution command, for example:
 #  $ export PISM_MPIDO="aprun -n "
 if [ -n "${PISM_MPIDO:+1}" ] ; then  # check if env var is already set
@@ -542,7 +551,7 @@ else
 fi
 
 # construct command
-cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG $AGE -i $INNAME -bootstrap -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE $HIGHRESPETSC -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
+cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG $AGE -i $INNAME -bootstrap -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $PISM_PARAM $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE $HIGHRESPETSC -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
 echo
 $PISM_DO $cmd
 
