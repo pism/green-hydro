@@ -478,7 +478,7 @@ fi
 if [ -n "${EXVARS:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME          EXVARS = $EXVARS  (already set)"
 else
-  EXVARS="bwat,bwatvel,diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,taud_mag,flux_divergence,velsurf,climatic_mass_balance,climatic_mass_balance_original"
+  EXVARS="bwat,bwatvel,diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,taud_mag,flux_divergence,velsurf,climatic_mass_balance,climatic_mass_balance_original,ocean_kill_flux,ocean_kill_flux"
   if [ "$5" = "hybrid" ]; then
     EXVARS="${EXVARS},hardav,velbase_mag,tauc,taub_mag"
   fi
