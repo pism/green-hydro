@@ -413,7 +413,7 @@ fi
 OFORMAT=$PISM_OFORMAT
 
 # check if env var PISM_DO was set (i.e. PISM_DO=echo for a 'dry' run)
-if [ -n "${PISM_PARAM,:+1}" ] ; then  # check if env var DO is already set
+if [ -n "${PISM_PARAM:+1}" ] ; then  # check if env var DO is already set
   echo "$SCRIPTNAME        PISM_DO = $PISM_DO  (already set)"
 else
   PISM_PARAM="" 
