@@ -185,7 +185,7 @@ for SIAE in 1.25 2; do
             echo >> $SCRIPT
             
             if [ $GRID == "4500" ]; then
-                REGRIDFILE=g9000m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
+                REGRIDFILE=g9000m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
             else
                 REGRIDFILE=$OUTFILE
             fi
@@ -195,7 +195,7 @@ for SIAE in 1.25 2; do
             END=-5000
             MKA=$(($END/-1000))
             
-            OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
+            OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
             
             if [[ ($GRID == "9000") || ($GRID == "4500") ]]; then      
                 cmd="PISM_DO="" PARAM_CALVING=eigen_calving PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=${SIAE} PARAM_PPQ=${PPQ} PARAM_SSA_N=${SSA_N} PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
@@ -207,7 +207,7 @@ for SIAE in 1.25 2; do
             
             
             if [ $GRID == "3600" ]; then
-                REGRIDFILE=g4500m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
+                REGRIDFILE=g4500m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
             else
                 REGRIDFILE=$OUTFILE
             fi
@@ -218,7 +218,7 @@ for SIAE in 1.25 2; do
             MKA=$(($END/-1000))
              
             
-            OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
+            OUTFILE=g${GRID}m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
             
             if [[ ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") ]]; then      
                 cmd="PISM_DO="" PARAM_CALVING=eigen_calving PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=${SIAE} PARAM_PPQ=${PPQ}  PARAM_SSA_N=${SSA_N} PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
@@ -229,7 +229,7 @@ for SIAE in 1.25 2; do
             echo >> $SCRIPT
             
             if [ $GRID == "1800" ]; then
-                 REGRIDFILE=g3600m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}.nc
+                 REGRIDFILE=g3600m_m${MKA}ka_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
             else
                 REGRIDFILE=$OUTFILE
             fi
@@ -241,7 +241,7 @@ for SIAE in 1.25 2; do
             MA=$(($END/-1))
             
             
-            OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
+            OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
              
             if [[ ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800") ]]; then      
                 cmd="PISM_DO="" PARAM_CALVING=eigen_calving PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=${SIAE} PARAM_PPQ=${PPQ} PARAM_SSA_N=${SSA_N} PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
@@ -252,7 +252,7 @@ for SIAE in 1.25 2; do
             echo >> $SCRIPT
             
             if [ $GRID == "1500" ]; then
-                REGRIDFILE=g1800m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
+                REGRIDFILE=g1800m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
              else
                  REGRIDFILE=$OUTFILE
             fi
@@ -263,7 +263,7 @@ for SIAE in 1.25 2; do
             MA=$(($END/-1))
              
             
-            OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
+            OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
             
             if [[ ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800") || ($GRID == "1500") ]]; then      
                 cmd="PISM_DO="" PARAM_CALVING=eigen_calving PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=${SIAE} PARAM_PPQ=${PPQ} PARAM_SSA_N=${SSA_N} EXSTEP=20 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
@@ -274,7 +274,7 @@ for SIAE in 1.25 2; do
             echo >> $SCRIPT
             
             if [ $GRID == "1200" ]; then
-                REGRIDFILE=g1500m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
+                REGRIDFILE=g1500m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
             else
                 REGRIDFILE=$OUTFILE
             fi
@@ -285,7 +285,7 @@ for SIAE in 1.25 2; do
             MA=$(($END/-1))
             
             
-            OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
+            OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
             
             if [[ ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800") || ($GRID == "1500")  || ($GRID == "1200") ]]; then      
                 cmd="PISM_DO="" PARAM_CALVING=eigen_calving PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=${SIAE} PARAM_PPQ=${PPQ} PARAM_SSA_N=${SSA_N} PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
@@ -296,7 +296,7 @@ for SIAE in 1.25 2; do
             echo >> $SCRIPT
 
             if [ $GRID == "900" ]; then
-                REGRIDFILE=g1200m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
+                REGRIDFILE=g1200m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
             else
                 REGRIDFILE=$OUTFILE
             fi
@@ -307,7 +307,7 @@ for SIAE in 1.25 2; do
             MA=$(($END/-1))
             
             
-            OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
+            OUTFILE=g${GRID}m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
             
             if [[ ($GRID == "9000") || ($GRID == "4500") || ($GRID == "3600") || ($GRID == "1800") || ($GRID == "1500")  || ($GRID == "1200") || ($GRID == "900") ]]; then      
                 cmd="PISM_DO="" PARAM_CALVING=eigen_calving PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=${SIAE} PARAM_PPQ=${PPQ} EXSTEP=10 PARAM_SSA_N=${SSA_N} PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
@@ -322,12 +322,12 @@ for SIAE in 1.25 2; do
             END=0
             
             if [ $GRID == "600" ]; then
-                REGRIDFILE=g900m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}.nc
+                REGRIDFILE=g900m_m${MA}a_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
             else
                 REGRIDFILE=$OUTFILE
             fi
             
-            OUTFILE=g${GRID}m_0_${CLIMATE}_${TYPE}_v${VERSION}.nc
+            OUTFILE=g${GRID}m_0_${CLIMATE}_${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.nc
             
             cmd="PISM_DO="" PARAM_CALVING=eigen_calving PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME REGRIDFILE=$REGRIDFILE PARAM_SIAE=${SIAE} PARAM_PPQ=${PPQ} PARAM_SSA_N=${SSA_N} EXSTEP=10 PISM_CONFIG=spinup_config.nc ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
             echo "$cmd 2>&1 | tee job_g.\${PBS_JOBID}" >> $SCRIPT
