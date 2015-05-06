@@ -283,7 +283,7 @@ if [ "$PARAM_CALVING" == "ocean_kill" ]; then
 elif [ "$PARAM_CALVING" == "float_kill" ]; then
     CALVING="-calving $PARAM_CALVING"
 elif [ "$PARAM_CALVING" == "eigen_calving" ]; then
-    CALVING="-calving $PARAM_CALVING"
+    CALVING="-calving $PARAM_CALVING -pik -eigen_calving_K 1e18 -cfl_eigen_calving"
     echo "Make sure you set the eigen-calving parameters"
     echo "This option is untested"
 elif [ "$PARAM_CALVING" == "thickness_calving" ]; then
