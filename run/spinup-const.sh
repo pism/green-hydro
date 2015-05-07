@@ -141,7 +141,7 @@ MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROCS_PER_NODE"
 MPIOUTLINE="#PBS -j oe"
 
 for SIAE in 1.25 2; do
-    for PPQ in 0.5 0.6; do
+    for PPQ in 0.33 0.5 0.6; do
         for SSA_N in 3 3.25; do
 
             SCRIPT="do_g${GRID}m_${CLIMATE}-spinup-${TYPE}_v${VERSION}_e_${SIAE}_ppq_${PPQ}_ssa_n_${SSA_N}.sh"
