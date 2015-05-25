@@ -140,7 +140,7 @@ MPITIMELINE="#PBS -l walltime=$WALLTIME"
 MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROCS_PER_NODE"
 MPIOUTLINE="#PBS -j oe"
 
-for SIAE in 1.25 2; do
+for SIAE in 1.25 2 3; do
     for PPQ in 0.33 0.5 0.6; do
         for SSA_N in 3 3.25; do
 
