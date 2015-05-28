@@ -30,11 +30,11 @@ TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
 BEDDEFLIST=(none, lc, iso)
 GRIDLIST="{36000, 18000, 9000, 4500, 3600, 1800, 1500, 1200, 900}"
 if [ $# -lt 2 ] ; then
-  echo "spinup.sh ERROR: needs 4 positional arguments ... ENDING NOW"
+  echo "spinup.sh ERROR: needs 5 positional arguments ... ENDING NOW"
   echo
   echo "usage:"
   echo
-  echo "    spinup.sh PROCS GRID CLIMATE TYPE BEDDEF"
+  echo "    spinup.sh PROCS GRID CLIMATE TYPE BEDDEF REGRIDFILE"
   echo
   echo "  where:"
   echo "    PROCS     = 1,2,3,... is number of MPI processes"
