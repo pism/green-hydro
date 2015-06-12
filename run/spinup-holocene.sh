@@ -28,9 +28,10 @@ VERSION=1.2
 CLIMLIST=(const, paleo)
 TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
 BEDDEFLIST=(none, lc, iso)
+CALVINGLIST=(float_kill, ocean_kill, eigen_calving)
 GRIDLIST="{36000, 18000, 9000, 4500, 3600, 1800, 1500, 1200, 900}"
-if [ $# -lt 2 ] ; then
-  echo "spinup.sh ERROR: needs 5 positional arguments ... ENDING NOW"
+if [ $# -lt 6 ] ; then
+  echo "spinup.sh ERROR: needs 6 positional arguments ... ENDING NOW"
   echo
   echo "usage:"
   echo
@@ -42,6 +43,7 @@ if [ $# -lt 2 ] ; then
   echo "    CLIMATE   in (${CLIMLIST[@]})"
   echo "    TYPE      in (${TYPELIST[@]})"
   echo "    BEDDEF    in (${BEDDEFLIST[@]})"
+  echo "    CALVING    in (${CALVINGLIST[@]})"
   echo
   echo
   exit
@@ -138,7 +140,20 @@ else
   echo "invalid forth argument; must be in (${BEDDEFLIST[@]})"
   exit
 fi
-REGRIDFILE=$6
+
+# set CALVING from argument 6
+if [ "$6" = "float_kill" ]; then
+    CAVLING=$6
+elif [ "$6" = "ocean_kill" ]; then
+    CALVING=$6
+elif [ "$6" = "eigen_calving" ]; then
+    CAVLING=$6
+else
+  echo "invalid forth argument; must be in (${CALVINGLIST[@]})"
+  exit
+fi
+
+REGRIDFILE=$7
 
 export PISM_EXPERIMENT=$EXPERIMENT
 export PISM_TITLE="Holocene Simulation"
@@ -160,11 +175,11 @@ MPIQUEUELINE="#PBS -q $QUEUE"
  MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROCS_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
-SCRIPT="do_g${GRID}m_straight-${CLIMATE}-holocene-${TYPE}_v${VERSION}_beddef_${BD}.sh"
+SCRIPT="do_g${GRID}m_straight-${CLIMATE}-holocene-${TYPE}_v${VERSION}_beddef_${BD}_calving_${CALVING}.sh"
 rm -f $SCRIPT
 EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization $TYPE"
 
-OUTFILE=g${GRID}m_0_holocene_${CLIMATE}_${TYPE}_beddef_${BD}_v${VERSION}.nc
+OUTFILE=g${GRID}m_0_holocene_${CLIMATE}_${TYPE}_beddef_${BD}_calving_${CALVING}_v${VERSION}.nc
 
 # insert preamble
 echo $SHEBANGLINE >> $SCRIPT
@@ -177,7 +192,7 @@ echo >> $SCRIPT # add newline
 echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
 echo >> $SCRIPT # add newline
     
-cmd="PISM_DO="" EXSTEP=10 PARAM_SIAE=3 PARAM_PPQ=0.50 PARAM_CALVING=float_kill  REGRIDFILE=$REGRIDFILE PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME $BEDDEF PISM_BCFILE=$PISM_BCFILE ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
+cmd="PISM_DO="" EXSTEP=10 PARAM_SIAE=3 PARAM_PPQ=0.50 PARAM_CALVING=$CALVING  REGRIDFILE=$REGRIDFILE PISM_OFORMAT=$OFORMAT STARTEND=$START,$END PISM_DATANAME=$PISM_DATANAME $BEDDEF PISM_BCFILE=$PISM_BCFILE ./run.sh $NN $CLIMATE $DURA $GRID hybrid null $OUTFILE $INFILE"
 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
 echo >> $SCRIPT
 
