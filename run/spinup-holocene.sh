@@ -143,11 +143,11 @@ fi
 
 # set CALVING from argument 6
 if [ "$6" = "float_kill" ]; then
-    CAVLING=$6
+    CALVING=$6
 elif [ "$6" = "ocean_kill" ]; then
     CALVING=$6
 elif [ "$6" = "eigen_calving" ]; then
-    CAVLING=$6
+    CALVING=$6
 else
   echo "invalid forth argument; must be in (${CALVINGLIST[@]})"
   exit
