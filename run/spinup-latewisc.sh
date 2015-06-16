@@ -156,7 +156,7 @@ fi
 REGRIDFILE=$7
 
 export PISM_EXPERIMENT=$EXPERIMENT
-export PISM_TITLE="Holocene Simulation"
+export PISM_TITLE="Late Wisconsinan Simulation"
 
 
 INFILE=pism_Greenland_${GRID}m_mcb_jpl_v${VERSION}_${TYPE}.nc
@@ -175,11 +175,11 @@ MPIQUEUELINE="#PBS -q $QUEUE"
  MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROCS_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
-SCRIPT="do_g${GRID}m_straight-${CLIMATE}-latewisc-${TYPE}_v${VERSION}_beddef_${BD}_calving_${CALVING}.sh"
+SCRIPT="do_g${GRID}m_m15ka-${CLIMATE}-latewisc-${TYPE}_v${VERSION}_beddef_${BD}_calving_${CALVING}.sh"
 rm -f $SCRIPT
 EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization $TYPE"
 
-OUTFILE=g${GRID}m_15kaBP_${CLIMATE}_${TYPE}_beddef_${BD}_calving_${CALVING}_v${VERSION}.nc
+OUTFILE=g${GRID}m_m15ka_latewisc_${CLIMATE}_${TYPE}_beddef_${BD}_calving_${CALVING}_v${VERSION}.nc
 
 # insert preamble
 echo $SHEBANGLINE >> $SCRIPT

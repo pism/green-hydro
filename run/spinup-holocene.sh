@@ -162,8 +162,8 @@ export PISM_TITLE="Holocene Simulation"
 INFILE=pism_Greenland_${GRID}m_mcb_jpl_v${VERSION}_${TYPE}.nc
 PISM_DATANAME=$INFILE
 PISM_BCFILE=RACMO_CLRUN_10000M_BIL_MM_EPSG314_1960-1990_baseline.nc
-DURA=25000
-START=-25000
+DURA=15000
+START=-15000
 END=0
 
 
@@ -175,7 +175,7 @@ MPIQUEUELINE="#PBS -q $QUEUE"
  MPISIZELINE="#PBS -l nodes=$NODES:ppn=$PROCS_PER_NODE"
   MPIOUTLINE="#PBS -j oe"
 
-SCRIPT="do_g${GRID}m_straight-${CLIMATE}-holocene-${TYPE}_v${VERSION}_beddef_${BD}_calving_${CALVING}.sh"
+SCRIPT="do_g${GRID}m_0-${CLIMATE}-holocene-${TYPE}_v${VERSION}_beddef_${BD}_calving_${CALVING}.sh"
 rm -f $SCRIPT
 EXPERIMENT="${DURAKA}ka ${CLIMATE}-climate initialization $TYPE"
 
