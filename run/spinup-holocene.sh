@@ -31,11 +31,11 @@ BEDDEFLIST=(none, lc, iso)
 CALVINGLIST=(float_kill, ocean_kill, eigen_calving)
 GRIDLIST="{36000, 18000, 9000, 4500, 3600, 1800, 1500, 1200, 900}"
 if [ $# -lt 6 ] ; then
-  echo "spinup.sh ERROR: needs 6 positional arguments ... ENDING NOW"
+  echo "spinup.sh ERROR: needs 7 positional arguments ... ENDING NOW"
   echo
   echo "usage:"
   echo
-  echo "    spinup.sh PROCS GRID CLIMATE TYPE BEDDEF REGRIDFILE"
+  echo "    spinup.sh PROCS GRID CLIMATE TYPE BEDDEF CALVING REGRIDFILE"
   echo
   echo "  where:"
   echo "    PROCS     = 1,2,3,... is number of MPI processes"

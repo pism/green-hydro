@@ -16,13 +16,14 @@ set -e # exit on error
 SCRIPTNAME=forecast
 CLIMATE=forcing
 TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
+CALVINGLIST=(float_kill, ocean_kill, eigen_calving)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900)
 if [ $# -lt 4 ] ; then
-  echo "paramspawn.sh ERROR: needs 4 positional arguments ... ENDING NOW"
+  echo "paramspawn.sh ERROR: needs 5 positional arguments ... ENDING NOW"
   echo
   echo "usage:"
   echo
-  echo "    paramspawn.sh NN GRID TYPE REGRIDFILE"
+  echo "    paramspawn.sh NN GRID TYPE CALVING REGRIDFILE"
   echo
   echo "  where:"
   echo "    PROCSS       = 1,2,3,... is number of MPI processes"
@@ -125,12 +126,24 @@ else
   exit
 fi
 
+# set CALVING from argument 4
+if [ "$4" = "float_kill" ]; then
+    CALVING=$4
+elif [ "$4" = "ocean_kill" ]; then
+    CALVING=$4
+elif [ "$4" = "eigen_calving" ]; then
+    CALVING=$4
+else
+  echo "invalid forth argument; must be in (${CALVINGLIST[@]})"
+  exit
+fi
+
 STARTYEAR=2008
 ENDYEAR=2099
 PISM_TIMEFILE=time_${STARTYEAR}-${ENDYEAR}.nc
 create_timeline.py -a ${STARTYEAR}-1-1 -e ${ENDYEAR}-1-1 $PISM_TIMEFILE
 
-REGRIDFILE=$4
+REGRIDFILE=$5
 PISM_BCFILE=RACMO_HadGEM2_RCP45_10000M_CON_MM_EPSG314_XY.nc
 PISM_CONST_BCFILE=g600m_paleo_climate.nc
 VERSION=1.2
@@ -155,7 +168,7 @@ for E in 1.25; do
         for TEFO in 0.02; do
 	    for SSA_N in 3.25; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
-                EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}_CONST
+                EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}_calving_${CALVING}_CONST
                 SCRIPT=forecast_g${GRID}m_${EXPERIMENT}.sh
                 rm -f $SCRIPT
                 
@@ -175,14 +188,14 @@ for E in 1.25; do
                 export PISM_EXPERIMENT=$EXPERIMENT
                 export PISM_TITLE="Greenland Prognostic Study"
                 
-                cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_CONST_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly SAVE=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                cmd="PISM_DO="" PARAM_CALVING=$CALVING REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_CONST_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly SAVE=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
                 echo
 
-                EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}_CTRL
+                EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}_calving_${CALVING}_CTRL
                 SCRIPT=forecast_g${GRID}m_${EXPERIMENT}.sh
                 rm -f $SCRIPT
                 
@@ -202,7 +215,7 @@ for E in 1.25; do
                 export PISM_EXPERIMENT=$EXPERIMENT
                 export PISM_TITLE="Greenland Prognostic Study"
                 
-                cmd="PISM_DO="" REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly SAVE=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                cmd="PISM_DO="" PARAM_CALVING=$CALVING REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly SAVE=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                 
                 echo >> $SCRIPT
@@ -210,7 +223,7 @@ for E in 1.25; do
                 echo
 
 
-                EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}_E1
+                EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}_calving_${CALVING}_E1
                 SCRIPT=forecast_g${GRID}m_${EXPERIMENT}.sh
                 rm -f $SCRIPT
                 
@@ -230,7 +243,7 @@ for E in 1.25; do
                 export PISM_EXPERIMENT=$EXPERIMENT
                 export PISM_TITLE="Greenland Prognostic Study"
                 
-                cmd="PISM_DO="" PISM_PARAM='-sliding_scale_factor_reduces_tauc 2' REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly SAVE=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                cmd="PISM_DO="" PARAM_CALVING=$CALVING PISM_PARAM='-sliding_scale_factor_reduces_tauc 2' REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly SAVE=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                 
                 echo >> $SCRIPT
