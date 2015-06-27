@@ -15,7 +15,7 @@
 set -e # exit on error
 SCRIPTNAME=hydro_null_spawn.sh
 
-VERSION=1.2
+VERSION=2
 CLIMLIST=(const, pdd)
 TYPELIST=(ctrl, old_bed, ba01_bed, 970mW_hs, jak_1985)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900 600 450)
