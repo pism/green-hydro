@@ -146,7 +146,7 @@ fi
 
 # are we using a time file for forcing?
 if [ -z "${PISM_BCFILE}" ] ; then  # check if env var is NOT set
-    PISM_BCFILE=RACMO_CLRUN_10KM_CON_MM_EPSG3413.nc
+    PISM_BCFILE=RACMO_CLRUN_10000M_BIL_MM_EPSG314_1960-1990_baseline.nc
 else
     PISM_BCFILE=$PISM_BCFILE
 fi
