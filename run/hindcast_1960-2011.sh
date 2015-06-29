@@ -29,6 +29,7 @@ if [ $# -lt 4 ] ; then
   echo "    PROCSS       = 1,2,3,... is number of MPI processes"
   echo "    GRID      in (${GRIDLIST[@]})"
   echo "    TYPE      in (${TYPELIST[@]})"
+  echo "    CALVING   in (${CALVINGLIST[@]})"
   echo "    REGRIDFILE  name of regrid file"
   echo
   echo
@@ -139,6 +140,8 @@ else
 fi
 
 REGRIDFILE=$5
+STARTYEAR=1960
+ENDYEAR=2011
 PISM_BCFILE=RACMO_CLRUN_10000M_BIL_MM_EPSG314.nc
 PISM_TIMEFILE=$PISM_BCFILE
 PISM_CONST_BCFILE=g600m_paleo_climate.nc
