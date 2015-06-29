@@ -44,7 +44,7 @@ fi
 if [ -n "${PISM_WALLTIME:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME                    PISM_WALLTIME = $PISM_WALLTIME  (already set)"
 else
-  PISM_WALLTIME=12:00:00
+  PISM_WALLTIME=160:00:00
   echo "$SCRIPTNAME                     PISM_WALLTIME = $PISM_WALLTIME"
 fi
 WALLTIME=$PISM_WALLTIME
@@ -138,15 +138,11 @@ else
   exit
 fi
 
-STARTYEAR=2008
-ENDYEAR=2099
-PISM_TIMEFILE=time_${STARTYEAR}-${ENDYEAR}.nc
-create_timeline.py -a ${STARTYEAR}-1-1 -e ${ENDYEAR}-1-1 $PISM_TIMEFILE
-
 REGRIDFILE=$5
-PISM_BCFILE=RACMO_HadGEM2_RCP45_10000M_CON_MM_EPSG314_XY.nc
+PISM_BCFILE=RACMO_CLRUN_10000M_BIL_MM_EPSG314.nc
+PISM_TIMEFILE=$PISM_BCFILE
 PISM_CONST_BCFILE=g600m_paleo_climate.nc
-VERSION=1.2
+VERSION=2_1985
 PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v${VERSION}_${TYPE}.nc
 NODES=$(( $NN/$PROCS_PER_NODE))
 TYPE=${TYPE}_v${VERSION}
@@ -164,7 +160,7 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 HYDRO=null
 philow=5
 for E in 1.25; do
-    for PPQ in 0.6 0.7; do
+    for PPQ in 0.6; do
         for TEFO in 0.02; do
 	    for SSA_N in 3.25; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
@@ -216,34 +212,6 @@ for E in 1.25; do
                 export PISM_TITLE="Greenland Prognostic Study"
                 
                 cmd="PISM_DO="" PARAM_CALVING=$CALVING REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly SAVE=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
-                echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-                
-                echo >> $SCRIPT
-                echo "# $SCRIPT written"
-                echo
-
-
-                EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}_calving_${CALVING}_E1
-                SCRIPT=forecast_g${GRID}m_${EXPERIMENT}.sh
-                rm -f $SCRIPT
-                
-                OUTFILE=g${GRID}m_${EXPERIMENT}.nc
-                
-                # insert preamble
-                echo $SHEBANGLINE >> $SCRIPT
-                echo >> $SCRIPT # add newline
-                echo $MPIQUEUELINE >> $SCRIPT
-                echo $MPITIMELINE >> $SCRIPT
-                echo $MPISIZELINE >> $SCRIPT
-                echo $MPIOUTLINE >> $SCRIPT
-                echo >> $SCRIPT # add newline
-                echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-                echo >> $SCRIPT # add newline
-                
-                export PISM_EXPERIMENT=$EXPERIMENT
-                export PISM_TITLE="Greenland Prognostic Study"
-                
-                cmd="PISM_DO="" PARAM_CALVING=$CALVING PISM_PARAM='-sliding_scale_factor_reduces_tauc 2' REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly SAVE=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                 
                 echo >> $SCRIPT
