@@ -13,9 +13,9 @@
 
 
 set -e # exit on error
-SCRIPTNAME=forecast
+SCRIPTNAME=hindcast
 CLIMATE=forcing
-TYPELIST=(ctrl, old_bed, 970mW_hs, jak_1985)
+TYPELIST=(ctrl, old_bed, 970mW_hs, 1985)
 CALVINGLIST=(float_kill, ocean_kill, eigen_calving)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900)
 if [ $# -lt 4 ] ; then
@@ -120,7 +120,7 @@ elif [ "$3" = "ba01_bed" ]; then
     TYPE=$3
 elif [ "$3" = "970mW_hs" ]; then
     TYPE=$3
-elif [ "$3" = "jak_1985" ]; then
+elif [ "$3" = "1985" ]; then
     TYPE=$3
 else
   echo "invalid forth argument; must be in (${TYPELIST[@]})"
