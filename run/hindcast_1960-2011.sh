@@ -157,7 +157,7 @@ MPIQUEUELINE="#PBS -q $QUEUE"
   MPIOUTLINE="#PBS -j oe"
 
 # ########################################################
-# set up forecast
+# set up hindcast
 # ########################################################
 
 HYDRO=null
@@ -168,7 +168,7 @@ for E in 1.25; do
 	    for SSA_N in 3.25; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
                 EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}_calving_${CALVING}_CONST
-                SCRIPT=forecast_g${GRID}m_${EXPERIMENT}.sh
+                SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
                 rm -f $SCRIPT
                 
                 OUTFILE=g${GRID}m_${EXPERIMENT}.nc
@@ -195,7 +195,7 @@ for E in 1.25; do
                 echo
 
                 EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}_calving_${CALVING}_CTRL
-                SCRIPT=forecast_g${GRID}m_${EXPERIMENT}.sh
+                SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
                 rm -f $SCRIPT
                 
                 OUTFILE=g${GRID}m_${EXPERIMENT}.nc
