@@ -175,9 +175,8 @@ elif [ "$2" = "pdd" ]; then
 elif [ "$2" = "forcing" ]; then
   climname="rcm-forcing"
   INLIST=""
-  # RACMO forcing not yet ready for ocean.
-  # COUPLER="-surface given -surface_given_file $PISM_BCFILE -ocean given -ocean_given_file $PISM_BCFILE"
-  COUPLER="-surface given -surface_given_file $PISM_BCFILE"
+  COUPLER="-surface given -surface_given_file $PISM_BCFILE -ocean given -ocean_given_file $PISM_BCFILE"
+  #COUPLER="-surface given -surface_given_file $PISM_BCFILE"
 
 else
   echo "invalid second argument; must be in $CLIMLIST"

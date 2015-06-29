@@ -1,11 +1,8 @@
 #!/usr/bin/env python
 
-# Copyright (C) 2011 Andy Aschwanden
+# Copyright (C) 2011-2015 Andy Aschwanden
 
-try:
-    import netCDF4 as netCDF
-except:
-    import netCDF3 as netCDF
+import netCDF4 as netCDF
 NC = netCDF.Dataset
 from netcdftime import utime
 import dateutil
@@ -23,6 +20,9 @@ parser.add_option("-e",dest="b_e",
                   help="basal melt rate from t_e on, in kg m-2 s-1",default=285e3)
 parser.add_option("--ta",dest="t_a",
                   help="time t_e, udunits string, e.g. 1989-1-1",default="1997-1-31")
+
+# From Motyka et al (2011)
+# melt rates increased by 25% from 228 m/yr to 285 m/yr
 
 (options, args) = parser.parse_args()
 b_a = options.b_a
