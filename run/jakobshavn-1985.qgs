@@ -102,31 +102,58 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="thickness20150627184958151" name="thickness">
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="jakobshavn_1985_floating_tongue20150628122121339" name="jakobshavn_1985_floating_tongue">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="surface20150627184442145" name="surface">
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="terminus_thickness20150628123113531" name="terminus_thickness">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="thk_shelf20150627183450275" name="thk_shelf">
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="terminus20150628123113627" name="terminus">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="surface_tongue20150627183120392" name="surface_tongue">
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="grounded_198520150628122508629" name="grounded_1985">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Checked" id="surface_1985_geoid_corrected20150627181419155" name="surface_1985_geoid_corrected">
+    <layer-tree-layer expanded="1" checked="Qt::Checked" id="mask20150628170214448" name="mask">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="0" checked="Qt::Checked" id="thickness20150628152151563" name="thickness">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="grounded20150628131434716" name="grounded">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20150627184958151" name="thickness 1985">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20150628152817086" name="thickness v2">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="19850905142904_LM50090111985248FFF03_220150628122923863" name="19850905142904_LM50090111985248FFF03_2">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="surface20150627184442145" name="surface">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="thk_shelf20150627183450275" name="thk_shelf">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="surface_tongue20150627183120392" name="surface_tongue">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="surface_1985_geoid_corrected20150627181419155" name="surface_1985_geoid_corrected">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="geoid20150627180950125" name="geoid">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="surface20150627180944098" name="surface">
+    <layer-tree-layer expanded="0" checked="Qt::Checked" id="bed20150628122232833" name="bed">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="surface_198520150627180936679" name="surface_1985">
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="surface20150627180944098" name="surface">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Checked" id="DEM_5_5_july_24_85_epsg341320150627171055111" name="DEM_5.5_july_24_85_epsg3413">
+    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="surface_198520150627180936679" name="surface_1985">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="0" checked="Qt::Checked" id="surface20150203101130311" name="GIMPDEM surface 150m">
@@ -259,10 +286,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>-298904.05402281432179734</xmin>
-      <ymin>-2341680.80762558942660689</ymin>
-      <xmax>-48373.52580385335022584</xmax>
-      <ymax>-2200871.67862661136314273</ymax>
+      <xmin>-206977.1511905969819054</xmin>
+      <ymin>-2281487.0479790298268199</ymin>
+      <xmax>-169594.53249638935085386</xmax>
+      <ymax>-2260476.37907790672034025</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -371,6 +398,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110401_0320150221112654000"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="test20150527125537996"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="19950527_0120150220182329811"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20150628152151563"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="19990524_0120150221112205936"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20120507_0620150221112719558"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20060529_0120150221112604882"/>
@@ -403,8 +431,8 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20060522_0120150221112604835"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="19980714_0120150221112203170"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g18000m_outline20150608141316905"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="g600m_const_ctrl_e_1_25_ppq_0_6_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_taud_mag20150208132453337"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="surface20150627180944098"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="g600m_const_ctrl_e_1_25_ppq_0_6_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_taud_mag20150208132453337"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20130410_0120150221112824066"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20120413_0120150221112716919"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20120417_0220150221112717641"/>
@@ -426,8 +454,9 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed_450m_v1_2_hs20150324193724328"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="19930624_0120150221112152794"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="19930707_0120150221112152883"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20060528_0120150221112604870"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="DEM_5_5_july_24_85_epsg341320150627171055111"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20060528_0120150221112604870"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="terminus_thickness20150628123113531"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20100513_0120150221112620317"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110426_1020150221112701624"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="test20150527125439708"/>
@@ -488,6 +517,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="MB20150429150150355"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20010523_0120150221112208946"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20060106_0120150221112604776"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="grounded_198520150628122508629"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="analysis20150319182107734"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110329_0120150221112652820"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20100513_0520150221112620598"/>
@@ -551,6 +581,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20100514_0820150221112621230"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="statistics_velsurf_normal_250m_greenland_2008_2009_grid_mo14_flow20150228125805449"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="19930709_0120150220182326258"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20150628152817086"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="topo5520150525171917270"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20030509_0120150221112559656"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110408_2020150221112656964"/>
@@ -654,6 +685,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20050523_0220150221112602251"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="19950522_0120150221112155487"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110419_0120150221112659580"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="mask20150628170214448"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110429_0220150221112702213"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20090407_0120150221112611321"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20120330_0220150221112716016"/>
@@ -718,6 +750,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="19950522_0120150220182329761"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20070912_0120150221112607157"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110505_0220150221112703143"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="jakobshavn_1985_floating_tongue20150628122121339"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20100517_0220150221112622006"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20100517_0120150221112621934"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20120507_0120150221112719194"/>
@@ -790,6 +823,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20090409_0120150221112611370"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110502_0520150221112702890"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110511_0520150221112704406"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="grounded20150628131434716"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="thk20150527093304012"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="surface_150m_slope20150203101308489"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="surface20150225180657130"/>
@@ -850,6 +884,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20100512_0120150221112620037"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20090422_0120150221112611570"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110425_0420150221112700842"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="19850905142904_LM50090111985248FFF03_220150628122923863"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20130321_0120150221112823708"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20070917_0120150221112607190"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="BedrockElevation20150220132326173"/>
@@ -942,6 +977,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="g900m_const_ctrl_v1_2_e_1_25_ppq_0_6_tefo_0_02_ssa_n_3_25_philow_5_0_hydro_null_100a_velsurf_mag20150209180945457"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110510_0120150221112703816"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="LAT20150429150600630"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20150628131118007"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20130326_0220150221112823749"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="greenland_andy20150121105218321"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110425_0820150221112701194"/>
@@ -994,6 +1030,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20130425_0120150221112824427"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20100525_0320150221112622942"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="old_bed_hs20141014120435686"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="Greenland_DEM_5_5_july_24_85_epsg3413_grounded20150628124727090"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20100515_0720150221112621862"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110424_0220150221112700590"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110408_1920150221112656880"/>
@@ -1045,6 +1082,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20150506152541591"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="statistics_velsurf_normal_250m_greenland_2008_2009_600m_best_flow_v1_220150324124312294"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110426_0920150221112701537"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="terminus20150628123113627"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20110430_0120150221112702297"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20100519_0320150221112622222"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="19930628_0120150220182326180"/>
@@ -1066,6 +1104,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="smb20150506152345807"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="foo20150601184701577"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20100510_0120150221112619476"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="bed20150628122232833"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20100106_0320150221112616243"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20150310143654661"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="20100510_0520150221112619756"/>
@@ -1111,6 +1150,14 @@
       <item>velsurf_mag20140918150111433</item>
       <item>velsurf_mag20150607120132640</item>
       <item>velsurf_mag20141012160122662</item>
+      <item>thickness20150627184958151</item>
+      <item>surface20150627184442145</item>
+      <item>thk_shelf20150627183450275</item>
+      <item>surface_tongue20150627183120392</item>
+      <item>surface_1985_geoid_corrected20150627181419155</item>
+      <item>geoid20150627180950125</item>
+      <item>surface20150627180944098</item>
+      <item>surface_198520150627180936679</item>
       <item>surface20150203101130311</item>
       <item>surface_150m_hs20140909191930698</item>
       <item>bed20150626153511986</item>
@@ -1141,15 +1188,16 @@
       <item>MODISGreenland250mclean_cut20140521183412526</item>
       <item>IBCAO_V3_500m_RR_epsg341420150208174333471</item>
       <item>IBCAO_V3_500m_RR_epsg3414_hs20150208174249742</item>
-      <item>DEM_5_5_july_24_85_epsg341320150627171055111</item>
-      <item>surface_198520150627180936679</item>
-      <item>surface20150627180944098</item>
-      <item>geoid20150627180950125</item>
-      <item>surface_1985_geoid_corrected20150627181419155</item>
-      <item>surface_tongue20150627183120392</item>
-      <item>thk_shelf20150627183450275</item>
-      <item>surface20150627184442145</item>
-      <item>thickness20150627184958151</item>
+      <item>jakobshavn_1985_floating_tongue20150628122121339</item>
+      <item>bed20150628122232833</item>
+      <item>grounded_198520150628122508629</item>
+      <item>19850905142904_LM50090111985248FFF03_220150628122923863</item>
+      <item>terminus_thickness20150628123113531</item>
+      <item>terminus20150628123113627</item>
+      <item>grounded20150628131434716</item>
+      <item>thickness20150628152151563</item>
+      <item>thickness20150628152817086</item>
+      <item>mask20150628170214448</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
@@ -1306,29 +1354,74 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="thickness" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="jakobshavn_1985_floating_tongue" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="thickness20150627184958151" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="jakobshavn_1985_floating_tongue20150628122121339" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="surface" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="terminus_thickness" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="surface20150627184442145" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="terminus_thickness20150628123113531" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="thk_shelf" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="terminus" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="thk_shelf20150627183450275" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="terminus20150628123113627" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="surface_tongue" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="grounded_1985" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="surface_tongue20150627183120392" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="grounded_198520150628122508629" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="surface_1985_geoid_corrected" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="mask" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="mask20150628170214448" visible="1"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="thickness" showFeatureCount="0">
       <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="surface_1985_geoid_corrected20150627181419155" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="thickness20150628152151563" visible="1"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="grounded" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="grounded20150628131434716" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness 1985" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="thickness20150627184958151" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness v2" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="thickness20150628152817086" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="19850905142904_LM50090111985248FFF03_2" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="19850905142904_LM50090111985248FFF03_220150628122923863" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="surface" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="surface20150627184442145" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="thk_shelf" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="thk_shelf20150627183450275" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="surface_tongue" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="surface_tongue20150627183120392" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="surface_1985_geoid_corrected" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="surface_1985_geoid_corrected20150627181419155" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="geoid" showFeatureCount="0">
@@ -1336,19 +1429,19 @@
         <legendlayerfile isInOverview="0" layerid="geoid20150627180950125" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="surface" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="surface20150627180944098" visible="1"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="surface_1985" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="surface_198520150627180936679" visible="1"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="DEM_5.5_july_24_85_epsg3413" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="bed" showFeatureCount="0">
       <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="DEM_5_5_july_24_85_epsg341320150627171055111" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="bed20150628122232833" visible="1"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="surface" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="surface20150627180944098" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="surface_1985" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="surface_198520150627180936679" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="GIMPDEM surface 150m" showFeatureCount="0">
@@ -7291,16 +7384,16 @@
       </ComposerScaleBar>
     </Composition>
   </Composer>
-  <projectlayers layercount="70">
+  <projectlayers layercount="79">
     <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-      <id>DEM_5_5_july_24_85_epsg341320150627171055111</id>
-      <datasource>/Volumes/Isunnguata Sermia/data/data_sets/jakobshavn-1985-dem/DEM_5.5_july_24_85_epsg3413.nc</datasource>
+      <id>19850905142904_LM50090111985248FFF03_220150628122923863</id>
+      <datasource>../../data_sets/GreenlandLandsat/19850905142904_LM50090111985248FFF03_2.tif</datasource>
       <title></title>
       <abstract></abstract>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>DEM_5.5_july_24_85_epsg3413</layername>
+      <layername>19850905142904_LM50090111985248FFF03_2</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
@@ -7318,147 +7411,16 @@
       </customproperties>
       <provider>gdal</provider>
       <noData>
-        <noDataList bandNo="1" useSrcNoData="1">
-          <noDataRange min="0" max="0"/>
-        </noDataList>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+        <noDataList bandNo="2" useSrcNoData="0"/>
+        <noDataList bandNo="3" useSrcNoData="0"/>
       </noData>
       <map-layer-style-manager current="">
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <pipe>
-        <rasterrenderer opacity="1" alphaBand="-1" classificationMax="2000" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
+        <rasterrenderer opacity="1" alphaBand="-1" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
           <rasterTransparency/>
-          <rastershader>
-            <colorrampshader colorRampType="INTERPOLATED" clip="0">
-              <item alpha="255" value="0" label="0.000000" color="#004f00"/>
-              <item alpha="255" value="15.8" label="15.800000" color="#004f00"/>
-              <item alpha="255" value="31.8" label="31.800000" color="#005100"/>
-              <item alpha="255" value="47.6" label="47.600000" color="#005200"/>
-              <item alpha="255" value="63.4" label="63.400000" color="#005400"/>
-              <item alpha="255" value="79.4" label="79.400000" color="#005400"/>
-              <item alpha="255" value="95.2" label="95.200000" color="#005700"/>
-              <item alpha="255" value="111.2" label="111.200000" color="#005700"/>
-              <item alpha="255" value="127" label="127.000000" color="#005800"/>
-              <item alpha="255" value="142.8" label="142.800000" color="#005900"/>
-              <item alpha="255" value="158.8" label="158.800000" color="#005b00"/>
-              <item alpha="255" value="174.6" label="174.600000" color="#005c00"/>
-              <item alpha="255" value="190.4" label="190.400000" color="#006100"/>
-              <item alpha="255" value="206.4" label="206.400000" color="#006100"/>
-              <item alpha="255" value="222.2" label="222.200000" color="#026300"/>
-              <item alpha="255" value="238" label="238.000000" color="#026300"/>
-              <item alpha="255" value="254" label="254.000000" color="#026500"/>
-              <item alpha="255" value="269.8" label="269.800000" color="#036600"/>
-              <item alpha="255" value="285.8" label="285.800000" color="#066800"/>
-              <item alpha="255" value="301.6" label="301.600000" color="#076900"/>
-              <item alpha="255" value="317.4" label="317.400000" color="#096b00"/>
-              <item alpha="255" value="333.4" label="333.400000" color="#096b00"/>
-              <item alpha="255" value="349.2" label="349.200000" color="#0b6e00"/>
-              <item alpha="255" value="365" label="365.000000" color="#0b6e00"/>
-              <item alpha="255" value="381" label="381.000000" color="#0e6f00"/>
-              <item alpha="255" value="396.8" label="396.800000" color="#0f7000"/>
-              <item alpha="255" value="412.6" label="412.600000" color="#127500"/>
-              <item alpha="255" value="428.6" label="428.600000" color="#127500"/>
-              <item alpha="255" value="444.4" label="444.400000" color="#167800"/>
-              <item alpha="255" value="460.4" label="460.400000" color="#167800"/>
-              <item alpha="255" value="476.2" label="476.200000" color="#167800"/>
-              <item alpha="255" value="492" label="492.000000" color="#167800"/>
-              <item alpha="255" value="508" label="508.000000" color="#177900"/>
-              <item alpha="255" value="523.8" label="523.800000" color="#187a00"/>
-              <item alpha="255" value="539.6" label="539.600000" color="#187a00"/>
-              <item alpha="255" value="555.6" label="555.600000" color="#187a00"/>
-              <item alpha="255" value="571.4" label="571.400000" color="#1b7d00"/>
-              <item alpha="255" value="587.4" label="587.400000" color="#1b7d00"/>
-              <item alpha="255" value="603.2" label="603.200000" color="#1d7f00"/>
-              <item alpha="255" value="619" label="619.000000" color="#1e8000"/>
-              <item alpha="255" value="635" label="635.000000" color="#1e8000"/>
-              <item alpha="255" value="650.8" label="650.800000" color="#1e8000"/>
-              <item alpha="255" value="666.6" label="666.600000" color="#238200"/>
-              <item alpha="255" value="682.6" label="682.600000" color="#238200"/>
-              <item alpha="255" value="698.4" label="698.400000" color="#2a8500"/>
-              <item alpha="255" value="714.2" label="714.200000" color="#2a8500"/>
-              <item alpha="255" value="730.2" label="730.200000" color="#338600"/>
-              <item alpha="255" value="746" label="746.000000" color="#348700"/>
-              <item alpha="255" value="762" label="762.000000" color="#3d8900"/>
-              <item alpha="255" value="777.8" label="777.800000" color="#3e8a00"/>
-              <item alpha="255" value="793.6" label="793.600000" color="#4a8f00"/>
-              <item alpha="255" value="809.6" label="809.600000" color="#4a8f00"/>
-              <item alpha="255" value="825.4" label="825.400000" color="#549000"/>
-              <item alpha="255" value="841.2" label="841.200000" color="#559100"/>
-              <item alpha="255" value="857.2" label="857.200000" color="#5d9300"/>
-              <item alpha="255" value="873" label="873.000000" color="#5e9400"/>
-              <item alpha="255" value="888.8" label="888.800000" color="#6a9c08"/>
-              <item alpha="255" value="904.8" label="904.800000" color="#6a9c08"/>
-              <item alpha="255" value="920.6" label="920.600000" color="#76a617"/>
-              <item alpha="255" value="936.6" label="936.600000" color="#76a617"/>
-              <item alpha="255" value="952.4" label="952.400000" color="#84b42a"/>
-              <item alpha="255" value="968.2" label="968.200000" color="#85b52b"/>
-              <item alpha="255" value="984.2" label="984.200000" color="#91be3e"/>
-              <item alpha="255" value="1000" label="1000.000000" color="#92bf3f"/>
-              <item alpha="255" value="1015.8" label="1015.800000" color="#a3cc58"/>
-              <item alpha="255" value="1031.8" label="1031.800000" color="#a3cc58"/>
-              <item alpha="255" value="1047.6" label="1047.600000" color="#b3d973"/>
-              <item alpha="255" value="1063.4" label="1063.400000" color="#b3d973"/>
-              <item alpha="255" value="1079.4" label="1079.400000" color="#c5e590"/>
-              <item alpha="255" value="1095.2" label="1095.200000" color="#c6e691"/>
-              <item alpha="255" value="1111.2" label="1111.200000" color="#cdec92"/>
-              <item alpha="255" value="1127" label="1127.000000" color="#ceed93"/>
-              <item alpha="255" value="1142.8" label="1142.800000" color="#cff07d"/>
-              <item alpha="255" value="1158.8" label="1158.800000" color="#cff07d"/>
-              <item alpha="255" value="1174.6" label="1174.600000" color="#d2f268"/>
-              <item alpha="255" value="1190.4" label="1190.400000" color="#d2f267"/>
-              <item alpha="255" value="1206.4" label="1206.400000" color="#d6f451"/>
-              <item alpha="255" value="1222.2" label="1222.200000" color="#d7f550"/>
-              <item alpha="255" value="1238" label="1238.000000" color="#e1f739"/>
-              <item alpha="255" value="1254" label="1254.000000" color="#e1f739"/>
-              <item alpha="255" value="1269.8" label="1269.800000" color="#ebfa20"/>
-              <item alpha="255" value="1285.8" label="1285.800000" color="#ebfa20"/>
-              <item alpha="255" value="1301.6" label="1301.600000" color="#f7fb0a"/>
-              <item alpha="255" value="1317.4" label="1317.400000" color="#f8fb09"/>
-              <item alpha="255" value="1333.4" label="1333.400000" color="#fbf400"/>
-              <item alpha="255" value="1349.2" label="1349.200000" color="#fbf300"/>
-              <item alpha="255" value="1365" label="1365.000000" color="#f7e300"/>
-              <item alpha="255" value="1381" label="1381.000000" color="#f7e300"/>
-              <item alpha="255" value="1396.8" label="1396.800000" color="#f5d400"/>
-              <item alpha="255" value="1412.6" label="1412.600000" color="#f4d300"/>
-              <item alpha="255" value="1428.6" label="1428.600000" color="#f0c400"/>
-              <item alpha="255" value="1444.4" label="1444.400000" color="#efc300"/>
-              <item alpha="255" value="1460.4" label="1460.400000" color="#edb600"/>
-              <item alpha="255" value="1476.2" label="1476.200000" color="#edb600"/>
-              <item alpha="255" value="1492" label="1492.000000" color="#e8a600"/>
-              <item alpha="255" value="1508" label="1508.000000" color="#e8a600"/>
-              <item alpha="255" value="1523.8" label="1523.800000" color="#e69900"/>
-              <item alpha="255" value="1539.6" label="1539.600000" color="#e59800"/>
-              <item alpha="255" value="1555.6" label="1555.600000" color="#de9000"/>
-              <item alpha="255" value="1571.4" label="1571.400000" color="#dd8f00"/>
-              <item alpha="255" value="1587.4" label="1587.400000" color="#d18400"/>
-              <item alpha="255" value="1603.2" label="1603.200000" color="#d18400"/>
-              <item alpha="255" value="1619" label="1619.000000" color="#c77e00"/>
-              <item alpha="255" value="1635" label="1635.000000" color="#c77e00"/>
-              <item alpha="255" value="1650.8" label="1650.800000" color="#bd7400"/>
-              <item alpha="255" value="1666.6" label="1666.600000" color="#bc7300"/>
-              <item alpha="255" value="1682.6" label="1682.600000" color="#b36b00"/>
-              <item alpha="255" value="1698.4" label="1698.400000" color="#b26a00"/>
-              <item alpha="255" value="1714.2" label="1714.200000" color="#a66100"/>
-              <item alpha="255" value="1730.2" label="1730.200000" color="#a66100"/>
-              <item alpha="255" value="1746" label="1746.000000" color="#9c5b00"/>
-              <item alpha="255" value="1762" label="1762.000000" color="#9c5b00"/>
-              <item alpha="255" value="1777.8" label="1777.800000" color="#a26714"/>
-              <item alpha="255" value="1793.6" label="1793.600000" color="#a36815"/>
-              <item alpha="255" value="1809.6" label="1809.600000" color="#ac782e"/>
-              <item alpha="255" value="1825.4" label="1825.400000" color="#ad792f"/>
-              <item alpha="255" value="1841.2" label="1841.200000" color="#b88b4d"/>
-              <item alpha="255" value="1857.2" label="1857.200000" color="#b88b4d"/>
-              <item alpha="255" value="1873" label="1873.000000" color="#bf9c6b"/>
-              <item alpha="255" value="1888.8" label="1888.800000" color="#bf9c6b"/>
-              <item alpha="255" value="1904.8" label="1904.800000" color="#cbb290"/>
-              <item alpha="255" value="1920.6" label="1920.600000" color="#ccb391"/>
-              <item alpha="255" value="1936.6" label="1936.600000" color="#d3c5b3"/>
-              <item alpha="255" value="1952.4" label="1952.400000" color="#d4c6b4"/>
-              <item alpha="255" value="1968.2" label="1968.200000" color="#e0e0e0"/>
-              <item alpha="255" value="1984.2" label="1984.200000" color="#e0e0e0"/>
-              <item alpha="255" value="2000" label="2000.000000" color="#e0e0e0"/>
-            </colorrampshader>
-          </rastershader>
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
         <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
@@ -21604,6 +21566,1078 @@
       <blendMode>6</blendMode>
     </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <id>bed20150628122232833</id>
+      <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/data_sets/jakobshavn-1985-dem/Greenland_150m_mcb_jpl_v2_1985.nc":bed</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>bed</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>100005</srsid>
+          <srid>0</srid>
+          <authid>USER:100005</authid>
+          <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+          <projectionacronym>stere</projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer opacity="1" alphaBand="-1" classificationMax="1834" classificationMinMaxOrigin="CumulativeCutFullExtentEstimated" band="1" classificationMin="-187" type="singlebandpseudocolor">
+          <rasterTransparency>
+            <singleValuePixelList>
+              <pixelListEntry min="0" max="-9999" percentTransparent="100"/>
+            </singleValuePixelList>
+          </rasterTransparency>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" clip="0">
+              <item alpha="255" value="-1200" label="Custom color map entry" color="#00083f"/>
+              <item alpha="255" value="-800" label="Color entry 2" color="#002673"/>
+              <item alpha="255" value="-796.278" label="Color entry 3" color="#002673"/>
+              <item alpha="255" value="-792.556" label="Color entry 4" color="#002673"/>
+              <item alpha="255" value="-788.834" label="Color entry 5" color="#002874"/>
+              <item alpha="255" value="-785.113" label="Color entry 6" color="#002975"/>
+              <item alpha="255" value="-781.391" label="Color entry 7" color="#002975"/>
+              <item alpha="255" value="-777.669" label="Color entry 8" color="#002a77"/>
+              <item alpha="255" value="-773.947" label="Color entry 9" color="#002b7a"/>
+              <item alpha="255" value="-770.225" label="Color entry 10" color="#002b7a"/>
+              <item alpha="255" value="-766.503" label="Color entry 11" color="#002b7b"/>
+              <item alpha="255" value="-762.782" label="Color entry 12" color="#002c7f"/>
+              <item alpha="255" value="-759.06" label="Color entry 13" color="#002d80"/>
+              <item alpha="255" value="-755.338" label="Color entry 14" color="#002d80"/>
+              <item alpha="255" value="-751.616" label="Color entry 15" color="#002d81"/>
+              <item alpha="255" value="-747.894" label="Color entry 16" color="#002e82"/>
+              <item alpha="255" value="-744.172" label="Color entry 17" color="#002e82"/>
+              <item alpha="255" value="-740.451" label="Color entry 18" color="#002e83"/>
+              <item alpha="255" value="-736.729" label="Color entry 19" color="#002e86"/>
+              <item alpha="255" value="-733.007" label="Color entry 20" color="#002f87"/>
+              <item alpha="255" value="-729.285" label="Color entry 21" color="#002f87"/>
+              <item alpha="255" value="-725.563" label="Color entry 22" color="#00318a"/>
+              <item alpha="255" value="-721.841" label="Color entry 23" color="#00338c"/>
+              <item alpha="255" value="-718.119" label="Color entry 24" color="#00338c"/>
+              <item alpha="255" value="-714.398" label="Color entry 25" color="#00338e"/>
+              <item alpha="255" value="-710.676" label="Color entry 26" color="#003591"/>
+              <item alpha="255" value="-706.954" label="Color entry 27" color="#003591"/>
+              <item alpha="255" value="-703.232" label="Color entry 28" color="#003591"/>
+              <item alpha="255" value="-699.51" label="Color entry 29" color="#003593"/>
+              <item alpha="255" value="-695.788" label="Color entry 30" color="#003694"/>
+              <item alpha="255" value="-692.067" label="Color entry 31" color="#003694"/>
+              <item alpha="255" value="-688.345" label="Color entry 32" color="#003796"/>
+              <item alpha="255" value="-684.623" label="Color entry 33" color="#003899"/>
+              <item alpha="255" value="-680.901" label="Color entry 34" color="#003899"/>
+              <item alpha="255" value="-677.179" label="Color entry 35" color="#00389a"/>
+              <item alpha="255" value="-673.457" label="Color entry 36" color="#00399d"/>
+              <item alpha="255" value="-669.736" label="Color entry 37" color="#003a9e"/>
+              <item alpha="255" value="-666.014" label="Color entry 38" color="#003a9e"/>
+              <item alpha="255" value="-662.292" label="Color entry 39" color="#003ca0"/>
+              <item alpha="255" value="-658.57" label="Color entry 40" color="#003fa3"/>
+              <item alpha="255" value="-654.848" label="Color entry 41" color="#003fa3"/>
+              <item alpha="255" value="-651.126" label="Color entry 42" color="#003fa4"/>
+              <item alpha="255" value="-647.405" label="Color entry 43" color="#0040a7"/>
+              <item alpha="255" value="-643.683" label="Color entry 44" color="#0041a8"/>
+              <item alpha="255" value="-639.961" label="Color entry 45" color="#0041a8"/>
+              <item alpha="255" value="-636.239" label="Color entry 46" color="#0041aa"/>
+              <item alpha="255" value="-632.517" label="Color entry 47" color="#0041ab"/>
+              <item alpha="255" value="-628.795" label="Color entry 48" color="#0041ab"/>
+              <item alpha="255" value="-625.073" label="Color entry 49" color="#0041ad"/>
+              <item alpha="255" value="-621.352" label="Color entry 50" color="#0043b0"/>
+              <item alpha="255" value="-617.63" label="Color entry 51" color="#0043b0"/>
+              <item alpha="255" value="-613.908" label="Color entry 52" color="#0043b0"/>
+              <item alpha="255" value="-610.186" label="Color entry 53" color="#0044b3"/>
+              <item alpha="255" value="-606.464" label="Color entry 54" color="#0045b5"/>
+              <item alpha="255" value="-602.742" label="Color entry 55" color="#0045b5"/>
+              <item alpha="255" value="-599.021" label="Color entry 56" color="#0047b7"/>
+              <item alpha="255" value="-595.299" label="Color entry 57" color="#004aba"/>
+              <item alpha="255" value="-591.577" label="Color entry 58" color="#004aba"/>
+              <item alpha="255" value="-587.855" label="Color entry 59" color="#004abb"/>
+              <item alpha="255" value="-584.133" label="Color entry 60" color="#004cbe"/>
+              <item alpha="255" value="-580.411" label="Color entry 61" color="#004dbf"/>
+              <item alpha="255" value="-576.69" label="Color entry 62" color="#004dbf"/>
+              <item alpha="255" value="-572.968" label="Color entry 63" color="#004dc0"/>
+              <item alpha="255" value="-569.246" label="Color entry 64" color="#004ec2"/>
+              <item alpha="255" value="-565.524" label="Color entry 65" color="#004ec2"/>
+              <item alpha="255" value="-561.802" label="Color entry 66" color="#004ec3"/>
+              <item alpha="255" value="-558.08" label="Color entry 67" color="#004fc6"/>
+              <item alpha="255" value="-554.358" label="Color entry 68" color="#0050c7"/>
+              <item alpha="255" value="-550.637" label="Color entry 69" color="#0050c7"/>
+              <item alpha="255" value="-546.915" label="Color entry 70" color="#0051ca"/>
+              <item alpha="255" value="-543.193" label="Color entry 71" color="#0052cc"/>
+              <item alpha="255" value="-539.471" label="Color entry 72" color="#0052cc"/>
+              <item alpha="255" value="-535.749" label="Color entry 73" color="#0054ce"/>
+              <item alpha="255" value="-532.027" label="Color entry 74" color="#0057d1"/>
+              <item alpha="255" value="-528.306" label="Color entry 75" color="#0057d1"/>
+              <item alpha="255" value="-524.584" label="Color entry 76" color="#0057d1"/>
+              <item alpha="255" value="-520.862" label="Color entry 77" color="#0057d3"/>
+              <item alpha="255" value="-517.14" label="Color entry 78" color="#0058d4"/>
+              <item alpha="255" value="-513.418" label="Color entry 79" color="#0058d4"/>
+              <item alpha="255" value="-509.696" label="Color entry 80" color="#0059d6"/>
+              <item alpha="255" value="-505.975" label="Color entry 81" color="#005ad9"/>
+              <item alpha="255" value="-502.253" label="Color entry 82" color="#005ad9"/>
+              <item alpha="255" value="-498.531" label="Color entry 83" color="#005ada"/>
+              <item alpha="255" value="-494.809" label="Color entry 84" color="#005bdd"/>
+              <item alpha="255" value="-491.087" label="Color entry 85" color="#005cde"/>
+              <item alpha="255" value="-487.365" label="Color entry 86" color="#005cde"/>
+              <item alpha="255" value="-483.643" label="Color entry 87" color="#005de1"/>
+              <item alpha="255" value="-479.922" label="Color entry 88" color="#005fe3"/>
+              <item alpha="255" value="-476.2" label="Color entry 89" color="#005fe3"/>
+              <item alpha="255" value="-472.478" label="Color entry 90" color="#0061e4"/>
+              <item alpha="255" value="-468.756" label="Color entry 91" color="#0064e7"/>
+              <item alpha="255" value="-465.034" label="Color entry 92" color="#0065e8"/>
+              <item alpha="255" value="-461.312" label="Color entry 93" color="#0065e8"/>
+              <item alpha="255" value="-457.591" label="Color entry 94" color="#0065ea"/>
+              <item alpha="255" value="-453.869" label="Color entry 95" color="#0066eb"/>
+              <item alpha="255" value="-450.147" label="Color entry 96" color="#0066eb"/>
+              <item alpha="255" value="-446.425" label="Color entry 97" color="#0066ed"/>
+              <item alpha="255" value="-442.703" label="Color entry 98" color="#0068f0"/>
+              <item alpha="255" value="-438.981" label="Color entry 99" color="#0068f0"/>
+              <item alpha="255" value="-435.26" label="Color entry 100" color="#0068f1"/>
+              <item alpha="255" value="-431.538" label="Color entry 101" color="#0069f3"/>
+              <item alpha="255" value="-427.816" label="Color entry 102" color="#006af5"/>
+              <item alpha="255" value="-424.094" label="Color entry 103" color="#006af5"/>
+              <item alpha="255" value="-420.372" label="Color entry 104" color="#006bf7"/>
+              <item alpha="255" value="-416.65" label="Color entry 105" color="#006cfa"/>
+              <item alpha="255" value="-412.928" label="Color entry 106" color="#006cfa"/>
+              <item alpha="255" value="-409.207" label="Color entry 107" color="#006cfb"/>
+              <item alpha="255" value="-405.485" label="Color entry 108" color="#006efe"/>
+              <item alpha="255" value="-401.763" label="Color entry 109" color="#006fff"/>
+              <item alpha="255" value="-398.041" label="Color entry 110" color="#006fff"/>
+              <item alpha="255" value="-394.319" label="Color entry 111" color="#0373ff"/>
+              <item alpha="255" value="-390.597" label="Color entry 112" color="#0576ff"/>
+              <item alpha="255" value="-386.876" label="Color entry 113" color="#0576ff"/>
+              <item alpha="255" value="-383.154" label="Color entry 114" color="#0676ff"/>
+              <item alpha="255" value="-379.432" label="Color entry 115" color="#0977ff"/>
+              <item alpha="255" value="-375.71" label="Color entry 116" color="#0a78ff"/>
+              <item alpha="255" value="-371.988" label="Color entry 117" color="#0b79ff"/>
+              <item alpha="255" value="-368.266" label="Color entry 118" color="#0f7eff"/>
+              <item alpha="255" value="-364.545" label="Color entry 119" color="#1281ff"/>
+              <item alpha="255" value="-360.823" label="Color entry 120" color="#1281ff"/>
+              <item alpha="255" value="-357.101" label="Color entry 121" color="#1582ff"/>
+              <item alpha="255" value="-353.379" label="Color entry 122" color="#1985ff"/>
+              <item alpha="255" value="-349.657" label="Color entry 123" color="#1985ff"/>
+              <item alpha="255" value="-345.935" label="Color entry 124" color="#1a85ff"/>
+              <item alpha="255" value="-342.214" label="Color entry 125" color="#1d86ff"/>
+              <item alpha="255" value="-338.492" label="Color entry 126" color="#1f87ff"/>
+              <item alpha="255" value="-334.77" label="Color entry 127" color="#1f87ff"/>
+              <item alpha="255" value="-331.048" label="Color entry 128" color="#218aff"/>
+              <item alpha="255" value="-327.326" label="Color entry 129" color="#248eff"/>
+              <item alpha="255" value="-323.604" label="Color entry 130" color="#248eff"/>
+              <item alpha="255" value="-319.882" label="Color entry 131" color="#258eff"/>
+              <item alpha="255" value="-316.161" label="Color entry 132" color="#288fff"/>
+              <item alpha="255" value="-312.439" label="Color entry 133" color="#2990ff"/>
+              <item alpha="255" value="-308.717" label="Color entry 134" color="#2990ff"/>
+              <item alpha="255" value="-304.995" label="Color entry 135" color="#2d95ff"/>
+              <item alpha="255" value="-301.273" label="Color entry 136" color="#3098ff"/>
+              <item alpha="255" value="-297.551" label="Color entry 137" color="#3098ff"/>
+              <item alpha="255" value="-293.83" label="Color entry 138" color="#3399ff"/>
+              <item alpha="255" value="-290.108" label="Color entry 139" color="#379bff"/>
+              <item alpha="255" value="-286.386" label="Color entry 140" color="#389cff"/>
+              <item alpha="255" value="-282.664" label="Color entry 141" color="#389cff"/>
+              <item alpha="255" value="-278.942" label="Color entry 142" color="#3b9fff"/>
+              <item alpha="255" value="-275.22" label="Color entry 143" color="#3da1ff"/>
+              <item alpha="255" value="-271.499" label="Color entry 144" color="#3da1ff"/>
+              <item alpha="255" value="-267.777" label="Color entry 145" color="#3fa2ff"/>
+              <item alpha="255" value="-264.055" label="Color entry 146" color="#42a4ff"/>
+              <item alpha="255" value="-260.333" label="Color entry 147" color="#42a4ff"/>
+              <item alpha="255" value="-256.611" label="Color entry 148" color="#43a4ff"/>
+              <item alpha="255" value="-252.889" label="Color entry 149" color="#48a6ff"/>
+              <item alpha="255" value="-249.167" label="Color entry 150" color="#4aa7ff"/>
+              <item alpha="255" value="-245.446" label="Color entry 151" color="#4aa7ff"/>
+              <item alpha="255" value="-241.724" label="Color entry 152" color="#4eaaff"/>
+              <item alpha="255" value="-238.002" label="Color entry 153" color="#52aeff"/>
+              <item alpha="255" value="-234.28" label="Color entry 154" color="#52aeff"/>
+              <item alpha="255" value="-230.558" label="Color entry 155" color="#53aeff"/>
+              <item alpha="255" value="-226.836" label="Color entry 156" color="#56afff"/>
+              <item alpha="255" value="-223.115" label="Color entry 157" color="#57b0ff"/>
+              <item alpha="255" value="-219.393" label="Color entry 158" color="#57b0ff"/>
+              <item alpha="255" value="-215.671" label="Color entry 159" color="#5ab3ff"/>
+              <item alpha="255" value="-211.949" label="Color entry 160" color="#5cb6ff"/>
+              <item alpha="255" value="-208.227" label="Color entry 161" color="#5cb6ff"/>
+              <item alpha="255" value="-204.505" label="Color entry 162" color="#5db6ff"/>
+              <item alpha="255" value="-200.784" label="Color entry 163" color="#60b7ff"/>
+              <item alpha="255" value="-197.062" label="Color entry 164" color="#61b8ff"/>
+              <item alpha="255" value="-193.34" label="Color entry 165" color="#62b8ff"/>
+              <item alpha="255" value="-189.618" label="Color entry 166" color="#66bcff"/>
+              <item alpha="255" value="-185.896" label="Color entry 167" color="#69beff"/>
+              <item alpha="255" value="-182.174" label="Color entry 168" color="#69beff"/>
+              <item alpha="255" value="-178.452" label="Color entry 169" color="#6cbfff"/>
+              <item alpha="255" value="-174.731" label="Color entry 170" color="#70c1ff"/>
+              <item alpha="255" value="-171.009" label="Color entry 171" color="#70c1ff"/>
+              <item alpha="255" value="-167.287" label="Color entry 172" color="#71c1ff"/>
+              <item alpha="255" value="-163.565" label="Color entry 173" color="#74c2ff"/>
+              <item alpha="255" value="-159.843" label="Color entry 174" color="#75c3ff"/>
+              <item alpha="255" value="-156.121" label="Color entry 175" color="#75c3ff"/>
+              <item alpha="255" value="-152.4" label="Color entry 176" color="#77c5ff"/>
+              <item alpha="255" value="-148.678" label="Color entry 177" color="#7ac8ff"/>
+              <item alpha="255" value="-144.956" label="Color entry 178" color="#7ac8ff"/>
+              <item alpha="255" value="-141.234" label="Color entry 179" color="#7bc8ff"/>
+              <item alpha="255" value="-137.512" label="Color entry 180" color="#7fc9ff"/>
+              <item alpha="255" value="-133.79" label="Color entry 181" color="#80caff"/>
+              <item alpha="255" value="-130.069" label="Color entry 182" color="#80caff"/>
+              <item alpha="255" value="-126.347" label="Color entry 183" color="#86cdff"/>
+              <item alpha="255" value="-122.625" label="Color entry 184" color="#8ad0ff"/>
+              <item alpha="255" value="-118.903" label="Color entry 185" color="#8ad0ff"/>
+              <item alpha="255" value="-115.181" label="Color entry 186" color="#8cd0ff"/>
+              <item alpha="255" value="-111.459" label="Color entry 187" color="#8ed1ff"/>
+              <item alpha="255" value="-107.738" label="Color entry 188" color="#8fd2ff"/>
+              <item alpha="255" value="-104.016" label="Color entry 189" color="#8fd2ff"/>
+              <item alpha="255" value="-100.294" label="Color entry 190" color="#92d3ff"/>
+              <item alpha="255" value="-96.572" label="Color entry 191" color="#94d4ff"/>
+              <item alpha="255" value="-92.8501" label="Color entry 192" color="#94d4ff"/>
+              <item alpha="255" value="-89.1283" label="Color entry 193" color="#96d5ff"/>
+              <item alpha="255" value="-85.4065" label="Color entry 194" color="#99d8ff"/>
+              <item alpha="255" value="-81.6846" label="Color entry 195" color="#99d8ff"/>
+              <item alpha="255" value="-77.9628" label="Color entry 196" color="#9ad8ff"/>
+              <item alpha="255" value="-74.2409" label="Color entry 197" color="#9fdaff"/>
+              <item alpha="255" value="-70.5191" label="Color entry 198" color="#a1dbff"/>
+              <item alpha="255" value="-66.7973" label="Color entry 199" color="#a1dbff"/>
+              <item alpha="255" value="-63.0754" label="Color entry 200" color="#a5ddff"/>
+              <item alpha="255" value="-59.3536" label="Color entry 201" color="#a8dfff"/>
+              <item alpha="255" value="-55.6317" label="Color entry 202" color="#a8dfff"/>
+              <item alpha="255" value="-51.9099" label="Color entry 203" color="#a9dfff"/>
+              <item alpha="255" value="-48.188" label="Color entry 204" color="#ace0ff"/>
+              <item alpha="255" value="-44.4662" label="Color entry 205" color="#ade1ff"/>
+              <item alpha="255" value="-40.7444" label="Color entry 206" color="#ade1ff"/>
+              <item alpha="255" value="-37.0225" label="Color entry 207" color="#b1e3ff"/>
+              <item alpha="255" value="-33.3007" label="Color entry 208" color="#b3e4ff"/>
+              <item alpha="255" value="-29.5788" label="Color entry 209" color="#b3e4ff"/>
+              <item alpha="255" value="-25.857" label="Color entry 210" color="#b5e4ff"/>
+              <item alpha="255" value="-22.1352" label="Color entry 211" color="#b8e6ff"/>
+              <item alpha="255" value="-18.4133" label="Color entry 212" color="#b8e6ff"/>
+              <item alpha="255" value="-14.6915" label="Color entry 213" color="#b9e6ff"/>
+              <item alpha="255" value="-10.9696" label="Color entry 214" color="#bde8ff"/>
+              <item alpha="255" value="-7.2478" label="Color entry 215" color="#bfe9ff"/>
+              <item alpha="255" value="-3.52595" label="Color entry 216" color="#bfe9ff"/>
+              <item alpha="255" value="0" label="Color entry 217" color="#305e02"/>
+              <item alpha="255" value="3.91773" label="Color entry 218" color="#336600"/>
+              <item alpha="255" value="7.63957" label="Color entry 219" color="#356800"/>
+              <item alpha="255" value="11.3614" label="Color entry 220" color="#366a01"/>
+              <item alpha="255" value="15.0832" label="Color entry 221" color="#386c02"/>
+              <item alpha="255" value="18.8051" label="Color entry 222" color="#3a6f03"/>
+              <item alpha="255" value="22.5269" label="Color entry 223" color="#3c7103"/>
+              <item alpha="255" value="26.2488" label="Color entry 224" color="#3e7304"/>
+              <item alpha="255" value="29.9706" label="Color entry 225" color="#407505"/>
+              <item alpha="255" value="33.6925" label="Color entry 226" color="#417705"/>
+              <item alpha="255" value="37.4143" label="Color entry 227" color="#437906"/>
+              <item alpha="255" value="41.1361" label="Color entry 228" color="#457c07"/>
+              <item alpha="255" value="44.858" label="Color entry 229" color="#477e08"/>
+              <item alpha="255" value="48.5798" label="Color entry 230" color="#498008"/>
+              <item alpha="255" value="52.3017" label="Color entry 231" color="#4a8209"/>
+              <item alpha="255" value="56.0235" label="Color entry 232" color="#4c840a"/>
+              <item alpha="255" value="59.7454" label="Color entry 233" color="#4e860a"/>
+              <item alpha="255" value="63.4672" label="Color entry 234" color="#50890b"/>
+              <item alpha="255" value="67.189" label="Color entry 235" color="#528b0c"/>
+              <item alpha="255" value="70.9109" label="Color entry 236" color="#548d0d"/>
+              <item alpha="255" value="74.6327" label="Color entry 237" color="#558f0d"/>
+              <item alpha="255" value="78.3546" label="Color entry 238" color="#57910e"/>
+              <item alpha="255" value="82.0764" label="Color entry 239" color="#59930f"/>
+              <item alpha="255" value="85.7982" label="Color entry 240" color="#5b9610"/>
+              <item alpha="255" value="89.5201" label="Color entry 241" color="#5d9810"/>
+              <item alpha="255" value="93.2419" label="Color entry 242" color="#5e9a11"/>
+              <item alpha="255" value="96.9638" label="Color entry 243" color="#609c12"/>
+              <item alpha="255" value="100.686" label="Color entry 244" color="#629e12"/>
+              <item alpha="255" value="104.407" label="Color entry 245" color="#64a013"/>
+              <item alpha="255" value="108.129" label="Color entry 246" color="#66a314"/>
+              <item alpha="255" value="111.851" label="Color entry 247" color="#68a515"/>
+              <item alpha="255" value="115.573" label="Color entry 248" color="#69a715"/>
+              <item alpha="255" value="119.295" label="Color entry 249" color="#6ba916"/>
+              <item alpha="255" value="123.017" label="Color entry 250" color="#6dab17"/>
+              <item alpha="255" value="126.738" label="Color entry 251" color="#6fad17"/>
+              <item alpha="255" value="130.46" label="Color entry 252" color="#71b018"/>
+              <item alpha="255" value="134.182" label="Color entry 253" color="#73b219"/>
+              <item alpha="255" value="137.904" label="Color entry 254" color="#74b41a"/>
+              <item alpha="255" value="141.626" label="Color entry 255" color="#76b61a"/>
+              <item alpha="255" value="145.348" label="Color entry 256" color="#78b81b"/>
+              <item alpha="255" value="149.07" label="Color entry 257" color="#7abb1c"/>
+              <item alpha="255" value="152.791" label="Color entry 258" color="#7cbd1d"/>
+              <item alpha="255" value="156.513" label="Color entry 259" color="#7dbf1d"/>
+              <item alpha="255" value="160.235" label="Color entry 260" color="#7fc11e"/>
+              <item alpha="255" value="163.957" label="Color entry 261" color="#81c320"/>
+              <item alpha="255" value="167.679" label="Color entry 262" color="#84c424"/>
+              <item alpha="255" value="171.401" label="Color entry 263" color="#87c628"/>
+              <item alpha="255" value="175.122" label="Color entry 264" color="#8ac72c"/>
+              <item alpha="255" value="178.844" label="Color entry 265" color="#8dc930"/>
+              <item alpha="255" value="182.566" label="Color entry 266" color="#90ca34"/>
+              <item alpha="255" value="186.288" label="Color entry 267" color="#93cb38"/>
+              <item alpha="255" value="190.01" label="Color entry 268" color="#96cd3c"/>
+              <item alpha="255" value="193.732" label="Color entry 269" color="#99ce40"/>
+              <item alpha="255" value="197.453" label="Color entry 270" color="#9cd044"/>
+              <item alpha="255" value="201.175" label="Color entry 271" color="#9fd148"/>
+              <item alpha="255" value="204.897" label="Color entry 272" color="#a2d24c"/>
+              <item alpha="255" value="208.619" label="Color entry 273" color="#a5d450"/>
+              <item alpha="255" value="212.341" label="Color entry 274" color="#a8d554"/>
+              <item alpha="255" value="216.063" label="Color entry 275" color="#abd758"/>
+              <item alpha="255" value="219.785" label="Color entry 276" color="#aed85c"/>
+              <item alpha="255" value="223.506" label="Color entry 277" color="#b1d960"/>
+              <item alpha="255" value="227.228" label="Color entry 278" color="#b3db64"/>
+              <item alpha="255" value="230.95" label="Color entry 279" color="#b6dc69"/>
+              <item alpha="255" value="234.672" label="Color entry 280" color="#b9de6d"/>
+              <item alpha="255" value="238.394" label="Color entry 281" color="#bcdf71"/>
+              <item alpha="255" value="242.116" label="Color entry 282" color="#bfe075"/>
+              <item alpha="255" value="245.837" label="Color entry 283" color="#c2e279"/>
+              <item alpha="255" value="249.559" label="Color entry 284" color="#c5e37d"/>
+              <item alpha="255" value="253.281" label="Color entry 285" color="#c8e581"/>
+              <item alpha="255" value="257.003" label="Color entry 286" color="#cbe685"/>
+              <item alpha="255" value="260.725" label="Color entry 287" color="#cee789"/>
+              <item alpha="255" value="264.447" label="Color entry 288" color="#d1e98d"/>
+              <item alpha="255" value="268.168" label="Color entry 289" color="#d4ea91"/>
+              <item alpha="255" value="271.89" label="Color entry 290" color="#d7ec95"/>
+              <item alpha="255" value="275.612" label="Color entry 291" color="#daed99"/>
+              <item alpha="255" value="279.334" label="Color entry 292" color="#ddee9d"/>
+              <item alpha="255" value="283.056" label="Color entry 293" color="#e0f0a1"/>
+              <item alpha="255" value="286.778" label="Color entry 294" color="#e3f1a5"/>
+              <item alpha="255" value="290.5" label="Color entry 295" color="#e5f3a9"/>
+              <item alpha="255" value="294.221" label="Color entry 296" color="#e8f4ad"/>
+              <item alpha="255" value="297.943" label="Color entry 297" color="#ebf5b1"/>
+              <item alpha="255" value="301.665" label="Color entry 298" color="#eef7b5"/>
+              <item alpha="255" value="305.387" label="Color entry 299" color="#f1f8b9"/>
+              <item alpha="255" value="309.109" label="Color entry 300" color="#f4fabd"/>
+              <item alpha="255" value="312.831" label="Color entry 301" color="#f7fbc1"/>
+              <item alpha="255" value="316.552" label="Color entry 302" color="#fafcc5"/>
+              <item alpha="255" value="320.274" label="Color entry 303" color="#fdfec9"/>
+              <item alpha="255" value="323.996" label="Color entry 304" color="#fefecb"/>
+              <item alpha="255" value="327.718" label="Color entry 305" color="#fefdc9"/>
+              <item alpha="255" value="331.44" label="Color entry 306" color="#fefdc8"/>
+              <item alpha="255" value="335.162" label="Color entry 307" color="#fefcc6"/>
+              <item alpha="255" value="338.883" label="Color entry 308" color="#fefbc4"/>
+              <item alpha="255" value="342.605" label="Color entry 309" color="#fefac3"/>
+              <item alpha="255" value="346.327" label="Color entry 310" color="#fef9c1"/>
+              <item alpha="255" value="350.049" label="Color entry 311" color="#fef9c0"/>
+              <item alpha="255" value="353.771" label="Color entry 312" color="#fdf8be"/>
+              <item alpha="255" value="357.493" label="Color entry 313" color="#fdf7bd"/>
+              <item alpha="255" value="361.214" label="Color entry 314" color="#fdf6bb"/>
+              <item alpha="255" value="364.936" label="Color entry 315" color="#fdf6b9"/>
+              <item alpha="255" value="368.658" label="Color entry 316" color="#fdf5b8"/>
+              <item alpha="255" value="372.38" label="Color entry 317" color="#fdf4b6"/>
+              <item alpha="255" value="376.102" label="Color entry 318" color="#fdf3b5"/>
+              <item alpha="255" value="379.824" label="Color entry 319" color="#fdf3b3"/>
+              <item alpha="255" value="383.546" label="Color entry 320" color="#fcf2b1"/>
+              <item alpha="255" value="387.267" label="Color entry 321" color="#fcf1b0"/>
+              <item alpha="255" value="390.989" label="Color entry 322" color="#fcf0ae"/>
+              <item alpha="255" value="394.711" label="Color entry 323" color="#fcefad"/>
+              <item alpha="255" value="398.433" label="Color entry 324" color="#fcefab"/>
+              <item alpha="255" value="402.155" label="Color entry 325" color="#fceeaa"/>
+              <item alpha="255" value="405.877" label="Color entry 326" color="#fceda8"/>
+              <item alpha="255" value="409.598" label="Color entry 327" color="#fbeca6"/>
+              <item alpha="255" value="413.32" label="Color entry 328" color="#fbeca5"/>
+              <item alpha="255" value="417.042" label="Color entry 329" color="#fbeba3"/>
+              <item alpha="255" value="420.764" label="Color entry 330" color="#fbeaa2"/>
+              <item alpha="255" value="424.486" label="Color entry 331" color="#fbe9a0"/>
+              <item alpha="255" value="428.208" label="Color entry 332" color="#fbe99f"/>
+              <item alpha="255" value="431.929" label="Color entry 333" color="#fbe89d"/>
+              <item alpha="255" value="435.651" label="Color entry 334" color="#fbe79b"/>
+              <item alpha="255" value="439.373" label="Color entry 335" color="#fae69a"/>
+              <item alpha="255" value="443.095" label="Color entry 336" color="#fae598"/>
+              <item alpha="255" value="446.817" label="Color entry 337" color="#fae597"/>
+              <item alpha="255" value="450.539" label="Color entry 338" color="#fae495"/>
+              <item alpha="255" value="454.261" label="Color entry 339" color="#fae394"/>
+              <item alpha="255" value="457.982" label="Color entry 340" color="#fae292"/>
+              <item alpha="255" value="461.704" label="Color entry 341" color="#fae290"/>
+              <item alpha="255" value="465.426" label="Color entry 342" color="#fae18f"/>
+              <item alpha="255" value="469.148" label="Color entry 343" color="#f9e08d"/>
+              <item alpha="255" value="472.87" label="Color entry 344" color="#f9df8c"/>
+              <item alpha="255" value="476.592" label="Color entry 345" color="#f9df8a"/>
+              <item alpha="255" value="480.313" label="Color entry 346" color="#f9de89"/>
+              <item alpha="255" value="484.035" label="Color entry 347" color="#f9dd87"/>
+              <item alpha="255" value="487.757" label="Color entry 348" color="#f9dc85"/>
+              <item alpha="255" value="491.479" label="Color entry 349" color="#f9db84"/>
+              <item alpha="255" value="495.201" label="Color entry 350" color="#f9db82"/>
+              <item alpha="255" value="498.923" label="Color entry 351" color="#f8da81"/>
+              <item alpha="255" value="502.644" label="Color entry 352" color="#f8d97f"/>
+              <item alpha="255" value="506.366" label="Color entry 353" color="#f8d87d"/>
+              <item alpha="255" value="510.088" label="Color entry 354" color="#f8d87c"/>
+              <item alpha="255" value="513.81" label="Color entry 355" color="#f8d77a"/>
+              <item alpha="255" value="517.532" label="Color entry 356" color="#f8d679"/>
+              <item alpha="255" value="521.254" label="Color entry 357" color="#f8d577"/>
+              <item alpha="255" value="524.976" label="Color entry 358" color="#f8d576"/>
+              <item alpha="255" value="528.697" label="Color entry 359" color="#f7d474"/>
+              <item alpha="255" value="532.419" label="Color entry 360" color="#f7d372"/>
+              <item alpha="255" value="536.141" label="Color entry 361" color="#f7d271"/>
+              <item alpha="255" value="539.863" label="Color entry 362" color="#f7d16f"/>
+              <item alpha="255" value="543.585" label="Color entry 363" color="#f7d16e"/>
+              <item alpha="255" value="547.307" label="Color entry 364" color="#f7d06c"/>
+              <item alpha="255" value="551.028" label="Color entry 365" color="#f7cf6b"/>
+              <item alpha="255" value="554.75" label="Color entry 366" color="#f6ce69"/>
+              <item alpha="255" value="558.472" label="Color entry 367" color="#f6ce67"/>
+              <item alpha="255" value="562.194" label="Color entry 368" color="#f6cd66"/>
+              <item alpha="255" value="565.916" label="Color entry 369" color="#f6cc64"/>
+              <item alpha="255" value="569.638" label="Color entry 370" color="#f6cb63"/>
+              <item alpha="255" value="573.359" label="Color entry 371" color="#f6ca61"/>
+              <item alpha="255" value="577.081" label="Color entry 372" color="#f6ca60"/>
+              <item alpha="255" value="580.803" label="Color entry 373" color="#f6c95e"/>
+              <item alpha="255" value="584.525" label="Color entry 374" color="#f5c85c"/>
+              <item alpha="255" value="588.247" label="Color entry 375" color="#f5c75b"/>
+              <item alpha="255" value="591.969" label="Color entry 376" color="#f5c759"/>
+              <item alpha="255" value="595.691" label="Color entry 377" color="#f5c658"/>
+              <item alpha="255" value="599.412" label="Color entry 378" color="#f5c556"/>
+              <item alpha="255" value="603.134" label="Color entry 379" color="#f5c455"/>
+              <item alpha="255" value="606.856" label="Color entry 380" color="#f5c453"/>
+              <item alpha="255" value="610.578" label="Color entry 381" color="#f5c351"/>
+              <item alpha="255" value="614.3" label="Color entry 382" color="#f4c250"/>
+              <item alpha="255" value="618.022" label="Color entry 383" color="#f4c14e"/>
+              <item alpha="255" value="621.743" label="Color entry 384" color="#f4c04d"/>
+              <item alpha="255" value="625.465" label="Color entry 385" color="#f4c04b"/>
+              <item alpha="255" value="629.187" label="Color entry 386" color="#f4bf49"/>
+              <item alpha="255" value="632.909" label="Color entry 387" color="#f4be48"/>
+              <item alpha="255" value="636.631" label="Color entry 388" color="#f4bd46"/>
+              <item alpha="255" value="640.353" label="Color entry 389" color="#f4bd45"/>
+              <item alpha="255" value="644.074" label="Color entry 390" color="#f3bc44"/>
+              <item alpha="255" value="647.796" label="Color entry 391" color="#f1bb44"/>
+              <item alpha="255" value="651.518" label="Color entry 392" color="#f0b943"/>
+              <item alpha="255" value="655.24" label="Color entry 393" color="#efb843"/>
+              <item alpha="255" value="658.962" label="Color entry 394" color="#eeb742"/>
+              <item alpha="255" value="662.684" label="Color entry 395" color="#edb642"/>
+              <item alpha="255" value="666.405" label="Color entry 396" color="#ecb541"/>
+              <item alpha="255" value="670.127" label="Color entry 397" color="#ebb441"/>
+              <item alpha="255" value="673.849" label="Color entry 398" color="#eab341"/>
+              <item alpha="255" value="677.571" label="Color entry 399" color="#e9b240"/>
+              <item alpha="255" value="681.293" label="Color entry 400" color="#e8b140"/>
+              <item alpha="255" value="685.015" label="Color entry 401" color="#e6b03f"/>
+              <item alpha="255" value="688.737" label="Color entry 402" color="#e5af3f"/>
+              <item alpha="255" value="692.458" label="Color entry 403" color="#e4ae3e"/>
+              <item alpha="255" value="696.18" label="Color entry 404" color="#e3ad3e"/>
+              <item alpha="255" value="699.902" label="Color entry 405" color="#e2ab3d"/>
+              <item alpha="255" value="703.624" label="Color entry 406" color="#e1aa3d"/>
+              <item alpha="255" value="707.346" label="Color entry 407" color="#e0a93d"/>
+              <item alpha="255" value="711.068" label="Color entry 408" color="#dfa83c"/>
+              <item alpha="255" value="714.789" label="Color entry 409" color="#dea73c"/>
+              <item alpha="255" value="718.511" label="Color entry 410" color="#dca63b"/>
+              <item alpha="255" value="722.233" label="Color entry 411" color="#dba53b"/>
+              <item alpha="255" value="725.955" label="Color entry 412" color="#daa43a"/>
+              <item alpha="255" value="729.677" label="Color entry 413" color="#d9a33a"/>
+              <item alpha="255" value="733.399" label="Color entry 414" color="#d8a239"/>
+              <item alpha="255" value="737.12" label="Color entry 415" color="#d7a139"/>
+              <item alpha="255" value="740.842" label="Color entry 416" color="#d6a039"/>
+              <item alpha="255" value="744.564" label="Color entry 417" color="#d59f38"/>
+              <item alpha="255" value="748.286" label="Color entry 418" color="#d49e38"/>
+              <item alpha="255" value="752.008" label="Color entry 419" color="#d39c37"/>
+              <item alpha="255" value="755.73" label="Color entry 420" color="#d19b37"/>
+              <item alpha="255" value="759.452" label="Color entry 421" color="#d09a36"/>
+              <item alpha="255" value="763.173" label="Color entry 422" color="#cf9936"/>
+              <item alpha="255" value="766.895" label="Color entry 423" color="#ce9835"/>
+              <item alpha="255" value="770.617" label="Color entry 424" color="#cd9735"/>
+              <item alpha="255" value="774.339" label="Color entry 425" color="#cc9635"/>
+              <item alpha="255" value="778.061" label="Color entry 426" color="#cb9534"/>
+              <item alpha="255" value="781.783" label="Color entry 427" color="#ca9434"/>
+              <item alpha="255" value="785.504" label="Color entry 428" color="#c99333"/>
+              <item alpha="255" value="789.226" label="Color entry 429" color="#c79233"/>
+              <item alpha="255" value="792.948" label="Color entry 430" color="#c69132"/>
+              <item alpha="255" value="796.67" label="Color entry 431" color="#c59032"/>
+              <item alpha="255" value="800.392" label="Color entry 432" color="#c48e31"/>
+              <item alpha="255" value="804.114" label="Color entry 433" color="#c38d31"/>
+              <item alpha="255" value="807.835" label="Color entry 434" color="#c28c31"/>
+              <item alpha="255" value="811.557" label="Color entry 435" color="#c18b30"/>
+              <item alpha="255" value="815.279" label="Color entry 436" color="#c08a30"/>
+              <item alpha="255" value="819.001" label="Color entry 437" color="#bf892f"/>
+              <item alpha="255" value="822.723" label="Color entry 438" color="#be882f"/>
+              <item alpha="255" value="826.445" label="Color entry 439" color="#bc872e"/>
+              <item alpha="255" value="830.167" label="Color entry 440" color="#bb862e"/>
+              <item alpha="255" value="833.888" label="Color entry 441" color="#ba852e"/>
+              <item alpha="255" value="837.61" label="Color entry 442" color="#b9842d"/>
+              <item alpha="255" value="841.332" label="Color entry 443" color="#b8832d"/>
+              <item alpha="255" value="845.054" label="Color entry 444" color="#b7822c"/>
+              <item alpha="255" value="848.776" label="Color entry 445" color="#b6812c"/>
+              <item alpha="255" value="852.498" label="Color entry 446" color="#b57f2b"/>
+              <item alpha="255" value="856.219" label="Color entry 447" color="#b47e2b"/>
+              <item alpha="255" value="859.941" label="Color entry 448" color="#b27d2a"/>
+              <item alpha="255" value="863.663" label="Color entry 449" color="#b17c2a"/>
+              <item alpha="255" value="867.385" label="Color entry 450" color="#b07b2a"/>
+              <item alpha="255" value="871.107" label="Color entry 451" color="#af7a29"/>
+              <item alpha="255" value="874.829" label="Color entry 452" color="#ae7929"/>
+              <item alpha="255" value="878.55" label="Color entry 453" color="#ad7828"/>
+              <item alpha="255" value="882.272" label="Color entry 454" color="#ac7728"/>
+              <item alpha="255" value="885.994" label="Color entry 455" color="#ab7627"/>
+              <item alpha="255" value="889.716" label="Color entry 456" color="#aa7527"/>
+              <item alpha="255" value="893.438" label="Color entry 457" color="#a97426"/>
+              <item alpha="255" value="897.16" label="Color entry 458" color="#a77326"/>
+              <item alpha="255" value="900.881" label="Color entry 459" color="#a67126"/>
+              <item alpha="255" value="904.603" label="Color entry 460" color="#a57025"/>
+              <item alpha="255" value="908.325" label="Color entry 461" color="#a46f25"/>
+              <item alpha="255" value="912.047" label="Color entry 462" color="#a36e24"/>
+              <item alpha="255" value="915.769" label="Color entry 463" color="#a26d24"/>
+              <item alpha="255" value="919.491" label="Color entry 464" color="#a16c23"/>
+              <item alpha="255" value="923.213" label="Color entry 465" color="#a06b23"/>
+              <item alpha="255" value="926.934" label="Color entry 466" color="#9f6a22"/>
+              <item alpha="255" value="930.656" label="Color entry 467" color="#9d6922"/>
+              <item alpha="255" value="934.378" label="Color entry 468" color="#9c6822"/>
+              <item alpha="255" value="938.1" label="Color entry 469" color="#9b6721"/>
+              <item alpha="255" value="941.822" label="Color entry 470" color="#9a6621"/>
+              <item alpha="255" value="945.544" label="Color entry 471" color="#996520"/>
+              <item alpha="255" value="949.265" label="Color entry 472" color="#986420"/>
+              <item alpha="255" value="952.987" label="Color entry 473" color="#97621f"/>
+              <item alpha="255" value="956.709" label="Color entry 474" color="#96611f"/>
+              <item alpha="255" value="960.431" label="Color entry 475" color="#95601e"/>
+              <item alpha="255" value="964.153" label="Color entry 476" color="#945f1e"/>
+              <item alpha="255" value="967.875" label="Color entry 477" color="#925e1e"/>
+              <item alpha="255" value="971.596" label="Color entry 478" color="#915d1d"/>
+              <item alpha="255" value="975.318" label="Color entry 479" color="#905c1d"/>
+              <item alpha="255" value="979.04" label="Color entry 480" color="#8f5b1c"/>
+              <item alpha="255" value="982.762" label="Color entry 481" color="#8e5a1c"/>
+              <item alpha="255" value="986.484" label="Color entry 482" color="#8d591b"/>
+              <item alpha="255" value="990.206" label="Color entry 483" color="#8c581b"/>
+              <item alpha="255" value="993.928" label="Color entry 484" color="#8b571a"/>
+              <item alpha="255" value="997.649" label="Color entry 485" color="#8a561a"/>
+              <item alpha="255" value="1001.37" label="Color entry 486" color="#88541a"/>
+              <item alpha="255" value="1005.09" label="Color entry 487" color="#875319"/>
+              <item alpha="255" value="1008.81" label="Color entry 488" color="#865219"/>
+              <item alpha="255" value="1012.54" label="Color entry 489" color="#855118"/>
+              <item alpha="255" value="1016.26" label="Color entry 490" color="#845018"/>
+              <item alpha="255" value="1019.98" label="Color entry 491" color="#834f17"/>
+              <item alpha="255" value="1023.7" label="Color entry 492" color="#824e17"/>
+              <item alpha="255" value="1027.42" label="Color entry 493" color="#814d16"/>
+              <item alpha="255" value="1031.15" label="Color entry 494" color="#804c16"/>
+              <item alpha="255" value="1034.87" label="Color entry 495" color="#7f4b16"/>
+              <item alpha="255" value="1038.59" label="Color entry 496" color="#7d4a15"/>
+              <item alpha="255" value="1042.31" label="Color entry 497" color="#7c4915"/>
+              <item alpha="255" value="1046.03" label="Color entry 498" color="#7b4814"/>
+              <item alpha="255" value="1049.76" label="Color entry 499" color="#7a4714"/>
+              <item alpha="255" value="1053.48" label="Color entry 500" color="#794513"/>
+              <item alpha="255" value="1057.2" label="Color entry 501" color="#784413"/>
+              <item alpha="255" value="1060.92" label="Color entry 502" color="#774312"/>
+              <item alpha="255" value="1064.64" label="Color entry 503" color="#764212"/>
+              <item alpha="255" value="1068.36" label="Color entry 504" color="#754112"/>
+              <item alpha="255" value="1072.09" label="Color entry 505" color="#734011"/>
+              <item alpha="255" value="1075.81" label="Color entry 506" color="#723f11"/>
+              <item alpha="255" value="1079.53" label="Color entry 507" color="#713e10"/>
+              <item alpha="255" value="1083.25" label="Color entry 508" color="#703d10"/>
+              <item alpha="255" value="1086.97" label="Color entry 509" color="#6f3c0f"/>
+              <item alpha="255" value="1090.7" label="Color entry 510" color="#6e3b0f"/>
+              <item alpha="255" value="1094.42" label="Color entry 511" color="#6d3a0e"/>
+              <item alpha="255" value="1098.14" label="Color entry 512" color="#6c390e"/>
+              <item alpha="255" value="1101.86" label="Color entry 513" color="#6b370e"/>
+              <item alpha="255" value="1105.58" label="Color entry 514" color="#6a360d"/>
+              <item alpha="255" value="1109.3" label="Color entry 515" color="#68350d"/>
+              <item alpha="255" value="1113.03" label="Color entry 516" color="#67340c"/>
+              <item alpha="255" value="1116.75" label="Color entry 517" color="#66330c"/>
+              <item alpha="255" value="1120.47" label="Color entry 518" color="#66330b"/>
+              <item alpha="255" value="1124.19" label="Color entry 519" color="#66330b"/>
+              <item alpha="255" value="1127.91" label="Color entry 520" color="#66330b"/>
+              <item alpha="255" value="1131.64" label="Color entry 521" color="#66330b"/>
+              <item alpha="255" value="1135.36" label="Color entry 522" color="#66330a"/>
+              <item alpha="255" value="1139.08" label="Color entry 523" color="#66330a"/>
+              <item alpha="255" value="1142.8" label="Color entry 524" color="#66330a"/>
+              <item alpha="255" value="1146.52" label="Color entry 525" color="#663309"/>
+              <item alpha="255" value="1150.24" label="Color entry 526" color="#663309"/>
+              <item alpha="255" value="1153.97" label="Color entry 527" color="#663309"/>
+              <item alpha="255" value="1157.69" label="Color entry 528" color="#663309"/>
+              <item alpha="255" value="1161.41" label="Color entry 529" color="#663308"/>
+              <item alpha="255" value="1165.13" label="Color entry 530" color="#663308"/>
+              <item alpha="255" value="1168.85" label="Color entry 531" color="#663308"/>
+              <item alpha="255" value="1172.58" label="Color entry 532" color="#663307"/>
+              <item alpha="255" value="1176.3" label="Color entry 533" color="#663307"/>
+              <item alpha="255" value="1180.02" label="Color entry 534" color="#663307"/>
+              <item alpha="255" value="1183.74" label="Color entry 535" color="#663307"/>
+              <item alpha="255" value="1187.46" label="Color entry 536" color="#663306"/>
+              <item alpha="255" value="1191.19" label="Color entry 537" color="#663306"/>
+              <item alpha="255" value="1194.91" label="Color entry 538" color="#663306"/>
+              <item alpha="255" value="1198.63" label="Color entry 539" color="#663306"/>
+              <item alpha="255" value="1202.35" label="Color entry 540" color="#663305"/>
+              <item alpha="255" value="1206.07" label="Color entry 541" color="#663305"/>
+              <item alpha="255" value="1209.79" label="Color entry 542" color="#663305"/>
+              <item alpha="255" value="1213.52" label="Color entry 543" color="#663304"/>
+              <item alpha="255" value="1217.24" label="Color entry 544" color="#663304"/>
+              <item alpha="255" value="1220.96" label="Color entry 545" color="#663304"/>
+              <item alpha="255" value="1224.68" label="Color entry 546" color="#663304"/>
+              <item alpha="255" value="1228.4" label="Color entry 547" color="#663303"/>
+              <item alpha="255" value="1232.13" label="Color entry 548" color="#663303"/>
+              <item alpha="255" value="1235.85" label="Color entry 549" color="#663303"/>
+              <item alpha="255" value="1239.57" label="Color entry 550" color="#663302"/>
+              <item alpha="255" value="1243.29" label="Color entry 551" color="#663302"/>
+              <item alpha="255" value="1247.01" label="Color entry 552" color="#663302"/>
+              <item alpha="255" value="1250.73" label="Color entry 553" color="#663302"/>
+              <item alpha="255" value="1254.46" label="Color entry 554" color="#663301"/>
+              <item alpha="255" value="1258.18" label="Color entry 555" color="#663301"/>
+              <item alpha="255" value="1261.9" label="Color entry 556" color="#663301"/>
+              <item alpha="255" value="1265.62" label="Color entry 557" color="#663300"/>
+              <item alpha="255" value="1269.34" label="Color entry 558" color="#663300"/>
+              <item alpha="255" value="1273.07" label="Color entry 559" color="#663300"/>
+              <item alpha="255" value="1276.79" label="Color entry 560" color="#663300"/>
+              <item alpha="255" value="1280.51" label="Color entry 561" color="#663300"/>
+              <item alpha="255" value="1284.23" label="Color entry 562" color="#663300"/>
+              <item alpha="255" value="1287.95" label="Color entry 563" color="#663401"/>
+              <item alpha="255" value="1291.67" label="Color entry 564" color="#673401"/>
+              <item alpha="255" value="1295.4" label="Color entry 565" color="#673402"/>
+              <item alpha="255" value="1299.12" label="Color entry 566" color="#673503"/>
+              <item alpha="255" value="1302.84" label="Color entry 567" color="#683503"/>
+              <item alpha="255" value="1306.56" label="Color entry 568" color="#683604"/>
+              <item alpha="255" value="1310.28" label="Color entry 569" color="#683604"/>
+              <item alpha="255" value="1314.01" label="Color entry 570" color="#693705"/>
+              <item alpha="255" value="1317.73" label="Color entry 571" color="#693705"/>
+              <item alpha="255" value="1321.45" label="Color entry 572" color="#693806"/>
+              <item alpha="255" value="1325.17" label="Color entry 573" color="#6a3806"/>
+              <item alpha="255" value="1328.89" label="Color entry 574" color="#6a3807"/>
+              <item alpha="255" value="1332.62" label="Color entry 575" color="#6a3908"/>
+              <item alpha="255" value="1336.34" label="Color entry 576" color="#6b3908"/>
+              <item alpha="255" value="1340.06" label="Color entry 577" color="#6b3a09"/>
+              <item alpha="255" value="1343.78" label="Color entry 578" color="#6b3a09"/>
+              <item alpha="255" value="1347.5" label="Color entry 579" color="#6c3b0a"/>
+              <item alpha="255" value="1351.22" label="Color entry 580" color="#6c3b0a"/>
+              <item alpha="255" value="1354.95" label="Color entry 581" color="#6c3c0b"/>
+              <item alpha="255" value="1358.67" label="Color entry 582" color="#6d3c0b"/>
+              <item alpha="255" value="1362.39" label="Color entry 583" color="#6d3c0c"/>
+              <item alpha="255" value="1366.11" label="Color entry 584" color="#6d3d0c"/>
+              <item alpha="255" value="1369.83" label="Color entry 585" color="#6e3d0d"/>
+              <item alpha="255" value="1373.56" label="Color entry 586" color="#6e3e0e"/>
+              <item alpha="255" value="1377.28" label="Color entry 587" color="#6e3e0e"/>
+              <item alpha="255" value="1381" label="Color entry 588" color="#6f3f0f"/>
+              <item alpha="255" value="1384.72" label="Color entry 589" color="#6f3f0f"/>
+              <item alpha="255" value="1388.44" label="Color entry 590" color="#6f4010"/>
+              <item alpha="255" value="1392.16" label="Color entry 591" color="#704010"/>
+              <item alpha="255" value="1395.89" label="Color entry 592" color="#704011"/>
+              <item alpha="255" value="1399.61" label="Color entry 593" color="#704111"/>
+              <item alpha="255" value="1403.33" label="Color entry 594" color="#714112"/>
+              <item alpha="255" value="1407.05" label="Color entry 595" color="#714213"/>
+              <item alpha="255" value="1410.77" label="Color entry 596" color="#714213"/>
+              <item alpha="255" value="1414.5" label="Color entry 597" color="#724314"/>
+              <item alpha="255" value="1418.22" label="Color entry 598" color="#724314"/>
+              <item alpha="255" value="1421.94" label="Color entry 599" color="#724315"/>
+              <item alpha="255" value="1425.66" label="Color entry 600" color="#734415"/>
+              <item alpha="255" value="1429.38" label="Color entry 601" color="#734416"/>
+              <item alpha="255" value="1433.1" label="Color entry 602" color="#734516"/>
+              <item alpha="255" value="1436.83" label="Color entry 603" color="#744517"/>
+              <item alpha="255" value="1440.55" label="Color entry 604" color="#744618"/>
+              <item alpha="255" value="1444.27" label="Color entry 605" color="#744618"/>
+              <item alpha="255" value="1447.99" label="Color entry 606" color="#754719"/>
+              <item alpha="255" value="1451.71" label="Color entry 607" color="#754719"/>
+              <item alpha="255" value="1455.44" label="Color entry 608" color="#75471a"/>
+              <item alpha="255" value="1459.16" label="Color entry 609" color="#76481a"/>
+              <item alpha="255" value="1462.88" label="Color entry 610" color="#76481b"/>
+              <item alpha="255" value="1466.6" label="Color entry 611" color="#76491b"/>
+              <item alpha="255" value="1470.32" label="Color entry 612" color="#77491c"/>
+              <item alpha="255" value="1474.05" label="Color entry 613" color="#774a1c"/>
+              <item alpha="255" value="1477.77" label="Color entry 614" color="#774a1d"/>
+              <item alpha="255" value="1481.49" label="Color entry 615" color="#784b1e"/>
+              <item alpha="255" value="1485.21" label="Color entry 616" color="#784b1e"/>
+              <item alpha="255" value="1488.93" label="Color entry 617" color="#784b1f"/>
+              <item alpha="255" value="1492.65" label="Color entry 618" color="#794c1f"/>
+              <item alpha="255" value="1496.38" label="Color entry 619" color="#794c20"/>
+              <item alpha="255" value="1500.1" label="Color entry 620" color="#794d20"/>
+              <item alpha="255" value="1503.82" label="Color entry 621" color="#7a4d21"/>
+              <item alpha="255" value="1507.54" label="Color entry 622" color="#7a4e21"/>
+              <item alpha="255" value="1511.26" label="Color entry 623" color="#7a4e22"/>
+              <item alpha="255" value="1514.99" label="Color entry 624" color="#7b4f23"/>
+              <item alpha="255" value="1518.71" label="Color entry 625" color="#7b4f23"/>
+              <item alpha="255" value="1522.43" label="Color entry 626" color="#7b4f24"/>
+              <item alpha="255" value="1526.15" label="Color entry 627" color="#7c5024"/>
+              <item alpha="255" value="1529.87" label="Color entry 628" color="#7c5025"/>
+              <item alpha="255" value="1533.59" label="Color entry 629" color="#7c5125"/>
+              <item alpha="255" value="1537.32" label="Color entry 630" color="#7d5126"/>
+              <item alpha="255" value="1541.04" label="Color entry 631" color="#7d5226"/>
+              <item alpha="255" value="1544.76" label="Color entry 632" color="#7d5227"/>
+              <item alpha="255" value="1548.48" label="Color entry 633" color="#7d5227"/>
+              <item alpha="255" value="1552.2" label="Color entry 634" color="#7e5328"/>
+              <item alpha="255" value="1555.93" label="Color entry 635" color="#7e5329"/>
+              <item alpha="255" value="1559.65" label="Color entry 636" color="#7e5429"/>
+              <item alpha="255" value="1563.37" label="Color entry 637" color="#7f542a"/>
+              <item alpha="255" value="1567.09" label="Color entry 638" color="#7f552a"/>
+              <item alpha="255" value="1570.81" label="Color entry 639" color="#7f552b"/>
+              <item alpha="255" value="1574.53" label="Color entry 640" color="#80562b"/>
+              <item alpha="255" value="1578.26" label="Color entry 641" color="#80562c"/>
+              <item alpha="255" value="1581.98" label="Color entry 642" color="#80562c"/>
+              <item alpha="255" value="1585.7" label="Color entry 643" color="#81572d"/>
+              <item alpha="255" value="1589.42" label="Color entry 644" color="#81572e"/>
+              <item alpha="255" value="1593.14" label="Color entry 645" color="#81582e"/>
+              <item alpha="255" value="1596.87" label="Color entry 646" color="#82582f"/>
+              <item alpha="255" value="1600.59" label="Color entry 647" color="#82592f"/>
+              <item alpha="255" value="1604.31" label="Color entry 648" color="#825930"/>
+              <item alpha="255" value="1608.03" label="Color entry 649" color="#835a30"/>
+              <item alpha="255" value="1611.75" label="Color entry 650" color="#835a31"/>
+              <item alpha="255" value="1615.48" label="Color entry 651" color="#835a31"/>
+              <item alpha="255" value="1619.2" label="Color entry 652" color="#845b32"/>
+              <item alpha="255" value="1622.92" label="Color entry 653" color="#845b33"/>
+              <item alpha="255" value="1626.64" label="Color entry 654" color="#845c33"/>
+              <item alpha="255" value="1630.36" label="Color entry 655" color="#855c34"/>
+              <item alpha="255" value="1634.08" label="Color entry 656" color="#855d34"/>
+              <item alpha="255" value="1637.81" label="Color entry 657" color="#855d35"/>
+              <item alpha="255" value="1641.53" label="Color entry 658" color="#865e35"/>
+              <item alpha="255" value="1645.25" label="Color entry 659" color="#865e36"/>
+              <item alpha="255" value="1648.97" label="Color entry 660" color="#865e36"/>
+              <item alpha="255" value="1652.69" label="Color entry 661" color="#875f37"/>
+              <item alpha="255" value="1656.42" label="Color entry 662" color="#875f37"/>
+              <item alpha="255" value="1660.14" label="Color entry 663" color="#876038"/>
+              <item alpha="255" value="1663.86" label="Color entry 664" color="#886039"/>
+              <item alpha="255" value="1667.58" label="Color entry 665" color="#886139"/>
+              <item alpha="255" value="1671.3" label="Color entry 666" color="#88613a"/>
+              <item alpha="255" value="1675.02" label="Color entry 667" color="#89613a"/>
+              <item alpha="255" value="1678.75" label="Color entry 668" color="#89623b"/>
+              <item alpha="255" value="1682.47" label="Color entry 669" color="#89623b"/>
+              <item alpha="255" value="1686.19" label="Color entry 670" color="#8a633c"/>
+              <item alpha="255" value="1689.91" label="Color entry 671" color="#8a633c"/>
+              <item alpha="255" value="1693.63" label="Color entry 672" color="#8a643d"/>
+              <item alpha="255" value="1697.36" label="Color entry 673" color="#8b643e"/>
+              <item alpha="255" value="1701.08" label="Color entry 674" color="#8b653e"/>
+              <item alpha="255" value="1704.8" label="Color entry 675" color="#8b653f"/>
+              <item alpha="255" value="1708.52" label="Color entry 676" color="#8c653f"/>
+              <item alpha="255" value="1712.24" label="Color entry 677" color="#8c6640"/>
+              <item alpha="255" value="1715.96" label="Color entry 678" color="#8c6640"/>
+              <item alpha="255" value="1719.69" label="Color entry 679" color="#8d6741"/>
+              <item alpha="255" value="1723.41" label="Color entry 680" color="#8d6741"/>
+              <item alpha="255" value="1727.13" label="Color entry 681" color="#8d6842"/>
+              <item alpha="255" value="1730.85" label="Color entry 682" color="#8e6843"/>
+              <item alpha="255" value="1734.57" label="Color entry 683" color="#8e6943"/>
+              <item alpha="255" value="1738.3" label="Color entry 684" color="#8e6944"/>
+              <item alpha="255" value="1742.02" label="Color entry 685" color="#8f6944"/>
+              <item alpha="255" value="1745.74" label="Color entry 686" color="#8f6a45"/>
+              <item alpha="255" value="1749.46" label="Color entry 687" color="#8f6a45"/>
+              <item alpha="255" value="1753.18" label="Color entry 688" color="#906b46"/>
+              <item alpha="255" value="1756.9" label="Color entry 689" color="#906b46"/>
+              <item alpha="255" value="1760.63" label="Color entry 690" color="#906c47"/>
+              <item alpha="255" value="1764.35" label="Color entry 691" color="#916c47"/>
+              <item alpha="255" value="1768.07" label="Color entry 692" color="#916d48"/>
+              <item alpha="255" value="1771.79" label="Color entry 693" color="#916d49"/>
+              <item alpha="255" value="1775.51" label="Color entry 694" color="#926d49"/>
+              <item alpha="255" value="1779.24" label="Color entry 695" color="#926e4a"/>
+              <item alpha="255" value="1782.96" label="Color entry 696" color="#926e4a"/>
+              <item alpha="255" value="1786.68" label="Color entry 697" color="#936f4b"/>
+              <item alpha="255" value="1790.4" label="Color entry 698" color="#936f4b"/>
+              <item alpha="255" value="1794.12" label="Color entry 699" color="#93704c"/>
+              <item alpha="255" value="1797.85" label="Color entry 700" color="#94704c"/>
+              <item alpha="255" value="1801.57" label="Color entry 701" color="#94704d"/>
+              <item alpha="255" value="1805.29" label="Color entry 702" color="#94714e"/>
+              <item alpha="255" value="1809.01" label="Color entry 703" color="#95714e"/>
+              <item alpha="255" value="1812.73" label="Color entry 704" color="#95724f"/>
+              <item alpha="255" value="1816.45" label="Color entry 705" color="#95724f"/>
+              <item alpha="255" value="1820.18" label="Color entry 706" color="#967350"/>
+              <item alpha="255" value="1823.9" label="Color entry 707" color="#967350"/>
+              <item alpha="255" value="1827.62" label="Color entry 708" color="#967451"/>
+              <item alpha="255" value="1831.34" label="Color entry 709" color="#977451"/>
+              <item alpha="255" value="1835.06" label="Color entry 710" color="#977452"/>
+              <item alpha="255" value="1838.79" label="Color entry 711" color="#977552"/>
+              <item alpha="255" value="1842.51" label="Color entry 712" color="#987553"/>
+              <item alpha="255" value="1846.23" label="Color entry 713" color="#987654"/>
+              <item alpha="255" value="1849.95" label="Color entry 714" color="#987654"/>
+              <item alpha="255" value="1853.67" label="Color entry 715" color="#997755"/>
+              <item alpha="255" value="1857.39" label="Color entry 716" color="#997755"/>
+              <item alpha="255" value="1861.12" label="Color entry 717" color="#997856"/>
+              <item alpha="255" value="1864.84" label="Color entry 718" color="#9a7856"/>
+              <item alpha="255" value="1868.56" label="Color entry 719" color="#9a7857"/>
+              <item alpha="255" value="1872.28" label="Color entry 720" color="#9a7957"/>
+              <item alpha="255" value="1876" label="Color entry 721" color="#9b7958"/>
+              <item alpha="255" value="1879.73" label="Color entry 722" color="#9b7a59"/>
+              <item alpha="255" value="1883.45" label="Color entry 723" color="#9b7a59"/>
+              <item alpha="255" value="1887.17" label="Color entry 724" color="#9c7b5a"/>
+              <item alpha="255" value="1890.89" label="Color entry 725" color="#9c7b5a"/>
+              <item alpha="255" value="1894.61" label="Color entry 726" color="#9c7c5b"/>
+              <item alpha="255" value="1898.33" label="Color entry 727" color="#9d7c5b"/>
+              <item alpha="255" value="1902.06" label="Color entry 728" color="#9d7c5c"/>
+              <item alpha="255" value="1905.78" label="Color entry 729" color="#9d7d5c"/>
+              <item alpha="255" value="1909.5" label="Color entry 730" color="#9e7d5d"/>
+              <item alpha="255" value="1913.22" label="Color entry 731" color="#9e7e5e"/>
+              <item alpha="255" value="1916.94" label="Color entry 732" color="#9e7e5e"/>
+              <item alpha="255" value="1920.67" label="Color entry 733" color="#9f7f5f"/>
+              <item alpha="255" value="1924.39" label="Color entry 734" color="#9f7f5f"/>
+              <item alpha="255" value="1928.11" label="Color entry 735" color="#9f7f60"/>
+              <item alpha="255" value="1931.83" label="Color entry 736" color="#a08060"/>
+              <item alpha="255" value="1935.55" label="Color entry 737" color="#a08061"/>
+              <item alpha="255" value="1939.28" label="Color entry 738" color="#a08161"/>
+              <item alpha="255" value="1943" label="Color entry 739" color="#a18162"/>
+              <item alpha="255" value="1946.72" label="Color entry 740" color="#a18262"/>
+              <item alpha="255" value="1950.44" label="Color entry 741" color="#a18263"/>
+              <item alpha="255" value="1954.16" label="Color entry 742" color="#a28364"/>
+              <item alpha="255" value="1957.88" label="Color entry 743" color="#a28364"/>
+              <item alpha="255" value="1961.61" label="Color entry 744" color="#a28365"/>
+              <item alpha="255" value="1965.33" label="Color entry 745" color="#a38465"/>
+              <item alpha="255" value="1969.05" label="Color entry 746" color="#a38466"/>
+              <item alpha="255" value="1972.77" label="Color entry 747" color="#a38566"/>
+              <item alpha="255" value="1976.49" label="Color entry 748" color="#a48567"/>
+              <item alpha="255" value="1980.22" label="Color entry 749" color="#a48667"/>
+              <item alpha="255" value="1983.94" label="Color entry 750" color="#a48668"/>
+              <item alpha="255" value="1987.66" label="Color entry 751" color="#a58769"/>
+              <item alpha="255" value="1991.38" label="Color entry 752" color="#a58769"/>
+              <item alpha="255" value="1995.1" label="Color entry 753" color="#a5876a"/>
+              <item alpha="255" value="1998.82" label="Color entry 754" color="#a6886a"/>
+              <item alpha="255" value="2002.55" label="Color entry 755" color="#a6886b"/>
+              <item alpha="255" value="2006.27" label="Color entry 756" color="#a6896b"/>
+              <item alpha="255" value="2009.99" label="Color entry 757" color="#a7896c"/>
+              <item alpha="255" value="2013.71" label="Color entry 758" color="#a78a6c"/>
+              <item alpha="255" value="2017.43" label="Color entry 759" color="#a78a6d"/>
+              <item alpha="255" value="2021.16" label="Color entry 760" color="#a88b6e"/>
+              <item alpha="255" value="2024.88" label="Color entry 761" color="#a88b6e"/>
+              <item alpha="255" value="2028.6" label="Color entry 762" color="#a88b6f"/>
+              <item alpha="255" value="2032.32" label="Color entry 763" color="#a88c6f"/>
+              <item alpha="255" value="2036.04" label="Color entry 764" color="#a98c70"/>
+              <item alpha="255" value="2039.76" label="Color entry 765" color="#a98d70"/>
+              <item alpha="255" value="2043.49" label="Color entry 766" color="#a98d71"/>
+              <item alpha="255" value="2047.21" label="Color entry 767" color="#aa8e71"/>
+              <item alpha="255" value="2050.93" label="Color entry 768" color="#aa8e72"/>
+              <item alpha="255" value="2054.65" label="Color entry 769" color="#aa8e72"/>
+              <item alpha="255" value="2058.37" label="Color entry 770" color="#ab8f73"/>
+              <item alpha="255" value="2062.1" label="Color entry 771" color="#ab8f74"/>
+              <item alpha="255" value="2065.82" label="Color entry 772" color="#ab9074"/>
+              <item alpha="255" value="2069.54" label="Color entry 773" color="#ac9075"/>
+              <item alpha="255" value="2073.26" label="Color entry 774" color="#ac9175"/>
+              <item alpha="255" value="2076.98" label="Color entry 775" color="#ac9176"/>
+              <item alpha="255" value="2080.71" label="Color entry 776" color="#ad9276"/>
+              <item alpha="255" value="2084.43" label="Color entry 777" color="#ad9277"/>
+              <item alpha="255" value="2088.15" label="Color entry 778" color="#ad9277"/>
+              <item alpha="255" value="2091.87" label="Color entry 779" color="#ae9378"/>
+              <item alpha="255" value="2095.59" label="Color entry 780" color="#ae9379"/>
+              <item alpha="255" value="2099.31" label="Color entry 781" color="#ae9479"/>
+              <item alpha="255" value="2103.04" label="Color entry 782" color="#af947a"/>
+              <item alpha="255" value="2106.76" label="Color entry 783" color="#af957a"/>
+              <item alpha="255" value="2110.48" label="Color entry 784" color="#af957b"/>
+              <item alpha="255" value="2114.2" label="Color entry 785" color="#b0967b"/>
+              <item alpha="255" value="2117.92" label="Color entry 786" color="#b0967c"/>
+              <item alpha="255" value="2121.65" label="Color entry 787" color="#b0967c"/>
+              <item alpha="255" value="2125.37" label="Color entry 788" color="#b1977d"/>
+              <item alpha="255" value="2129.09" label="Color entry 789" color="#b1977d"/>
+              <item alpha="255" value="2132.81" label="Color entry 790" color="#b1987e"/>
+              <item alpha="255" value="2136.53" label="Color entry 791" color="#b2987f"/>
+              <item alpha="255" value="2140.25" label="Color entry 792" color="#b2997f"/>
+              <item alpha="255" value="2143.98" label="Color entry 793" color="#b29980"/>
+              <item alpha="255" value="2147.7" label="Color entry 794" color="#b39980"/>
+              <item alpha="255" value="2151.42" label="Color entry 795" color="#b39a81"/>
+              <item alpha="255" value="2155.14" label="Color entry 796" color="#b39a81"/>
+              <item alpha="255" value="2158.86" label="Color entry 797" color="#b49b82"/>
+              <item alpha="255" value="2162.59" label="Color entry 798" color="#b49b82"/>
+              <item alpha="255" value="2166.31" label="Color entry 799" color="#b49c83"/>
+              <item alpha="255" value="2170.03" label="Color entry 800" color="#b59c84"/>
+              <item alpha="255" value="2173.75" label="Color entry 801" color="#b59d84"/>
+              <item alpha="255" value="2177.47" label="Color entry 802" color="#b59d85"/>
+              <item alpha="255" value="2181.19" label="Color entry 803" color="#b69d85"/>
+              <item alpha="255" value="2184.92" label="Color entry 804" color="#b69e86"/>
+              <item alpha="255" value="2188.64" label="Color entry 805" color="#b69e86"/>
+              <item alpha="255" value="2192.36" label="Color entry 806" color="#b79f87"/>
+              <item alpha="255" value="2196.08" label="Color entry 807" color="#b79f87"/>
+              <item alpha="255" value="2199.8" label="Color entry 808" color="#b7a088"/>
+              <item alpha="255" value="2203.53" label="Color entry 809" color="#b8a089"/>
+              <item alpha="255" value="2207.25" label="Color entry 810" color="#b8a189"/>
+              <item alpha="255" value="2210.97" label="Color entry 811" color="#b8a18a"/>
+              <item alpha="255" value="2214.69" label="Color entry 812" color="#b9a18a"/>
+              <item alpha="255" value="2218.41" label="Color entry 813" color="#b9a28b"/>
+              <item alpha="255" value="2222.14" label="Color entry 814" color="#b9a28b"/>
+              <item alpha="255" value="2225.86" label="Color entry 815" color="#baa38c"/>
+              <item alpha="255" value="2229.58" label="Color entry 816" color="#baa38c"/>
+              <item alpha="255" value="2233.3" label="Color entry 817" color="#baa48d"/>
+              <item alpha="255" value="2237.02" label="Color entry 818" color="#bba48d"/>
+              <item alpha="255" value="2240.74" label="Color entry 819" color="#bba58e"/>
+              <item alpha="255" value="2244.47" label="Color entry 820" color="#bba58f"/>
+              <item alpha="255" value="2248.19" label="Color entry 821" color="#bca58f"/>
+              <item alpha="255" value="2251.91" label="Color entry 822" color="#bca690"/>
+              <item alpha="255" value="2255.63" label="Color entry 823" color="#bca690"/>
+              <item alpha="255" value="2259.35" label="Color entry 824" color="#bda791"/>
+              <item alpha="255" value="2263.08" label="Color entry 825" color="#bda791"/>
+              <item alpha="255" value="2266.8" label="Color entry 826" color="#bda892"/>
+              <item alpha="255" value="2270.52" label="Color entry 827" color="#bea892"/>
+              <item alpha="255" value="2274.24" label="Color entry 828" color="#bea893"/>
+              <item alpha="255" value="2277.96" label="Color entry 829" color="#bea994"/>
+              <item alpha="255" value="2281.68" label="Color entry 830" color="#bfa994"/>
+              <item alpha="255" value="2285.41" label="Color entry 831" color="#bfaa95"/>
+              <item alpha="255" value="2289.13" label="Color entry 832" color="#bfaa95"/>
+              <item alpha="255" value="2292.85" label="Color entry 833" color="#c0ab96"/>
+              <item alpha="255" value="2296.57" label="Color entry 834" color="#c0ab96"/>
+              <item alpha="255" value="2300.29" label="Color entry 835" color="#c0ac97"/>
+              <item alpha="255" value="2304.02" label="Color entry 836" color="#c1ac97"/>
+              <item alpha="255" value="2307.74" label="Color entry 837" color="#c1ac98"/>
+              <item alpha="255" value="2311.46" label="Color entry 838" color="#c1ad99"/>
+              <item alpha="255" value="2315.18" label="Color entry 839" color="#c2ad99"/>
+              <item alpha="255" value="2318.9" label="Color entry 840" color="#c2ae9a"/>
+              <item alpha="255" value="2322.62" label="Color entry 841" color="#c2ae9a"/>
+              <item alpha="255" value="2326.35" label="Color entry 842" color="#c3af9b"/>
+              <item alpha="255" value="2330.07" label="Color entry 843" color="#c3af9b"/>
+              <item alpha="255" value="2333.79" label="Color entry 844" color="#c3b09c"/>
+              <item alpha="255" value="2337.51" label="Color entry 845" color="#c4b09c"/>
+              <item alpha="255" value="2341.23" label="Color entry 846" color="#c4b09d"/>
+              <item alpha="255" value="2344.96" label="Color entry 847" color="#c4b19d"/>
+              <item alpha="255" value="2348.68" label="Color entry 848" color="#c5b19e"/>
+              <item alpha="255" value="2352.4" label="Color entry 849" color="#c5b29f"/>
+              <item alpha="255" value="2356.12" label="Color entry 850" color="#c5b29f"/>
+              <item alpha="255" value="2359.84" label="Color entry 851" color="#c6b3a0"/>
+              <item alpha="255" value="2363.57" label="Color entry 852" color="#c6b3a0"/>
+              <item alpha="255" value="2367.29" label="Color entry 853" color="#c6b4a1"/>
+              <item alpha="255" value="2371.01" label="Color entry 854" color="#c7b4a1"/>
+              <item alpha="255" value="2374.73" label="Color entry 855" color="#c7b4a2"/>
+              <item alpha="255" value="2378.45" label="Color entry 856" color="#c7b5a2"/>
+              <item alpha="255" value="2382.17" label="Color entry 857" color="#c8b5a3"/>
+              <item alpha="255" value="2385.9" label="Color entry 858" color="#c8b6a4"/>
+              <item alpha="255" value="2389.62" label="Color entry 859" color="#c8b6a4"/>
+              <item alpha="255" value="2393.34" label="Color entry 860" color="#c9b7a5"/>
+              <item alpha="255" value="2397.06" label="Color entry 861" color="#c9b7a5"/>
+              <item alpha="255" value="2400.78" label="Color entry 862" color="#c9b7a6"/>
+              <item alpha="255" value="2404.51" label="Color entry 863" color="#cab8a6"/>
+              <item alpha="255" value="2408.23" label="Color entry 864" color="#cab8a7"/>
+              <item alpha="255" value="2411.95" label="Color entry 865" color="#cab9a7"/>
+              <item alpha="255" value="2415.67" label="Color entry 866" color="#cbb9a8"/>
+              <item alpha="255" value="2419.39" label="Color entry 867" color="#cbbaa8"/>
+              <item alpha="255" value="2423.11" label="Color entry 868" color="#cbbaa9"/>
+              <item alpha="255" value="2426.84" label="Color entry 869" color="#ccbbaa"/>
+              <item alpha="255" value="2430.56" label="Color entry 870" color="#ccbbaa"/>
+              <item alpha="255" value="2434.28" label="Color entry 871" color="#ccbbab"/>
+              <item alpha="255" value="2438" label="Color entry 872" color="#cdbcab"/>
+              <item alpha="255" value="2441.72" label="Color entry 873" color="#cdbcac"/>
+              <item alpha="255" value="2445.45" label="Color entry 874" color="#cdbdac"/>
+              <item alpha="255" value="2449.17" label="Color entry 875" color="#cebdad"/>
+              <item alpha="255" value="2452.89" label="Color entry 876" color="#cebead"/>
+              <item alpha="255" value="2456.61" label="Color entry 877" color="#cebeae"/>
+              <item alpha="255" value="2460.33" label="Color entry 878" color="#cfbfaf"/>
+              <item alpha="255" value="2464.05" label="Color entry 879" color="#cfbfaf"/>
+              <item alpha="255" value="2467.78" label="Color entry 880" color="#cfbfb0"/>
+              <item alpha="255" value="2471.5" label="Color entry 881" color="#d0c0b0"/>
+              <item alpha="255" value="2475.22" label="Color entry 882" color="#d0c0b1"/>
+              <item alpha="255" value="2478.94" label="Color entry 883" color="#d0c1b1"/>
+              <item alpha="255" value="2482.66" label="Color entry 884" color="#d1c1b2"/>
+              <item alpha="255" value="2486.39" label="Color entry 885" color="#d1c2b2"/>
+              <item alpha="255" value="2490.11" label="Color entry 886" color="#d1c2b3"/>
+              <item alpha="255" value="2493.83" label="Color entry 887" color="#d2c3b4"/>
+              <item alpha="255" value="2497.55" label="Color entry 888" color="#d2c3b4"/>
+              <item alpha="255" value="2501.27" label="Color entry 889" color="#d2c3b5"/>
+              <item alpha="255" value="2505" label="Color entry 890" color="#d3c4b5"/>
+              <item alpha="255" value="2508.72" label="Color entry 891" color="#d3c4b6"/>
+              <item alpha="255" value="2512.44" label="Color entry 892" color="#d3c5b6"/>
+              <item alpha="255" value="2516.16" label="Color entry 893" color="#d3c5b7"/>
+              <item alpha="255" value="2519.88" label="Color entry 894" color="#d4c6b7"/>
+              <item alpha="255" value="2523.6" label="Color entry 895" color="#d4c6b8"/>
+              <item alpha="255" value="2527.33" label="Color entry 896" color="#d4c6b8"/>
+              <item alpha="255" value="2531.05" label="Color entry 897" color="#d5c7b9"/>
+              <item alpha="255" value="2534.77" label="Color entry 898" color="#d5c7ba"/>
+              <item alpha="255" value="2538.49" label="Color entry 899" color="#d5c8ba"/>
+              <item alpha="255" value="2542.21" label="Color entry 900" color="#d6c8bb"/>
+              <item alpha="255" value="2545.94" label="Color entry 901" color="#d6c9bb"/>
+              <item alpha="255" value="2549.66" label="Color entry 902" color="#d6c9bc"/>
+              <item alpha="255" value="2553.38" label="Color entry 903" color="#d7cabc"/>
+              <item alpha="255" value="2557.1" label="Color entry 904" color="#d7cabd"/>
+              <item alpha="255" value="2560.82" label="Color entry 905" color="#d7cabd"/>
+              <item alpha="255" value="2564.54" label="Color entry 906" color="#d8cbbe"/>
+              <item alpha="255" value="2568.27" label="Color entry 907" color="#d8cbbf"/>
+              <item alpha="255" value="2571.99" label="Color entry 908" color="#d8ccbf"/>
+              <item alpha="255" value="2575.71" label="Color entry 909" color="#d9ccc0"/>
+              <item alpha="255" value="2579.43" label="Color entry 910" color="#d9cdc0"/>
+              <item alpha="255" value="2583.15" label="Color entry 911" color="#d9cdc1"/>
+              <item alpha="255" value="2586.88" label="Color entry 912" color="#dacec1"/>
+              <item alpha="255" value="2590.6" label="Color entry 913" color="#dacec2"/>
+              <item alpha="255" value="2594.32" label="Color entry 914" color="#dacec2"/>
+              <item alpha="255" value="2598.04" label="Color entry 915" color="#dbcfc3"/>
+              <item alpha="255" value="2601.76" label="Color entry 916" color="#dbcfc4"/>
+              <item alpha="255" value="2605.48" label="Color entry 917" color="#dbd0c4"/>
+              <item alpha="255" value="2609.21" label="Color entry 918" color="#dcd0c5"/>
+              <item alpha="255" value="2612.93" label="Color entry 919" color="#dcd1c5"/>
+              <item alpha="255" value="2616.65" label="Color entry 920" color="#dcd1c6"/>
+              <item alpha="255" value="2620.37" label="Color entry 921" color="#ddd2c6"/>
+              <item alpha="255" value="2624.09" label="Color entry 922" color="#ddd2c7"/>
+              <item alpha="255" value="2627.82" label="Color entry 923" color="#ddd2c7"/>
+              <item alpha="255" value="2631.54" label="Color entry 924" color="#ded3c8"/>
+              <item alpha="255" value="2635.26" label="Color entry 925" color="#ded3c8"/>
+              <item alpha="255" value="2638.98" label="Color entry 926" color="#ded4c9"/>
+              <item alpha="255" value="2642.7" label="Color entry 927" color="#dfd4ca"/>
+              <item alpha="255" value="2646.43" label="Color entry 928" color="#dfd5ca"/>
+              <item alpha="255" value="2650.15" label="Color entry 929" color="#dfd5cb"/>
+              <item alpha="255" value="2653.87" label="Color entry 930" color="#e0d5cb"/>
+              <item alpha="255" value="2657.59" label="Color entry 931" color="#e0d6cc"/>
+              <item alpha="255" value="2661.31" label="Color entry 932" color="#e0d6cc"/>
+              <item alpha="255" value="2665.03" label="Color entry 933" color="#e1d7cd"/>
+              <item alpha="255" value="2668.76" label="Color entry 934" color="#e1d7cd"/>
+              <item alpha="255" value="2672.48" label="Color entry 935" color="#e1d8ce"/>
+              <item alpha="255" value="2676.2" label="Color entry 936" color="#e2d8cf"/>
+              <item alpha="255" value="2679.92" label="Color entry 937" color="#e2d9cf"/>
+              <item alpha="255" value="2683.64" label="Color entry 938" color="#e2d9d0"/>
+              <item alpha="255" value="2687.37" label="Color entry 939" color="#e3d9d0"/>
+              <item alpha="255" value="2691.09" label="Color entry 940" color="#e3dad1"/>
+              <item alpha="255" value="2694.81" label="Color entry 941" color="#e3dad1"/>
+              <item alpha="255" value="2698.53" label="Color entry 942" color="#e4dbd2"/>
+              <item alpha="255" value="2702.25" label="Color entry 943" color="#e4dbd2"/>
+              <item alpha="255" value="2705.97" label="Color entry 944" color="#e4dcd3"/>
+              <item alpha="255" value="2709.7" label="Color entry 945" color="#e5dcd3"/>
+              <item alpha="255" value="2713.42" label="Color entry 946" color="#e5ddd4"/>
+              <item alpha="255" value="2717.14" label="Color entry 947" color="#e5ddd5"/>
+              <item alpha="255" value="2720.86" label="Color entry 948" color="#e6ddd5"/>
+              <item alpha="255" value="2724.58" label="Color entry 949" color="#e6ded6"/>
+              <item alpha="255" value="2728.31" label="Color entry 950" color="#e6ded6"/>
+              <item alpha="255" value="2732.03" label="Color entry 951" color="#e7dfd7"/>
+              <item alpha="255" value="2735.75" label="Color entry 952" color="#e7dfd7"/>
+              <item alpha="255" value="2739.47" label="Color entry 953" color="#e7e0d8"/>
+              <item alpha="255" value="2743.19" label="Color entry 954" color="#e8e0d8"/>
+              <item alpha="255" value="2746.91" label="Color entry 955" color="#e8e1d9"/>
+              <item alpha="255" value="2750.64" label="Color entry 956" color="#e8e1da"/>
+              <item alpha="255" value="2754.36" label="Color entry 957" color="#e9e1da"/>
+              <item alpha="255" value="2758.08" label="Color entry 958" color="#e9e2db"/>
+              <item alpha="255" value="2761.8" label="Color entry 959" color="#e9e2db"/>
+              <item alpha="255" value="2765.52" label="Color entry 960" color="#eae3dc"/>
+              <item alpha="255" value="2769.25" label="Color entry 961" color="#eae3dc"/>
+              <item alpha="255" value="2772.97" label="Color entry 962" color="#eae4dd"/>
+              <item alpha="255" value="2776.69" label="Color entry 963" color="#ebe4dd"/>
+              <item alpha="255" value="2780.41" label="Color entry 964" color="#ebe4de"/>
+              <item alpha="255" value="2784.13" label="Color entry 965" color="#ebe5df"/>
+              <item alpha="255" value="2787.86" label="Color entry 966" color="#ece5df"/>
+              <item alpha="255" value="2791.58" label="Color entry 967" color="#ece6e0"/>
+              <item alpha="255" value="2795.3" label="Color entry 968" color="#ece6e0"/>
+              <item alpha="255" value="2799.02" label="Color entry 969" color="#ede7e1"/>
+              <item alpha="255" value="2802.74" label="Color entry 970" color="#ede7e1"/>
+              <item alpha="255" value="2806.46" label="Color entry 971" color="#ede8e2"/>
+              <item alpha="255" value="2810.19" label="Color entry 972" color="#eee8e2"/>
+              <item alpha="255" value="2813.91" label="Color entry 973" color="#eee8e3"/>
+              <item alpha="255" value="2817.63" label="Color entry 974" color="#eee9e3"/>
+              <item alpha="255" value="2821.35" label="Color entry 975" color="#efe9e4"/>
+              <item alpha="255" value="2825.07" label="Color entry 976" color="#efeae5"/>
+              <item alpha="255" value="2828.8" label="Color entry 977" color="#efeae5"/>
+              <item alpha="255" value="2832.52" label="Color entry 978" color="#f0ebe6"/>
+              <item alpha="255" value="2836.24" label="Color entry 979" color="#f0ebe6"/>
+              <item alpha="255" value="2839.96" label="Color entry 980" color="#f0ece7"/>
+              <item alpha="255" value="2843.68" label="Color entry 981" color="#f1ece7"/>
+              <item alpha="255" value="2847.4" label="Color entry 982" color="#f1ece8"/>
+              <item alpha="255" value="2851.13" label="Color entry 983" color="#f1ede8"/>
+              <item alpha="255" value="2854.85" label="Color entry 984" color="#f2ede9"/>
+              <item alpha="255" value="2858.57" label="Color entry 985" color="#f2eeea"/>
+              <item alpha="255" value="2862.29" label="Color entry 986" color="#f2eeea"/>
+              <item alpha="255" value="2866.01" label="Color entry 987" color="#f3efeb"/>
+              <item alpha="255" value="2869.74" label="Color entry 988" color="#f3efeb"/>
+              <item alpha="255" value="2873.46" label="Color entry 989" color="#f3f0ec"/>
+              <item alpha="255" value="2877.18" label="Color entry 990" color="#f4f0ec"/>
+              <item alpha="255" value="2880.9" label="Color entry 991" color="#f4f0ed"/>
+              <item alpha="255" value="2884.62" label="Color entry 992" color="#f4f1ed"/>
+              <item alpha="255" value="2888.34" label="Color entry 993" color="#f5f1ee"/>
+              <item alpha="255" value="2892.07" label="Color entry 994" color="#f5f2ef"/>
+              <item alpha="255" value="2895.79" label="Color entry 995" color="#f5f2ef"/>
+              <item alpha="255" value="2899.51" label="Color entry 996" color="#f6f3f0"/>
+              <item alpha="255" value="2903.23" label="Color entry 997" color="#f6f3f0"/>
+              <item alpha="255" value="2906.95" label="Color entry 998" color="#f6f3f1"/>
+              <item alpha="255" value="2910.68" label="Color entry 999" color="#f7f4f1"/>
+              <item alpha="255" value="2914.4" label="Color entry 1000" color="#f7f4f2"/>
+              <item alpha="255" value="2918.12" label="Color entry 1001" color="#f7f5f2"/>
+              <item alpha="255" value="2921.84" label="Color entry 1002" color="#f8f5f3"/>
+              <item alpha="255" value="2925.56" label="Color entry 1003" color="#f8f6f3"/>
+              <item alpha="255" value="2929.29" label="Color entry 1004" color="#f8f6f4"/>
+              <item alpha="255" value="2933.01" label="Color entry 1005" color="#f9f7f5"/>
+              <item alpha="255" value="2936.73" label="Color entry 1006" color="#f9f7f5"/>
+              <item alpha="255" value="2940.45" label="Color entry 1007" color="#f9f7f6"/>
+              <item alpha="255" value="2944.17" label="Color entry 1008" color="#faf8f6"/>
+              <item alpha="255" value="2947.89" label="Color entry 1009" color="#faf8f7"/>
+              <item alpha="255" value="2951.62" label="Color entry 1010" color="#faf9f7"/>
+              <item alpha="255" value="2955.34" label="Color entry 1011" color="#fbf9f8"/>
+              <item alpha="255" value="2959.06" label="Color entry 1012" color="#fbfaf8"/>
+              <item alpha="255" value="2962.78" label="Color entry 1013" color="#fbfaf9"/>
+              <item alpha="255" value="2966.5" label="Color entry 1014" color="#fcfbfa"/>
+              <item alpha="255" value="2970.23" label="Color entry 1015" color="#fcfbfa"/>
+              <item alpha="255" value="2973.95" label="Color entry 1016" color="#fcfbfb"/>
+              <item alpha="255" value="2977.67" label="Color entry 1017" color="#fdfcfb"/>
+              <item alpha="255" value="2981.39" label="Color entry 1018" color="#fdfcfc"/>
+              <item alpha="255" value="2985.11" label="Color entry 1019" color="#fdfdfc"/>
+              <item alpha="255" value="2988.83" label="Color entry 1020" color="#fefdfd"/>
+              <item alpha="255" value="2992.56" label="Color entry 1021" color="#fefefd"/>
+              <item alpha="255" value="2996.28" label="Color entry 1022" color="#fefefe"/>
+              <item alpha="255" value="3000" label="Color entry 1023" color="#ffffff"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>6</blendMode>
+    </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
       <id>bed_1200m_v1_2_hs20150324193725083</id>
       <datasource>./observed/figures/bed_1200m_v1.2_hs.tif</datasource>
       <title></title>
@@ -24936,6 +25970,288 @@
         </edittype>
       </edittypes>
     </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <id>grounded20150628131434716</id>
+      <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/data_sets/jakobshavn-1985-dem/Greenland_150m_mcb_jpl_v2_1985.nc":grounded</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>grounded</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>100005</srsid>
+          <srid>0</srid>
+          <authid>USER:100005</authid>
+          <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+          <projectionacronym>stere</projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
+          <rasterTransparency/>
+          <contrastEnhancement>
+            <minValue>136.48</minValue>
+            <maxValue>150.403</maxValue>
+            <algorithm>StretchToMinimumMaximum</algorithm>
+          </contrastEnhancement>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <id>grounded_198520150628122508629</id>
+      <datasource>/Users/andy/base/ice/data_sets/jakobshavn-1985-dem/grounded_1985.shp</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>grounded_1985</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <provider encoding="System">ogr</provider>
+      <previewExpression></previewExpression>
+      <vectorjoins/>
+      <expressionfields/>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+      <renderer-v2 symbollevels="0" type="singleSymbol">
+        <symbols>
+          <symbol alpha="1" type="fill" name="0">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0"/>
+              <prop k="color" v="95,173,211,85"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale scalemethod="area"/>
+      </renderer-v2>
+      <customproperties>
+        <property key="labeling" value="pal"/>
+        <property key="labeling/addDirectionSymbol" value="false"/>
+        <property key="labeling/angleOffset" value="0"/>
+        <property key="labeling/blendMode" value="0"/>
+        <property key="labeling/bufferBlendMode" value="0"/>
+        <property key="labeling/bufferColorA" value="255"/>
+        <property key="labeling/bufferColorB" value="255"/>
+        <property key="labeling/bufferColorG" value="255"/>
+        <property key="labeling/bufferColorR" value="255"/>
+        <property key="labeling/bufferDraw" value="false"/>
+        <property key="labeling/bufferJoinStyle" value="64"/>
+        <property key="labeling/bufferNoFill" value="false"/>
+        <property key="labeling/bufferSize" value="1"/>
+        <property key="labeling/bufferSizeInMapUnits" value="false"/>
+        <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
+        <property key="labeling/bufferTransp" value="0"/>
+        <property key="labeling/centroidInside" value="false"/>
+        <property key="labeling/centroidWhole" value="false"/>
+        <property key="labeling/decimals" value="3"/>
+        <property key="labeling/displayAll" value="false"/>
+        <property key="labeling/dist" value="0"/>
+        <property key="labeling/distInMapUnits" value="false"/>
+        <property key="labeling/distMapUnitMaxScale" value="0"/>
+        <property key="labeling/distMapUnitMinScale" value="0"/>
+        <property key="labeling/enabled" value="false"/>
+        <property key="labeling/fieldName" value="id"/>
+        <property key="labeling/fontBold" value="false"/>
+        <property key="labeling/fontCapitals" value="0"/>
+        <property key="labeling/fontFamily" value=".Lucida Grande UI"/>
+        <property key="labeling/fontItalic" value="false"/>
+        <property key="labeling/fontLetterSpacing" value="0"/>
+        <property key="labeling/fontLimitPixelSize" value="false"/>
+        <property key="labeling/fontMaxPixelSize" value="10000"/>
+        <property key="labeling/fontMinPixelSize" value="3"/>
+        <property key="labeling/fontSize" value="13"/>
+        <property key="labeling/fontSizeInMapUnits" value="false"/>
+        <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
+        <property key="labeling/fontStrikeout" value="false"/>
+        <property key="labeling/fontUnderline" value="false"/>
+        <property key="labeling/fontWeight" value="50"/>
+        <property key="labeling/fontWordSpacing" value="0"/>
+        <property key="labeling/formatNumbers" value="false"/>
+        <property key="labeling/isExpression" value="false"/>
+        <property key="labeling/labelOffsetInMapUnits" value="true"/>
+        <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
+        <property key="labeling/labelPerPart" value="false"/>
+        <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+        <property key="labeling/limitNumLabels" value="false"/>
+        <property key="labeling/maxCurvedCharAngleIn" value="20"/>
+        <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
+        <property key="labeling/maxNumLabels" value="2000"/>
+        <property key="labeling/mergeLines" value="false"/>
+        <property key="labeling/minFeatureSize" value="0"/>
+        <property key="labeling/multilineAlign" value="0"/>
+        <property key="labeling/multilineHeight" value="1"/>
+        <property key="labeling/namedStyle" value=""/>
+        <property key="labeling/obstacle" value="true"/>
+        <property key="labeling/placeDirectionSymbol" value="0"/>
+        <property key="labeling/placement" value="1"/>
+        <property key="labeling/placementFlags" value="0"/>
+        <property key="labeling/plussign" value="false"/>
+        <property key="labeling/preserveRotation" value="true"/>
+        <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+        <property key="labeling/priority" value="5"/>
+        <property key="labeling/quadOffset" value="4"/>
+        <property key="labeling/repeatDistance" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+        <property key="labeling/repeatDistanceUnit" value="1"/>
+        <property key="labeling/reverseDirectionSymbol" value="false"/>
+        <property key="labeling/rightDirectionSymbol" value=">"/>
+        <property key="labeling/scaleMax" value="10000000"/>
+        <property key="labeling/scaleMin" value="1"/>
+        <property key="labeling/scaleVisibility" value="false"/>
+        <property key="labeling/shadowBlendMode" value="6"/>
+        <property key="labeling/shadowColorB" value="0"/>
+        <property key="labeling/shadowColorG" value="0"/>
+        <property key="labeling/shadowColorR" value="0"/>
+        <property key="labeling/shadowDraw" value="false"/>
+        <property key="labeling/shadowOffsetAngle" value="135"/>
+        <property key="labeling/shadowOffsetDist" value="1"/>
+        <property key="labeling/shadowOffsetGlobal" value="true"/>
+        <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
+        <property key="labeling/shadowOffsetUnits" value="1"/>
+        <property key="labeling/shadowRadius" value="1.5"/>
+        <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+        <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+        <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
+        <property key="labeling/shadowRadiusUnits" value="1"/>
+        <property key="labeling/shadowScale" value="100"/>
+        <property key="labeling/shadowTransparency" value="30"/>
+        <property key="labeling/shadowUnder" value="0"/>
+        <property key="labeling/shapeBlendMode" value="0"/>
+        <property key="labeling/shapeBorderColorA" value="255"/>
+        <property key="labeling/shapeBorderColorB" value="128"/>
+        <property key="labeling/shapeBorderColorG" value="128"/>
+        <property key="labeling/shapeBorderColorR" value="128"/>
+        <property key="labeling/shapeBorderWidth" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeBorderWidthUnits" value="1"/>
+        <property key="labeling/shapeDraw" value="false"/>
+        <property key="labeling/shapeFillColorA" value="255"/>
+        <property key="labeling/shapeFillColorB" value="255"/>
+        <property key="labeling/shapeFillColorG" value="255"/>
+        <property key="labeling/shapeFillColorR" value="255"/>
+        <property key="labeling/shapeJoinStyle" value="64"/>
+        <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeOffsetUnits" value="1"/>
+        <property key="labeling/shapeOffsetX" value="0"/>
+        <property key="labeling/shapeOffsetY" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeRadiiUnits" value="1"/>
+        <property key="labeling/shapeRadiiX" value="0"/>
+        <property key="labeling/shapeRadiiY" value="0"/>
+        <property key="labeling/shapeRotation" value="0"/>
+        <property key="labeling/shapeRotationType" value="0"/>
+        <property key="labeling/shapeSVGFile" value=""/>
+        <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeSizeType" value="0"/>
+        <property key="labeling/shapeSizeUnits" value="1"/>
+        <property key="labeling/shapeSizeX" value="0"/>
+        <property key="labeling/shapeSizeY" value="0"/>
+        <property key="labeling/shapeTransparency" value="0"/>
+        <property key="labeling/shapeType" value="0"/>
+        <property key="labeling/textColorA" value="255"/>
+        <property key="labeling/textColorB" value="0"/>
+        <property key="labeling/textColorG" value="0"/>
+        <property key="labeling/textColorR" value="0"/>
+        <property key="labeling/textTransp" value="0"/>
+        <property key="labeling/upsidedownLabels" value="0"/>
+        <property key="labeling/wrapChar" value=""/>
+        <property key="labeling/xOffset" value="0"/>
+        <property key="labeling/yOffset" value="0"/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerTransparency>0</layerTransparency>
+      <displayfield>id</displayfield>
+      <label>0</label>
+      <labelattributes>
+        <label fieldname="" text="Label"/>
+        <family fieldname="" name=".Lucida Grande UI"/>
+        <size fieldname="" units="pt" value="12"/>
+        <bold fieldname="" on="0"/>
+        <italic fieldname="" on="0"/>
+        <underline fieldname="" on="0"/>
+        <strikeout fieldname="" on="0"/>
+        <color fieldname="" red="0" blue="0" green="0"/>
+        <x fieldname=""/>
+        <y fieldname=""/>
+        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+        <angle fieldname="" value="0" auto="0"/>
+        <alignment fieldname="" value="center"/>
+        <buffercolor fieldname="" red="255" blue="255" green="255"/>
+        <buffersize fieldname="" units="pt" value="1"/>
+        <bufferenabled fieldname="" on=""/>
+        <multilineenabled fieldname="" on=""/>
+        <selectedonly on=""/>
+      </labelattributes>
+      <editform>.</editform>
+      <editforminit/>
+      <featformsuppress>0</featformsuppress>
+      <annotationform>.</annotationform>
+      <editorlayout>generatedlayout</editorlayout>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <attributeactions/>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+    </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>ice_stream_glaciers20150301173556810</id>
       <datasource>./additional_stuff/ice-stream-glaciers.shp</datasource>
@@ -25381,6 +26697,100 @@
         <property key="labeling/xOffset" value="0"/>
         <property key="labeling/yOffset" value="0"/>
       </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerTransparency>0</layerTransparency>
+      <displayfield>id</displayfield>
+      <label>0</label>
+      <labelattributes>
+        <label fieldname="" text="Label"/>
+        <family fieldname="" name=".Lucida Grande UI"/>
+        <size fieldname="" units="pt" value="12"/>
+        <bold fieldname="" on="0"/>
+        <italic fieldname="" on="0"/>
+        <underline fieldname="" on="0"/>
+        <strikeout fieldname="" on="0"/>
+        <color fieldname="" red="0" blue="0" green="0"/>
+        <x fieldname=""/>
+        <y fieldname=""/>
+        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+        <angle fieldname="" value="0" auto="0"/>
+        <alignment fieldname="" value="center"/>
+        <buffercolor fieldname="" red="255" blue="255" green="255"/>
+        <buffersize fieldname="" units="pt" value="1"/>
+        <bufferenabled fieldname="" on=""/>
+        <multilineenabled fieldname="" on=""/>
+        <selectedonly on=""/>
+      </labelattributes>
+      <editform>.</editform>
+      <editforminit/>
+      <featformsuppress>0</featformsuppress>
+      <annotationform>.</annotationform>
+      <editorlayout>generatedlayout</editorlayout>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <attributeactions/>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+    </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <id>jakobshavn_1985_floating_tongue20150628122121339</id>
+      <datasource>/Users/andy/base/ice/data_sets/jakobshavn-1985-dem/jakobshavn_1985_floating_tongue.shp</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>jakobshavn_1985_floating_tongue</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <provider encoding="System">ogr</provider>
+      <previewExpression></previewExpression>
+      <vectorjoins/>
+      <expressionfields/>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+      <renderer-v2 symbollevels="0" type="singleSymbol">
+        <symbols>
+          <symbol alpha="1" type="fill" name="0">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0"/>
+              <prop k="color" v="65,121,199,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale scalemethod="area"/>
+      </renderer-v2>
+      <customproperties/>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
@@ -25903,6 +27313,56 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
+    </maplayer>
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <id>mask20150628170214448</id>
+      <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/data_sets/jakobshavn-1985-dem/Greenland_150m_mcb_jpl_v2_1985.nc":mask</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>mask</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>100005</srsid>
+          <srid>0</srid>
+          <authid>USER:100005</authid>
+          <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+          <projectionacronym>stere</projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer opacity="0.494118" alphaBand="0" classificationMax="4" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" clip="0">
+              <item alpha="255" value="0" label="0.000000" color="#31007e"/>
+              <item alpha="255" value="1" label="1.000000" color="#17d78b"/>
+              <item alpha="255" value="2" label="2.000000" color="#9fff00"/>
+              <item alpha="255" value="3" label="3.000000" color="#ff0000"/>
+              <item alpha="255" value="4" label="4.000000" color="#ffd7eb"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
     </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>outlet_glacier_boxes20150209114815193</id>
@@ -29185,6 +30645,216 @@
         </edittype>
       </edittypes>
     </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <id>terminus20150628123113627</id>
+      <datasource>../../data_sets/GreenlandLandsat/terminus.shp</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>terminus</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <provider encoding="System">ogr</provider>
+      <previewExpression></previewExpression>
+      <vectorjoins/>
+      <expressionfields/>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="thk">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+      <renderer-v2 symbollevels="0" type="singleSymbol">
+        <symbols>
+          <symbol alpha="1" type="line" name="0">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="square"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="105,221,79,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="0.26"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0"/>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale scalemethod="area"/>
+      </renderer-v2>
+      <customproperties/>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerTransparency>0</layerTransparency>
+      <displayfield>id</displayfield>
+      <label>0</label>
+      <labelattributes>
+        <label fieldname="" text="Label"/>
+        <family fieldname="" name=".Lucida Grande UI"/>
+        <size fieldname="" units="pt" value="12"/>
+        <bold fieldname="" on="0"/>
+        <italic fieldname="" on="0"/>
+        <underline fieldname="" on="0"/>
+        <strikeout fieldname="" on="0"/>
+        <color fieldname="" red="0" blue="0" green="0"/>
+        <x fieldname=""/>
+        <y fieldname=""/>
+        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+        <angle fieldname="" value="0" auto="0"/>
+        <alignment fieldname="" value="center"/>
+        <buffercolor fieldname="" red="255" blue="255" green="255"/>
+        <buffersize fieldname="" units="pt" value="1"/>
+        <bufferenabled fieldname="" on=""/>
+        <multilineenabled fieldname="" on=""/>
+        <selectedonly on=""/>
+      </labelattributes>
+      <editform>.</editform>
+      <editforminit/>
+      <featformsuppress>0</featformsuppress>
+      <annotationform>.</annotationform>
+      <editorlayout>generatedlayout</editorlayout>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <attributeactions/>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="thk">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+    </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <id>terminus_thickness20150628123113531</id>
+      <datasource>../../data_sets/GreenlandLandsat/terminus_thickness.shp</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>terminus_thickness</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <provider encoding="System">ogr</provider>
+      <previewExpression></previewExpression>
+      <vectorjoins/>
+      <expressionfields/>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="thk">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+      <renderer-v2 symbollevels="0" type="singleSymbol">
+        <symbols>
+          <symbol alpha="1" type="marker" name="0">
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="22,41,135,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="name" v="circle"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_map_unit_scale" v="0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="area"/>
+              <prop k="size" v="2"/>
+              <prop k="size_map_unit_scale" v="0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale scalemethod="area"/>
+      </renderer-v2>
+      <customproperties/>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerTransparency>0</layerTransparency>
+      <displayfield>id</displayfield>
+      <label>0</label>
+      <labelattributes>
+        <label fieldname="" text="Label"/>
+        <family fieldname="" name=".Lucida Grande UI"/>
+        <size fieldname="" units="pt" value="12"/>
+        <bold fieldname="" on="0"/>
+        <italic fieldname="" on="0"/>
+        <underline fieldname="" on="0"/>
+        <strikeout fieldname="" on="0"/>
+        <color fieldname="" red="0" blue="0" green="0"/>
+        <x fieldname=""/>
+        <y fieldname=""/>
+        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+        <angle fieldname="" value="0" auto="0"/>
+        <alignment fieldname="" value="center"/>
+        <buffercolor fieldname="" red="255" blue="255" green="255"/>
+        <buffersize fieldname="" units="pt" value="1"/>
+        <bufferenabled fieldname="" on=""/>
+        <multilineenabled fieldname="" on=""/>
+        <selectedonly on=""/>
+      </labelattributes>
+      <editform>.</editform>
+      <editforminit/>
+      <featformsuppress>0</featformsuppress>
+      <annotationform>.</annotationform>
+      <editorlayout>generatedlayout</editorlayout>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <attributeactions/>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="thk">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+    </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
       <id>thickness20150627184958151</id>
       <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/data_sets/jakobshavn-1985-dem/Greenland_150m_mcb_jpl_v2_1985.nc":thickness</datasource>
@@ -29193,7 +30863,7 @@
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>thickness</layername>
+      <layername>thickness 1985</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
@@ -29217,13 +30887,182 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <pipe>
-        <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
+        <rasterrenderer opacity="1" alphaBand="-1" classificationMax="2000" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
           <rasterTransparency/>
-          <contrastEnhancement>
-            <minValue>3</minValue>
-            <maxValue>3041</maxValue>
-            <algorithm>StretchToMinimumMaximum</algorithm>
-          </contrastEnhancement>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" clip="0">
+              <item alpha="255" value="0" label="0.000000" color="#31007e"/>
+              <item alpha="255" value="80" label="80.000000" color="#000081"/>
+              <item alpha="255" value="160" label="160.000000" color="#0032b3"/>
+              <item alpha="255" value="240" label="240.000000" color="#0000ff"/>
+              <item alpha="255" value="320" label="320.000000" color="#007dff"/>
+              <item alpha="255" value="400" label="400.000000" color="#00bdff"/>
+              <item alpha="255" value="480" label="480.000000" color="#17d78b"/>
+              <item alpha="255" value="560" label="560.000000" color="#39ad73"/>
+              <item alpha="255" value="640" label="640.000000" color="#2aa92a"/>
+              <item alpha="255" value="720" label="720.000000" color="#2ac82a"/>
+              <item alpha="255" value="800" label="800.000000" color="#00ff31"/>
+              <item alpha="255" value="880" label="880.000000" color="#53ff00"/>
+              <item alpha="255" value="960" label="960.000000" color="#9fff00"/>
+              <item alpha="255" value="1040" label="1040.000000" color="#ffff00"/>
+              <item alpha="255" value="1120" label="1120.000000" color="#ffcc00"/>
+              <item alpha="255" value="1200" label="1200.000000" color="#ff9800"/>
+              <item alpha="255" value="1280" label="1280.000000" color="#ff6500"/>
+              <item alpha="255" value="1360" label="1360.000000" color="#ff5400"/>
+              <item alpha="255" value="1440" label="1440.000000" color="#ff0000"/>
+              <item alpha="255" value="1520" label="1520.000000" color="#ff007f"/>
+              <item alpha="255" value="1600" label="1600.000000" color="#ff2290"/>
+              <item alpha="255" value="1680" label="1680.000000" color="#ff5eb1"/>
+              <item alpha="255" value="1760" label="1760.000000" color="#ff86c2"/>
+              <item alpha="255" value="1840" label="1840.000000" color="#ffaed7"/>
+              <item alpha="255" value="1920" label="1920.000000" color="#ffd7eb"/>
+              <item alpha="255" value="2000" label="2000.000000" color="#ffd7eb"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <id>thickness20150628152151563</id>
+      <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/data_sets/jakobshavn-1985-dem/tmp_thickness.nc":thickness</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>thickness</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>100005</srsid>
+          <srid>0</srid>
+          <authid>USER:100005</authid>
+          <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+          <projectionacronym>stere</projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1">
+          <noDataRange min="0" max="0"/>
+        </noDataList>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer opacity="1" alphaBand="0" classificationMax="2000" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" clip="0">
+              <item alpha="255" value="0" label="0.000000" color="#31007e"/>
+              <item alpha="255" value="80" label="80.000000" color="#000081"/>
+              <item alpha="255" value="160" label="160.000000" color="#0032b3"/>
+              <item alpha="255" value="240" label="240.000000" color="#0000ff"/>
+              <item alpha="255" value="320" label="320.000000" color="#007dff"/>
+              <item alpha="255" value="400" label="400.000000" color="#00bdff"/>
+              <item alpha="255" value="480" label="480.000000" color="#17d78b"/>
+              <item alpha="255" value="560" label="560.000000" color="#39ad73"/>
+              <item alpha="255" value="640" label="640.000000" color="#2aa92a"/>
+              <item alpha="255" value="720" label="720.000000" color="#2ac82a"/>
+              <item alpha="255" value="800" label="800.000000" color="#00ff31"/>
+              <item alpha="255" value="880" label="880.000000" color="#53ff00"/>
+              <item alpha="255" value="960" label="960.000000" color="#9fff00"/>
+              <item alpha="255" value="1040" label="1040.000000" color="#ffff00"/>
+              <item alpha="255" value="1120" label="1120.000000" color="#ffcc00"/>
+              <item alpha="255" value="1200" label="1200.000000" color="#ff9800"/>
+              <item alpha="255" value="1280" label="1280.000000" color="#ff6500"/>
+              <item alpha="255" value="1360" label="1360.000000" color="#ff5400"/>
+              <item alpha="255" value="1440" label="1440.000000" color="#ff0000"/>
+              <item alpha="255" value="1520" label="1520.000000" color="#ff007f"/>
+              <item alpha="255" value="1600" label="1600.000000" color="#ff2290"/>
+              <item alpha="255" value="1680" label="1680.000000" color="#ff5eb1"/>
+              <item alpha="255" value="1760" label="1760.000000" color="#ff86c2"/>
+              <item alpha="255" value="1840" label="1840.000000" color="#ffaed7"/>
+              <item alpha="255" value="1920" label="1920.000000" color="#ffd7eb"/>
+              <item alpha="255" value="2000" label="2000.000000" color="#ffd7eb"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <id>thickness20150628152817086</id>
+      <datasource>NETCDF:"/Volumes/Isunnguata Sermia/data/data_sets/jakobshavn-1985-dem/Greenland_150m_mcb_jpl_v2.nc":thickness</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>thickness v2</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>100005</srsid>
+          <srid>0</srid>
+          <authid>USER:100005</authid>
+          <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+          <projectionacronym>stere</projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer opacity="1" alphaBand="-1" classificationMax="2000" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" clip="0">
+              <item alpha="255" value="0" label="0.000000" color="#31007e"/>
+              <item alpha="255" value="80" label="80.000000" color="#000081"/>
+              <item alpha="255" value="160" label="160.000000" color="#0032b3"/>
+              <item alpha="255" value="240" label="240.000000" color="#0000ff"/>
+              <item alpha="255" value="320" label="320.000000" color="#007dff"/>
+              <item alpha="255" value="400" label="400.000000" color="#00bdff"/>
+              <item alpha="255" value="480" label="480.000000" color="#17d78b"/>
+              <item alpha="255" value="560" label="560.000000" color="#39ad73"/>
+              <item alpha="255" value="640" label="640.000000" color="#2aa92a"/>
+              <item alpha="255" value="720" label="720.000000" color="#2ac82a"/>
+              <item alpha="255" value="800" label="800.000000" color="#00ff31"/>
+              <item alpha="255" value="880" label="880.000000" color="#53ff00"/>
+              <item alpha="255" value="960" label="960.000000" color="#9fff00"/>
+              <item alpha="255" value="1040" label="1040.000000" color="#ffff00"/>
+              <item alpha="255" value="1120" label="1120.000000" color="#ffcc00"/>
+              <item alpha="255" value="1200" label="1200.000000" color="#ff9800"/>
+              <item alpha="255" value="1280" label="1280.000000" color="#ff6500"/>
+              <item alpha="255" value="1360" label="1360.000000" color="#ff5400"/>
+              <item alpha="255" value="1440" label="1440.000000" color="#ff0000"/>
+              <item alpha="255" value="1520" label="1520.000000" color="#ff007f"/>
+              <item alpha="255" value="1600" label="1600.000000" color="#ff2290"/>
+              <item alpha="255" value="1680" label="1680.000000" color="#ff5eb1"/>
+              <item alpha="255" value="1760" label="1760.000000" color="#ff86c2"/>
+              <item alpha="255" value="1840" label="1840.000000" color="#ffaed7"/>
+              <item alpha="255" value="1920" label="1920.000000" color="#ffd7eb"/>
+              <item alpha="255" value="2000" label="2000.000000" color="#ffd7eb"/>
+            </colorrampshader>
+          </rastershader>
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
         <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
@@ -32158,8 +33997,10 @@
         <value>grid_3600m20140925173614606</value>
         <value>grid_4500m20140928152639294</value>
         <value>grid_900m20140925141721375</value>
+        <value>grounded_198520150628122508629</value>
         <value>ice_stream_glaciers20150301173556810</value>
         <value>ice_stream_glaciers_copy20150301174027883</value>
+        <value>jakobshavn_1985_floating_tongue20150628122121339</value>
         <value>kriged_glaciers20150301174452949</value>
         <value>kriged_glaciers_copy20150301174951575</value>
         <value>outlet_glacier_boxes20150209114815193</value>
@@ -32169,8 +34010,14 @@
         <value>statistics_velsurf_normal_250m_greenland_2008_2009_grid_mo14_flow20150120190036088</value>
         <value>surge_glaciers_copy20150209103024496</value>
         <value>surge_glaciers_legend_copy20150303164927582</value>
+        <value>terminus20150628123113627</value>
+        <value>terminus_thickness20150628123113531</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
@@ -32227,8 +34074,16 @@
         <value>0</value>
         <value>0</value>
         <value>0</value>
+        <value>0</value>
+        <value>0</value>
+        <value>0</value>
+        <value>0</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
@@ -32259,6 +34114,10 @@
       <DefaultSnapType type="QString">off</DefaultSnapType>
       <DefaultSnapTolerance type="double">0</DefaultSnapTolerance>
       <LayerSnappingToleranceList type="QStringList">
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
