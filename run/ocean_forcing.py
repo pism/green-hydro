@@ -7,7 +7,7 @@ NC = netCDF.Dataset
 from netcdftime import utime
 import dateutil
 import numpy as np
-from datetime import datetime,timedelta
+from datetime import datetime, timedelta
 from argparse import ArgumentParser
 
 # Set up the option parser
