@@ -142,8 +142,6 @@ fi
 REGRIDFILE=$5
 STARTYEAR=1989
 ENDYEAR=2011
-PISM_BCFILE=R6b_ERAI_1989_2011_5400M_BIL.nc
-PISM_TIMEFILE=$PISM_BCFILE
 PISM_CONST_BCFILE=GR6b_ERAI_1989_2011_5400M_BIL_1989_baseline.nc
 
 EXSTEP=yearly
@@ -174,7 +172,7 @@ for E in 1.25; do
 	    for SSA_N in 3.25; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
                 EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}_calving_${CALVING}_RELAX
-                SCRIPT=hirham_relax_g${GRID}m_${EXPERIMENT}.sh
+                SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
                 rm -f $SCRIPT
                 
                 OUTFILE=g${GRID}m_${EXPERIMENT}.nc
@@ -193,7 +191,7 @@ for E in 1.25; do
                 export PISM_EXPERIMENT=$EXPERIMENT
                 export PISM_TITLE="Greenland Prognostic Study"
                 
-                cmd="PISM_DO="" PARAM_CALVING=$CALVING REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_CONST_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP SAVE=$SAVESTEP REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE $RELAXYEARS $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                cmd="PISM_DO="" PARAM_CALVING=$CALVING REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_CONST_BCFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP SAVE=$SAVESTEP REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE $RELAXYEARS $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                 
                 echo >> $SCRIPT
