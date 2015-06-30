@@ -143,7 +143,7 @@ ENDYEAR=2099
 PISM_TIMEFILE=time_${STARTYEAR}-${ENDYEAR}.nc
 create_timeline.py -a ${STARTYEAR}-1-1 -e ${ENDYEAR}-1-1 $PISM_TIMEFILE
 
-EXSTEP=monthly
+EXSTEP=yearly
 SAVESTEP=yearly
 
 REGRIDFILE=$5
