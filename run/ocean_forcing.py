@@ -8,23 +8,25 @@ from netcdftime import utime
 import dateutil
 import numpy as np
 from datetime import datetime,timedelta
-from optparse import OptionParser
+from argparse import ArgumentParser
 
 # Set up the option parser
-parser = OptionParser()
-parser.usage = "usage: %prog [options] FILE"
+parser = ArgumentParser()
 parser.description = "Script adds ocean forcing to HIRHAM atmosphere/surface forcing file. Sets a constant, spatially-uniform basal melt rate of b_a before time t_a, and b_e after time t_a."
-parser.add_option("-a",dest="b_a",
+parser.add_argument("FILE", nargs='*')
+parser.add_argument("-a",dest="b_a",
                   help="basal melt rate until t_a, in km m-2 s-1",default=228e3)
-parser.add_option("-e",dest="b_e",
+parser.add_argument("-e",dest="b_e",
                   help="basal melt rate from t_e on, in kg m-2 s-1",default=285e3)
-parser.add_option("--ta",dest="t_a",
+parser.add_argument("--ta",dest="t_a",
                   help="time t_e, udunits string, e.g. 1989-1-1",default="1997-1-31")
 
 # From Motyka et al (2011)
 # melt rates increased by 25% from 228 m/yr to 285 m/yr
 
-(options, args) = parser.parse_args()
+options = parser.parse_args()
+args = options.FILE
+
 b_a = options.b_a
 b_e = options.b_e
 t_a = str(options.t_a)
