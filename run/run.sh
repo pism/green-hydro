@@ -53,6 +53,8 @@ if [ $# -lt 5 ] ; then
   echo "    NODIAGS      if set, DON'T use -ts_file or -extra_file"
   echo "    PARAM_BEDDEF  sets the bed deformation method"
   echo "                 [default=not set] for [iso,lc]"
+  echo "    PARAM_CALVING_K sets eigen-calving K [default=1e18]"
+  echo "    PARAM_CALVING_THK sets calving threshold [default=50]"
   echo "    PARAM_NOAGE    if set, DON'T calculate age"
   echo "    PARAM_NOENERGY if set, DON'T use energy updates"
   echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
@@ -277,12 +279,25 @@ else
   PARAM_CALVING="ocean_kill"
 fi
 
+if [ -n "${PARAM_CALVING_THK+1}" ] ; then  # check if env var is set
+  CALVING_THK=$PARAM_CALVING_THK
+else
+  CALVING_THK=50
+fi
+
+
+if [ -n "${PARAM_CALVING_K+1}" ] ; then  # check if env var is set
+  CALVING_K=$PARAM_CALVING_K
+else
+  CALVING_K=1e18
+fi
+
 if [ "$PARAM_CALVING" == "ocean_kill" ]; then
   CALVING="-calving $PARAM_CALVING -ocean_kill_file $PISM_DATANAME"
 elif [ "$PARAM_CALVING" == "float_kill" ]; then
     CALVING="-calving $PARAM_CALVING"
 elif [ "$PARAM_CALVING" == "eigen_calving" ]; then
-    CALVING="-calving $PARAM_CALVING,thickness_calving -thickness_calving_threshold 50  -pik -eigen_calving_K 1e18 -cfl_eigen_calving"
+    CALVING="-calving $PARAM_CALVING,thickness_calving -thickness_calving_threshold $CALVING_THK  -pik -eigen_calving_K $CALVING_K -cfl_eigen_calving"
     echo "Make sure you set the eigen-calving parameters"
     echo "This option is untested"
 elif [ "$PARAM_CALVING" == "thickness_calving" ]; then
