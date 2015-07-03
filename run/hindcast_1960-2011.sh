@@ -171,7 +171,7 @@ TEFO=0.02
 for E in 1.25; do
     for PPQ in 0.6; do
 	for SSA_N in 3.25; do
-            for K in 1.5e17 1e18 1.5e18
+            for K in 1.5e17 1e18 1.5e18; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
                 EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_hydro_${HYDRO}_calving_${CALVING}_CONST
                 SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
