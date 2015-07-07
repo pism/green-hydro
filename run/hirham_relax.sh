@@ -15,6 +15,11 @@
 set -e # exit on error
 SCRIPTNAME=relax
 CLIMATE=const
+
+# pre-breakup melt rate of 228 m/yr from Motyka et al (2011)
+MELTRATE=228
+PISM_PARAM="-shelf_base_melt_rate $MELTRATE"
+
 TYPELIST=(ctrl, old_bed, 970mW_hs, 1985)
 CALVINGLIST=(float_kill, ocean_kill, eigen_calving)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900)
@@ -192,7 +197,7 @@ for E in 1.25; do
                 export PISM_EXPERIMENT=$EXPERIMENT
                 export PISM_TITLE="Greenland Prognostic Study"
                 
-                cmd="PISM_DO="" REGRIDVARS="litho_temp,enthalpy,tillwat,bmelt,Href,age" PARAM_CALVING=$CALVING PARAM_CALVING_K=$K REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_CONST_BCFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP SAVE=$SAVESTEP REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE $RELAXYEARS $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                cmd="PISM_DO="" REGRIDVARS="litho_temp,enthalpy,tillwat,bmelt,Href,age" PARAM_CALVING=$CALVING PARAM_CALVING_K=$K REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_CONST_BCFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP SAVE=$SAVESTEP REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PISM_PARAM=$PISM_PARAM ./run.sh $NN $CLIMATE $RELAXYEARS $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                 
                 echo >> $SCRIPT

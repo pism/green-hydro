@@ -15,9 +15,9 @@ parser = ArgumentParser()
 parser.description = "Script adds ocean forcing to HIRHAM atmosphere/surface forcing file. Sets a constant, spatially-uniform basal melt rate of b_a before time t_a, and b_e after time t_a."
 parser.add_argument("FILE", nargs='*')
 parser.add_argument("-a",dest="b_a",
-                  help="basal melt rate until t_a, in km m-2 s-1",default=228e3)
+                    help="basal melt rate until t_a, in kg m-2 s-1",default=228e3*0.91)
 parser.add_argument("-e",dest="b_e",
-                  help="basal melt rate from t_e on, in kg m-2 s-1",default=285e3)
+                    help="basal melt rate from t_e on, in kg m-2 s-1",default=285e3*0.91)
 parser.add_argument("--ta",dest="t_a",
                   help="time t_e, udunits string, e.g. 1989-1-1",default="1997-1-31")
 
