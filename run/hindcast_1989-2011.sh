@@ -14,7 +14,6 @@
 
 set -e # exit on error
 SCRIPTNAME=hindcast
-CLIMATE=forcing
 TYPELIST=(ctrl, old_bed, 970mW_hs, 1985)
 CALVINGLIST=(float_kill, ocean_kill, eigen_calving)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900)
@@ -173,6 +172,7 @@ for E in 1.25; do
         for K in 1.5e17 1e18 1.5e18; do
 	    for SSA_N in 3.25; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
+                CLIMATE=climate
                 EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_hydro_${HYDRO}_calving_${CALVING}_CONST
                 SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
                 rm -f $SCRIPT
@@ -193,14 +193,15 @@ for E in 1.25; do
                 export PISM_EXPERIMENT=$EXPERIMENT
                 export PISM_TITLE="Greenland Prognostic Study"
                 
-                cmd="PISM_DO="" PARAM_CALVING=$CALVING PARAM_CALVING_K=$K REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_CONST_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP SAVE=$SAVESTEP REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                cmd="PISM_DO="" PARAM_CALVING=$CALVING PARAM_CALVING_K=$K REGRIDFILE=$REGRIDFILE  REGRIDFILE=$REGRIDFILE PISM_BCFILE=$PISM_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP SAVE=$SAVESTEP REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
                 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
                 echo
-
-                EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_hydro_${HYDRO}_calving_${CALVING}_CTRL
+                
+                CLIMATE=climateocean
+                EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_hydro_${HYDRO}_calving_${CALVING}_CTRL
                 SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
                 rm -f $SCRIPT
                 
