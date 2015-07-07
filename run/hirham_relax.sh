@@ -18,7 +18,7 @@ CLIMATE=const
 
 # pre-breakup melt rate of 228 m/yr from Motyka et al (2011)
 MELTRATE=228
-PISM_PARAM="-shelf_base_melt_rate $MELTRATE"
+PISM_PARAM='-shelf_base_melt_rate $MELTRATE'
 
 TYPELIST=(ctrl, old_bed, 970mW_hs, 1985)
 CALVINGLIST=(float_kill, ocean_kill, eigen_calving)
