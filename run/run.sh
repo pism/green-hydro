@@ -60,6 +60,7 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
   echo "                   [default=0.25]"
   echo "    PARAM_SIAE   sets option -sia_e \$PARAM_SIAE   [default=3.0]"
+  echo "    PARAM_SUB_SHELF_MELT sets option -sub_shelf_melt_rate \$PARAM_SUB_SHELF_MELT"
   echo "    PARAM_UTHR   sets option -pseudo_platic_uthreshold \$PARAM_UTHR [default=100 m/a]"
   echo "    PARAM_TEFO   sets (hybrid-only) option -till_effective_fraction_overburden"
   echo "                   \$PARAM_TEFO   [default=0.02]"
@@ -291,6 +292,12 @@ else
   CALVING_THK=50
 fi
 
+if [ -n "${PARAM_SUB_SHELF_MELT+1}" ] ; then  # check if env var is set
+  SUB_SHELF_MELT="-sub_shelf_melt_rate ${PARAM_SUB_SHELF_MELT}"
+else
+  SUB_SHELF_MELT=""
+fi
+
 
 if [ -n "${PARAM_CALVING_K+1}" ] ; then  # check if env var is set
   CALVING_K=$PARAM_CALVING_K
@@ -346,7 +353,7 @@ if [ "$5" = "hybrid" ]; then
   else
     SSA_N="-ssa_n 3.0"
   fi
-  PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N}"
+  PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N} ${SUB_SHELF_MELT}"
 else
   if [ "$5" = "sia" ]; then
     echo "$SCRIPTNAME  sia-only case: ignoring PARAM_TTPHI, PARAM_PPQ, PARAM_TEFO ..."
@@ -382,7 +389,7 @@ elif [ "$6" = "routing" ]; then
 elif [ "$6" = "distributed" ]; then
   HYDRO="-hydrology distributed $HYDROPARAMS"
 else
-  echo "invalid sixt argument, must be in $HYDROLIST"
+  echo "invalid sixth argument, must be in $HYDROLIST"
 fi
 
 # set output filename from argument 7
