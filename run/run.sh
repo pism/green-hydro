@@ -60,7 +60,7 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
   echo "                   [default=0.25]"
   echo "    PARAM_SIAE   sets option -sia_e \$PARAM_SIAE   [default=3.0]"
-  echo "    PARAM_SUB_SHELF_MELT sets option -sub_shelf_melt_rate \$PARAM_SUB_SHELF_MELT"
+  echo "    PARAM_SHELF_BASE_MELT_RATE sets option -shelf_base_melt_rate \$PARAM_SHELF_BASE_MELT_RATE"
   echo "    PARAM_UTHR   sets option -pseudo_platic_uthreshold \$PARAM_UTHR [default=100 m/a]"
   echo "    PARAM_TEFO   sets (hybrid-only) option -till_effective_fraction_overburden"
   echo "                   \$PARAM_TEFO   [default=0.02]"
@@ -292,10 +292,10 @@ else
   CALVING_THK=50
 fi
 
-if [ -n "${PARAM_SUB_SHELF_MELT+1}" ] ; then  # check if env var is set
-  SUB_SHELF_MELT="-sub_shelf_melt_rate ${PARAM_SUB_SHELF_MELT}"
+if [ -n "${PARAM_SHELF_BASE_MELT_RATE+1}" ] ; then  # check if env var is set
+  SHELF_BASE_MELT_RATE="-shelf_base_melt_rate ${PARAM_SHELF_BASE_MELT_RATE}"
 else
-  SUB_SHELF_MELT=""
+  SHELF_BASE_MELT_RATE=""
 fi
 
 
@@ -578,7 +578,7 @@ else
 fi
 
 # construct command
-cmd="$PISM_MPIDO $NN $PISM ${SUB_SHELF_MELT} -config_override $CONFIG $AGE -i $INNAME -bootstrap -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $PISM_PARAM $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE $HIGHRESPETSC -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
+cmd="$PISM_MPIDO $NN $PISM ${SHELF_BASE_MELT_RATE} -config_override $CONFIG $AGE -i $INNAME -bootstrap -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $PISM_PARAM $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE $HIGHRESPETSC -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
 echo
 $PISM_DO $cmd
 
