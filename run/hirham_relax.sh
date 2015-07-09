@@ -16,10 +16,6 @@ set -e # exit on error
 SCRIPTNAME=relax
 CLIMATE=const
 
-# pre-breakup melt rate of 228 m/yr from Motyka et al (2011)
-MELTRATE=228
-PISM_PARAM="-shelf_base_melt_rate $MELTRATE"
-
 TYPELIST=(ctrl, old_bed, 970mW_hs, 1985)
 CALVINGLIST=(float_kill, ocean_kill, eigen_calving)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900)

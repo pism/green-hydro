@@ -353,7 +353,7 @@ if [ "$5" = "hybrid" ]; then
   else
     SSA_N="-ssa_n 3.0"
   fi
-  PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N} ${SUB_SHELF_MELT}"
+  PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N}"
 else
   if [ "$5" = "sia" ]; then
     echo "$SCRIPTNAME  sia-only case: ignoring PARAM_TTPHI, PARAM_PPQ, PARAM_TEFO ..."
@@ -578,7 +578,7 @@ else
 fi
 
 # construct command
-cmd="$PISM_MPIDO $NN $PISM -config_override $CONFIG $AGE -i $INNAME -bootstrap -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $PISM_PARAM $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE $HIGHRESPETSC -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
+cmd="$PISM_MPIDO $NN $PISM ${SUB_SHELF_MELT} -config_override $CONFIG $AGE -i $INNAME -bootstrap -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $PISM_PARAM $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE $HIGHRESPETSC -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
 echo
 $PISM_DO $cmd
 
