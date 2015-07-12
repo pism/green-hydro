@@ -146,12 +146,17 @@ else
     AGE=""
 fi
 
-
-# are we using a time file for forcing?
-if [ -z "${PISM_BCFILE}" ] ; then  # check if env var is NOT set
-    PISM_BCFILE=RACMO_CLRUN_10000M_BIL_MM_EPSG314_1960-1990_baseline.nc
+if [ -z "${PISM_SURFACE_BCFILE}" ] ; then  # check if env var is NOT set
+    PISM_SURFACE_BCFILE=RACMO_CLRUN_10000M_BIL_MM_EPSG314_1960-1990_baseline.nc
 else
-    PISM_BCFILE=$PISM_BCFILE
+    PISM_SURFACE_BCFILE=$PISM_SURFACE_BCFILE
+fi
+
+if [ -z "${PISM_OCEAN_BCFILE}" ] ; then  # check if env var is NOT set
+    OCEAN="-ocean const"
+else
+    PISM_OCEAN_BCFILE=$PISM_OCEAN_BCFILE
+    OCEAN="-ocean given -ocean_given_file $PISM_OCEAN_BCFILE"
 fi
 
 # override config file?
@@ -166,7 +171,7 @@ if [ "$2" = "const" ]; then
   climname="constant-climate"
   INLIST=""
   # use this if you want constant-climate with force-to-thickness
-  COUPLER="-surface given$FTT -surface_given_file $PISM_BCFILE"
+  COUPLER="-surface given$FTT -surface_given_file $PISM_SURFACE_BCFILE $OCEAN"
   # COUPLER="-surface given -surface_given_file $PISM_DATANAME"
 elif [ "$2" = "paleo" ]; then
   climname="paleo-climate"
@@ -174,19 +179,19 @@ elif [ "$2" = "paleo" ]; then
   COUPLER=" -atmosphere searise_greenland,delta_T,paleo_precip -surface pdd$FTT -atmosphere_paleo_precip_file $PISM_TEMPSERIES -atmosphere_delta_T_file $PISM_TEMPSERIES -ocean constant,delta_SL -ocean_delta_SL_file $PISM_SLSERIES"
 elif [ "$2" = "pdd" ]; then
   climname="pdd-climate"
-  COUPLER=" -atmosphere searise_greenland -surface pdd$FTT -ocean constant"
+  COUPLER=" -atmosphere searise_greenland -surface pdd$FTT $OCEAN"
 elif [ "$2" = "climate" ]; then
   climname="rcm-forcing with constant ocean"
   INLIST=""
-  COUPLER="-surface given -surface_given_file $PISM_BCFILE -ocean constant"
+  COUPLER="-surface given -surface_given_file $PISM_SURFACE_BCFILE $OCEAN"
 elif [ "$2" = "ocean" ]; then
   climname="ocean-forcing"
   INLIST=""
-  COUPLER="-surface given -surface_given_file $PISM_BCFILE -ocean given -ocean_given_file $PISM_BCFILE"
+  COUPLER="-surface given -surface_given_file $PISM_SURFACE_BCFILE -ocean given -ocean_given_file $PISM_OCEAN_BCFILE"
 elif [ "$2" = "climateocean" ]; then
   climname="rcm-forcing with ocean-forcing"
   INLIST=""
-  COUPLER="-surface given -surface_given_file $PISM_BCFILE -ocean given -ocean_given_file $PISM_BCFILE"
+  COUPLER="-surface given -surface_given_file $PISM_SURFACE_BCFILE -ocean given -ocean_given_file $PISM_OCEAN_BCFILE"
 else
   echo "invalid second argument; must be in $CLIMLIST"
   exit
