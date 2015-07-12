@@ -176,7 +176,8 @@ for E in 1.25; do
             PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_1989_baseline.nc
             EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_hydro_${HYDRO}_calving_${CALVING}_ocean_ctrl
             SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
-            rm -f $SCRIPT
+            POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
+            rm -f $SCRIPT $POST
             
             OUTFILE=g${GRID}m_${EXPERIMENT}.nc
             
@@ -196,15 +197,19 @@ for E in 1.25; do
             
             cmd="PISM_DO="" PISM_CONFIG=$CONFIG REGRIDVARS="litho_temp,enthalpy,tillwat,bmelt,Href,age" PARAM_NOAGE=foo PARAM_CALVING=$CALVING PARAM_CALVING_K=$K REGRIDFILE=$REGRIDFILE PISM_SURFACE_BCFILE=$PISM_SURFACE_BCFILE PISM_OCEAN_BCFILE=$PISM_OCEAN_BCFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP SAVE=$SAVESTEP REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PISM_PARAM=\"$PISM_PARAM\" ./run.sh $NN $CLIMATE $RELAXYEARS $GRID hybrid $HYDRO $OUTFILE $INFILE"
             echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-            
+
             echo >> $SCRIPT
             echo "# $SCRIPT written"
             echo
+
+            source run-postpro-relax.sh
+            echo "# $POST written"
 
             PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_1989_m20_baseline.nc
             EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_hydro_${HYDRO}_calving_${CALVING}_ocean_m20
             SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
-            rm -f $SCRIPT
+            POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
+            rm -f $SCRIPT $POST
             
             OUTFILE=g${GRID}m_${EXPERIMENT}.nc
             
@@ -224,15 +229,20 @@ for E in 1.25; do
             
             cmd="PISM_DO="" PISM_CONFIG=$CONFIG REGRIDVARS="litho_temp,enthalpy,tillwat,bmelt,Href,age" PARAM_NOAGE=foo PARAM_CALVING=$CALVING PARAM_CALVING_K=$K REGRIDFILE=$REGRIDFILE PISM_SURFACE_BCFILE=$PISM_SURFACE_BCFILE PISM_OCEAN_BCFILE=$PISM_OCEAN_BCFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP SAVE=$SAVESTEP REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PISM_PARAM=\"$PISM_PARAM\" ./run.sh $NN $CLIMATE $RELAXYEARS $GRID hybrid $HYDRO $OUTFILE $INFILE"
             echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-            
+
             echo >> $SCRIPT
             echo "# $SCRIPT written"
             echo
 
+            source run-postpro-relax.sh
+            echo "# $POST written"
+
+
             PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_1989_p20_baseline.nc
             EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_hydro_${HYDRO}_calving_${CALVING}_ocean_p20
             SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
-            rm -f $SCRIPT
+            POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
+            rm -f $SCRIPT $POST
             
             OUTFILE=g${GRID}m_${EXPERIMENT}.nc
             
@@ -252,11 +262,13 @@ for E in 1.25; do
             
             cmd="PISM_DO="" PISM_CONFIG=$CONFIG REGRIDVARS="litho_temp,enthalpy,tillwat,bmelt,Href,age" PARAM_NOAGE=foo PARAM_CALVING=$CALVING PARAM_CALVING_K=$K REGRIDFILE=$REGRIDFILE PISM_SURFACE_BCFILE=$PISM_SURFACE_BCFILE PISM_OCEAN_BCFILE=$PISM_OCEAN_BCFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP SAVE=$SAVESTEP REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PISM_PARAM=\"$PISM_PARAM\" ./run.sh $NN $CLIMATE $RELAXYEARS $GRID hybrid $HYDRO $OUTFILE $INFILE"
             echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
-            
+                
             echo >> $SCRIPT
             echo "# $SCRIPT written"
             echo
-            
+
+            source run-postpro-relax.sh
+            echo "# $POST written"            
         done
     done
 done
