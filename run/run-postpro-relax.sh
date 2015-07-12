@@ -5,9 +5,11 @@ MYMPIQUEUELINE="#PBS -q transfer"
  MYMPISIZELINE="#PBS -l nodes=1:ppn=1"
   MYMPIOUTLINE="#PBS -j oe"
 
-filepre=g${GRID}m_${EXPERIMENT}_${DURA}a
+filepre=g${GRID}m_${EXPERIMENT}
 
 if [ "$TYPE" = "ctrl_v2" ]; then
+    MYTYPE="MO14 2015-04-27"
+elif [ "$TYPE" = "1985_v2" ]; then
     MYTYPE="MO14 2015-04-27"
 elif [ "$TYPE" = "ctrl_v1.2" ]; then
     MYTYPE="MO14 2014-11-19"
