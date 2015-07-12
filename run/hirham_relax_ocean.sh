@@ -174,7 +174,7 @@ for E in 1.25; do
         for K in 1e16 1.5e16 1e17 1.5e17 1e18; do
             PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
             PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_1989_baseline.nc
-            EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_sbmelt_${SBMELT}_hydro_${HYDRO}_calving_${CALVING}_ocean_ctrl
+            EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_hydro_${HYDRO}_calving_${CALVING}_ocean_ctrl
             SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
             rm -f $SCRIPT
             
