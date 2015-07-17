@@ -170,7 +170,7 @@ philow=5
 TEFO=0.02
 for E in 1.25; do
     for PPQ in 0.6; do
-        for K in 1.5e17 1e18 1.5e18; do
+        for K in 1e15 1e16 1.5e16 1e17 1.5e17 1e18; do
 	    for SSA_N in 3.25; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
                 CLIMATE=climate
