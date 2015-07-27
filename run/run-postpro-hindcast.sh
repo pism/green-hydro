@@ -26,7 +26,7 @@ else
     exit
 fi
 
-tl_dir=relax_${GRID}m_${CLIMATE}_${TYPE}
+tl_dir=hindcast_${GRID}m_${CLIMATE}_${TYPE}
 nc_dir=processed
 
 fill=-2e9
