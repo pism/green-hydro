@@ -237,7 +237,7 @@ for K in 1e15 1e16 1e17; do
         echo "# $POST written"
         echo
         
-        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_1989_m20_baseline.nc
+        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_m20_1989_baseline.nc
         EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_m20
         SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
@@ -270,7 +270,7 @@ for K in 1e15 1e16 1e17; do
         echo
 
 
-        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_1989_p20_baseline.nc
+        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_p20_1989_baseline.nc
         EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_p20
         SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
