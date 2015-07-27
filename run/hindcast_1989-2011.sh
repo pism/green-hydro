@@ -199,7 +199,7 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
-                source run-postpro-hincast.sh
+                source run-postpro-hindcast.sh
                 echo "# $POST written"
                 echo
                 
@@ -231,7 +231,7 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
-                source run-postpro-hincast.sh
+                source run-postpro-hindcast.sh
                 echo "# $POST written"
                 echo
 
@@ -263,7 +263,7 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
-                source run-postpro-hincast.sh
+                source run-postpro-hindcast.sh
                 echo "# $POST written"
                 echo
 
@@ -295,7 +295,7 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
-                source run-postpro-hincast.sh
+                source run-postpro-hindcast.sh
                 echo "# $POST written"
                 echo
             done
