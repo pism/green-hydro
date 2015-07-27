@@ -271,7 +271,7 @@ for K in 1e15 1e16 1e17 1e18; do
 
 
         PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_1989_p20_baseline.nc
-        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_hydro_${HYDRO}_calving_${CALVING}_ocean_p20
+        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_p20
         SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
         rm -f $SCRIPT $POST
@@ -301,7 +301,6 @@ for K in 1e15 1e16 1e17 1e18; do
         source run-postpro-relax.sh
         echo "# $POST written"            
         echo
-        done
     done
 done
 
