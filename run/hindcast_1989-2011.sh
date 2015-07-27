@@ -198,6 +198,8 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
+                source run-postpro-relax.sh
+                echo "# $POST written"
                 echo
                 
                 CLIMATE=climateocean
@@ -227,6 +229,8 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
+                source run-postpro-relax.sh
+                echo "# $POST written"
                 echo
 
                 CLIMATE=climateocean
@@ -256,6 +260,8 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
+                source run-postpro-relax.sh
+                echo "# $POST written"
                 echo
 
                 CLIMATE=climateocean
@@ -285,6 +291,8 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
+                source run-postpro-relax.sh
+                echo "# $POST written"
                 echo
             done
         done
