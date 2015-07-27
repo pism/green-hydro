@@ -175,7 +175,8 @@ for E in 1.25; do
                 CLIMATE=climate
                 EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_hydro_${HYDRO}_calving_${CALVING}_CONST
                 SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
-                rm -f $SCRIPT
+                POST=hindcast_g${GRID}m_${EXPERIMENT}_post.sh
+                rm -f $SCRIPT $POST
                 
                 OUTFILE=g${GRID}m_${EXPERIMENT}.nc
                 
@@ -198,7 +199,7 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
-                source run-postpro-relax.sh
+                source run-postpro-hincast.sh
                 echo "# $POST written"
                 echo
                 
@@ -206,7 +207,8 @@ for E in 1.25; do
                 PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011.nc
                 EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_hydro_${HYDRO}_calving_${CALVING}_CTRL
                 SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
-                rm -f $SCRIPT
+                POST=hindcast_g${GRID}m_${EXPERIMENT}_post.sh
+                rm -f $SCRIPT $POST
                 
                 OUTFILE=g${GRID}m_${EXPERIMENT}.nc
                 
@@ -229,7 +231,7 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
-                source run-postpro-relax.sh
+                source run-postpro-hincast.sh
                 echo "# $POST written"
                 echo
 
@@ -237,7 +239,8 @@ for E in 1.25; do
                 PISM_OCEAN_BCFILE=ocean_forcing_sb_${GRID}m_1989-2011.nc
                 EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_hydro_${HYDRO}_calving_${CALVING}_SB
                 SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
-                rm -f $SCRIPT
+                POST=hindcast_g${GRID}m_${EXPERIMENT}_post.sh
+                rm -f $SCRIPT $POST
                 
                 OUTFILE=g${GRID}m_${EXPERIMENT}.nc
                 
@@ -260,7 +263,7 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
-                source run-postpro-relax.sh
+                source run-postpro-hincast.sh
                 echo "# $POST written"
                 echo
 
@@ -268,7 +271,8 @@ for E in 1.25; do
                 PISM_OCEAN_BCFILE=ocean_forcing_sb5_${GRID}m_1989-2011.nc
                 EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_hydro_${HYDRO}_calving_${CALVING}_SB5
                 SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
-                rm -f $SCRIPT
+                POST=hindcast_g${GRID}m_${EXPERIMENT}_post.sh
+                rm -f $SCRIPT $POST
                 
                 OUTFILE=g${GRID}m_${EXPERIMENT}.nc
                 
@@ -291,7 +295,7 @@ for E in 1.25; do
                 
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
-                source run-postpro-relax.sh
+                source run-postpro-hincast.sh
                 echo "# $POST written"
                 echo
             done
