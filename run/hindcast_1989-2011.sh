@@ -175,7 +175,7 @@ for K in 1e15 1e16 1e17; do
     for THK in 50 100 200; do
         PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
         CLIMATE=climate
-        EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_k_${K}_calving_${CALVING}_${THK}_CONST
+        EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_k_${K}_calving_${CALVING}_${THK}_const
         SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
         POST=hindcast_g${GRID}m_${EXPERIMENT}_post.sh
         rm -f $SCRIPT $POST
@@ -207,7 +207,7 @@ for K in 1e15 1e16 1e17; do
         
         CLIMATE=climateocean
         PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011.nc
-        EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_k_${K}_calving_${CALVING}_${THK}_CTRL
+        EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_k_${K}_calving_${CALVING}_${THK}_ctrl
         SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
         POST=hindcast_g${GRID}m_${EXPERIMENT}_post.sh
         rm -f $SCRIPT $POST
@@ -239,7 +239,7 @@ for K in 1e15 1e16 1e17; do
     
         CLIMATE=climateocean
         PISM_OCEAN_BCFILE=ocean_forcing_sb_${GRID}m_1989-2011.nc
-        EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_philow_${philow}_k_${K}_calving_${CALVING}_${THK}_SB
+        EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_k_${K}_calving_${CALVING}_${THK}_sb
         SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
         POST=hindcast_g${GRID}m_${EXPERIMENT}_post.sh
         rm -f $SCRIPT $POST
@@ -271,7 +271,7 @@ for K in 1e15 1e16 1e17; do
         
         CLIMATE=climateocean
         PISM_OCEAN_BCFILE=ocean_forcing_sb2_${GRID}m_1989-2011.nc
-        EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_k_${K}_calving_${CALVING}_${THK}_SB2
+        EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_k_${K}_calving_${CALVING}_${THK}_sb2
         SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
         POST=hindcast_g${GRID}m_${EXPERIMENT}_post.sh
         rm -f $SCRIPT $POST
@@ -303,7 +303,7 @@ for K in 1e15 1e16 1e17; do
         
         CLIMATE=climateocean
         PISM_OCEAN_BCFILE=ocean_forcing_sb5_${GRID}m_1989-2011.nc
-        EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_k_${K}_calving_${CALVING}_${THK}_SB5
+        EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_k_${K}_calving_${CALVING}_${THK}_sb5
         SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
         POST=hindcast_g${GRID}m_${EXPERIMENT}_post.sh
         rm -f $SCRIPT $POST
