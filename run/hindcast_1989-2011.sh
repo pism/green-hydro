@@ -238,7 +238,7 @@ for K in 1e15 1e16 1e17; do
         echo
     
         CLIMATE=climateocean
-        PISM_OCEAN_BCFILE=ocean_forcing_sb_${GRID}m_1989-2011.nc
+        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_sb.nc
         EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_k_${K}_calving_${CALVING}_${THK}_sb
         SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
         POST=hindcast_g${GRID}m_${EXPERIMENT}_post.sh
@@ -270,7 +270,7 @@ for K in 1e15 1e16 1e17; do
         echo
         
         CLIMATE=climateocean
-        PISM_OCEAN_BCFILE=ocean_forcing_sb2_${GRID}m_1989-2011.nc
+        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_sb2.nc
         EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_k_${K}_calving_${CALVING}_${THK}_sb2
         SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
         POST=hindcast_g${GRID}m_${EXPERIMENT}_post.sh
@@ -302,7 +302,7 @@ for K in 1e15 1e16 1e17; do
         echo
         
         CLIMATE=climateocean
-        PISM_OCEAN_BCFILE=ocean_forcing_sb5_${GRID}m_1989-2011.nc
+        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_sb5.nc
         EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_k_${K}_calving_${CALVING}_${THK}_sb5
         SCRIPT=hindcast_g${GRID}m_${EXPERIMENT}.sh
         POST=hindcast_g${GRID}m_${EXPERIMENT}_post.sh

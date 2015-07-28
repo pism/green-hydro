@@ -174,7 +174,8 @@ for K in 1e15 1e16 1e17; do
     for THK in 50 100 200; do
         PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
         PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_1989_baseline.nc
-        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_ctrl
+        OTYPE=ctrl
+        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
         SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
         rm -f $SCRIPT $POST
@@ -205,9 +206,9 @@ for K in 1e15 1e16 1e17; do
         echo "# $POST written"
         echo
         
-        PISM_OCEAN_BCFILE=ocean_forcing_sb_${GRID}m_1989-2011_1989_baseline.nc
-        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_sb
-        SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
+        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_sb_1989_baseline.nc
+        OTYPE=sb
+        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}        SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
         rm -f $SCRIPT $POST
         
@@ -238,7 +239,8 @@ for K in 1e15 1e16 1e17; do
         echo
         
         PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_m20_1989_baseline.nc
-        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_m20
+        OTYPE=m20
+        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
         SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
         rm -f $SCRIPT $POST
@@ -271,7 +273,8 @@ for K in 1e15 1e16 1e17; do
 
 
         PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_p20_1989_baseline.nc
-        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_p20
+        OTYPE=p20
+        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
         SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
         rm -f $SCRIPT $POST
