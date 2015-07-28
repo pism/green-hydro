@@ -25,6 +25,7 @@ else
     echo "$TYPE not recogniced, exciting"
     exit
 fi
+OTYPE="${OTYPE}"
 
 tl_dir=relax_${GRID}m_${CLIMATE}_${TYPE}
 nc_dir=processed
