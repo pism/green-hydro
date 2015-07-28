@@ -68,7 +68,7 @@ QUEUE=$PISM_QUEUE
 if [ -n "${PISM_OFORMAT:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME                      PISM_OFORMAT = $PISM_OFORMAT  (already set)"
 else
-  PISM_OFORMAT="netcdf3"
+  PISM_OFORMAT="pnetcdf"
   echo "$SCRIPTNAME                      PISM_OFORMAT = $PISM_OFORMAT"
 fi
 OFORMAT=$PISM_OFORMAT
