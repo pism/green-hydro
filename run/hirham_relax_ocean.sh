@@ -206,8 +206,40 @@ for K in 1e15 1e16 1e17; do
         echo "# $POST written"
         echo
         
-        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_sb_1989_baseline.nc
+        OTYPE=lm
+        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
+        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}        SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
+        POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
+        rm -f $SCRIPT $POST
+        
+        OUTFILE=g${GRID}m_${EXPERIMENT}.nc
+        
+        # insert preamble
+        echo $SHEBANGLINE >> $SCRIPT
+        echo >> $SCRIPT # add newline
+        echo $MPIQUEUELINE >> $SCRIPT
+        echo $MPITIMELINE >> $SCRIPT
+        echo $MPISIZELINE >> $SCRIPT
+        echo $MPIOUTLINE >> $SCRIPT
+        echo >> $SCRIPT # add newline
+        echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
+        echo >> $SCRIPT # add newline
+            
+        export PISM_EXPERIMENT=$EXPERIMENT
+        export PISM_TITLE="Greenland Prognostic Study"
+            
+        cmd="PISM_DO="" PISM_CONFIG=$CONFIG REGRIDVARS="litho_temp,enthalpy,tillwat,bmelt,Href,age" PARAM_NOAGE=foo PARAM_CALVING=$CALVING PARAM_CALVING_K=$K PARAM_CALVING_THK=$THK REGRIDFILE=$REGRIDFILE PISM_SURFACE_BCFILE=$PISM_SURFACE_BCFILE PISM_OCEAN_BCFILE=$PISM_OCEAN_BCFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP PARAM_SIAE=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PISM_PARAM=\"$PISM_PARAM\" ./run.sh $NN $CLIMATE $RELAXYEARS $GRID hybrid $HYDRO $OUTFILE $INFILE"
+        echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+        
+        echo >> $SCRIPT
+        echo "# $SCRIPT written"
+        
+        source run-postpro-relax.sh
+        echo "# $POST written"
+        echo
+
         OTYPE=sb
+        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
         EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}        SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
         rm -f $SCRIPT $POST
@@ -238,8 +270,8 @@ for K in 1e15 1e16 1e17; do
         echo "# $POST written"
         echo
         
-        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_m20_1989_baseline.nc
         OTYPE=m20
+        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
         EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
         SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
@@ -272,8 +304,8 @@ for K in 1e15 1e16 1e17; do
         echo
 
 
-        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_p20_1989_baseline.nc
         OTYPE=p20
+        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
         EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
         SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
