@@ -210,7 +210,7 @@ for K in 1e15 1e16 1e17; do
         echo >> $SCRIPT
         echo "# $SCRIPT written"
         
-        source run-postpro-relax.sh
+        source run-postpro-relax-2s.sh
         echo "# $POST written"
         echo
         
