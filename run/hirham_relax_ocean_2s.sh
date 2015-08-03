@@ -184,6 +184,8 @@ for K in 1e14 1e15 1e16 1e17; do
         
         OUTFILE=g${GRID}m_${EXPERIMENT}_1.nc
         OUTFILE2=g${GRID}m_${EXPERIMENT}_2.nc
+
+        REGRIDFILE=$5
         
         # insert preamble
         echo $SHEBANGLINE >> $SCRIPT
