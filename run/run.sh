@@ -55,6 +55,7 @@ if [ $# -lt 5 ] ; then
   echo "                 [default=not set] for [iso,lc]"
   echo "    PARAM_CALVING_K sets eigen-calving K [default=1e18]"
   echo "    PARAM_CALVING_THK sets calving threshold [default=50]"
+  echo "    PARAM_FRACTURE if set, run default fracture dynamics"
   echo "    PARAM_NOAGE    if set, DON'T calculate age"
   echo "    PARAM_NOENERGY if set, DON'T use energy updates"
   echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
@@ -327,6 +328,21 @@ else
     exit
 fi
 
+if [ -n "${PARAM_FRACTURE+1}" ] ; then  # check if env var is set
+    THRESHOLD=4.5e4   #  stress threshold
+    FRACRATE=0.5   #  fracture rate
+    HEALTHRESHOLD=2.0e-10   #  healing threshold
+    HEALRATE=0.05   #  healing rate
+    SOFTRES=0.01   #  softening residual (avoid viscosity from degeneration), value 1 inhibits softening effect
+    criterion=""
+    boundary="-do_frac_on_grounded"
+    healing=""
+    FRACTURE="-fractures ${FRACRATE},${THRESHOLD},${HEALRATE},${HEALTHRESHOLD} -write_fd_fields -scheme_fd2d ${healing} ${boundary} ${criterion} ${softening}"
+else
+    FRACTURE=""
+fi
+
+
 if [ -n "${PARAM_SIAE:+1}" ] ; then  # check if env var is already set
   PHYS="$BEDDEF $ENERGY $CALVING -sia_e ${PARAM_SIAE} ${SIA_N}"
 else
@@ -583,7 +599,7 @@ else
 fi
 
 # construct command
-cmd="$PISM_MPIDO $NN $PISM ${SHELF_BASE_MELT_RATE} -config_override $CONFIG $AGE -i $INNAME -bootstrap -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $PISM_PARAM $COUPLER $PHYS $HYDRO $DIAGNOSTICS $SAVE $HIGHRESPETSC -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
+cmd="$PISM_MPIDO $NN $PISM ${SHELF_BASE_MELT_RATE} -config_override $CONFIG $AGE -i $INNAME -bootstrap -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $PISM_PARAM $COUPLER $PHYS $FRACTURE $HYDRO $DIAGNOSTICS $SAVE $HIGHRESPETSC -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
 echo
 $PISM_DO $cmd
 
