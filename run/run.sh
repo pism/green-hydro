@@ -337,6 +337,7 @@ if [ -n "${PARAM_FRACTURE+1}" ] ; then  # check if env var is set
     criterion=""
     boundary="-do_frac_on_grounded"
     healing=""
+    EXFRACS=",fracture_density,fracture_flow_enhancement,fracture_growth_rate,fracture_healing_rate,fracture_toughness"
     FRACTURE="-fractures ${FRACRATE},${THRESHOLD},${HEALRATE},${HEALTHRESHOLD} -write_fd_fields -scheme_fd2d ${healing} ${boundary} ${criterion} ${softening}"
 else
     FRACTURE=""
@@ -526,7 +527,7 @@ fi
 if [ -n "${EXVARS:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME          EXVARS = $EXVARS  (already set)"
 else
-  EXVARS="bwat,bwatvel,diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,taud_mag,flux_divergence,velsurf,climatic_mass_balance,climatic_mass_balance_original,discharge_flux_cumulative"
+  EXVARS="bwat,bwatvel,diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,taud_mag,flux_divergence,velsurf,climatic_mass_balance,climatic_mass_balance_original,discharge_flux_cumulative,deviatoric_stresses,,$EXFRACS"
   if [ "$5" = "hybrid" ]; then
     EXVARS="${EXVARS},hardav,velbase_mag,tauc,taub_mag"
   fi
