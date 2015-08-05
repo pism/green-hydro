@@ -56,6 +56,7 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_CALVING_K sets eigen-calving K [default=1e18]"
   echo "    PARAM_CALVING_THK sets calving threshold [default=50]"
   echo "    PARAM_FRACTURE if set, run default fracture dynamics"
+  echo "    PARAM_FSOFT sets fracture softening [default=1]"
   echo "    PARAM_NOAGE    if set, DON'T calculate age"
   echo "    PARAM_NOENERGY if set, DON'T use energy updates"
   echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
@@ -333,11 +334,14 @@ if [ -n "${PARAM_FRACTURE+1}" ] ; then  # check if env var is set
     FRACRATE=0.5   #  fracture rate
     HEALTHRESHOLD=2.0e-10   #  healing threshold
     HEALRATE=0.05   #  healing rate
-    SOFTRES=0.01   #  softening residual (avoid viscosity from degeneration), value 1 inhibits softening effect
+    SOFTRES=1   #  softening residual (avoid viscosity from degeneration), value 1 inhibits softening effect
     criterion=""
     boundary="-do_frac_on_grounded"
     healing=""
-    softening="-fracture_softening ${SOFTRES}" #residual eps=0.001
+    if [ -n "${PARAM_FSOFT+1}" ]; then
+        SOFTRES=$PARAM_FSOFT
+    fi
+    softening="-fracture_softening ${SOFTRES}"
     EXFRACS=",fracture_density,fracture_flow_enhancement,fracture_growth_rate,fracture_healing_rate,fracture_toughness"
     FRACTURE="-fractures ${FRACRATE},${THRESHOLD},${HEALRATE},${HEALTHRESHOLD} -write_fd_fields -scheme_fd2d ${healing} ${boundary} ${criterion} ${softening}"
 else
