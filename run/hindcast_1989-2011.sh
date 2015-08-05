@@ -172,7 +172,7 @@ E=1.25
 PPQ=0.6
 SSA_N=3.25
 for K in 1e15 1e16 1e17; do
-    for THK in 100 200; do
+    for THK in 100 200 300; do
         PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
         CLIMATE=climate
         EXPERIMENT=${CLIMATE}_${TYPE}_${STARTYEAR}_${ENDYEAR}_k_${K}_calving_${CALVING}_${THK}_const
