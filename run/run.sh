@@ -337,6 +337,7 @@ if [ -n "${PARAM_FRACTURE+1}" ] ; then  # check if env var is set
     criterion=""
     boundary="-do_frac_on_grounded"
     healing=""
+    softening="-fracture_softening ${SOFTRES}" #residual eps=0.001
     EXFRACS=",fracture_density,fracture_flow_enhancement,fracture_growth_rate,fracture_healing_rate,fracture_toughness"
     FRACTURE="-fractures ${FRACRATE},${THRESHOLD},${HEALRATE},${HEALTHRESHOLD} -write_fd_fields -scheme_fd2d ${healing} ${boundary} ${criterion} ${softening}"
 else
