@@ -155,7 +155,7 @@ else
 fi
 
 if [ -z "${PISM_OCEAN_BCFILE}" ] ; then  # check if env var is NOT set
-    OCEAN="-ocean const"
+    OCEAN="-ocean constant"
 else
     PISM_OCEAN_BCFILE=$PISM_OCEAN_BCFILE
     OCEAN="-ocean given -ocean_given_file $PISM_OCEAN_BCFILE"
