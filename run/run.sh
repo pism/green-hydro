@@ -381,13 +381,14 @@ if [ "$5" = "hybrid" ]; then
   if [ -n "${PARAM_SSA_N:+1}" ] ; then  # check if env var is NOT set
     SSA_N="-ssa_n ${PARAM_SSA_N}"
   else
-    SSA_N="-ssa_n 3.0"
+      SSA_N="-ssa_n 3.0"
+  fi
   if [ -n "${PARAM_SSA_N:+1}" ] ; then  # check if env var is NOT set
     SSA_E="-ssa_e ${PARAM_SSA_E}"
   else
     SSA_E="-ssa_e 1.0"
   fi
-  PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N}"
+  PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N} ${SSA_E}"
 else
   if [ "$5" = "sia" ]; then
     echo "$SCRIPTNAME  sia-only case: ignoring PARAM_TTPHI, PARAM_PPQ, PARAM_TEFO ..."
