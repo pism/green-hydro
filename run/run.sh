@@ -61,7 +61,6 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_NOENERGY if set, DON'T use energy updates"
   echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
   echo "                   [default=0.25]"
-  echo "    PARAM_SIAE   sets option -sia_e \$PARAM_SIAE   [default=3.0]"
   echo "    PARAM_SHELF_BASE_MELT_RATE sets option -shelf_base_melt_rate \$PARAM_SHELF_BASE_MELT_RATE"
   echo "    PARAM_UTHR   sets option -pseudo_platic_uthreshold \$PARAM_UTHR [default=100 m/a]"
   echo "    PARAM_TEFO   sets (hybrid-only) option -till_effective_fraction_overburden"
@@ -80,6 +79,10 @@ if [ $# -lt 5 ] ; then
   echo "                 [default=3] for Glen exponent in SIA"
   echo "    PARAM_SSA_N  sets -ssa_n \$PARAM_SSA_N"
   echo "                 [default=3] for Glen exponent in SSA"
+  echo "    PARAM_SIA_E  sets -sia_e \$PARAM_SIA_E"
+  echo "                 [default=1.0] for enhancement in SIA"
+  echo "    PARAM_SSA_E  sets -ssa_e \$PARAM_SSA_E"
+  echo "                 [default=1] for enhancement in SSA"
   echo "    PISM_PARAM   gives you the flexibility of adding options"
   echo "                 [default=none]"
   echo "    PISM_DO      set to 'echo' if no run desired; defaults to empty"
@@ -349,7 +352,7 @@ else
 fi
 
 
-if [ -n "${PARAM_SIAE:+1}" ] ; then  # check if env var is already set
+if [ -n "${PARAM_SIA_E:+1}" ] ; then  # check if env var is already set
   PHYS="$BEDDEF $ENERGY $CALVING -sia_e ${PARAM_SIAE} ${SIA_N}"
 else
   PHYS="$BEDDEF $ENERGY $CALVING -sia_e 3.0 ${SIA_N}"
@@ -379,6 +382,10 @@ if [ "$5" = "hybrid" ]; then
     SSA_N="-ssa_n ${PARAM_SSA_N}"
   else
     SSA_N="-ssa_n 3.0"
+  if [ -n "${PARAM_SSA_N:+1}" ] ; then  # check if env var is NOT set
+    SSA_E="-ssa_e ${PARAM_SSA_E}"
+  else
+    SSA_E="-ssa_e 1.0"
   fi
   PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N}"
 else
