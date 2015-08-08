@@ -353,7 +353,7 @@ fi
 
 
 if [ -n "${PARAM_SIA_E:+1}" ] ; then  # check if env var is already set
-  PHYS="$BEDDEF $ENERGY $CALVING -sia_e ${PARAM_SIAE} ${SIA_N}"
+  PHYS="$BEDDEF $ENERGY $CALVING -sia_e ${PARAM_SIA_E} ${SIA_N}"
 else
   PHYS="$BEDDEF $ENERGY $CALVING -sia_e 3.0 ${SIA_N}"
 fi
