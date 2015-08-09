@@ -159,7 +159,7 @@ HYDRO=null
 
 for E in 1.25; do
     for PPQ in 0.5 0.6; do
-        for TEFO in 0.015 0.0175 0.02; do
+        for TEFO in 0.0125 0.015 0.0175 0.02; do
 	    for SSA_N in 3.0 3.25; do
                 for SSA_E in 0.6 0.8 1.0; do
                     philow=5.0
