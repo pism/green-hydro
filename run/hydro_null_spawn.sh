@@ -155,7 +155,7 @@ MPIQUEUELINE="#PBS -q $QUEUE"
 # ########################################################
 
 HYDRO=null
-
+PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc
 
 for E in 1.25; do
     for PPQ in 0.5 0.6; do
@@ -185,7 +185,7 @@ for E in 1.25; do
                     
                     OUTFILE=g${GRID}m_${EXPERIMENT}_${DURA}a.nc
                     
-                    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT PISM_OSIZE=$OSIZE PARAM_NOAGE=foo REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIA_E=$E PARAM_SSA_E=$SSA_E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                    cmd="PISM_DO="" PISM_OFORMAT=$OFORMAT PISM_OSIZE=$OSIZE PARAM_NOAGE=foo PISM_SURFACE_BCFILE=$PISM_SURFACE_BCFILE REGRIDFILE=$REGRIDFILE PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=yearly REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href PARAM_SIA_E=$E PARAM_SSA_E=$SSA_E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_FTT=foo ./run.sh $NN $CLIMATE $DURA $GRID hybrid $HYDRO $OUTFILE $INFILE"
                     echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                                    
                     echo >> $SCRIPT
