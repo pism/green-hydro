@@ -170,14 +170,14 @@ TEFO=0.02
 SSA_N=3.25
 E=1.25
 PPQ=0.6
-for K in 1e15; do
-    for THK in 100; do
+for K in 1e15 1e17; do
+    for THK in 100 200 300; do
         
         PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
         
         OTYPE=ctrl
         PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
-        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}        SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
+        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}        SCRIPT=hirham_relax_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
         rm -f $SCRIPT $POST
         
