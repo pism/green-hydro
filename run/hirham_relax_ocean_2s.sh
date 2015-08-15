@@ -148,7 +148,7 @@ CONFIG=hindcast_config.nc
 EXSTEP=yearly
 RELAXYEARS=15
 
-VERSION=2
+VERSION=2b
 PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v${VERSION}_${TYPE}.nc
 
 NODES=$(( $NN/$PROCS_PER_NODE))
@@ -175,7 +175,7 @@ for K in 1e15; do
         
         PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
         
-        OTYPE=null
+        OTYPE=ctrl
         PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
         EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}        SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
@@ -215,7 +215,8 @@ for K in 1e15; do
         echo "# $POST written"
         echo
 
-        OTYPE=sb_ctrl
+        
+        OTYPE=p20
         PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
         EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}        SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
@@ -255,47 +256,7 @@ for K in 1e15; do
         echo "# $POST written"
         echo
         
-        OTYPE=sb_p20
-        PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
-        EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}        SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
-        POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
-        rm -f $SCRIPT $POST
-        
-        OUTFILE=g${GRID}m_${EXPERIMENT}_1.nc
-        OUTFILE2=g${GRID}m_${EXPERIMENT}_2.nc
-
-        REGRIDFILE=$5
-        
-        # insert preamble
-        echo $SHEBANGLINE >> $SCRIPT
-        echo >> $SCRIPT # add newline
-        echo $MPIQUEUELINE >> $SCRIPT
-        echo $MPITIMELINE >> $SCRIPT
-        echo $MPISIZELINE >> $SCRIPT
-        echo $MPIOUTLINE >> $SCRIPT
-        echo >> $SCRIPT # add newline
-        echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
-        echo >> $SCRIPT # add newline
-            
-        export PISM_EXPERIMENT=$EXPERIMENT
-        export PISM_TITLE="Greenland Prognostic Study"
-            
-        cmd="PISM_DO="" PISM_CONFIG=$CONFIG REGRIDVARS="litho_temp,enthalpy,tillwat,bmelt,Href,age" PARAM_NOAGE=foo PARAM_FRACTURE=foo PARAM_CALVING=$CALVING PARAM_CALVING_K=$K PARAM_CALVING_THK=$THK REGRIDFILE=$REGRIDFILE PISM_SURFACE_BCFILE=$PISM_SURFACE_BCFILE PISM_OCEAN_BCFILE=$PISM_OCEAN_BCFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP PARAM_SIA_E=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PISM_PARAM=\"$PISM_PARAM\" ./run.sh $NN $CLIMATE $RELAXYEARS $GRID hybrid $HYDRO $OUTFILE $INFILE"
-        echo "$cmd 2>&1 | tee job_1.\${PBS_JOBID}" >> $SCRIPT
-        echo >> $SCRIPT
-        
-        REGRIDFILE=$OUTFILE
-        cmd="PISM_DO="" PISM_CONFIG=$CONFIG REGRIDVARS="litho_temp,enthalpy,tillwat,bmelt,Href,age" PARAM_NOAGE=foo PARAM_FRACTURE=foo PARAM_CALVING=$CALVING PARAM_CALVING_K=$K PARAM_CALVING_THK=$THK REGRIDFILE=$REGRIDFILE PISM_SURFACE_BCFILE=$PISM_SURFACE_BCFILE PISM_OCEAN_BCFILE=$PISM_OCEAN_BCFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP PARAM_SIA_E=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PISM_PARAM=\"$PISM_PARAM\" ./run.sh $NN $CLIMATE $RELAXYEARS $GRID hybrid $HYDRO $OUTFILE2 $INFILE"
-        echo "$cmd 2>&1 | tee job_2.\${PBS_JOBID}" >> $SCRIPT
-        
-        echo >> $SCRIPT
-        echo "# $SCRIPT written"
-        
-        source run-postpro-relax-2s.sh
-        echo "# $POST written"
-        echo
-        
-        OTYPE=sb_m20
+        OTYPE=m20
         PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
         EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}        SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
         POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
