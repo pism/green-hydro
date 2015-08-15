@@ -63,6 +63,15 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
+    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20150814164326923" name="thickness">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Greenland_DEM_5_5_july_24_85_epsg3413_grounded20150814164800046" name="Greenland_DEM_5.5_july_24_85_epsg3413_grounded">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Greenland_DEM_5_5_july_24_85_epsg3413_south_bay20150814140726173" name="Greenland_DEM_5.5_july_24_85_epsg3413_south_bay">
+      <customproperties/>
+    </layer-tree-layer>
     <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="Greenland_basins_modified20150601184348624" name="Greenland_basins_modified">
       <customproperties/>
     </layer-tree-layer>
@@ -72,13 +81,16 @@
     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="basin_rms_area20150730153520869" name="basin_rms_area">
       <customproperties/>
     </layer-tree-layer>
+    <layer-tree-layer expanded="1" checked="Qt::Checked" id="south_bay20150814170457904" name="south_bay">
+      <customproperties/>
+    </layer-tree-layer>
     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="goodvel_mask20150729183307122" name="goodvel_mask">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" checked="Qt::Checked" id="motyka_centerline20150804151004624" name="motyka-centerline">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="grounded_198520150628122508629" name="grounded_1985">
+    <layer-tree-layer expanded="1" checked="Qt::Checked" id="grounded_198520150628122508629" name="grounded_1985">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-group expanded="0" checked="Qt::Unchecked" name="speeds">
@@ -111,7 +123,7 @@
     <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thk20150806192856130" name="thk 100">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Checked" id="thk20150806192844436" name="thk 200">
+    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thk20150806192844436" name="thk 200">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thk20150806192834023" name="thk">
@@ -126,7 +138,10 @@
     <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="surface20150803121900006" name="surface 1985 1200m initial">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20150715130837891" name="thickness 1985 1200m initial">
+    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20150814190327740" name="thickness 1985 1200m initial v2b">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20150715130837891" name="thickness 1985 1200m initial v2">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="jakobshavn_surface_velocities_1985_velsurf_mag_epsg3413_cut20150731112234373" name="jakobshavn_surface_velocities_1985_velsurf_mag_epsg3413_cut">
@@ -138,60 +153,60 @@
     <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="velsurf_mag20150707093155691" name="velsurf_mag 1985">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20150627184958151" name="thickness 1985">
+    <layer-tree-layer expanded="0" checked="Qt::Checked" id="thickness20150814190632127" name="thickness 1985 v2b">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20150627184958151" name="thickness 1985 v2">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20150711131026653" name="thickness v2">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20150731114905168" name="thickness initial">
-      <customproperties/>
-    </layer-tree-layer>
     <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="DEM_5_5_july_24_8520150803122146442" name="DEM_5.5_july_24_85">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20150804133259703" name="thickness 1985 unfilled">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="thickness20150628152151563" name="thickness 1985 initial">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="bed20150803121653784" name="bed 1200m v2">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112010229EDC00_B320150807144151588" name="LE70090112010229EDC00_B3">
+    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Satellite Imagery">
       <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112009226EDC00_B320150807144142437" name="LE70090112009226EDC00_B3">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112008224EDC00_B320150807144133333" name="LE70090112008224EDC00_B3">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112007237EDC00_B320150807144125173" name="LE70090112007237EDC00_B3">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Checked" id="LE70090112006218EDC00_B320150807142705129" name="LE70090112006218EDC00_B3">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112005247EDC00_B320150807142724458" name="LE70090112005247EDC00_B3">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112000218EDC00_B320150807141145153" name="LE70090112000218EDC00_B3">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112001220EDC00_B320150807141149096" name="LE70090112001220EDC00_B3">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LT50090111994241KIS00_B320150807140535674" name="LT50090111994241KIS00_B3">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="0" checked="Qt::Checked" id="LT50080111990239KIS00_B320150807142715073" name="LT50080111990239KIS00_B3">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="19850905142904_LM50090111985248FFF03_220150628122923863" name="19850905142904_LM50090111985248FFF03_2">
-      <customproperties/>
-    </layer-tree-layer>
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="19850905142904_LM50090111985248FFF03_220150628122923863" name="19850905142904_LM50090111985248FFF03_2">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LT50080111990239KIS00_B320150807142715073" name="LT50080111990239KIS00_B3">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LT50090111994241KIS00_B320150807140535674" name="LT50090111994241KIS00_B3">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" checked="Qt::Checked" id="LE70090112000218EDC00_B320150807141145153" name="LE70090112000218EDC00_B3">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112001220EDC00_B320150807141149096" name="LE70090112001220EDC00_B3">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112005247EDC00_B320150807142724458" name="LE70090112005247EDC00_B3">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112006218EDC00_B320150807142705129" name="LE70090112006218EDC00_B3">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112007237EDC00_B320150807144125173" name="LE70090112007237EDC00_B3">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112008224EDC00_B320150807144133333" name="LE70090112008224EDC00_B3">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112009226EDC00_B320150807144142437" name="LE70090112009226EDC00_B3">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LE70090112010229EDC00_B320150807144151588" name="LE70090112010229EDC00_B3">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="LC80090112014216LGN00_B820150807173309605" name="LC80090112014216LGN00_B8">
+        <customproperties/>
+      </layer-tree-layer>
+    </layer-tree-group>
     <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="surface20150627184442145" name="surface">
       <customproperties/>
     </layer-tree-layer>
@@ -241,10 +256,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>-223010.00000000096042641</xmin>
-      <ymin>-2311340.00000000884756446</ymin>
-      <xmax>-107090.00000000043655746</xmax>
-      <ymax>-2238260.00000000419095159</ymax>
+      <xmin>-195288.02778278687037528</xmin>
+      <ymin>-2292754.30427197879180312</ymin>
+      <xmax>-166164.02023454994196072</xmax>
+      <ymax>-2258213.17147926473990083</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -262,34 +277,16 @@
     </destinationsrs>
     <layer_coordinate_transform_info>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="IBCAO_V3_500m_RR_epsg3414_hs20150208174249742"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LT50090111994241KIS00_B320150807140535674"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="19850905142904_LM50090111985248FFF03_220150628122923863"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="segments_Jakobshavn_20030508_00164520150630163346368"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LE70090112005247EDC00_B320150807142724458"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="segments_Jakobshavn_20140910_20551520150630163228176"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thk20150806192844436"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20150804133259703"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thk20150805113654687"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LE70090112006218EDC00_B320150807142705129"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="tongue_rms_area20150727091123727"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thk20150805113648242"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LE70090112001220EDC00_B320150807141149096"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thk20150806192834023"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LE70090112007237EDC00_B320150807144125173"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thk20150806192856130"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="south_bay20150814170457904"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="grounded_198520150628122508629"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="motyka_centerline20150804151004624"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="session_Jakobshavn_20140910_20551520150630163228182"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thk20150806192808140"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20150628152151563"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LE70090112008224EDC00_B320150807144133333"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32623" srcDatumTransform="-1" destDatumTransform="-1" layerid="LT50080111990239KIS00_B320150807140510307"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20150814190327740"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20150814190632127"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20150715130837891"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="segments_Jakobshavn_20030508_00164520150630163346368"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="segments_Jakobshavn_20140910_20551520150630163228176"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LE70090112000218EDC00_B320150807141145153"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32623" srcDatumTransform="-1" destDatumTransform="-1" layerid="LT50080111990239KIS00_B320150807142715073"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thk20150806192821935"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="velsurf_mag20150727084621009"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thk20150805113659708"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LE70090112009226EDC00_B320150807144142437"/>
-      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:32622" srcDatumTransform="-1" destDatumTransform="-1" layerid="LE70090112010229EDC00_B320150807144151588"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="tongue_rms_area20150727091123727"/>
     </layer_coordinate_transform_info>
   </mapcanvas>
   <visibility-presets/>
@@ -330,10 +327,7 @@
       <item>velsurf_mag20150707093155691</item>
       <item>thickness20150627184958151</item>
       <item>thickness20150711131026653</item>
-      <item>thickness20150731114905168</item>
       <item>DEM_5_5_july_24_8520150803122146442</item>
-      <item>thickness20150804133259703</item>
-      <item>thickness20150628152151563</item>
       <item>bed20150803121653784</item>
       <item>19850905142904_LM50090111985248FFF03_220150628122923863</item>
       <item>surface20150627184442145</item>
@@ -364,6 +358,13 @@
       <item>LE70090112008224EDC00_B320150807144133333</item>
       <item>LE70090112009226EDC00_B320150807144142437</item>
       <item>LE70090112010229EDC00_B320150807144151588</item>
+      <item>LC80090112014216LGN00_B820150807173309605</item>
+      <item>Greenland_DEM_5_5_july_24_85_epsg3413_south_bay20150814140726173</item>
+      <item>thickness20150814164326923</item>
+      <item>Greenland_DEM_5_5_july_24_85_epsg3413_grounded20150814164800046</item>
+      <item>south_bay20150814170457904</item>
+      <item>thickness20150814190327740</item>
+      <item>thickness20150814190632127</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
@@ -461,6 +462,21 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="thickness20150814164326923" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Greenland_DEM_5.5_july_24_85_epsg3413_grounded" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="Greenland_DEM_5_5_july_24_85_epsg3413_grounded20150814164800046" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Greenland_DEM_5.5_july_24_85_epsg3413_south_bay" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="Greenland_DEM_5_5_july_24_85_epsg3413_south_bay20150814140726173" visible="0"/>
+      </filegroup>
+    </legendlayer>
     <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Greenland_basins_modified" showFeatureCount="0">
       <filegroup open="false" hidden="false">
         <legendlayerfile isInOverview="0" layerid="Greenland_basins_modified20150601184348624" visible="0"/>
@@ -476,6 +492,11 @@
         <legendlayerfile isInOverview="0" layerid="basin_rms_area20150730153520869" visible="0"/>
       </filegroup>
     </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="south_bay" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="south_bay20150814170457904" visible="1"/>
+      </filegroup>
+    </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="goodvel_mask" showFeatureCount="0">
       <filegroup open="true" hidden="false">
         <legendlayerfile isInOverview="0" layerid="goodvel_mask20150729183307122" visible="0"/>
@@ -486,9 +507,9 @@
         <legendlayerfile isInOverview="0" layerid="motyka_centerline20150804151004624" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="grounded_1985" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="grounded_1985" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="grounded_198520150628122508629" visible="0"/>
+        <legendlayerfile isInOverview="0" layerid="grounded_198520150628122508629" visible="1"/>
       </filegroup>
     </legendlayer>
     <legendgroup open="false" checked="Qt::Unchecked" name="speeds">
@@ -527,9 +548,9 @@
         <legendlayerfile isInOverview="0" layerid="thk20150806192856130" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="thk 200" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thk 200" showFeatureCount="0">
       <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="thk20150806192844436" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="thk20150806192844436" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thk" showFeatureCount="0">
@@ -552,7 +573,12 @@
         <legendlayerfile isInOverview="0" layerid="surface20150803121900006" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness 1985 1200m initial" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness 1985 1200m initial v2b" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="thickness20150814190327740" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness 1985 1200m initial v2" showFeatureCount="0">
       <filegroup open="false" hidden="false">
         <legendlayerfile isInOverview="0" layerid="thickness20150715130837891" visible="0"/>
       </filegroup>
@@ -572,7 +598,12 @@
         <legendlayerfile isInOverview="0" layerid="velsurf_mag20150707093155691" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness 1985" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="thickness 1985 v2b" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="thickness20150814190632127" visible="1"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness 1985 v2" showFeatureCount="0">
       <filegroup open="false" hidden="false">
         <legendlayerfile isInOverview="0" layerid="thickness20150627184958151" visible="0"/>
       </filegroup>
@@ -582,24 +613,9 @@
         <legendlayerfile isInOverview="0" layerid="thickness20150711131026653" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness initial" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="thickness20150731114905168" visible="0"/>
-      </filegroup>
-    </legendlayer>
     <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="DEM_5.5_july_24_85" showFeatureCount="0">
       <filegroup open="false" hidden="false">
         <legendlayerfile isInOverview="0" layerid="DEM_5_5_july_24_8520150803122146442" visible="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness 1985 unfilled" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="thickness20150804133259703" visible="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="thickness 1985 initial" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="thickness20150628152151563" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="bed 1200m v2" showFeatureCount="0">
@@ -607,61 +623,68 @@
         <legendlayerfile isInOverview="0" layerid="bed20150803121653784" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112010229EDC00_B3" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="LE70090112010229EDC00_B320150807144151588" visible="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112009226EDC00_B3" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="LE70090112009226EDC00_B320150807144142437" visible="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112008224EDC00_B3" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="LE70090112008224EDC00_B320150807144133333" visible="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112007237EDC00_B3" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="LE70090112007237EDC00_B320150807144125173" visible="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="LE70090112006218EDC00_B3" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="LE70090112006218EDC00_B320150807142705129" visible="1"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112005247EDC00_B3" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="LE70090112005247EDC00_B320150807142724458" visible="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112000218EDC00_B3" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="LE70090112000218EDC00_B320150807141145153" visible="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112001220EDC00_B3" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="LE70090112001220EDC00_B320150807141149096" visible="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LT50090111994241KIS00_B3" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="LT50090111994241KIS00_B320150807140535674" visible="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="LT50080111990239KIS00_B3" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="LT50080111990239KIS00_B320150807142715073" visible="1"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="19850905142904_LM50090111985248FFF03_2" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="19850905142904_LM50090111985248FFF03_220150628122923863" visible="1"/>
-      </filegroup>
-    </legendlayer>
+    <legendgroup open="true" checked="Qt::PartiallyChecked" name="Satellite Imagery">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="19850905142904_LM50090111985248FFF03_2" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="19850905142904_LM50090111985248FFF03_220150628122923863" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LT50080111990239KIS00_B3" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="LT50080111990239KIS00_B320150807142715073" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LT50090111994241KIS00_B3" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="LT50090111994241KIS00_B320150807140535674" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="LE70090112000218EDC00_B3" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="LE70090112000218EDC00_B320150807141145153" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112001220EDC00_B3" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="LE70090112001220EDC00_B320150807141149096" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112005247EDC00_B3" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="LE70090112005247EDC00_B320150807142724458" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112006218EDC00_B3" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="LE70090112006218EDC00_B320150807142705129" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112007237EDC00_B3" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="LE70090112007237EDC00_B320150807144125173" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112008224EDC00_B3" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="LE70090112008224EDC00_B320150807144133333" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112009226EDC00_B3" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="LE70090112009226EDC00_B320150807144142437" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LE70090112010229EDC00_B3" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="LE70090112010229EDC00_B320150807144151588" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="LC80090112014216LGN00_B8" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="LC80090112014216LGN00_B820150807173309605" visible="0"/>
+        </filegroup>
+      </legendlayer>
+    </legendgroup>
     <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="surface" showFeatureCount="0">
       <filegroup open="false" hidden="false">
         <legendlayerfile isInOverview="0" layerid="surface20150627184442145" visible="0"/>
@@ -20651,7 +20674,7 @@
       </ComposerMap>
     </Composition>
   </Composer>
-  <projectlayers layercount="71">
+  <projectlayers layercount="75">
     <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
       <id>19850905142904_LM50090111985248FFF03_220150628122923863</id>
       <datasource>../../data_sets/GreenlandLandsat/19850905142904_LM50090111985248FFF03_2.tif</datasource>
@@ -22627,6 +22650,152 @@
         <rasterresampler maxOversampling="2"/>
       </pipe>
       <blendMode>6</blendMode>
+    </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <id>Greenland_DEM_5_5_july_24_85_epsg3413_grounded20150814164800046</id>
+      <datasource>../../data_sets/jakobshavn-1985-dem/Greenland_DEM_5.5_july_24_85_epsg3413_grounded.nc</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Greenland_DEM_5.5_july_24_85_epsg3413_grounded</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+          <srsid>1371</srsid>
+          <srid>3413</srid>
+          <authid>EPSG:3413</authid>
+          <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+          <projectionacronym>stere</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer opacity="0.643137" alphaBand="0" classificationMax="3000" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
+          <rasterTransparency>
+            <singleValuePixelList>
+              <pixelListEntry min="0" max="30" percentTransparent="70"/>
+            </singleValuePixelList>
+          </rasterTransparency>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" clip="0">
+              <item alpha="255" value="0" label="0.000000" color="#31007e"/>
+              <item alpha="255" value="120" label="120.000000" color="#000081"/>
+              <item alpha="255" value="240" label="240.000000" color="#0032b3"/>
+              <item alpha="255" value="360" label="360.000000" color="#0000ff"/>
+              <item alpha="255" value="480" label="480.000000" color="#007dff"/>
+              <item alpha="255" value="600" label="600.000000" color="#00bdff"/>
+              <item alpha="255" value="720" label="720.000000" color="#17d78b"/>
+              <item alpha="255" value="840" label="840.000000" color="#39ad73"/>
+              <item alpha="255" value="960" label="960.000000" color="#2aa92a"/>
+              <item alpha="255" value="1080" label="1080.000000" color="#2ac82a"/>
+              <item alpha="255" value="1200" label="1200.000000" color="#00ff31"/>
+              <item alpha="255" value="1320" label="1320.000000" color="#53ff00"/>
+              <item alpha="255" value="1440" label="1440.000000" color="#9fff00"/>
+              <item alpha="255" value="1560" label="1560.000000" color="#ffff00"/>
+              <item alpha="255" value="1680" label="1680.000000" color="#ffcc00"/>
+              <item alpha="255" value="1800" label="1800.000000" color="#ff9800"/>
+              <item alpha="255" value="1920" label="1920.000000" color="#ff6500"/>
+              <item alpha="255" value="2040" label="2040.000000" color="#ff5400"/>
+              <item alpha="255" value="2160" label="2160.000000" color="#ff0000"/>
+              <item alpha="255" value="2280" label="2280.000000" color="#ff007f"/>
+              <item alpha="255" value="2400" label="2400.000000" color="#ff2290"/>
+              <item alpha="255" value="2520" label="2520.000000" color="#ff5eb1"/>
+              <item alpha="255" value="2640" label="2640.000000" color="#ff86c2"/>
+              <item alpha="255" value="2760" label="2760.000000" color="#ffaed7"/>
+              <item alpha="255" value="2880" label="2880.000000" color="#ffd7eb"/>
+              <item alpha="255" value="3000" label="3000.000000" color="#ffd7eb"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <id>Greenland_DEM_5_5_july_24_85_epsg3413_south_bay20150814140726173</id>
+      <datasource>../../data_sets/jakobshavn-1985-dem/Greenland_DEM_5.5_july_24_85_epsg3413_south_bay.nc</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Greenland_DEM_5.5_july_24_85_epsg3413_south_bay</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
+          <srsid>1371</srsid>
+          <srid>3413</srid>
+          <authid>EPSG:3413</authid>
+          <description>WGS 84 / NSIDC Sea Ice Polar Stereographic North</description>
+          <projectionacronym>stere</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer opacity="1" alphaBand="0" classificationMax="3000" classificationMinMaxOrigin="User" band="169" classificationMin="0" type="singlebandpseudocolor">
+          <rasterTransparency/>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" clip="0">
+              <item alpha="255" value="0" label="0.000000" color="#31007e"/>
+              <item alpha="255" value="120" label="120.000000" color="#000081"/>
+              <item alpha="255" value="240" label="240.000000" color="#0032b3"/>
+              <item alpha="255" value="360" label="360.000000" color="#0000ff"/>
+              <item alpha="255" value="480" label="480.000000" color="#007dff"/>
+              <item alpha="255" value="600" label="600.000000" color="#00bdff"/>
+              <item alpha="255" value="720" label="720.000000" color="#17d78b"/>
+              <item alpha="255" value="840" label="840.000000" color="#39ad73"/>
+              <item alpha="255" value="960" label="960.000000" color="#2aa92a"/>
+              <item alpha="255" value="1080" label="1080.000000" color="#2ac82a"/>
+              <item alpha="255" value="1200" label="1200.000000" color="#00ff31"/>
+              <item alpha="255" value="1320" label="1320.000000" color="#53ff00"/>
+              <item alpha="255" value="1440" label="1440.000000" color="#9fff00"/>
+              <item alpha="255" value="1560" label="1560.000000" color="#ffff00"/>
+              <item alpha="255" value="1680" label="1680.000000" color="#ffcc00"/>
+              <item alpha="255" value="1800" label="1800.000000" color="#ff9800"/>
+              <item alpha="255" value="1920" label="1920.000000" color="#ff6500"/>
+              <item alpha="255" value="2040" label="2040.000000" color="#ff5400"/>
+              <item alpha="255" value="2160" label="2160.000000" color="#ff0000"/>
+              <item alpha="255" value="2280" label="2280.000000" color="#ff007f"/>
+              <item alpha="255" value="2400" label="2400.000000" color="#ff2290"/>
+              <item alpha="255" value="2520" label="2520.000000" color="#ff5eb1"/>
+              <item alpha="255" value="2640" label="2640.000000" color="#ff86c2"/>
+              <item alpha="255" value="2760" label="2760.000000" color="#ffaed7"/>
+              <item alpha="255" value="2880" label="2880.000000" color="#ffd7eb"/>
+              <item alpha="255" value="3000" label="3000.000000" color="#ffd7eb"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
     </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>Greenland_basins_modified20150601184348624</id>
@@ -25664,6 +25833,52 @@
           <contrastEnhancement>
             <minValue>168</minValue>
             <maxValue>190</maxValue>
+            <algorithm>StretchToMinimumMaximum</algorithm>
+          </contrastEnhancement>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <id>LC80090112014216LGN00_B820150807173309605</id>
+      <datasource>../../../LC80090112014216LGN00/LC80090112014216LGN00_B8.TIF</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>LC80090112014216LGN00_B8</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=utm +zone=22 +datum=WGS84 +units=m +no_defs</proj4>
+          <srsid>3106</srsid>
+          <srid>32622</srid>
+          <authid>EPSG:32622</authid>
+          <description>WGS 84 / UTM zone 22N</description>
+          <projectionacronym>utm</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="0" type="singlebandgray" grayBand="1">
+          <rasterTransparency/>
+          <contrastEnhancement>
+            <minValue>0</minValue>
+            <maxValue>31878</maxValue>
             <algorithm>StretchToMinimumMaximum</algorithm>
           </contrastEnhancement>
         </rasterrenderer>
@@ -39964,6 +40179,360 @@
         </edittype>
       </edittypes>
     </maplayer>
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <id>south_bay20150814170457904</id>
+      <datasource>/Users/andy/base/fastflow-paper/jako1985/south_bay.shp</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>south_bay</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <provider encoding="System">ogr</provider>
+      <previewExpression></previewExpression>
+      <vectorjoins/>
+      <expressionfields/>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+      <renderer-v2 symbollevels="0" type="singleSymbol">
+        <symbols>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0"/>
+              <prop k="color" v="0,0,0,0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="1"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="dropShadow">
+                  <prop k="blend_mode" v="13"/>
+                  <prop k="blur_level" v="10"/>
+                  <prop k="color" v="0,0,0,255"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="0"/>
+                  <prop k="offset_angle" v="135"/>
+                  <prop k="offset_distance" v="2"/>
+                  <prop k="offset_unit" v="MM"/>
+                  <prop k="offset_unit_scale" v="0,0"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+                <effect type="outerGlow">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="blur_level" v="3"/>
+                  <prop k="color_type" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="0"/>
+                  <prop k="single_color" v="255,255,255,255"/>
+                  <prop k="spread" v="2"/>
+                  <prop k="spread_unit" v="MM"/>
+                  <prop k="spread_unit_scale" v="0,0"/>
+                  <prop k="transparency" v="0.5"/>
+                </effect>
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+                <effect type="innerShadow">
+                  <prop k="blend_mode" v="13"/>
+                  <prop k="blur_level" v="10"/>
+                  <prop k="color" v="0,0,0,255"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="0"/>
+                  <prop k="offset_angle" v="135"/>
+                  <prop k="offset_distance" v="2"/>
+                  <prop k="offset_unit" v="MM"/>
+                  <prop k="offset_unit_scale" v="0,0"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+                <effect type="innerGlow">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="blur_level" v="3"/>
+                  <prop k="color_type" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="0"/>
+                  <prop k="single_color" v="255,255,255,255"/>
+                  <prop k="spread" v="2"/>
+                  <prop k="spread_unit" v="MM"/>
+                  <prop k="spread_unit_scale" v="0,0"/>
+                  <prop k="transparency" v="0.5"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale scalemethod="diameter"/>
+        <effect enabled="0" type="effectStack">
+          <effect type="dropShadow">
+            <prop k="blend_mode" v="13"/>
+            <prop k="blur_level" v="10"/>
+            <prop k="color" v="0,0,0,255"/>
+            <prop k="draw_mode" v="2"/>
+            <prop k="enabled" v="0"/>
+            <prop k="offset_angle" v="135"/>
+            <prop k="offset_distance" v="2"/>
+            <prop k="offset_unit" v="MM"/>
+            <prop k="offset_unit_scale" v="0,0"/>
+            <prop k="transparency" v="0"/>
+          </effect>
+          <effect type="outerGlow">
+            <prop k="blend_mode" v="0"/>
+            <prop k="blur_level" v="3"/>
+            <prop k="color_type" v="0"/>
+            <prop k="draw_mode" v="2"/>
+            <prop k="enabled" v="0"/>
+            <prop k="single_color" v="255,255,255,255"/>
+            <prop k="spread" v="2"/>
+            <prop k="spread_unit" v="MM"/>
+            <prop k="spread_unit_scale" v="0,0"/>
+            <prop k="transparency" v="0.5"/>
+          </effect>
+          <effect type="drawSource">
+            <prop k="blend_mode" v="0"/>
+            <prop k="draw_mode" v="2"/>
+            <prop k="enabled" v="1"/>
+            <prop k="transparency" v="0"/>
+          </effect>
+          <effect type="innerShadow">
+            <prop k="blend_mode" v="13"/>
+            <prop k="blur_level" v="10"/>
+            <prop k="color" v="0,0,0,255"/>
+            <prop k="draw_mode" v="2"/>
+            <prop k="enabled" v="0"/>
+            <prop k="offset_angle" v="135"/>
+            <prop k="offset_distance" v="2"/>
+            <prop k="offset_unit" v="MM"/>
+            <prop k="offset_unit_scale" v="0,0"/>
+            <prop k="transparency" v="0"/>
+          </effect>
+          <effect type="innerGlow">
+            <prop k="blend_mode" v="0"/>
+            <prop k="blur_level" v="3"/>
+            <prop k="color_type" v="0"/>
+            <prop k="draw_mode" v="2"/>
+            <prop k="enabled" v="0"/>
+            <prop k="single_color" v="255,255,255,255"/>
+            <prop k="spread" v="2"/>
+            <prop k="spread_unit" v="MM"/>
+            <prop k="spread_unit_scale" v="0,0"/>
+            <prop k="transparency" v="0.5"/>
+          </effect>
+        </effect>
+      </renderer-v2>
+      <customproperties>
+        <property key="labeling" value="pal"/>
+        <property key="labeling/addDirectionSymbol" value="false"/>
+        <property key="labeling/angleOffset" value="0"/>
+        <property key="labeling/blendMode" value="0"/>
+        <property key="labeling/bufferBlendMode" value="0"/>
+        <property key="labeling/bufferColorA" value="255"/>
+        <property key="labeling/bufferColorB" value="255"/>
+        <property key="labeling/bufferColorG" value="255"/>
+        <property key="labeling/bufferColorR" value="255"/>
+        <property key="labeling/bufferDraw" value="false"/>
+        <property key="labeling/bufferJoinStyle" value="64"/>
+        <property key="labeling/bufferNoFill" value="false"/>
+        <property key="labeling/bufferSize" value="1"/>
+        <property key="labeling/bufferSizeInMapUnits" value="false"/>
+        <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
+        <property key="labeling/bufferTransp" value="0"/>
+        <property key="labeling/centroidInside" value="false"/>
+        <property key="labeling/centroidWhole" value="false"/>
+        <property key="labeling/decimals" value="3"/>
+        <property key="labeling/displayAll" value="false"/>
+        <property key="labeling/dist" value="0"/>
+        <property key="labeling/distInMapUnits" value="false"/>
+        <property key="labeling/distMapUnitMaxScale" value="0"/>
+        <property key="labeling/distMapUnitMinScale" value="0"/>
+        <property key="labeling/enabled" value="false"/>
+        <property key="labeling/fieldName" value="id"/>
+        <property key="labeling/fontBold" value="false"/>
+        <property key="labeling/fontCapitals" value="0"/>
+        <property key="labeling/fontFamily" value=".Lucida Grande UI"/>
+        <property key="labeling/fontItalic" value="false"/>
+        <property key="labeling/fontLetterSpacing" value="0"/>
+        <property key="labeling/fontLimitPixelSize" value="false"/>
+        <property key="labeling/fontMaxPixelSize" value="10000"/>
+        <property key="labeling/fontMinPixelSize" value="3"/>
+        <property key="labeling/fontSize" value="13"/>
+        <property key="labeling/fontSizeInMapUnits" value="false"/>
+        <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
+        <property key="labeling/fontStrikeout" value="false"/>
+        <property key="labeling/fontUnderline" value="false"/>
+        <property key="labeling/fontWeight" value="50"/>
+        <property key="labeling/fontWordSpacing" value="0"/>
+        <property key="labeling/formatNumbers" value="false"/>
+        <property key="labeling/isExpression" value="false"/>
+        <property key="labeling/labelOffsetInMapUnits" value="true"/>
+        <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
+        <property key="labeling/labelPerPart" value="false"/>
+        <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+        <property key="labeling/limitNumLabels" value="false"/>
+        <property key="labeling/maxCurvedCharAngleIn" value="20"/>
+        <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
+        <property key="labeling/maxNumLabels" value="2000"/>
+        <property key="labeling/mergeLines" value="false"/>
+        <property key="labeling/minFeatureSize" value="0"/>
+        <property key="labeling/multilineAlign" value="0"/>
+        <property key="labeling/multilineHeight" value="1"/>
+        <property key="labeling/namedStyle" value=""/>
+        <property key="labeling/obstacle" value="true"/>
+        <property key="labeling/placeDirectionSymbol" value="0"/>
+        <property key="labeling/placement" value="1"/>
+        <property key="labeling/placementFlags" value="0"/>
+        <property key="labeling/plussign" value="false"/>
+        <property key="labeling/preserveRotation" value="true"/>
+        <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+        <property key="labeling/priority" value="5"/>
+        <property key="labeling/quadOffset" value="4"/>
+        <property key="labeling/repeatDistance" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+        <property key="labeling/repeatDistanceUnit" value="1"/>
+        <property key="labeling/reverseDirectionSymbol" value="false"/>
+        <property key="labeling/rightDirectionSymbol" value=">"/>
+        <property key="labeling/scaleMax" value="10000000"/>
+        <property key="labeling/scaleMin" value="1"/>
+        <property key="labeling/scaleVisibility" value="false"/>
+        <property key="labeling/shadowBlendMode" value="6"/>
+        <property key="labeling/shadowColorB" value="0"/>
+        <property key="labeling/shadowColorG" value="0"/>
+        <property key="labeling/shadowColorR" value="0"/>
+        <property key="labeling/shadowDraw" value="false"/>
+        <property key="labeling/shadowOffsetAngle" value="135"/>
+        <property key="labeling/shadowOffsetDist" value="1"/>
+        <property key="labeling/shadowOffsetGlobal" value="true"/>
+        <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
+        <property key="labeling/shadowOffsetUnits" value="1"/>
+        <property key="labeling/shadowRadius" value="1.5"/>
+        <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+        <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+        <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
+        <property key="labeling/shadowRadiusUnits" value="1"/>
+        <property key="labeling/shadowScale" value="100"/>
+        <property key="labeling/shadowTransparency" value="30"/>
+        <property key="labeling/shadowUnder" value="0"/>
+        <property key="labeling/shapeBlendMode" value="0"/>
+        <property key="labeling/shapeBorderColorA" value="255"/>
+        <property key="labeling/shapeBorderColorB" value="128"/>
+        <property key="labeling/shapeBorderColorG" value="128"/>
+        <property key="labeling/shapeBorderColorR" value="128"/>
+        <property key="labeling/shapeBorderWidth" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeBorderWidthUnits" value="1"/>
+        <property key="labeling/shapeDraw" value="false"/>
+        <property key="labeling/shapeFillColorA" value="255"/>
+        <property key="labeling/shapeFillColorB" value="255"/>
+        <property key="labeling/shapeFillColorG" value="255"/>
+        <property key="labeling/shapeFillColorR" value="255"/>
+        <property key="labeling/shapeJoinStyle" value="64"/>
+        <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeOffsetUnits" value="1"/>
+        <property key="labeling/shapeOffsetX" value="0"/>
+        <property key="labeling/shapeOffsetY" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeRadiiUnits" value="1"/>
+        <property key="labeling/shapeRadiiX" value="0"/>
+        <property key="labeling/shapeRadiiY" value="0"/>
+        <property key="labeling/shapeRotation" value="0"/>
+        <property key="labeling/shapeRotationType" value="0"/>
+        <property key="labeling/shapeSVGFile" value=""/>
+        <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeSizeType" value="0"/>
+        <property key="labeling/shapeSizeUnits" value="1"/>
+        <property key="labeling/shapeSizeX" value="0"/>
+        <property key="labeling/shapeSizeY" value="0"/>
+        <property key="labeling/shapeTransparency" value="0"/>
+        <property key="labeling/shapeType" value="0"/>
+        <property key="labeling/textColorA" value="255"/>
+        <property key="labeling/textColorB" value="0"/>
+        <property key="labeling/textColorG" value="0"/>
+        <property key="labeling/textColorR" value="0"/>
+        <property key="labeling/textTransp" value="0"/>
+        <property key="labeling/upsidedownLabels" value="0"/>
+        <property key="labeling/wrapChar" value=""/>
+        <property key="labeling/xOffset" value="0"/>
+        <property key="labeling/yOffset" value="0"/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerTransparency>0</layerTransparency>
+      <displayfield>id</displayfield>
+      <label>0</label>
+      <labelattributes>
+        <label fieldname="" text="Label"/>
+        <family fieldname="" name=".Lucida Grande UI"/>
+        <size fieldname="" units="pt" value="12"/>
+        <bold fieldname="" on="0"/>
+        <italic fieldname="" on="0"/>
+        <underline fieldname="" on="0"/>
+        <strikeout fieldname="" on="0"/>
+        <color fieldname="" red="0" blue="0" green="0"/>
+        <x fieldname=""/>
+        <y fieldname=""/>
+        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+        <angle fieldname="" value="0" auto="0"/>
+        <alignment fieldname="" value="center"/>
+        <buffercolor fieldname="" red="255" blue="255" green="255"/>
+        <buffersize fieldname="" units="pt" value="1"/>
+        <bufferenabled fieldname="" on=""/>
+        <multilineenabled fieldname="" on=""/>
+        <selectedonly on=""/>
+      </labelattributes>
+      <SingleCategoryDiagramRenderer diagramType="Pie">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="-4.65661e-10">
+          <fontProperties description=".Lucida Grande UI,13,-1,5,50,0,0,0,0,0" style=""/>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" showAll="1"/>
+      <editform></editform>
+      <editforminit/>
+      <featformsuppress>0</featformsuppress>
+      <annotationform></annotationform>
+      <editorlayout>generatedlayout</editorlayout>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <attributeactions/>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+    </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>statistics_velsurf_normal_250m_greenland_2008_2009_grid_mo14_flow20150120190036088</id>
       <datasource>./statistics_velsurf_normal_250m_greenland_2008-2009_grid_mo14_flow.shp</datasource>
@@ -41423,7 +41992,7 @@
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>thickness 1985</layername>
+      <layername>thickness 1985 v2</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
@@ -41442,83 +42011,6 @@
       <provider>gdal</provider>
       <noData>
         <noDataList bandNo="1" useSrcNoData="1"/>
-      </noData>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
-      </map-layer-style-manager>
-      <pipe>
-        <rasterrenderer opacity="0.643137" alphaBand="-1" classificationMax="3000" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
-          <rasterTransparency>
-            <singleValuePixelList>
-              <pixelListEntry min="0" max="30" percentTransparent="70"/>
-            </singleValuePixelList>
-          </rasterTransparency>
-          <rastershader>
-            <colorrampshader colorRampType="INTERPOLATED" clip="0">
-              <item alpha="255" value="0" label="0.000000" color="#31007e"/>
-              <item alpha="255" value="120" label="120.000000" color="#000081"/>
-              <item alpha="255" value="240" label="240.000000" color="#0032b3"/>
-              <item alpha="255" value="360" label="360.000000" color="#0000ff"/>
-              <item alpha="255" value="480" label="480.000000" color="#007dff"/>
-              <item alpha="255" value="600" label="600.000000" color="#00bdff"/>
-              <item alpha="255" value="720" label="720.000000" color="#17d78b"/>
-              <item alpha="255" value="840" label="840.000000" color="#39ad73"/>
-              <item alpha="255" value="960" label="960.000000" color="#2aa92a"/>
-              <item alpha="255" value="1080" label="1080.000000" color="#2ac82a"/>
-              <item alpha="255" value="1200" label="1200.000000" color="#00ff31"/>
-              <item alpha="255" value="1320" label="1320.000000" color="#53ff00"/>
-              <item alpha="255" value="1440" label="1440.000000" color="#9fff00"/>
-              <item alpha="255" value="1560" label="1560.000000" color="#ffff00"/>
-              <item alpha="255" value="1680" label="1680.000000" color="#ffcc00"/>
-              <item alpha="255" value="1800" label="1800.000000" color="#ff9800"/>
-              <item alpha="255" value="1920" label="1920.000000" color="#ff6500"/>
-              <item alpha="255" value="2040" label="2040.000000" color="#ff5400"/>
-              <item alpha="255" value="2160" label="2160.000000" color="#ff0000"/>
-              <item alpha="255" value="2280" label="2280.000000" color="#ff007f"/>
-              <item alpha="255" value="2400" label="2400.000000" color="#ff2290"/>
-              <item alpha="255" value="2520" label="2520.000000" color="#ff5eb1"/>
-              <item alpha="255" value="2640" label="2640.000000" color="#ff86c2"/>
-              <item alpha="255" value="2760" label="2760.000000" color="#ffaed7"/>
-              <item alpha="255" value="2880" label="2880.000000" color="#ffd7eb"/>
-              <item alpha="255" value="3000" label="3000.000000" color="#ffd7eb"/>
-            </colorrampshader>
-          </rastershader>
-        </rasterrenderer>
-        <brightnesscontrast brightness="0" contrast="0"/>
-        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-        <rasterresampler maxOversampling="2"/>
-      </pipe>
-      <blendMode>0</blendMode>
-    </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-      <id>thickness20150628152151563</id>
-      <datasource>NETCDF:"../../data_sets/jakobshavn-1985-dem/tmp_thickness.nc":thickness</datasource>
-      <title></title>
-      <abstract></abstract>
-      <keywordList>
-        <value></value>
-      </keywordList>
-      <layername>thickness 1985 initial</layername>
-      <srs>
-        <spatialrefsys>
-          <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-          <srsid>100005</srsid>
-          <srid>0</srid>
-          <authid>USER:100005</authid>
-          <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
-          <projectionacronym>stere</projectionacronym>
-          <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
-        </spatialrefsys>
-      </srs>
-      <customproperties>
-        <property key="identify/format" value="Value"/>
-      </customproperties>
-      <provider>gdal</provider>
-      <noData>
-        <noDataList bandNo="1" useSrcNoData="1">
-          <noDataRange min="0" max="0"/>
-        </noDataList>
       </noData>
       <map-layer-style-manager current="">
         <map-layer-style name=""/>
@@ -41650,7 +42142,7 @@
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>thickness 1985 1200m initial</layername>
+      <layername>thickness 1985 1200m initial v2</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
@@ -41720,14 +42212,89 @@
       <blendMode>0</blendMode>
     </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-      <id>thickness20150731114905168</id>
-      <datasource>NETCDF:"../../data_sets/mc_beds/pism_Greenland_1200m_mcb_jpl_v2_1985.nc":thickness</datasource>
+      <id>thickness20150814164326923</id>
+      <datasource>NETCDF:"../../data_sets/jakobshavn-1985-dem/Greenland_150m_mcb_jpl_v2b_1985.nc":thickness</datasource>
       <title></title>
       <abstract></abstract>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>thickness initial</layername>
+      <layername>thickness</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>100005</srsid>
+          <srid>0</srid>
+          <authid>USER:100005</authid>
+          <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+          <projectionacronym>stere</projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer opacity="0.643137" alphaBand="0" classificationMax="3000" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
+          <rasterTransparency>
+            <singleValuePixelList>
+              <pixelListEntry min="0" max="30" percentTransparent="70"/>
+            </singleValuePixelList>
+          </rasterTransparency>
+          <rastershader>
+            <colorrampshader colorRampType="INTERPOLATED" clip="0">
+              <item alpha="255" value="0" label="0.000000" color="#31007e"/>
+              <item alpha="255" value="120" label="120.000000" color="#000081"/>
+              <item alpha="255" value="240" label="240.000000" color="#0032b3"/>
+              <item alpha="255" value="360" label="360.000000" color="#0000ff"/>
+              <item alpha="255" value="480" label="480.000000" color="#007dff"/>
+              <item alpha="255" value="600" label="600.000000" color="#00bdff"/>
+              <item alpha="255" value="720" label="720.000000" color="#17d78b"/>
+              <item alpha="255" value="840" label="840.000000" color="#39ad73"/>
+              <item alpha="255" value="960" label="960.000000" color="#2aa92a"/>
+              <item alpha="255" value="1080" label="1080.000000" color="#2ac82a"/>
+              <item alpha="255" value="1200" label="1200.000000" color="#00ff31"/>
+              <item alpha="255" value="1320" label="1320.000000" color="#53ff00"/>
+              <item alpha="255" value="1440" label="1440.000000" color="#9fff00"/>
+              <item alpha="255" value="1560" label="1560.000000" color="#ffff00"/>
+              <item alpha="255" value="1680" label="1680.000000" color="#ffcc00"/>
+              <item alpha="255" value="1800" label="1800.000000" color="#ff9800"/>
+              <item alpha="255" value="1920" label="1920.000000" color="#ff6500"/>
+              <item alpha="255" value="2040" label="2040.000000" color="#ff5400"/>
+              <item alpha="255" value="2160" label="2160.000000" color="#ff0000"/>
+              <item alpha="255" value="2280" label="2280.000000" color="#ff007f"/>
+              <item alpha="255" value="2400" label="2400.000000" color="#ff2290"/>
+              <item alpha="255" value="2520" label="2520.000000" color="#ff5eb1"/>
+              <item alpha="255" value="2640" label="2640.000000" color="#ff86c2"/>
+              <item alpha="255" value="2760" label="2760.000000" color="#ffaed7"/>
+              <item alpha="255" value="2880" label="2880.000000" color="#ffd7eb"/>
+              <item alpha="255" value="3000" label="3000.000000" color="#ffd7eb"/>
+            </colorrampshader>
+          </rastershader>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <id>thickness20150814190327740</id>
+      <datasource>NETCDF:"../../data_sets/mc_beds/pism_Greenland_1200m_mcb_jpl_v2b_1985.nc":thickness</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>thickness 1985 1200m initial v2b</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs</proj4>
@@ -41795,14 +42362,14 @@
       <blendMode>0</blendMode>
     </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-      <id>thickness20150804133259703</id>
-      <datasource>NETCDF:"../../data_sets/jakobshavn-1985-dem/Greenland_150m_mcb_jpl_v2_1985_hole.nc":thickness</datasource>
+      <id>thickness20150814190632127</id>
+      <datasource>NETCDF:"../../data_sets/mc_beds/Greenland_150m_mcb_jpl_v2b_1985.nc":thickness</datasource>
       <title></title>
       <abstract></abstract>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>thickness 1985 unfilled</layername>
+      <layername>thickness 1985 v2b</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
@@ -41826,7 +42393,7 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <pipe>
-        <rasterrenderer opacity="0.643137" alphaBand="-1" classificationMax="3000" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
+        <rasterrenderer opacity="0.643137" alphaBand="0" classificationMax="3000" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
           <rasterTransparency>
             <singleValuePixelList>
               <pixelListEntry min="0" max="30" percentTransparent="70"/>
@@ -42919,7 +43486,7 @@
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
       <id>thk20150806192844436</id>
       <datasource>NETCDF:"./hindcast_1200m_climateocean_1985_v2/processed/jak_ex_g1200m_climateocean_1985_v2_1989_2011_k_1e15_calving_eigen_calving_200_sb.nc":thk</datasource>
       <title></title>
@@ -43226,7 +43793,7 @@
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <pipe>
-        <rasterrenderer opacity="1" alphaBand="0" classificationMax="3000" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
+        <rasterrenderer opacity="1" alphaBand="-1" classificationMax="3000" classificationMinMaxOrigin="User" band="169" classificationMin="0" type="singlebandpseudocolor">
           <rasterTransparency>
             <singleValuePixelList>
               <pixelListEntry min="0" max="30" percentTransparent="70"/>
@@ -47736,11 +48303,11 @@
     <TimeManager>
       <timeFrameSize type="int">1</timeFrameSize>
       <mode type="int">0</mode>
-      <timeLayerManager type="QString">1970-02-01 00:00:00;1992-12-31 00:00:00;1970-02-01 00:00:00</timeLayerManager>
+      <timeLayerManager type="QString">1970-02-01 00:00:00;1992-12-31 00:00:00;1984-01-19 22:41:52</timeLayerManager>
       <digits type="int">4</digits>
       <active type="int">1</active>
       <timeFrameType type="QString">months</timeFrameType>
-      <currentMapTimePosition type="QString">1970-02-01 00:00:00</currentMapTimePosition>
+      <currentMapTimePosition type="QString">1984-01-19 22:41:52</currentMapTimePosition>
       <loopAnimation type="int">1</loopAnimation>
       <animationFrameLength type="int">2000</animationFrameLength>
       <timeLayerList type="QStringList">
@@ -47760,8 +48327,8 @@
       <DegreeFormat type="QString">D</DegreeFormat>
     </PositionPrecision>
     <WCSUrl type="QString"></WCSUrl>
-    <WMSContactPhone type="QString"></WMSContactPhone>
     <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
+    <WMSContactPhone type="QString"></WMSContactPhone>
     <WMSServiceAbstract type="QString"></WMSServiceAbstract>
     <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
     <Measure>
@@ -47811,8 +48378,10 @@
         <value>session_Jakobshavn_20140910_20551520150630163228182</value>
         <value>statistics_velsurf_normal_250m_greenland_2008_2009_grid_mo14_flow20150120190036088</value>
         <value>tongue_rms_area20150727091123727</value>
+        <value>south_bay20150814170457904</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
+        <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
@@ -47869,8 +48438,10 @@
         <value>0</value>
         <value>0</value>
         <value>0</value>
+        <value>0</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
+        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
@@ -47901,6 +48472,7 @@
       <DefaultSnapType type="QString">off</DefaultSnapType>
       <DefaultSnapTolerance type="double">0</DefaultSnapTolerance>
       <LayerSnappingToleranceList type="QStringList">
+        <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
