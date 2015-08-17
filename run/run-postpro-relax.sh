@@ -29,7 +29,7 @@ OTYPE="${OTYPE}"
 
 tl_dir=relax_${GRID}m_${CLIMATE}_${TYPE}
 nc_dir=processed
-
+jk_dir=jakobshavn
 fill=-2e9
 
 cat - > $POST <<EOF
@@ -51,6 +51,9 @@ if [ ! -d ${tl_dir}/${nc_dir} ]; then
     mkdir ${tl_dir}/${nc_dir}
 fi
 
+if [ ! -d ${tl_dir}/${jk_dir} ]; then
+    mkdir ${tl_dir}/${jk_dir}
+fi
 
 if [ -f ${filepre}.nc ]; then
     rm -f tmp_${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
