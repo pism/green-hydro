@@ -175,7 +175,7 @@ SSA_N=3.25
 E=1.25
 SSA_E=1.0
 PPQ=0.6
-for SSA_E in 0.6 0.8 1.0; do
+for SSA_E in 0.6 0.8; do
     for K in 1e18; do
         for THK in 300; do
             for OTYPE in ctrl p20 m20 lm_ctrl lm_p20 lm_m20; do
