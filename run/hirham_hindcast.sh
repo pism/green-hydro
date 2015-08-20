@@ -185,7 +185,7 @@ for SSA_E in 0.6 0.8; do
                 PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
                 EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
                 RUNE=${CLIMATE}_${TYPE}_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
-                SCRIPT=hirham_hindcast_g${GRID}m_${RUNE}_run.sh
+                SCRIPT=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_run.sh
                 POSTR=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_relax_post.sh
                 POSTH=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_hindcast_post.sh
 
@@ -259,7 +259,7 @@ SUBMIT=submit_hirham_hindcast.sh
 rm -f $SUBMIT
 cat - > $SUBMIT <<EOF
 $SHEBANGLINE
-for FILE in hirham_hindcast_g${GRID}m_*_run.sh; do
+for FILE in hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_*_run.sh; do
   JOBID=\$(qsub \$FILE)
   fbname=\$(basename "\$FILE" .sh)
   POSTR=\${fbname}_relax_post.sh
