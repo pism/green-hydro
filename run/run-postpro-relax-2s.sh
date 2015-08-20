@@ -36,7 +36,7 @@ nc_dir=processed
 jk_dir=jakobshavn
 fill=-2e9
 
-cat - > $POST <<EOF
+cat - > $POSTR <<EOF
 $MYSHEBANGLINE
 $MYMPIQUEUELINE
 $MYMPITIMELINE

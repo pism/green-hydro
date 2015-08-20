@@ -38,7 +38,7 @@ fill=-2e9
 # seconds per year, from UDUNITS
 SECPERA=3.15569259747e7
 
-cat - > $POST <<EOF
+cat - > $POSTH <<EOF
 $MYSHEBANGLINE
 $MYMPIQUEUELINE
 $MYMPITIMELINE
