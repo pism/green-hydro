@@ -261,7 +261,7 @@ cat - > $SUBMIT <<EOF
 $SHEBANGLINE
 for FILE in hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_*_run.sh; do
   JOBID=\$(qsub \$FILE)
-  fbname=\$(basename "\$FILE" .sh)
+  fbname=\$(basename "\$FILE" _run.sh)
   POSTR=\${fbname}_relax_post.sh
   ID=\$(qsub -W depend=afterok:\${JOBID} \$POSTR)
   POSTH=\${fbname}_hindcast_post.sh
