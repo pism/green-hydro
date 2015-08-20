@@ -143,12 +143,12 @@ fi
 REGRIDFILE=$5
 STARTYEAR=1989
 ENDYEAR=2011
-PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc
+PISM_TIMEFILE=$PISM_SURFACE_BCFILE
+
 CONFIG=hindcast_config.nc
-EXSTEP=yearly
 RELAXYEARS=15
 
-VERSION=2b
+VERSION=2c
 if [ $# -gt 5 ] ; then  # if user says "paramspawn.sh 8" then NN = 8
   VERSION="$6"
 fi
@@ -180,18 +180,21 @@ for SSA_E in 0.6 0.8 1.0; do
         for THK in 300; do
             for OTYPE in ctrl p20 m20 lm_ctrl lm_p20 lm_m20; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
-                
+
+                PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc
                 PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
                 EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
-                SCRIPT=hirham_relax_g${GRID}m_${EXPERIMENT}.sh
-                POST=hirham_relax_g${GRID}m_${EXPERIMENT}_post.sh
+                SCRIPT=hirham_hindcast_g${GRID}m_${EXPERIMENT}.sh
+                POST=hirham_hindcast_g${GRID}m_${EXPERIMENT}_post.sh
                 rm -f $SCRIPT $POST
                 
                 OUTFILE=g${GRID}m_${EXPERIMENT}_1.nc
                 OUTFILE2=g${GRID}m_${EXPERIMENT}_2.nc
                 
                 REGRIDFILE=$5
-                
+
+                EXSTEP=yearly
+
                 # insert preamble
                 echo $SHEBANGLINE >> $SCRIPT
                 echo >> $SCRIPT # add newline
@@ -220,7 +223,41 @@ for SSA_E in 0.6 0.8 1.0; do
                 source run-postpro-relax-2s.sh
                 echo "# $POST written"
                 echo
-                    
+
+                REGRIDFILE=$OUTFILE2
+                CLIMATE=climateocean
+                PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL.nc
+                PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}.nc
+                EXPERIMENT=hindcast_${STARTYEAR}_${ENDYEAR}_${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
+                
+                OUTFILE=g${GRID}m_${EXPERIMENT}.nc
+
+                EXSTEP=monthly
+
+                # insert preamble
+                echo $SHEBANGLINE >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                echo $MPIQUEUELINE >> $SCRIPT
+                echo $MPITIMELINE >> $SCRIPT
+                echo $MPISIZELINE >> $SCRIPT
+                echo $MPIOUTLINE >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                
+                export PISM_EXPERIMENT=$EXPERIMENT
+                export PISM_TITLE="Greenland Prognostic Study"
+                
+                cmd="PISM_DO="" PISM_CONFIG=$CONFIG PARAM_NOAGE=foo PARAM_FRACTURE=foo PARAM_CALVING=$CALVING PARAM_CALVING_THK=$THK REGRIDFILE=$REGRIDFILE PISM_SURFACE_BCFILE=$PISM_SURFACE_BCFILE PISM_OCEAN_BCFILE=$PISM_OCEAN_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP PISM_SAVE=$SAVESTEP REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIA_E=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+                
+                echo >> $SCRIPT
+                echo "# $SCRIPT written"
+                source run-postpro-hindcast.sh
+                echo "# $POST written"
+                echo
+
+
             done
         done
     done
