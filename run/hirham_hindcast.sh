@@ -224,7 +224,7 @@ for SSA_E in 0.6 0.8 1.0; do
                 echo "# $SCRIPT written"
                 
                 source run-postpro-relax-2s.sh
-                echo "# $POST written"
+                echo "# $POSTR written"
                 echo
 
                 REGRIDFILE=$OUTFILE2
@@ -248,7 +248,7 @@ for SSA_E in 0.6 0.8 1.0; do
                 echo >> $SCRIPT
                 echo "# $SCRIPT written"
                 source run-postpro-hindcast.sh
-                echo "# $POST written"
+                echo "# $POSTH written"
                 echo
 
 
