@@ -221,11 +221,7 @@ for SSA_E in 0.6 0.8 1.0; do
                 echo "$cmd 2>&1 | tee job_2.\${PBS_JOBID}" >> $SCRIPT
                 
                 echo >> $SCRIPT
-                echo "# $SCRIPT written"
                 
-                source run-postpro-relax-2s.sh
-                echo "# $POSTR written"
-                echo
 
                 REGRIDFILE=$OUTFILE2
                 CLIMATE=climateocean
@@ -246,8 +242,10 @@ for SSA_E in 0.6 0.8 1.0; do
                 echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
                 
                 echo >> $SCRIPT
-                echo "# $SCRIPT written"
+                source run-postpro-relax-2s.sh
                 source run-postpro-hindcast.sh
+                echo "# $SCRIPT written"
+                echo "# $POSTR written"
                 echo "# $POSTH written"
                 echo
 
