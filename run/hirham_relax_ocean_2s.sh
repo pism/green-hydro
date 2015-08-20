@@ -176,8 +176,8 @@ E=1.25
 SSA_E=1.0
 PPQ=0.6
 for SSA_E in 0.6 0.8 1.0; do
-    for K in 1e15 1e17 1e18; do
-        for THK in 100 200 300; do
+    for K in 1e18; do
+        for THK in 300; do
             
             PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
             
