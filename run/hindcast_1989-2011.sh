@@ -78,7 +78,7 @@ OFORMAT=$PISM_OFORMAT
 if [ -n "${PISM_OSIZE:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME                      PISM_OSIZE = $PISM_OSIZE  (already set)"
 else
-  PISM_OSIZE="big"
+  PISM_OSIZE="2dbig"
   echo "$SCRIPTNAME                      PISM_OSIZE = $PISM_OSIZE"
 fi
 OSIZE=$PISM_OSIZE

@@ -80,7 +80,7 @@ OFORMAT=$PISM_OFORMAT
 if [ -n "${PISM_OSIZE:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME                      PISM_OSIZE = $PISM_OSIZE  (already set)"
 else
-  PISM_OSIZE="big"
+  PISM_OSIZE="2dbig"
   echo "$SCRIPTNAME                      PISM_OSIZE = $PISM_OSIZE"
 fi
 OSIZE=$PISM_OSIZE
@@ -175,7 +175,7 @@ SSA_N=3.25
 E=1.25
 SSA_E=1.0
 PPQ=0.6
-for SSA_E in 0.8 1.0; do
+for SSA_E in 0.6 0.8 1.0; do
     for K in 1e15 1e17 1e18; do
         for THK in 100 200 300; do
             
@@ -183,7 +183,7 @@ for SSA_E in 0.8 1.0; do
             
             OTYPE=ctrl
             PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
-            EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_$k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
+            EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
             SCRIPT=hirham_relax_g${GRID}m_${EXPERIMENT}.sh
             POST=hirham_relax_g${GRID}m_${EXPERIMENT}_post.sh
             rm -f $SCRIPT $POST
@@ -308,7 +308,8 @@ for SSA_E in 0.8 1.0; do
 
             OTYPE=lm_ctrl
             PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
-            EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}        SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
+            EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
+            SCRIPT=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}.sh
             POST=hirham_relax_${RELAXYEARS}a_g${GRID}m_${EXPERIMENT}_post.sh
             rm -f $SCRIPT $POST
             
