@@ -225,6 +225,7 @@ for SSA_E in 0.6 0.8; do
 
                 REGRIDFILE=$OUTFILE2
                 CLIMATE=climateocean
+                PISM_TIMEFILE=GR6b_ERAI_1989_2011_4800M_BIL_MM.nc
                 PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_MM.nc
                 PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}.nc
                 EXPERIMENT=hindcast_${STARTYEAR}_${ENDYEAR}_${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
