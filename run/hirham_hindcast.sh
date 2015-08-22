@@ -14,7 +14,6 @@
 
 set -e # exit on error
 SCRIPTNAME=relax
-CLIMATE=const
 
 TYPELIST=(ctrl, old_bed, 970mW_hs, 1985)
 CALVINGLIST=(float_kill, ocean_kill, eigen_calving)
@@ -181,11 +180,11 @@ for SSA_E in 0.6 0.8; do
             # for OTYPE in ctrl p20 m20 lm_ctrl lm_p20 lm_m20; do
             for OTYPE in ctrl; do
                 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
-
+                CLIMATE=const
                 PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc
                 PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
                 EXPERIMENTR=${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
-                RUNE=${CLIMATE}_${TYPE}_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
+                RUNE=${TYPE}_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
                 SCRIPT=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_run.sh
                 POSTR=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_relax_post.sh
                 POSTH=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_hindcast_post.sh
