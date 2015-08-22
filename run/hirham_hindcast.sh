@@ -191,8 +191,8 @@ for SSA_E in 0.6 0.8; do
 
                 rm -f $SCRIPT $POSTR $POSTH
                 
-                OUTFILE=g${GRID}m_${EXPERIMENT}_1.nc
-                OUTFILE2=g${GRID}m_${EXPERIMENT}_2.nc
+                OUTFILE=g${GRID}m_${EXPERIMENTR}_1.nc
+                OUTFILE2=g${GRID}m_${EXPERIMENTR}_2.nc
                 
                 REGRIDFILE=$5
 
