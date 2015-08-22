@@ -5,7 +5,7 @@ MYMPIQUEUELINE="#PBS -q transfer"
  MYMPISIZELINE="#PBS -l nodes=1:ppn=1"
   MYMPIOUTLINE="#PBS -j oe"
 
-filepre=g${GRID}m_${EXPERIMENT}
+filepre=g${GRID}m_${EXPERIMENTH}
 
 if [ "$TYPE" = "ctrl_v2" ]; then
     MYTYPE="MO14 2015-04-27"

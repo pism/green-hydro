@@ -183,7 +183,7 @@ for SSA_E in 0.6 0.8; do
 
                 PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc
                 PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}_1989_baseline.nc
-                EXPERIMENT=${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
+                EXPERIMENTR=${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
                 RUNE=${CLIMATE}_${TYPE}_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
                 SCRIPT=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_run.sh
                 POSTR=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_relax_post.sh
@@ -209,7 +209,7 @@ for SSA_E in 0.6 0.8; do
                 echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
                 echo >> $SCRIPT # add newline
                 
-                export PISM_EXPERIMENT=$EXPERIMENT
+                export PISM_EXPERIMENT=$EXPERIMENTR
                 export PISM_TITLE="Greenland Prognostic Study"
                 
                 cmd="PISM_DO="" PISM_CONFIG=$CONFIG REGRIDVARS="litho_temp,enthalpy,tillwat,bmelt,Href,age" PARAM_NOAGE=foo PARAM_FRACTURE=foo PARAM_CALVING=$CALVING PARAM_CALVING_K=$K PARAM_CALVING_THK=$THK REGRIDFILE=$REGRIDFILE PISM_SURFACE_BCFILE=$PISM_SURFACE_BCFILE PISM_OCEAN_BCFILE=$PISM_OCEAN_BCFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP PARAM_SIA_E=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_SSA_E=$SSA_E PISM_PARAM=\"$PISM_PARAM\" PISM_OSIZE=$OSIZE ./run.sh $NN $CLIMATE $RELAXYEARS $GRID hybrid $HYDRO $OUTFILE $INFILE"
@@ -228,15 +228,15 @@ for SSA_E in 0.6 0.8; do
                 PISM_TIMEFILE=GR6b_ERAI_1989_2011_4800M_BIL_MM.nc
                 PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_MM.nc
                 PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${OTYPE}.nc
-                EXPERIMENT=hindcast_${STARTYEAR}_${ENDYEAR}_${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
+                EXPERIMENTH=hindcast_${STARTYEAR}_${ENDYEAR}_${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
                 
-                OUTFILE=g${GRID}m_${EXPERIMENT}.nc
+                OUTFILE=g${GRID}m_${EXPERIMENTH}.nc
 
                 EXSTEP=monthly
 
                 echo >> $SCRIPT # add newline
                 
-                export PISM_EXPERIMENT=$EXPERIMENT
+                export PISM_EXPERIMENT=$EXPERIMENTH
                 export PISM_TITLE="Greenland Hindcast"
                 
                 cmd="PISM_DO="" PISM_CONFIG=$CONFIG PARAM_NOAGE=foo PARAM_FRACTURE=foo PARAM_CALVING=$CALVING  PARAM_CALVING_K=$K PARAM_CALVING_THK=$THK REGRIDFILE=$REGRIDFILE PISM_SURFACE_BCFILE=$PISM_SURFACE_BCFILE PISM_OCEAN_BCFILE=$PISM_OCEAN_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP PISM_SAVE=$SAVESTEP REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIA_E=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_SSA_E=$SSA_E PISM_OSIZE=$OSIZE ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
