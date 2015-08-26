@@ -7,10 +7,12 @@ MYMPIQUEUELINE="#PBS -q transfer"
 
 filepre=g${GRID}m_${EXPERIMENTR}
 
-if [ "$TYPE" = "2_1985" ]; then
+if [ "$VERSION" = "2" ]; then
     MYTYPE="MO14 2015-04-27"
+elif [ "$VERSION" = "1.2" ]; then
+    MYTYPE="MO14 2014-11-19"
 else
-    echo "$TYPE not recogniced, exciting"
+    echo "$VERSION not recogniced, exciting"
     exit
 fi
 OTYPE="${OTYPE}"
