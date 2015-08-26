@@ -148,7 +148,7 @@ VERSION=2_1985
 PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v${VERSION}_${TYPE}.nc
 
 NODES=$(( $NN/$PROCS_PER_NODE))
-TYPE=${TYPE}_v${VERSION}
+
 
  SHEBANGLINE="#!/bin/bash"
 MPIQUEUELINE="#PBS -q $QUEUE"
