@@ -185,7 +185,27 @@ for SSA_E in 0.8; do
                 rm -f $SCRIPT $POSTR $POSTH
                 
                 OUTFILE=g${GRID}m_${EXPERIMENTR}.nc
-            
+                
+                EXSTEP=yearly
+
+                # insert preamble
+                echo $SHEBANGLINE >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                echo $MPIQUEUELINE >> $SCRIPT
+                echo $MPITIMELINE >> $SCRIPT
+                echo $MPISIZELINE >> $SCRIPT
+                echo $MPIOUTLINE >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                
+                export PISM_EXPERIMENT=$EXPERIMENTR
+                export PISM_TITLE="Greenland Prognostic Study"
+                
+                cmd="PISM_DO="" PISM_CONFIG=$CONFIG REGRIDVARS="litho_temp,enthalpy,tillwat,bmelt,Href,age" PARAM_NOAGE=foo PARAM_FRACTURE=foo PARAM_CALVING=$CALVING PARAM_CALVING_K=$K PARAM_CALVING_THK=$THK REGRIDFILE=$REGRIDFILE PISM_SURFACE_BCFILE=$PISM_SURFACE_BCFILE PISM_OCEAN_BCFILE=$PISM_OCEAN_BCFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP PARAM_SIA_E=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_SSA_E=$SSA_E PISM_PARAM=\"$PISM_PARAM\" PISM_OSIZE=$OSIZE ./run.sh $NN $CLIMATE $RELAXYEARS $GRID hybrid $HYDRO $OUTFILE $INFILE"
+                echo "$cmd 2>&1 | tee job_r.\${PBS_JOBID}" >> $SCRIPT
+                echo >> $SCRIPT
+
 
                 REGRIDFILE=$OUTFILE
                 CLIMATE=climateocean
@@ -204,7 +224,7 @@ for SSA_E in 0.8; do
                 export PISM_TITLE="Greenland Hindcast"
                 
                 # cmd="PISM_DO="" PISM_CONFIG=$CONFIG PARAM_NOAGE=foo PARAM_FRACTURE=foo PARAM_CALVING=$CALVING  PARAM_CALVING_K=$K PARAM_CALVING_THK=$THK REGRIDFILE=$REGRIDFILE PISM_SURFACE_BCFILE=$PISM_SURFACE_BCFILE PISM_OCEAN_BCFILE=$PISM_OCEAN_BCFILE PISM_TIMEFILE=$PISM_TIMEFILE PISM_OFORMAT=$OFORMAT PISM_DATANAME=$PISM_DATANAME TSSTEP=daily EXSTEP=$EXSTEP PISM_SAVE=$SAVESTEP REGRIDVARS=litho_temp,enthalpy,tillwat,bmelt,Href,thk PARAM_SIA_E=$E PARAM_PPQ=$PPQ PARAM_TEFO=$TEFO PARAM_TTPHI=$PARAM_TTPHI PARAM_SSA_N=$SSA_N PARAM_SSA_E=$SSA_E PISM_OSIZE=$OSIZE ./run.sh $NN $CLIMATE 30 $GRID hybrid $HYDRO $OUTFILE $INFILE"
-                # echo "$cmd 2>&1 | tee job.\${PBS_JOBID}" >> $SCRIPT
+                # echo "$cmd 2>&1 | tee job_h.\${PBS_JOBID}" >> $SCRIPT
                 
                 echo >> $SCRIPT
                 source run-postpro-relax.sh
