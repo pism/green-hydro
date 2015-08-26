@@ -176,8 +176,9 @@ for SSA_E in 0.8; do
                 CLIMATE=const
                 PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc
                 PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${VERSION}_${TYPE}_${OTYPE}_1989_baseline.nc
-                EXPERIMENTR=${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
-                RUNE=${TYPE}_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
+                RUNE=${CLIMATE}_v${VERSION}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
+                EXPERIMENTR=${CLIMATE}_v${VERSION}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
+                # RUNE=${TYPE}_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
                 SCRIPT=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_run.sh
                 POSTR=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_relax_post.sh
                 POSTH=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_hindcast_post.sh
@@ -212,7 +213,7 @@ for SSA_E in 0.8; do
                 PISM_TIMEFILE=GR6b_ERAI_1989_2011_4800M_BIL_MM.nc
                 PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_MM.nc
                 PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_${VERSION}_${TYPE}_${OTYPE}.nc
-                EXPERIMENTH=hindcast_${STARTYEAR}_${ENDYEAR}_${CLIMATE}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
+                EXPERIMENTH=hindcast_${STARTYEAR}_${ENDYEAR}_${CLIMATE}_v${VERSION}_${TYPE}_ssa_e_${SSA_E}_k_${K}_calving_${CALVING}_${THK}_ocean_${OTYPE}
                 
                 OUTFILE=g${GRID}m_${EXPERIMENTH}.nc
 
