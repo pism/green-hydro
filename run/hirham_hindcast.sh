@@ -183,7 +183,8 @@ for SSA_E in 0.8; do
                 POSTH=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_hindcast_post.sh
 
                 rm -f $SCRIPT $POSTR $POSTH
-                
+
+                REGRIDFILE=$5
                 OUTFILE=g${GRID}m_${EXPERIMENTR}.nc
                 
                 EXSTEP=yearly
