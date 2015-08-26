@@ -7,30 +7,14 @@ MYMPIQUEUELINE="#PBS -q transfer"
 
 filepre=g${GRID}m_${EXPERIMENTH}
 
-if [ "$TYPE" = "ctrl_v2" ]; then
+if [ "$VERSION" = "2_1985" ]; then
     MYTYPE="MO14 2015-04-27"
-elif [ "$TYPE" = "1985_v2" ]; then
-    MYTYPE="MO14 2015-04-27"
-elif [ "$TYPE" = "1985_v2b" ]; then
-    MYTYPE="MO14 2015-04-27"
-elif [ "$TYPE" = "1985_v2c" ]; then
-    MYTYPE="MO14 2015-04-27"
-elif [ "$TYPE" = "1985_v2d" ]; then
-    MYTYPE="MO14 2015-04-27"
-elif [ "$TYPE" = "ctrl_v1.2" ]; then
-    MYTYPE="MO14 2014-11-19"
-elif [ "$TYPE" = "ctrl" ]; then
-    MYTYPE="MO14 2014-06-26"
-elif [ "$TYPE" = "old_bed" ]; then
-    MYTYPE="BA01"
-elif [ "$TYPE" = "old_bed_v1.2" ]; then
-    MYTYPE="BA01"
-elif [ "$TYPE" = "searise" ]; then
-    MYTYPE="SR13"
 else
-    echo "$TYPE not recogniced, exciting"
+    echo "$VERSION not recogniced, exciting"
     exit
 fi
+TYPE="${TYPE}"
+OTYPE="${OTYPE}"
 
 tl_dir=hindcast_${GRID}m_${CLIMATE}_${TYPE}
 nc_dir=processed
@@ -68,7 +52,7 @@ if [ -f ${filepre}.nc ]; then
     ncks -O --64 -d x,-220000.,-110000. -d y,-2310000.,-2240000. ex_${filepre}.nc ${tl_dir}/${jk_dir}/jak_ex_${filepre}.nc
     ncks --64 -v enthalpy,litho_temp,temp -x ${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
     ncap2 -O -s "uflux=ubar*thk; vflux=vbar*thk; velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {velshear_mag=$fill; velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag);" ${tl_dir}/${nc_dir}/${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
-    ncatted -a bed_data_set,run_stats,o,c,"$MYTYPE" -a grid_dx_meters,run_stats,o,f,$GRID -a grid_dy_meters,run_stats,o,f,$GRID -a long_name,uflux,o,c,"Vertically-integrated horizontal flux of ice in the X direction" -a long_name,vflux,o,c,"Vertically-integrated horizontal flux of ice in the Y direction" -a units,uflux,o,c,"m2 year-1" -a units,vflux,o,c,"m2 year-1" -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}.nc
+    ncatted -a bathymetry_type,run_stats,o,c,"$TYPE" -a bed_data_set,run_stats,o,c,"$MYTYPE" -a grid_dx_meters,run_stats,o,f,$GRID -a grid_dy_meters,run_stats,o,f,$GRID -a long_name,uflux,o,c,"Vertically-integrated horizontal flux of ice in the X direction" -a long_name,vflux,o,c,"Vertically-integrated horizontal flux of ice in the Y direction" -a units,uflux,o,c,"m2 year-1" -a units,vflux,o,c,"m2 year-1" -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${nc_dir}/${filepre}.nc
     ncap2 -O -s "velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {velshear_mag=$fill; velbase_mag=$fill; velsurf_mag=$fill; flux_mag=$fill;}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag);" ${tl_dir}/${jk_dir}/jak_ex_${filepre}.nc ${tl_dir}/${jk_dir}/jak_ex_${filepre}.nc
     ncatted -a bed_data_set,run_stats,o,c,"$MYTYPE" -a grid_dx_meters,run_stats,o,f,$GRID -a grid_dy_meters,run_stats,o,f,$GRID -a long_name,uflux,o,c,"Vertically-integrated horizontal flux of ice in the X direction" -a long_name,vflux,o,c,"Vertically-integrated horizontal flux of ice in the Y direction" -a units,uflux,o,c,"m2 year-1" -a units,vflux,o,c,"m2 year-1" -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" ${tl_dir}/${jk_dir}/jak_ex_${filepre}.nc
 ncap2 -O -s '*sz_idt=time.size(); *dhdt[\$time,\$y,\$x]= 0.f; *dHdt[\$time,\$y,\$x]= 0.f; for(*idt=1 ; idt<sz_idt ; idt++) {dhdt(idt,:,:)=(usurf(idt,:,:)-usurf(idt-1,:,:))/(time(idt)-time(idt-1))*$SECPERA; dHdt(idt,:,:)=(thk(idt,:,:)-thk(idt-1,:,:))/(time(idt)-time(idt-1))*$SECPERA;} dhdt.ram_write(); dHdt.ram_write();' ${tl_dir}/${jk_dir}/jak_ex_${filepre}.nc ${tl_dir}/${jk_dir}/jak_ex_${filepre}.nc
