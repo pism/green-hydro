@@ -16,7 +16,7 @@ fi
 TYPE="${TYPE}"
 OTYPE="${OTYPE}"
 
-tl_dir=hindcast_${GRID}m_${CLIMATE}_${TYPE}
+tl_dir=hindcast_${GRID}m_${CLIMATEH}
 nc_dir=processed
 jk_dir=jakobshavn
 

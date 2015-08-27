@@ -16,7 +16,7 @@ fi
 TYPE="${TYPE}"
 OTYPE="${OTYPE}"
 
-tl_dir=relax_${GRID}m_${CLIMATE}_${TYPE}
+tl_dir=relax_${GRID}m_${CLIMATER}
 nc_dir=processed
 jk_dir=jakobshavn
 fill=-2e9
