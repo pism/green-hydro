@@ -118,6 +118,8 @@ elif [ "$3" = "sbay" ]; then
     TYPE=$3
 elif [ "$3" = "rumple_750m" ]; then
     TYPE=$3
+elif [ "$3" = "rumple_850m" ]; then
+    TYPE=$3
 else
   echo "invalid forth argument; must be in (${TYPELIST[@]})"
   exit
@@ -168,11 +170,11 @@ E=1.25
 SSA_E=1.0
 PPQ=0.6
 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
-for SSA_E in 0.8; do
+for SSA_E in 0.8 1.0; do
     for K in 1e15; do
-        for THK in 100 300; do
+        for THK in 100; do
             # for OTYPE in const_ctrl const_p20 const_m20 lm_ctrl lm_p20 lm_m20; do
-            for OTYPE in const_m50; do
+            for OTYPE in const_m90; do
                 CLIMATER=const
                 PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc
                 PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_v${VERSION}_${TYPE}_${OTYPE}_1989_baseline.nc
