@@ -227,8 +227,6 @@ for FILE in hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_v${VERSION}_${TYPE
   fbname=\$(basename "\$FILE" _run.sh)
   POSTR=\${fbname}_relax_post.sh
   ID=\$(qsub -W depend=afterok:\${JOBID} \$POSTR)
-  POSTH=\${fbname}_hindcast_post.sh
-  ID=\$(qsub -W depend=afterok:\${JOBID} \$POSTH)
 done
 EOF
 
