@@ -74,5 +74,7 @@ ncatted -a units,dhdt,o,c,'m year-1' \
         -a grid_mapping,dHdt,o,c,'mapping' \
         -a cell_methods,dhdt,o,c,'time: sum (interval: 1 year)' \
         -a cell_methods,dHdt,o,c,'time: sum (interval: 1 year)' ${tl_dir}/${jk_dir}/jak_ex_${filepre}_ym.nc
+ncks -O --64 -d x,-220000.,-110000. -d y,-2310000.,-2240000. ${tl_dir}/${nc_dir}/${filepre}.nc ${tl_dir}/${jk_dir}/jak_${filepre}.nc
+
 fi
 EOF
