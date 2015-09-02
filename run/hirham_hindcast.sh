@@ -13,9 +13,9 @@
 
 
 set -e # exit on error
-SCRIPTNAME=relax
+SCRIPTNAME=hindcast
 
-TYPELIST=(ctrl, sbay, rumple_750m)
+TYPELIST=(ctrl, sbay, rumple_750m, rumple_850m)
 CALVINGLIST=(float_kill, ocean_kill, eigen_calving)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900)
 if [ $# -lt 4 ] ; then
