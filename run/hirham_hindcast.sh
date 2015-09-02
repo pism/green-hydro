@@ -190,6 +190,17 @@ for SSA_E in 0.8; do
 
                 EXSTEP=monthly
 
+                # insert preamble
+                echo $SHEBANGLINE >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                echo $MPIQUEUELINE >> $SCRIPT
+                echo $MPITIMELINE >> $SCRIPT
+                echo $MPISIZELINE >> $SCRIPT
+                echo $MPIOUTLINE >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                echo "cd \$PBS_O_WORKDIR" >> $SCRIPT
+                echo >> $SCRIPT # add newline
+                
                 echo >> $SCRIPT # add newline
                 
                 export PISM_EXPERIMENT=$EXPERIMENTH
