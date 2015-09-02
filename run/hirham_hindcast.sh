@@ -173,7 +173,7 @@ PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
 for SSA_E in 0.8; do
     for K in 1e15; do
         for THK in 300; do
-            for OTYPE in const_ctrl; do
+            for OTYPE in const_ctrl const_m20; do
                 CLIMATEH=climateocean
                 PISM_TIMEFILE=GR6b_ERAI_1989_2011_4800M_BIL_MM.nc
                 PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_MM.nc
