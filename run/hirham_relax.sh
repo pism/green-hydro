@@ -172,7 +172,7 @@ PPQ=0.6
 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
 for SSA_E in 0.8 1.0; do
     for K in 1e15 1e18; do
-        for THK in 100; do
+        for THK in 300; do
             for OTYPE in const_m90 const_m80 const_m50; do
                 CLIMATER=const
                 PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc
