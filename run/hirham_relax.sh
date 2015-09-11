@@ -143,7 +143,8 @@ ENDYEAR=2011
 PISM_TIMEFILE=$PISM_SURFACE_BCFILE
 
 CONFIG=hindcast_config.nc
-RELAXYEARS=30
+# Flux divergences relax enough in 20 years, based on 30 year long test runs
+RELAXYEARS=20
 
 VERSION=2_1985
 
@@ -174,7 +175,7 @@ for SSA_E in 1.0; do
     for K in 1e18; do
         for THK in 100; do
             for OTYPE in const_m90; do
-                for FSOFT in 0.5 0.75; do
+                for FSOFT in 0.5 0.75 0.9; do
                     CLIMATER=const
                     PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc
                     PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_v${VERSION}_${TYPE}_${OTYPE}_1989_baseline.nc
