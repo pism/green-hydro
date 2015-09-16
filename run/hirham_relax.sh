@@ -172,10 +172,10 @@ SSA_E=1.0
 PPQ=0.6
 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
 for SSA_E in 0.8 1.0; do
-    for K in 1e18; do
+    for K in 1e15 1e18; do
         for THK in 100; do
-            for OTYPE in constrsb_m20; do
-                for FSOFT in 0.5 0.75 0.9 0.95; do
+            for OTYPE in constrsb_ctrl constrsb_m20; do
+                for FSOFT in 0.5 0.75 0.9 0.95 1.0; do
                     CLIMATER=const
                     PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc
                     PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_v${VERSION}_${TYPE}_${OTYPE}_1989_baseline.nc
