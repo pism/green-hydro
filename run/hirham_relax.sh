@@ -174,15 +174,15 @@ PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
 for SSA_E in 0.8 1.0; do
     for K in 1e15 1e18; do
         for THK in 100; do
-            for OTYPE in constrsb_ctrl constrsb_m20; do
-                for FSOFT in 0.5 0.75 0.9 0.95 1.0; do
+            for OTYPE in lm_ctrl lm_m20; do
+                for FSOFT in 0.75 0.9 0.95 1.0; do
                     CLIMATER=const
                     PISM_SURFACE_BCFILE=GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc
                     PISM_OCEAN_BCFILE=ocean_forcing_${GRID}m_1989-2011_v${VERSION}_${TYPE}_${OTYPE}_1989_baseline.nc
                     RUNE=v${VERSION}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_fsoft_${FSOFT}_calving_${CALVING}_${THK}_ocean_${OTYPE}
                     EXPERIMENTR=${CLIMATER}_v${VERSION}_${TYPE}_${RELAXYEARS}a_ssa_e_${SSA_E}_k_${K}_fsoft_${FSOFT}_calving_${CALVING}_${THK}_ocean_${OTYPE}
-                    SCRIPT=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_run.sh
-                    POSTR=hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_relax_post.sh
+                    SCRIPT=hirham_relax_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_run.sh
+                    POSTR=hirham_relax_${STARTYEAR}_${ENDYEAR}_g${GRID}m_${RUNE}_relax_post.sh
 
                     rm -f $SCRIPT $POSTR
 
