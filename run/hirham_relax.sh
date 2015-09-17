@@ -224,7 +224,7 @@ SUBMIT=submit_hirham_relax.sh
 rm -f $SUBMIT
 cat - > $SUBMIT <<EOF
 $SHEBANGLINE
-for FILE in hirham_hindcast_${STARTYEAR}_${ENDYEAR}_g${GRID}m_v${VERSION}_${TYPE}_${RELAXYEARS}a_ssa_e_*_k_*_calving_${CALVING}_*_ocean_*_run.sh; do
+for FILE in hirham_relax_${STARTYEAR}_${ENDYEAR}_g${GRID}m_v${VERSION}_${TYPE}_${RELAXYEARS}a_ssa_e_*_k_*_calving_${CALVING}_*_ocean_*_run.sh; do
   JOBID=\$(qsub \$FILE)
   fbname=\$(basename "\$FILE" _run.sh)
   POSTR=\${fbname}_relax_post.sh
