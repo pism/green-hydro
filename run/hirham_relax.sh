@@ -146,7 +146,7 @@ CONFIG=hindcast_config.nc
 # Flux divergences relax enough in 20 years, based on 30 year long test runs
 RELAXYEARS=20
 
-VERSION=2_1985
+VERSION=2_1985p50
 
 PISM_DATANAME=pism_Greenland_${GRID}m_mcb_jpl_v${VERSION}_${TYPE}.nc
 

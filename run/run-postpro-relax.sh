@@ -9,6 +9,8 @@ filepre=g${GRID}m_${EXPERIMENTR}
 
 if [ "$VERSION" = "2_1985" ]; then
     MYTYPE="MO14 2015-04-27"
+elif [ "$VERSION" = "2_1985p50" ]; then
+    MYTYPE="MO14 2015-04-27"
 else
     echo "$VERSION not recogniced, exciting"
     exit
