@@ -170,7 +170,7 @@ E=1.25
 SSA_E=1.0
 PPQ=0.6
 PARAM_TTPHI="${philow}.0,40.0,-700.0,700.0"
-for SSA_E in 0.8; do
+for SSA_E in 0.8 1.0; do
     for K in 1e18; do
         for THK in 300 500; do
             for OTYPE in const_ctrl const_m20; do
