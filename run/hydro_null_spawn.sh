@@ -17,7 +17,7 @@ SCRIPTNAME=hydro_null_spawn.sh
 
 VERSION=2
 CLIMLIST=(const, pdd)
-TYPELIST=(ctrl, old_bed, ba01_bed, 970mW_hs, jak_1985)
+TYPELIST=(ctrl, old_bed, ba01_bed, 970mW_hs, jak_1985, cresis)
 GRIDLIST=(18000 9000 4500 3600 1800 1500 1200 900 600 450)
 if [ $# -lt 5 ] ; then
   echo "paramspawn.sh ERROR: needs 5 positional arguments ... ENDING NOW"
@@ -132,6 +132,8 @@ elif [ "$4" = "ba01_bed" ]; then
 elif [ "$4" = "970mW_hs" ]; then
     TYPE=$4
 elif [ "$4" = "jak_1985" ]; then
+    TYPE=$4
+elif [ "$4" = "cresis ]; then
     TYPE=$4
 else
   echo "invalid forth argument; must be in (${TYPELIST[@]})"
