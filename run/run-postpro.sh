@@ -9,6 +9,8 @@ filepre=g${GRID}m_${EXPERIMENT}_${DURA}a
 
 if [ "$TYPE" = "ctrl_v2" ]; then
     MYTYPE="MO14 2015-04-27"
+if [ "$TYPE" = "cresis_v2" ]; then
+    MYTYPE="MO14+CReSIS 2015-04-27"
 elif [ "$TYPE" = "ctrl_v1.2" ]; then
     MYTYPE="MO14 2014-11-19"
 elif [ "$TYPE" = "ctrl" ]; then
