@@ -167,8 +167,8 @@ for E in 1.25; do
                     for elevhigh in 700 1000 1300; do
                         for elevlow in -700 -500; do
                             philow=5.0
-		            PARAM_TTPHI="${philow},40.0,-${elevlow},${elevhigh}"
-                            EXPERIMENT=${CLIMATE}_${TYPE}_sia_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_ssa_e_${SSA_E}_philow_${philow}_elevlow_m${elevlow}_elevhigh_${elevhigh}_hydro_${HYDRO}
+		            PARAM_TTPHI="${philow},40.0,${elevlow},${elevhigh}"
+                            EXPERIMENT=${CLIMATE}_${TYPE}_sia_e_${E}_ppq_${PPQ}_tefo_${TEFO}_ssa_n_${SSA_N}_ssa_e_${SSA_E}_philow_${philow}_elevlow_${elevlow}_elevhigh_${elevhigh}_hydro_${HYDRO}
                             SCRIPT=do_g${GRID}m_${EXPERIMENT}.sh
                             POST=do_g${GRID}m_${EXPERIMENT}_post.sh
                             rm -f $SCRIPT $$POST
