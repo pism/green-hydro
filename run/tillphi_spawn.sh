@@ -212,7 +212,7 @@ SUBMIT=submit_g${GRID}m_${CLIMATE}_${TYPE}_hydro_${HYDRO}.sh
 rm -f $SUBMIT
 cat - > $SUBMIT <<EOF
 $SHEBANGLINE
-for FILE in do_g${GRID}m_${CLIMATE}_${TYPE}_*${HYDRO}.sh; do
+for FILE in do_g${GRID}m_${CLIMATE}_${TYPE}_elevlow_*${HYDRO}.sh; do
   JOBID=\$(qsub \$FILE)
   fbname=\$(basename "\$FILE" .sh)
   POST=\${fbname}_post.sh
