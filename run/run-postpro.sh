@@ -63,7 +63,7 @@ fi
 
 if [ -f ${filepre}.nc ]; then
     rm -f tmp_${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
-    ncks -v enthalpy,litho_temp,temp_pa,liqfrac,cts,temp,temp_pa,uvel,vvel,wvel,wvel_rel -x ${filepre}.nc tmp_${filepre}.nc
+    ncks -v enthalpy,litho_temp -x ${filepre}.nc tmp_${filepre}.nc
     # because QGIS doesn't like (x,y) ordering
     sh add_epsg3413_mapping.sh tmp_${filepre}.nc
     ncpdq -O --64 -a time,y,x tmp_${filepre}.nc ${tl_dir}/${nc_dir}/${filepre}.nc
