@@ -63,7 +63,7 @@ elif DOMAIN.lower() in ('jakobshavn'):
     x_max = 316000
     y_min = -2349000
     y_max = -1996000
-    pism_exec = 'pismo -x_range {x_min},{x_max} -y_range {y_min},{y_max}'.format(x_min=xmin, x_max=x_max, y_min=y_min, y_max=y_max)
+    pism_exec = 'pismo -x_range {x_min},{x_max} -y_range {y_min},{y_max}'.format(x_min=x_min, x_max=x_max, y_min=y_min, y_max=y_max)
 
 
 REGRIDFILE=args[0]
