@@ -140,7 +140,7 @@ for n, combination in enumerate(combinations):
         f.write('cd $PBS_O_WORKDIR\n')
         f.write('\n')
 
-        if DOMAIN.lower in ('jakobshavn'):
+        if DOMAIN.lower() in ('jakobshavn'):
             OUTFILE = 'jak_g{}m_{}_{}a.nc'.format(GRID, EXPERIMENT, DURA)
         else:
             OUTFILE = 'g{}m_{}_{}a.nc'.format(GRID, EXPERIMENT, DURA)
@@ -163,6 +163,7 @@ for n, combination in enumerate(combinations):
         params_dict['PARAM_TEFO'] = TEFO
         params_dict['PARAM_TTPHI'] = TTPHI
         params_dict['PARAM_FTT'] = 'foo'
+        params_dict['PISM_EXEC'] = pism_exec
 
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
         cmd = ' '.join([params, './run.sh', str(NN), CLIMATE, str(DURA), str(GRID), 'hybrid', HYDRO, OUTFILE, INFILE, '2>&1 | tee job.${PBS_JOBID}'])
