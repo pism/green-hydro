@@ -573,7 +573,7 @@ fi
 if [ -n "${PISM_OSIZE+1}" ] ; then  # check if env var is set
   OSIZE=$PISM_OSIZE
 else
-  OSIZE="big"
+  OSIZE="2dbig"
 fi
 
 # show remaining setup options:

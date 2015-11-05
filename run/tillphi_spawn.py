@@ -18,12 +18,15 @@ parser.add_argument("-W", '--wall_time', dest="WALLTIME",
                     help='''Walltime. Default: 12:00:00.''', default="12:00:00")
 parser.add_argument("-Q", '--queue', dest="QUEUE",
                     help='''Queue. Default=standard_4.''', default='standard_4')
-parser.add_argument("-f", "--o_format", dest="OFORMAT",
-                    choices=['netcdf3', 'netcdf4_parallel', 'pnetcdf'],
-                    help="Output format", default='netcdf4_parallel')
 parser.add_argument("-c", "--climate", dest="CLIMATE",
                     choices=['const', 'pdd'],
                     help="Climate", default='const')
+parser.add_argument("-d", "--domain", dest="DOMAIN",
+                    choices=['greenland', 'jakobshavn'],
+                    help="Climate", default='const')
+parser.add_argument("-f", "--o_format", dest="OFORMAT",
+                    choices=['netcdf3', 'netcdf4_parallel', 'pnetcdf'],
+                    help="Output format", default='netcdf4_parallel')
 parser.add_argument("-g", "--grid", dest="GRID", type=int,
                     choices=[18000, 9000, 4500, 3600, 1800, 1500, 1200, 900, 600, 450],
                     help="Output size type", default=1500)
@@ -51,6 +54,17 @@ CLIMATE = options.CLIMATE
 GRID = options.GRID
 TYPE = options.TYPE
 VERSION = options.VERSION
+
+DOMAIN = options.DOMAIN
+if DOMAIN.lower() in ('greenland'):
+    pism_exec = 'pismr'
+elif DOMAIN.lower() in ('jakobshavn'):
+    x_min = -229000
+    x_max = 316000
+    y_min = -2349000
+    y_max = -1996000
+    pism_exec = 'pismo -x_range {x_min},{x_max} -y_range {y_min},{y_max}'.format(x_min=xmin, x_max=x_max, y_min=y_min, y_max=y_max)
+
 
 REGRIDFILE=args[0]
 INFILE = ''
@@ -126,8 +140,11 @@ for n, combination in enumerate(combinations):
         f.write('cd $PBS_O_WORKDIR\n')
         f.write('\n')
 
-        OUTFILE = 'g{}m_{}_{}a.nc'.format(GRID, EXPERIMENT, DURA)
-
+        if DOMAIN.lower in ('jakobshavn'):
+            OUTFILE = 'jak_g{}m_{}_{}a.nc'.format(GRID, EXPERIMENT, DURA)
+        else:
+            OUTFILE = 'g{}m_{}_{}a.nc'.format(GRID, EXPERIMENT, DURA)
+            
         params_dict = dict()
         params_dict['PISM_DO'] = ''
         params_dict['PISM_OFORMAT'] = OFORMAT
