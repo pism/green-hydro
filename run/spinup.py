@@ -100,9 +100,9 @@ for n, combination in enumerate(combinations):
     EXPERIMENT='{}_{}_sia_e_{}_ppq_{}_tefo_{}_ssa_n_{}_ssa_e_{}_phi_min_{}_phi_max_{}_topg_min_{}_topg_max_{}'.format(CLIMATE, TYPE, SIA_E, PPQ, TEFO, SSA_N, SSA_E, phi_min, phi_max, topg_min, topg_max)
 
     
-    DURA=100000
+    DURA=125000
     START=-125000
-    END=-25000
+    END=-0
 
     SCRIPT = 'do_g{GRID}m_m{END}a_{EXPERIMENT}.sh'.format(GRID=GRID, END=END, EXPERIMENT=EXPERIMENT)
     

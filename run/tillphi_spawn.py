@@ -23,7 +23,7 @@ parser.add_argument("-c", "--climate", dest="CLIMATE",
                     help="Climate", default='const')
 parser.add_argument("-d", "--domain", dest="DOMAIN",
                     choices=['greenland', 'jakobshavn'],
-                    help="Climate", default='const')
+                    help="Sets the modeling domain", default='Greenland')
 parser.add_argument("-f", "--o_format", dest="OFORMAT",
                     choices=['netcdf3', 'netcdf4_parallel', 'pnetcdf'],
                     help="Output format", default='netcdf4_parallel')
@@ -63,8 +63,12 @@ elif DOMAIN.lower() in ('jakobshavn'):
     x_max = 316000
     y_min = -2349000
     y_max = -1996000
-    pism_exec = 'pismo -x_range {x_min},{x_max} -y_range {y_min},{y_max}'.format(x_min=x_min, x_max=x_max, y_min=y_min, y_max=y_max)
-
+    pism_exec = '''\'pismo -x_range {x_min},{x_max} -y_range {y_min},{y_max} -bootstrap\''''.format(x_min=x_min, x_max=x_max, y_min=y_min, y_max=y_max)
+else:
+    print('Domain {} not recognized, exiting'.format(DOMAIN))
+    import sys
+    sys.exit(0)
+    
 
 REGRIDFILE=args[0]
 INFILE = ''
