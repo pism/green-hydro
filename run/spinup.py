@@ -24,19 +24,25 @@ parser.add_argument("-c", "--climate", dest="CLIMATE",
                     choices=['const', 'paleo'],
                     help="Climate", default='paleo')
 parser.add_argument("-g", "--grid", dest="GRID", type=int,
-                    choices=[18000, 9000, 4500, 3600, 1800, 1500, 1200, 900, 600, 450],
+                    choices=[
+                        18000, 9000, 4500, 3600, 1800, 1500, 1200, 900, 600, 450],
                     help="Output size type", default=9000)
 parser.add_argument("-s", "--o_size", dest="OSIZE",
                     choices=['small', 'medium', 'big', '2dbig'],
                     help="Output size type", default='2dbig')
 parser.add_argument("-t", "--type", dest="TYPE",
-                    choices=['ctrl', 'old_bed', 'ba01_bed', '970mW_hs', 'jak_1985', 'cresis'],
+                    choices=[
+                        'ctrl', 'old_bed', 'ba01_bed', '970mW_hs', 'jak_1985', 'cresis'],
                     help="Output size type", default='970mW_hs')
 parser.add_argument("--dataset_version", dest="VERSION",
                     choices=['1.1', '1.2', '2'],
                     help="Input data set version", default='2')
 
 options = parser.parse_args()
+wisconsian_holocene_transition = -11000
+ftt_starttime = -5000
+REGRIDVARS = 'litho_temp,enthalpy,tillwat,bmelt,Href'
+
 
 NN = options.N
 PROCS_PER_NODE = options.PROCS_PER_NODE
@@ -51,10 +57,11 @@ TYPE = options.TYPE
 VERSION = options.VERSION
 
 INFILE = ''
-PISM_DATANAME = 'pism_Greenland_{}m_mcb_jpl_v{}_{}.nc'.format(GRID, VERSION, TYPE)
+PISM_DATANAME = 'pism_Greenland_{}m_mcb_jpl_v{}_{}.nc'.format(
+    GRID, VERSION, TYPE)
 TYPE = '{}_v{}'.format(TYPE, VERSION)
-DURA = 100
-NODES= NN/ PROCS_PER_NODE
+
+NODES = NN / PROCS_PER_NODE
 
 SHEBANGLINE = "#!/bin/bash"
 MPIQUEUELINE = "#PBS -q {}".format(QUEUE)
@@ -63,8 +70,8 @@ MPISIZELINE = "#PBS -l nodes={}:ppn={}".format(NODES, PROCS_PER_NODE)
 MPIOUTLINE = "#PBS -j oe"
 
 
-#### TODO:
-## Generate config file from cdl
+# TODO:
+# Generate config file from cdl
 
 
 # ########################################################
@@ -83,11 +90,12 @@ phi_min_values = [5.0]
 phi_max_values = [40.]
 topg_min_values = [-700]
 topg_max_values = [700]
-combinations = list(itertools.product(phi_min_values, phi_max_values, topg_min_values, topg_max_values))
+combinations = list(itertools.product(
+    phi_min_values, phi_max_values, topg_min_values, topg_max_values))
 
 TSSTEP = '1'
 EXSTEP = '100'
-REGRIDVARS = 'litho_temp,enthalpy,tillwat,bmelt,Href'
+REGRIDVARS = 'litho_temp,enthalpy,tillwat,bmelt,Href,age,thk'
 
 for n, combination in enumerate(combinations):
     phi_min = combination[0]
@@ -97,25 +105,18 @@ for n, combination in enumerate(combinations):
 
     TTPHI = '{},{},{},{}'.format(phi_min, phi_max, topg_min, topg_max)
 
-    EXPERIMENT='{}_{}_sia_e_{}_ppq_{}_tefo_{}_ssa_n_{}_ssa_e_{}_phi_min_{}_phi_max_{}_topg_min_{}_topg_max_{}'.format(CLIMATE, TYPE, SIA_E, PPQ, TEFO, SSA_N, SSA_E, phi_min, phi_max, topg_min, topg_max)
+    EXPERIMENT = '{}_{}_sia_e_{}_ppq_{}_tefo_{}_ssa_n_{}_ssa_e_{}_phi_min_{}_phi_max_{}_topg_min_{}_topg_max_{}'.format(
+        CLIMATE, TYPE, SIA_E, PPQ, TEFO, SSA_N, SSA_E, phi_min, phi_max, topg_min, topg_max)
 
-    
-    DURA=125000
-    START=-125000
-    END=-0
+    SCRIPT = 'do_g{GRID}m_{EXPERIMENT}.sh'.format(
+        GRID=GRID, EXPERIMENT=EXPERIMENT)
 
-    SCRIPT = 'do_g{GRID}m_m{END}a_{EXPERIMENT}.sh'.format(GRID=GRID, END=END, EXPERIMENT=EXPERIMENT)
-    
     for filename in (SCRIPT):
         try:
             os.remove(filename)
         except OSError:
             pass
 
-    
-    os.environ['PISM_EXPERIMENT'] = EXPERIMENT
-    os.environ['PISM_TITLE'] = 'Greenland Paleo-Climate Initialization'
-    
     with open(SCRIPT, 'w') as f:
 
         f.write('{}\n'.format(SHEBANGLINE))
@@ -128,7 +129,18 @@ for n, combination in enumerate(combinations):
         f.write('cd $PBS_O_WORKDIR\n')
         f.write('\n')
 
-        OUTFILE = 'g{GRID}m_m{END}_{EXPERIMENT}a.nc'.format(GRID=GRID, EXPERIMENT=EXPERIMENT, END=-END)
+        os.environ['PISM_EXPERIMENT'] = '_'.join([EXPERIMENT, TYPE])
+        os.environ['PISM_TITLE'] = 'Greenland Paleo-Climate Initialization'
+
+        ## CTRL simulation
+        
+        START = -125000
+        END = 0
+        DURA = END - START
+        TYPE = 'ctrl'
+        
+        OUTFILE_CTRL = 'g{GRID}m_m{END}a_{EXPERIMENT}_{TYPE}.nc'.format(
+            GRID=GRID, EXPERIMENT=EXPERIMENT, END=-END,TYPE=TYPE)
 
         params_dict = dict()
         params_dict['PISM_DO'] = ''
@@ -146,19 +158,65 @@ for n, combination in enumerate(combinations):
         params_dict['PARAM_TEFO'] = TEFO
         params_dict['PARAM_TTPHI'] = TTPHI
         params_dict['PARAM_FTT'] = ''
-        params_dict['PISM_SAVE'] = '-25000,-11000,-5000,-1000,-500,-200,-100'
-        params_dict['STARTEND'] = '{},{}'.format(START,END)
+        params_dict['PISM_SAVE'] = '-25000,{},{},-1000,-500,-200,-100'.format(
+            wisconsian_holocene_transition, ftt_starttime)
+        params_dict['STARTEND'] = '{},{}'.format(START, END)
         params_dict['DURA'] = DURA
-        
 
-        params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
-        cmd = ' '.join([params, './run.sh', str(NN), CLIMATE, str(params_dict['DURA']), str(GRID), 'hybrid', HYDRO, OUTFILE, INFILE, '2>&1 | tee job.${PBS_JOBID}'])
+        params = ' '.join(['='.join([k, str(v)])
+                           for k, v in params_dict.items()])
+        cmd = ' '.join([params, './run.sh', str(NN), CLIMATE, str(params_dict['DURA']),
+                        str(GRID), 'hybrid', HYDRO, '.'.join([OUTFILE_CTRL, 'nc']), INFILE, '2>&1 | tee job_{TYPE}.${{PBS_JOBID}}'.format(TYPE=TYPE)])
 
         f.write(cmd)
-        f.write('\n')
+        f.write('\n\n')
 
 
+        ## E-AGE simulation
+        
+        START = wisconsian_holocene_transition
+        DURA = END - START
+        TYPE = 'e_age'
 
+        params_dict['STARTEND'] = '{},{}'.format(START, END)
+        params_dict['DURA'] = DURA
+        params_dict['PARAM_E_AGE_COUPLING'] = 'yes'
+        params_dict['REGRIDFILE'] = OUTFILE_CTRL
+
+        OUTFILE_E_AGE = 'g{GRID}m_m{END}a_{EXPERIMENT}_{TYPE}'.format(
+            GRID=GRID, EXPERIMENT=EXPERIMENT, END=-END,TYPE=TYPE)
+
+        params = ' '.join(['='.join([k, str(v)])
+                           for k, v in params_dict.items()])
+        cmd = ' '.join([params, './run.sh', str(NN), CLIMATE, str(params_dict['DURA']),
+                        str(GRID), 'hybrid', HYDRO, '.'.join([OUTFILE_E_AGE, 'nc']), INFILE, '2>&1 | tee job_{TYPE}.${{PBS_JOBID}}'.format(TYPE=TYPE)])
+
+        f.write(cmd)
+        f.write('\n\n')
+
+
+        ## FTT simulation
+        
+        START = ftt_starttime
+        DURA = END - START
+        TYPE = 'ftt'
+
+        params_dict['STARTEND'] = '{},{}'.format(START, END)
+        params_dict['DURA'] = DURA
+        params_dict['PARAM_FTT'] = 'yes'
+        params_dict['PARAM_E_AGE_COUPLING'] = 'yes'
+        params_dict['REGRIDFILE'] = OUTFILE_CTRL
+        
+        OUTFILE_FTT = 'g{GRID}m_m{END}a_{EXPERIMENT}_{TYPE}'.format(
+            GRID=GRID, EXPERIMENT=EXPERIMENT, END=-END,TYPE=TYPE)
+
+        params = ' '.join(['='.join([k, str(v)])
+                           for k, v in params_dict.items()])
+        cmd = ' '.join([params, './run.sh', str(NN), CLIMATE, str(params_dict['DURA']),
+                        str(GRID), 'hybrid', HYDRO, '.'.join([OUTFILE_FTT, 'nc']), INFILE, '2>&1 | tee job_{TYPE}.${{PBS_JOBID}}'.format(TYPE=TYPE)])
+
+        f.write(cmd)
+        f.write('\n\n')
 
 # SUBMIT = 'submit_g{GRID}m_{CLIMATE}_{TYPE}_tillphi.sh'.format(GRID=GRID, CLIMATE=CLIMATE, TYPE=TYPE)
 # try:
@@ -175,4 +233,3 @@ for n, combination in enumerate(combinations):
 #         f.write('qsub -W depend=afterok:${{JOBID}} {post}\n'.format(post=POSTS[k]))
 
 # print("\nRun {} to submit all jobs to the scheduler\n".format(SUBMIT))
-

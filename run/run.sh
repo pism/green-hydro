@@ -58,6 +58,7 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_FRACTURE if set, run default fracture dynamics"
   echo "    PARAM_FSOFT sets fracture softening [default=1]"
   echo "    PARAM_NOAGE    if set, DON'T calculate age"
+  echo "    PARAM_E_AGE_COUPLING    if set, couple enhancement factor to age of ice."
   echo "    PARAM_NOENERGY if set, DON'T use energy updates"
   echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
   echo "                   [default=0.25]"
@@ -414,6 +415,12 @@ else
   PARAM_K="0.01"
 fi
 
+if [ -n "${PARAM_E_AGE_COUPLING+1}" ] ; then  # check if env var is set
+  PARAM_E_AGE_COUPLING="-do_e_age_coupling"
+else
+  PARAM_E_AGE_COUPLING=""
+fi
+
 HYDROPARAMS="-hydrology_thickness_power_in_flux ${PARAM_ALPHA} -tauc_add_transportable_water -till_log_factor_transportable_water ${PARAM_OMEGA} -hydrology_hydraulic_conductivity ${PARAM_K}"
 
 # set output filename from argument 6
@@ -613,7 +620,7 @@ else
 fi
 
 # construct command
-cmd="$PISM_MPIDO $NN $PISM ${SHELF_BASE_MELT_RATE} -config_override $CONFIG $AGE -i $INNAME -bootstrap -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $PISM_PARAM $COUPLER $PHYS $FRACTURE $HYDRO $DIAGNOSTICS $SAVE $HIGHRESPETSC -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
+cmd="$PISM_MPIDO $NN $PISM ${SHELF_BASE_MELT_RATE} -config_override $CONFIG $AGE -i $INNAME -bootstrap -Mx $myMx -My $myMy $vgrid $RUNSTARTEND $regridcommand $PARAM_E_AGE_COUPLING $PISM_PARAM $COUPLER $PHYS $FRACTURE $HYDRO $DIAGNOSTICS $SAVE $HIGHRESPETSC -o_format $OFORMAT -o_size $OSIZE -o $OUTNAME"
 echo
 $PISM_DO $cmd
 
