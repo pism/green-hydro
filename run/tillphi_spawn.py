@@ -16,7 +16,7 @@ parser.add_argument("-P", '--procs_per_node', dest="PROCS_PER_NODE", type=int,
                     help='''Cores/Processors per node. Default=4.''', default=4)
 parser.add_argument("-W", '--wall_time', dest="WALLTIME",
                     help='''Walltime. Default: 12:00:00.''', default="12:00:00")
-parser.add_argument("-Q", '--queue', dest="QUEUE", choices=[standard_4, standard_16, gpu, gpu_long],
+parser.add_argument("-Q", '--queue', dest="QUEUE", choices=['standard_4', 'standard_16', 'gpu', 'gpu_long'],
                     help='''Queue. Default=standard_4.''', default='standard_4')
 parser.add_argument("-c", "--climate", dest="CLIMATE",
                     choices=['const', 'pdd'],
