@@ -61,8 +61,8 @@ if DOMAIN.lower() in ('greenland'):
 elif DOMAIN.lower() in ('jakobshavn'):
     x_min = -229000
     x_max = 316000
-    y_min = -2349000
-    y_max = -1996000
+    y_min = -2394000
+    y_max = -1988000
     pism_exec = '''\'pismo -x_range {x_min},{x_max} -y_range {y_min},{y_max} -bootstrap\''''.format(x_min=x_min, x_max=x_max, y_min=y_min, y_max=y_max)
 else:
     print('Domain {} not recognized, exiting'.format(DOMAIN))
