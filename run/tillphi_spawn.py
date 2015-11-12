@@ -87,7 +87,7 @@ MPIOUTLINE = "#PBS -j oe"
 # set up parameter sensitivity study: tillphi
 # ########################################################
 
-HYDRO = 'null'
+HYDRO = 'distributed'
 PISM_SURFACE_BCFILE = 'GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc'
 
 SIA_E = (1.75)
@@ -99,7 +99,7 @@ SSA_E = (1.0)
 phi_min_values = [5.0, 7.5, 10.0]
 phi_max_values = [40.]
 topg_min_values = [-900, -700, -500]
-topg_max_values = [300, 500, 700, 900, 1100]
+topg_max_values = [300, 500, 700, 900]
 combinations = list(itertools.product(phi_min_values, phi_max_values, topg_min_values, topg_max_values))
 
 TSSTEP = 'daily'
