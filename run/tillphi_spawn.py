@@ -52,6 +52,7 @@ OFORMAT = options.OFORMAT
 OSIZE = options.OSIZE
 QUEUE = options.QUEUE
 WALLTIME = options.WALLTIME
+SYSTEM = options.SYSTEM
 
 CLIMATE = options.CLIMATE
 GRID = options.GRID
