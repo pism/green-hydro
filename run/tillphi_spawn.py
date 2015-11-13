@@ -103,7 +103,8 @@ def make_pbs_header(system, cores, walltime, queue):
 #PBS -j oe
 
 cd $PBS_O_WORKDIR
-        """.format(queue=queue, walltime=walltime, nodes=nodes, ppn=ppn)
+
+""".format(queue=queue, walltime=walltime, nodes=nodes, ppn=ppn)
     else:
         header = """
 #!/bin/bash
@@ -113,7 +114,8 @@ cd $PBS_O_WORKDIR
 #PBS -j oe
 
 cd $PBS_O_WORKDIR
-        """.format(queue=queue, walltime=walltime, nodes=nodes, ppn=ppn)
+
+""".format(queue=queue, walltime=walltime, nodes=nodes, ppn=ppn)
 
     return header
 
@@ -190,22 +192,26 @@ for n, combination in enumerate(combinations):
         params_dict['PISM_DO'] = ''
         params_dict['PISM_OFORMAT'] = OFORMAT
         params_dict['PISM_OSIZE'] = OSIZE
-        params_dict['PARAM_NOAGE'] = 'foo'
+        params_dict['PISM_EXEC'] = pism_exec
+        params_dict['PISM_DATANAME'] = PISM_DATANAME
         params_dict['PISM_SURFACE_BC_FILE'] = PISM_SURFACE_BCFILE
         params_dict['REGRIDFILE'] = REGRIDFILE
-        params_dict['PISM_DATANAME'] = PISM_DATANAME
         params_dict['TSSTEP'] = TSSTEP
         params_dict['EXSTEP'] = EXSTEP
         params_dict['REGRIDVARS'] = REGRIDVARS
         params_dict['SIA_E'] = SIA_E
         params_dict['SSA_E'] = SSA_E
         params_dict['SSA_N'] = SSA_N
+        params_dict['PARAM_NOAGE'] = 'foo'
         params_dict['PARAM_PPQ'] = PPQ
         params_dict['PARAM_TEFO'] = TEFO
         params_dict['PARAM_TTPHI'] = TTPHI
         params_dict['PARAM_FTT'] = 'foo'
-        params_dict['PISM_EXEC'] = pism_exec
-
+        params_dict['PARAM_ALPHA'] = alpha
+        params_dict['PARAM_K'] = k
+        params_dict['PARAM_OMEGA'] = omega
+        
+        
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
         cmd = ' '.join([params, './run.sh', str(NN), CLIMATE, str(DURA), str(GRID), 'hybrid', HYDRO, OUTFILE, INFILE, '2>&1 | tee job.${PBS_JOBID}'])
 
