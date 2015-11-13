@@ -70,8 +70,52 @@ else:
     import sys
     sys.exit(0)
 
-    
+def merge_dicts(*dict_args):
+    '''
+    Given any number of dicts, shallow copy and merge into a new dict,
+    precedence goes to key value pairs in latter dicts.
+    '''
+    result = {}
+    for dictionary in dict_args:
+        result.update(dictionary)
+    return result
 
+
+def generate_grid_description(grid_resolution):
+
+    Mx_max = 10560
+    My_max = 18240
+    resolution_max = 150
+    
+    accepted_resolutions = (150, 300, 450, 600, 900, 1200, 1500, 1800, 2400, 3000, 3600, 4500, 9000, 18000, 36000)
+
+    try:
+        grid_resolution in accepted_resolutions
+        pass
+    except:
+        print('grid resolution {}m not recognized'.format(grid_resolution))
+
+    grid_div = (grid_resolution / resolution_max)
+              
+    Mx = Mx_max / grid_div
+    My = My_max / grid_div
+
+    horizontal_grid = {}
+    horizontal_grid['-Mx'] = Mx
+    horizontal_grid['-My'] = My
+
+    vertical_grid = {}
+    vertical_grid['-Lz'] = 4000
+    vertical_grid['-Lzb'] = 2000
+    vertical_grid['-z_spacing'] = 'equal'
+    vertical_grid['-Mz'] = 6
+    vertical_grid['-Mzb'] = 6
+
+    grid_dict = merge_dicts( horizontal_grid, vertical_grid)
+
+    return ' '.join(['='.join([k, str(v)]) for k, v in grid_dict.items()])
+
+              
 def make_pbs_header(system, cores, walltime, queue):
     systems = {}
     systems['fish'] = {'gpu' : 16,
