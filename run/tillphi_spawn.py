@@ -16,7 +16,7 @@ parser.add_argument("-P", '--procs_per_node', dest="PROCS_PER_NODE", type=int,
                     help='''Cores/Processors per node. Default=4.''', default=4)
 parser.add_argument("-W", '--wall_time', dest="WALLTIME",
                     help='''Walltime. Default: 12:00:00.''', default="12:00:00")
-parser.add_argument("-Q", '--queue', dest="QUEUE", choices=['standard_4', 'standard_16', 'gpu', 'gpu_long'],
+parser.add_argument("-Q", '--queue', dest="QUEUE", choices=['standard_4', 'standard_16', 'gpu', 'gpu_long', 'long', 'normal'],
                     help='''Queue. Default=standard_4.''', default='standard_4')
 parser.add_argument("-c", "--climate", dest="CLIMATE",
                     choices=['const', 'pdd'],
@@ -30,9 +30,12 @@ parser.add_argument("-f", "--o_format", dest="OFORMAT",
 parser.add_argument("-g", "--grid", dest="GRID", type=int,
                     choices=[18000, 9000, 4500, 3600, 1800, 1500, 1200, 900, 600, 450],
                     help="Output size type", default=1500)
-parser.add_argument("-s", "--o_size", dest="OSIZE",
+parser.add_argument("--o_size", dest="OSIZE",
                     choices=['small', 'medium', 'big', '2dbig'],
                     help="Output size type", default='2dbig')
+parser.add_argument("-s", "--system", dest="SYSTEM",
+                    choices=['pleiades', 'fish', 'pacman'],
+                    help="Computer system to use.", default='pacman')
 parser.add_argument("-t", "--type", dest="TYPE",
                     choices=['ctrl', 'old_bed', 'ba01_bed', '970mW_hs', 'jak_1985', 'cresis'],
                     help="Output size type", default='ctrl')
@@ -68,20 +71,58 @@ else:
     print('Domain {} not recognized, exiting'.format(DOMAIN))
     import sys
     sys.exit(0)
+
     
 
+def make_pbs_header(system, cores, walltime, queue):
+    systems = {}
+    systems['fish'] = {'gpu' : 16,
+                       'gpu_long' : 16}
+    systems['pacman'] = {'standard_4' : 4,
+                        'standard_16' : 16}
+    systems['pleiades'] = {'long' : 20,
+                           'normal': 20}
+
+    assert system in systems.keys()
+    assert queue in systems[system].keys()
+    assert cores > 0
+
+    ppn = systems[system][queue]
+    nodes = cores / ppn
+
+    if system in ('pleiades'):
+        
+        header = """
+#PBS -S /bin/bash
+#PBS -N cfd
+#PBS -l walltime={walltime}
+#PBS -m e
+#PBS -q {queue}
+#PBS -lselect={nodes}:ncpus={ppn}:mpiprocs={ppn}:model=ivy
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+        """.format(queue=queue, walltime=walltime, nodes=nodes, ppn=ppn)
+    else:
+        header = """
+#!/bin/bash
+#PBS -q {queue}
+#PBS -l walltime={walltime}
+#PBS -l nodes={nodes}:ppn={ppn}
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+        """.format(queue=queue, walltime=walltime, nodes=nodes, ppn=ppn)
+
+    return header
+
+    
 REGRIDFILE=args[0]
 INFILE = ''
 PISM_DATANAME = 'pism_Greenland_{}m_mcb_jpl_v{}_{}.nc'.format(GRID, VERSION, TYPE)
 TYPE = '{}_v{}'.format(TYPE, VERSION)
-DURA = 100
-NODES= NN/ PROCS_PER_NODE
+DURA = 20
 
-SHEBANGLINE = "#!/bin/bash"
-MPIQUEUELINE = "#PBS -q {}".format(QUEUE)
-MPITIMELINE = "#PBS -l walltime={}".format(WALLTIME)
-MPISIZELINE = "#PBS -l nodes={}:ppn={}".format(NODES, PROCS_PER_NODE)
-MPIOUTLINE = "#PBS -j oe"
 
 # ########################################################
 # set up parameter sensitivity study: tillphi
@@ -96,11 +137,14 @@ TEFO = (0.02)
 SSA_N = (3.25)
 SSA_E = (1.0)
 
+omega_values = [0.1, 1.0, 10.0]
+alpha_values = [1, 2, 3]
+k_values = [0.0001, 0.001, 0.01, 0.1]
 phi_min_values = [5.0, 7.5, 10.0]
 phi_max_values = [40.]
 topg_min_values = [-900, -700, -500]
-topg_max_values = [300, 500, 700, 900]
-combinations = list(itertools.product(phi_min_values, phi_max_values, topg_min_values, topg_max_values))
+topg_max_values = [500, 700, 900]
+combinations = list(itertools.product(omega_values, alpha_values, k_values, phi_min_values, phi_max_values, topg_min_values, topg_max_values))
 
 TSSTEP = 'daily'
 EXSTEP = 'yearly'
@@ -109,17 +153,15 @@ REGRIDVARS = 'litho_temp,enthalpy,tillwat,bmelt,Href'
 SCRIPTS = []
 POSTS = []
 for n, combination in enumerate(combinations):
-    phi_min = combination[0]
-    phi_max = combination[1]
-    topg_min = combination[2]
-    topg_max = combination[3]
+
+    omega, alpha, k, phi_min, phi_max, topg_min, topg_max = combination
 
     TTPHI = '{},{},{},{}'.format(phi_min, phi_max, topg_min, topg_max)
 
-    EXPERIMENT='{}_{}_sia_e_{}_ppq_{}_tefo_{}_ssa_n_{}_ssa_e_{}_phi_min_{}_phi_max_{}_topg_min_{}_topg_max_{}_hydro_{}'.format(CLIMATE, TYPE, SIA_E, PPQ, TEFO, SSA_N, SSA_E, phi_min, phi_max, topg_min, topg_max, HYDRO)
-    SCRIPT = 'do_g{}m_{}.sh'.format(GRID, EXPERIMENT)
+    EXPERIMENT='{}_{}_sia_e_{}_ppq_{}_tefo_{}_ssa_n_{}_ssa_e_{}_phi_min_{}_phi_max_{}_topg_min_{}_topg_max_{}_hydro_{}_omega_{}_alpha_{}_k_{}'.format(CLIMATE, TYPE, SIA_E, PPQ, TEFO, SSA_N, SSA_E, phi_min, phi_max, topg_min, topg_max, HYDRO, omega, alpha, k)
+    SCRIPT = 'do_{}_g{}m_{}.sh'.format(DOMAIN.lower(), GRID, EXPERIMENT)
     SCRIPTS.append(SCRIPT)
-    POST = 'do_g{}m_{}_post.sh'.format(GRID, EXPERIMENT)
+    POST = 'do_{}_g{}m_{}_post.sh'.format(DOMAIN.lower(), GRID, EXPERIMENT)
     POSTS.append(POST)
     
     for filename in (SCRIPT, POST):
@@ -128,21 +170,15 @@ for n, combination in enumerate(combinations):
         except OSError:
             pass
 
+    pbs_header = make_pbs_header(SYSTEM, NN, WALLTIME, QUEUE)
+        
     
     os.environ['PISM_EXPERIMENT'] = EXPERIMENT
     os.environ['PISM_TITLE'] = 'Greenland Paramter Study'
     
     with open(SCRIPT, 'w') as f:
 
-        f.write('{}\n'.format(SHEBANGLINE))
-        f.write('\n')
-        f.write('{}\n'.format(MPIQUEUELINE))
-        f.write('{}\n'.format(MPITIMELINE))
-        f.write('{}\n'.format(MPISIZELINE))
-        f.write('{}\n'.format(MPIOUTLINE))
-        f.write('\n')
-        f.write('cd $PBS_O_WORKDIR\n')
-        f.write('\n')
+        f.write(pbs_header)
 
         if DOMAIN.lower() in ('jakobshavn'):
             OUTFILE = 'jak_g{}m_{}_{}a.nc'.format(GRID, EXPERIMENT, DURA)
@@ -224,7 +260,7 @@ for n, combination in enumerate(combinations):
     
 
 
-SUBMIT = 'submit_g{GRID}m_{CLIMATE}_{TYPE}_tillphi.sh'.format(GRID=GRID, CLIMATE=CLIMATE, TYPE=TYPE)
+SUBMIT = 'submit_{DOMAIN}_g{GRID}m_{CLIMATE}_{TYPE}_tillphi.sh'.format(DOMAIN=DOMAIN.lower(), GRID=GRID, CLIMATE=CLIMATE, TYPE=TYPE)
 try:
     os.remove(SUBMIT)
 except OSError:
