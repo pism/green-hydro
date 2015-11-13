@@ -12,8 +12,6 @@ parser.description = "Generating scripts for parameter study."
 parser.add_argument("REGRIDFILE", nargs=1)
 parser.add_argument("-N", '--n_procs', dest="N", type=int,
                     help='''Number of cores/processors. Default=64.''', default=64)
-parser.add_argument("-P", '--procs_per_node', dest="PROCS_PER_NODE", type=int,
-                    help='''Cores/Processors per node. Default=4.''', default=4)
 parser.add_argument("-W", '--wall_time', dest="WALLTIME",
                     help='''Walltime. Default: 12:00:00.''', default="12:00:00")
 parser.add_argument("-Q", '--queue', dest="QUEUE", choices=['standard_4', 'standard_16', 'gpu', 'gpu_long', 'long', 'normal'],
@@ -47,7 +45,6 @@ options = parser.parse_args()
 args = options.REGRIDFILE
 
 NN = options.N
-PROCS_PER_NODE = options.PROCS_PER_NODE
 OFORMAT = options.OFORMAT
 OSIZE = options.OSIZE
 QUEUE = options.QUEUE
