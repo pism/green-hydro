@@ -165,7 +165,7 @@ REGRIDFILE=args[0]
 INFILE = ''
 PISM_DATANAME = 'pism_Greenland_{}m_mcb_jpl_v{}_{}.nc'.format(GRID, VERSION, TYPE)
 TYPE = '{}_v{}'.format(TYPE, VERSION)
-DURA = 20
+DURA = 10
 
 
 # ########################################################
@@ -224,10 +224,8 @@ for n, combination in enumerate(combinations):
 
         f.write(pbs_header)
 
-        if DOMAIN.lower() in ('jakobshavn'):
-            OUTFILE = 'jak_g{}m_{}_{}a.nc'.format(GRID, EXPERIMENT, DURA)
-        else:
-            OUTFILE = 'g{}m_{}_{}a.nc'.format(GRID, EXPERIMENT, DURA)
+
+        OUTFILE = '{DOMAIN}_g{GRID}m_{EXPERIMENT}_{DURA}a.nc'.format(DOMAIN=DOMAIN.lower(),GRID=GRID, EXPERIMENT=EXPERIMENT, DURA=DURA)
             
         params_dict = dict()
         params_dict['PISM_DO'] = ''
@@ -320,7 +318,7 @@ with open(SUBMIT, 'w') as f:
 
     for k in range(len(SCRIPTS)):
         f.write('JOBID=$(qsub {script})\n'.format(script=SCRIPTS[k]))
-        f.write('qsub -W depend=afterok:${{JOBID}} {post}\n'.format(post=POSTS[k]))
+        #f.write('qsub -W depend=afterok:${{JOBID}} {post}\n'.format(post=POSTS[k]))
 
 print("\nRun {} to submit all jobs to the scheduler\n".format(SUBMIT))
 
