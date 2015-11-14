@@ -27,7 +27,7 @@ parser.add_argument("-f", "--o_format", dest="OFORMAT",
                     help="Output format", default='netcdf4_parallel')
 parser.add_argument("-g", "--grid", dest="GRID", type=int,
                     choices=[18000, 9000, 4500, 3600, 1800, 1500, 1200, 900, 600, 450],
-                    help="Output size type", default=1500)
+                    help="Horizontal grid resolution", default=1500)
 parser.add_argument("--o_size", dest="OSIZE",
                     choices=['small', 'medium', 'big', '2dbig'],
                     help="Output size type", default='2dbig')
@@ -70,6 +70,7 @@ else:
     import sys
     sys.exit(0)
 
+
 def merge_dicts(*dict_args):
     '''
     Given any number of dicts, shallow copy and merge into a new dict,
@@ -104,12 +105,33 @@ def generate_grid_description(grid_resolution):
     horizontal_grid['-Mx'] = Mx
     horizontal_grid['-My'] = My
 
+    if grid_resolution < 1200:
+        skip_max = 200
+        Mz = 401
+        Mzb = 41
+    elif (grid_resolution >= 1200) and (grid_resolution < 4500):
+        skip_max = 50
+        Mz = 201
+        Mzb = 21
+    elif (grid_resolution >= 4500) and (grid_resolution < 18000):
+        skip_max = 20
+        Mz = 201
+        Mzb = 21
+    else:
+        skip_max = 10
+        Mz = 101
+        Mzb = 11
+
     vertical_grid = {}
     vertical_grid['-Lz'] = 4000
     vertical_grid['-Lzb'] = 2000
     vertical_grid['-z_spacing'] = 'equal'
-    vertical_grid['-Mz'] = 6
-    vertical_grid['-Mzb'] = 6
+    vertical_grid['-Mz'] = Mz
+    vertical_grid['-Mzb'] = Mzb
+
+    grid_options = {}
+    grid_options['-skip'] = ''
+    grid_options['-skip_max'] = skip_max
 
     grid_dict = merge_dicts( horizontal_grid, vertical_grid)
 
