@@ -3,7 +3,6 @@
 
 import itertools
 import os
-import subprocess
 from argparse import ArgumentParser
 
 # Set up the option parser
@@ -197,7 +196,7 @@ DURA = 10
 HYDRO = 'distributed'
 PISM_SURFACE_BCFILE = 'GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc'
 
-SIA_E = (1.75)
+SIA_E = (1.25)
 PPQ = (0.6)
 TEFO = (0.02)
 SSA_N = (3.25)
