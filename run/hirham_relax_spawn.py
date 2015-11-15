@@ -226,6 +226,7 @@ for n, combination in enumerate(combinations):
 
     tl_dir = '{}m_{}_{}'.format(GRID, CLIMATE, TYPE)
     nc_dir = 'processed'
+    rc_dir = DOMAIN.lower()
     fill = '-2e9'
         
     with open(POST, 'w') as f:
@@ -241,15 +242,15 @@ for n, combination in enumerate(combinations):
         f.write('cd $PBS_O_WORKDIR\n')
         f.write('\n')
 
-        f.write(' if [ ! -d {tl_dir}/{nc_dir} ]; then mkdir -p {tl_dir}/{nc_dir}; fi\n'.format(tl_dir=tl_dir, nc_dir=nc_dir))
+        f.write(' if [ ! -d {tl_dir}/{nc_dir}/{rc_dir} ]; then mkdir -p {tl_dir}/{nc_dir}/{rc_dir}; fi\n'.format(tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write('\n')
         f.write('if [ -f {} ]; then\n'.format(OUTFILE))
-        f.write('  rm -f tmp_{outfile} {tl_dir}/{nc_dir}/{outfile}\n'.format(outfile=OUTFILE, tl_dir=tl_dir, nc_dir=nc_dir))
+        f.write('  rm -f tmp_{outfile} {tl_dir}/{nc_dir}/{rc_dir}/{outfile}\n'.format(outfile=OUTFILE, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write('  ncks -v enthalpy,litho_temp -x {} tmp_{}\n'.format(OUTFILE, OUTFILE))
         f.write('  sh add_epsg3413_mapping.sh tmp_{}\n'.format(OUTFILE))
-        f.write('  ncpdq -O --64 -a time,y,x tmp_{outfile} {tl_dir}/{nc_dir}/{outfile}\n'.format(outfile=OUTFILE, tl_dir=tl_dir, nc_dir=nc_dir))
-        f.write(  '''  ncap2 -O -s "uflux=ubar*thk; vflux=vbar*thk; velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {{velshear_mag={fill}; velbase_mag={fill}; velsurf_mag={fill}; flux_mag={fill};}}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag);" {tl_dir}/{nc_dir}/{outfile} {tl_dir}/${nc_dir}/{outfile}\n'''.format(outfile=OUTFILE, fill=fill, tl_dir=tl_dir, nc_dir=nc_dir))
-        f.write('  ncatted -a bed_data_set,run_stats,o,c,"{MYTYPE}" -a grid_dx_meters,run_stats,o,f,{GRID} -a grid_dy_meters,run_stats,o,f,{GRID} -a long_name,uflux,o,c,"Vertically-integrated horizontal flux of ice in the X direction" -a long_name,vflux,o,c,"Vertically-integrated horizontal flux of ice in the Y direction" -a units,uflux,o,c,"m2 year-1" -a units,vflux,o,c,"m2 year-1" -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" {tl_dir}/{nc_dir}/{outfile}\n'.format(MYTYPE=MYTYPE, GRID=GRID, tl_dir=tl_dir, nc_dir=nc_dir, outfile=OUTFILE))
+        f.write('  ncpdq -O --64 -a time,y,x tmp_{outfile} {tl_dir}/{nc_dir}/{rc_dir}/{outfile}\n'.format(outfile=OUTFILE, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
+        f.write(  '''  ncap2 -O -s "uflux=ubar*thk; vflux=vbar*thk; velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {{velshear_mag={fill}; velbase_mag={fill}; velsurf_mag={fill}; flux_mag={fill};}}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag);" {tl_dir}/{nc_dir}/{rc_dir}/{outfile} {tl_dir}/${nc_dir}/{rc_dir}/{outfile}\n'''.format(outfile=OUTFILE, fill=fill, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
+        f.write('  ncatted -a bed_data_set,run_stats,o,c,"{MYTYPE}" -a grid_dx_meters,run_stats,o,f,{GRID} -a grid_dy_meters,run_stats,o,f,{GRID} -a long_name,uflux,o,c,"Vertically-integrated horizontal flux of ice in the X direction" -a long_name,vflux,o,c,"Vertically-integrated horizontal flux of ice in the Y direction" -a units,uflux,o,c,"m2 year-1" -a units,vflux,o,c,"m2 year-1" -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" {tl_dir}/{nc_dir}/{rc_dir}/{outfile}\n'.format(MYTYPE=MYTYPE, GRID=GRID, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir, outfile=OUTFILE))
         f.write('fi\n')
         f.write('\n')
         
