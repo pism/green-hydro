@@ -194,6 +194,7 @@ for n, combination in enumerate(combinations):
         params_dict['PISM_EXEC'] = pism_exec
         params_dict['PISM_DATANAME'] = PISM_DATANAME
         params_dict['PISM_SURFACE_BC_FILE'] = PISM_SURFACE_BCFILE
+        params_dict['PISM_OCEAN_BCFILE']= 'ocean_forcing_{GRID}m_1989-2011_v{VERSION}_{TYPE}_{OCEAN}_1989_baseline.nc'.format(GRID=GRID, VERSION=VERSION, TYPE=TYPE, OCEAN=OCEAN)
         params_dict['PISM_CONFIG'] = 'hindcast_config.nc'
         params_dict['REGRIDFILE'] = REGRIDFILE
         params_dict['TSSTEP'] = TSSTEP
@@ -210,7 +211,6 @@ for n, combination in enumerate(combinations):
         params_dict['PARAM_CALVING'] = CALVING
         params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
         params_dict['PARAM_CALVING_K'] = calving_k
-        
         
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
         cmd = ' '.join([params, './run.sh', str(NN), CLIMATE, str(DURA), str(GRID), 'hybrid', HYDRO, OUTFILE, INFILE, '2>&1 | tee job.${PBS_JOBID}'])
