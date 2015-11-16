@@ -124,7 +124,6 @@ cd $PBS_O_WORKDIR
 REGRIDFILE=args[0]
 INFILE = ''
 PISM_DATANAME = 'pism_Greenland_{}m_mcb_jpl_v{}_{}.nc'.format(GRID, VERSION, TYPE)
-TYPE = '{}_v{}'.format(TYPE, VERSION)
 DURA = 20
 
 
@@ -162,7 +161,7 @@ for n, combination in enumerate(combinations):
 
     TTPHI = '{},{},{},{}'.format(phi_min, phi_max, topg_min, topg_max)
 
-    EXPERIMENT='{CLIMATE}_{TYPE}_sia_e_{SIA_E}_ppq_{PPQ}_tefo_{TEFO}_ssa_n_{SSA_N}_ssa_e_{SSA_E}_phi_min_{phi_min}_phi_max_{phi_max}_topg_min_{topg_min}_topg_max_{topg_max}_hydro_{hydro}_{calving}_k_{calving_k}_thk_threshold_{thk_threshold}_ocean_{OCEAN}'.format(CLIMATE=CLIMATE, TYPE=TYPE, SIA_E=SIA_E, PPQ=PPQ, TEFO=TEFO, SSA_N=SSA_N, SSA_E=SSA_E, phi_min=phi_min, phi_max=phi_max, topg_min=topg_min, topg_max=topg_max, hydro=HYDRO, calving=CALVING, thk_threshold=calving_thk_threshold, calving_k=calving_k, OCEAN=OCEAN)
+    EXPERIMENT='{CLIMATE}_{TYPE}_{VERSION}_sia_e_{SIA_E}_ppq_{PPQ}_tefo_{TEFO}_ssa_n_{SSA_N}_ssa_e_{SSA_E}_phi_min_{phi_min}_phi_max_{phi_max}_topg_min_{topg_min}_topg_max_{topg_max}_hydro_{hydro}_{calving}_k_{calving_k}_thk_threshold_{thk_threshold}_ocean_{OCEAN}'.format(CLIMATE=CLIMATE, TYPE=TYPE, SIA_E=SIA_E, PPQ=PPQ, TEFO=TEFO, SSA_N=SSA_N, SSA_E=SSA_E, phi_min=phi_min, phi_max=phi_max, topg_min=topg_min, topg_max=topg_max, hydro=HYDRO, calving=CALVING, thk_threshold=calving_thk_threshold, calving_k=calving_k, OCEAN=OCEAN, VERSION=VERSION)
     SCRIPT = 'do_{}_g{}m_{}.sh'.format(DOMAIN.lower(), GRID, EXPERIMENT)
     SCRIPTS.append(SCRIPT)
     POST = 'do_{}_g{}m_{}_post.sh'.format(DOMAIN.lower(), GRID, EXPERIMENT)
@@ -194,7 +193,7 @@ for n, combination in enumerate(combinations):
         params_dict['PISM_EXEC'] = pism_exec
         params_dict['PISM_DATANAME'] = PISM_DATANAME
         params_dict['PISM_SURFACE_BC_FILE'] = PISM_SURFACE_BCFILE
-        params_dict['PISM_OCEAN_BCFILE']= 'ocean_forcing_{GRID}m_1989-2011_{TYPE}_{OCEAN}_1989_baseline.nc'.format(GRID=GRID, VERSION=VERSION, TYPE=TYPE, OCEAN=OCEAN)
+        params_dict['PISM_OCEAN_BCFILE']= 'ocean_forcing_{GRID}m_1989-2011_v{VERSION}_{TYPE}_{OCEAN}_1989_baseline.nc'.format(GRID=GRID, VERSION=VERSION, TYPE=TYPE, OCEAN=OCEAN)
         params_dict['PISM_CONFIG'] = 'hindcast_config.nc'
         params_dict['REGRIDFILE'] = REGRIDFILE
         params_dict['TSSTEP'] = TSSTEP
@@ -218,7 +217,7 @@ for n, combination in enumerate(combinations):
         f.write(cmd)
         f.write('\n')
 
-        if TYPE in 'ctrl_v2_1985':
+        if CTYPE in 'v2_1985':
             MYTYPE = "MO14 2015-04-27"
         else:
             import sys
