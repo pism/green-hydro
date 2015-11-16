@@ -206,7 +206,8 @@ for n, combination in enumerate(combinations):
         params_dict['PARAM_PPQ'] = PPQ
         params_dict['PARAM_TEFO'] = TEFO
         params_dict['PARAM_TTPHI'] = TTPHI
-        params_dict['PARAM_FTT'] = 'foo'
+        params_dict['PARAM_FTT'] = ''
+        params_dict['PARAM_CALVING'] = CALVING
         params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
         params_dict['PARAM_CALVING_K'] = calving_k
         
