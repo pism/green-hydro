@@ -142,12 +142,12 @@ TEFO = (0.02)
 SSA_N = (3.25)
 SSA_E = (1.0)
 
-calving_thk_threshold_values = [100, 300]
+calving_thk_threshold_values = [100, 300, 500]
 calving_k_values = [1e15, 1e18]
 phi_min_values = [5.0]
 phi_max_values = [40.]
-topg_min_values = [-900, -700, -500]
-topg_max_values = [500, 700, 900]
+topg_min_values = [-700]
+topg_max_values = [700]
 combinations = list(itertools.product(calving_thk_threshold_values, calving_k_values, phi_min_values, phi_max_values, topg_min_values, topg_max_values))
 
 TSSTEP = 'daily'
