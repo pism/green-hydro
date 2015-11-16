@@ -217,7 +217,7 @@ for n, combination in enumerate(combinations):
         f.write(cmd)
         f.write('\n')
 
-        if TYPE in 'v2_1985':
+        if VERSION in 'v2_1985':
             MYTYPE = "MO14 2015-04-27"
         else:
             import sys
