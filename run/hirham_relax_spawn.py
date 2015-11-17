@@ -246,7 +246,7 @@ for n, combination in enumerate(combinations):
         f.write('\n')
         f.write('if [ -f {} ]; then\n'.format(OUTFILE))
         f.write('  rm -f tmp_{outfile} {tl_dir}/{nc_dir}/{rc_dir}/{outfile}\n'.format(outfile=OUTFILE, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
-        f.write('  ncks -v enthalpy,litho_temp -x {} tmp_{}\n'.format(OUTFILE, OUTFILE))
+        f.write('  ncks -v enthalpy,litho_temp -x {OUTFILE} tmp_{OUTFILE}\n'.format(OUTFILE=OUTFILE))
         f.write('  sh add_epsg3413_mapping.sh tmp_{}\n'.format(OUTFILE))
         f.write('  ncpdq -O --64 -a time,y,x tmp_{outfile} {tl_dir}/{nc_dir}/{rc_dir}/{outfile}\n'.format(outfile=OUTFILE, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write(  '''  ncap2 -O -s "uflux=ubar*thk; vflux=vbar*thk; velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {{velshear_mag={fill}; velbase_mag={fill}; velsurf_mag={fill}; flux_mag={fill};}}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag);" {tl_dir}/{nc_dir}/{rc_dir}/{outfile} {tl_dir}/{nc_dir}/{rc_dir}/{outfile}\n'''.format(outfile=OUTFILE, fill=fill, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
