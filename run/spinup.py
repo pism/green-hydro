@@ -25,8 +25,8 @@ parser.add_argument("-c", "--climate", dest="CLIMATE",
                     help="Climate", default='paleo')
 parser.add_argument("-g", "--grid", dest="GRID", type=int,
                     choices=[
-                        18000, 9000, 4500, 3600, 1800, 1500, 1200, 900, 600, 450],
-                    help="Output size type", default=9000)
+                        9000, 4500, 3600, 1800, 1500, 1200, 900, 600],
+                    help="Horizontal grid resolution", default=9000)
 parser.add_argument("-s", "--o_size", dest="OSIZE",
                     choices=['small', 'medium', 'big', '2dbig'],
                     help="Output size type", default='2dbig')
@@ -200,6 +200,30 @@ for n, combination in enumerate(combinations):
         START = ftt_starttime
         DURA = END - START
         TYPE = 'ftt'
+
+        params_dict['STARTEND'] = '{},{}'.format(START, END)
+        params_dict['DURA'] = DURA
+        params_dict['PARAM_FTT'] = 'yes'
+        params_dict['PARAM_E_AGE_COUPLING'] = 'yes'
+        params_dict['REGRIDFILE'] = OUTFILE_CTRL
+        
+        OUTFILE_FTT = 'g{GRID}m_m{END}a_{EXPERIMENT}_{TYPE}'.format(
+            GRID=GRID, EXPERIMENT=EXPERIMENT, END=-END,TYPE=TYPE)
+
+        params = ' '.join(['='.join([k, str(v)])
+                           for k, v in params_dict.items()])
+        cmd = ' '.join([params, './run.sh', str(NN), CLIMATE, str(params_dict['DURA']),
+                        str(GRID), 'hybrid', HYDRO, '.'.join([OUTFILE_FTT, 'nc']), INFILE, '2>&1 | tee job_{TYPE}.${{PBS_JOBID}}'.format(TYPE=TYPE)])
+
+        f.write(cmd)
+        f.write('\n\n')
+
+        
+        ## E-AGE / FTT simulation
+        
+        START = ftt_starttime
+        DURA = END - START
+        TYPE = 'e_age_ftt'
 
         params_dict['STARTEND'] = '{},{}'.format(START, END)
         params_dict['DURA'] = DURA
