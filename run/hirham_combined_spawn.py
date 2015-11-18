@@ -299,7 +299,7 @@ for n, combination in enumerate(combinations):
         f.write('  ncatted -a bed_data_set,run_stats,o,c,"{mytype}" -a grid_dx_meters,run_stats,o,f,{grid} -a grid_dy_meters,run_stats,o,f,{grid} -a long_name,uflux,o,c,"Vertically-integrated horizontal flux of ice in the X direction" -a long_name,vflux,o,c,"Vertically-integrated horizontal flux of ice in the Y direction" -a units,uflux,o,c,"m2 year-1" -a units,vflux,o,c,"m2 year-1" -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" {tl_dir}/{nc_dir}/{rc_dir}/{relax_outfile}\n'.format(mytype=mytype, grid=grid, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir, relax_outfile=relax_outfile))
         f.write('fi\n')
         f.write('\n')
-r        f.write('if [ -f {} ]; then\n'.format(hindcast_outfile))
+        f.write('if [ -f {} ]; then\n'.format(hindcast_outfile))
         f.write('  rm -f tmp_{hindcast_outfile} tmp_ex_{hindcast_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{hindcast_outfile} {tl_dir}/{nc_dir}/{rc_dir}/ex_{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write('  ncks -v enthalpy,litho_temp -x {hindcast_outfile} tmp_{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile))
         f.write('  ncks -O --64 ex_{hindcast_oufile} {tl_dir}/{nc_dir}/{rc_dir}/ex_{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
