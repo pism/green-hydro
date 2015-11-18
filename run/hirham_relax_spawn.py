@@ -161,7 +161,11 @@ for n, combination in enumerate(combinations):
 
     TTPHI = '{},{},{},{}'.format(phi_min, phi_max, topg_min, topg_max)
 
-    EXPERIMENT='{CLIMATE}_{TYPE}_{VERSION}_sia_e_{SIA_E}_ppq_{PPQ}_tefo_{TEFO}_ssa_n_{SSA_N}_ssa_e_{SSA_E}_phi_min_{phi_min}_phi_max_{phi_max}_topg_min_{topg_min}_topg_max_{topg_max}_hydro_{hydro}_{calving}_k_{calving_k}_thk_threshold_{thk_threshold}_ocean_{OCEAN}'.format(CLIMATE=CLIMATE, TYPE=TYPE, SIA_E=SIA_E, PPQ=PPQ, TEFO=TEFO, SSA_N=SSA_N, SSA_E=SSA_E, phi_min=phi_min, phi_max=phi_max, topg_min=topg_min, topg_max=topg_max, hydro=HYDRO, calving=CALVING, thk_threshold=calving_thk_threshold, calving_k=calving_k, OCEAN=OCEAN, VERSION=VERSION)
+    if CALVING in ('eigen_calving'):
+        EXPERIMENT='{CLIMATE}_{TYPE}_{VERSION}_sia_e_{SIA_E}_ppq_{PPQ}_tefo_{TEFO}_ssa_n_{SSA_N}_ssa_e_{SSA_E}_phi_min_{phi_min}_phi_max_{phi_max}_topg_min_{topg_min}_topg_max_{topg_max}_hydro_{hydro}_{calving}_k_{calving_k}_thk_threshold_{thk_threshold}_ocean_{OCEAN}'.format(CLIMATE=CLIMATE, TYPE=TYPE, SIA_E=SIA_E, PPQ=PPQ, TEFO=TEFO, SSA_N=SSA_N, SSA_E=SSA_E, phi_min=phi_min, phi_max=phi_max, topg_min=topg_min, topg_max=topg_max, hydro=HYDRO, calving=CALVING, thk_threshold=calving_thk_threshold, calving_k=calving_k, OCEAN=OCEAN, VERSION=VERSION)
+    else:
+        EXPERIMENT='{CLIMATE}_{TYPE}_{VERSION}_sia_e_{SIA_E}_ppq_{PPQ}_tefo_{TEFO}_ssa_n_{SSA_N}_ssa_e_{SSA_E}_phi_min_{phi_min}_phi_max_{phi_max}_topg_min_{topg_min}_topg_max_{topg_max}_hydro_{hydro}_{calving}_k_{calving_k}_thk_threshold_{thk_threshold}_ocean_{OCEAN}'.format(CLIMATE=CLIMATE, TYPE=TYPE, SIA_E=SIA_E, PPQ=PPQ, TEFO=TEFO, SSA_N=SSA_N, SSA_E=SSA_E, phi_min=phi_min, phi_max=phi_max, topg_min=topg_min, topg_max=topg_max, hydro=HYDRO, calving=CALVING, OCEAN=OCEAN, VERSION=VERSION)
+        
     SCRIPT = 'do_{}_g{}m_{}.sh'.format(DOMAIN.lower(), GRID, EXPERIMENT)
     SCRIPTS.append(SCRIPT)
     POST = 'do_{}_g{}m_{}_post.sh'.format(DOMAIN.lower(), GRID, EXPERIMENT)
@@ -208,8 +212,9 @@ for n, combination in enumerate(combinations):
         params_dict['PARAM_TTPHI'] = TTPHI
         params_dict['PARAM_FTT'] = ''
         params_dict['PARAM_CALVING'] = CALVING
-        params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
-        params_dict['PARAM_CALVING_K'] = calving_k
+        if CALVING in ('eigen_calving'):
+            params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
+            params_dict['PARAM_CALVING_K'] = calving_k
         
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
         cmd = ' '.join([params, './run.sh', str(NN), CLIMATE, str(DURA), str(GRID), 'hybrid', HYDRO, OUTFILE, INFILE, '2>&1 | tee job.${PBS_JOBID}'])

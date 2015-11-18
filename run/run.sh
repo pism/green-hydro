@@ -136,7 +136,7 @@ PISM_FTT_FILE=$PISM_DATANAME
 if [ -z "${PARAM_FTT}" ] ; then  # check if env var is NOT set
     FTT=""
 else
-    FTT=",forcing -force_to_thickness_file $PISM_FTT_FILE"
+    FTT=",forcing -force_to_thickness_start_time 0 -force_to_thickness_file $PISM_FTT_FILE"
 fi
 
 if [ -z "${PARAM_BEDDEF}" ] ; then  # check if env var is NOT set
@@ -596,8 +596,8 @@ if [ -z "${NODIAGS}" ] ; then  # check if env var is NOT set
     if [ -z "${PISM_TIMEFILE}" ] ; then  # check if env var is NOT set
         if [ -z "${STARTEND}" ] ; then  # check if env var is NOT set
             DURATION=$3
-            START=-$(($DURATION))
-            END=0
+            END=$DURATION
+            START=0
             RUNSTARTEND="-ys $START -ye $END"
         else
             STARTEND=$STARTEND
