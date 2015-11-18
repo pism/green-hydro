@@ -160,7 +160,6 @@ for n, combination in enumerate(combinations):
     calving_thk_threshold, calving_k , phi_min, phi_max, topg_min, topg_max = combination
 
     TTPHI = '{},{},{},{}'.format(phi_min, phi_max, topg_min, topg_max)
-    print CALVING
     if CALVING in ('eigen_calving'):
         EXPERIMENT='{CLIMATE}_{TYPE}_{VERSION}_sia_e_{SIA_E}_ppq_{PPQ}_tefo_{TEFO}_ssa_n_{SSA_N}_ssa_e_{SSA_E}_phi_min_{phi_min}_phi_max_{phi_max}_topg_min_{topg_min}_topg_max_{topg_max}_hydro_{hydro}_{calving}_k_{calving_k}_thk_threshold_{thk_threshold}_ocean_{OCEAN}'.format(CLIMATE=CLIMATE, TYPE=TYPE, SIA_E=SIA_E, PPQ=PPQ, TEFO=TEFO, SSA_N=SSA_N, SSA_E=SSA_E, phi_min=phi_min, phi_max=phi_max, topg_min=topg_min, topg_max=topg_max, hydro=HYDRO, calving=CALVING, calving_k=calving_k, thk_threshold=calvin_thk_threshold, OCEAN=OCEAN, VERSION=VERSION)
     else:
