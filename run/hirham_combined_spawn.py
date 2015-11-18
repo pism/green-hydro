@@ -302,7 +302,7 @@ for n, combination in enumerate(combinations):
         f.write('if [ -f {} ]; then\n'.format(hindcast_outfile))
         f.write('  rm -f tmp_{hindcast_outfile} tmp_ex_{hindcast_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{hindcast_outfile} {tl_dir}/{nc_dir}/{rc_dir}/ex_{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write('  ncks -v enthalpy,litho_temp -x {hindcast_outfile} tmp_{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile))
-        f.write('  ncks -O --64 ex_{hindcast_oufile} {tl_dir}/{nc_dir}/{rc_dir}/ex_{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
+        f.write('  ncks -O --64 ex_{hindcast_outfile} {tl_dir}/{nc_dir}/{rc_dir}/ex_{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write('  sh add_epsg3413_mapping.sh tmp_{}\n'.format(hindcast_outfile))
         f.write('  ncpdq -o --64 -a time,y,x tmp_{hindcast_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write(  '''  ncap2 -O -s "uflux=ubar*thk; vflux=vbar*thk; velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {{velshear_mag={fill}; velbase_mag={fill}; velsurf_mag={fill}; flux_mag={fill};}}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag);" {tl_dir}/{nc_dir}/{rc_dir}/{hindcast_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{hindcast_outfile}\n'''.format(hindcast_outfile=hindcast_outfile, fill=fill, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
