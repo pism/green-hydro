@@ -258,7 +258,7 @@ for n, combination in enumerate(combinations):
         params_dict['PISM_OCEAN_BCFILE']= 'ocean_forcing_{grid}m_1989-2011_v{version}_{bed_type}_{ocean}.nc'.format(grid=grid, version=version, bed_type=bed_type, ocean=ocean)
 
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
-        cmd = ' '.join([params, './run.sh', str(nn), climate, str(dura), str(grid), 'hybrid', hydro, outfile, infile, '2>&1 | tee job.${PBS_JOBID}'])
+        cmd = ' '.join([params, './run.sh', str(nn), climate, str(dura), str(grid), 'hybrid', hydro, hindcast_outfile, infile, '2>&1 | tee job.${PBS_JOBID}'])
 
         f.write(cmd)
         f.write('\n')
