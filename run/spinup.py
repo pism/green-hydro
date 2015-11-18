@@ -1,259 +1,322 @@
 #!/usr/bin/env python
-# Copyright (C) 2014-2015 Andy Aschwanden
+# Copyright (C) 2015 Andy Aschwanden
 
 import itertools
+from collections import OrderedDict
 import os
-import subprocess
 from argparse import ArgumentParser
 
-# Set up the option parser
+grid_choices = [9000, 4500, 3600, 1800, 1500, 1200, 900, 600]
+
+# set up the option parser
 parser = ArgumentParser()
-parser.description = "Generating scripts for initialization."
-parser.add_argument("-N", '--n_procs', dest="N", type=int,
-                    help='''Number of cores/processors. Default=64.''', default=64)
-parser.add_argument("-P", '--procs_per_node', dest="PROCS_PER_NODE", type=int,
-                    help='''Cores/Processors per node. Default=4.''', default=4)
-parser.add_argument("-W", '--wall_time', dest="WALLTIME",
-                    help='''Walltime. Default: 12:00:00.''', default="12:00:00")
-parser.add_argument("-Q", '--queue', dest="QUEUE",
-                    help='''Queue. Default=standard_4.''', default='standard_4')
-parser.add_argument("-f", "--o_format", dest="OFORMAT",
-                    choices=['netcdf3', 'netcdf4_parallel', 'pnetcdf'],
-                    help="Output format", default='netcdf4_parallel')
-parser.add_argument("-c", "--climate", dest="CLIMATE",
+parser.description = "Generating scripts for model initialization."
+parser.add_argument("-n", '--n_procs', dest="n", type=int,
+                    help='''number of cores/processors. default=64.''', default=64)
+parser.add_argument("-w", '--wall_time', dest="walltime",
+                    help='''walltime. default: 12:00:00.''', default="12:00:00")
+parser.add_argument("-q", '--queue', dest="queue", choices=['standard_4', 'standard_16', 'gpu', 'gpu_long', 'long', 'normal'],
+                    help='''queue. default=standard_4.''', default='standard_4')
+parser.add_argument("--climate", dest="climate",
                     choices=['const', 'paleo'],
                     help="Climate", default='paleo')
-parser.add_argument("-g", "--grid", dest="GRID", type=int,
-                    choices=[
-                        9000, 4500, 3600, 1800, 1500, 1200, 900, 600],
-                    help="Horizontal grid resolution", default=9000)
-parser.add_argument("-s", "--o_size", dest="OSIZE",
+parser.add_argument("--calving", dest="calving",
+                    choices=['float_kill', 'ocean_kill', 'eigen_calving'],
+                    help="claving", default='ocean_kill')
+parser.add_argument("-d", "--domain", dest="domain",
+                    choices=['greenland'],
+                    help="sets the modeling domain", default='greenland')
+parser.add_argument("-f", "--o_format", dest="oformat",
+                    choices=['netcdf3', 'netcdf4_parallel', 'pnetcdf'],
+                    help="output format", default='netcdf4_parallel')
+parser.add_argument("-g", "--grid", dest="grid", type=int,
+                    choices=grid_choices,
+                    help="horizontal grid resolution", default=9000)
+parser.add_argument("--o_size", dest="osize",
                     choices=['small', 'medium', 'big', '2dbig'],
-                    help="Output size type", default='2dbig')
-parser.add_argument("-t", "--type", dest="TYPE",
-                    choices=[
-                        'ctrl', 'old_bed', 'ba01_bed', '970mW_hs', 'jak_1985', 'cresis'],
-                    help="Output size type", default='970mW_hs')
-parser.add_argument("--dataset_version", dest="VERSION",
-                    choices=['1.1', '1.2', '2'],
-                    help="Input data set version", default='2')
+                    help="output size type", default='2dbig')
+parser.add_argument("-s", "--system", dest="system",
+                    choices=['pleiades', 'fish', 'pacman', 'debug'],
+                    help="computer system to use.", default='pacman')
+parser.add_argument("-b", "--bed_type", dest="bed_type",
+                    choices=['ctrl', 'old_bed', 'ba01_bed', '970mw_hs', 'jak_1985', 'cresis'],
+                    help="output size type", default='ctrl')
+parser.add_argument("--forcing_type", dest="forcing_type",
+                    choices=['ctrl', 'e_age', 'ftt', 'e_age_ftt'],
+                    help="output size type", default='ctrl')
+parser.add_argument("--dataset_version", dest="version",
+                    choices=['2'],
+                    help="input data set version", default='2')
+
 
 options = parser.parse_args()
-wisconsian_holocene_transition = -11000
-ftt_starttime = -5000
-REGRIDVARS = 'litho_temp,enthalpy,tillwat,bmelt,Href'
 
+nn = options.n
+oformat = options.oformat
+osize = options.osize
+queue = options.queue
+walltime = options.walltime
+system = options.system
 
-NN = options.N
-PROCS_PER_NODE = options.PROCS_PER_NODE
-OFORMAT = options.OFORMAT
-OSIZE = options.OSIZE
-QUEUE = options.QUEUE
-WALLTIME = options.WALLTIME
+calving = options.calving
+climate = options.climate
+forcing_type = options.forcing_type
+grid = options.grid
+bed_type = options.bed_type
+version = options.version
 
-CLIMATE = options.CLIMATE
-GRID = options.GRID
-TYPE = options.TYPE
-VERSION = options.VERSION
+domain = options.domain
+if domain.lower() in ('greenland'):
+    pism_exec = 'pismr'
+elif domain.lower() in ('jakobshavn'):
+    x_min = -280000
+    x_max = 320000
+    y_min = -2410000
+    y_max = -2020000
+    pism_exec = '''\'pismo -x_range {x_min},{x_max} -y_range {y_min},{y_max} -bootstrap\''''.format(x_min=x_min, x_max=x_max, y_min=y_min, y_max=y_max)
+else:
+    print('Domain {} not recognized, exiting'.format(domain))
+    import sys
+    sys.exit(0)
 
-INFILE = ''
-PISM_DATANAME = 'pism_Greenland_{}m_mcb_jpl_v{}_{}.nc'.format(
-    GRID, VERSION, TYPE)
-TYPE = '{}_v{}'.format(TYPE, VERSION)
+no_grid_choices = len(grid_choices)
+grid_nos = range(0, no_grid_choices)
+grid_mapping = OrderedDict(zip(grid_choices, grid_nos))
+save_times = [-125000, -25000, -5000, -1500, -1000, -500, -200, -100]
+grid_start_times = OrderedDict(zip(grid_choices, save_times))
 
-NODES = NN / PROCS_PER_NODE
+              
+def make_pbs_header(system, cores, walltime, queue):
+    systems = {}
+    systems['debug'] = {}
+    systems['fish'] = {'gpu' : 16,
+                       'gpu_long' : 16}
+    systems['pacman'] = {'standard_4' : 4,
+                        'standard_16' : 16}
+    systems['pleiades'] = {'long' : 20,
+                           'normal': 20}
 
-SHEBANGLINE = "#!/bin/bash"
-MPIQUEUELINE = "#PBS -q {}".format(QUEUE)
-MPITIMELINE = "#PBS -l walltime={}".format(WALLTIME)
-MPISIZELINE = "#PBS -l nodes={}:ppn={}".format(NODES, PROCS_PER_NODE)
-MPIOUTLINE = "#PBS -j oe"
+    assert system in systems.keys()
+    if system not in 'debug':
+        assert queue in systems[system].keys()
+        assert cores > 0
 
+        ppn = systems[system][queue]
+        nodes = cores / ppn
 
-# TODO:
-# Generate config file from cdl
+    if system in ('debug'):
+
+        header = ''
+        
+    elif system in ('pleiades'):
+        
+        header = """
+#PBS -S /bin/bash
+#PBS -N cfd
+#PBS -l walltime={walltime}
+#PBS -m e
+#PBS -q {queue}
+#PBS -lselect={nodes}:ncpus={ppn}:mpiprocs={ppn}:model=ivy
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+""".format(queue=queue, walltime=walltime, nodes=nodes, ppn=ppn)
+    else:
+        header = """
+#!/bin/bash
+#PBS -q {queue}
+#PBS -l walltime={walltime}
+#PBS -l nodes={nodes}:ppn={ppn}
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+""".format(queue=queue, walltime=walltime, nodes=nodes, ppn=ppn)
+
+    return header
+
+    
+infile = ''
+pism_dataname = 'pism_Greenland_{}m_mcb_jpl_v{}_{}.nc'.format(grid, version, bed_type)
 
 
 # ########################################################
-# set up parameter sensitivity study: tillphi
+# set up model initialization
 # ########################################################
 
+hydro = 'null'
+pism_surface_bcfile = 'GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc'
 
-SIA_E = (3.0)
-PPQ = (0.6)
-TEFO = (0.02)
-SSA_N = (3.25)
-SSA_E = (3.0)
-HYDRO = 'null'
+sia_e = (3.0)
+ppq = (0.6)
+tefo = (0.02)
+ssa_n = (3.25)
+ssa_e = (1.0)
 
+calving_thk_threshold_values = [300]
+calving_k_values = [1e18]
 phi_min_values = [5.0]
 phi_max_values = [40.]
 topg_min_values = [-700]
 topg_max_values = [700]
-combinations = list(itertools.product(
-    phi_min_values, phi_max_values, topg_min_values, topg_max_values))
+combinations = list(itertools.product(calving_thk_threshold_values, calving_k_values, phi_min_values, phi_max_values, topg_min_values, topg_max_values))
 
-TSSTEP = '1'
-EXSTEP = '100'
-REGRIDVARS = 'litho_temp,enthalpy,tillwat,bmelt,Href,age,thk'
+tsstep = 'yearly'
+exstep = '100'
+regridvars = 'age,litho_temp,enthalpy,tillwat,bmelt,Href,thk'
+
+scripts = []
+posts = []
+
+start = grid_start_times[grid]
+end = 0
 
 for n, combination in enumerate(combinations):
-    phi_min = combination[0]
-    phi_max = combination[1]
-    topg_min = combination[2]
-    topg_max = combination[3]
 
-    TTPHI = '{},{},{},{}'.format(phi_min, phi_max, topg_min, topg_max)
+    calving_thk_threshold, calving_k , phi_min, phi_max, topg_min, topg_max = combination
 
-    EXPERIMENT = '{}_{}_sia_e_{}_ppq_{}_tefo_{}_ssa_n_{}_ssa_e_{}_phi_min_{}_phi_max_{}_topg_min_{}_topg_max_{}'.format(
-        CLIMATE, TYPE, SIA_E, PPQ, TEFO, SSA_N, SSA_E, phi_min, phi_max, topg_min, topg_max)
+    ttphi = '{},{},{},{}'.format(phi_min, phi_max, topg_min, topg_max)
 
-    SCRIPT = 'do_g{GRID}m_{EXPERIMENT}.sh'.format(
-        GRID=GRID, EXPERIMENT=EXPERIMENT)
+    name_options = OrderedDict()
+    name_options['sia_e'] = sia_e
+    name_options['ppq'] = ppq
+    name_options['tefo'] = tefo
+    name_options['ssa_n'] = ssa_n
+    name_options['ssa_e'] = ssa_e
+    name_options['phi_min'] = phi_min
+    name_options['phi_max'] = phi_max
+    name_options['topg_min'] = topg_min
+    name_options['topg_max'] = topg_max
+    name_options['calving'] = calving
+    if calving in ('eigen_calving'):
+        name_options['calving_k'] = calving
+        name_options['calving_thk_threshold'] = calving
+    name_options['forcing_type'] = forcing_type
+    
+    vversion = 'v' + str(version)
+    experiment =  '_'.join([climate, vversion, '_'.join(['_'.join([k, str(v)]) for k, v in name_options.items()])])
 
-    for filename in (SCRIPT):
+        
+    script = 'spinup_{}_g{}m_{}.sh'.format(domain.lower(), grid, experiment)
+    scripts.append(script)
+    post = 'spinup_{}_g{}m_{}_post.sh'.format(domain.lower(), grid, experiment)
+    posts.append(post)
+    
+    for filename in (script, post):
         try:
             os.remove(filename)
         except OSError:
             pass
 
-    with open(SCRIPT, 'w') as f:
+    pbs_header = make_pbs_header(system, nn, walltime, queue)
+        
+    
+    os.environ['PISM_EXPERIMENT'] = experiment
+    os.environ['PISM_TITLE'] = 'Greenland Paramter Study'
+    
+    with open(script, 'w') as f:
 
-        f.write('{}\n'.format(SHEBANGLINE))
+        f.write(pbs_header)
+
+
+        outfile = '{domain}_g{grid}m_spinup_{experiment}_0.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment)
+        
+        dura = 10
+        params_dict = dict()
+        params_dict['PISM_DO'] = ''
+        params_dict['PISM_OFORMAT'] = oformat
+        params_dict['PISM_OSIZE'] = osize
+        params_dict['PISM_EXEC'] = pism_exec
+        params_dict['PISM_SAVE'] = ','.join(str(e) for e in save_times[grid_mapping[grid]+1::])
+        params_dict['STARTEND'] = '{},{}'.format(start, end)
+
+        params_dict['PISM_DATANAME'] = pism_dataname
+        params_dict['PISM_SURFACE_BC_FILE'] = pism_surface_bcfile
+        params_dict['PISM_CONFIG'] = 'spinup_config.nc'
+        params_dict['TSSTEP'] = tsstep
+        params_dict['EXSTEP'] = exstep
+        if grid_mapping[grid] > 0:
+            previous_grid =  [k for k, v in grid_mapping.iteritems() if v == grid_mapping[grid] -1][0]
+            regridfile = 'save_{domain}_g{grid}m_spinup_{experiment}_{start}.nc'.format(domain=domain.lower(),grid=previous_grid, experiment=experiment, start=start)
+            params_dict['REGRIDVARS'] = regridvars
+            params_dict['REGRIDFILE'] = regridfile
+        params_dict['SIA_E'] = sia_e
+        params_dict['SSA_E'] = ssa_e
+        params_dict['SSA_N'] = ssa_n
+        params_dict['PARAM_NOAGE'] = ''
+        params_dict['PARAM_PPQ'] = ppq
+        params_dict['PARAM_TEFO'] = tefo
+        params_dict['PARAM_TTPHI'] = ttphi
+        params_dict['PARAM_CALVING'] = calving
+        if calving in ('eigen_calving'):
+            params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
+            params_dict['PARAM_CALVING_K'] = calving_k
+        if forcing_type in ('e_age', 'e_age_ftt'):
+            params_dict['PARAM_E_AGE_COUPLING'] = 'yes'
+        elif forcing_type in ('ftt', 'e_age_ftt'):
+            params_dict['PARAM_FTT'] = 'yes'
+            
+        
+        params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
+        cmd = ' '.join([params, './run.sh', str(nn), climate, str(dura), str(grid), 'hybrid', hydro, outfile, infile, '2>&1 | tee job.${PBS_JOBID}'])
+
+        f.write(cmd)
         f.write('\n')
-        f.write('{}\n'.format(MPIQUEUELINE))
-        f.write('{}\n'.format(MPITIMELINE))
-        f.write('{}\n'.format(MPISIZELINE))
-        f.write('{}\n'.format(MPIOUTLINE))
+
+        if version in 'v2_1985':
+            mytype = "MO14 2015-04-27"
+        else:
+            import sys
+            print('TYPE {} not recognized, exiting'.format(version))
+            sys.exit(0)
+
+    tl_dir = '{}m_{}_{}'.format(grid, climate, bed_type)
+    nc_dir = 'processed'
+    rc_dir = domain.lower()
+    fill = '-2e9'
+        
+    with open(post, 'w') as f:
+
+        f.write('#!/bin/bash\n')
+        f.write('#PBS -q transfer\n')
+        f.write('#PBS -l walltime=4:00:00\n')
+        f.write('#PBS -l nodes=1:ppn=1\n')
+        f.write('#PBS -j oe\n')
+        f.write('\n')
+        f.write('source ~/python/bin/activate\n')
         f.write('\n')
         f.write('cd $PBS_O_WORKDIR\n')
         f.write('\n')
 
-        os.environ['PISM_EXPERIMENT'] = '_'.join([EXPERIMENT, TYPE])
-        os.environ['PISM_TITLE'] = 'Greenland Paleo-Climate Initialization'
-
-        ## CTRL simulation
+        f.write(' if [ ! -d {tl_dir}/{nc_dir}/{rc_dir} ]; then mkdir -p {tl_dir}/{nc_dir}/{rc_dir}; fi\n'.format(tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
+        f.write('\n')
+        f.write('if [ -f {} ]; then\n'.format(outfile))
+        f.write('  rm -f tmp_{outfile} {tl_dir}/{nc_dir}/{rc_dir}/{outfile}\n'.format(outfile=outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
+        f.write('  ncks -v enthalpy,litho_temp -x {outfile} tmp_{outfile}\n'.format(outfile=outfile))
+        f.write('  sh add_epsg3413_mapping.sh tmp_{}\n'.format(outfile))
+        f.write('  ncpdq -o --64 -a time,y,x tmp_{outfile} {tl_dir}/{nc_dir}/{rc_dir}/{outfile}\n'.format(outfile=outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
+        f.write(  '''  ncap2 -O -s "uflux=ubar*thk; vflux=vbar*thk; velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {{velshear_mag={fill}; velbase_mag={fill}; velsurf_mag={fill}; flux_mag={fill};}}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag);" {tl_dir}/{nc_dir}/{rc_dir}/{outfile} {tl_dir}/{nc_dir}/{rc_dir}/{outfile}\n'''.format(outfile=outfile, fill=fill, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
+        f.write('  ncatted -a bed_data_set,run_stats,o,c,"{mytype}" -a grid_dx_meters,run_stats,o,f,{grid} -a grid_dy_meters,run_stats,o,f,{grid} -a long_name,uflux,o,c,"Vertically-integrated horizontal flux of ice in the X direction" -a long_name,vflux,o,c,"Vertically-integrated horizontal flux of ice in the Y direction" -a units,uflux,o,c,"m2 year-1" -a units,vflux,o,c,"m2 year-1" -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" {tl_dir}/{nc_dir}/{rc_dir}/{outfile}\n'.format(mytype=mytype, grid=grid, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir, outfile=outfile))
+        f.write('fi\n')
+        f.write('\n')
         
-        START = -125000
-        END = 0
-        DURA = END - START
-        TYPE = 'ctrl'
-        
-        OUTFILE_CTRL = 'g{GRID}m_m{END}a_{EXPERIMENT}_{TYPE}.nc'.format(
-            GRID=GRID, EXPERIMENT=EXPERIMENT, END=-END,TYPE=TYPE)
-
-        params_dict = dict()
-        params_dict['PISM_DO'] = ''
-        params_dict['PISM_OFORMAT'] = OFORMAT
-        params_dict['PISM_OSIZE'] = OSIZE
-        params_dict['PISM_CONFIG'] = 'spinup_config.nc'
-        params_dict['PARAM_NOAGE'] = ''
-        params_dict['PISM_DATANAME'] = PISM_DATANAME
-        params_dict['TSSTEP'] = TSSTEP
-        params_dict['EXSTEP'] = EXSTEP
-        params_dict['SIA_E'] = SIA_E
-        params_dict['SSA_E'] = SSA_E
-        params_dict['SSA_N'] = SSA_N
-        params_dict['PARAM_PPQ'] = PPQ
-        params_dict['PARAM_TEFO'] = TEFO
-        params_dict['PARAM_TTPHI'] = TTPHI
-        params_dict['PARAM_FTT'] = ''
-        params_dict['PISM_SAVE'] = '-25000,{},{},-1000,-500,-200,-100'.format(
-            wisconsian_holocene_transition, ftt_starttime)
-        params_dict['STARTEND'] = '{},{}'.format(START, END)
-        params_dict['DURA'] = DURA
-
-        params = ' '.join(['='.join([k, str(v)])
-                           for k, v in params_dict.items()])
-        cmd = ' '.join([params, './run.sh', str(NN), CLIMATE, str(params_dict['DURA']),
-                        str(GRID), 'hybrid', HYDRO, '.'.join([OUTFILE_CTRL, 'nc']), INFILE, '2>&1 | tee job_{TYPE}.${{PBS_JOBID}}'.format(TYPE=TYPE)])
-
-        f.write(cmd)
-        f.write('\n\n')
+    
 
 
-        ## E-AGE simulation
-        
-        START = wisconsian_holocene_transition
-        DURA = END - START
-        TYPE = 'e_age'
+submit = 'submit_{domain}_g{grid}m_{climate}_{bed_type}_hirham_relax.sh'.format(domain=domain.lower(), grid=grid, climate=climate, bed_type=bed_type)
+try:
+    os.remove(submit)
+except OSError:
+    pass
 
-        params_dict['STARTEND'] = '{},{}'.format(START, END)
-        params_dict['DURA'] = DURA
-        params_dict['PARAM_E_AGE_COUPLING'] = 'yes'
-        params_dict['REGRIDFILE'] = OUTFILE_CTRL
+with open(submit, 'w') as f:
 
-        OUTFILE_E_AGE = 'g{GRID}m_m{END}a_{EXPERIMENT}_{TYPE}'.format(
-            GRID=GRID, EXPERIMENT=EXPERIMENT, END=-END,TYPE=TYPE)
+    f.write('#!/bin/bash\n')
 
-        params = ' '.join(['='.join([k, str(v)])
-                           for k, v in params_dict.items()])
-        cmd = ' '.join([params, './run.sh', str(NN), CLIMATE, str(params_dict['DURA']),
-                        str(GRID), 'hybrid', HYDRO, '.'.join([OUTFILE_E_AGE, 'nc']), INFILE, '2>&1 | tee job_{TYPE}.${{PBS_JOBID}}'.format(TYPE=TYPE)])
+    for k in range(len(scripts)):
+        f.write('JOBID=$(qsub {script})\n'.format(script=scripts[k]))
+        f.write('qsub -W depend=afterok:${{JOBID}} {post}\n'.format(post=posts[k]))
 
-        f.write(cmd)
-        f.write('\n\n')
+print("\nRun {} to submit all jobs to the scheduler\n".format(submit))
 
-
-        ## FTT simulation
-        
-        START = ftt_starttime
-        DURA = END - START
-        TYPE = 'ftt'
-
-        params_dict['STARTEND'] = '{},{}'.format(START, END)
-        params_dict['DURA'] = DURA
-        params_dict['PARAM_FTT'] = 'yes'
-        params_dict['PARAM_E_AGE_COUPLING'] = 'yes'
-        params_dict['REGRIDFILE'] = OUTFILE_CTRL
-        
-        OUTFILE_FTT = 'g{GRID}m_m{END}a_{EXPERIMENT}_{TYPE}'.format(
-            GRID=GRID, EXPERIMENT=EXPERIMENT, END=-END,TYPE=TYPE)
-
-        params = ' '.join(['='.join([k, str(v)])
-                           for k, v in params_dict.items()])
-        cmd = ' '.join([params, './run.sh', str(NN), CLIMATE, str(params_dict['DURA']),
-                        str(GRID), 'hybrid', HYDRO, '.'.join([OUTFILE_FTT, 'nc']), INFILE, '2>&1 | tee job_{TYPE}.${{PBS_JOBID}}'.format(TYPE=TYPE)])
-
-        f.write(cmd)
-        f.write('\n\n')
-
-        
-        ## E-AGE / FTT simulation
-        
-        START = ftt_starttime
-        DURA = END - START
-        TYPE = 'e_age_ftt'
-
-        params_dict['STARTEND'] = '{},{}'.format(START, END)
-        params_dict['DURA'] = DURA
-        params_dict['PARAM_FTT'] = 'yes'
-        params_dict['PARAM_E_AGE_COUPLING'] = 'yes'
-        params_dict['REGRIDFILE'] = OUTFILE_CTRL
-        
-        OUTFILE_FTT = 'g{GRID}m_m{END}a_{EXPERIMENT}_{TYPE}'.format(
-            GRID=GRID, EXPERIMENT=EXPERIMENT, END=-END,TYPE=TYPE)
-
-        params = ' '.join(['='.join([k, str(v)])
-                           for k, v in params_dict.items()])
-        cmd = ' '.join([params, './run.sh', str(NN), CLIMATE, str(params_dict['DURA']),
-                        str(GRID), 'hybrid', HYDRO, '.'.join([OUTFILE_FTT, 'nc']), INFILE, '2>&1 | tee job_{TYPE}.${{PBS_JOBID}}'.format(TYPE=TYPE)])
-
-        f.write(cmd)
-        f.write('\n\n')
-
-# SUBMIT = 'submit_g{GRID}m_{CLIMATE}_{TYPE}_tillphi.sh'.format(GRID=GRID, CLIMATE=CLIMATE, TYPE=TYPE)
-# try:
-#     os.remove(SUBMIT)
-# except OSError:
-#     pass
-
-# with open(SUBMIT, 'w') as f:
-
-#     f.write('#!/bin/bash\n')
-
-#     for k in range(len(SCRIPTS)):
-#         f.write('JOBID=$(qsub {script})\n'.format(script=SCRIPTS[k]))
-#         f.write('qsub -W depend=afterok:${{JOBID}} {post}\n'.format(post=POSTS[k]))
-
-# print("\nRun {} to submit all jobs to the scheduler\n".format(SUBMIT))

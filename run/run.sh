@@ -572,7 +572,7 @@ fi
 if [ -n "${PISM_SAVE:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME                      PISM_SAVE = $PISM_SAVE  (already set)"
   OUTNAMESANS=`basename $OUTNAME .nc`
-  SAVE="-save_times $PISM_SAVE -save_split -save_file snap_$OUTNAMESANS"
+  SAVE="-save_times $PISM_SAVE -save_split -save_force_output_times -save_file save_$OUTNAMESANS"
 else
   SAVE=""
 fi
