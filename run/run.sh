@@ -329,7 +329,7 @@ elif [ "$PARAM_CALVING" == "eigen_calving" ]; then
     echo "Make sure you set the eigen-calving parameters"
     echo "This option is untested"
 elif [ "$PARAM_CALVING" == "thickness_calving" ]; then
-    CALVING="-calving $PARAM_CALVING"
+    CALVING="-calving $PARAM_CALVING -thickness_calving_threshold $CALVING_THK"
     echo "Make sure you set the thickness-calving parameters"
     echo "This option is untested"
 else

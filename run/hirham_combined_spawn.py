@@ -17,7 +17,7 @@ parser.add_argument("-w", '--wall_time', dest="walltime",
 parser.add_argument("-q", '--queue', dest="queue", choices=['standard_4', 'standard_16', 'standard', 'gpu', 'gpu_long', 'long', 'normal'],
                     help='''queue. default=standard_4.''', default='standard_4')
 parser.add_argument("--calving", dest="calving",
-                    choices=['float_kill', 'ocean_kill', 'eigen_calving'],
+                    choices=['float_kill', 'ocean_kill', 'eigen_calving', 'thickness_calving'],
                     help="claving", default='eigen_calving')
 parser.add_argument("--ocean", dest="ocean",
                     choices=['const_ctrl', 'const_m20'],
