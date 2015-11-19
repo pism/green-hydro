@@ -190,6 +190,8 @@ for n, combination in enumerate(combinations):
     if calving in ('eigen_calving'):
         name_options['calving_k'] = calving_k
         name_options['calving_thk_threshold'] = calving_thk_threshold
+    if calving in ('thickness_calving'):
+        name_options['calving_thk_threshold'] = calving_thk_threshold
     name_options['ocean'] = ocean
 
     experiment =  '_'.join([climate, bed_type, vversion, '_'.join(['_'.join([k, str(v)]) for k, v in name_options.items()])])
