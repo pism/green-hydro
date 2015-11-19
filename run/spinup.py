@@ -166,6 +166,7 @@ combinations = list(itertools.product(calving_thk_threshold_values, calving_k_va
 tsstep = 'yearly'
 exstep = '100'
 regridvars = 'age,litho_temp,enthalpy,tillwat,bmelt,Href,thk'
+ftt_starttime = -5000
 
 scripts = []
 posts = []
@@ -255,8 +256,9 @@ for n, combination in enumerate(combinations):
             params_dict['PARAM_CALVING_K'] = calving_k
         if forcing_type in ('e_age', 'e_age_ftt'):
             params_dict['PARAM_E_AGE_COUPLING'] = 'yes'
-        elif forcing_type in ('ftt', 'e_age_ftt'):
+        if forcing_type in ('ftt', 'e_age_ftt'):
             params_dict['PARAM_FTT'] = 'yes'
+            params_dict['PARAM_FTT_STARTTIME'] = ftt_starttime
             
         
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])

@@ -136,7 +136,10 @@ PISM_FTT_FILE=$PISM_DATANAME
 if [ -z "${PARAM_FTT}" ] ; then  # check if env var is NOT set
     FTT=""
 else
-    FTT=",forcing -force_to_thickness_start_time 0 -force_to_thickness_file $PISM_FTT_FILE"
+    if [ -z "${PARAM_FTT_STARTTIME}" ] ; then  # check if env var is NOT set
+        FTT=",forcing -force_to_thickness_start_time 0 -force_to_thickness_file $PISM_FTT_FILE"
+    else
+        FTT=",forcing -force_to_thickness_start_time $PARAM_FTT_STARTTIME -force_to_thickness_file $PISM_FTT_FILE"        
 fi
 
 if [ -z "${PARAM_BEDDEF}" ] ; then  # check if env var is NOT set
