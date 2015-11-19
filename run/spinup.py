@@ -15,7 +15,7 @@ parser.add_argument("-n", '--n_procs', dest="n", type=int,
                     help='''number of cores/processors. default=64.''', default=64)
 parser.add_argument("-w", '--wall_time', dest="walltime",
                     help='''walltime. default: 12:00:00.''', default="12:00:00")
-parser.add_argument("-q", '--queue', dest="queue", choices=['standard_4', 'standard_16', 'gpu', 'gpu_long', 'long', 'normal'],
+parser.add_argument("-q", '--queue', dest="queue", choices=['standard_4', 'standard_16', 'standard', 'gpu', 'gpu_long', 'long', 'normal'],
                     help='''queue. default=standard_4.''', default='standard_4')
 parser.add_argument("--climate", dest="climate",
                     choices=['const', 'paleo'],
@@ -90,7 +90,8 @@ def make_pbs_header(system, cores, walltime, queue):
     systems = {}
     systems['debug'] = {}
     systems['fish'] = {'gpu' : 16,
-                       'gpu_long' : 16}
+                       'gpu_long' : 16,
+                       'standard' : 12}
     systems['pacman'] = {'standard_4' : 4,
                         'standard_16' : 16}
     systems['pleiades'] = {'long' : 20,
@@ -238,7 +239,7 @@ for n, combination in enumerate(combinations):
         params_dict['EXSTEP'] = exstep
         if grid_mapping[grid] > 0:
             previous_grid =  [k for k, v in grid_mapping.iteritems() if v == grid_mapping[grid] -1][0]
-            regridfile = 'save_{domain}_g{grid}m_spinup_{experiment}_{start}.nc'.format(domain=domain.lower(),grid=previous_grid, experiment=experiment, start=start)
+            regridfile = 'save_{domain}_g{grid}m_spinup_{experiment}_{start}.000.nc'.format(domain=domain.lower(),grid=previous_grid, experiment=experiment, start=start)
             params_dict['REGRIDVARS'] = regridvars
             params_dict['REGRIDFILE'] = regridfile
         params_dict['SIA_E'] = sia_e

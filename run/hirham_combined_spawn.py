@@ -14,7 +14,7 @@ parser.add_argument("-n", '--n_procs', dest="n", type=int,
                     help='''number of cores/processors. default=64.''', default=64)
 parser.add_argument("-w", '--wall_time', dest="walltime",
                     help='''walltime. default: 12:00:00.''', default="12:00:00")
-parser.add_argument("-q", '--queue', dest="queue", choices=['standard_4', 'standard_16', 'gpu', 'gpu_long', 'long', 'normal'],
+parser.add_argument("-q", '--queue', dest="queue", choices=['standard_4', 'standard_16', 'standard', 'gpu', 'gpu_long', 'long', 'normal'],
                     help='''queue. default=standard_4.''', default='standard_4')
 parser.add_argument("--calving", dest="calving",
                     choices=['float_kill', 'ocean_kill', 'eigen_calving'],
@@ -60,6 +60,7 @@ ocean = options.ocean
 grid = options.grid
 bed_type = options.bed_type
 version = options.version
+vversion = 'v{}'.format(version)
 
 domain = options.domain
 if domain.lower() in ('greenland'):
@@ -81,7 +82,8 @@ def make_pbs_header(system, cores, walltime, queue):
     systems = {}
     systems['debug'] = {}
     systems['fish'] = {'gpu' : 16,
-                       'gpu_long' : 16}
+                       'gpu_long' : 16,
+                       'standard' : 12}
     systems['pacman'] = {'standard_4' : 4,
                         'standard_16' : 16}
     systems['pleiades'] = {'long' : 20,
@@ -186,11 +188,11 @@ for n, combination in enumerate(combinations):
     name_options['hydro'] = hydro
     name_options['calving'] = calving
     if calving in ('eigen_calving'):
-        name_options['calving_k'] = calving
-        name_options['calving_thk_threshold'] = calving
+        name_options['calving_k'] = calving_k
+        name_options['calving_thk_threshold'] = calving_thk_threshold
     name_options['ocean'] = ocean
 
-    experiment =  '_'.join([climate, bed_type, version, '_'.join(['_'.join([k, str(v)]) for k, v in name_options.items()])])
+    experiment =  '_'.join([climate, bed_type, vversion, '_'.join(['_'.join([k, str(v)]) for k, v in name_options.items()])])
 
         
     script = 'do_{}_g{}m_{}.sh'.format(domain.lower(), grid, experiment)
