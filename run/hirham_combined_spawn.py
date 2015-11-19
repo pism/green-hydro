@@ -132,7 +132,7 @@ cd $PBS_O_WORKDIR
     
 regridfile=args[0]
 infile = ''
-pism_dataname = 'pism_greenland_{}m_mcb_jpl_v{}_{}.nc'.format(grid, version, bed_type)
+pism_dataname = 'pism_Greenland_{}m_mcb_jpl_v{}_{}.nc'.format(grid, version, bed_type)
 dura = 20
 
 
