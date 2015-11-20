@@ -85,7 +85,26 @@ grid_mapping = OrderedDict(zip(grid_choices, grid_nos))
 save_times = [-125000, -25000, -5000, -1500, -1000, -500, -200, -100]
 grid_start_times = OrderedDict(zip(grid_choices, save_times))
 
-              
+
+def uniquify_list(seq, idfun=None):
+    '''
+    Remove duplicates from a list, order preserving.
+    From http://www.peterbe.com/plog/uniqifiers-benchmark
+    '''
+
+    if idfun is None:
+        def idfun(x): return x
+    seen = {}
+    result = []
+    for item in seq:
+        marker = idfun(item)
+        if marker in seen:
+            continue
+        seen[marker] = 1
+        result.append(item)
+    return result
+
+
 def make_pbs_header(system, cores, walltime, queue):
     systems = {}
     systems['debug'] = {}
@@ -305,7 +324,8 @@ for n, combination in enumerate(combinations):
         f.write('\n')
         
     
-
+scripts = uniquify_list(scripts)
+posts = uniquify_list(posts)
 
 submit = 'submit_{domain}_g{grid}m_{climate}_{bed_type}_hirham_relax.sh'.format(domain=domain.lower(), grid=grid, climate=climate, bed_type=bed_type)
 try:

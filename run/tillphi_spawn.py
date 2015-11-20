@@ -136,7 +136,26 @@ def generate_grid_description(grid_resolution):
 
     return ' '.join(['='.join([k, str(v)]) for k, v in grid_dict.items()])
 
-              
+
+def uniquify_list(seq, idfun=None):
+    '''
+    Remove duplicates from a list, order preserving.
+    From http://www.peterbe.com/plog/uniqifiers-benchmark
+    '''
+
+    if idfun is None:
+        def idfun(x): return x
+    seen = {}
+    result = []
+    for item in seq:
+        marker = idfun(item)
+        if marker in seen:
+            continue
+        seen[marker] = 1
+        result.append(item)
+    return result
+
+
 def make_pbs_header(system, cores, walltime, queue):
     systems = {}
     systems['debug'] = {}
@@ -331,9 +350,10 @@ for n, combination in enumerate(combinations):
         f.write('  ncatted -a bed_data_set,run_stats,o,c,"{mytype}" -a grid_dx_meters,run_stats,o,f,{grid} -a grid_dy_meters,run_stats,o,f,{grid} -a long_name,uflux,o,c,"vertically-integrated horizontal flux of ice in the x direction" -a long_name,vflux,o,c,"vertically-integrated horizontal flux of ice in the y direction" -a units,uflux,o,c,"m2 year-1" -a units,vflux,o,c,"m2 year-1" -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" {tl_dir}/{nc_dir}/{rc_dir}/{outfile}\n'.format(mytype=mytype, grid=grid, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir, outfile=outfile))
         f.write('fi\n')
         f.write('\n')
-        
-    
 
+        
+scripts = uniquify_list(scripts)
+posts = uniquify_list(posts)
 
 submit = 'submit_{domain}_g{grid}m_{climate}_{type}_tillphi.sh'.format(domain=domain.lower(), grid=grid, climate=climate, type=type)
 try:
