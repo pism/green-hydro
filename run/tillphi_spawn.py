@@ -160,7 +160,7 @@ def make_pbs_header(system, cores, walltime, queue):
     systems = {}
     systems['debug'] = {}
     systems['fish'] = {'gpu' : 16,
-                       'gpu_long' : 16
+                       'gpu_long' : 16,
                        'standard' : 12}
     systems['pacman'] = {'standard_4' : 4,
                         'standard_16' : 16}
@@ -222,19 +222,19 @@ dura = 10
 hydro = 'distributed'
 pism_surface_bcfile = 'GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc'
 
-sia_e = (1.75)
+sia_e = (1.25)
 ppq = (0.6)
 tefo = (0.02)
 ssa_n = (3.25)
 ssa_e = (1.0)
 
 omega_values = [0.1, 1.0, 10.0]
-alpha_values = [1, 2, 3]
+alpha_values = [1]
 k_values = [0.0001, 0.001, 0.01, 0.1]
-phi_min_values = [5.0, 7.5, 10.0]
+phi_min_values = [5.0]
 phi_max_values = [40.]
-topg_min_values = [-900, -700, -500]
-topg_max_values = [500, 700, 900]
+topg_min_values = [-700]
+topg_max_values = [700]
 combinations = list(itertools.product(omega_values, alpha_values, k_values, phi_min_values, phi_max_values, topg_min_values, topg_max_values))
 
 tsstep = 'daily'
