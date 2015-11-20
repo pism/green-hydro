@@ -261,14 +261,15 @@ for n, combination in enumerate(combinations):
         params_dict['PARAM_FTT'] = ''
         params_dict['PARAM_CALVING'] = calving
         if calving in ('eigen_calving'):
-            params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
             params_dict['PARAM_CALVING_K'] = calving_k
-        
+        if calving in ('eigen_calving', 'thickness_calving'):
+            params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
+
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
         cmd = ' '.join([params, './run.sh', str(nn), climate, str(dura), str(grid), 'hybrid', hydro, relax_outfile, infile, '2>&1 | tee job.${PBS_JOBID}'])
 
         f.write(cmd)
-        f.write('\n')
+        f.write('\n\n')
 
         hindcast_outfile = '{domain}_g{grid}m_{experiment}_{start}-{end}.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment, start=era_start, end=era_end)
 
@@ -331,7 +332,6 @@ for n, combination in enumerate(combinations):
         f.write('fi\n')
         f.write('\n')
         
-    
 
 scripts = uniquify_list(scripts)
 posts = uniquify_list(posts)
