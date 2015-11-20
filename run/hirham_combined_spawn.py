@@ -76,6 +76,24 @@ else:
     import sys
     sys.exit(0)
 
+    
+def uniquify_list(seq, idfun=None):
+    '''
+    Remove duplicates from a list, order preserving.
+    From http://www.peterbe.com/plog/uniqifiers-benchmark
+    '''
+
+    if idfun is None:
+        def idfun(x): return x
+    seen = {}
+    result = []
+    for item in seq:
+        marker = idfun(item)
+        if marker in seen:
+            continue
+        seen[marker] = 1
+        result.append(item)
+    return result
 
 
 def make_pbs_header(system, cores, walltime, queue):
@@ -151,7 +169,6 @@ ppq = (0.6)
 tefo = (0.02)
 ssa_n = (3.25)
 ssa_e = (1.0)
-
 calving_thk_threshold_values = [100, 300, 500]
 calving_k_values = [1e15, 1e18]
 phi_min_values = [5.0]
@@ -316,7 +333,9 @@ for n, combination in enumerate(combinations):
         
     
 
-
+scripts = uniquify_list(scripts)
+posts = uniquify_list(posts)
+        
 submit = 'submit_{domain}_g{grid}m_{climate}_{bed_type}_hirham.sh'.format(domain=domain.lower(), grid=grid, climate=climate, bed_type=bed_type)
 try:
     os.remove(submit)
