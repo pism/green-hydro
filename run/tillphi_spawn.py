@@ -355,7 +355,7 @@ for n, combination in enumerate(combinations):
 scripts = uniquify_list(scripts)
 posts = uniquify_list(posts)
 
-submit = 'submit_{domain}_g{grid}m_{climate}_{type}_tillphi.sh'.format(domain=domain.lower(), grid=grid, climate=climate, type=type)
+submit = 'submit_{domain}_g{grid}m_{climate}_{etype}_tillphi.sh'.format(domain=domain.lower(), grid=grid, climate=climate, etype=etype)
 try:
     os.remove(submit)
 except OSError:
