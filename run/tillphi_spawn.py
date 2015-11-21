@@ -280,7 +280,7 @@ for n, combination in enumerate(combinations):
         params_dict['PISM_OSIZE'] = osize
         params_dict['PISM_EXEC'] = pism_exec
         params_dict['PISM_DATANAME'] = pism_dataname
-        params_dict['PISM_SURFACE_BC_FILE'] = pism_surface_bcfile
+        params_dict['PISM_SURFACE_BCFILE'] = pism_surface_bcfile
         params_dict['REGRIDFILE'] = regridfile
         params_dict['TSSTEP'] = tsstep
         params_dict['EXSTEP'] = exstep

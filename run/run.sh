@@ -420,7 +420,7 @@ else
 fi
 
 if [ -n "${PARAM_E_AGE_COUPLING+1}" ] ; then  # check if env var is set
-  PARAM_E_AGE_COUPLING="-do_e_age_coupling"
+  PARAM_E_AGE_COUPLING="-e_age_coupling"
 else
   PARAM_E_AGE_COUPLING=""
 fi
