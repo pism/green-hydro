@@ -17,10 +17,10 @@ netcdf pism_overrides {
     pism_overrides:backup_interval = 5.0;
     pism_overrides:backup_interval_doc = "hours; wall-clock time between automatic backups";
     
-    pism_overrides:force_to_thickness_alpha = 0.025;
+    pism_overrides:force_to_thickness_alpha = 0.001;
     pism_overrides:force_to_thickness_alpha_doc = "yr-1; exponential coefficient in force-to-thickness mechanism";
 
-    pism_overrides:force_to_thickness_ice_free_alpha_factor = 10.0;
+    pism_overrides:force_to_thickness_ice_free_alpha_factor = 100.0;
     pism_overrides:force_to_thickness_ice_free_alpha_factor_doc = "; force_to_thickness_alpha is multiplied by this factor in areas that are ice-free according to the target ice thickness and force_to_thickness_ice_free_thickness_threshold";
 
     pism_overrides:ocean_sub_shelf_heat_flux_into_ice = 50.0;
