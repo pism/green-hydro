@@ -273,6 +273,8 @@ for n, combination in enumerate(combinations):
 
         hindcast_outfile = '{domain}_g{grid}m_{experiment}_{start}-{end}.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment, start=era_start, end=era_end)
 
+        exstep = 'daily'
+        params_dict['EXSTEP'] = exstep
         params_dict['REGRIDFILE'] = relax_outfile
         params_dict['REGRIDVARS'] = regridvars        
         params_dict['PISM_TIMEFILE'] = hindcast_surface_bcfile
