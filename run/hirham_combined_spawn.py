@@ -178,7 +178,6 @@ topg_max_values = [700]
 combinations = list(itertools.product(calving_thk_threshold_values, calving_k_values, phi_min_values, phi_max_values, topg_min_values, topg_max_values))
 
 tsstep = 'daily'
-regridvars = 'litho_temp,enthalpy,tillwat,bmelt,Href'
 
 era_start = 1989
 era_end = 2011
@@ -238,6 +237,7 @@ for n, combination in enumerate(combinations):
         relax_outfile = '{domain}_g{grid}m_{experiment}_{dura}a.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment, dura=dura)
 
         exstep = 'yearly'
+        regridvars = 'litho_temp,enthalpy,tillwat,bmelt,Href'
         params_dict = dict()
         params_dict['PISM_DO'] = ''
         params_dict['PISM_OFORMAT'] = oformat
@@ -273,7 +273,8 @@ for n, combination in enumerate(combinations):
 
         hindcast_outfile = '{domain}_g{grid}m_{experiment}_{start}-{end}.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment, start=era_start, end=era_end)
 
-        exstep = 'daily'
+        exstep = 'monthly'
+        regridvars = 'litho_temp,enthalpy,tillwat,bmelt,Href,thk'
         params_dict['EXSTEP'] = exstep
         params_dict['REGRIDFILE'] = relax_outfile
         params_dict['REGRIDVARS'] = regridvars        
