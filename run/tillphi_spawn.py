@@ -228,9 +228,9 @@ tefo = (0.02)
 ssa_n = (3.25)
 ssa_e = (1.0)
 
-omega_values = [0.1, 1.0, 10.0]
+omega_values = [1.0]
 alpha_values = [1]
-k_values = [0.0001, 0.001, 0.01, 0.1]
+k_values = [0.001, 0.01, 0.1]
 phi_min_values = [5.0]
 phi_max_values = [40.]
 topg_min_values = [-700]
