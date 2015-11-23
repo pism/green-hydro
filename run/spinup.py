@@ -183,7 +183,7 @@ topg_max_values = [700]
 combinations = list(itertools.product(calving_thk_threshold_values, calving_k_values, phi_min_values, phi_max_values, topg_min_values, topg_max_values))
 
 tsstep = 'yearly'
-exstep = 'yearly'
+exstep = '100'
 regridvars = 'age,litho_temp,enthalpy,tillwat,bmelt,Href,thk'
 ftt_starttime = -5000
 
