@@ -216,7 +216,7 @@ for n, combination in enumerate(combinations):
     name_options['forcing_type'] = forcing_type
     
     vversion = 'v' + str(version)
-    experiment =  '_'.join([climate, vversion, '_'.join(['_'.join([k, str(v)]) for k, v in name_options.items()])])
+    experiment =  '_'.join([climate, vversion, bed_type, '_'.join(['_'.join([k, str(v)]) for k, v in name_options.items()])])
 
         
     script = 'spinup_{}_g{}m_{}.sh'.format(domain.lower(), grid, experiment)
