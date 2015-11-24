@@ -177,7 +177,7 @@ tefo = (0.02)
 ssa_n = (3.25)
 ssa_e = (1.0)
 calving_thk_threshold_values = [100, 300, 500]
-calving_k_values = [1e15, 1e18]
+calving_k_values = [1e15]
 phi_min_values = [5.0]
 phi_max_values = [40.]
 topg_min_values = [-700]
@@ -209,10 +209,10 @@ for n, combination in enumerate(combinations):
     name_options['topg_max'] = topg_max
     name_options['hydro'] = hydro
     name_options['calving'] = calving
-    if calving_relax in ('eigen_calving'):
+    if calving in ('eigen_calving', 'oc_eigen'):
         name_options['calving_k'] = calving_k
         name_options['calving_thk_threshold'] = calving_thk_threshold
-    if calving_relax in ('thickness_calving'):
+    if calving in ('thickness_calving'):
         name_options['calving_thk_threshold'] = calving_thk_threshold
     name_options['ocean'] = ocean
 
@@ -266,10 +266,10 @@ for n, combination in enumerate(combinations):
         params_dict['PARAM_TEFO'] = tefo
         params_dict['PARAM_TTPHI'] = ttphi
         params_dict['PARAM_FTT'] = ''
-        params_dict['PARAM_CALVING'] = calving_hindcast
-        if calving_hindcast in ('eigen_calving'):
+        params_dict['PARAM_CALVING'] = calving_relax
+        if calving_relax in ('eigen_calving'):
             params_dict['PARAM_CALVING_K'] = calving_k
-        if calving_hindcast in ('eigen_calving', 'thickness_calving'):
+        if calving_relax in ('eigen_calving', 'thickness_calving'):
             params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
 
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
@@ -288,6 +288,11 @@ for n, combination in enumerate(combinations):
         params_dict['PISM_TIMEFILE'] = hindcast_surface_bcfile
         params_dict['PISM_SURFACE_BCFILE']= hindcast_surface_bcfile
         params_dict['PISM_OCEAN_BCFILE']= 'ocean_forcing_{grid}m_1989-2011_v{version}_{bed_type}_{ocean}.nc'.format(grid=grid, version=version, bed_type=bed_type, ocean=ocean)
+        params_dict['PARAM_CALVING'] = calving_hindcast
+        if calving_hindcast in ('eigen_calving'):
+            params_dict['PARAM_CALVING_K'] = calving_k
+        if calving_hindcast in ('eigen_calving', 'thickness_calving'):
+            params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
 
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
         cmd = ' '.join([params, './run.sh', str(nn), climate, str(dura), str(grid), 'hybrid', hydro, hindcast_outfile, infile, '2>&1 | tee job.${PBS_JOBID}'])
