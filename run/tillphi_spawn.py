@@ -34,7 +34,7 @@ parser.add_argument("-s", "--system", dest="system",
                     choices=['pleiades', 'fish', 'pacman', 'debug'],
                     help="computer system to use.", default='pacman')
 parser.add_argument("-t", "--etype", dest="etype",
-                    choices=['ctrl', 'old_bed', 'ba01_bed', '970mw_hs', 'jak_1985', 'cresis'],
+                    choices=['ctrl', 'old_bed', 'ba01_bed', '970mW_hs', 'jak_1985', 'cresis'],
                     help="subglacial topography type", default='ctrl')
 parser.add_argument("--dataset_version", dest="version",
                     choices=['1.1', '1.2', '2'],
