@@ -17,7 +17,7 @@ parser.add_argument("-w", '--wall_time', dest="walltime",
 parser.add_argument("-q", '--queue', dest="queue", choices=['standard_4', 'standard_16', 'standard', 'gpu', 'gpu_long', 'long', 'normal'],
                     help='''queue. default=standard_4.''', default='standard_4')
 parser.add_argument("--calving", dest="calving",
-                    choices=['float_kill', 'ocean_kill', 'eigen_calving', 'thickness_calving'],
+                    choices=['float_kill', 'ocean_kill', 'eigen_calving', 'thickness_calving', 'oc_eigen'],
                     help="claving", default='eigen_calving')
 parser.add_argument("--ocean", dest="ocean",
                     choices=['const_ctrl', 'const_m20'],
@@ -61,6 +61,13 @@ grid = options.grid
 bed_type = options.bed_type
 version = options.version
 vversion = 'v{}'.format(version)
+
+if calving in ('oc_eigen'):
+    calving_relax = 'ocean_kill'
+    calving_hindcast = 'eigen_calving'
+else:
+    calving_relax = calving
+    calving_hindcast = calving
 
 domain = options.domain
 if domain.lower() in ('greenland'):
@@ -202,10 +209,10 @@ for n, combination in enumerate(combinations):
     name_options['topg_max'] = topg_max
     name_options['hydro'] = hydro
     name_options['calving'] = calving
-    if calving in ('eigen_calving'):
+    if calving_relax in ('eigen_calving'):
         name_options['calving_k'] = calving_k
         name_options['calving_thk_threshold'] = calving_thk_threshold
-    if calving in ('thickness_calving'):
+    if calving_relax in ('thickness_calving'):
         name_options['calving_thk_threshold'] = calving_thk_threshold
     name_options['ocean'] = ocean
 
@@ -259,10 +266,10 @@ for n, combination in enumerate(combinations):
         params_dict['PARAM_TEFO'] = tefo
         params_dict['PARAM_TTPHI'] = ttphi
         params_dict['PARAM_FTT'] = ''
-        params_dict['PARAM_CALVING'] = calving
-        if calving in ('eigen_calving'):
+        params_dict['PARAM_CALVING'] = calving_hindcast
+        if calving_hindcast in ('eigen_calving'):
             params_dict['PARAM_CALVING_K'] = calving_k
-        if calving in ('eigen_calving', 'thickness_calving'):
+        if calving_hindcast in ('eigen_calving', 'thickness_calving'):
             params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
 
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
