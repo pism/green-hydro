@@ -245,11 +245,11 @@ scripts = []
 posts = []
 for n, combination in enumerate(combinations):
 
-    omega, alpha, k, phi_min, phi_max, topg_min, topg_max = combination
+    dist_omega, dist_alpha, dist_k, phi_min, phi_max, topg_min, topg_max = combination
 
     ttphi = '{},{},{},{}'.format(phi_min, phi_max, topg_min, topg_max)
 
-    experiment='{}_{}_sia_e_{}_ppq_{}_tefo_{}_ssa_n_{}_ssa_e_{}_phi_min_{}_phi_max_{}_topg_min_{}_topg_max_{}_hydro_{}_omega_{}_alpha_{}_k_{}'.format(climate, etype, sia_e, ppq, tefo, ssa_n, ssa_e, phi_min, phi_max, topg_min, topg_max, hydro, omega, alpha, k)
+    experiment='{}_{}_sia_e_{}_ppq_{}_tefo_{}_ssa_n_{}_ssa_e_{}_phi_min_{}_phi_max_{}_topg_min_{}_topg_max_{}_hydro_{}_omega_{}_alpha_{}_k_{}'.format(climate, etype, sia_e, ppq, tefo, ssa_n, ssa_e, phi_min, phi_max, topg_min, topg_max, hydro, dist_omega, dist_alpha, dist_k)
     script = 'do_{}_g{}m_{}.sh'.format(domain.lower(), grid, experiment)
     scripts.append(script)
     post = 'do_{}_g{}m_{}_post.sh'.format(domain.lower(), grid, experiment)
@@ -293,9 +293,9 @@ for n, combination in enumerate(combinations):
         params_dict['PARAM_TEFO'] = tefo
         params_dict['PARAM_TTPHI'] = ttphi
         params_dict['PARAM_FTT'] = 'foo'
-        params_dict['PARAM_ALPHA'] = alpha
-        params_dict['PARAM_K'] = k
-        params_dict['PARAM_OMEGA'] = omega
+        params_dict['PARAM_ALPHA'] = dist_alpha
+        params_dict['PARAM_K'] = dist_k
+        params_dict['PARAM_OMEGA'] = dist_omega
         
         
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
