@@ -199,10 +199,11 @@ end = 0
 
 for n, combination in enumerate(combinations):
 
-    omega, alpha, k, calving_thk_threshold, calving_k , phi_min, phi_max, topg_min, topg_max = combination
+    dist_omega, dist_alpha, dist_k, calving_thk_threshold, calving_k , phi_min, phi_max, topg_min, topg_max = combination
 
     ttphi = '{},{},{},{}'.format(phi_min, phi_max, topg_min, topg_max)
 
+    
     name_options = OrderedDict()
     name_options['sia_e'] = sia_e
     name_options['ppq'] = ppq
@@ -218,9 +219,9 @@ for n, combination in enumerate(combinations):
         name_options['calving_k'] = calving
         name_options['calving_thk_threshold'] = calving
     name_options['forcing_type'] = forcing_type
-    name_options['omega'] = omega
-    name_options['alpha'] = alpha
-    name_options['k'] = k
+    name_options['omega'] = dist_omega
+    name_options['alpha'] = dist_alpha
+    name_options['k'] = dist_k
 
     
     vversion = 'v' + str(version)
@@ -286,9 +287,9 @@ for n, combination in enumerate(combinations):
         if forcing_type in ('ftt', 'e_age_ftt'):
             params_dict['PARAM_FTT'] = 'yes'
             params_dict['PARAM_FTT_STARTTIME'] = ftt_starttime
-        params_dict['PARAM_ALPHA'] = alpha
-        params_dict['PARAM_K'] = k
-        params_dict['PARAM_OMEGA'] = omega
+        params_dict['PARAM_ALPHA'] = dist_alpha
+        params_dict['PARAM_K'] = dist_k
+        params_dict['PARAM_OMEGA'] = dist_omega
 
         
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
