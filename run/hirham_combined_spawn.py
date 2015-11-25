@@ -273,7 +273,7 @@ for n, combination in enumerate(combinations):
             params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
 
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
-        cmd = ' '.join([params, './run.sh', str(nn), climate, str(dura), str(grid), 'hybrid', hydro, relax_outfile, infile, '2>&1 | tee job.${PBS_JOBID}'])
+        cmd = ' '.join([params, './run.sh', str(nn), climate, str(dura), str(grid), 'hybrid', hydro, relax_outfile, infile, '2>&1 | tee job_r.${PBS_JOBID}'])
 
         f.write(cmd)
         f.write('\n\n')
@@ -295,7 +295,7 @@ for n, combination in enumerate(combinations):
             params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
 
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
-        cmd = ' '.join([params, './run.sh', str(nn), climate, str(dura), str(grid), 'hybrid', hydro, hindcast_outfile, infile, '2>&1 | tee job.${PBS_JOBID}'])
+        cmd = ' '.join([params, './run.sh', str(nn), climate, str(dura), str(grid), 'hybrid', hydro, hindcast_outfile, infile, '2>&1 | tee job_h.${PBS_JOBID}'])
 
         f.write(cmd)
         f.write('\n')
