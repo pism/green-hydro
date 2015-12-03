@@ -310,7 +310,7 @@ for n, combination in enumerate(combinations):
             print('TYPE {} not recognized, exiting'.format(version))
             sys.exit(0)
 
-    tl_dir = '{}m_{}_{}'.format(grid, climate, bed_type)
+    tl_dir = '{}m_{}_{}_{}'.format(grid, climate, bed_type, vversion)
     nc_dir = 'processed'
     rc_dir = domain.lower()
     fill = '-2e9'
