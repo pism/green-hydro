@@ -17,7 +17,7 @@ parser.add_argument("-w", '--wall_time', dest="walltime",
 parser.add_argument("-q", '--queue', dest="queue", choices=['standard_4', 'standard_16', 'standard', 'gpu', 'gpu_long', 'long', 'normal'],
                     help='''queue. default=standard_4.''', default='standard_4')
 parser.add_argument("--calving", dest="calving",
-                    choices=['float_kill', 'ocean_kill', 'eigen_calving', 'thickness_calving', 'ok_eigen_calving'],
+                    choices=['float_kill', 'ocean_kill', 'eigen_calving', 'thickness_calving', 'mixed_calving'],
                     help="claving", default='eigen_calving')
 parser.add_argument("--ocean", dest="ocean",
                     choices=['const_ctrl', 'const_m20'],
@@ -62,13 +62,16 @@ bed_type = options.bed_type
 version = options.version
 vversion = 'v{}'.format(version)
 
-if calving in ('ok_eigen_calving'):
+print calving
+if calving in ('mixed_calving'):
     calving_relax = 'ocean_kill'
     calving_hindcast = 'eigen_calving'
+    print 'hi'
 else:
     calving_relax = calving
     calving_hindcast = calving
-
+print calving_relax, calving_hindcast
+     
 domain = options.domain
 if domain.lower() in ('greenland'):
     pism_exec = 'pismr'
@@ -209,7 +212,7 @@ for n, combination in enumerate(combinations):
     name_options['topg_max'] = topg_max
     name_options['hydro'] = hydro
     name_options['calving'] = calving
-    if calving in ('eigen_calving', 'ok_eigen_calving'):
+    if calving in ('eigen_calving', 'mixed_calving'):
         name_options['calving_k'] = calving_k
         name_options['calving_thk_threshold'] = calving_thk_threshold
     if calving in ('thickness_calving'):
