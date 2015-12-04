@@ -243,7 +243,7 @@ for n, combination in enumerate(combinations):
 
         relax_outfile = '{domain}_g{grid}m_{experiment}_{dura}a.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment, dura=dura)
 
-        exstep = 'yearly'
+        exstep = 'monthly'
         regridvars = 'litho_temp,enthalpy,tillwat,bmelt,Href'
         params_dict = dict()
         params_dict['PISM_DO'] = ''
