@@ -235,50 +235,12 @@ for n, combination in enumerate(combinations):
 
         f.write(pbs_header)
 
-
-        relax_outfile = '{domain}_g{grid}m_{experiment}_{dura}a.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment, dura=dura)
-
-        exstep = 'yearly'
-        regridvars = 'litho_temp,enthalpy,tillwat,bmelt,Href'
-        params_dict = dict()
-        params_dict['PISM_DO'] = ''
-        params_dict['PISM_OFORMAT'] = oformat
-        params_dict['PISM_OSIZE'] = osize
-        params_dict['PISM_EXEC'] = pism_exec
-        params_dict['PISM_DATANAME'] = pism_dataname
-        params_dict['PISM_SURFACE_BC_FILE'] = relax_surface_bcfile
-        params_dict['PISM_OCEAN_BCFILE']= 'ocean_forcing_{grid}m_{start}-{end}_v{version}_{bed_type}_{ocean}_1989_baseline.nc'.format(grid=grid, version=version, bed_type=bed_type, ocean=ocean, start=era_start, end=era_end)
-        params_dict['PISM_CONFIG'] = 'hindcast_config.nc'
-        params_dict['REGRIDFILE'] = regridfile
-        params_dict['TSSTEP'] = tsstep
-        params_dict['EXSTEP'] = exstep
-        params_dict['REGRIDVARS'] = regridvars
-        params_dict['SIA_E'] = sia_e
-        params_dict['SSA_E'] = ssa_e
-        params_dict['SSA_N'] = ssa_n
-        params_dict['PARAM_NOAGE'] = 'foo'
-        params_dict['PARAM_PPQ'] = ppq
-        params_dict['PARAM_TEFO'] = tefo
-        params_dict['PARAM_TTPHI'] = ttphi
-        params_dict['PARAM_FTT'] = ''
-        params_dict['PARAM_CALVING'] = calving_relax
-        if calving_relax in ('eigen_calving'):
-            params_dict['PARAM_CALVING_K'] = calving_k
-        if calving_relax in ('eigen_calving', 'thickness_calving'):
-            params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
-
-        params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
-        cmd = ' '.join([params, './run.sh', str(nn), climate, str(dura), str(grid), 'hybrid', hydro, relax_outfile, infile, '2>&1 | tee job_r.${PBS_JOBID}'])
-
-        f.write(cmd)
-        f.write('\n\n')
-
         hindcast_outfile = '{domain}_g{grid}m_{experiment}_{start}-{end}.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment, start=era_start, end=era_end)
 
         exstep = 'monthly'
         regridvars = 'litho_temp,enthalpy,tillwat,bmelt,Href,thk'
         params_dict['EXSTEP'] = exstep
-        params_dict['REGRIDFILE'] = relax_outfile
+        params_dict['REGRIDFILE'] = regridfile
         params_dict['REGRIDVARS'] = regridvars        
         params_dict['PISM_TIMEFILE'] = hindcast_surface_bcfile
         params_dict['PISM_SURFACE_BCFILE']= hindcast_surface_bcfile
@@ -320,17 +282,7 @@ for n, combination in enumerate(combinations):
         f.write('cd $PBS_O_WORKDIR\n')
         f.write('\n')
 
-        f.write(' if [ ! -d {tl_dir}/{nc_dir}/{rc_dir} ]; then mkdir -p {tl_dir}/{nc_dir}/{rc_dir}; fi\n'.format(tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
-        f.write('\n')
-        f.write('if [ -f {} ]; then\n'.format(relax_outfile))
-        f.write('  rm -f tmp_{relax_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{relax_outfile}\n'.format(relax_outfile=relax_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
-        f.write('  ncks -v enthalpy,litho_temp -x {relax_outfile} tmp_{relax_outfile}\n'.format(relax_outfile=relax_outfile))
-        f.write('  sh add_epsg3413_mapping.sh tmp_{}\n'.format(relax_outfile))
-        f.write('  ncpdq -o --64 -a time,y,x tmp_{relax_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{relax_outfile}\n'.format(relax_outfile=relax_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
-        f.write(  '''  ncap2 -O -s "uflux=ubar*thk; vflux=vbar*thk; velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {{velshear_mag={fill}; velbase_mag={fill}; velsurf_mag={fill}; flux_mag={fill};}}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag);" {tl_dir}/{nc_dir}/{rc_dir}/{relax_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{relax_outfile}\n'''.format(relax_outfile=relax_outfile, fill=fill, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
-        f.write('  ncatted -a bed_data_set,run_stats,o,c,"{mytype}" -a grid_dx_meters,run_stats,o,f,{grid} -a grid_dy_meters,run_stats,o,f,{grid} -a long_name,uflux,o,c,"Vertically-integrated horizontal flux of ice in the X direction" -a long_name,vflux,o,c,"Vertically-integrated horizontal flux of ice in the Y direction" -a units,uflux,o,c,"m2 year-1" -a units,vflux,o,c,"m2 year-1" -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" {tl_dir}/{nc_dir}/{rc_dir}/{relax_outfile}\n'.format(mytype=mytype, grid=grid, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir, relax_outfile=relax_outfile))
-        f.write('fi\n')
-        f.write('\n')
+
         f.write('if [ -f {} ]; then\n'.format(hindcast_outfile))
         f.write('  rm -f tmp_{hindcast_outfile} tmp_ex_{hindcast_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{hindcast_outfile} {tl_dir}/{nc_dir}/{rc_dir}/ex_{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write('  ncks -v enthalpy,litho_temp -x {hindcast_outfile} tmp_{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile))
