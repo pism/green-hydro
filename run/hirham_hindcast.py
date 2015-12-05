@@ -235,7 +235,7 @@ for n, combination in enumerate(combinations):
 
         f.write(pbs_header)
 
-        hindcast_outfile = '{domain}_g{grid}m_{experiment}_{start}-{end}.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment, start=era_start, end=era_end)
+        hindcast_outfile = '{domain}_g{grid}m_{experiment}_hindcast_{start}-{end}.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment, start=era_start, end=era_end)
 
         exstep = 'monthly'
         regridvars = 'litho_temp,enthalpy,tillwat,bmelt,Href,thk'
