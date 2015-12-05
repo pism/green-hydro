@@ -239,12 +239,30 @@ for n, combination in enumerate(combinations):
 
         exstep = 'monthly'
         regridvars = 'litho_temp,enthalpy,tillwat,bmelt,Href,thk'
+        params_dict = dict()
+        params_dict['PISM_DO'] = ''
+        params_dict['PISM_OFORMAT'] = oformat
+        params_dict['PISM_OSIZE'] = osize
+        params_dict['PISM_EXEC'] = pism_exec
+        params_dict['PISM_DATANAME'] = pism_dataname
         params_dict['EXSTEP'] = exstep
         params_dict['REGRIDFILE'] = regridfile
         params_dict['REGRIDVARS'] = regridvars        
         params_dict['PISM_TIMEFILE'] = hindcast_surface_bcfile
         params_dict['PISM_SURFACE_BCFILE']= hindcast_surface_bcfile
         params_dict['PISM_OCEAN_BCFILE']= 'ocean_forcing_{grid}m_1989-2011_v{version}_{bed_type}_{ocean}.nc'.format(grid=grid, version=version, bed_type=bed_type, ocean=ocean)
+        params_dict['PISM_CONFIG'] = 'hindcast_config.nc'
+        params_dict['TSSTEP'] = tsstep
+        params_dict['EXSTEP'] = exstep
+        params_dict['REGRIDVARS'] = regridvars
+        params_dict['SIA_E'] = sia_e
+        params_dict['SSA_E'] = ssa_e
+        params_dict['SSA_N'] = ssa_n
+        params_dict['PARAM_NOAGE'] = 'foo'
+        params_dict['PARAM_PPQ'] = ppq
+        params_dict['PARAM_TEFO'] = tefo
+        params_dict['PARAM_TTPHI'] = ttphi
+        params_dict['PARAM_FTT'] = ''
         params_dict['PARAM_CALVING'] = calving_hindcast
         if calving_hindcast in ('eigen_calving'):
             params_dict['PARAM_CALVING_K'] = calving_k
