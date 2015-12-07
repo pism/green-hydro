@@ -20,7 +20,7 @@ parser.add_argument("--calving", dest="calving",
                     choices=['float_kill', 'ocean_kill', 'eigen_calving', 'thickness_calving', 'mixed_calving'],
                     help="claving", default='eigen_calving')
 parser.add_argument("--ocean", dest="ocean",
-                    choices=['const_ctrl', 'const_m20'],
+                    choices=['const_ctrl', 'const_m20', 'ref'],
                     help="ocean forcing type", default='const_ctrl')
 parser.add_argument("-d", "--domain", dest="domain",
                     choices=['greenland', 'jakobshavn'],
