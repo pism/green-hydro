@@ -33,7 +33,7 @@
     <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="jak_thk_Greenland_150m_mcb_jpl_v2_198520151128123524811" name="jak_thk_Greenland_150m_mcb_jpl_v2_1985">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="jakobshavn_joughin_2012_points20151208160935969" name="jakobshavn_joughin_2012_points">
+    <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="jakobshavn_joughin_2012_points20151208160935969" name="jakobshavn_joughin_2012_points">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-group expanded="1" checked="Qt::Unchecked" name="hincast calving front">
@@ -61,6 +61,9 @@
       </layer-tree-layer>
     </layer-tree-group>
     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="surface_1985_geoid_corrected20151128141542144" name="surface_1985_geoid_corrected">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="1" checked="Qt::Checked" id="bmelt20151209144909079" name="bmelt">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="ice_thickness_dem_clean20151128153201975" name="ice_thickness_dem_clean">
@@ -344,6 +347,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100016" srcDatumTransform="-1" destDatumTransform="-1" layerid="e_age_obs_rel20151123143822146"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="slope220151030150839639"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="thickness20150926172819029"/>
+      <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100016" srcDatumTransform="-1" destDatumTransform="-1" layerid="bmelt20151209144909079"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100005" srcDatumTransform="-1" destDatumTransform="-1" layerid="C5_250m_flowlines20151029130740802"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="EPSG:3413" srcDatumTransform="-1" destDatumTransform="-1" layerid="g600m_remapped_to_5km_velsurf_mag20151007130523704"/>
       <layer_coordinate_transform destAuthId="EPSG:3413" srcAuthId="USER:100016" srcDatumTransform="-1" destDatumTransform="-1" layerid="dist_diff20151114135751319"/>
@@ -457,6 +461,7 @@
       <item>grounding_line_k_1e_15_calving_thk_threshold_350_ocean_const_m20_1989_2011_copy20151208142950901</item>
       <item>speed_k_1e_15_calving_thk_threshold_350_ocean_const_m20_1989_2011_copy20151208143016857</item>
       <item>jakobshavn_joughin_2012_points20151208160935969</item>
+      <item>bmelt20151209144909079</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
@@ -510,9 +515,9 @@
         <legendlayerfile isInOverview="0" layerid="jak_thk_Greenland_150m_mcb_jpl_v2_198520151128123524811" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="jakobshavn_joughin_2012_points" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="jakobshavn_joughin_2012_points20151208160935969" visible="1"/>
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="jakobshavn_joughin_2012_points" showFeatureCount="0">
+      <filegroup open="false" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="jakobshavn_joughin_2012_points20151208160935969" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendgroup open="true" checked="Qt::Unchecked" name="hincast calving front">
@@ -552,6 +557,11 @@
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="surface_1985_geoid_corrected" showFeatureCount="0">
       <filegroup open="true" hidden="false">
         <legendlayerfile isInOverview="0" layerid="surface_1985_geoid_corrected20151128141542144" visible="0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="bmelt" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="bmelt20151209144909079" visible="1"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="ice_thickness_dem_clean" showFeatureCount="0">
@@ -1001,7 +1011,7 @@
       </customproperties>
     </Composition>
   </Composer>
-  <Composer title="jakobshavn plain" visible="1">
+  <Composer title="jakobshavn plain" visible="0">
     <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="152" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="123" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
@@ -1246,7 +1256,7 @@
           <annotationFontProperties description=".SF NS Text,13,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="-5" page="1" id="" lastValidViewScaleFactor="3.18113" positionMode="0" positionLock="false" x="-7" y="-5" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="117" outlineWidth="0.3" excludeFromExports="0" uuid="{456b6387-ce79-493c-8243-d849ff2b93bb}" height="176.428" itemRotation="0" frame="false" pagex="-7">
+        <ComposerItem pagey="-5" page="1" id="" lastValidViewScaleFactor="4.6383" positionMode="0" positionLock="false" x="-7" y="-5" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="117" outlineWidth="0.3" excludeFromExports="0" uuid="{456b6387-ce79-493c-8243-d849ff2b93bb}" height="176.428" itemRotation="0" frame="false" pagex="-7">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
@@ -1545,7 +1555,145 @@
       </customproperties>
     </Composition>
   </Composer>
-  <projectlayers layercount="47">
+  <Composer title="jakobshavn bmelt" visible="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="152" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="123" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
+      <symbol alpha="1" clip_to_extent="1" type="fill" name="">
+        <layer pass="0" class="SimpleFill" locked="0">
+          <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="color" v="255,255,255,255"/>
+          <prop k="joinstyle" v="miter"/>
+          <prop k="offset" v="0,0"/>
+          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+          <prop k="offset_unit" v="MM"/>
+          <prop k="outline_color" v="0,0,0,255"/>
+          <prop k="outline_style" v="no"/>
+          <prop k="outline_width" v="0.26"/>
+          <prop k="outline_width_unit" v="MM"/>
+          <prop k="style" v="solid"/>
+        </layer>
+      </symbol>
+      <ComposerLegend symbolWidth="7" title="sub-shelf melt" boxSpace="2" rasterBorderWidth="0" splitLayer="0" equalColumnWidth="0" map="0" titleAlignment="1" rasterBorder="1" symbolHeight="4" wmsLegendHeight="25" wrapChar="" fontColor="#000000" columnSpace="2" wmsLegendWidth="50" columnCount="1" rasterBorderColor="0,0,0,255">
+        <styles>
+          <style marginBottom="2" name="title">
+            <styleFont description="Helvetica,10,-1,5,50,0,0,0,0,0" style="Regular"/>
+          </style>
+          <style marginTop="2" name="group">
+            <styleFont description="Helvetica,10,-1,5,50,0,0,0,0,0" style="Regular"/>
+          </style>
+          <style marginTop="2" name="subgroup">
+            <styleFont description="Helvetica,10,-1,5,50,0,0,0,0,0" style="Regular"/>
+          </style>
+          <style marginTop="2" name="symbol">
+            <styleFont description=".SF NS Text,13,-1,5,50,0,0,0,0,0" style=""/>
+          </style>
+          <style marginTop="2" marginLeft="2" name="symbolLabel">
+            <styleFont description="Helvetica,10,-1,5,50,0,0,0,0,0" style="Regular"/>
+          </style>
+        </styles>
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="">
+          <customproperties/>
+          <layer-tree-layer expanded="1" checked="Qt::Checked" id="bmelt20151209144909079" name="bmelt">
+            <customproperties>
+              <property key="legend/title-label" value="(m/yr)"/>
+            </customproperties>
+          </layer-tree-layer>
+        </layer-tree-group>
+        <ComposerItem pagey="0.97844" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="118.761" y="0.97844" visibility="1" zValue="5" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="26.7734" outlineWidth="0.3" excludeFromExports="0" uuid="{8be0230e-a809-4143-80f5-6d9f65cde2ef}" height="39.0922" itemRotation="0" frame="false" pagex="118.761">
+          <FrameColor alpha="255" red="0" blue="0" green="0"/>
+          <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+          <customproperties/>
+        </ComposerItem>
+      </ComposerLegend>
+      <ComposerScaleBar lineCapStyle="square" style="Single Box" numMapUnitsPerScaleBarUnit="1000" segmentSizeMode="0" alignment="0" numSegments="2" segmentMillimeters="7.76612" lineJoinStyle="miter" minBarWidth="50" numUnitsPerSegment="5000" units="1" labelBarSpace="2" outlineWidth="0.4" numSegmentsLeft="0" maxBarWidth="150" height="2" boxContentSpace="1" mapId="0" unitLabel="km">
+        <scaleBarFont description=".SF NS Text,12,-1,5,50,0,0,0,0,0" style=""/>
+        <fillColor alpha="255" red="0" blue="0" green="0"/>
+        <fillColor2 alpha="255" red="255" blue="255" green="255"/>
+        <strokeColor alpha="255" red="0" blue="0" green="0"/>
+        <textColor alpha="255" red="0" blue="0" green="0"/>
+        <ComposerItem pagey="106.768" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="116.837" y="106.768" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="28.5979" outlineWidth="0.2" excludeFromExports="0" uuid="{b10cff8c-f486-42b2-854d-21b9d989dc56}" height="9.90494" itemRotation="0" frame="true" pagex="116.837">
+          <FrameColor alpha="255" red="0" blue="0" green="0"/>
+          <BackgroundColor alpha="191" red="255" blue="255" green="255"/>
+          <customproperties/>
+        </ComposerItem>
+      </ComposerScaleBar>
+      <ComposerMap mapRotation="0" keepLayerSet="false" id="0" previewMode="Render" drawCanvasItems="true">
+        <Extent ymin="-2321649.66721987957134843" xmin="-223031.46323572428082116" ymax="-2245630.25141904363408685" xmax="-128131.46313892627949826"/>
+        <LayerSet/>
+        <Grid/>
+        <ComposerMapGrid rightAnnotationDirection="1" gridFramePenColor="0,0,0,255" show="1" bottomAnnotationPosition="1" annotationPrecision="0" showAnnotation="1" topFrameDivisions="0" uuid="{64e1ffc9-32c6-462f-9b66-4bae0574dfb8}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="1" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="1" gridFrameSideFlags="15" intervalY="0.25" bottomAnnotationDirection="0" leftAnnotationDisplay="3" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.29999999999999999" bottomAnnotationDisplay="2" unit="0" topAnnotationDisplay="3" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="5" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="1" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
+          <lineStyle>
+            <symbol alpha="1" clip_to_extent="1" type="line" name="">
+              <layer pass="0" class="SimpleLine" locked="0">
+                <prop k="capstyle" v="flat"/>
+                <prop k="customdash" v="5;2"/>
+                <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="customdash_unit" v="MM"/>
+                <prop k="draw_inside_polygon" v="0"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="line_color" v="0,0,0,255"/>
+                <prop k="line_style" v="dot"/>
+                <prop k="line_width" v="0.3"/>
+                <prop k="line_width_unit" v="MM"/>
+                <prop k="offset" v="0"/>
+                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="use_custom_dash" v="0"/>
+                <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              </layer>
+            </symbol>
+          </lineStyle>
+          <markerStyle>
+            <symbol alpha="1" clip_to_extent="1" type="marker" name="">
+              <layer pass="0" class="SimpleMarker" locked="0">
+                <prop k="angle" v="0"/>
+                <prop k="color" v="0,0,0,255"/>
+                <prop k="horizontal_anchor_point" v="1"/>
+                <prop k="name" v="circle"/>
+                <prop k="offset" v="0,0"/>
+                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="outline_color" v="0,0,0,255"/>
+                <prop k="outline_style" v="solid"/>
+                <prop k="outline_width" v="0"/>
+                <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="outline_width_unit" v="MM"/>
+                <prop k="scale_method" v="diameter"/>
+                <prop k="size" v="2"/>
+                <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+                <prop k="size_unit" v="MM"/>
+                <prop k="vertical_anchor_point" v="1"/>
+              </layer>
+            </symbol>
+          </markerStyle>
+          <spatialrefsys>
+            <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+            <srsid>3452</srsid>
+            <srid>4326</srid>
+            <authid>EPSG:4326</authid>
+            <description>WGS 84</description>
+            <projectionacronym>longlat</projectionacronym>
+            <ellipsoidacronym>WGS84</ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+          <annotationFontProperties description=".SF NS Text,13,-1,5,50,0,0,0,0,0" style=""/>
+        </ComposerMapGrid>
+        <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
+        <ComposerItem pagey="0" page="1" id="" lastValidViewScaleFactor="6.13221" positionMode="0" positionLock="false" x="0" y="0" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="146.814" outlineWidth="0.3" excludeFromExports="0" uuid="{70be4e56-23d8-4bdf-ae59-8fceec6afb11}" height="117.605" itemRotation="0" frame="false" pagex="0">
+          <FrameColor alpha="255" red="0" blue="0" green="0"/>
+          <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+          <customproperties/>
+        </ComposerItem>
+      </ComposerMap>
+      <customproperties>
+        <property key="imageCropMarginBottom" value="0"/>
+        <property key="imageCropMarginLeft" value="0"/>
+        <property key="imageCropMarginRight" value="0"/>
+        <property key="imageCropMarginTop" value="0"/>
+        <property key="imageCropToContents" value="false"/>
+      </customproperties>
+    </Composition>
+  </Composer>
+  <projectlayers layercount="48">
     <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
       <id>19850905142904_LM50090111985248FFF03_220151128122016766</id>
       <datasource>../../data_sets/GreenlandLandsat/19850905142904_LM50090111985248FFF03_2.tif</datasource>
@@ -1720,6 +1868,334 @@
             <maxValue>223</maxValue>
             <algorithm>StretchToMinimumMaximum</algorithm>
           </contrastEnhancement>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <id>bmelt20151209144909079</id>
+      <datasource>NETCDF:"./900m_const_ctrl_v2_1985/processed/jakobshavn/ex_jakobshavn_g900m_const_ctrl_v2_1985_sia_e_1.25_ppq_0.6_tefo_0.02_ssa_n_3.25_ssa_e_1.0_calving_eigen_calving_calving_k_1e+15_calving_thk_threshold_350_ocean_const_m20_hindcast_1989-2011.nc":bmelt</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>bmelt</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>100016</srsid>
+          <srid>0</srid>
+          <authid>USER:100016</authid>
+          <description> * Generated CRS (+proj=stere +lat_0=90 +lat_ts=70 +lon_0=-45 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
+          <projectionacronym>stere</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="1"/>
+        <noDataList bandNo="2" useSrcNoData="1"/>
+        <noDataList bandNo="3" useSrcNoData="1"/>
+        <noDataList bandNo="4" useSrcNoData="1"/>
+        <noDataList bandNo="5" useSrcNoData="1"/>
+        <noDataList bandNo="6" useSrcNoData="1"/>
+        <noDataList bandNo="7" useSrcNoData="1"/>
+        <noDataList bandNo="8" useSrcNoData="1"/>
+        <noDataList bandNo="9" useSrcNoData="1"/>
+        <noDataList bandNo="10" useSrcNoData="1"/>
+        <noDataList bandNo="11" useSrcNoData="1"/>
+        <noDataList bandNo="12" useSrcNoData="1"/>
+        <noDataList bandNo="13" useSrcNoData="1"/>
+        <noDataList bandNo="14" useSrcNoData="1"/>
+        <noDataList bandNo="15" useSrcNoData="1"/>
+        <noDataList bandNo="16" useSrcNoData="1"/>
+        <noDataList bandNo="17" useSrcNoData="1"/>
+        <noDataList bandNo="18" useSrcNoData="1"/>
+        <noDataList bandNo="19" useSrcNoData="1"/>
+        <noDataList bandNo="20" useSrcNoData="1"/>
+        <noDataList bandNo="21" useSrcNoData="1"/>
+        <noDataList bandNo="22" useSrcNoData="1"/>
+        <noDataList bandNo="23" useSrcNoData="1"/>
+        <noDataList bandNo="24" useSrcNoData="1"/>
+        <noDataList bandNo="25" useSrcNoData="1"/>
+        <noDataList bandNo="26" useSrcNoData="1"/>
+        <noDataList bandNo="27" useSrcNoData="1"/>
+        <noDataList bandNo="28" useSrcNoData="1"/>
+        <noDataList bandNo="29" useSrcNoData="1"/>
+        <noDataList bandNo="30" useSrcNoData="1"/>
+        <noDataList bandNo="31" useSrcNoData="1"/>
+        <noDataList bandNo="32" useSrcNoData="1"/>
+        <noDataList bandNo="33" useSrcNoData="1"/>
+        <noDataList bandNo="34" useSrcNoData="1"/>
+        <noDataList bandNo="35" useSrcNoData="1"/>
+        <noDataList bandNo="36" useSrcNoData="1"/>
+        <noDataList bandNo="37" useSrcNoData="1"/>
+        <noDataList bandNo="38" useSrcNoData="1"/>
+        <noDataList bandNo="39" useSrcNoData="1"/>
+        <noDataList bandNo="40" useSrcNoData="1"/>
+        <noDataList bandNo="41" useSrcNoData="1"/>
+        <noDataList bandNo="42" useSrcNoData="1"/>
+        <noDataList bandNo="43" useSrcNoData="1"/>
+        <noDataList bandNo="44" useSrcNoData="1"/>
+        <noDataList bandNo="45" useSrcNoData="1"/>
+        <noDataList bandNo="46" useSrcNoData="1"/>
+        <noDataList bandNo="47" useSrcNoData="1"/>
+        <noDataList bandNo="48" useSrcNoData="1"/>
+        <noDataList bandNo="49" useSrcNoData="1"/>
+        <noDataList bandNo="50" useSrcNoData="1"/>
+        <noDataList bandNo="51" useSrcNoData="1"/>
+        <noDataList bandNo="52" useSrcNoData="1"/>
+        <noDataList bandNo="53" useSrcNoData="1"/>
+        <noDataList bandNo="54" useSrcNoData="1"/>
+        <noDataList bandNo="55" useSrcNoData="1"/>
+        <noDataList bandNo="56" useSrcNoData="1"/>
+        <noDataList bandNo="57" useSrcNoData="1"/>
+        <noDataList bandNo="58" useSrcNoData="1"/>
+        <noDataList bandNo="59" useSrcNoData="1"/>
+        <noDataList bandNo="60" useSrcNoData="1"/>
+        <noDataList bandNo="61" useSrcNoData="1"/>
+        <noDataList bandNo="62" useSrcNoData="1"/>
+        <noDataList bandNo="63" useSrcNoData="1"/>
+        <noDataList bandNo="64" useSrcNoData="1"/>
+        <noDataList bandNo="65" useSrcNoData="1"/>
+        <noDataList bandNo="66" useSrcNoData="1"/>
+        <noDataList bandNo="67" useSrcNoData="1"/>
+        <noDataList bandNo="68" useSrcNoData="1"/>
+        <noDataList bandNo="69" useSrcNoData="1"/>
+        <noDataList bandNo="70" useSrcNoData="1"/>
+        <noDataList bandNo="71" useSrcNoData="1"/>
+        <noDataList bandNo="72" useSrcNoData="1"/>
+        <noDataList bandNo="73" useSrcNoData="1"/>
+        <noDataList bandNo="74" useSrcNoData="1"/>
+        <noDataList bandNo="75" useSrcNoData="1"/>
+        <noDataList bandNo="76" useSrcNoData="1"/>
+        <noDataList bandNo="77" useSrcNoData="1"/>
+        <noDataList bandNo="78" useSrcNoData="1"/>
+        <noDataList bandNo="79" useSrcNoData="1"/>
+        <noDataList bandNo="80" useSrcNoData="1"/>
+        <noDataList bandNo="81" useSrcNoData="1"/>
+        <noDataList bandNo="82" useSrcNoData="1"/>
+        <noDataList bandNo="83" useSrcNoData="1"/>
+        <noDataList bandNo="84" useSrcNoData="1"/>
+        <noDataList bandNo="85" useSrcNoData="1"/>
+        <noDataList bandNo="86" useSrcNoData="1"/>
+        <noDataList bandNo="87" useSrcNoData="1"/>
+        <noDataList bandNo="88" useSrcNoData="1"/>
+        <noDataList bandNo="89" useSrcNoData="1"/>
+        <noDataList bandNo="90" useSrcNoData="1"/>
+        <noDataList bandNo="91" useSrcNoData="1"/>
+        <noDataList bandNo="92" useSrcNoData="1"/>
+        <noDataList bandNo="93" useSrcNoData="1"/>
+        <noDataList bandNo="94" useSrcNoData="1"/>
+        <noDataList bandNo="95" useSrcNoData="1"/>
+        <noDataList bandNo="96" useSrcNoData="1"/>
+        <noDataList bandNo="97" useSrcNoData="1"/>
+        <noDataList bandNo="98" useSrcNoData="1"/>
+        <noDataList bandNo="99" useSrcNoData="1"/>
+        <noDataList bandNo="100" useSrcNoData="1"/>
+        <noDataList bandNo="101" useSrcNoData="1"/>
+        <noDataList bandNo="102" useSrcNoData="1"/>
+        <noDataList bandNo="103" useSrcNoData="1"/>
+        <noDataList bandNo="104" useSrcNoData="1"/>
+        <noDataList bandNo="105" useSrcNoData="1"/>
+        <noDataList bandNo="106" useSrcNoData="1"/>
+        <noDataList bandNo="107" useSrcNoData="1"/>
+        <noDataList bandNo="108" useSrcNoData="1"/>
+        <noDataList bandNo="109" useSrcNoData="1"/>
+        <noDataList bandNo="110" useSrcNoData="1"/>
+        <noDataList bandNo="111" useSrcNoData="1"/>
+        <noDataList bandNo="112" useSrcNoData="1"/>
+        <noDataList bandNo="113" useSrcNoData="1"/>
+        <noDataList bandNo="114" useSrcNoData="1"/>
+        <noDataList bandNo="115" useSrcNoData="1"/>
+        <noDataList bandNo="116" useSrcNoData="1"/>
+        <noDataList bandNo="117" useSrcNoData="1"/>
+        <noDataList bandNo="118" useSrcNoData="1"/>
+        <noDataList bandNo="119" useSrcNoData="1"/>
+        <noDataList bandNo="120" useSrcNoData="1"/>
+        <noDataList bandNo="121" useSrcNoData="1"/>
+        <noDataList bandNo="122" useSrcNoData="1"/>
+        <noDataList bandNo="123" useSrcNoData="1"/>
+        <noDataList bandNo="124" useSrcNoData="1"/>
+        <noDataList bandNo="125" useSrcNoData="1"/>
+        <noDataList bandNo="126" useSrcNoData="1"/>
+        <noDataList bandNo="127" useSrcNoData="1"/>
+        <noDataList bandNo="128" useSrcNoData="1"/>
+        <noDataList bandNo="129" useSrcNoData="1"/>
+        <noDataList bandNo="130" useSrcNoData="1"/>
+        <noDataList bandNo="131" useSrcNoData="1"/>
+        <noDataList bandNo="132" useSrcNoData="1"/>
+        <noDataList bandNo="133" useSrcNoData="1"/>
+        <noDataList bandNo="134" useSrcNoData="1"/>
+        <noDataList bandNo="135" useSrcNoData="1"/>
+        <noDataList bandNo="136" useSrcNoData="1"/>
+        <noDataList bandNo="137" useSrcNoData="1"/>
+        <noDataList bandNo="138" useSrcNoData="1"/>
+        <noDataList bandNo="139" useSrcNoData="1"/>
+        <noDataList bandNo="140" useSrcNoData="1"/>
+        <noDataList bandNo="141" useSrcNoData="1"/>
+        <noDataList bandNo="142" useSrcNoData="1"/>
+        <noDataList bandNo="143" useSrcNoData="1"/>
+        <noDataList bandNo="144" useSrcNoData="1"/>
+        <noDataList bandNo="145" useSrcNoData="1"/>
+        <noDataList bandNo="146" useSrcNoData="1"/>
+        <noDataList bandNo="147" useSrcNoData="1"/>
+        <noDataList bandNo="148" useSrcNoData="1"/>
+        <noDataList bandNo="149" useSrcNoData="1"/>
+        <noDataList bandNo="150" useSrcNoData="1"/>
+        <noDataList bandNo="151" useSrcNoData="1"/>
+        <noDataList bandNo="152" useSrcNoData="1"/>
+        <noDataList bandNo="153" useSrcNoData="1"/>
+        <noDataList bandNo="154" useSrcNoData="1"/>
+        <noDataList bandNo="155" useSrcNoData="1"/>
+        <noDataList bandNo="156" useSrcNoData="1"/>
+        <noDataList bandNo="157" useSrcNoData="1"/>
+        <noDataList bandNo="158" useSrcNoData="1"/>
+        <noDataList bandNo="159" useSrcNoData="1"/>
+        <noDataList bandNo="160" useSrcNoData="1"/>
+        <noDataList bandNo="161" useSrcNoData="1"/>
+        <noDataList bandNo="162" useSrcNoData="1"/>
+        <noDataList bandNo="163" useSrcNoData="1"/>
+        <noDataList bandNo="164" useSrcNoData="1"/>
+        <noDataList bandNo="165" useSrcNoData="1"/>
+        <noDataList bandNo="166" useSrcNoData="1"/>
+        <noDataList bandNo="167" useSrcNoData="1"/>
+        <noDataList bandNo="168" useSrcNoData="1"/>
+        <noDataList bandNo="169" useSrcNoData="1"/>
+        <noDataList bandNo="170" useSrcNoData="1"/>
+        <noDataList bandNo="171" useSrcNoData="1"/>
+        <noDataList bandNo="172" useSrcNoData="1"/>
+        <noDataList bandNo="173" useSrcNoData="1"/>
+        <noDataList bandNo="174" useSrcNoData="1"/>
+        <noDataList bandNo="175" useSrcNoData="1"/>
+        <noDataList bandNo="176" useSrcNoData="1"/>
+        <noDataList bandNo="177" useSrcNoData="1"/>
+        <noDataList bandNo="178" useSrcNoData="1"/>
+        <noDataList bandNo="179" useSrcNoData="1"/>
+        <noDataList bandNo="180" useSrcNoData="1"/>
+        <noDataList bandNo="181" useSrcNoData="1"/>
+        <noDataList bandNo="182" useSrcNoData="1"/>
+        <noDataList bandNo="183" useSrcNoData="1"/>
+        <noDataList bandNo="184" useSrcNoData="1"/>
+        <noDataList bandNo="185" useSrcNoData="1"/>
+        <noDataList bandNo="186" useSrcNoData="1"/>
+        <noDataList bandNo="187" useSrcNoData="1"/>
+        <noDataList bandNo="188" useSrcNoData="1"/>
+        <noDataList bandNo="189" useSrcNoData="1"/>
+        <noDataList bandNo="190" useSrcNoData="1"/>
+        <noDataList bandNo="191" useSrcNoData="1"/>
+        <noDataList bandNo="192" useSrcNoData="1"/>
+        <noDataList bandNo="193" useSrcNoData="1"/>
+        <noDataList bandNo="194" useSrcNoData="1"/>
+        <noDataList bandNo="195" useSrcNoData="1"/>
+        <noDataList bandNo="196" useSrcNoData="1"/>
+        <noDataList bandNo="197" useSrcNoData="1"/>
+        <noDataList bandNo="198" useSrcNoData="1"/>
+        <noDataList bandNo="199" useSrcNoData="1"/>
+        <noDataList bandNo="200" useSrcNoData="1"/>
+        <noDataList bandNo="201" useSrcNoData="1"/>
+        <noDataList bandNo="202" useSrcNoData="1"/>
+        <noDataList bandNo="203" useSrcNoData="1"/>
+        <noDataList bandNo="204" useSrcNoData="1"/>
+        <noDataList bandNo="205" useSrcNoData="1"/>
+        <noDataList bandNo="206" useSrcNoData="1"/>
+        <noDataList bandNo="207" useSrcNoData="1"/>
+        <noDataList bandNo="208" useSrcNoData="1"/>
+        <noDataList bandNo="209" useSrcNoData="1"/>
+        <noDataList bandNo="210" useSrcNoData="1"/>
+        <noDataList bandNo="211" useSrcNoData="1"/>
+        <noDataList bandNo="212" useSrcNoData="1"/>
+        <noDataList bandNo="213" useSrcNoData="1"/>
+        <noDataList bandNo="214" useSrcNoData="1"/>
+        <noDataList bandNo="215" useSrcNoData="1"/>
+        <noDataList bandNo="216" useSrcNoData="1"/>
+        <noDataList bandNo="217" useSrcNoData="1"/>
+        <noDataList bandNo="218" useSrcNoData="1"/>
+        <noDataList bandNo="219" useSrcNoData="1"/>
+        <noDataList bandNo="220" useSrcNoData="1"/>
+        <noDataList bandNo="221" useSrcNoData="1"/>
+        <noDataList bandNo="222" useSrcNoData="1"/>
+        <noDataList bandNo="223" useSrcNoData="1"/>
+        <noDataList bandNo="224" useSrcNoData="1"/>
+        <noDataList bandNo="225" useSrcNoData="1"/>
+        <noDataList bandNo="226" useSrcNoData="1"/>
+        <noDataList bandNo="227" useSrcNoData="1"/>
+        <noDataList bandNo="228" useSrcNoData="1"/>
+        <noDataList bandNo="229" useSrcNoData="1"/>
+        <noDataList bandNo="230" useSrcNoData="1"/>
+        <noDataList bandNo="231" useSrcNoData="1"/>
+        <noDataList bandNo="232" useSrcNoData="1"/>
+        <noDataList bandNo="233" useSrcNoData="1"/>
+        <noDataList bandNo="234" useSrcNoData="1"/>
+        <noDataList bandNo="235" useSrcNoData="1"/>
+        <noDataList bandNo="236" useSrcNoData="1"/>
+        <noDataList bandNo="237" useSrcNoData="1"/>
+        <noDataList bandNo="238" useSrcNoData="1"/>
+        <noDataList bandNo="239" useSrcNoData="1"/>
+        <noDataList bandNo="240" useSrcNoData="1"/>
+        <noDataList bandNo="241" useSrcNoData="1"/>
+        <noDataList bandNo="242" useSrcNoData="1"/>
+        <noDataList bandNo="243" useSrcNoData="1"/>
+        <noDataList bandNo="244" useSrcNoData="1"/>
+        <noDataList bandNo="245" useSrcNoData="1"/>
+        <noDataList bandNo="246" useSrcNoData="1"/>
+        <noDataList bandNo="247" useSrcNoData="1"/>
+        <noDataList bandNo="248" useSrcNoData="1"/>
+        <noDataList bandNo="249" useSrcNoData="1"/>
+        <noDataList bandNo="250" useSrcNoData="1"/>
+        <noDataList bandNo="251" useSrcNoData="1"/>
+        <noDataList bandNo="252" useSrcNoData="1"/>
+        <noDataList bandNo="253" useSrcNoData="1"/>
+        <noDataList bandNo="254" useSrcNoData="1"/>
+        <noDataList bandNo="255" useSrcNoData="1"/>
+        <noDataList bandNo="256" useSrcNoData="1"/>
+        <noDataList bandNo="257" useSrcNoData="1"/>
+        <noDataList bandNo="258" useSrcNoData="1"/>
+        <noDataList bandNo="259" useSrcNoData="1"/>
+        <noDataList bandNo="260" useSrcNoData="1"/>
+        <noDataList bandNo="261" useSrcNoData="1"/>
+        <noDataList bandNo="262" useSrcNoData="1"/>
+        <noDataList bandNo="263" useSrcNoData="1"/>
+        <noDataList bandNo="264" useSrcNoData="1"/>
+        <noDataList bandNo="265" useSrcNoData="1"/>
+        <noDataList bandNo="266" useSrcNoData="1"/>
+        <noDataList bandNo="267" useSrcNoData="1"/>
+        <noDataList bandNo="268" useSrcNoData="1"/>
+        <noDataList bandNo="269" useSrcNoData="1"/>
+        <noDataList bandNo="270" useSrcNoData="1"/>
+        <noDataList bandNo="271" useSrcNoData="1"/>
+        <noDataList bandNo="272" useSrcNoData="1"/>
+        <noDataList bandNo="273" useSrcNoData="1"/>
+        <noDataList bandNo="274" useSrcNoData="1"/>
+        <noDataList bandNo="275" useSrcNoData="1"/>
+        <noDataList bandNo="276" useSrcNoData="1"/>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer opacity="1" alphaBand="-1" classificationMax="250" classificationMinMaxOrigin="User" band="1" classificationMin="0" type="singlebandpseudocolor">
+          <rasterTransparency>
+            <singleValuePixelList>
+              <pixelListEntry min="-10" max="20" percentTransparent="100"/>
+            </singleValuePixelList>
+          </rasterTransparency>
+          <rastershader>
+            <colorrampshader colorRampType="DISCRETE" clip="0">
+              <item alpha="255" value="25" label="20-25" color="#00bfff"/>
+              <item alpha="255" value="30" label="25-30" color="#7fff7f"/>
+              <item alpha="255" value="180" label="170-180" color="#ffbf00"/>
+              <item alpha="255" value="250" label="180-250" color="#ff0000"/>
+            </colorrampshader>
+          </rastershader>
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
         <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
