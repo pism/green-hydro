@@ -280,7 +280,6 @@ for n, combination in enumerate(combinations):
         params_dict['REGRIDVARS'] = regridvars        
         params_dict['PISM_TIMEFILE'] = time_file
         params_dict['PISM_SURFACE_BCFILE']= forecast_surface_bcfile
-        params_dict['PISM_OCEAN_BCFILE']= 'ocean_forcing_{grid}m_1989-2011_v{version}_{bed_type}_{ocean}.nc'.format(grid=grid, version=version, bed_type=bed_type, ocean=ocean)
         params_dict['PARAM_CALVING'] = calving_forecast
         if calving_forecast in ('eigen_calving'):
             params_dict['PARAM_CALVING_K'] = calving_k
