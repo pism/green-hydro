@@ -5,33 +5,33 @@ import itertools
 from collections import OrderedDict
 import os
 from argparse import ArgumentParser
-from resources import *
+
+grid_choices = [9000, 4500, 3600, 1800, 1500, 1200, 900, 600, 450]
 
 # set up the option parser
 parser = ArgumentParser()
-parser.description = "Generating scripts for parameter study."
-parser.add_argument("regridfile", nargs=1)
+parser.description = "Generating scripts for model initialization."
 parser.add_argument("-n", '--n_procs', dest="n", type=int,
                     help='''number of cores/processors. default=64.''', default=64)
 parser.add_argument("-w", '--wall_time', dest="walltime",
                     help='''walltime. default: 12:00:00.''', default="12:00:00")
 parser.add_argument("-q", '--queue', dest="queue", choices=['standard_4', 'standard_16', 'standard', 'gpu', 'gpu_long', 'long', 'normal'],
                     help='''queue. default=standard_4.''', default='standard_4')
+parser.add_argument("--climate", dest="climate",
+                    choices=['const', 'paleo'],
+                    help="Climate", default='paleo')
 parser.add_argument("--calving", dest="calving",
                     choices=['float_kill', 'ocean_kill', 'eigen_calving'],
-                    help="claving", default='eigen_calving')
-parser.add_argument("--ocean", dest="ocean",
-                    choices=['const_ctrl', 'const_m20'],
-                    help="ocean forcing type", default='const_ctrl')
+                    help="claving", default='ocean_kill')
 parser.add_argument("-d", "--domain", dest="domain",
-                    choices=['greenland', 'jakobshavn'],
+                    choices=['greenland'],
                     help="sets the modeling domain", default='greenland')
 parser.add_argument("-f", "--o_format", dest="oformat",
                     choices=['netcdf3', 'netcdf4_parallel', 'pnetcdf'],
                     help="output format", default='netcdf4_parallel')
 parser.add_argument("-g", "--grid", dest="grid", type=int,
-                    choices=[18000, 9000, 4500, 3600, 1800, 1500, 1200, 900, 600, 450],
-                    help="horizontal grid resolution", default=1500)
+                    choices=grid_choices,
+                    help="horizontal grid resolution", default=9000)
 parser.add_argument("--o_size", dest="osize",
                     choices=['small', 'medium', 'big', '2dbig'],
                     help="output size type", default='2dbig')
@@ -39,15 +39,17 @@ parser.add_argument("-s", "--system", dest="system",
                     choices=['pleiades', 'fish', 'pacman', 'debug'],
                     help="computer system to use.", default='pacman')
 parser.add_argument("-b", "--bed_type", dest="bed_type",
-                    choices=['ctrl', 'old_bed', 'ba01_bed', '970mw_hs', 'jak_1985', 'cresis'],
-                    help="subglacial topograpy type", default='ctrl')
+                    choices=['ctrl', 'old_bed', 'ba01_bed', '970mW_hs', 'jak_1985', 'cresis'],
+                    help="output size type", default='ctrl')
+parser.add_argument("--forcing_type", dest="forcing_type",
+                    choices=['ctrl', 'e_age', 'ftt', 'e_age_ftt'],
+                    help="output size type", default='ctrl')
 parser.add_argument("--dataset_version", dest="version",
-                    choices=['2_1985'],
-                    help="input data set version", default='2_1985')
+                    choices=['2'],
+                    help="input data set version", default='2')
 
 
 options = parser.parse_args()
-args = options.regridfile
 
 nn = options.n
 oformat = options.oformat
@@ -57,11 +59,11 @@ walltime = options.walltime
 system = options.system
 
 calving = options.calving
-ocean = options.ocean
+climate = options.climate
+forcing_type = options.forcing_type
 grid = options.grid
 bed_type = options.bed_type
 version = options.version
-vversion = 'v{}'.format(version)
 
 domain = options.domain
 if domain.lower() in ('greenland'):
@@ -77,42 +79,214 @@ else:
     import sys
     sys.exit(0)
 
+no_grid_choices = len(grid_choices)
+grid_nos = range(0, no_grid_choices)
+grid_mapping = OrderedDict(zip(grid_choices, grid_nos))
+save_times = [-125000, -25000, -5000, -1500, -1000, -500, -200, -100]
+grid_start_times = OrderedDict(zip(grid_choices, save_times))
+
+
+def generate_grid_description(grid_resolution):
+
+    mx_max = 10560
+    my_max = 18240
+    resolution_max = 150
+    
+    accepted_resolutions = (150, 300, 450, 600, 900, 1200, 1500, 1800, 2400, 3000, 3600, 4500, 9000, 18000, 36000)
+
+    try:
+        grid_resolution in accepted_resolutions
+        pass
+    except:
+        print('grid resolution {}m not recognized'.format(grid_resolution))
+
+    grid_div = (grid_resolution / resolution_max)
+              
+    mx = mx_max / grid_div
+    my = my_max / grid_div
+
+    horizontal_grid = {}
+    horizontal_grid['-Mx'] = mx
+    horizontal_grid['-My'] = my
+
+    if grid_resolution < 1200:
+        skip_max = 200
+        mz = 401
+        mzb = 41
+    elif (grid_resolution >= 1200) and (grid_resolution < 4500):
+        skip_max = 50
+        mz = 201
+        mzb = 21
+    elif (grid_resolution >= 4500) and (grid_resolution < 18000):
+        skip_max = 20
+        mz = 201
+        mzb = 21
+    else:
+        skip_max = 10
+        mz = 101
+        mzb = 11
+
+    vertical_grid = {}
+    vertical_grid['-Lz'] = 4000
+    vertical_grid['-Lzb'] = 2000
+    vertical_grid['-z_spacing'] = 'equal'
+    vertical_grid['-Mz'] = mz
+    vertical_grid['-Mzb'] = mzb
+
+    grid_options = {}
+    grid_options['-skip'] = ''
+    grid_options['-skip_max'] = skip_max
+
+    grid_dict = merge_dicts( horizontal_grid, vertical_grid)
+
+    return grid_dict
+
+
+def generate_stress_balance(stress_balance, *params):
+    '''
+    Generate stress balance params
+    '''
+
+    # PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N} ${SSA_E}"
+
+    accepted_stress_balances = ('sia', 'ssa+sia')
+
+    if stress_balance not in accepted_stress_balances:
+        print('{} not in {}'.format(stress_balance, accepted_stress_balances))
+        print('available stress balance solvers are {}'.format(accepted_stress_balances))
+        import sys
+        sys.exit(0)
+
+    stress_balance_params = {}
+    stress_balance_params['-stress_balance'] = stress_balance
+    if stress_balance in ('ssa+sia'):
+        stress_balance_params['-cfbc'] = ''
+        stress_balance_params['-pseudo_plastic'] = ''
+        stress_balance_params['-pseudo_plastic_q'] = params['pseudo_plastic_q']
+        stress_balance_params['-till_effective_fraction_overburden'] = params['till_effective_fraction_overburden']
+        stress_balance_params['-topg_to_phi'] = params['topg_to_phi']
+
+    return stress_balance_params
+
+
+def merge_dicts(*dict_args):
+    '''
+    Given any number of dicts, shallow copy and merge into a new dict,
+    precedence goes to key value pairs in latter dicts.
+    '''
+    result = {}
+    for dictionary in dict_args:
+        result.update(dictionary)
+    return result
+
+
+def uniquify_list(seq, idfun=None):
+    '''
+    Remove duplicates from a list, order preserving.
+    From http://www.peterbe.com/plog/uniqifiers-benchmark
+    '''
+
+    if idfun is None:
+        def idfun(x): return x
+    seen = {}
+    result = []
+    for item in seq:
+        marker = idfun(item)
+        if marker in seen:
+            continue
+        seen[marker] = 1
+        result.append(item)
+    return result
+
+
+def make_pbs_header(system, cores, walltime, queue):
+    systems = {}
+    systems['debug'] = {}
+    systems['fish'] = {'gpu' : 16,
+                       'gpu_long' : 16,
+                       'standard' : 12}
+    systems['pacman'] = {'standard_4' : 4,
+                        'standard_16' : 16}
+    systems['pleiades'] = {'long' : 20,
+                           'normal': 20}
+
+    assert system in systems.keys()
+    if system not in 'debug':
+        assert queue in systems[system].keys()
+        assert cores > 0
+
+        ppn = systems[system][queue]
+        nodes = cores / ppn
+
+    if system in ('debug'):
+
+        header = ''
+        
+    elif system in ('pleiades'):
+        
+        header = """
+#PBS -S /bin/bash
+#PBS -N cfd
+#PBS -l walltime={walltime}
+#PBS -m e
+#PBS -q {queue}
+#PBS -lselect={nodes}:ncpus={ppn}:mpiprocs={ppn}:model=ivy
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+""".format(queue=queue, walltime=walltime, nodes=nodes, ppn=ppn)
+    else:
+        header = """
+#!/bin/bash
+#PBS -q {queue}
+#PBS -l walltime={walltime}
+#PBS -l nodes={nodes}:ppn={ppn}
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+""".format(queue=queue, walltime=walltime, nodes=nodes, ppn=ppn)
+
+    return header
 
     
-regridfile=args[0]
 infile = ''
-pism_dataname = 'pism_greenland_{}m_mcb_jpl_v{}_{}.nc'.format(grid, version, bed_type)
-dura = 20
+pism_dataname = 'pism_Greenland_{}m_mcb_jpl_v{}_{}.nc'.format(grid, version, bed_type)
 
 
 # ########################################################
-# set up parameter sensitivity study: 1985 relaxation run
+# set up model initialization
 # ########################################################
 
-climate = 'const'
 hydro = 'null'
 pism_surface_bcfile = 'GR6b_ERAI_1989_2011_4800M_BIL_1989_baseline.nc'
 
-sia_e = (1.25)
+sia_e = (3.0)
 ppq = (0.6)
 tefo = (0.02)
 ssa_n = (3.25)
 ssa_e = (1.0)
 
-calving_thk_threshold_values = [100, 300, 500]
-calving_k_values = [1e15, 1e18]
+calving_thk_threshold_values = [300]
+calving_k_values = [1e18]
 phi_min_values = [5.0]
 phi_max_values = [40.]
 topg_min_values = [-700]
 topg_max_values = [700]
 combinations = list(itertools.product(calving_thk_threshold_values, calving_k_values, phi_min_values, phi_max_values, topg_min_values, topg_max_values))
 
-tsstep = 'daily'
-exstep = 'yearly'
-regridvars = 'litho_temp,enthalpy,tillwat,bmelt,Href'
+tsstep = 'yearly'
+exstep = '100'
+regridvars = 'age,litho_temp,enthalpy,tillwat,bmelt,Href,thk'
+ftt_starttime = -5000
 
 scripts = []
 posts = []
+
+start = grid_start_times[grid]
+end = 0
+
 for n, combination in enumerate(combinations):
 
     calving_thk_threshold, calving_k , phi_min, phi_max, topg_min, topg_max = combination
@@ -129,19 +303,19 @@ for n, combination in enumerate(combinations):
     name_options['phi_max'] = phi_max
     name_options['topg_min'] = topg_min
     name_options['topg_max'] = topg_max
-    name_options['hydro'] = hydro
     name_options['calving'] = calving
     if calving in ('eigen_calving'):
         name_options['calving_k'] = calving
         name_options['calving_thk_threshold'] = calving
-    name_options['ocean'] = ocean
-
-    experiment =  '_'.join([climate, bed_type, vversion, '_'.join(['_'.join([k, str(v)]) for k, v in name_options.items()])])
+    name_options['forcing_type'] = forcing_type
+    
+    vversion = 'v' + str(version)
+    experiment =  '_'.join([climate, vversion, bed_type, '_'.join(['_'.join([k, str(v)]) for k, v in name_options.items()])])
 
         
-    script = 'do_{}_g{}m_{}.sh'.format(domain.lower(), grid, experiment)
+    script = 'spinup_{}_g{}m_{}.sh'.format(domain.lower(), grid, experiment)
     scripts.append(script)
-    post = 'do_{}_g{}m_{}_post.sh'.format(domain.lower(), grid, experiment)
+    post = 'spinup_{}_g{}m_{}_post.sh'.format(domain.lower(), grid, experiment)
     posts.append(post)
     
     for filename in (script, post):
@@ -161,33 +335,43 @@ for n, combination in enumerate(combinations):
         f.write(pbs_header)
 
 
-        outfile = '{domain}_g{grid}m_{experiment}_{dura}a.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment, dura=dura)
-            
+        outfile = '{domain}_g{grid}m_spinup_{experiment}_0.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment)
+        
+        dura = 10
         params_dict = dict()
-        params_dict['PISM_DO'] = ''
         params_dict['PISM_OFORMAT'] = oformat
         params_dict['PISM_OSIZE'] = osize
         params_dict['PISM_EXEC'] = pism_exec
+        params_dict['PISM_SAVE'] = ','.join(str(e) for e in save_times[grid_mapping[grid]+1::])
+        params_dict['STARTEND'] = '{},{}'.format(start, end)
+
         params_dict['PISM_DATANAME'] = pism_dataname
         params_dict['PISM_SURFACE_BC_FILE'] = pism_surface_bcfile
-        params_dict['PISM_OCEAN_BCFILE']= 'ocean_forcing_{grid}m_1989-2011_v{version}_{bed_type}_{ocean}_1989_baseline.nc'.format(grid=grid, version=version, bed_type=bed_type, ocean=ocean)
-        params_dict['PISM_CONFIG'] = 'hindcast_config.nc'
-        params_dict['REGRIDFILE'] = regridfile
+        params_dict['PISM_CONFIG'] = 'spinup_config.nc'
         params_dict['TSSTEP'] = tsstep
         params_dict['EXSTEP'] = exstep
-        params_dict['REGRIDVARS'] = regridvars
+        if grid_mapping[grid] > 0:
+            previous_grid =  [k for k, v in grid_mapping.iteritems() if v == grid_mapping[grid] -1][0]
+            regridfile = 'save_{domain}_g{grid}m_spinup_{experiment}_{start}.000.nc'.format(domain=domain.lower(),grid=previous_grid, experiment=experiment, start=start)
+            params_dict['REGRIDVARS'] = regridvars
+            params_dict['REGRIDFILE'] = regridfile
         params_dict['SIA_E'] = sia_e
         params_dict['SSA_E'] = ssa_e
         params_dict['SSA_N'] = ssa_n
-        params_dict['PARAM_NOAGE'] = 'foo'
+        params_dict['PARAM_NOAGE'] = ''
         params_dict['PARAM_PPQ'] = ppq
         params_dict['PARAM_TEFO'] = tefo
         params_dict['PARAM_TTPHI'] = ttphi
-        params_dict['PARAM_FTT'] = ''
         params_dict['PARAM_CALVING'] = calving
         if calving in ('eigen_calving'):
             params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
             params_dict['PARAM_CALVING_K'] = calving_k
+        if forcing_type in ('e_age', 'e_age_ftt'):
+            params_dict['PARAM_E_AGE_COUPLING'] = 'yes'
+        if forcing_type in ('ftt', 'e_age_ftt'):
+            params_dict['PARAM_FTT'] = 'yes'
+            params_dict['PARAM_FTT_STARTTIME'] = ftt_starttime
+            
         
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
         cmd = ' '.join([params, './run.sh', str(nn), climate, str(dura), str(grid), 'hybrid', hydro, outfile, infile, '2>&1 | tee job.${PBS_JOBID}'])
@@ -233,7 +417,8 @@ for n, combination in enumerate(combinations):
         f.write('\n')
         
     
-
+scripts = uniquify_list(scripts)
+posts = uniquify_list(posts)
 
 submit = 'submit_{domain}_g{grid}m_{climate}_{bed_type}_hirham_relax.sh'.format(domain=domain.lower(), grid=grid, climate=climate, bed_type=bed_type)
 try:
