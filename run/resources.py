@@ -1,3 +1,6 @@
+from collections import OrderedDict
+
+
 def generate_domain(domain):
     '''
     Generate domain specific options
@@ -41,9 +44,9 @@ def generate_grid_description(grid_resolution):
     mx = mx_max / grid_div
     my = my_max / grid_div
 
-    horizontal_grid = {}
-    horizontal_grid['-Mx'] = mx
-    horizontal_grid['-My'] = my
+    horizontal_grid = OrderedDict()
+    horizontal_grid['Mx'] = mx
+    horizontal_grid['My'] = my
 
     if grid_resolution < 1200:
         skip_max = 200
@@ -62,16 +65,16 @@ def generate_grid_description(grid_resolution):
         mz = 101
         mzb = 11
 
-    vertical_grid = {}
-    vertical_grid['-Lz'] = 4000
-    vertical_grid['-Lzb'] = 2000
-    vertical_grid['-z_spacing'] = 'equal'
-    vertical_grid['-Mz'] = mz
-    vertical_grid['-Mzb'] = mzb
+    vertical_grid = OrderedDict()
+    vertical_grid['Lz'] = 4000
+    vertical_grid['Lzb'] = 2000
+    vertical_grid['z_spacing'] = 'equal'
+    vertical_grid['Mz'] = mz
+    vertical_grid['Mzb'] = mzb
 
     grid_options = {}
-    grid_options['-skip'] = ''
-    grid_options['-skip_max'] = skip_max
+    grid_options['skip'] = ''
+    grid_options['skip_max'] = skip_max
 
     grid_dict = merge_dicts( horizontal_grid, vertical_grid)
 
@@ -83,7 +86,7 @@ def merge_dicts(*dict_args):
     Given any number of dicts, shallow copy and merge into a new dict,
     precedence goes to key value pairs in latter dicts.
     '''
-    result = {}
+    result = OrderedDict()
     for dictionary in dict_args:
         result.update(dictionary)
     return result
@@ -106,6 +109,34 @@ def uniquify_list(seq, idfun=None):
         seen[marker] = 1
         result.append(item)
     return result
+
+
+def generate_stress_balance(stress_balance, params_dict):
+    '''
+    Generate stress balance params
+    '''
+
+    accepted_stress_balances = ('sia', 'ssa+sia')
+
+    if stress_balance not in accepted_stress_balances:
+        print('{} not in {}'.format(stress_balance, accepted_stress_balances))
+        print('available stress balance solvers are {}'.format(accepted_stress_balances))
+        import sys
+        sys.exit(0)
+
+    stress_balance_params_dict = OrderedDict()
+    stress_balance_params_dict['stress_balance'] = stress_balance
+    if stress_balance in ('ssa+sia'):
+        stress_balance_params_dict['cfbc'] = ''
+        stress_balance_params_dict['pseudo_plastic'] = ''
+        stress_balance_params_dict['pseudo_plastic_q'] = params_dict['pseudo_plastic_q']
+        stress_balance_params_dict['till_effective_fraction_overburden'] = params_dict['till_effective_fraction_overburden']
+        stress_balance_params_dict['topg_to_phi'] = params_dict['topg_to_phi']
+        stress_balance_params_dict['tauc_slippery_grounding_lines'] = ''
+
+        return merge_dicts(params_dict, stress_balance_params_dict)
+        
+
 
 
 def make_pbs_header(system, cores, walltime, queue):

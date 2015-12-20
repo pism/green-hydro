@@ -164,16 +164,26 @@ for n, combination in enumerate(combinations):
         
         dura = 10
 
-        general_params_dict = dict()
-        general_params_dict['-o_format'] = oformat
-        general_params_dict['-o_size'] = osize
+        general_params_dict = OrderedDict()
+        general_params_dict['o_format'] = oformat
+        general_params_dict['o_size'] = osize
         
         grid_params_dict = generate_grid_description(grid)
 
-        all_params_dict = merge_dicts(general_params_dict, grid_params_dict)
-        all_params = ' '.join([' '.join([k, str(v)]) for k, v in all_params_dict.items()])
+        sb_params_dict = OrderedDict()
+        sb_params_dict['sia_e'] = sia_e
+        sb_params_dict['ssa_e'] = ssa_e
+        sb_params_dict['ssa_n'] = ssa_n
+        sb_params_dict['pseudo_plastic_q'] = ppq
+        sb_params_dict['till_effective_fraction_overburden'] = tefo
+        sb_params_dict['topg_to_phi'] = ttphi
+
+        stress_balance_params_dict = generate_stress_balance(stress_balance, sb_params_dict)
+
+        all_params_dict = merge_dicts(general_params_dict, grid_params_dict, stress_balance_params_dict)
+        all_params = ' '.join([' '.join(['-' + k, str(v)]) for k, v in all_params_dict.items()])
         
-        params_dict = dict()
+        params_dict = OrderedDict()
         if system in ('debug'):
             params_dict['PISM_DO'] = 'echo'
         else:
@@ -194,13 +204,7 @@ for n, combination in enumerate(combinations):
             regridfile = 'save_{domain}_g{grid}m_spinup_{experiment}_{start}.000.nc'.format(domain=domain.lower(),grid=previous_grid, experiment=experiment, start=start)
             params_dict['REGRIDVARS'] = regridvars
             params_dict['REGRIDFILE'] = regridfile
-        params_dict['SIA_E'] = sia_e
-        params_dict['SSA_E'] = ssa_e
-        params_dict['SSA_N'] = ssa_n
         params_dict['PARAM_NOAGE'] = ''
-        params_dict['PARAM_PPQ'] = ppq
-        params_dict['PARAM_TEFO'] = tefo
-        params_dict['PARAM_TTPHI'] = ttphi
         params_dict['PARAM_CALVING'] = calving
         if calving in ('eigen_calving'):
             params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
@@ -214,7 +218,7 @@ for n, combination in enumerate(combinations):
         
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
         
-        cmd = ' '.join([params, './run_main.sh', str(nn), climate, str(dura), 'hybrid', hydro, outfile, infile, '2>&1 | tee job.${PBS_JOBID}'])
+        cmd = ' '.join([params, './run_main.sh', str(nn), climate, str(dura), hydro, outfile, infile, '2>&1 | tee job.${PBS_JOBID}'])
 
         f.write(cmd)
         f.write('\n')

@@ -21,7 +21,7 @@ parser.add_argument("--calving", dest="calving",
                     choices=['float_kill', 'ocean_kill', 'eigen_calving', 'thickness_calving', 'mixed_calving'],
                     help="claving", default='eigen_calving')
 parser.add_argument("--ocean", dest="ocean",
-                    choices=['const_ctrl', 'const_m20', 'ref'],
+                    choices=['const_ctrl', 'const_m20'],
                     help="ocean forcing type", default='const_ctrl')
 parser.add_argument("-d", "--domain", dest="domain",
                     choices=['greenland', 'jakobshavn'],
@@ -41,6 +41,9 @@ parser.add_argument("-s", "--system", dest="system",
 parser.add_argument("-b", "--bed_type", dest="bed_type",
                     choices=['ctrl', 'old_bed', 'ba01_bed', '970mW_hs', 'jak_1985', 'cresis'],
                     help="subglacial topograpy type", default='ctrl')
+parser.add_argument("--stress_balance", dest="stress_balance",
+                    choices=['sia', 'ssa+sia', 'ssa'],
+                    help="stress balance solver", default='ssa+sia')
 parser.add_argument("--dataset_version", dest="version",
                     choices=['2_1985'],
                     help="input data set version", default='2_1985')
@@ -60,6 +63,7 @@ calving = options.calving
 ocean = options.ocean
 grid = options.grid
 bed_type = options.bed_type
+stress_balance = options.stress_balance
 version = options.version
 vversion = 'v{}'.format(version)
 
@@ -72,7 +76,6 @@ else:
      
 domain = options.domain
 pism_exec = generate_domain(domain)
-
     
 regridfile=args[0]
 infile = ''
@@ -122,6 +125,11 @@ for n, combination in enumerate(combinations):
     name_options['tefo'] = tefo
     name_options['ssa_n'] = ssa_n
     name_options['ssa_e'] = ssa_e
+    name_options['phi_min'] = phi_min
+    name_options['phi_max'] = phi_max
+    name_options['topg_min'] = topg_min
+    name_options['topg_max'] = topg_max
+    name_options['hydro'] = hydro
     name_options['calving'] = calving
     if calving in ('eigen_calving', 'mixed_calving'):
         name_options['calving_k'] = calving_k
@@ -154,16 +162,35 @@ for n, combination in enumerate(combinations):
 
         f.write(pbs_header)
 
+        relax_outfile = '{domain}_g{grid}m_{experiment}_{dura}a.nc'.format(domain=domain.lower(), grid=grid, experiment=experiment, dura=dura)
 
-        relax_outfile = '{domain}_g{grid}m_{experiment}_{dura}a.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment, dura=dura)
+        general_params_dict = OrderedDict()
+        general_params_dict['o_format'] = oformat
+        general_params_dict['o_size'] = osize
+        
+        grid_params_dict = generate_grid_description(grid)
+
+        sb_params_dict = OrderedDict()
+        sb_params_dict['sia_e'] = sia_e
+        sb_params_dict['ssa_e'] = ssa_e
+        sb_params_dict['ssa_n'] = ssa_n
+        sb_params_dict['pseudo_plastic_q'] = ppq
+        sb_params_dict['till_effective_fraction_overburden'] = tefo
+        sb_params_dict['topg_to_phi'] = ttphi
+
+        stress_balance_params_dict = generate_stress_balance(stress_balance, sb_params_dict)
+
+        all_params_dict = merge_dicts(general_params_dict, grid_params_dict, stress_balance_params_dict)
+        all_params = ' '.join([' '.join(['-' + k, str(v)]) for k, v in all_params_dict.items()])
+    
 
         exstep = 'yearly'
         regridvars = 'litho_temp,enthalpy,tillwat,bmelt,Href'
-        params_dict = dict()
+
+        params_dict = OrderedDict()
         params_dict['PISM_DO'] = ''
-        params_dict['PISM_OFORMAT'] = oformat
-        params_dict['PISM_OSIZE'] = osize
         params_dict['PISM_EXEC'] = pism_exec
+        params_dict['PISM_PARAMS'] = '\'{}\''.format(all_params)
         params_dict['PISM_DATANAME'] = pism_dataname
         params_dict['PISM_SURFACE_BC_FILE'] = relax_surface_bcfile
         params_dict['PISM_OCEAN_BCFILE']= 'ocean_forcing_{grid}m_{start}-{end}_v{version}_{bed_type}_{ocean}_1989_baseline.nc'.format(grid=grid, version=version, bed_type=bed_type, ocean=ocean, start=era_start, end=era_end)
@@ -172,13 +199,7 @@ for n, combination in enumerate(combinations):
         params_dict['TSSTEP'] = tsstep
         params_dict['EXSTEP'] = exstep
         params_dict['REGRIDVARS'] = regridvars
-        params_dict['SIA_E'] = sia_e
-        params_dict['SSA_E'] = ssa_e
-        params_dict['SSA_N'] = ssa_n
         params_dict['PARAM_NOAGE'] = 'foo'
-        params_dict['PARAM_PPQ'] = ppq
-        params_dict['PARAM_TEFO'] = tefo
-        params_dict['PARAM_TTPHI'] = ttphi
         params_dict['PARAM_FTT'] = ''
         params_dict['PARAM_CALVING'] = calving_relax
         if calving_relax in ('eigen_calving'):
@@ -187,12 +208,12 @@ for n, combination in enumerate(combinations):
             params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
 
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
-        cmd = ' '.join([params, './run.sh', str(nn), climate, str(dura), str(grid), 'hybrid', hydro, relax_outfile, infile, '2>&1 | tee job_r.${PBS_JOBID}'])
+        cmd = ' '.join([params, './run_main.sh', str(nn), climate, str(dura), hydro, relax_outfile, infile, '2>&1 | tee job_r.${PBS_JOBID}'])
 
         f.write(cmd)
         f.write('\n\n')
 
-        hindcast_outfile = '{domain}_g{grid}m_{experiment}_{start}-{end}.nc'.format(domain=domain.lower(),grid=grid, experiment=experiment, start=era_start, end=era_end)
+        hindcast_outfile = '{domain}_g{grid}m_{experiment}_{start}-{end}.nc'.format(domain=domain.lower(), grid=grid, experiment=experiment, start=era_start, end=era_end)
 
         exstep = 'monthly'
         regridvars = 'litho_temp,enthalpy,tillwat,bmelt,Href,thk'
@@ -209,7 +230,7 @@ for n, combination in enumerate(combinations):
             params_dict['PARAM_CALVING_THK'] = calving_thk_threshold
 
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
-        cmd = ' '.join([params, './run.sh', str(nn), climate, str(dura), str(grid), 'hybrid', hydro, hindcast_outfile, infile, '2>&1 | tee job_h.${PBS_JOBID}'])
+        cmd = ' '.join([params, './run_main.sh', str(nn), climate, str(dura), hydro, hindcast_outfile, infile, '2>&1 | tee job_h.${PBS_JOBID}'])
 
         f.write(cmd)
         f.write('\n')
@@ -245,7 +266,7 @@ for n, combination in enumerate(combinations):
         f.write('  rm -f tmp_{relax_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{relax_outfile}\n'.format(relax_outfile=relax_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write('  ncks -v enthalpy,litho_temp -x {relax_outfile} tmp_{relax_outfile}\n'.format(relax_outfile=relax_outfile))
         f.write('  sh add_epsg3413_mapping.sh tmp_{}\n'.format(relax_outfile))
-        f.write('  ncpdq -O --64 -a time,y,x tmp_{relax_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{relax_outfile}\n'.format(relax_outfile=relax_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
+        f.write('  ncpdq -o --64 -a time,y,x tmp_{relax_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{relax_outfile}\n'.format(relax_outfile=relax_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write(  '''  ncap2 -O -s "uflux=ubar*thk; vflux=vbar*thk; velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {{velshear_mag={fill}; velbase_mag={fill}; velsurf_mag={fill}; flux_mag={fill};}}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag);" {tl_dir}/{nc_dir}/{rc_dir}/{relax_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{relax_outfile}\n'''.format(relax_outfile=relax_outfile, fill=fill, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write('  ncatted -a bed_data_set,run_stats,o,c,"{mytype}" -a grid_dx_meters,run_stats,o,f,{grid} -a grid_dy_meters,run_stats,o,f,{grid} -a long_name,uflux,o,c,"Vertically-integrated horizontal flux of ice in the X direction" -a long_name,vflux,o,c,"Vertically-integrated horizontal flux of ice in the Y direction" -a units,uflux,o,c,"m2 year-1" -a units,vflux,o,c,"m2 year-1" -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" {tl_dir}/{nc_dir}/{rc_dir}/{relax_outfile}\n'.format(mytype=mytype, grid=grid, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir, relax_outfile=relax_outfile))
         f.write('fi\n')
@@ -255,7 +276,7 @@ for n, combination in enumerate(combinations):
         f.write('  ncks -v enthalpy,litho_temp -x {hindcast_outfile} tmp_{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile))
         f.write('  ncks -O --64 ex_{hindcast_outfile} {tl_dir}/{nc_dir}/{rc_dir}/ex_{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write('  sh add_epsg3413_mapping.sh tmp_{}\n'.format(hindcast_outfile))
-        f.write('  ncpdq -O --64 -a time,y,x tmp_{hindcast_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
+        f.write('  ncpdq -o --64 -a time,y,x tmp_{hindcast_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{hindcast_outfile}\n'.format(hindcast_outfile=hindcast_outfile, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write(  '''  ncap2 -O -s "uflux=ubar*thk; vflux=vbar*thk; velshear_mag=velsurf_mag-velbase_mag; where(thk<50) {{velshear_mag={fill}; velbase_mag={fill}; velsurf_mag={fill}; flux_mag={fill};}}; sliding_r = velbase_mag/velsurf_mag; tau_r = tauc/(taud_mag+1); tau_rel=(tauc-taud_mag)/(1+taud_mag);" {tl_dir}/{nc_dir}/{rc_dir}/{hindcast_outfile} {tl_dir}/{nc_dir}/{rc_dir}/{hindcast_outfile}\n'''.format(hindcast_outfile=hindcast_outfile, fill=fill, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir))
         f.write('  ncatted -a bed_data_set,run_stats,o,c,"{mytype}" -a grid_dx_meters,run_stats,o,f,{grid} -a grid_dy_meters,run_stats,o,f,{grid} -a long_name,uflux,o,c,"Vertically-integrated horizontal flux of ice in the X direction" -a long_name,vflux,o,c,"Vertically-integrated horizontal flux of ice in the Y direction" -a units,uflux,o,c,"m2 year-1" -a units,vflux,o,c,"m2 year-1" -a units,sliding_r,o,c,"1" -a units,tau_r,o,c,"1" -a units,tau_rel,o,c,"1" {tl_dir}/{nc_dir}/{rc_dir}/{hindcast_outfile}\n'.format(mytype=mytype, grid=grid, tl_dir=tl_dir, nc_dir=nc_dir, rc_dir=rc_dir, hindcast_outfile=hindcast_outfile))
         f.write('fi\n')

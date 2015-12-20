@@ -1,17 +1,10 @@
 #!/bin/bash
 
-# Copyright (C) 2014 The PISM Authors
-
-# PISM Greenland spinup using either constant present-day climate or modeled
-# paleoclimate.
-
-# Before using this script, run preprocess.sh to download and 
-# prepare data sets.
+# Copyright (C) 2015 Andy Aschwanden and the PISM authors
 
 set -e  # exit on error
 
 CLIMLIST="{const, paleo, pdd, climate, ocean, climateocean}"
-DYNALIST="{sia, hybrid}"
 HYDROLIST="{null, routing, distributed}"
 
 # preprocess.sh generates pism_*.nc files; run it first
@@ -24,18 +17,17 @@ fi
 PISM_TEMPSERIES=pism_dT.nc
 PISM_SLSERIES=pism_dSL.nc
 
-if [ $# -lt 5 ] ; then
-  echo "run.sh ERROR: needs 4 or 5 or 6 or 7 positional arguments ... ENDING NOW"
+if [ $# -lt 3 ] ; then
+  echo "run.sh ERROR: needs 3 or 4 or 5 or 6 positional arguments ... ENDING NOW"
   echo
   echo "usage:"
   echo
-  echo "    run.sh PROCS CLIMATE DURATION GRID DYNAMICS HYRDRO [OUTFILE] [BOOTFILE]"
+  echo "    run.sh PROCS CLIMATE DURATION HYRDRO [OUTFILE] [BOOTFILE]"
   echo
   echo "  where:"
   echo "    PROCS     = 1,2,3,... is number of MPI processes"
   echo "    CLIMATE   in $CLIMLIST"
   echo "    DURATION  = model run time in years; does '-ys -DURATION -ye 0'"
-  echo "    DYNAMICS  in $DYNALIST; sia is non-sliding; default = sia"
   echo "    HYDRO     in $HYDROLIST; default = null"
   echo "    OUTFILE   optional name of output file; default = unnamed.nc"
   echo "    BOOTFILE  optional name of input file; default = $PISM_DATANAME"
@@ -58,15 +50,7 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_NOAGE    if set, DON'T calculate age"
   echo "    PARAM_E_AGE_COUPLING    if set, couple enhancement factor to age of ice."
   echo "    PARAM_NOENERGY if set, DON'T use energy updates"
-  echo "    PARAM_PPQ    sets (hybrid-only) option -pseudo_plastic_q \$PARAM_PPQ"
-  echo "                   [default=0.25]"
   echo "    PARAM_SHELF_BASE_MELT_RATE sets option -shelf_base_melt_rate \$PARAM_SHELF_BASE_MELT_RATE"
-  echo "    PARAM_UTHR   sets option -pseudo_platic_uthreshold \$PARAM_UTHR [default=100 m/a]"
-  echo "    PARAM_TEFO   sets (hybrid-only) option -till_effective_fraction_overburden"
-  echo "                   \$PARAM_TEFO   [default=0.02]"
-  echo "    PARAM_TTPHI  sets (hybrid-only) option -topg_to_phi \$PARAM_TTPHI"
-  echo "                   [default=15.0,40.0,-300.0,700.0]"
-  echo "    PARAM_NOSGL  if set, DON'T use -tauc_slippery_grounding_lines"
   echo "    PARAM_FTT    if set, use force-to-thickness method"
   echo "    PARAM_K      sets -hydraulic_conductivity \$PARAM_K"
   echo "                 [default=0.01] for [routing,distributed]"
@@ -74,14 +58,6 @@ if [ $# -lt 5 ] ; then
   echo "                 [default=0.5] for [routing, distributed]"
   echo "    PARAM_OMEGA  sets -tauc_add_transportable_water -till_log_factor_transportable_water \$PARAM_OMEGA"
   echo "                 [default=0.04] for [routing, distributed]"
-  echo "    PARAM_SIA_N  sets -sia_n \$PARAM_SIA_N"
-  echo "                 [default=3] for Glen exponent in SIA"
-  echo "    PARAM_SSA_N  sets -ssa_n \$PARAM_SSA_N"
-  echo "                 [default=3] for Glen exponent in SSA"
-  echo "    PARAM_SIA_E  sets -sia_e \$PARAM_SIA_E"
-  echo "                 [default=1.0] for enhancement in SIA"
-  echo "    PARAM_SSA_E  sets -ssa_e \$PARAM_SSA_E"
-  echo "                 [default=1] for enhancement in SSA"
   echo "    PISM_PARAMS  gives you the flexibility of adding options"
   echo "                 [default=none]"
   echo "    PISM_DO      set to 'echo' if no run desired; defaults to empty"
@@ -279,51 +255,8 @@ else
 fi
 
 
-if [ -n "${PARAM_SIA_E:+1}" ] ; then  # check if env var is already set
-  PHYS="$BEDDEF $ENERGY $CALVING -sia_e ${PARAM_SIA_E} ${SIA_N}"
-else
-  PHYS="$BEDDEF $ENERGY $CALVING -sia_e 3.0 ${SIA_N}"
-fi
-# done forming $PHYS if "$5" = "sia"
+PHYS="$BEDDEF $ENERGY $CALVING"
 
-
-if [ "$4" = "hybrid" ]; then
-  if [ -z "${PARAM_TTPHI}" ] ; then  # check if env var is NOT set
-    PARAM_TTPHI="5.0,40.0,-300.0,700.0"
-  fi
-  if [ -z "${PARAM_PPQ}" ] ; then  # check if env var is NOT set
-    PARAM_PPQ="0.5"
-  fi
-  if [ -z "${PARAM_TEFO}" ] ; then  # check if env var is NOT set
-    PARAM_TEFO="0.02"
-  fi
-  if [ -z "${PARAM_UTHR}" ] ; then  # check if env var is NOT set
-    PARAM_UTHR="100"
-  fi
-  if [ -z "${PARAM_NOSGL}" ] ; then  # check if env var is NOT set
-    SGL="-tauc_slippery_grounding_lines"
-  else
-    SGL=""
-  fi
-  if [ -n "${PARAM_SSA_N:+1}" ] ; then  # check if env var is NOT set
-    SSA_N="-ssa_n ${PARAM_SSA_N}"
-  else
-      SSA_N="-ssa_n 3.0"
-  fi
-  if [ -n "${PARAM_SSA_N:+1}" ] ; then  # check if env var is NOT set
-    SSA_E="-ssa_e ${PARAM_SSA_E}"
-  else
-    SSA_E="-ssa_e 1.0"
-  fi
-  PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N} ${SSA_E}"
-else
-  if [ "$4" = "sia" ]; then
-    echo "$SCRIPTNAME  sia-only case: ignoring PARAM_TTPHI, PARAM_PPQ, PARAM_TEFO ..."
-  else
-    echo "invalid fifth argument; must be in $DYNALIST"
-    exit
-  fi
-fi
 
 if [ -n "${PARAM_ALPHA+1}" ] ; then  # check if env var is set
   PARAM_ALPHA=$PARAM_ALPHA
@@ -350,29 +283,29 @@ fi
 HYDROPARAMS="-hydrology_thickness_power_in_flux ${PARAM_ALPHA} -tauc_add_transportable_water -till_log_factor_transportable_water ${PARAM_OMEGA} -hydrology_hydraulic_conductivity ${PARAM_K}"
 
 # set output filename from argument 6
-if [ "$5" = "null" ]; then
+if [ "$4" = "null" ]; then
   HYDRO="-hydrology null"
-elif [ "$5" = "routing" ]; then
+elif [ "$4" = "routing" ]; then
   HYDRO="-hydrology routing $HYDROPARAMS"
-elif [ "$5" = "distributed" ]; then
+elif [ "$4" = "distributed" ]; then
   HYDRO="-hydrology distributed $HYDROPARAMS"
 else
   echo "invalid sixth argument, must be in $HYDROLIST"
 fi
 
 # set output filename from argument 7
-if [ -z "$6" ]; then
+if [ -z "$5" ]; then
   OUTNAME=unnamed.nc
 else
-  OUTNAME=$6
+  OUTNAME=$5
 fi
 OUTNAMESANS=`basename $OUTNAME .nc`
 
 # set bootstrapping input filename from argument 8
-if [ -z "$7" ]; then
+if [ -z "$6" ]; then
   INNAME=$PISM_DATANAME
 else
-  INNAME=$7
+  INNAME=$6
 fi
 INLIST="${INLIST} $INNAME $REGRIDFILE $CONFIG"
 
@@ -474,9 +407,7 @@ if [ -n "${EXVARS:+1}" ] ; then  # check if env var is already set
   echo "$SCRIPTNAME          EXVARS = $EXVARS  (already set)"
 else
   EXVARS="climatic_mass_balance_cumulative,tempsurf,effbwp,bwp,bwprel,bwat,bwatvel,diffusivity,temppabase,tempicethk_basal,bmelt,tillwat,velsurf_mag,mask,thk,topg,usurf,taud_mag,flux_divergence,velsurf,climatic_mass_balance,climatic_mass_balance_original,discharge_flux_cumulative,deviatoric_stresses,,$EXFRACS"
-  if [ "$5" = "hybrid" ]; then
-    EXVARS="${EXVARS},hardav,velbase_mag,tauc,taub_mag"
-  fi
+  EXVARS="${EXVARS},hardav,velbase_mag,tauc,taub_mag"
   echo "$SCRIPTNAME          EXVARS = $EXVARS"
 fi
 
