@@ -7,7 +7,7 @@ import os
 from argparse import ArgumentParser
 from resources import *
 
-grid_choices = [9000, 4500, 3600, 1800, 1500, 1200, 900, 600, 450, 300, 150]
+grid_choices = [18000, 9000, 4500, 3600, 1800, 1500, 1200, 900, 600, 450, 300, 150]
 
 # set up the option parser
 parser = ArgumentParser()
@@ -25,8 +25,8 @@ parser.add_argument("--calving", dest="calving",
                     choices=['float_kill', 'ocean_kill', 'eigen_calving'],
                     help="claving", default='ocean_kill')
 parser.add_argument("-d", "--domain", dest="domain",
-                    choices=['greenland'],
-                    help="sets the modeling domain", default='greenland')
+                    choices=['gris'],
+                    help="sets the modeling domain", default='gris')
 parser.add_argument("-f", "--o_format", dest="oformat",
                     choices=['netcdf3', 'netcdf4_parallel', 'pnetcdf'],
                     help="output format", default='netcdf4_parallel')
@@ -183,8 +183,11 @@ for n, combination in enumerate(combinations):
         sb_params_dict['topg_to_phi'] = ttphi
 
         stress_balance_params_dict = generate_stress_balance(stress_balance, sb_params_dict)
+        exvars = "climatic_mass_balance_cumulative,tempsurf,diffusivity,temppabase,bmeltvelsurf_mag,mask,thk,topg,usurf,taud_mag,velsurf,climatic_mass_balance,climatic_mass_balance_original,velbase_mag,tauc,taub_mag"
+        spatial_ts_dict = generate_spatial_ts(outfile, exvars, exstep, start=start, end=end)
+        scalar_ts_dict = generate_scalar_ts(outfile, tsstep, start=start, end=end)
 
-        all_params_dict = merge_dicts(general_params_dict, grid_params_dict, stress_balance_params_dict)
+        all_params_dict = merge_dicts(general_params_dict, grid_params_dict, stress_balance_params_dict, spatial_ts_dict, scalar_ts_dict)
         all_params = ' '.join([' '.join(['-' + k, str(v)]) for k, v in all_params_dict.items()])
         
         params_dict = OrderedDict()
@@ -263,7 +266,7 @@ for n, combination in enumerate(combinations):
 scripts = uniquify_list(scripts)
 posts = uniquify_list(posts)
 
-submit = 'submit_{domain}_g{grid}m_{climate}_{bed_type}_hirham_relax.sh'.format(domain=domain.lower(), grid=grid, climate=climate, bed_type=bed_type)
+submit = 'submit_{domain}_g{grid}m_{climate}_{bed_type}.sh'.format(domain=domain.lower(), grid=grid, climate=climate, bed_type=bed_type)
 try:
     os.remove(submit)
 except OSError:

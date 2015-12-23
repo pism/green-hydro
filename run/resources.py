@@ -6,7 +6,7 @@ def generate_domain(domain):
     Generate domain specific options
     '''
     
-    if domain.lower() in ('greenland'):
+    if domain.lower() in ('greenland', 'gris'):
         pism_exec = 'pismr'
     elif domain.lower() in ('jakobshavn'):
         x_min = -280000
@@ -20,6 +20,52 @@ def generate_domain(domain):
         sys.exit(0)
 
     return pism_exec
+
+
+def generate_spatial_ts(outfile, exvars, step, start=None, end=None, split=None):
+    '''
+    Return dict to generate spatial time series
+    '''
+
+    ts_dict = OrderedDict()
+    ts_dict['extra_file'] = 'ex_' + outfile
+    ts_dict['extra_vars'] = exvars
+        
+    if step is None:
+        step = 'yearly'
+
+    if (start is not None and end is not None):
+        times = '{start}:{step}:{end}'.format(start=start, step=step, end=end)
+    else:
+        times = step
+        
+    ts_dict['extra_times'] = times
+        
+    if split:
+        ts_dict['extra_split'] = ''
+
+    return ts_dict
+
+
+def generate_scalar_ts(outfile, step, start=None, end=None):
+    '''
+    Return dict to create scalar time series
+    '''
+
+    ts_dict = OrderedDict()
+    ts_dict['ts_file'] = 'ts_' + outfile
+    
+    if step is None:
+        step = 'yearly'
+
+    if (start is not None and end is not None):
+        times = '{start}:{step}:{end}'.format(start=start, step=step, end=end)
+    else:
+        times = step
+    ts_dict['ts_times'] = times
+
+    return ts_dict
+
 
     
 def generate_grid_description(grid_resolution):

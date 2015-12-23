@@ -441,38 +441,22 @@ echo "$SCRIPTNAME      executable = '$PISM'"
 echo "$SCRIPTNAME         coupler = '$COUPLER'"
 echo "$SCRIPTNAME        dynamics = '$PHYS'"
 
-# set up diagnostics
-if [ -z "${NODIAGS}" ] ; then  # check if env var is NOT set
-
-    # are we using a time file for forcing?
-    if [ -z "${PISM_TIMEFILE}" ] ; then  # check if env var is NOT set
-        if [ -z "${STARTEND}" ] ; then  # check if env var is NOT set
-            DURATION=$3
-            END=$DURATION
-            START=0
-            RUNSTARTEND="-ys $START -ye $END"
-        else
-            STARTEND=$STARTEND
-            IFS=',' read START END <<<"$STARTEND"
-            RUNSTARTEND="-ys $START -ye $END"
-        fi
-        TSTIMES=$START:$TSSTEP:$END
-        EXTIMES=$START:$EXSTEP:$END
+# are we using a time file for forcing?
+if [ -z "${PISM_TIMEFILE}" ] ; then  # check if env var is NOT set
+    if [ -z "${STARTEND}" ] ; then  # check if env var is NOT set
+        DURATION=$3
+        END=$DURATION
+        START=0
+        RUNSTARTEND="-ys $START -ye $END"
     else
-        TSTIMES=$TSSTEP
-        EXTIMES=$EXSTEP
-        RUNSTARTEND="-time_file $PISM_TIMEFILE"
+        STARTEND=$STARTEND
+        IFS=',' read START END <<<"$STARTEND"
+        RUNSTARTEND="-ys $START -ye $END"
     fi
-    TSNAME=ts_$OUTNAME
-    EXNAME=ex_$OUTNAME
-    # check_stationarity.py can be applied to $EXNAME
-    DIAGNOSTICS="-ts_file $TSNAME -ts_times $TSTIMES $EXSPLIT -extra_file $EXNAME -extra_times $EXTIMES -extra_vars $EXVARS"
-else
-  DIAGNOSTICS=""
 fi
 
 # construct command
-cmd="$PISM_MPIDO $NN $PISM ${SHELF_BASE_MELT_RATE} -config_override $CONFIG $AGE -i $INNAME -bootstrap $RUNSTARTEND $regridcommand $PARAM_E_AGE_COUPLING $PISM_PARAMS $COUPLER $PHYS $FRACTURE $HYDRO $DIAGNOSTICS $SAVE  -o $OUTNAME"
+cmd="$PISM_MPIDO $NN $PISM ${SHELF_BASE_MELT_RATE} -config_override $CONFIG $AGE -i $INNAME -bootstrap $RUNSTARTEND $regridcommand $PARAM_E_AGE_COUPLING $PISM_PARAMS $COUPLER $PHYS $FRACTURE $HYDRO $SAVE  -o $OUTNAME"
 echo
 $PISM_DO $cmd
 
