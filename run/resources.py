@@ -174,6 +174,7 @@ def generate_stress_balance(stress_balance, params_dict):
     stress_balance_params_dict['stress_balance'] = stress_balance
     if stress_balance in ('ssa+sia'):
         stress_balance_params_dict['cfbc'] = ''
+        stress_balance_params_dict['sia_flow_law'] = 'gpbld3'
         stress_balance_params_dict['pseudo_plastic'] = ''
         stress_balance_params_dict['pseudo_plastic_q'] = params_dict['pseudo_plastic_q']
         stress_balance_params_dict['till_effective_fraction_overburden'] = params_dict['till_effective_fraction_overburden']
