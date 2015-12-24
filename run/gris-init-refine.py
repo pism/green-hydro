@@ -45,6 +45,9 @@ parser.add_argument("-b", "--bed_type", dest="bed_type",
 parser.add_argument("--forcing_type", dest="forcing_type",
                     choices=['ctrl', 'e_age', 'ftt', 'e_age_ftt'],
                     help="output size type", default='ctrl')
+parser.add_argument("--stress_balance", dest="stress_balance",
+                    choices=['sia', 'ssa+sia', 'ssa'],
+                    help="stress balance solver", default='ssa+sia')
 parser.add_argument("--dataset_version", dest="version",
                     choices=['2'],
                     help="input data set version", default='2')
@@ -64,6 +67,7 @@ climate = options.climate
 forcing_type = options.forcing_type
 grid = options.grid
 bed_type = options.bed_type
+stress_balance = options.stress_balance
 version = options.version
 
 domain = options.domain
@@ -75,7 +79,6 @@ grid_mapping = OrderedDict(zip(grid_choices, grid_nos))
 save_times = [-125000, -25000, -5000, -1500, -1000, -500, -200, -100]
 grid_start_times = OrderedDict(zip(grid_choices, save_times))
 
-    
 infile = ''
 pism_dataname = 'pism_Greenland_{}m_mcb_jpl_v{}_{}.nc'.format(grid, version, bed_type)
 
