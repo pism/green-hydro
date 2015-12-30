@@ -72,12 +72,7 @@ stress_balance = options.stress_balance
 
 domain = options.domain
 pism_exec = generate_domain(domain)
-
-no_grid_choices = len(grid_choices)
-grid_nos = range(0, no_grid_choices)
-grid_mapping = OrderedDict(zip(grid_choices, grid_nos))
-save_times = [-125000, -25000, -5000, -1500, -1000, -500, -200, -100]
-grid_start_times = OrderedDict(zip(grid_choices, save_times))
+save_times = [-25000, -5000, -1500, -1000, -500, -200, -100]
 
     
 infile = ''
@@ -107,13 +102,11 @@ combinations = list(itertools.product(calving_thk_threshold_values, calving_k_va
 
 tsstep = 'yearly'
 exstep = '100'
-regridvars = 'age,litho_temp,enthalpy,tillwat,bmelt,Href,thk'
-ftt_starttime = -5000
 
 scripts = []
 posts = []
 
-start = grid_start_times[grid]
+start = -125000
 end = 0
 
 for n, combination in enumerate(combinations):
@@ -214,9 +207,7 @@ for n, combination in enumerate(combinations):
         if forcing_type in ('e_age', 'e_age_ftt'):
             params_dict['PARAM_E_AGE_COUPLING'] = 'yes'
         if forcing_type in ('ftt', 'e_age_ftt'):
-            params_dict['PARAM_FTT'] = 'yes'
-            params_dict['PARAM_FTT_STARTTIME'] = ftt_starttime
-            
+            params_dict['PARAM_FTT'] = 'yes'            
         
         params = ' '.join(['='.join([k, str(v)]) for k, v in params_dict.items()])
         
@@ -225,7 +216,7 @@ for n, combination in enumerate(combinations):
         f.write(cmd)
         f.write('\n')
 
-        if version in 'v2_1985':
+        if version in ('v2', 'v2_1985'):
             mytype = "MO14 2015-04-27"
         else:
             import sys
