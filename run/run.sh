@@ -65,6 +65,7 @@ if [ $# -lt 5 ] ; then
   echo "    PARAM_SHELF_BASE_MELT_RATE sets option -shelf_base_melt_rate \$PARAM_SHELF_BASE_MELT_RATE"
   echo "    PARAM_UTHR   sets option -pseudo_platic_uthreshold \$PARAM_UTHR [default=100 m/a]"
   echo "    PARAM_TEFO   sets (hybrid-only) option -till_effective_fraction_overburden"
+  echo "    PARAM_TEFO   sets (hybrid-only) option -till_reference_void_ratio"
   echo "                   \$PARAM_TEFO   [default=0.02]"
   echo "    PARAM_TTPHI  sets (hybrid-only) option -topg_to_phi \$PARAM_TTPHI"
   echo "                   [default=15.0,40.0,-300.0,700.0]"
@@ -374,6 +375,8 @@ if [ "$5" = "hybrid" ]; then
   fi
   if [ -z "${PARAM_TEFO}" ] ; then  # check if env var is NOT set
     PARAM_TEFO="0.02"
+  if [ -z "${PARAM_TRVR}" ] ; then  # check if env var is NOT set
+    PARAM_TRVR="0.69"
   fi
   if [ -z "${PARAM_UTHR}" ] ; then  # check if env var is NOT set
     PARAM_UTHR="100"
@@ -393,7 +396,7 @@ if [ "$5" = "hybrid" ]; then
   else
     SSA_E="-ssa_e 1.0"
   fi
-  PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} ${SGL} ${SSA_N} ${SSA_E}"
+  PHYS="${PHYS} -stress_balance ssa+sia -cfbc -topg_to_phi ${PARAM_TTPHI} -pseudo_plastic -pseudo_plastic_q ${PARAM_PPQ} -pseudo_plastic_uthreshold ${PARAM_UTHR} -till_effective_fraction_overburden ${PARAM_TEFO} -till_reference_void_ration ${TRVR} ${SGL} ${SSA_N} ${SSA_E}"
 else
   if [ "$5" = "sia" ]; then
     echo "$SCRIPTNAME  sia-only case: ignoring PARAM_TTPHI, PARAM_PPQ, PARAM_TEFO ..."
