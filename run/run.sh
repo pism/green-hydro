@@ -375,6 +375,7 @@ if [ "$5" = "hybrid" ]; then
   fi
   if [ -z "${PARAM_TEFO}" ] ; then  # check if env var is NOT set
     PARAM_TEFO="0.02"
+  fi
   if [ -z "${PARAM_TRVR}" ] ; then  # check if env var is NOT set
     PARAM_TRVR="0.69"
   fi
